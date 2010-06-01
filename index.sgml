@@ -7,8 +7,82 @@
 		<TITLE>Writing UNIX Manual Pages</TITLE>
 	</HEAD>
 	<BODY>
-		<P>
-			Hi.
-		</P>
+		<DIV>
+			% cat manpages.7
+			<BR>
+			.Dd $Mdocdate$
+			<BR>
+			.Dt MANUALS 7
+			<BR>
+			.Os
+			<BR>
+			.Sh NAME
+			<BR>
+			.Nm <SPAN CLASS="vis">UNIX Manual Pages</SPAN>
+			<BR>
+			.Nd <SPAN CLASS="vis">structure, style, and composition</SPAN>
+			<BR>
+			.\"
+			<BR>
+			.\"
+			<BR>
+			.Sh <SPAN CLASS="h1">DESCRIPTION</SPAN>
+			<BR>
+			.\"
+			<BR>
+			.Em <SPAN CLASS="vis em">A utility without good documentation is of no utility at all.</SPAN>
+			<BR>
+			.Pp
+			<DIV CLASS="vis">
+			So you've written a utility, library, or driver (or started writing one), and you want to document your work.
+			<BR>
+			How do you get from code to
+			</DIV>
+			.Xr <A
+			HREF="http://www.openbsd.org/cgi-bin/man.cgi?query=man&amp;apropos=0&amp;sektion=0&amp;manpath=OpenBSD+Current&amp;arch=i386&amp;format=html">man</A> 1
+			<DIV CLASS="vis">
+			output?
+			</DIV>
+			.Pp
+			<DIV CLASS="vis">
+			This site is a resource for composing well-formed and maintainable UNIX manuals in
+			</DIV>
+			.Xr <A
+			HREF="http://www.openbsd.org/cgi-bin/man.cgi?query=mdoc&amp;apropos=0&amp;sektion=0&amp;manpath=OpenBSD+Current&amp;arch=i386&amp;format=html">mdoc</A> 7 
+			<SPAN CLASS="vvis">,</SPAN>
+			<DIV CLASS="vis">
+			a language designed specifically for UNIX manuals.
+			</DIV>
+			.Pp
+			<DIV CLASS="vis">
+			For the time being, this site contains only links to existing resources and a mailing list for specific questions.
+			<BR>
+			Eventually we will post FAQ's and tutorials.
+			</DIV>
+			.\"
+			<BR>
+			.Sh <SPAN CLASS="h1">SEE ALSO</SPAN>
+			<BR>
+			.\"
+			<DIV CLASS="vis">
+			Our reference platform for UNIX manual formatting:
+			</DIV>
+			.Pp
+			<BR>
+			.Lk <A HREF="http://mdocml.bsd.lv/">http://mdocml.bsd.lv/</A>
+			<BR>
+			.Pp
+			<DIV CLASS="vis">
+			This page as a manual:
+			</DIV>
+			.Pp
+			<BR>
+			.Lk <A HREF="index.7">index.7</A>
+			<BR>
+			.Lk <A HREF="index.7.html">index.7.html</A>
+			<BR>
+			.Lk <A HREF="index.7.txt">index.7.txt</A>
+			<BR>
+		</DIV>
 	</BODY>
 </HTML>

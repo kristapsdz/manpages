@@ -1,4 +1,30 @@
 body		{ font-family: monospace; 
+		  margin-left: 2em;
+		  color: #dddddd;
 		  min-width: 580px; 
 		  width: 580px; }
 
+.vis		{ color: #000000; }
+
+.vvis		{ color: #000000; }
+
+span.h1		{ color: #000000; 
+		  font-weight: bold; }
+
+span.h2		{ color: #000000; 
+		  margin-left: 1ex;
+		  font-weight: bold; }
+
+span.vis	{ margin-left: 2ex; }
+
+div.vis		{ margin-left: 6ex; }
+
+.em		{ font-style: italic; }
+
+.ob		{ font-weight: bold; }
+
+a		{ color: #0000ff;
+		  margin-left: 2ex;
+		  text-decoration: none; }
+
+a:hover		{ color: #339999; }
