@@ -8,14 +8,14 @@ INSTALL_LIB	 = $(INSTALL) -m 0644
 INSTALL_MAN	 = $(INSTALL_DATA)
 SGMLS	   	 = index.sgml
 HTMLS	   	 = index.html index.7.html
-STATICS		 = index.css
+STATICS		 = index.css style.css
 MANS		 = index.7
 TEXTS		 = index.7.txt
 
 all:	$(HTMLS) $(MANS) $(TEXTS)
 
-installwww: www
-	$(INSTALL_DATA) $(HTMLS) $(STATICS) $(DESTDIR)$(PREFIX)/
+installwww: all
+	$(INSTALL_DATA) $(HTMLS) $(STATICS) $(TEXTS) $(MANS) $(DESTDIR)$(PREFIX)/
 
 clean:
 	rm -f $(HTMLS) $(MANS) $(TEXTS)
@@ -25,7 +25,7 @@ clean:
 	cp -f $< $@
 
 .html.7:
-	lynx -dump -nolist $< | sed 's!^[ 	]*!!g' | tail -n+2 >$@
+	lynx -dump -nolist $< | sed 's!^[ 	]*!!g' | tail -n+3 >$@
 
 .7.7.txt:
 	mandoc -Wall -fstrict $< | col -b >$@
