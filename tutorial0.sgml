@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+	<HEAD>
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+		<META NAME="resource-type" CONTENT="document">
+		<LINK REL="stylesheet" HREF="tutorial.css" TYPE="text/css" MEDIA="all">
+		<TITLE>UNIX Manual Pages Tutorial | Getting Started</TITLE>
+	</HEAD>
+	<BODY>
+		<DIV CLASS="head">
+			<B>UNIX Manual Tutorial</B> &#8211; <Q>Getting Started</Q>
+		</DIV>
+		<DIV>
+			<H1>SYNOPSIS</H1>
+			<P>
+				This tutorial illustrates how to prepare an initial environment for writing portable UNIX manual pages.
+			</P>
+		</DIV>
+		<DIV>
+			<H1>DESCRIPTION</H1>
+			<P>
+				It's quite easy:
+			</P>
+			<OL>
+				<LI>
+					<P>
+						Make sure <A CLASS="man external" HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A> exists on
+						your system.
+					</P>
+					<P CLASS="code">
+						% man 1 mandoc
+					</P>
+				</LI>
+				<LI>
+					<P>
+						Copy the manual page template file into your working directory.  We assume that the template is
+						installed in <SPAN CLASS="path">/usr/share/misc/</SPAN>.
+					</P>
+					<P CLASS="code">
+						% cp /usr/share/misc/mdoc.template .
+					</P>
+				</LI>
+				<LI>
+					<P>
+						Open the <A CLASS="man external" HREF="http://mdocml.bsd.lv/mdoc.7.html">mdoc</A> language
+						reference in another terminal window.
+					</P>
+					<P CLASS="code">
+						% man 7 mdoc
+					</P>
+				</LI>
+				<LI>
+					<P>
+						Rename the template as your command, utility, or device (any reasonable name will do) with a
+						suffix corresponding to the <A CLASS="external"
+						HREF="http://mdocml.bsd.lv/mdoc.7.html#x5c264474">manual section</A>.  Let the name by
+						<Q>foo</Q> and the section be <Q>1</Q> for general utilities.
+					</P>
+					<P CLASS="code">
+						% mv mdoc.template foo.1
+					</P>
+				</LI>
+				<LI>
+					<P>
+						That's it!  Edit the template using the <A CLASS="man external"
+						HREF="http://mdocml.bsd.lv/mdoc.7.html">mdoc(7)</A> reference as a guide.  Preview your work
+						from time to time in both terminal and HTML modes.
+					</P>
+					<P CLASS="code">
+						% mandoc -Wall -fstrict foo.1 |less
+					</P>
+					<P CLASS="code">
+						% mandoc -Wall -fstrict -Thtml foo.1 &gt;foo.1.html
+					</P>
+				</LI>
+			</OL>
+			<P>
+				That's it!
+			</P>
+		</DIV>
+		<DIV>
+			<H1>AUTHORS</H1>
+			<P>
+				This tutorial was written by Kristaps Dzonsons, kris<A CLASS="external" TITLE="Reveal this e-mail address"
+				HREF="http://mailhide.recaptcha.net/d?k=01M6h_w7twDp58ZgH57eWC_w==&amp;c=Q2DBUt401ePlSeupJFrq_Q==">...</A>@bsd.lv.
+				It was last updated on $Date$.
+			</P>
+		</DIV>
+		<DIV CLASS="foot">
+			$Id$ | Copyright &#169; 2010 Kristaps Dzonsons
+		</DIV>
+	</BODY>
+</HTML>

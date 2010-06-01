@@ -7,8 +7,9 @@ INSTALL_DATA	 = $(INSTALL) -m 0444
 INSTALL_LIB	 = $(INSTALL) -m 0644
 INSTALL_MAN	 = $(INSTALL_DATA)
 SGMLS	   	 = index.sgml
-HTMLS	   	 = index.html index.7.html
-STATICS		 = index.css style.css
+HTMLS	   	 = index.html index.7.html \
+		   tutorial0.html
+STATICS		 = index.css style.css tutorial.css external.png
 MANS		 = index.7
 TEXTS		 = index.7.txt
 
@@ -25,7 +26,7 @@ clean:
 	cp -f $< $@
 
 .html.7:
-	lynx -dump -nolist $< | sed 's!^[ 	]*!!g' | tail -n+3 >$@
+	lynx -width=1000 -dump -nolist $< | sed 's!^[ 	]*!!g' | tail -n+2 >$@
 
 .7.7.txt:
 	mandoc -Wall -fstrict $< | col -b >$@

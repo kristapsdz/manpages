@@ -7,22 +7,20 @@
 		<TITLE>Writing UNIX Manual Pages</TITLE>
 	</HEAD>
 	<BODY>
-		<DIV>
-			% cat manpages.7
+		<DIV CLASS="nvis offs">
+			.Dd <SPAN CLASS="nvis">$Mdocdate$</SPAN>
 			<BR>
-			.\" Copyright (c) 2010, Kristaps Dzonsons
-			<BR>
-			.Dd $Mdocdate$
-			<BR>
-			.Dt MANUALS 7
+			.Dt <SPAN CLASS="nvis">MANUALS 7</SPAN>
 			<BR>
 			.Os
 			<BR>
-			.Sh NAME
+			.Sh <SPAN CLASS="h1">NAME</SPAN>
 			<BR>
-			.Nm <SPAN CLASS="vis">UNIX Manual Pages</SPAN>
+			.\"
 			<BR>
-			.Nd <SPAN CLASS="vis">structure, style, and composition</SPAN>
+			.Nm <SPAN>UNIX Manual Pages</SPAN>
+			<BR>
+			.Nd <SPAN>structure, style, and composition</SPAN>
 			<BR>
 			.\"
 			<BR>
@@ -30,66 +28,105 @@
 			<BR>
 			.\"
 			<BR>
-			.Em <SPAN CLASS="vis em">A utility without good documentation is of no utility at all.</SPAN>
+			.Em <SPAN CLASS="em">A utility without good documentation is of no utility at all.</SPAN>
 			<BR>
 			.Pp
-			<DIV CLASS="vis">
+			<DIV>
 			So you've written a utility, library, or driver (or started writing one), and you want to document your work.
 			<BR>
 			How do you get from code to
 			</DIV>
 			.Xr <A
 			HREF="http://www.openbsd.org/cgi-bin/man.cgi?query=man&amp;apropos=0&amp;sektion=0&amp;manpath=OpenBSD+Current&amp;arch=i386&amp;format=html">man</A> 1
-			<DIV CLASS="vis">
+			<DIV>
 			output?
 			</DIV>
 			.Pp
-			<DIV CLASS="vis">
+			<DIV>
 			This site is a resource for composing well-formed and maintainable UNIX manuals in
 			</DIV>
 			.Xr <A
-			HREF="http://www.openbsd.org/cgi-bin/man.cgi?query=mdoc&amp;apropos=0&amp;sektion=0&amp;manpath=OpenBSD+Current&amp;arch=i386&amp;format=html">mdoc</A> 7 
-			<SPAN CLASS="vvis">,</SPAN>
-			<DIV CLASS="vis">
-			a language designed specifically for UNIX manuals.
+			HREF="http://www.openbsd.org/cgi-bin/man.cgi?query=mdoc&amp;apropos=0&amp;sektion=0&amp;manpath=OpenBSD+Current&amp;arch=i386&amp;format=html">mdoc</A> 7 <SPAN CLASS="offs">,</SPAN>
+			<DIV>
+			a language designed specifically for UNIX manuals and available by default on most reasonable UNIX installations.
 			</DIV>
-			.Pp
-			<DIV CLASS="vis">
-			For the time being, this site contains only links to existing resources and a mailing list for specific questions.
+			.\"
 			<BR>
-			Eventually we will post FAQ's and tutorials.
-			</DIV>
-			.Pp
-			<DIV CLASS="vis">
-			By way of example, this site may be seen as a screen-dumped
-			</DIV>
-			.Lk <A HREF="index.7">index.7</A> <SPAN CLASS="vvis">,</SPAN>
+			.Sh <SPAN CLASS="h2">Tutorials</SPAN>
 			<BR>
-			.Lk <A HREF="index.7.html">index.7.html</A> <SPAN CLASS="vvis">,</SPAN>
-			<DIV CLASS="vis">
-			or
-			</DIV>
-			.Lk <A HREF="index.7.txt">index.7.txt</A> <SPAN CLASS="vvis">.</SPAN>
+			.\"
+			<TABLE>
+				<COL CLASS="left">
+				<COL>
+				<TBODY>
+					<TR>
+						<TD>.Lk <A HREF="tutorial0.html">tutorial0.html</A></TD>
+						<TD><Q>Getting Started</Q></TD>
+					</TR>
+				</TBODY>
+			</TABLE>
+			.\"
 			<BR>
+			.Sh <SPAN CLASS="h2">FAQ</SPAN>
+			<BR>
+			.\"
+			<TABLE>
+				<COL CLASS="left">
+				<COL>
+				<TBODY>
+					<TR>
+						<TD>.Lk <A HREF="faq0.html">faq0.html</A></TD>
+						<TD><Q>Manuals in Makefiles</Q></TD>
+					</TR>
+				</TBODY>
+			</TABLE>
+			.\"
+			<BR>
+			.Sh <SPAN CLASS="h2">Mailing Lists</SPAN>
+			<BR>
+			.\"
+			<TABLE>
+				<COL CLASS="left">
+				<COL>
+				<TBODY>
+					<TR>
+						<TD>.Lk <SPAN>disc<A CLASS="offs" TITLE="Reveal this e-mail address"
+						HREF="http://www.google.com/recaptcha/mailhide/d?k=01fqH3xoy7rwp-l_5K0BumPA==&amp;c=NTI0bIlVxlrR2xLEqaJxCv-_SGL-rzM8DjAFEivPvNzLi2PxNha85zOyiFYPiprL">...</A>@manpages.bsd.lv</SPAN></TD>
+						<TD><SPAN CLASS="offs">Questions and discussions</SPAN></TD>
+					</TR>
+				</TBODY>
+			</TABLE>
 			.\"
 			<BR>
 			.Sh <SPAN CLASS="h1">SEE ALSO</SPAN>
 			<BR>
 			.\"
-			<DIV CLASS="vis">
-			Our reference platform for UNIX manual formatting:
+			<DIV>
+			Reference platform for UNIX manual formatting:
 			</DIV>
 			.Pp
 			<BR>
 			.Lk <A HREF="http://mdocml.bsd.lv/">http://mdocml.bsd.lv/</A>
 			<BR>
 			.Pp
-			<DIV CLASS="vis">
+			<DIV>
 			Traditional GNU troff UNIX manual formatter:
 			</DIV>
 			.Pp
 			<BR>
 			.Lk <A HREF="http://www.gnu.org/software/groff">http://www.gnu.org/software/groff</A>
+			<BR>
+			.\"	
+			<BR>
+			.ig
+			<DIV>
+			(Why does this page look funny?  It's actually a full-out manual.  View a screen-dump as <A CLASS="offs"
+			HREF="index.7">index.7</A>, manual source; <A CLASS="offs" HREF="index.7.html">index.7.html</A>, HTML formatted;
+			or <A CLASS="offs" HREF="index.7.txt">index.7.txt</A>, text formatted.)
+			</DIV>
+			..
+			<BR>
+			.\" <SPAN CLASS="nvis">Copyright (c) 2010, Kristaps Dzonsons</SPAN>
 		</DIV>
 	</BODY>
 </HTML>
