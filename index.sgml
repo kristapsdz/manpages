@@ -10,6 +10,8 @@
 		<DIV>
 			% cat manpages.7
 			<BR>
+			.\" Copyright (c) 2010, Kristaps Dzonsons
+			<BR>
 			.Dd $Mdocdate$
 			<BR>
 			.Dt MANUALS 7
@@ -21,8 +23,6 @@
 			.Nm <SPAN CLASS="vis">UNIX Manual Pages</SPAN>
 			<BR>
 			.Nd <SPAN CLASS="vis">structure, style, and composition</SPAN>
-			<BR>
-			.\"
 			<BR>
 			.\"
 			<BR>
@@ -59,6 +59,18 @@
 			<BR>
 			Eventually we will post FAQ's and tutorials.
 			</DIV>
+			.Pp
+			<DIV CLASS="vis">
+			By way of example, this site may be seen as a screen-dumped
+			</DIV>
+			.Lk <A HREF="index.7">index.7</A> <SPAN CLASS="vvis">,</SPAN>
+			<BR>
+			.Lk <A HREF="index.7.html">index.7.html</A> <SPAN CLASS="vvis">,</SPAN>
+			<DIV CLASS="vis">
+			or
+			</DIV>
+			.Lk <A HREF="index.7.txt">index.7.txt</A> <SPAN CLASS="vvis">.</SPAN>
+			<BR>
 			.\"
 			<BR>
 			.Sh <SPAN CLASS="h1">SEE ALSO</SPAN>
@@ -73,16 +85,11 @@
 			<BR>
 			.Pp
 			<DIV CLASS="vis">
-			This page as a manual:
+			Traditional GNU troff UNIX manual formatter:
 			</DIV>
 			.Pp
 			<BR>
-			.Lk <A HREF="index.7">index.7</A>
-			<BR>
-			.Lk <A HREF="index.7.html">index.7.html</A>
-			<BR>
-			.Lk <A HREF="index.7.txt">index.7.txt</A>
-			<BR>
+			.Lk <A HREF="http://www.gnu.org/software/groff">http://www.gnu.org/software/groff</A>
 		</DIV>
 	</BODY>
 </HTML>
