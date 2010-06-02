@@ -36,7 +36,7 @@
 			<BR>
 			How do you get from code to
 			</DIV>
-			.Xr <A
+			.Xr <A CLASS="man external"
 			HREF="http://www.openbsd.org/cgi-bin/man.cgi?query=man&amp;apropos=0&amp;sektion=0&amp;manpath=OpenBSD+Current&amp;arch=i386&amp;format=html">man</A> 1
 			<DIV>
 			output?
@@ -45,7 +45,7 @@
 			<DIV>
 			This site is a resource for composing well-formed and maintainable UNIX manuals in
 			</DIV>
-			.Xr <A
+			.Xr <A CLASS="man external"
 			HREF="http://www.openbsd.org/cgi-bin/man.cgi?query=mdoc&amp;apropos=0&amp;sektion=0&amp;manpath=OpenBSD+Current&amp;arch=i386&amp;format=html">mdoc</A> 7 <SPAN CLASS="offs">,</SPAN>
 			<DIV>
 			a language designed specifically for UNIX manuals and available by default on most reasonable UNIX installations.
@@ -90,7 +90,7 @@
 				<COL>
 				<TBODY>
 					<TR>
-						<TD>.Lk <SPAN>disc<A CLASS="offs" TITLE="Reveal this e-mail address"
+						<TD>.Lk <SPAN>disc<A CLASS="offs external" TITLE="Reveal this e-mail address"
 						HREF="http://www.google.com/recaptcha/mailhide/d?k=01fqH3xoy7rwp-l_5K0BumPA==&amp;c=NTI0bIlVxlrR2xLEqaJxCv-_SGL-rzM8DjAFEivPvNzLi2PxNha85zOyiFYPiprL">...</A>@manpages.bsd.lv</SPAN></TD>
 						<TD><SPAN CLASS="offs">Questions and discussions</SPAN></TD>
 					</TR>
@@ -106,7 +106,7 @@
 			</DIV>
 			.Pp
 			<BR>
-			.Lk <A HREF="http://mdocml.bsd.lv/">http://mdocml.bsd.lv/</A>
+			.Lk <A CLASS="external" HREF="http://mdocml.bsd.lv/">http://mdocml.bsd.lv/</A>
 			<BR>
 			.Pp
 			<DIV>
@@ -114,15 +114,15 @@
 			</DIV>
 			.Pp
 			<BR>
-			.Lk <A HREF="http://www.gnu.org/software/groff">http://www.gnu.org/software/groff</A>
+			.Lk <A CLASS="external" HREF="http://www.gnu.org/software/groff">http://www.gnu.org/software/groff</A>
 			<BR>
 			.\"	
 			<BR>
 			.ig
 			<DIV>
-			(Why does this page look funny?  It's actually a full-out manual.  View a screen-dump as <A CLASS="offs"
-			HREF="index.7">index.7</A>, manual source; <A CLASS="offs" HREF="index.7.html">index.7.html</A>, HTML formatted;
-			or <A CLASS="offs" HREF="index.7.txt">index.7.txt</A>, text formatted.)
+			(Why does this page look funny?  It's actually a full-out manual.  View a screen-dump as manual source, <A CLASS="offs"
+			HREF="index.7">index.7</A>; rendered as HTML, <A CLASS="offs" HREF="index.7.html">index.7.html</A>; or rendered as text,
+			<A CLASS="offs" HREF="index.7.txt">index.7.txt</A>.)
 			</DIV>
 			..
 			<BR>

@@ -9,7 +9,7 @@ INSTALL_MAN	 = $(INSTALL_DATA)
 SGMLS	   	 = index.sgml
 HTMLS	   	 = index.html index.7.html \
 		   tutorial0.html
-STATICS		 = index.css style.css tutorial.css external.png
+STATICS		 = index.css style.css tutorial.css external.png all.css
 MANS		 = index.7
 TEXTS		 = index.7.txt
 

@@ -8,12 +8,12 @@
 	</HEAD>
 	<BODY>
 		<DIV CLASS="head">
-			<B>UNIX Manual Tutorial</B> &#8211; <Q>Getting Started</Q>
+			<A HREF="index.html">Writing UNIX Manual Pages</A> &#8211; <Q>Getting Started</Q>
 		</DIV>
 		<DIV>
 			<H1>SYNOPSIS</H1>
 			<P>
-				This tutorial illustrates how to prepare an initial environment for writing portable UNIX manual pages.
+				This tutorial illustrates how to prepare an environment for writing portable UNIX manual pages.
 			</P>
 		</DIV>
 		<DIV>
@@ -53,8 +53,8 @@
 					<P>
 						Rename the template as your command, utility, or device (any reasonable name will do) with a
 						suffix corresponding to the <A CLASS="external"
-						HREF="http://mdocml.bsd.lv/mdoc.7.html#x5c264474">manual section</A>.  Let the name by
-						<Q>foo</Q> and the section be <Q>1</Q> for general utilities.
+						HREF="http://mdocml.bsd.lv/mdoc.7.html#x5c264474">manual section</A>.  Let the name be
+						<Q>foo</Q> and the section be <Q>1</Q>, for general utilities.
 					</P>
 					<P CLASS="code">
 						% mv mdoc.template foo.1
@@ -62,9 +62,9 @@
 				</LI>
 				<LI>
 					<P>
-						That's it!  Edit the template using the <A CLASS="man external"
-						HREF="http://mdocml.bsd.lv/mdoc.7.html">mdoc(7)</A> reference as a guide.  Preview your work
-						from time to time in both terminal and HTML modes.
+						Edit the template using the <A CLASS="man external"
+						HREF="http://mdocml.bsd.lv/mdoc.7.html">mdoc</A> reference as a guide.  Preview your work from
+						time to time in both terminal and HTML modes.
 					</P>
 					<P CLASS="code">
 						% mandoc -Wall -fstrict foo.1 |less

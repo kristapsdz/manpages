@@ -1,39 +1,38 @@
+@import 'all.css';
+
 body		{ font-family: monospace; 
+		  font-size: 9pt;
 		  margin-left: 2em;
 		  color: #dddddd;
 		  min-width: 580px; }
 
 .nvis		{ color: #dddddd; }
 
-.offs		{ margin-left: 0px; }
+.offs		{ margin-left: 0em; }
 
 q		{ color: #000000; }
 
 span		{ color: #000000; 
-		  margin-left: 2ex; }
+		  margin-left: 2em; }
 
-div		{ margin-left: 6ex;
+div		{ margin-left: 4em;
 		  color: #000000; 
-		  max-width: 80ex; }
+		  max-width: 60em; }
 
 span.h1		{ font-weight: bolder; 
-		  margin-left: 0ex; }
+		  margin-left: 0em; }
 
 span.h2		{ font-weight: bolder; 
-		  margin-left: 1ex; }
+		  margin-left: 1em; }
+
+a		{ margin-left: 2em; }
 
 span.em		{ font-style: italic; }
 
-a		{ color: #0000ff;
-		  margin-left: 2ex; 
-		  text-decoration: none; }
-
-a:hover		{ color: #339999; }
-
-col.left	{ width: 35ex; }
+col.left	{ width: 20em; }
 
 table		{ width: 100%;
-		  border-spacing: 0px; }
+		  border-spacing: 0em; }
 
-td		{ padding: 0px;
-		  margin: 0px; }
+td		{ padding: 0em;
+		  margin: 0em; }
