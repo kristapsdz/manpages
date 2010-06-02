@@ -8,6 +8,8 @@
 	</HEAD>
 	<BODY>
 		<DIV CLASS="nvis offs">
+			.\"
+			<BR>
 			.Dd <SPAN CLASS="nvis">$Mdocdate$</SPAN>
 			<BR>
 			.Dt <SPAN CLASS="nvis">MANUALS 7</SPAN>
