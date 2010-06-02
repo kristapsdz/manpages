@@ -112,31 +112,31 @@
 			<BR>
 			.Sh <SPAN CLASS="h1">SEE ALSO</SPAN>
 			<BR>
-			.\"
-			<DIV>
-			Reference platform for manpage formatting:
-			</DIV>
-			.Pp
+			.Bl -ohang
+			<BR>
+			.It <SPAN>Reference platform for manpage formatting:</SPAN>
 			<BR>
 			.Lk <A CLASS="external" HREF="http://mdocml.bsd.lv/">http://mdocml.bsd.lv/</A>
 			<BR>
-			.Pp
-			<DIV>
-			Traditional manpage formatter and general-purpose type-setter:
-			</DIV>
-			.Pp
+			.\"
+			<BR>
+			.It <SPAN>Traditional manpage formatter and general-purpose type-setter:</SPAN>
 			<BR>
 			.Lk <A CLASS="external" HREF="http://www.gnu.org/software/groff">http://www.gnu.org/software/groff</A>
 			<BR>
-			.Pp
-			<DIV>
-			On-line CVS for this site:
-			</DIV>
-			.Pp
+			.\"
+			<BR>
+			.It <SPAN>On-line CVS for this site:</SPAN>
 			<BR>
 			.Lk <A HREF="http://manpages.bsd.lv/cgi-bin/cvsweb/?cvsroot=manpages">http://manpages.bsd.lv/cgi-bin/cvsweb/?cvsroot=manpages</A>
 			<BR>
-			.\"	
+			.\"
+			<BR>
+			.It <SPAN><Q>Fixing on a Standard Language for UNIX Manuals</Q></SPAN>
+			<BR>
+			.Lk <A CLASS="external" HREF="http://www.usenix.org/publications/login/2009-10/pdfs/dzonsons.pdf">http://www.usenix.org/publications/login/2009-10/pdfs/dzonsons.pdf</A>
+			<BR>
+			.El
 			<BR>
 			.ig
 			<DIV>
