@@ -27,6 +27,7 @@ h1,
 h2		{ font-size: 1.0em; }
 
 p.code		{ border: 1px dotted #dddddd;
+		  margin-left: 2.4em;
 		  color: #000000;
 		  background-color: #eeeeee;
 		  font-size: larger;

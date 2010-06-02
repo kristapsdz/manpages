@@ -84,6 +84,10 @@
 						<TD>.Lk <A HREF="tutorial1.html">tutorial1.html</A></TD>
 						<TD><Q>Manpages in Makefiles</Q></TD>
 					</TR>
+					<TR>
+						<TD>.Lk <A HREF="tutorial2.html">tutorial2.html</A></TD>
+						<TD><Q>Spell-checking Manpages</Q></TD>
+					</TR>
 				</TBODY>
 			</TABLE>
 			.\"

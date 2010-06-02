@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+	<HEAD>
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+		<META NAME="resource-type" CONTENT="document">
+		<LINK REL="stylesheet" HREF="tutorial.css" TYPE="text/css" MEDIA="all">
+		<TITLE>Writing UNIX Manual Pages | Spell-checking Manpages</TITLE>
+	</HEAD>
+	<BODY>
+		<DIV CLASS="head">
+			<A HREF="index.html">Writing UNIX Manual Pages</A> &#8211; <Q>Spell-checking Manpages</Q>
+		</DIV>
+		<DIV>
+			<H1>SYNOPSIS</H1>
+			<P>
+				This tutorial illustrates how to check your manuals for spelling.
+			</P>
+		</DIV>
+		<DIV>
+			<H1>DESCRIPTION</H1>
+			<P>
+				It's unsurprising that most spell-checkers barf on <A CLASS="external"
+				HREF="http://mdocml.bsd.lv/mdoc.7.html">mdoc</A> input, as it's difficult to parse text from control structures.
+				The most convenient method is to use <A CLASS="external"
+				HREF="http://www.lasr.cs.ucla.edu/geoff/ispell.html">ispell</A> or <A CLASS="external"
+				HREF="http://aspell.net/">GNU aspell</A>.  Both have similar calling syntax.  For this example, let <SPAN
+				CLASS="file">foo.1</SPAN> be the name of your manual.
+			</P>
+			<P CLASS="code">
+				% ispell -n foo.1
+			</P>
+			<P CLASS="code">
+				% aspell -n foo.1
+			</P>
+			<P>
+				If these are not available and you have <SPAN CLASS="cmd">deroff</SPAN> installed, you can pipe its output
+				directly into <SPAN CLASS="cmd">spell</SPAN>.  Both of these utilites are found on most reasonable UNIX
+				installations.
+			</P>
+			<P CLASS="code">
+				% deroff foo.1 | spell
+			</P>
+		</DIV>
+		<DIV>
+			<H1>AUTHORS</H1>
+			<P>
+				This tutorial was written by Kristaps Dzonsons, kris<A CLASS="external" TITLE="Reveal this e-mail address"
+				HREF="http://mailhide.recaptcha.net/d?k=01M6h_w7twDp58ZgH57eWC_w==&amp;c=Q2DBUt401ePlSeupJFrq_Q==">...</A>@bsd.lv.
+			</P>
+		</DIV>
+		<DIV CLASS="foot">
+			$Id$ | Copyright &#169; 2010 Kristaps Dzonsons
+		</DIV>
+	</BODY>
+</HTML>
