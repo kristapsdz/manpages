@@ -28,7 +28,8 @@ clean:
 	cp -f $< $@
 
 .html.7:
-	lynx -width=1000 -dump -nolist $< | sed 's!^[ 	]*!!g' | tail -n+1 >$@
+	# Note: GNU/Linux wants tail -n+1, OpenBSD wants tail -n+2.
+	lynx -width=1000 -dump -nolist $< | sed 's!^[ 	]*!!g' | tail -n+2 >$@
 
 .7.7.txt:
 	mandoc -Wall -fstrict $< | col -b >$@

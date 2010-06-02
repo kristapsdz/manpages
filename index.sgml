@@ -126,6 +126,14 @@
 			<BR>
 			.Lk <A CLASS="external" HREF="http://www.gnu.org/software/groff">http://www.gnu.org/software/groff</A>
 			<BR>
+			.Pp
+			<DIV>
+			On-line CVS for this site:
+			</DIV>
+			.Pp
+			<BR>
+			.Lk <A HREF="http://manpages.bsd.lv/cgi-bin/cvsweb/?cvsroot=manpages">http://manpages.bsd.lv/cgi-bin/cvsweb/?cvsroot=manpages</A>
+			<BR>
 			.\"	
 			<BR>
 			.ig
