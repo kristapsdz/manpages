@@ -36,8 +36,7 @@
 			<BR>
 			How do you get from code to
 			</DIV>
-			.Xr <A CLASS="man external"
-			HREF="http://www.openbsd.org/cgi-bin/man.cgi?query=man&amp;apropos=0&amp;sektion=0&amp;manpath=OpenBSD+Current&amp;arch=i386&amp;format=html">man</A> 1
+			.Xr <SPAN>man</SPAN> 1
 			<DIV>
 			output?
 			</DIV>
@@ -45,11 +44,29 @@
 			<DIV>
 			This site is a resource for composing well-formed and maintainable UNIX manuals (<Q>manpages</Q>) in
 			</DIV>
-			.Xr <A CLASS="man external"
-			HREF="http://www.openbsd.org/cgi-bin/man.cgi?query=mdoc&amp;apropos=0&amp;sektion=0&amp;manpath=OpenBSD+Current&amp;arch=i386&amp;format=html">mdoc</A> 7 <SPAN CLASS="offs">,</SPAN>
+			.Xr <A CLASS="man external" HREF="http://mdocml.bsd.lv/mdoc.7.html">mdoc</A> 7 <SPAN CLASS="offs">,</SPAN>
 			<DIV>
 			a language designed specifically for manpages and available by default on most reasonable UNIX installations.
 			</DIV>
+			.\"
+			<BR>
+			.Sh <SPAN CLASS="h2">Templates</SPAN>
+			<BR>
+			.\"
+			<TABLE>
+				<COL CLASS="left">
+				<COL>
+				<TBODY>
+					<TR>
+						<TD>.Lk <A HREF="template.1">template.1</A></TD>
+						<TD><SPAN CLASS="offs">Template for a utility manual</SPAN></TD>
+					</TR>
+					<TR>
+						<TD>.Lk <A HREF="template.3">template.3</A></TD>
+						<TD><SPAN CLASS="offs">Template for a library/function manual</SPAN></TD>
+					</TR>
+				</TBODY>
+			</TABLE>
 			.\"
 			<BR>
 			.Sh <SPAN CLASS="h2">Tutorials</SPAN>

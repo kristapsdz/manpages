@@ -33,6 +33,7 @@ p.code		{ border: 1px dotted #dddddd;
 		  font-family: monospace;
 		  padding: 2px; }
 
+.cmd,
 .path,
 .file		{ font-family: monospace;
 		  font-size: larger; }

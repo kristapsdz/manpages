@@ -20,7 +20,7 @@
 		<DIV>
 			<H1>DESCRIPTION</H1>
 			<P>
-				This tutorial is focussed on systems with <A CLASS="man external"
+				This tutorial is focussed on systems with <A CLASS="cmd external"
 				HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A> installed.  If you do not, or if your downstream providers
 				do not, limited alternatives will be noted.
 			</P>
@@ -62,7 +62,7 @@
 				</LI>
 				<LI>
 					<P>
-						Write the rule that validates your manual using <A CLASS="man external"
+						Write the rule that validates your manual using <A CLASS="cmd external"
 						HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A> (note that you cannot copy and paste this,
 						as you'll have to convert the whitespace following the rule declaration into a tab).
 					</P>
@@ -80,8 +80,9 @@
 						.in.1.1 .in.3.3:
 					</P>
 					<P>
-						If <A CLASS="man external" HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A> is not
-						installed, you can catch only egregious errors with nroff (see above regarding copy and paste).
+						If <A CLASS="cmd external" HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A> is not
+						installed, you can catch only egregious errors with <SPAN CLASS="cmd">nroff</SPAN> (see above
+						regarding copy and paste).
 					</P>
 					<P CLASS="code">
 						.in.1.1:
@@ -124,10 +125,11 @@
 			<OL>
 				<LI>
 					<P>
-						If you have <A CLASS="man external" HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A>
-						installed, you will be able to convert into ASCII, HTML, and XHTML.  With nroff, you can convert
-						into ASCII and PostScript.  (Ed.: PostScript is a current project for <A CLASS="man external"
-						HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A> as of the time of this writing.)
+						If you have <A CLASS="cmd external" HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A>
+						installed, you will be able to convert into ASCII, HTML, and XHTML.  With <SPAN
+						CLASS="cmd">nroff</SPAN>, you can convert into ASCII and PostScript.  (Ed.: PostScript is a
+						current project for <A CLASS="cmd external" HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A>
+						as of the time of this writing.)
 					</P>
 					<P>
 						Add the suffix rules for your output format of choice.
@@ -138,7 +140,7 @@
 				</LI>
 				<LI>
 					<P>
-						Next, incorporate the following build rules, first using <A CLASS="man external"
+						Next, incorporate the following build rules, first using <A CLASS="cmd external"
 						HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A> for HTML.
 					</P>
 					<P CLASS="code">
@@ -155,7 +157,7 @@
 						mandoc -Wall -fstrict $&lt; | col -b &gt;$@
 					</P>
 					<P>
-						The same form must be used if formatting with nroff.
+						The same form must be used if formatting with <SPAN CLASS="cmd">nroff</SPAN>.
 					</P>
 					<P CLASS="code">
 						.1.1.txt .3.3.txt:
