@@ -34,7 +34,7 @@
 			</P>
 			<P>
 				If these are not available and you have <SPAN CLASS="cmd">deroff</SPAN> installed, you can pipe its output
-				directly into <SPAN CLASS="cmd">spell</SPAN>.  Both of these utilites are found on most reasonable UNIX
+				directly into <SPAN CLASS="cmd">spell</SPAN>.  Both of these utilities are found on most reasonable UNIX
 				installations.
 			</P>
 			<P CLASS="code">

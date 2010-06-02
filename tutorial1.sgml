@@ -21,8 +21,8 @@
 			<H1>DESCRIPTION</H1>
 			<P>
 				This tutorial is focussed on systems with <A CLASS="cmd external"
-				HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A> installed.  If you do not, or if your downstream providers
-				do not, limited alternatives will be noted.
+				HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A> installed.  If yours does not, limited alternatives will be
+				noted.
 			</P>
 			<P>
 				This tutorial assumes you know a little about writing Makefiles.  Our Makefile syntax should work on either BSD
@@ -120,7 +120,7 @@
 			</OL>
 			<H2>Conversion</H2>
 			<P>
-				Now we accomodate for conversion into different formats.
+				Now we accommodate for conversion into different formats.
 			</P>
 			<OL>
 				<LI>

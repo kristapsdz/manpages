@@ -1,6 +1,6 @@
 .SUFFIXES:	.html .sgml .7 .7.txt .7.html .in.1 .in.3 .1 .3
 
-PREFIX		 = /usr/local
+PREFIX		 = /usr/vhosts/manpages.bsd.lv/www/htdocs/
 INSTALL		 = install
 INSTALL_PROGRAM	 = $(INSTALL) -m 0755
 INSTALL_DATA	 = $(INSTALL) -m 0444
@@ -28,7 +28,6 @@ clean:
 	cp -f $< $@
 
 .html.7:
-	# Note: GNU/Linux wants tail -n+1, OpenBSD wants tail -n+2.
 	lynx -width=1000 -dump -nolist $< | sed 's!^[ 	]*!!g' | tail -n+2 >$@
 
 .7.7.txt:
