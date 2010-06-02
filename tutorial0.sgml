@@ -19,7 +19,8 @@
 		<DIV>
 			<H1>DESCRIPTION</H1>
 			<P>
-				It's quite easy:
+				It's quite easy, but may be slightly complicated if your system doesn't have <A CLASS="man external"
+				HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A> installed.
 			</P>
 			<OL>
 				<LI>
@@ -30,6 +31,10 @@
 					<P CLASS="code">
 						% man 1 mandoc
 					</P>
+					<P>
+						If it does not and you don't have the resources to install it, then skip previewing your work in
+						<A CLASS="man external" HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A> and instead fall
+						back to nroff, which will almost certainly be installed.
 				</LI>
 				<LI>
 					<P>
@@ -39,11 +44,17 @@
 					<P CLASS="code">
 						% cp /usr/share/misc/mdoc.template .
 					</P>
+					<P>
+						If this document is not available on your system, it may be fetched online from 
+						<A CLASS="external"
+						HREF="http://mdocml.bsd.lv/cgi-bin/cvsweb/~checkout~/mdoc.template?rev=HEAD&amp;cvsroot=mdocml">mdoc.template</A>.
+					</P>
 				</LI>
 				<LI>
 					<P>
 						Open the <A CLASS="man external" HREF="http://mdocml.bsd.lv/mdoc.7.html">mdoc</A> language
-						reference in another terminal window.
+						reference in another terminal window.  Use the linked, on-line version if this is not available
+						on your system.
 					</P>
 					<P CLASS="code">
 						% man 7 mdoc
@@ -52,9 +63,9 @@
 				<LI>
 					<P>
 						Rename the template as your command, utility, or device (any reasonable name will do) with a
-						suffix corresponding to the <A CLASS="external"
-						HREF="http://mdocml.bsd.lv/mdoc.7.html#x5c264474">manual section</A>.  Let the name be
-						<Q>foo</Q> and the section be <Q>1</Q>, for general utilities.
+						suffix corresponding to an available <A CLASS="external"
+						HREF="http://mdocml.bsd.lv/mdoc.7.html#x5c264474">manual section</A>.  In this example, let the
+						name be <Q>foo</Q> and the section be <Q>1</Q>, for general utilities.
 					</P>
 					<P CLASS="code">
 						% mv mdoc.template foo.1
@@ -73,17 +84,28 @@
 						% mandoc -Wall -fstrict -Thtml foo.1 &gt;foo.1.html
 					</P>
 				</LI>
+				<LI>
+					<P>
+						If <A CLASS="man external" HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A> is not
+						installed, fall back to using nroff.  You may want to do this to verify the portability of your
+						manual anyway.
+					</P>
+					<P CLASS="code">
+						% nroff -Tascii -mandoc foo.1 |less
+					</P>
+					<P>
+						If you're only using nroff to verify your manual, be quite careful that your manual closely
+						follows the <A CLASS="man external" HREF="http://mdocml.bsd.lv/mdoc.7.html">mdoc</A> language
+						reference.
+					</P>
+				</LI>
 			</OL>
-			<P>
-				That's it!
-			</P>
 		</DIV>
 		<DIV>
 			<H1>AUTHORS</H1>
 			<P>
 				This tutorial was written by Kristaps Dzonsons, kris<A CLASS="external" TITLE="Reveal this e-mail address"
 				HREF="http://mailhide.recaptcha.net/d?k=01M6h_w7twDp58ZgH57eWC_w==&amp;c=Q2DBUt401ePlSeupJFrq_Q==">...</A>@bsd.lv.
-				It was last updated on $Date$.
 			</P>
 		</DIV>
 		<DIV CLASS="foot">

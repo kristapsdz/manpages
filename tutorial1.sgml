@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+	<HEAD>
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+		<META NAME="resource-type" CONTENT="document">
+		<LINK REL="stylesheet" HREF="tutorial.css" TYPE="text/css" MEDIA="all">
+		<TITLE>UNIX Manual Pages Tutorial | Getting Started</TITLE>
+	</HEAD>
+	<BODY>
+		<DIV CLASS="head">
+			<A HREF="index.html">Writing UNIX Manual Pages</A> &#8211; <Q>Manpages in Makefiles</Q>
+		</DIV>
+		<DIV>
+			<H1>SYNOPSIS</H1>
+			<P>
+				This tutorial illustrates how to integrate manpages into Makefiles for automatic verification of manpage syntax
+				and conversion to other formats (e.g., HTML).
+			</P>
+		</DIV>
+		<DIV>
+			<H1>DESCRIPTION</H1>
+			<P>
+				This tutorial is focussed on systems with <A CLASS="man external"
+				HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A> installed.  If you do not, or if your downstream providers
+				do not, limited alternatives will be noted.
+			</P>
+			<P>
+				This tutorial assumes you know a little about writing Makefiles.  Our Makefile syntax should work on either BSD
+				make or <A CLASS="external" HREF="http://www.gnu.org/software/make/">GNU make</A>.
+			</P>
+			<H2>Validation</H2>
+			<P>
+				We begin with the bits that will allow automatic verification of your manual.
+			</P>
+			<OL>
+				<LI>
+					<P>
+						For this example, let your manual be named <SPAN CLASS="file">foo.1</SPAN>.
+					</P>
+				</LI>
+				<LI>
+					<P>
+						Rename your manual such that the suffix, in this case <SPAN CLASS="file">.1</SPAN>, is instead
+						<SPAN CLASS="file">.in.1</SPAN>.  The <SPAN CLASS="file">.in.1</SPAN> will be the writable
+						<I>source</I> of your manual; the <SPAN CLASS="file">.1</SPAN> suffix will be your read-only
+						<I>output</I>.
+					</P>
+				</LI>
+				<LI>
+					<P>
+						Add these suffixes to your <SPAN CLASS="file">Makefile</SPAN>.
+					</P>
+					<P CLASS="code">
+						.SUFFIXES: .in.1 .1
+					</P>
+					<P>
+						If you have multiple manuals with different suffixes, then add them, too.
+					</P>
+					<P CLASS="code">
+						.SUFFIXES: .in.1 .1 .in.3 .3
+					</P>
+				</LI>
+				<LI>
+					<P>
+						Write the rule that validates your manual using <A CLASS="man external"
+						HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A> (note that you cannot copy and paste this,
+						as you'll have to convert the whitespace following the rule declaration into a tab).
+					</P>
+					<P CLASS="code">
+						.in.1.1:
+						<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						mandoc -Tlint $&lt;
+						<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						cp -f $&lt; $@
+					</P>
+					<P>
+						If you have multiple manuals with different suffixes, list them in the rule declaration.
+					</P>
+					<P CLASS="code">
+						.in.1.1 .in.3.3:
+					</P>
+					<P>
+						If <A CLASS="man external" HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A> is not
+						installed, you can catch only egregious errors with nroff (see above regarding copy and paste).
+					</P>
+					<P CLASS="code">
+						.in.1.1:
+						<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						nroff -Tascii -mandoc $&lt; &gt;/dev/null
+						<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						cp -f $&lt; $@
+					</P>
+				</LI>
+				<LI>
+					<P>
+						We suggest adding verification to whichever rule builds your source code.  For the sake of
+						simplicity, we assume that to be the default rule.
+					</P>
+					<P CLASS="code">
+						all: foo.1
+					</P>
+					<P>
+						If you have multiple manuals with different suffixes, then add them, too.
+					</P>
+					<P CLASS="code">
+						all: foo.1 foo.3 bar.1
+					</P>
+				</LI>
+				<LI>
+					<P>
+						Lastly, you'll want to add the output file(s) to your cleaning rule.
+					</P>
+					<P CLASS="code">
+						clean:
+						<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						rm -f foo.1 foo.3 bar.1
+					</P>
+				</LI>
+			</OL>
+			<H2>Conversion</H2>
+			<P>
+				Now we accomodate for conversion into different formats.
+			</P>
+			<OL>
+				<LI>
+					<P>
+						If you have <A CLASS="man external" HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A>
+						installed, you will be able to convert into ASCII, HTML, and XHTML.  With nroff, you can convert
+						into ASCII and PostScript.  (Ed.: PostScript is a current project for <A CLASS="man external"
+						HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A> as of the time of this writing.)
+					</P>
+					<P>
+						Add the suffix rules for your output format of choice.
+					</P>
+					<P CLASS="code">
+						.SUFFIXES: .1 .1.html .1.txt
+					</P>
+				</LI>
+				<LI>
+					<P>
+						Next, incorporate the following build rules, first using <A CLASS="man external"
+						HREF="http://mdocml.bsd.lv/mandoc.1.html">mandoc</A> for HTML.
+					</P>
+					<P CLASS="code">
+						.1.1.html .3.3.html:
+						<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						mandoc -Thtml -Wall -fstrict $&lt; &gt;$@
+					</P>
+					<P>
+						Text files require an additional command to remove the back-space terminal encoding.
+					</P>
+					<P CLASS="code">
+						.1.1.txt .3.3.txt:
+						<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						mandoc -Wall -fstrict $&lt; | col -b &gt;$@
+					</P>
+					<P>
+						The same form must be used if formatting with nroff.
+					</P>
+					<P CLASS="code">
+						.1.1.txt .3.3.txt:
+						<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						nroff -mandoc $&lt; | col -b &gt;$@
+					</P>
+				</LI>
+				<LI>
+					<P>
+						Usually formatting isn't built into the default rule for your utility.  Here, we assume a
+						rule for directly formatting output files.
+					</P>
+					<P CLASS="code">
+						format: foo.1.txt foo.1.html
+					</P>
+				</LI>
+				<LI>
+					<P>
+						Lastly, you'll want to add the output file(s) to your cleaning rule.
+					</P>
+					<P CLASS="code">
+						clean:
+						<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						rm -f foo.1.html foo.1.txt
+					</P>
+				</LI>
+			</OL>
+		</DIV>
+		<DIV>
+			<H1>AUTHORS</H1>
+			<P>
+				This tutorial was written by Kristaps Dzonsons, kris<A CLASS="external" TITLE="Reveal this e-mail address"
+				HREF="http://mailhide.recaptcha.net/d?k=01M6h_w7twDp58ZgH57eWC_w==&amp;c=Q2DBUt401ePlSeupJFrq_Q==">...</A>@bsd.lv.
+			</P>
+		</DIV>
+		<DIV CLASS="foot">
+			$Id$ | Copyright &#169; 2010 Kristaps Dzonsons
+		</DIV>
+	</BODY>
+</HTML>

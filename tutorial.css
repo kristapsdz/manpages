@@ -23,7 +23,8 @@ li		{ margin-left: 2em; }
 
 p		{ margin-left: 2em; }
 
-h1		{ font-size: 1.0em; }
+h1,
+h2		{ font-size: 1.0em; }
 
 p.code		{ border: 1px dotted #dddddd;
 		  color: #000000;
@@ -32,3 +33,6 @@ p.code		{ border: 1px dotted #dddddd;
 		  font-family: monospace;
 		  padding: 2px; }
 
+.path,
+.file		{ font-family: monospace;
+		  font-size: larger; }

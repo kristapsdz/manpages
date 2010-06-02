@@ -8,6 +8,7 @@ INSTALL_LIB	 = $(INSTALL) -m 0644
 INSTALL_MAN	 = $(INSTALL_DATA)
 SGMLS	   	 = index.sgml
 HTMLS	   	 = index.html index.7.html \
+		   tutorial1.html \
 		   tutorial0.html
 STATICS		 = index.css style.css tutorial.css external.png all.css
 MANS		 = index.7

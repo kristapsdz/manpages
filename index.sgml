@@ -43,12 +43,12 @@
 			</DIV>
 			.Pp
 			<DIV>
-			This site is a resource for composing well-formed and maintainable UNIX manuals in
+			This site is a resource for composing well-formed and maintainable UNIX manuals (<Q>manpages</Q>) in
 			</DIV>
 			.Xr <A CLASS="man external"
 			HREF="http://www.openbsd.org/cgi-bin/man.cgi?query=mdoc&amp;apropos=0&amp;sektion=0&amp;manpath=OpenBSD+Current&amp;arch=i386&amp;format=html">mdoc</A> 7 <SPAN CLASS="offs">,</SPAN>
 			<DIV>
-			a language designed specifically for UNIX manuals and available by default on most reasonable UNIX installations.
+			a language designed specifically for manpages and available by default on most reasonable UNIX installations.
 			</DIV>
 			.\"
 			<BR>
@@ -63,20 +63,9 @@
 						<TD>.Lk <A HREF="tutorial0.html">tutorial0.html</A></TD>
 						<TD><Q>Getting Started</Q></TD>
 					</TR>
-				</TBODY>
-			</TABLE>
-			.\"
-			<BR>
-			.Sh <SPAN CLASS="h2">FAQ</SPAN>
-			<BR>
-			.\"
-			<TABLE>
-				<COL CLASS="left">
-				<COL>
-				<TBODY>
 					<TR>
-						<TD>.Lk <A HREF="faq0.html">faq0.html</A></TD>
-						<TD><Q>Manuals in Makefiles</Q></TD>
+						<TD>.Lk <A HREF="tutorial1.html">tutorial1.html</A></TD>
+						<TD><Q>Manpages in Makefiles</Q></TD>
 					</TR>
 				</TBODY>
 			</TABLE>
@@ -102,7 +91,7 @@
 			<BR>
 			.\"
 			<DIV>
-			Reference platform for UNIX manual formatting:
+			Reference platform for manpage formatting:
 			</DIV>
 			.Pp
 			<BR>
@@ -110,7 +99,7 @@
 			<BR>
 			.Pp
 			<DIV>
-			Traditional GNU troff UNIX manual formatter:
+			Traditional manpage formatter and general-purpose type-setter:
 			</DIV>
 			.Pp
 			<BR>
