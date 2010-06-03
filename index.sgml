@@ -96,19 +96,16 @@
 			<BR>
 			.Sh <SPAN CLASS="h2">Mailing Lists</SPAN>
 			<BR>
-			.\"
-			<TABLE>
-				<COL CLASS="left">
-				<COL>
-				<TBODY>
-					<TR>
-						<TD>.Lk <SPAN>disc<A CLASS="offs external" TITLE="Reveal this e-mail address"
-						HREF="http://www.google.com/recaptcha/mailhide/d?k=01fqH3xoy7rwp-l_5K0BumPA==&amp;c=NTI0bIlVxlrR2xLEqaJxCv-_SGL-rzM8DjAFEivPvNzLi2PxNha85zOyiFYPiprL">...</A>@manpages.bsd.lv</SPAN></TD>
-						<TD><SPAN CLASS="offs">Questions and discussions</SPAN></TD>
-					</TR>
-				</TBODY>
-			</TABLE>
-			.\"
+			.Bl -ohang
+			<BR>
+			.It <SPAN>General questions about manpages and mdoc:</SPAN>
+			<BR>
+			.Mt <SPAN>disc<A CLASS="offs external" TITLE="Reveal this e-mail address"
+			HREF="http://www.google.com/recaptcha/mailhide/d?k=01fqH3xoy7rwp-l_5K0BumPA==&amp;c=NTI0bIlVxlrR2xLEqaJxCv-_SGL-rzM8DjAFEivPvNzLi2PxNha85zOyiFYPiprL">...</A>@manpages.bsd.lv</SPAN>
+			<BR>
+			.Pq <SPAN>Archive not yet available.</SPAN>
+			<BR>
+			.El
 			<BR>
 			.Sh <SPAN CLASS="h1">SEE ALSO</SPAN>
 			<BR>

@@ -9,14 +9,17 @@ body		{ font-family: monospace;
 
 .nvis		{ color: #dddddd; }
 
-.offs		{ margin-left: 0em; }
+.offs		{ margin-left: 0em; 
+		  padding-left: 0em; }
 
 q		{ color: #000000; }
 
 span		{ color: #000000; 
+		  padding-left: 0em;
 		  margin-left: 2em; }
 
 div		{ margin-left: 4em;
+		  padding-left: 0.5em;
 		  color: #000000; 
 		  max-width: 60em; }
 
