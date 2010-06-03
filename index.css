@@ -4,10 +4,10 @@ body		{ font-family: monospace;
 		  font-size: 9pt;
 		  margin-top: 0em;
 		  margin-left: 2em;
-		  color: #dddddd;
+		  color: #cccccc;
 		  min-width: 580px; }
 
-.nvis		{ color: #dddddd; }
+.nvis		{ color: #cccccc; }
 
 .offs		{ margin-left: 0em; 
 		  padding-left: 0em; }
@@ -40,3 +40,7 @@ table		{ width: 100%;
 
 td		{ padding: 0em;
 		  margin: 0em; }
+
+.pq:after	{ content: ")"; }
+
+.pq:before	{ content: "("; }
