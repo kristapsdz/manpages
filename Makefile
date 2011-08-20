@@ -1,17 +1,23 @@
 .SUFFIXES: .html .sgml .xml .xhtml
 
-HTMLS	= index.html
 XHTMLS	= preface.xhtml part1.xhtml part1-1.xhtml part1-1-1.xhtml part1-1-2.xhtml
+
 VERSION	= 1.1.3
 DATE	= 16 August 2011
 
-all: $(HTMLS) $(XHTMLS)
+all: $(XHTMLS) book.epub index.html
+
+install: all
+	mkdir -p $(PREFIX)
+	mkdir -p $(PREFIX)/css
+	install -m 0444 license.png external.png $(PREFIX)
+	install -m 0444 index.html index.css $(PREFIX)
+	install -m 0444 $(XHTMLS) $(PREFIX)
+	install -m 0444 css/book.css $(PREFIX)/css
+	install -m 0444 book.epub $(PREFIX)
 
 clean:
-	rm -f $(HTMLS) $(XHTMLS) book.epub
-
-book.epub.md5: book.epub
-	md5 book.epub >$@
+	rm -f index.html $(XHTMLS) book.epub
 
 book.epub: $(XHTMLS) book.css book.ncx book.opf
 	mkdir .book
@@ -41,4 +47,4 @@ book.epub: $(XHTMLS) book.css book.ncx book.opf
 	sed -e "s!@VERSION@!$(VERSION)!g" -e "s!@DATE@!$(DATE)!g" $< >$@
 
 .xml.xhtml:
-	cp -f $< $@
+	sed -e "s!@VERSION@!$(VERSION)!g" -e "s!@DATE@!$(DATE)!g" $< >$@

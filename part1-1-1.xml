@@ -138,11 +138,11 @@ Section text.
 			arguments.  
 		</p>
 		<p>
-			Of the remaining macros, <span class="macro">Dd</span> accepts the last modification date of the manual in ``month day,
-			year'' format.  <span class="macro">Dt</span> refers to the manual's title, <span class="screen">HI</span>, and its
-			section.  Note that <span class="screen">HI</span> is uppercase: by convention, <span class="macro">Dt</span> should
-			always accept a capitalised document title.  We'll talk more about titles and sections in later chapters of this book.
-			For now, let's assume that section number 1 consists of executable commands.  
+			Of the remaining macros, <span class="macro">Dd</span> accepts the last modification date of the manual in <q>month day,
+				year</q> format.  <span class="macro">Dt</span> refers to the manual's title, <span class="screen">HI</span>,
+			and its section.  Note that <span class="screen">HI</span> is uppercase: by convention, <span class="macro">Dt</span>
+			should always accept a capitalised document title.  We'll talk more about titles and sections in later chapters of this
+			book.  For now, let's assume that section number 1 consists of executable commands.  
 		</p>
 		<p>
 			Next, <span class="macro">Os</span> indicates the operating system of the system running the formatter.  If left
@@ -150,9 +150,9 @@ Section text.
 			<span class="screen">Linux 2.6.32-5</span>, or <span class="screen">Microsoft Windows XP</span>).
 		</p>
 		<pre>
-.Dd May 30, 2011  \" date of last modification
-.Dt HI 1  \" title and section
-.Os  \" use current operating system
+.Dd May 30, 2011 \" date of last modification
+.Dt HI 1 \" title and section
+.Os \" use current operating system
 		</pre>
 		<p>
 			Note that text following the <span class="screen">\&quot;</span> marker is an <span class="lang">mdoc</span> comment.  A
@@ -170,7 +170,7 @@ More text.
 		</p>
 		<pre>
 .Sh NAME
-.Nm hi  \" command's name
+.Nm hi \" command's name
 .Nd print \(dqhello, world\(dq \" command's description
 		</pre>
 		<p>
@@ -183,23 +183,23 @@ More text.
 		</p>
 		<pre>
 .Sh SYNOPSIS
-.Nm  \" invoke with just the command name
+.Nm \" invoke with just the command name
 		</pre>
 		<p>
 			Piecing this all together, we now have the following.
 		</p>
 		<pre>
-.Dd May 30, 2011  \" date of last modification
-.Dt HI 1  \" title and section
-.Os  \" use current operating system
+.Dd May 30, 2011 \" date of last modification
+.Dt HI 1 \" title and section
+.Os \" use current operating system
 .Sh NAME
-.Nm hi  \" commands name
+.Nm hi \" commands name
 .Nd print \(dqhello, world\(dq \" command's description
 .Sh SYNOPSIS
-.Nm  \" invoke with just the command name
+.Nm \" invoke with just the command name
 .Sh DESCRIPTION
 Print
-.Qq hello, world  \" quote these terms
+.Qq hello, world \" quote these terms
 and exit.
 		</pre>
 		<p>
