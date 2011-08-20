@@ -47,4 +47,5 @@ book.epub: $(XHTMLS) book.css book.ncx book.opf
 	sed -e "s!@VERSION@!$(VERSION)!g" -e "s!@DATE@!$(DATE)!g" $< >$@
 
 .xml.xhtml:
+	validate --xml --warn $<
 	sed -e "s!@VERSION@!$(VERSION)!g" -e "s!@DATE@!$(DATE)!g" $< >$@

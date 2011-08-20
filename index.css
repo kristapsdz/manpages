@@ -4,6 +4,7 @@ html		{ margin-top: 0em;
 		  min-width: 580px; }
 
 span.inv,
+div.inv,
 body		{ font-family: monospace; 
 		  line-height: 11pt;
 		  font-size: 9pt;
