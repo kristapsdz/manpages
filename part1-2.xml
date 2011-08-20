@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Part 1, Chapter 2: Functions</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<p>
+			Programming functions are a significant part of the UNIX canon, from the system call interface to the C library.  If
+			you're a C or C++ developer, chances are you've at least glanced through the manuals of system functions such as <span
+				class="func">socket</span> or <span class="func">printf</span>, or C library functions like <span
+				class="func">memmove</span>.
+		</p>
+		<p>
+			The <span class="lang">mdoc</span> format is designed primarily with the C and Fortran languages in mind, although it
+			also works with C++, Perl, Tcl, and other imperative languages.  In fact, most any language with functions (or
+			subroutines) and variables will work, typed or not.
+		</p>
+		<p>
+			Before beginning, we need to change our mental checklist for a complete manual.  Since function manuals can document
+			more than just function parts, our manual must grow to account for complexity.
+		</p>
+		<ul>
+			<li>Do I describe the preprocessing and linking information?</li>
+			<li>Do I describe the calling syntax of each function and variable?</li>
+			<li>Do I describe the type of each function and variable?</li>
+			<li>Do I describe each argument in each calling syntax?</li>
+			<li>Do I describe each function's operation?</li>
+			<li>Do I describe each function's side effects?</li>
+		</ul>
+		<p>
+			A <span class="term">function</span> is any callable instruction, be it a C function, routine, or macro.  A variable may
+			also be a C variable or macro.  I'll consistently use the function and variable terminology in this book.
+		</p>
+		<p>
+			In general, you don't have to be knowledgeable of C to understand this section, but it helps to have a grasp of basic
+			programming structure, such as functions, function prototypes, and header files.  
+		</p>
+		<p>
+			In any event, I'll refer to a <span class="term">header file</span> as a text file consisting of function prototypes.
+			Header files for the C language, such as in our examples, end with the <span class="file">.h</span> suffix.  A C
+			function prototype indicates the calling syntax of a function, such as the following.
+		</p>
+		<pre>
+int
+isspace(int c);
+		</pre>
+		<p>
+			In this, the C function <span class="screen">isspace</span>, notationally referred to as <span
+				class="func">isspace</span>, has a single argument <span class="screen">int c</span> (an integer named <span
+				class="var">c</span>) and returns a value of type <span class="type">int</span> (another integer).  Multiple
+			arguments are comma-separated.
+		</p>
+	</body>
+</html>

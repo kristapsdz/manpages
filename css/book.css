@@ -17,10 +17,13 @@ span.cmd,
 span.cmdflag,
 span.cmdarg,
 span.cmdline,
+span.func,
 span.macro,
 span.macroarg,
 span.macroflag,
-span.screen		{ font-family: monospace; 
+span.screen,
+span.type,
+span.var		{ font-family: monospace; 
 			  line-height: 11pt;
 			  font-size: 9pt; } 
 
@@ -28,6 +31,7 @@ span.cmdflag:before,
 span.macroflag:before	{ content: "-"; }
 span.cmdopt:before	{ content: "["; }
 span.cmdopt:after	{ content: "]"; }
+span.func:after		{ content: "()"; }
 
 span.cmdline,
 span.screen		{ border: 1px dotted #cccccc; 
