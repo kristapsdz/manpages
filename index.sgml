@@ -4,89 +4,95 @@
 		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 		<META NAME="resource-type" CONTENT="document">
 		<LINK REL="stylesheet" HREF="index.css" TYPE="text/css" MEDIA="all">
-		<TITLE>Writing UNIX Manual Pages</TITLE>
+		<TITLE>Practical UNIX Manuals: mdoc</TITLE>
 	</HEAD>
 	<BODY>
-		<DIV CLASS="nvis offs">
-			.
-			<BR>
-			.Dd <SPAN CLASS="nvis">$Mdocdate$</SPAN>
-			<BR>
-			.Dt <SPAN CLASS="nvis">MANUALS 7</SPAN>
-			<BR>
-			.Os
-			<BR>
-			.Sh <SPAN CLASS="h1">NAME</SPAN>
-			<BR>
-			.
-			<BR>
-			.Nm <SPAN>UNIX Manual Pages</SPAN>
-			<BR>
-			.Nd <SPAN>structure, style, and composition</SPAN>
-			<BR>
-			.
-			<BR>
-			.Sh <SPAN CLASS="h1">DESCRIPTION</SPAN>
-			<BR>
-			.
-			<BR>
-			.Em <SPAN CLASS="em">A utility without good documentation is of no utility at all.</SPAN>
-			<BR>
-			.Pp
-			<DIV>
-			So you've written a utility, library, or driver (or started writing one), and you want to document your work.
-			<BR>
-			How do you get from code to
-			</DIV>
-			.Xr <SPAN>man</SPAN> 1
-			<DIV>
-			output?
-			</DIV>
-			.Pp
-			<DIV>
-			This site is a resource for composing well-formed and maintainable UNIX manuals (<Q>manpages</Q>) in
-			</DIV>
-			.Xr <A CLASS="man external" HREF="http://mdocml.bsd.lv/mdoc.7.html">mdoc</A> 7 <SPAN CLASS="offs">,</SPAN>
-			<DIV>
-			a language designed specifically for manpages and available by default on most reasonable UNIX installations.
-			</DIV>
-			.
-			<BR>
-			.
-			<BR>
-			.Sh <SPAN CLASS="h1">REFERENCE</SPAN>
-			<BR>
-			.
-			<BR>
-			.Lk <A HREF="preface.xhtml">Preface</A>
-			<BR>
-			.Bl -enum
-			<BR>
-			.It
-			<BR>
-			.Lk <A HREF="part1.xhtml">Part 1</A>: <SPAN CLASS="offs">Tutorial Introduction</SPAN>
-			<BR>
-			.Bl -enum
-			<BR>
-			.It
-			<BR>
-			.Lk &nbsp;&nbsp;<A HREF="part1-1.xhtml">Chapter 1</A>: <SPAN CLASS="offs">Commands</SPAN>
-			<BR>
-			.Bl -enum
-			<BR>
-			.It
-			<BR>
-			.Lk &nbsp;&nbsp;&nbsp;&nbsp;<A HREF="part1-1-1.xhtml">Section 1</A>: <SPAN CLASS="offs">Simple Command</SPAN>
-			<BR>
-			.El
-			<BR>
-			.El
-			<BR>
-			.El
-			<BR>
-			.
-			<BR>
-			.\" <SPAN CLASS="nvis">Copyright &copy; 2010&mdash;2011, Kristaps Dzonsons</SPAN>
+		.Dd <SPAN CLASS="inv">$Date$</SPAN>
+		<BR>
+		.Dt <SPAN CLASS="inv">MANUALS 7</SPAN>
+		<BR>
+		.Os
+		<BR>
+		.Sh <SPAN CLASS="h1">NAME</SPAN>
+		<BR>
+		.
+		<BR>
+		.Nm <SPAN>Practical UNIX Manuals</SPAN>
+		<BR>
+		.Nd <SPAN><I>mdoc</I>: structure, style, and composition</SPAN>
+		<BR>
+		.
+		<BR>
+		.Sh <SPAN CLASS="h1">DESCRIPTION</SPAN>
+		<BR>
+		.
+		<DIV>
+			So you've written a UNIX utility, library, or driver&mdash;or started writing one&mdash;and you want to document your
+			work in manual form.  What happens next?
 		</DIV>
+		.Pp
+		<DIV>
+			<I>Practical UNIX Manuals: mdoc</I> is a guide for composing well-formed and maintainable UNIX manuals (<Q>manpages</Q>)
+			in the <A CLASS="external" HREF="http://mdocml.bsd.lv/mdoc.7.html">mdoc</A> language.
+		</DIV>
+		.Pp
+		<DIV>
+			Why <I>mdoc</I>?  
+			Foremost, formatters for the language are available by default on all modern UNIX installations and may be downloaded
+			for non-UNIX systems.  
+			Furthermore, <I>mdoc</I> semantically annotates content, allowing for search and reference analysis of your
+			documentation.
+		</DIV>
+		.Pp
+		<DIV>
+			This guide is structured first as a series of tutorials, then as a reference and guide to UNIX manual best practises.
+		</DIV>
+		.
+		<BR>
+		.Sh <SPAN CLASS="h1">REFERENCE</SPAN>
+		<BR>
+		.
+		<DIV>
+			<A HREF="http://creativecommons.org/licenses/by-sa/3.0/"><IMG SRC="license.png" ALT="CC BY-SA" /></A>
+			<BR>
+			The guide is may be downloaded or viewed on-line.  All content is licensed under Creative Commons <A CLASS="external"
+			HREF="http://creativecommons.org/licenses/by-sa/3.0/">Attribution Share-Alike</A>, so deriving works must attribute the
+			author(s) and license similarly.  
+		</DIV>
+		.Pp
+		<DIV>
+			Citation information: Dzonsons, Kristaps.  <I>Practical UNIX Manuals: mdoc</I>.
+			<BR>
+			Current version: @VERSION@, @DATE@.
+		</DIV>
+		.
+		<BR>
+		.Ss <SPAN CLASS="h2">On-line</SPAN>
+		<BR>
+		.
+		<BR>
+		.Lk <SPAN><A HREF="preface.xhtml">Preface</A></SPAN>
+		<BR>
+		.Lk <SPAN><A HREF="part1.xhtml">Part 1</A>: Tutorial Introduction</SPAN>
+		<BR>
+		.Lk <SPAN>&nbsp;&nbsp;<A HREF="part1-1.xhtml">Chapter 1</A>: Commands</SPAN>
+		<BR>
+		.Lk <SPAN>&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="part1-1-1.xhtml">Section 1</A>: Simple Command</SPAN>
+		<BR>
+		.Lk <SPAN>&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="part1-1-2.xhtml">Section 2</A>: Elaborate Command</SPAN>
+		<BR>
+		.
+		<BR>
+		.Ss <SPAN CLASS="h2">Off-line</SPAN>
+		<BR>
+		.
+		<BR>
+		.Lk <SPAN><A>book.epub</A>: e-book archive, e-Pub 2.0.1 format</SPAN>
+		<BR>
+		.
+		<BR>
+		.
+		<BR>
+		.\" <SPAN CLASS="inv">Copyright &copy; 2010&mdash;2011, Kristaps Dzonsons</SPAN>
 	</BODY>
 </HTML>

@@ -41,18 +41,6 @@ and exit.
 				formatter</q> to avoid confusion.
 		</p>
 		<div class="mdocout">
-			<table summary="Document Header" class="mdoc-head" width="100%">
-				<col width="30%"/>
-				<col width="30%"/>
-				<col width="30%"/>
-				<tbody>
-					<tr>
-						<td class="mdoc-head-ltitle">HI(1)</td>
-						<td class="mdoc-head-vol" align="center">General Commands Manual</td>
-						<td class="mdoc-head-rtitle" align="right">HI(1)</td>
-					</tr>
-				</tbody>
-			</table>
 			<div class="mdoc-section">
 				<h1>NAME</h1>
 				<b class="mdoc-name">hi</b> &#8212; <span class="mdoc-desc">print &#34;hello, world&#34;</span>

@@ -1,10 +1,18 @@
 html		{ margin-top: 0em;
 		  margin-left: 2em;
+		  max-width: 80%;
 		  min-width: 580px; }
 
+span.inv,
 body		{ font-family: monospace; 
+		  line-height: 11pt;
 		  font-size: 9pt;
-		  color: #cccccc; }
+		  color: #dddddd; }
+
+span,
+div		{ color: #000000;
+		  font-size: 9pt;
+		  font-family: Verdana, Tahoma, Arial, sans-serif; }
 
 a.external 	{ background: transparent url(external.png) center right no-repeat; 
 		  padding-right: 12px; }
@@ -14,40 +22,14 @@ a		{ color: #0000ff;
 
 a:hover		{ color: #339999; }
 
-.nvis		{ color: #cccccc; }
-
-.offs		{ margin-left: 0em; 
-		  padding-left: 0em; }
-
-q		{ color: #000000; }
-
-span		{ color: #000000; 
-		  padding-left: 0em;
+span		{ padding-left: 0em;
 		  margin-left: 2em; }
 
 div		{ margin-left: 4em;
-		  padding-left: 0.5em;
-		  color: #000000; 
-		  max-width: 60em; }
+		  padding-left: 0.5em; }
 
-span.h1		{ font-weight: bolder; 
+span.h1		{ font-weight: bolder;
 		  margin-left: 0em; }
 
-span.h2		{ font-weight: bolder; 
+span.h2		{ font-weight: bolder;
 		  margin-left: 1em; }
-
-a		{ margin-left: 2em; }
-
-span.em		{ font-style: italic; }
-
-col.left	{ width: 24em; }
-
-table		{ width: 100%;
-		  border-spacing: 0em; }
-
-td		{ padding: 0em;
-		  margin: 0em; }
-
-.pq:after	{ content: ")"; }
-
-.pq:before	{ content: "("; }

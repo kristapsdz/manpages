@@ -1,17 +1,49 @@
-span.lang	{ font-style: italic; } /* Language (mdoc, man, etc.). */
+html			{ margin-top: 1em;
+			  width: 75%;
+			  margin-left: 4em; }
 
-span.term	{ font-style: italic; } /* A term we're defining. */
+body			{ font-family: serif;
+			  letter-spacing: 1px;
+			  line-height: 20px;
+			  font-size: 10pt; }
 
-span.cmd,	/* A command name. */
-span.cmdline,	/* A command invocation. */
-span.macro,	/* The name of a macro. */
-span.screen	{ font-family: monospace; } /* Screen output. */
+span.lang,
+span.term		{ font-style: italic; } 
+
+pre,
+div.mdocout,
+span.cmd,
+span.cmdflag,
+span.cmdarg,
+span.cmdline,
+span.macro,
+span.macroarg,
+span.macroflag,
+span.screen		{ font-family: monospace; 
+			  line-height: 11pt;
+			  font-size: 9pt; } 
+
+span.cmdflag:before,
+span.macroflag:before	{ content: "-"; }
+span.cmdopt:before	{ content: "["; }
+span.cmdopt:after	{ content: "]"; }
 
 span.cmdline,
-span.screen	{ border: 1px dotted #cccccc; padding: 2px; background-color: #eeeeee; }
+span.screen		{ border: 1px dotted #cccccc; 
+			  padding: 2px; 
+			  background-color: #eeeeee; }
 
-pre		{ margin-left: 2%; }
+pre			{ border: 1px dotted #dddddd;
+			  padding-left: 1ex;
+			  margin-left: 2%; }
 
-div.mdocout	{ font-family: monospace; max-width: 60em; margin-left: 5%; } /* Mdoc output section. */
+div.mdocout		{ border: 1px dotted #dddddd;
+			  max-width: 60em; 
+			  padding-left: 4%;
+			  margin-left: 2%; }
 
-div.mdocout h1	{ margin-bottom: 1ex; font-size: 110%; margin-left: -4%; } /* Section header (Sh, SH). */
+div.mdocout h1		{ font-size: inherit; 
+			  margin-top: 0px;
+			  margin-bottom: 0px;
+			  margin-left: -4%; } 
+

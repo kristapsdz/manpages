@@ -1,12 +1,17 @@
 .SUFFIXES: .html .sgml .xml .xhtml
 
 HTMLS	= index.html
-XHTMLS	= preface.xhtml part1.xhtml part1-1.xhtml part1-1-1.xhtml
+XHTMLS	= preface.xhtml part1.xhtml part1-1.xhtml part1-1-1.xhtml part1-1-2.xhtml
+VERSION	= 1.1.3
+DATE	= 16 August 2011
 
 all: $(HTMLS) $(XHTMLS)
 
 clean:
 	rm -f $(HTMLS) $(XHTMLS) book.epub
+
+book.epub.md5: book.epub
+	md5 book.epub >$@
 
 book.epub: $(XHTMLS) book.css book.ncx book.opf
 	mkdir .book
@@ -25,6 +30,7 @@ book.epub: $(XHTMLS) book.css book.ncx book.opf
 		OPS/part1.xhtml \
 		OPS/part1-1.xhtml \
 		OPS/part1-1-1.xhtml \
+		OPS/part1-1-2.xhtml \
 		OPS/book.opf \
 		OPS/book.ncx \
 		OPS/css/book.css )
@@ -32,7 +38,7 @@ book.epub: $(XHTMLS) book.css book.ncx book.opf
 
 .sgml.html:
 	validate --warn $<
-	cp -f $< $@
+	sed -e "s!@VERSION@!$(VERSION)!g" -e "s!@DATE@!$(DATE)!g" $< >$@
 
 .xml.xhtml:
 	cp -f $< $@

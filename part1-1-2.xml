@@ -28,58 +28,75 @@
 .Op Ar prefix                 
 		</pre>
 		<p>
-			Already, we begin to see the output take shape with the \texttt{C} and \texttt{o} characters, and the \texttt{prefix}.
-			But what are these other words, \texttt{Fl} and \texttt{Ar}?
+			Already, we begin to see the output take shape with the <span class="screen">C</span> and <span class="screen">o</span>
+			characters, and the <span class="screen">prefix</span>.  But what are these other words, <span class="screen">Fl</span>
+			and <span class="screen">Ar</span>?
 		</p>
 		<p>
 			Let's examine the rendered output:
 		</p>
+		<div class="mdocout">
+			<div class="mdoc-section">
+				<h1>SYNOPSIS</h1>
+				<table class="mdoc-synopsis">
+					<col style="width: 5.00ex;"/>
+					<col/>
+					<tbody>
+						<tr>
+							<td>
+								hello</td>
+							<td>
+								&#91;<span class="mdoc-opt"><b class="mdoc-flag">&#45;C</b></span>&#93; 
+								&#91;<span class="mdoc-opt"><b class="mdoc-flag">&#45;o</b> 
+									<i class="mdoc-arg">output</i></span>&#93; 
+								&#91;<span class="mdoc-opt"><i class="mdoc-arg">prefix</i></span>&#93;
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<p>
+			It's clear that the <span class="macro">Op</span> macro surrounds its arguments in square brackets, just as <span
+				class="macro">Qq</span> surrounded its line in double-quotes.
+		</p>
+		<p>
+			How did the formatter know to prefix the <span class="screen">C</span> and <span class="screen">o</span> with a dash, or
+			underline the arguments <span class="screen">output</span> and <span class="screen">prefix</span>?  It's obvious this
+			has something to do with <span class="screen">Fl</span> and <span class="screen">Ar</span>.
+		</p>
+		<p>
+			Macro lines may in fact consist of multiple macros&mdash;sometimes nesting further macros, sometimes closing prior
+			scopes to begin one anew.  The <span class="macro">Fl</span> and <span class="macro">Ar</span> words are macros nested
+			within the scope of <span class="macro">Op</span>.  However, while <span class="macro">Op</span> contains both of these
+			child scopes, the <span class="macro">Ar</span> macro is able to close out the <span class="macro">Fl</span> scope and
+			begin its own.
+		</p>
 		<pre>
-\begin{verbatim}[mdocout]
-SSYYNNOOPPSSIISS
-     hheelllloo [--CC] [--oo _o_u_t_p_u_t] [_p_r_e_f_i_x]
-\end{verbatim}
-		</pre>
-		<p>
-			It's clear that the \macro{Op} macro surrounds its arguments in square
-			brackets, just as \macro{Qq} surrounded its line in double-quotes.
-		</p>
-		<p>
-			How did the formatter know to prefix the \texttt{C} and \texttt{o} with a dash, or underline the arguments
-			\texttt{output} and \texttt{prefix}?  It's obvious this has something to do with \texttt{Fl} and \texttt{Ar}.
-		</p>
-		<p>
-			Macro lines may in fact consist of multiple macros---sometimes nesting further macros, sometimes closing prior scopes to
-			begin one anew.  The \macro{Fl} and \macro{Ar} words are macros nested within the scope of \macro{Op}.  However, while
-			\macro{Op} contains both of these child scopes, the \macro{Ar} macro is able to close out the \macro{Fl} scope and begin
-			its own.
-		</p>
-		<p>
-\begin{mdocl}
 .\underline{Op \{Fl C\}}
 .\underline{Op \{Fl o\} \{Ar output\}}
 .\underline{Op \{Ar prefix\}}
-\end{mdocl}
+		</pre>
+		<p>
+			Underlined parts are an <span class="term">outer scope</span>, while bracketed parts are an <span class="term">inner
+				scope</span>.  Now it's easy to see how <span class="macro">Fl</span> prefixes only the <span
+				class="screen">C</span> with a dash and not the arguments following: its scope is closed out by <span
+				class="macro">Ar</span>.
 		</p>
 		<p>
-			Underlined parts are an ``outer'' scope, while bracketed parts are an ``inner'' scope.  Now it's easy to see how
-			\macro{Fl} prefixes only the \texttt{C} with a dash and not the arguments following: its scope is closed out by
-			\macro{Ar}.
+			When a macro can be closed out by another, we call it an <span class="term">in-line macro</span>.
 		</p>
 		<p>
-			When a macro can be closed out by another, we call it an \textit{in-line} macro.
-		</p>
-		<p>
-			Note that to document a flag ``Ar'', we would need to quote its arguments as \texttt{Fl "Ar"} (we'll later learn how to
-			escape arguments with zero-width spaces to accomplish the same).  As there are many \mdoc{} macros, a popular novice
-			mistake is to unknowingly invoke a macro when expecting to print text.
+			Note that to document a flag <span class="screen">Ar</span>, we would need to quote its arguments as <span
+				class="screen">Fl "Ar"</span> (we'll later learn how to escape arguments with zero-width spaces to accomplish
+			the same).  As there are many <span class="lang">mdoc</span> macros, a popular novice mistake is to unknowingly invoke a
+			macro when expecting to print text.
 		</p>
 		<p>
 			With our command syntax documented, let's document the arguments themselves.  To do so, we detail the meaning of flags
-			and arguments in the \Sh{DESCRIPTION} section.
+			and arguments in the <span class="sec">DESCRIPTION</span> section.
 		</p>
-		<p>
-\begin{verbatim}[mdocl]
+		<pre>
 The
 .Nm
 function prints
@@ -97,78 +114,89 @@ Write to file
 Prefix the output with
 .Ar prefix .
 .El
-\end{verbatim}
-		</p>
+		</pre>
 		<p>
-			Immediately, we see the introduction of several new macros: \macro{Pp}, \macro{Bl}, \macro{It}, and \macro{El}.  More
-			interestingly, we notice the text on the \macro{Bl} begins with a dash, just as when passing arguments on a command
+			Immediately, we see the introduction of several new macros: <span class="macro">Pp</span>, <span
+				class="macro">Bl</span>, <span class="macro">It</span>, and <span class="macro">El</span>.  More interestingly,
+			we notice the text on the <span class="macro">Bl</span> begins with a dash, just as when passing arguments on a command
 			line.  This is the first instance of a macro that accepts flags.  
 		</p>
 		<p>
 			The rendered output of this fragment is as follows.
 		</p>
+		<div class="mdocout">
+			Its arguments are as follows:
+			<dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="mdoc-list mdoc-list-tag">
+				<dt class="mdoc-list-tag" style="margin-top: 1.00em;">
+					<b class="mdoc-flag">&#45;C</b></dt>
+				<dd class="mdoc-list-tag" style="margin-left: 6.00ex;">
+					Print only uppercase letters.</dd>
+				<dt class="mdoc-list-tag" style="margin-top: 1.00em;">
+					<b class="mdoc-flag">&#45;o</b> <i class="mdoc-arg">output</i></dt>
+				<dd class="mdoc-list-tag" style="margin-left: 6.00ex;">
+					Write to file <i class="mdoc-arg">output</i>.</dd>
+				<dt class="mdoc-list-tag" style="margin-top: 1.00em;">
+					<i class="mdoc-arg">prefix</i></dt>
+				<dd class="mdoc-list-tag" style="margin-left: 6.00ex;">
+					Prefix the output with <i class="mdoc-arg">prefix</i>.</dd>
+			</dl>
+		</div>
 		<p>
-\begin{verbatim}[mdocout]
-     Its arguments are as follows:
-
-     --CC      Print only uppercase letters.
-
-     --oo _o_u_t_p_u_t
-             Write to file _o_u_t_p_u_t.
-
-     _p_r_e_f_i_x  Prefix the output with _p_r_e_f_i_x.
-\end{verbatim}
+			It should be clear that the <span class="macro">Pp</span> macro, which always stands alone, introduces a vertical
+			paragraph break.
 		</p>
 		<p>
-			It should be clear that the \macro{Pp} macro, which always stands alone, introduces a vertical paragraph break.
+			Earlier, I introduced the concept of a multi-line scope for <span class="macro">Sh</span>, which was closed and
+			re-opened by subsequent invocations of <span class="macro">Sh</span>.  In this fragment, the <span
+				class="macro">Bl</span> macro (for <q>begin list</q>) is explicitly closed out by the <span
+				class="macro">El</span> maro (<q>end list</q>).  This is an example of <span class="term">explicit scope
+				closure</span>, versus the <span class="term">implicit scope closure</span> of <span class="macro">Sh</span>
+			sequences.
 		</p>
 		<p>
-			Earlier, I introduced the concept of a multi-line scope for \macro{Sh}, which was closed and re-opened by subsequent
-			invocations of \macro{Sh}.  In this fragment, the \macro{Bl} macro (for ``begin list'') is \textit{explicitly} closed
-			out by the \macro{El} maro (``end list'').  This is an example of explicit scope closure, versus the implicit scope
-			closure of \macro{Sh} sequences.
+			Predictably, the <span class="macro">Bl</span> and <span class="macro">El</span> enclosure consists of list items, begun
+			by the multi-line <span class="macro">It</span> macro lines.  Like <span class="macro">Sh</span>, the <span
+				class="macro">It</span> macro has its scope closed by subsequent invocations of <span class="macro">It</span>.
+			As expected, its scope also closes when the surrounding list is closed with <span class="macro">El</span>.
 		</p>
 		<p>
-			Predictably, the \macro{Bl} and \macro{El} enclosure consists of list items, begun by the multi-line \macro{It} macro
-			lines.  Like \macro{Sh}, the \macro{It} macro has its scope closed by subsequent invocations of \macro{It}.  As
-			expected, its scope also closes when the surrounding list is closed with \macro{El}.
-		</p>
-		<p>
-			The notion of a ``tagged'' list comes from the flag provided to the \macro{Bl} macro, \macroflag{tag}.  Until now, we've
-			discussed only macros and macro arguments.  Only a handful of macros also accept flags, which themselves may have
-			arguments.  In our example, the \macro{Bl} macro accepts a second flag, \macroflag{width}, which accepts the argument
-			\macroarg{Ds}.  This instructs the formatter that the tag portion of the list has width ``Ds'', which is a shorthand for
-			about 6 spaces.
+			The notion of a <q>tagged</q> list comes from the flag provided to the <span class="macro">Bl</span> macro, <span
+				class="macroflag">tag</span>.  Until now, we've discussed only macros and macro arguments.  Only a handful of
+			macros also accept flags, which themselves may have arguments.  In our example, the <span class="macro">Bl</span> macro
+			accepts a second flag, <span class="macroflag">width</span>, which accepts the argument <span
+				class="macroarg">Ds</span>.  This instructs the formatter that the tag portion of the list has width <q>Ds</q>,
+			which is shorthand for about 6 spaces.
 		</p>
 		<p>
 			Let's look closer at the input line 
 		</p>
-		<p>
-\begin{verbatim}[mdocl]
+		<pre>
 .Ar prefix .
-\end{verbatim}
-		</p>
+		</pre>
 		<p>
 			Note that it's correctly rendered with the period flushed up against the text, although the period itself isn't
 			underlined.
 		</p>
+		<div class="mdocout">
+			<dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="mdoc-list mdoc-list-tag">
+				<dt class="mdoc-list-tag" style="margin-top: 1.00em;">
+					<i class="mdoc-arg">prefix</i></dt>
+				<dd class="mdoc-list-tag" style="margin-left: 6.00ex;">
+					Prefix the output with <i class="mdoc-arg">prefix</i>.</dd>
+			</dl>
+		</div>
 		<p>
-\begin{verbatim}[mdocout]
-     _p_r_e_f_i_x  Prefix the output with _p_r_e_f_i_x.
-\end{verbatim}
+			By making the punctuation a separate argument, we distinguish it from the term <span class="screen">prefix</span>, and
+			thus it is not underlined.  The formatter is smart enough to distinguish standalone punctuation.  When writing an <span
+				class="lang">mdoc</span> manual, punctuation should always be separated from macro arguments unless it's part of
+			the argument itself.  This allows the formatter to correctly intuit end-of-line spacing.
 		</p>
 		<p>
-			By making the punctuation a separate argument, we distinguish it from the term \texttt{prefix}, and thus it is not
-			underlined.  \cmd{nroff} is smart enough to distinguish standalone punctuation.  When writing an \mdoc{} manual,
-			punctuation should always be separated from macro arguments unless it's part of the argument itself.  This allows the
-			formatter to correctly intuit end-of-line spacing.
+			Let's piece this all together.  You'll recognise the <span class="macro">Dd</span>, <span class="macro">Dt</span>, and
+			<span class="macro">Os</span> macros from the last section, although the <span class="macro">Dt</span> argument has
+			changed with our command name.
 		</p>
-		<p>
-			Let's piece this all together.  You'll recognise the \macro{Dd}, \macro{Dt}, and \macro{Os} macros from the last
-			section, although the \macro{Dt} argument has changed with our command name.
-		</p>
-		<p>
-\begin{verbatim}[mdocl]
+		<pre>
 .Dd May 30, 2011
 .Dt HELLO 1
 .Os
@@ -198,55 +226,51 @@ Write to file
 Prefix the output with
 .Ar prefix .
 .El
-\end{verbatim}
-		</p>
+		</pre>
 		<p>
-			Notice that we don't repeat the \macro{Op} macros in the \Sh{DESCRIPTION}, although we stipulate them in the
-			\Sh{SYNOPSIS}.  This is because we document the flags and arguments themselves in the \Sh{DESCRIPTION}, not the calling
-			syntax of the command.
+			Notice that we don't repeat the <span class="macro">Op</span> macros in the <span class="sec">DESCRIPTION</span>,
+			although we stipulate them in the <span class="sec">SYNOPSIS</span>.  This is because we document the flags and
+			arguments themselves in the <span class="sec">DESCRIPTION</span>, not the calling syntax of the command.
 		</p>
 		<p>
 			Finally, let's accomodate for command errors by stipulating the exit status of the command.  To do this, we add a new
-			section to the end of the manual, \Sh{EXIT STATUS}, consisting of a single macro.  We didn't add this to \file{hi.1}
-			because we didn't stipulate any exit state; however, it's good practise to always include this section, even if your
-			command only exits in one way.
+			section to the end of the manual, <span class="sec">EXIT STATUS</span>, consisting of a single macro.  We didn't add
+			this to <span class="file">hi.1</span> because we didn't stipulate any exit state; however, it's good practise to always
+			include this section, even if your command only exits in one way.
 		</p>
-		<p>
-\begin{verbatim}[mdocl]
+		<pre>
 .Sh EXIT STATUS
 .Ex -std
-\end{verbatim}
-		</p>
+		</pre>
 		<p>
-			The \macro{Ex} macro is special in that it always accepts a flag, \macroflag{std}.  This is by convention.  Although you
-			can specify an argument to \macro{Ex}, it works like \macro{Nm} without arguments in that it reproduces the name of the
-			document as last invoked with \macro{Nm}.  It prints a standardised message about the exit status of the command.
+			The <span class="macro">Ex</span> macro is special in that it always accepts a flag, <span class="macroflag">std</span>.
+			This is by convention.  Although you can specify an argument to <span class="macro">Ex</span>, it works like <span
+				class="macro">Nm</span> without arguments in that it reproduces the name of the document as last invoked with
+			<span class="macro">Nm</span>.  It prints a standardised message about the exit status of the command.
 		</p>
-		<p>
-\begin{verbatim}[mdocout]
-EEXXIITT SSTTAATTUUSS
-     The hheelllloo utility exits 0 on success, and >0 if an error occurs.
-\end{verbatim}
-		</p>
+		<div class="mdocout">
+			<div class="mdoc-section">
+				<h1>EXIT STATUS</h1>
+				The <b class="mdoc-utility">hello</b> utility exits 0 on success, and &gt;0 if an error occurs.
+			</div>
+		</div>
 		<p>
 			With our manual complete, let's go over our checklist.
 		</p>
+		<dl>
+			<dt>Did I describe the calling syntax of the command?</dt>
+			<dd>Yes, including flags and arguments.</dd>
+			<dt>Did I describe each flag and argument of the command?</dt>
+			<dd>Yes for all flags and arguments.</dd>
+			<dt>Did I describe the command's operation?</dt>
+			<dd>Yes, that it prints <span class="screen">hello, world</span>.</dd>
+			<dt>Did I describe the command's exit status?</dt>
+			<dd>Yes, that it returns a non-zero exit code on failure.</dd>
+			<dt>Did I describe referenced files and environment variables?</dt>
+			<dd>This is not applicable to this manual.</dd>
+		</dl>
 		<p>
-\begin{enumerate}
-\item Did I describe the calling syntax of the command?\\
-\textit{Yes}, including flags and arguments.
-\item Did I describe each flag and argument of the command?\\
-\textit{Yes} for all flags and arguments.
-\item Did I describe the command's operation?\\
-\textit{Yes}, that it prints ``hello, world''.
-\item Did I describe the command's exit status?\\
-\textit{Yes}, that it returns a non-zero exit code on failure.
-\item Did I describe referenced files and environment variables?\\
-This is not applicable to this manual.
-\end{enumerate}
-		</p>
-		<p>
-			Of course, most ``real'' manuals have many other useful bits of information, such as author names, referenced standards,
+			Of course, most real manuals have many other useful bits of information, such as author names, referenced standards,
 			files, and so on.  I'll describe these in detail in later chapters of this book.
 		</p>
 	</body>
