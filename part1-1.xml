@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Part 1, Chapter 1: Commands</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<p>
+			Commands are the way in which a user operates her computer.  Already I've noted the <span class="cmd">man</span>
+			command: if you've interacted with a UNIX machine, you've probably run at least <code class="cmdline">man intro</code>
+			or <code class="cmdline">man man</code> to learn about your system.
+		</p>
+		<p>
+			In this chapter, I'll discuss how to document these commands with <span class="lang">mdoc</span>.  
+		</p>
+		<p>
+			This may be unfamiliar if you're accustomed to graphical interfaces&mdash;all of our examples will refer to
+			command-line, text-based commands.  If your target environment isn't a UNIX system, it's a good idea to read these
+			examples anyway, as as they will expose the rudimentary structure of the <span class="lang">mdoc</span> language.  As
+			mentioned before, reading an introductory text on UNIX will help avoid confusion.
+		</p>
+		<p>
+			Let's begin by making a mental checklist for the criteria that make a good manual for a command.
+		</p>
+		<p>
+			This checklist arises by inverting what a manual reader expects in opening a manual.  Namely: what does the command do
+			and how do I operate it?
+		</p>
+		<ul>
+			<li>Do I describe the calling syntax of the command?</li>
+			<li>Do I describe each flag and argument of the command?</li>
+			<li>Do I describe the command's operation?</li>
+			<li>Do I describe the command's exit status?</li>
+			<li>Do I describe referenced files and environment variables?</li>
+		</ul>
+		<p>
+			Above all, the best litmus test is whether a colleague or friend can read your manual and be able to use your command
+			without any assistance on your part.  Don't be discouraged by how this can take several tries to get right!
+		</p>
+		<p>
+			I'll begin with a simple command, <span class="cmd">hi</span>, which prints <span class="screen">hello, world</span> to
+			the screen.  I'll then add some command-line arguments to this command.  By the time you exit this chapter, you should
+			have a grasp of <span class="lang">mdoc</span> syntax and some of its more widely-used macros.
+		</p>
+		<p>
+			In general, I'll refer to commands as <span class="cmd">command</span> <span class="cmdopt"><span
+					class="cmdflag">flag</span> <span class="cmdarg">farg</span></span> <span class="cmdarg">arg</span>.
+		</p>
+		<p>
+			Here, <span class="cmd">command</span> refers to the command invocation name, <span class="cmdflag">flag</span> is a
+			flag (or switch) to that command, <span class="cmdarg">farg</span> is an argument to a flag (not all flags have
+			arguments), and <span class="cmdarg">arg</span> is an argument to the command.
+		</p>
+		<p>
+			The dash in front of <span class="cmdflag">flag</span> indicates a flag, while the square brackets around 
+			<span class="cmdopt"><span class="cmdflag">flag</span> <span class="cmdarg">farg</span></span> indicate an optional part of the invocation.
+			Since <span class="cmdarg">arg</span> is not bracketed, it is a mandatory part of the invocation.
+		</p>
+	</body>
+</html>

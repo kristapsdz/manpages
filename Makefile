@@ -1,41 +1,38 @@
-.SUFFIXES:	.html .sgml .7 .7.txt .7.html .in.1 .in.3 .1 .3
+.SUFFIXES: .html .sgml .xml .xhtml
 
-PREFIX		 = /usr/vhosts/manpages.bsd.lv/www/htdocs/
-INSTALL		 = install
-INSTALL_PROGRAM	 = $(INSTALL) -m 0755
-INSTALL_DATA	 = $(INSTALL) -m 0444
-INSTALL_LIB	 = $(INSTALL) -m 0644
-INSTALL_MAN	 = $(INSTALL_DATA)
-SGMLS	   	 = index.sgml
-HTMLS	   	 = index.html index.7.html \
-		   tutorial2.html \
-		   tutorial1.html \
-		   tutorial0.html
-STATICS		 = index.css style.css tutorial.css external.png all.css
-MANS		 = index.7 template.1 template.3
-TEXTS		 = index.7.txt
+HTMLS	= index.html
+XHTMLS	= preface.xhtml part1.xhtml part1-1.xhtml part1-1-1.xhtml
 
-all:	$(HTMLS) $(MANS) $(TEXTS)
-
-installwww: all
-	$(INSTALL_DATA) $(HTMLS) $(STATICS) $(TEXTS) $(MANS) $(DESTDIR)$(PREFIX)/
+all: $(HTMLS) $(XHTMLS)
 
 clean:
-	rm -f $(HTMLS) $(MANS) $(TEXTS)
+	rm -f $(HTMLS) $(XHTMLS) book.epub
+
+book.epub: $(XHTMLS) book.css book.ncx book.opf
+	mkdir .book
+	mkdir -p .book/META-INF
+	mkdir -p .book/OPS
+	mkdir -p .book/OPS/css
+	echo "application/epub+zip" > .book/mimetype
+	install -m 0444 container.xml .book/META-INF
+	install -m 0444 $(XHTMLS) .book/OPS
+	install -m 0444 book.opf book.ncx .book/OPS
+	install -m 0444 book.css .book/OPS/css
+	(cd .book && zip -X ../$@ \
+		mimetype \
+		META-INF/container.xml \
+		OPS/preface.xhtml \
+		OPS/part1.xhtml \
+		OPS/part1-1.xhtml \
+		OPS/part1-1-1.xhtml \
+		OPS/book.opf \
+		OPS/book.ncx \
+		OPS/css/book.css )
+	rm -rf .book
 
 .sgml.html:
 	validate --warn $<
 	cp -f $< $@
 
-.html.7:
-	lynx -width=1000 -dump -nolist $< | sed 's!^[ 	]*!!g' | tail -n+2 >$@
-
-.7.7.txt:
-	mandoc -Wall -fstrict $< | col -b >$@
-
-.7.7.html:
-	mandoc -Wall -Thtml -Ostyle=style.css -fstrict $< >$@
-
-.in.1.1 .in.3.3:
-	mandoc -Tlint $<
+.xml.xhtml:
 	cp -f $< $@

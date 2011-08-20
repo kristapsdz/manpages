@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package version="2.0" xmlns="http://www.idpf.org/2007/opf" unique-identifier="manpages.bsd.lv">
+	<metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+		<dc:title>Practical UNIX Manuals: mdoc</dc:title>
+		<dc:language>en</dc:language>
+		<dc:identifier id="manpages.bsd.lv" opf:scheme="URL">http://manpages.bsd.lv</dc:identifier>
+	</metadata>
+	<manifest>
+		<item id="part1" href="part1.xhtml" media-type="application/xhtml+xml"/>
+		<item id="stylesheet" href="css/book.css" media-type="text/css"/>
+		<item id="ncx" href="book.ncx" media-type="application/x-dtbncx+xml"/>
+	</manifest>
+	<spine toc="ncx">
+		<itemref idref="part1"/>
+	</spine>
+</package>

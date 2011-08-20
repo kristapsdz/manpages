@@ -1,0 +1,17 @@
+span.lang	{ font-style: italic; } /* Language (mdoc, man, etc.). */
+
+span.term	{ font-style: italic; } /* A term we're defining. */
+
+span.cmd,	/* A command name. */
+span.cmdline,	/* A command invocation. */
+span.macro,	/* The name of a macro. */
+span.screen	{ font-family: monospace; } /* Screen output. */
+
+span.cmdline,
+span.screen	{ border: 1px dotted #cccccc; padding: 2px; background-color: #eeeeee; }
+
+pre		{ margin-left: 2%; }
+
+div.mdocout	{ font-family: monospace; max-width: 60em; margin-left: 5%; } /* Mdoc output section. */
+
+div.mdocout h1	{ margin-bottom: 1ex; font-size: 110%; margin-left: -4%; } /* Section header (Sh, SH). */

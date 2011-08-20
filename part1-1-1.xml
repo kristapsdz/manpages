@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Part 1, Chapter 1, Section 1: Simple Command</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<p>
+			Consider a simple UNIX command <span class="cmd">hi</span> that prints <span class="screen">hello, world</span> and
+			exits.  Let's create a manual page <span class="file">hi.1</span> documenting this command.  In this example, I'll begin
+			with the full manual.  In later examples, we'll build up the manual piece by piece.
+		</p>
+		<pre>
+.Dd May 30, 2011
+.Dt HI 1
+.Os
+.Sh NAME
+.Nm hi
+.Nd print \(dqhello, world\(dq
+.Sh SYNOPSIS
+.Nm
+.Sh DESCRIPTION
+Print
+.Qq hello, world
+and exit.
+		</pre>
+		<p>
+			How to display this manual page depends on the system you're using.
+		</p>
+		<p>
+			Historically, the command of choice for formatting UNIX manuals for a terminal was <span class="cmd">nroff</span>.  For
+			now, let's stick with that.  If you're running on a non-UNIX system, or <span class="cmd">nroff</span> isn't installed,
+			consult Part III of this book for a list of alternatives.
+		</p>
+		<p>
+			To display output, you must invoke <span class="cmd">nroff</span> as <span class="cmdline">nroff -mandoc -Tascii
+				file</span>.  The <span class="cmdflag">mandoc</span> flag indicates that input is in <span
+				class="lang">mdoc</span>.  Hereafter, I'll refer to <span class="cmd">nroff</span> simply as <q>the
+				formatter</q> to avoid confusion.
+		</p>
+		<div class="mdocout">
+			<table summary="Document Header" class="mdoc-head" width="100%">
+				<col width="30%"/>
+				<col width="30%"/>
+				<col width="30%"/>
+				<tbody>
+					<tr>
+						<td class="mdoc-head-ltitle">HI(1)</td>
+						<td class="mdoc-head-vol" align="center">General Commands Manual</td>
+						<td class="mdoc-head-rtitle" align="right">HI(1)</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="mdoc-section">
+				<h1>NAME</h1>
+				<b class="mdoc-name">hi</b> &#8212; <span class="mdoc-desc">print &#34;hello, world&#34;</span>
+			</div>
+			<div class="mdoc-section">
+				<h1>SYNOPSIS</h1>
+				<table class="mdoc-synopsis">
+					<col style="width: 2.00ex;"/>
+					<col/>
+					<tbody>
+						<tr>
+							<td>
+								hi
+							</td>
+							<td>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="mdoc-section">
+				<h1>DESCRIPTION</h1>
+				Print &#8220;hello, world&#8221; and exit.
+			</div>
+		</div>
+		<p>
+			Let's start by studying the input and output.  We can see most of the text translated into output, for instance, the
+			capitalised <span class="screen">NAME</span> input is left-justified and in bold text.  Same with <span class="screen">
+				SYNOPSIS</span> and <span class="screen">DESCRIPTION</span>, although the preceding <span
+				class="screen">.Sh</span> is missing.  We can even see the output sentence <span class="screen">Print "hello,
+				world" and exit</span> spread over lines 10&ndash;12, although it's separated by the input line
+		</p>
+		<pre>
+.Qq hello, world
+		</pre>
+		<p>
+			Let's take a closer look at this fragment.
+		</p>
+		<p>
+			The <span class="screen">.Qq</span> is part of <span class="lang">mdoc</span>'s instruction syntax.  Input lines
+			beginning with a dot are instructions to the formatter called <span class="term">macros</span>.  The <span
+				class="term">macro name</span> is a terse two or three-character word following the dot, for example, <span
+				class="macro">Qq</span>.  Lines following the macro name are interpreted as <span class="term">arguments</span>
+			in the <span class="term">scope</span> of the macro.
+		</p>
+		<p>
+			Although this syntax may look strange, note its economy as regards screen real-estate, and terseness as regards
+			instruction.  The dot-notation seems unusual at first glance, but its utility will become more and more clear as we
+			examine complicated manuals and issues such as version control and parsing.
+		</p>
+		<p>
+			Returning to the <span class="macro">Qq</span> macro, the fragment
+		</p>
+		<pre>
+Print
+.Qq hello, world
+and exit.
+		</pre>
+		<p>
+			was thus interpreted as text, then a macro <span class="macro">Qq</span> with scoped arguments <span
+				class="screen">hello, world</span>, then more text.  It's obvious by now that <span class="macro">Qq</span>
+			instructs the formatter to quote its arguments.
+		</p>
+		<p>
+			Most <span class="lang">mdoc</span> macros, such as <span class="macro">Qq</span>, are limited in scope to their
+			invocation line.  But notice that the formatter recognised the content between <span class="macro">Sh</span> macros as
+			requiring indentation.  Thus, it's clear that there's a notion of multi-line scope.  In fact, <span
+				class="macro">Sh</span> has both line arguments, for the name of the section; and multi-line arguments, for
+			section content.
+		</p>
+		<pre>
+.Sh SECTION 1
+Section text.
+.Sh SECTION 2
+New section text.
+		</pre>
+		<p>
+			Furthermore, the existance of <span class="macro">Qq</span> within the <span class="macro">Sh</span> scope means that
+			scopes may be nested.  In the next section we'll see how multiple macros may even be specified on a single line.
+		</p>
+		<pre>
+.Sh SECTION 1
+Section text.
+.Sh SECTION 2
+.Qq Section text nested in a quote.
+		</pre>
+		<p>
+			Now let's return to <span class="file">hi.1</span> with this new knowledge of macros and scopes.
+		</p>
+		<p>
+			We see seven macros in total, <span class="macro">Dd</span>, <span class="macro">Dt</span>, <span
+				class="macro">Os</span>, <span class="macro">Sh</span>, <span class="macro">Nm</span>, <span
+				class="macro">Nd</span>, and <span class="macro">Qq</span>.  We know now that <span class="macro">Qq</span>
+			encloses its arguments in double-quotes, <span class="macro">Sh</span> begins a named section with indented multi-line
+			arguments.  
+		</p>
+		<p>
+			Of the remaining macros, <span class="macro">Dd</span> accepts the last modification date of the manual in ``month day,
+			year'' format.  <span class="macro">Dt</span> refers to the manual's title, <span class="screen">HI</span>, and its
+			section.  Note that <span class="screen">HI</span> is uppercase: by convention, <span class="macro">Dt</span> should
+			always accept a capitalised document title.  We'll talk more about titles and sections in later chapters of this book.
+			For now, let's assume that section number 1 consists of executable commands.  
+		</p>
+		<p>
+			Next, <span class="macro">Os</span> indicates the operating system of the system running the formatter.  If left
+			unspecified, the formatter will return the current operating system (e.g., <span class="screen">OpenBSD 4.9</span>,
+			<span class="screen">Linux 2.6.32-5</span>, or <span class="screen">Microsoft Windows XP</span>).
+		</p>
+		<pre>
+.Dd May 30, 2011  \" date of last modification
+.Dt HI 1  \" title and section
+.Os  \" use current operating system
+		</pre>
+		<p>
+			Note that text following the <span class="screen">\&quot;</span> marker is an <span class="lang">mdoc</span> comment.  A
+			comment spanning the full line looks like
+		</p>
+		<pre>
+Text. \" Comment to the end of the line.
+.\" Comment extending across the full line.
+More text.
+		</pre>
+		<p>
+			Moving along, <span class="macro">Nm</span> accepts the manual's name.  This differs from the title, <span
+				class="macro">Dt</span>, in that a single manual may document multiple components.  We'll see examples of this
+			in later chapters.  Finally, <span class="macro">Nd</span> accepts a brief, one-line description of the command.
+		</p>
+		<pre>
+.Sh NAME
+.Nm hi  \" command's name
+.Nd print \(dqhello, world\(dq \" command's description
+		</pre>
+		<p>
+			You can see that in the <span class="sec">DESCRIPTION</span> we re-invoke the <span class="macro">Nm</span>, only
+			without arguments, when documenting our command's calling syntax.  The formatter is smart enough to fill in its argument
+			with the last supplied argument, in this case being <span class="screen">hi</span>.
+		</p>
+		<p>
+			Since our simple command has no command-line arguments, its invocation is simply the command name.
+		</p>
+		<pre>
+.Sh SYNOPSIS
+.Nm  \" invoke with just the command name
+		</pre>
+		<p>
+			Piecing this all together, we now have the following.
+		</p>
+		<pre>
+.Dd May 30, 2011  \" date of last modification
+.Dt HI 1  \" title and section
+.Os  \" use current operating system
+.Sh NAME
+.Nm hi  \" commands name
+.Nd print \(dqhello, world\(dq \" command's description
+.Sh SYNOPSIS
+.Nm  \" invoke with just the command name
+.Sh DESCRIPTION
+Print
+.Qq hello, world  \" quote these terms
+and exit.
+		</pre>
+		<p>
+			In this example, you've noticed that 
+		</p>
+		<pre>
+\(dqhello, world\(dq
+		</pre>
+		<p>
+			has the same behaviour of the <span class="macro">Qq</span> invocation.  In <span class="lang">mdoc</span>, quotation
+			marks signify literal strings. Thus, we used an escape character <span class="screen">\(dq</span> to render <span
+				class="screen">&quot;</span>.
+		</p>
+		<p>
+			You may ask why not just use <span class="macro">Qq</span>, such as
+		</p>
+		<pre>
+.Nd print
+.Qq hello, world
+		</pre>
+		<p>
+			For the time being, assume that <span class="macro">Nd</span> must have its scope on the invocation line.
+			Strictly-speaking, we could have written 
+		</p>
+		<pre>
+.Nd print "hello, world"
+		</pre>
+		<p>
+			but this encourages dangerous behaviour in assuming that quoted arguments may not affect output.  This isn't always the
+			case!
+		</p>
+		<p>
+			Before moving on to the next section, let's look quickly over our checklist for a well-formed manual.
+		</p>
+		<dl>
+			<dt>
+				Did I describe the calling syntax of the command?
+			</dt>
+			<dd>
+				Yes.  It was only the name of the macro (no arguments or flags).
+			</dd>
+			<dt>
+				Did I describe each flag and argument of the command?
+			</dt>
+			<dd>
+				There were none, so yes.
+			</dd>
+			<dt>
+				Did I describe the command's operation?
+			</dt>
+			<dd>
+				Yes, it prints <span class="screen">hello, world</span> and exits.
+			</dd>
+			<dt>
+				Did I describe the command's exit status?
+			</dt>
+			<dd>
+				No, we only mentioned that it exits.
+			</dd>
+			<dt>
+				Did I describe referenced files and environment variables?
+			</dt>
+			<dd>
+				This is not applicable.
+			</dd>
+		</dl>
+		<p>
+			To the effect of the exit status, let's modify the <span class="sec">DESCRIPTION</span> slightly for clarity.
+		</p>
+		<pre>
+.Sh DESCRIPTION
+Print
+.Qq hello, world
+and exit 0.
+		</pre>
+		<p>
+			Of course, our command must actually do so!  For simplicity's sake, let's assume that this is the case.
+		</p>
+		<p>
+			With our simple, well-documented example in mind, let's move on to a more realistic UNIX command.
+		</p>
+	</body>
+</html>
+

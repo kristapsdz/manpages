@@ -8,7 +8,7 @@
 	</HEAD>
 	<BODY>
 		<DIV CLASS="nvis offs">
-			.\"
+			.
 			<BR>
 			.Dd <SPAN CLASS="nvis">$Mdocdate$</SPAN>
 			<BR>
@@ -18,17 +18,17 @@
 			<BR>
 			.Sh <SPAN CLASS="h1">NAME</SPAN>
 			<BR>
-			.\"
+			.
 			<BR>
 			.Nm <SPAN>UNIX Manual Pages</SPAN>
 			<BR>
 			.Nd <SPAN>structure, style, and composition</SPAN>
 			<BR>
-			.\"
+			.
 			<BR>
 			.Sh <SPAN CLASS="h1">DESCRIPTION</SPAN>
 			<BR>
-			.\"
+			.
 			<BR>
 			.Em <SPAN CLASS="em">A utility without good documentation is of no utility at all.</SPAN>
 			<BR>
@@ -50,100 +50,43 @@
 			<DIV>
 			a language designed specifically for manpages and available by default on most reasonable UNIX installations.
 			</DIV>
-			.\"
+			.
 			<BR>
-			.Sh <SPAN CLASS="h2">Templates</SPAN>
+			.
 			<BR>
-			.\"
-			<TABLE>
-				<COL CLASS="left">
-				<COL>
-				<TBODY>
-					<TR>
-						<TD>.Lk <A HREF="template.1">template.1</A></TD>
-						<TD><SPAN CLASS="offs">Template for a utility manual</SPAN></TD>
-					</TR>
-					<TR>
-						<TD>.Lk <A HREF="template.3">template.3</A></TD>
-						<TD><SPAN CLASS="offs">Template for a library/function manual</SPAN></TD>
-					</TR>
-				</TBODY>
-			</TABLE>
-			.\"
+			.Sh <SPAN CLASS="h1">REFERENCE</SPAN>
 			<BR>
-			.Sh <SPAN CLASS="h2">Tutorials</SPAN>
+			.
 			<BR>
-			.\"
-			<TABLE>
-				<COL CLASS="left">
-				<COL>
-				<TBODY>
-					<TR>
-						<TD>.Lk <A HREF="tutorial0.html">tutorial0.html</A></TD>
-						<TD><Q>Getting Started</Q></TD>
-					</TR>
-					<TR>
-						<TD>.Lk <A HREF="tutorial1.html">tutorial1.html</A></TD>
-						<TD><Q>Manpages in Makefiles</Q></TD>
-					</TR>
-					<TR>
-						<TD>.Lk <A HREF="tutorial2.html">tutorial2.html</A></TD>
-						<TD><Q>Spell-checking Manpages</Q></TD>
-					</TR>
-				</TBODY>
-			</TABLE>
-			.\"
+			.Lk <A HREF="preface.xhtml">Preface</A>
 			<BR>
-			.Sh <SPAN CLASS="h2">Mailing Lists</SPAN>
+			.Bl -enum
 			<BR>
-			.Bl -ohang
+			.It
 			<BR>
-			.It <SPAN>General questions about manpages and mdoc:</SPAN>
+			.Lk <A HREF="part1.xhtml">Part 1</A>: <SPAN CLASS="offs">Tutorial Introduction</SPAN>
 			<BR>
-			.Mt <SPAN>disc<A CLASS="offs external" TITLE="Reveal this e-mail address"
-			HREF="http://www.google.com/recaptcha/mailhide/d?k=01fqH3xoy7rwp-l_5K0BumPA==&amp;c=NTI0bIlVxlrR2xLEqaJxCv-_SGL-rzM8DjAFEivPvNzLi2PxNha85zOyiFYPiprL">...</A>@manpages.bsd.lv</SPAN>
+			.Bl -enum
 			<BR>
-			.Pq <SPAN CLASS="pq">Archive not yet available.</SPAN>
+			.It
+			<BR>
+			.Lk &nbsp;&nbsp;<A HREF="part1-1.xhtml">Chapter 1</A>: <SPAN CLASS="offs">Commands</SPAN>
+			<BR>
+			.Bl -enum
+			<BR>
+			.It
+			<BR>
+			.Lk &nbsp;&nbsp;&nbsp;&nbsp;<A HREF="part1-1-1.xhtml">Section 1</A>: <SPAN CLASS="offs">Simple Command</SPAN>
 			<BR>
 			.El
 			<BR>
-			.Sh <SPAN CLASS="h1">SEE ALSO</SPAN>
-			<BR>
-			.Bl -ohang
-			<BR>
-			.It <SPAN>Reference platform for manpage formatting:</SPAN>
-			<BR>
-			.Lk <A CLASS="external" HREF="http://mdocml.bsd.lv/">http://mdocml.bsd.lv/</A>
-			<BR>
-			.\"
-			<BR>
-			.It <SPAN>Traditional manpage formatter and general-purpose type-setter:</SPAN>
-			<BR>
-			.Lk <A CLASS="external" HREF="http://www.gnu.org/software/groff">http://www.gnu.org/software/groff</A>
-			<BR>
-			.\"
-			<BR>
-			.It <SPAN>On-line CVS for this site:</SPAN>
-			<BR>
-			.Lk <A HREF="http://manpages.bsd.lv/cgi-bin/cvsweb/?cvsroot=manpages">http://manpages.bsd.lv/cgi-bin/cvsweb/?cvsroot=manpages</A>
-			<BR>
-			.\"
-			<BR>
-			.It <SPAN><Q>Fixing on a Standard Language for UNIX Manuals</Q></SPAN>
-			<BR>
-			.Lk <A CLASS="external" HREF="http://www.usenix.org/publications/login/2009-10/pdfs/dzonsons.pdf">http://www.usenix.org/publications/login/2009-10/pdfs/dzonsons.pdf</A>
+			.El
 			<BR>
 			.El
 			<BR>
-			.ig
-			<DIV>
-			(Why does this page look funny?  It's actually a full-out manual.  View a screen-dump as manual source, <A CLASS="offs"
-			HREF="index.7">index.7</A>; rendered as HTML, <A CLASS="offs" HREF="index.7.html">index.7.html</A>; or rendered as text,
-			<A CLASS="offs" HREF="index.7.txt">index.7.txt</A>.)
-			</DIV>
-			..
+			.
 			<BR>
-			.\" <SPAN CLASS="nvis">Copyright (c) 2010, Kristaps Dzonsons</SPAN>
+			.\" <SPAN CLASS="nvis">Copyright &copy; 2010&mdash;2011, Kristaps Dzonsons</SPAN>
 		</DIV>
 	</BODY>
 </HTML>

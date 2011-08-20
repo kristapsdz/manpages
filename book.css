@@ -1,0 +1,10 @@
+html		{ min-width: 600px;
+		  max-width: 900px;
+		  margin: 0px;
+		  padding: 0px; }
+
+body		{ color: #333333;
+		  font-size: 0.80em;
+		  font-family: Verdana, Tahoma, Arial, sans-serif; }
+
+p		{ margin-bottom: 2em; }

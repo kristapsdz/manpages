@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Part 1: Tutorial Introduction</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<p>
+			Let's begin with practical examples of <span class="lang">mdoc</span>.
+		</p>
+		<p>
+			The intended audience of this part is somebody who has never written a <span class="lang">mdoc</span> manual.  Although
+			you may be tempted to jump to the chapter relevant to your manual type (for example, a command or function library),
+			it's best to read the chapters in order.  I'll explain <span class="lang">mdoc</span> syntax as we go.
+		</p>
+		<p>
+			If you've already written a few manuals, you may want to read this part anyway: beyond explaining technical <span
+				class="lang">mdoc</span> language concepts by example, I'll also introduce some best practices and discuss
+			portable between various <span class="lang">mdoc</span> environments.
+		</p>
+		<p>
+			I'll frequently refer to the screen output of <span class="lang">mdoc</span> documents as they're displayed by the
+			classical UNIX <span class="cmd">man</span> utility.  Furthermore, I'll refer to invoking utilities in the traditional
+			UNIX way&mdash;on the command line.  Due to both of these caveats, a bit of UNIX knowledge will help to avoid confusion,
+			but I'll briefly introduce invocation syntaxes as the need arises.
+		</p>
+	</body>
+</html>

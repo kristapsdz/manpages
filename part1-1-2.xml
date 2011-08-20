@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Part 1, Chapter 1, Section 1: Complex Command</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<p>
+			Most UNIX commands have flags, arguments, return values, environmental variables, and so on.  So let's expand upon our
+			example to include arguments for writing to an output file and a flag for outputting in uppercase letters.  Furthermore,
+			we'll accept an optional prefix string on the command-line, and return non-zero on failure.
+		</p>
+		<p>
+			This changes two parts of our manual: the <span class="sec">SYNOPSIS</span> section, where we'll record the invocation
+			syntax of our command; and the <span class="sec">DESCRIPTION</span>, where we'll describe the command-line options.
+			We'll also add a new section, <span class="sec">EXIT STATUS</span>, to describe the non-zero exit on failure.
+		</p>
+		<p>
+			Let's start by documenting our command-line options in the <span class="sec">SYNOPSIS</span> section:
+		</p>
+		<pre>
+.Sh SYNOPSIS                  
+.Nm                           
+.Op Fl C                      
+.Op Fl o Ar output            
+.Op Ar prefix                 
+		</pre>
+		<p>
+			Already, we begin to see the output take shape with the \texttt{C} and \texttt{o} characters, and the \texttt{prefix}.
+			But what are these other words, \texttt{Fl} and \texttt{Ar}?
+		</p>
+		<p>
+			Let's examine the rendered output:
+		</p>
+		<pre>
+\begin{verbatim}[mdocout]
+SSYYNNOOPPSSIISS
+     hheelllloo [--CC] [--oo _o_u_t_p_u_t] [_p_r_e_f_i_x]
+\end{verbatim}
+		</pre>
+		<p>
+			It's clear that the \macro{Op} macro surrounds its arguments in square
+			brackets, just as \macro{Qq} surrounded its line in double-quotes.
+		</p>
+		<p>
+			How did the formatter know to prefix the \texttt{C} and \texttt{o} with a dash, or underline the arguments
+			\texttt{output} and \texttt{prefix}?  It's obvious this has something to do with \texttt{Fl} and \texttt{Ar}.
+		</p>
+		<p>
+			Macro lines may in fact consist of multiple macros---sometimes nesting further macros, sometimes closing prior scopes to
+			begin one anew.  The \macro{Fl} and \macro{Ar} words are macros nested within the scope of \macro{Op}.  However, while
+			\macro{Op} contains both of these child scopes, the \macro{Ar} macro is able to close out the \macro{Fl} scope and begin
+			its own.
+		</p>
+		<p>
+\begin{mdocl}
+.\underline{Op \{Fl C\}}
+.\underline{Op \{Fl o\} \{Ar output\}}
+.\underline{Op \{Ar prefix\}}
+\end{mdocl}
+		</p>
+		<p>
+			Underlined parts are an ``outer'' scope, while bracketed parts are an ``inner'' scope.  Now it's easy to see how
+			\macro{Fl} prefixes only the \texttt{C} with a dash and not the arguments following: its scope is closed out by
+			\macro{Ar}.
+		</p>
+		<p>
+			When a macro can be closed out by another, we call it an \textit{in-line} macro.
+		</p>
+		<p>
+			Note that to document a flag ``Ar'', we would need to quote its arguments as \texttt{Fl "Ar"} (we'll later learn how to
+			escape arguments with zero-width spaces to accomplish the same).  As there are many \mdoc{} macros, a popular novice
+			mistake is to unknowingly invoke a macro when expecting to print text.
+		</p>
+		<p>
+			With our command syntax documented, let's document the arguments themselves.  To do so, we detail the meaning of flags
+			and arguments in the \Sh{DESCRIPTION} section.
+		</p>
+		<p>
+\begin{verbatim}[mdocl]
+The
+.Nm
+function prints
+.Qq hello, world
+and returns.
+.Pp
+Its arguments are as follows:
+.Bl -tag -width Ds
+.It Fl C
+Print only uppercase letters.
+.It Fl o Ar output
+Write to file
+.Ar output .
+.It Ar prefix
+Prefix the output with
+.Ar prefix .
+.El
+\end{verbatim}
+		</p>
+		<p>
+			Immediately, we see the introduction of several new macros: \macro{Pp}, \macro{Bl}, \macro{It}, and \macro{El}.  More
+			interestingly, we notice the text on the \macro{Bl} begins with a dash, just as when passing arguments on a command
+			line.  This is the first instance of a macro that accepts flags.  
+		</p>
+		<p>
+			The rendered output of this fragment is as follows.
+		</p>
+		<p>
+\begin{verbatim}[mdocout]
+     Its arguments are as follows:
+
+     --CC      Print only uppercase letters.
+
+     --oo _o_u_t_p_u_t
+             Write to file _o_u_t_p_u_t.
+
+     _p_r_e_f_i_x  Prefix the output with _p_r_e_f_i_x.
+\end{verbatim}
+		</p>
+		<p>
+			It should be clear that the \macro{Pp} macro, which always stands alone, introduces a vertical paragraph break.
+		</p>
+		<p>
+			Earlier, I introduced the concept of a multi-line scope for \macro{Sh}, which was closed and re-opened by subsequent
+			invocations of \macro{Sh}.  In this fragment, the \macro{Bl} macro (for ``begin list'') is \textit{explicitly} closed
+			out by the \macro{El} maro (``end list'').  This is an example of explicit scope closure, versus the implicit scope
+			closure of \macro{Sh} sequences.
+		</p>
+		<p>
+			Predictably, the \macro{Bl} and \macro{El} enclosure consists of list items, begun by the multi-line \macro{It} macro
+			lines.  Like \macro{Sh}, the \macro{It} macro has its scope closed by subsequent invocations of \macro{It}.  As
+			expected, its scope also closes when the surrounding list is closed with \macro{El}.
+		</p>
+		<p>
+			The notion of a ``tagged'' list comes from the flag provided to the \macro{Bl} macro, \macroflag{tag}.  Until now, we've
+			discussed only macros and macro arguments.  Only a handful of macros also accept flags, which themselves may have
+			arguments.  In our example, the \macro{Bl} macro accepts a second flag, \macroflag{width}, which accepts the argument
+			\macroarg{Ds}.  This instructs the formatter that the tag portion of the list has width ``Ds'', which is a shorthand for
+			about 6 spaces.
+		</p>
+		<p>
+			Let's look closer at the input line 
+		</p>
+		<p>
+\begin{verbatim}[mdocl]
+.Ar prefix .
+\end{verbatim}
+		</p>
+		<p>
+			Note that it's correctly rendered with the period flushed up against the text, although the period itself isn't
+			underlined.
+		</p>
+		<p>
+\begin{verbatim}[mdocout]
+     _p_r_e_f_i_x  Prefix the output with _p_r_e_f_i_x.
+\end{verbatim}
+		</p>
+		<p>
+			By making the punctuation a separate argument, we distinguish it from the term \texttt{prefix}, and thus it is not
+			underlined.  \cmd{nroff} is smart enough to distinguish standalone punctuation.  When writing an \mdoc{} manual,
+			punctuation should always be separated from macro arguments unless it's part of the argument itself.  This allows the
+			formatter to correctly intuit end-of-line spacing.
+		</p>
+		<p>
+			Let's piece this all together.  You'll recognise the \macro{Dd}, \macro{Dt}, and \macro{Os} macros from the last
+			section, although the \macro{Dt} argument has changed with our command name.
+		</p>
+		<p>
+\begin{verbatim}[mdocl]
+.Dd May 30, 2011
+.Dt HELLO 1
+.Os
+.Sh NAME
+.Nm hello
+.Nd print \(dqhello, world\(dq
+.Sh SYNOPSIS
+.Nm \" first use the command naem
+.Op Fl C \" then an optional flag
+.Op Fl o Ar output \" then an optional flag/argument pair
+.Op Ar prefix \" then an optional argument
+.Sh DESCRIPTION
+The
+.Nm
+function prints
+.Qq hello, world
+and returns.
+.Pp \" begin documenting arguments
+Its arguments are as follows:
+.Bl -tag -width Ds \" start a tagged list
+.It Fl C \" first the standalone flag
+Print only uppercase letters.
+.It Fl o Ar output \" now the flag with argument
+Write to file
+.Ar output .
+.It Ar prefix \" now the argument
+Prefix the output with
+.Ar prefix .
+.El
+\end{verbatim}
+		</p>
+		<p>
+			Notice that we don't repeat the \macro{Op} macros in the \Sh{DESCRIPTION}, although we stipulate them in the
+			\Sh{SYNOPSIS}.  This is because we document the flags and arguments themselves in the \Sh{DESCRIPTION}, not the calling
+			syntax of the command.
+		</p>
+		<p>
+			Finally, let's accomodate for command errors by stipulating the exit status of the command.  To do this, we add a new
+			section to the end of the manual, \Sh{EXIT STATUS}, consisting of a single macro.  We didn't add this to \file{hi.1}
+			because we didn't stipulate any exit state; however, it's good practise to always include this section, even if your
+			command only exits in one way.
+		</p>
+		<p>
+\begin{verbatim}[mdocl]
+.Sh EXIT STATUS
+.Ex -std
+\end{verbatim}
+		</p>
+		<p>
+			The \macro{Ex} macro is special in that it always accepts a flag, \macroflag{std}.  This is by convention.  Although you
+			can specify an argument to \macro{Ex}, it works like \macro{Nm} without arguments in that it reproduces the name of the
+			document as last invoked with \macro{Nm}.  It prints a standardised message about the exit status of the command.
+		</p>
+		<p>
+\begin{verbatim}[mdocout]
+EEXXIITT SSTTAATTUUSS
+     The hheelllloo utility exits 0 on success, and >0 if an error occurs.
+\end{verbatim}
+		</p>
+		<p>
+			With our manual complete, let's go over our checklist.
+		</p>
+		<p>
+\begin{enumerate}
+\item Did I describe the calling syntax of the command?\\
+\textit{Yes}, including flags and arguments.
+\item Did I describe each flag and argument of the command?\\
+\textit{Yes} for all flags and arguments.
+\item Did I describe the command's operation?\\
+\textit{Yes}, that it prints ``hello, world''.
+\item Did I describe the command's exit status?\\
+\textit{Yes}, that it returns a non-zero exit code on failure.
+\item Did I describe referenced files and environment variables?\\
+This is not applicable to this manual.
+\end{enumerate}
+		</p>
+		<p>
+			Of course, most ``real'' manuals have many other useful bits of information, such as author names, referenced standards,
+			files, and so on.  I'll describe these in detail in later chapters of this book.
+		</p>
+	</body>
+</html>

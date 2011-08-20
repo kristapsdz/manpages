@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Preface</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<blockquote>
+			<p>
+				A utility without a manual is of no utility at all.
+			</p>
+		</blockquote>
+		<p>
+			This is a guide for writing UNIX manuals in the <span class="lang">mdoc</span> language.  If you're new to writing UNIX
+			manuals, or you want to learn about best practices for high-quality manuals, this book may benefit your work.
+		</p>
+		<p>
+			To those unfamiliar with UNIX, <span class="lang">mdoc</span> is a language for documenting utilities, programming
+			functions, file and wire formats, hardware device interfaces, and so on.  By a <span class="term">language</span> I mean
+			a structured, machine-readable document format such as HTML, the primary language of web pages; or RTF, used by word
+			processors.  <span class="cmd">man</span> is the utility for querying documents in <span class="lang">mdoc</span> and
+			other languages, collectively called <span class="term">man pages</span>.  
+		</p>
+		<p>
+			The following, for example, is a fragment of <span class="cmd">man</span> output for the <span class="cmd">cat</span>
+			command.
+		</p>
+		<div class="mdocout">
+			<div class="mdoc-section">
+				<h1>NAME</h1>
+				<b class="mdoc-name">cat</b> &#8212; <span class="mdoc-desc">concatenate and print files</span></div>
+			<div class="mdoc-section">
+				<h1>SYNOPSIS</h1>
+				<table class="mdoc-synopsis">
+					<col style="width: 3.00ex;"/>
+					<col/>
+					<tbody>
+						<tr>
+							<td>
+								cat
+							</td>
+							<td>
+								&#91;<span class="mdoc-opt"><b class="mdoc-flag">&#45;benstuv</b></span>&#93; 
+								&#91;<span class="mdoc-opt"><i class="mdoc-arg">file ...</i></span>&#93;
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="mdoc-section">
+				<h1>DESCRIPTION</h1>
+				The <b class="mdoc-name">cat</b> utility reads files sequentially, writing them to the standard output. The <i
+					class="mdoc-arg">file</i> operands are processed in command-line order.  If <i class="mdoc-arg">file</i>
+				is a single dash (&#8216;&#8203;-&#39;) or absent, <b class="mdoc-name">cat</b> reads from
+				the standard input.
+			</div>
+		</div>
+		<p>
+			Any modern UNIX system can format <span class="lang">mdoc</span> manuals without needing special software.
+		</p>
+		<p>
+			I've mentioned UNIX several times already, but in fact, <span class="lang">mdoc</span> isn't exclusively tied to UNIX.
+			Although UNIX and <span class="lang">mdoc</span> are historically linked, open source <span class="lang">mdoc</span>
+			tools exist for any operating system.  Furthermore, the documentation capabilities of <span class="lang">mdoc</span>
+			apply to computing systems in general&mdash;not just UNIX.
+		</p>
+		<p>
+			In this book I'll assume you are casually familiar with <span class="cmd">man</span> and its output.  This will allow us
+			to focus on manuals with the same formatted output in mind.  Thus, if you're unfamiliar with UNIX or <span
+				class="cmd">man</span>, this is a good time to read an introductory text on the subject, or at the very least,
+			read the output of <span class="cmdline">man man</span> (the manual page of the <span class="cmd">man</span> command).
+		</p>
+		<p>
+			This is not a canonical reference! The <span class="lang">mdoc</span> language is not standardised.  For official
+			reference, consult the manual distributed with your target computer system.  This work primarily addresses the elements
+			of <span class="lang">mdoc</span> common to any UNIX deployment, noting common pitfalls in portability.
+		</p>
+	</body>
+</html>
