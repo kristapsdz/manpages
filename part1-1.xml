@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
+		<h2>
+			Commands
+		</h2>
 		<p>
 			Commands are the way in which a user operates her computer.  Already I've noted the <span class="cmd">man</span>
 			command: if you've interacted with a UNIX machine, you've probably run at least <code class="cmdline">man intro</code>

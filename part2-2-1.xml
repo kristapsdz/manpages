@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
+		<h3>
+			Prologue
+		</h3>
 		<p>
 			The prologue consists at most of the <span class="macro">Dd</span>, <span class="macro">Dt</span>, and <span
 				class="macro">Os</span> macros.  These always occur at the beginning of a manual.

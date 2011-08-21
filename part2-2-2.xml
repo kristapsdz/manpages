@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
+		<h3>
+			Document Body
+		</h3>
 		<p>
 			The document body begins with the first macro not in the prologue set (<span class="macro">Dd</span>, <span
 				class="macro">Dt</span>, and <span class="macro">Os</span>).  The document body consists of the manual content

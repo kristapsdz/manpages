@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
+		<h3>
+			Simple Command
+		</h3>
 		<p>
 			Consider a simple UNIX command <span class="cmd">hi</span> that prints <span class="screen">hello, world</span> and
 			exits.  Let's create a manual page <span class="file">hi.1</span> documenting this command.  In this example, I'll begin

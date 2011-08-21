@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
+		<h1>
+			Manual Syntax and Structure
+		</h1>
 		<p>
 			In the last part, I introduced some <span class="lang">mdoc</span> language syntax by way of example.  In this part,
 			I'll study the structure of the UNIX manual itself.

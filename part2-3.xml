@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
+		<h2>
+			Layout
+		</h2>
 		<p>
 			An <span class="lang">mdoc</span> document body is divided into sections.  The names and ordering of these sections is
 			dictated by convention extending to the first published edition of UNIX.
@@ -77,9 +80,9 @@
 				class="cat">3</span> and <span class="cat">2</span> manuals; while <span class="sec">EXIT STATUS</span> is found
 			for most category <span class="cat">1</span>, <span class="cat">6</span>, and <span class="cat">8</span> manuals.
 		</p>
-		<h1>
-			Name
-		</h1>
+		<h4>
+			NAME
+		</h4>
 		<p>
 			The <span class="sec">NAME</span> section immediately follows the document prologue and is thus usually the first macro
 			of the document body.  It specifies the name of each documented component, and provides a brief description of the
@@ -125,17 +128,17 @@
 			Note that the punctuation should be separate from the macro argument.  This allows the formatter to distinguish between
 			the name and trailing punctuation.
 		</p>
-		<h1>
-			Synopsis
-		</h1>
+		<h4>
+			SYNOPSIS
+		</h4>
 		<p>
 			The <span class="sec">SYNOPSIS</span> section, if specified, follows the <span class="sec">NAME</span> section.  It
 			specifies the calling syntax of a component, thus, it is necessary for functions and commands.  The <span
 				class="sec">SYNOPSIS</span> section has a layout dictated by convention, and depends upon the category.
 		</p>
-		<h2>
+		<h5>
 			Commands
-		</h2>
+		</h5>
 		<p>
 			For command manuals in category <span class="cat">1</span>, <span class="cat">6</span>, and <span class="cat">9</span>,
 			each command must have its full syntax stipulated.
@@ -171,9 +174,9 @@
 			necessary that we specify the name of each command.  In this example, an additional command <span class="cmd">hi</span>
 			is specified, which has neither flags nor arguments.
 		</p>
-		<h2>
+		<h5>
 			Functions
-		</h2>
+		</h5>
 		<p>
 			Function libraries are more complicated, as they involve more diverse content.  A function library <span
 				class="sec">SYNOPSIS</span> section consists of all documented material, including header files, functions,
@@ -257,16 +260,16 @@
 			<span class="macro">In</span> macros.  These need not necessarily much with the <span class="sec">NAME</span> section
 			ordering, but should be as close as possible.
 		</p>
-		<h1>
-			Description
-		</h1>
+		<h4>
+			DESCRIPTION
+		</h4>
 		<p>
 			This section documents the component itself, and is usually the longest.  For commands, each command is described in
 			detail along with its arguments.  For functions, each function must be described along with its types and arguments.
 		</p>
-		<h2>
+		<h5>
 			Commands
-		</h2>
+		</h5>
 		<p>
 			A command or set of commands is documented in <span class="sec">DESCRIPTION</span> with a brief explanation of
 			behaviour, a list of arguments, and default behaviour regarding those arguments.
@@ -294,9 +297,9 @@ prints a mixed-case greeting to standard output.
 			<span class="sec">DESCRIPTION</span>.  Remember to specify a documented command, in this case, whenever invoking the
 			<span class="macro">Nm</span> macro.  Command exit statuses are documented in <span class="sec">EXIT STATUS</span>.
 		</p>
-		<h2>
+		<h5>
 			Functions
-		</h2>
+		</h5>
 		<p>
 			Functions do not share the <span class="screen">The arguments are as follows</span> convention that commands enjoy.
 			Most often, a function is described in paragraph form.
@@ -334,9 +337,9 @@ is prefixed to the output.
 			Above all, you must be careful to document each argument to each function.  Function return values are usually
 			documented in <span class="sec">RETURN VALUES</span>.
 		</p>
-		<h1>
-			Implementation notes
-		</h1>
+		<h4>
+			IMPLEMENTATION NOTES
+		</h4>
 		<p>
 			For components describing an algorithm, or implementing a generic interface, it's at time useful to document the
 			implementation itself.  As this is not relevant to the calling syntax or description of a component, this is relegated
@@ -365,9 +368,9 @@ Since swapping is in-place, a constant number of allocations occur.
 		<p>
 			In general, <span class="sec">IMPLEMENTATION NOTES</span> is not used, and is thus rarely found in UNIX manuals. 
 		</p>
-		<h1>
-			Return values
-		</h1>
+		<h4>
+			RETURN VALUES
+		</h4>
 		<p>
 			Manuals describing functions (categories <span class="cat">2</span>, <span class="cat">3</span>, and <span
 				class="cat">9</span>) must use the <span class="sec">RETURN VALUES</span> section to document each function's
@@ -395,9 +398,9 @@ The
 .Fn hello
 function returns zero on success and non-zero on failure.
 		</pre>
-		<h1>
-			Environment
-		</h1>
+		<h4>
+			ENVIRONMENT
+		</h4>
 		<p>
 			Both commands and functions may be affected by UNIX environmental
 			variables.  These must be documented in the <span class="sec">ENVIRONMENT</span> section of the manual.  Each variable
@@ -414,9 +417,9 @@ The time zone for when displaying dates.
 			Some historical manuals use <span class="sec">ENVIRONMENT VARIABLES</span> instead of <span
 				class="sec">ENVIRONMENT</span>.
 		</p>
-		<h1>
-			Files
-		</h1>
+		<h4>
+			FILES
+		</h4>
 		<p>
 			Both commands and functions may also be affected by files, although this is mainly the purview of commands.  These files
 			should be listed in the <span class="sec">FILES</span> section in a tagged list.
@@ -428,9 +431,9 @@ The time zone for when displaying dates.
 User's login profile.
 .El
 		</pre>
-		<h1>
-			Exit Status
-		</h1>
+		<h4>
+			EXIT STATUS
+		</h4>
 		<p>
 			This section is the dual of <span class="sec">RETURN VALUES</span> for commands in categories <span
 				class="cat">1</span>, <span class="cat">6</span>, and <span class="cat">8</span>.  It documents the exit status
@@ -447,9 +450,9 @@ User's login profile.
 		<p>
 			More complex commands should document all possible exit status.
 		</p>
-		<h1>
-			Examples
-		</h1>
+		<h4>
+			EXAMPLES
+		</h4>
 		<p>
 			In many situations of casual use, the <span class="sec">EXAMPLES</span> section is the first visited in a manual.  It
 			should consist of concise, documented examples of the most common uses of your component.  
@@ -514,9 +517,9 @@ main(int argc, char *argv[]) {
 			Some manuals will use the <span class="macro">vS</span> and <span class="macro">vE</span> macros around source code.
 			I'll discuss these later in this book, but they should be avoided for portable manuals.
 		</p>
-		<h1>
-			Diagnostics
-		</h1>
+		<h4>
+			DIAGNOSTICS
+		</h4>
 		<p>
 			If your component emits regular debug, status, error, or warning messages, document the syntax of these messages in
 			<span class="sec">DIAGNOSTICS</span>.
@@ -547,18 +550,18 @@ may be followed by additional debugging information in
 .Cm %extra .
 .El
 		</pre>
-		<h1>
-			Errors
-		</h1>
+		<h4>
+			ERRORS
+		</h4>
 		<p>
 			This section is used exclusively by functions that set or return a regular error code.  The most common use is for
 			system calls (category two) setting error constants in the C library.  In either case, this section should consist of a
 			single list documenting all possible error codes.  In the latter case, each error should be labelled within the <span
 				class="macro">Er</span> macro.
 		</p>
-		<h1>
-			See Also
-		</h1>
+		<h4>
+			SEE ALSO
+		</h4>
 		<p>
 			This section consists of cross-references to other manuals or literature.  It is a standard section in most UNIX
 			manuals.  Any components referenced in your manual should be duplicated here along with any other bibliographic texts.
@@ -598,9 +601,9 @@ may be followed by additional debugging information in
 		<p>
 			Bibliographic references should be ordered by document title.  Advanced references will be covered later in this book.
 		</p>
-		<h1>
-			Standards
-		</h1>
+		<h4>
+			STANDARDS
+		</h4>
 		<p>
 			If your component references any standards literature, it should be mentioned here.  Most standards (e.g., POSIX, ANSI,
 			etc.) may be semantically noted with the <span class="macro">St</span> macro.  When implementing standardised wire
@@ -623,9 +626,9 @@ specification.
 		<p>
 			This section has also been referred to as <span class="sec">CONFORMING TO</span> on some GNU/Linux manuals.
 		</p>
-		<h1>
-			History
-		</h1>
+		<h4>
+			HISTORY
+		</h4>
 		<p>
 			Some components have a historical basis: this should be included here.  Keep this information terse and, above all,
 			correct.
@@ -634,9 +637,9 @@ specification.
 			If your manual includes prior implementations of your component, for example, it's common to include the dates and
 			developers of those prior implementations.
 		</p>
-		<h1>
-			Authors
-		</h1>
+		<h4>
+			AUTHORS
+		</h4>
 		<p>
 			Another standard section for UNIX manuals is the <span class="sec">AUTHORS</span> section, which should always mention
 			the current contact for the utility.  The traditional text for this section is as follows.
@@ -663,24 +666,24 @@ reference was written by
 		<p>
 			The term <span class="screen">reference</span> in this fragment should reflect the content of the manual.
 		</p>
-		<h1>
-			Caveats
-		</h1>
+		<h4>
+			CAVEATS
+		</h4>
 		<p>
 			The <span class="sec">CAVEATS</span> section is not often used.  It consists of text relevant to unexpected (but
 			unchangeable) behaviour of the component.
 		</p>
-		<h1>
-			Bugs
-		</h1>
+		<h4>
+			BUGS
+		</h4>
 		<p>
 			If the component has known bugs, they should be listed here.  In some historic manuals, authors used this section to
 			list <q>no bugs present</q>; however, this text can be misleading for machine-readers of manuals and should be avoided
 			in new manuals.
 		</p>
-		<h1>
-			Security Considerations
-		</h1>
+		<h4>
+			SECURITY CONSIDERATIONS
+		</h4>
 		<p>
 			The <span class="sec">SECURITY CONSIDERATIONS</span> section is reserved for components whose deployment may be
 			sensitive to security conditions, such as network daemons.  It should include suggestions on security measures beyond

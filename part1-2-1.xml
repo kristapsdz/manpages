@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
+		<h3>
+			Simple Function
+		</h3>
 		<p>
 			Let's study a simple C function, <span class="func">hi</span>, which prints <span class="screen">hello, world</span>
 			just like in prior sections.  We begin with the familiar first macros.

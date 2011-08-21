@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
+		<h3>
+			Elaborate Function
+		</h3>
 		<p>
 			Let's also study a function form of the elaborate command example.  Again, I'll use C as my example.  Since this is a
 			bit more involved, you may feel a little lost if you're not familiar with C programming.  I'll keep the technical jargon

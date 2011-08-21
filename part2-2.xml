@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
+		<h2>
+			Structure
+		</h2>
 		<p>
 			An <span class="lang">mdoc</span> manual is divided into two logical parts: the <span class="term">prologue</span> and
 			the <span class="term">document body</span>.

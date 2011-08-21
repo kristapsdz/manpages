@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
+		<h1>
+			Preface
+		</h1>
 		<blockquote>
 			<p>
 				A utility without a manual is of no utility at all.

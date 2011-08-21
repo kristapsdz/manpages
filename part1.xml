@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
+		<h1>
+			Tutorial Introduction
+		</h1>
 		<p>
 			Let's begin with practical examples of <span class="lang">mdoc</span>.
 		</p>

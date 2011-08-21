@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
+		<h2>
+			Functions
+		</h2>
 		<p>
 			Programming functions are a significant part of the UNIX canon, from the system call interface to the C library.  If
 			you're a C or C++ developer, chances are you've at least glanced through the manuals of system functions such as <span

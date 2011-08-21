@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
+		<h2>
+			System Call
+		</h2>
 		<p>
 			A <span class="term">system call</span> differs from a <span class="term">user-land function</span> in that it triggers
 			the operating system kernel to perform some operation.  This usually applies to I/O, such as reading from files or

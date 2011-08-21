@@ -3,10 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
-		<title>Part 1, Chapter 1, Section 1: Complex Command</title>
+		<title>Part 1, Chapter 1, Section 2: Elaborate Command</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
+		<h3>
+			Elaborate Command
+		</h3>
 		<p>
 			Most UNIX commands have flags, arguments, return values, environmental variables, and so on.  So let's expand upon our
 			example to include arguments for writing to an output file and a flag for outputting in uppercase letters.  Furthermore,

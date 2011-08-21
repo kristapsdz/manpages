@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
+		<h2>
+			Basic Syntax
+		</h2>
 		<p>
 			Before studying the structure of \mdoc{} manuals, let's formalise the language we've seen so far.  We've already noted
 			that \mdoc{} documents are line-based: some lines, demarked by a leading `.', are interpreted as macros.  Those without
