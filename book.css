@@ -2,11 +2,19 @@ html			{ }
 
 body			{ font-family: serif;
 			  letter-spacing: 1px;
-			  line-height: 12pt;
+			  line-height: 14pt;
 			  font-size: 10pt; }
 
-p.edits,
 p.nav			{ display: none; }
+
+p.edits			{ display: none; }
+
+a			{ color: #0000ff; 
+			  text-decoration: none; }
+
+a.term			{ border-bottom: 1px dotted #0000ff; }
+
+a:hover			{ color: #339999; }
 
 h1,
 h2,
@@ -27,7 +35,6 @@ span.sec		{ font-weight: bolder; }
 pre,
 div.mdocin,
 div.mdocout,
-div.mdocsyntax,
 span.cmd,
 span.cmdflag,
 span.cmdarg,
@@ -50,10 +57,38 @@ span.cmdopt:after	{ content: "]"; }
 span.macroopt:before	{ content: "["; }
 span.macroopt:after	{ content: "]"; }
 span.func:after		{ content: "()"; }
+span.cmdline:before	{ content: "$ "; }
 
-pre			{ }
+span.cmdline,
+span.screen		{ border: 1px dotted green; 
+			  padding: 2px; 
+			  background-color: #eeeeee; }
 
-dl			{ }
+pre			{ border: 1px dotted #dddddd;
+			  padding-left: 1ex;
+			  margin-left: 2%; }
+
+dl			{ margin-left: 2%; }
+
+div.mdocin,
+div.mdocout,
+div.mdocsyntax		{ border: 1px dotted #dddddd;
+			  max-width: 60em; 
+			  margin-left: 2%; }
+
+div.mdocin,
+div.mdocsyntax		{ padding: 0.5ex 0 0.5ex 1.0ex; }
+
+div.mdocout		{ padding-left: 3ex; }
 
 div.mdocout h1		{ font-size: inherit; 
-			  margin-bottom: 0px; }
+			  margin-bottom: 0px;
+			  margin-left: -2ex; } 
+
+div.mdocout td		{ vertical-align: top; }
+
+div.mdocout table	{ width: 100%; margin-top: 0ex; margin-bottom: 0ex; } 
+
+div.mdocout blockquote	{ margin-left: 5ex; margin-top: 0ex; margin-bottom: 0ex; } 
+
+div.mdocout div.section	{ margin-bottom: 2ex; margin-left: 5ex; }

@@ -87,3 +87,11 @@ div.mdocout		{ padding-left: 3ex; }
 div.mdocout h1		{ font-size: inherit; 
 			  margin-bottom: 0px;
 			  margin-left: -2ex; } 
+
+div.mdocout td		{ vertical-align: top; }
+
+div.mdocout table	{ width: 100%; margin-top: 0ex; margin-bottom: 0ex; } 
+
+div.mdocout blockquote	{ margin-left: 5ex; margin-top: 0ex; margin-bottom: 0ex; } 
+
+div.mdocout div.section	{ margin-bottom: 2ex; margin-left: 5ex; }
