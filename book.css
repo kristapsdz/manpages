@@ -1,6 +1,9 @@
 html			{ }
 
-body			{ }
+body			{ font-family: serif;
+			  letter-spacing: 1px;
+			  line-height: 12pt;
+			  font-size: 10pt; }
 
 p.edits,
 p.nav			{ display: none; }
@@ -35,7 +38,9 @@ span.macroflag,
 span.screen,
 span.type,
 span.value,
-span.var		{ font-family: monospace; }
+span.var		{ font-family: monospace; 
+			  line-height: 11pt;
+			  font-size: 9pt; } 
 
 span.cmdflag:before,
 span.macroflag:before	{ content: "-"; }

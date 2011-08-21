@@ -16,26 +16,27 @@
 			with the full manual.  In later examples, we'll build up the manual piece by piece.
 		</p>
 		<pre>
-.Dd May 30, 2011
-.Dt HI 1
-.Os
-.Sh NAME
-.Nm hi
-.Nd print \(dqhello, world\(dq
-.Sh SYNOPSIS
-.Nm
-.Sh DESCRIPTION
-Print
-.Qq hello, world
-and exit.
+ 1 .Dd May 30, 2011
+ 2 .Dt HI 1
+ 3 .Os
+ 4 .Sh NAME
+ 5 .Nm hi
+ 6 .Nd print \(dqhello, world\(dq
+ 7 .Sh SYNOPSIS
+ 8 .Nm
+ 9 .Sh DESCRIPTION
+10 Print
+11 .Qq hello, world
+12 and exit.
 		</pre>
 		<p>
 			How to display this manual page depends on the system you're using.
 		</p>
 		<p>
-			Historically, the command of choice for formatting UNIX manuals for a terminal was <span class="cmd">nroff</span>.  For
-			now, let's stick with that.  If you're running on a non-UNIX system, or <span class="cmd">nroff</span> isn't installed,
-			consult Part III of this book for a list of alternatives.
+			Historically, the command of choice for formatting UNIX manuals for a <a class="term"
+				href="glossary.xhtml#terminal">terminal</a> was <span class="cmd">nroff</span>.  For now, let's stick with that.
+			<!--If you're running on a non-UNIX system, or <span class="cmd">nroff</span> isn't installed, consult Part III of this
+			book for a list of alternatives.-->
 		</p>
 		<p>
 			To display output, you must invoke <span class="cmd">nroff</span> as <span class="cmdline">nroff -mandoc -Tascii
@@ -84,10 +85,10 @@ and exit.
 		</p>
 		<p>
 			The <span class="screen">.Qq</span> is part of <span class="lang">mdoc</span>'s instruction syntax.  Input lines
-			beginning with a dot are instructions to the formatter called <span class="term">macros</span>.  The <span
-				class="term">macro name</span> is a terse two or three-character word following the dot, for example, <span
-				class="macro">Qq</span>.  Lines following the macro name are interpreted as <span class="term">arguments</span>
-			in the <span class="term">scope</span> of the macro.
+			beginning with a dot are instructions to the formatter called <a class="term" href="glossary.xhtml#mdoc_macro">mdoc
+				macros</a> or just macros for short.  The macro name is a terse two or three-character word following the dot,
+			for example, <span class="macro">Qq</span>.  Lines following the macro name are interpreted as <span
+				class="term">arguments</span> in the <span class="term">scope</span> of the macro.
 		</p>
 		<p>
 			Although this syntax may look strange, note its economy as regards screen real-estate, and terseness as regards

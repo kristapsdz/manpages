@@ -59,9 +59,10 @@ span.cmdopt:after	{ content: "]"; }
 span.macroopt:before	{ content: "["; }
 span.macroopt:after	{ content: "]"; }
 span.func:after		{ content: "()"; }
+span.cmdline:before	{ content: "$ "; }
 
 span.cmdline,
-span.screen		{ border: 1px dotted #cccccc; 
+span.screen		{ border: 1px dotted green; 
 			  padding: 2px; 
 			  background-color: #eeeeee; }
 

@@ -21,13 +21,14 @@
 		<p>
 			If you've already written a few manuals, you may want to read this part anyway: beyond explaining technical <span
 				class="lang">mdoc</span> language concepts by example, I'll also introduce some best practices and discuss
-			portable between various <span class="lang">mdoc</span> environments.
+			portability between various <span class="lang">mdoc</span> environments.
 		</p>
 		<p>
 			I'll frequently refer to the screen output of <span class="lang">mdoc</span> documents as they're displayed by the
 			classical UNIX <span class="cmd">man</span> utility.  Furthermore, I'll refer to invoking utilities in the traditional
-			UNIX way&mdash;on the command line.  Due to both of these caveats, a bit of UNIX knowledge will help to avoid confusion,
-			but I'll briefly introduce invocation syntaxes as the need arises.
+			UNIX way&mdash;on the <a class="term" href="glossary.xhtml#command_line">command line</a>.  Due to both of these
+			caveats, a bit of UNIX knowledge will help to avoid confusion, but I'll briefly introduce invocation syntaxes as the
+			need arises.
 		</p>
 		<p class="nav">
 			<a href="part1-1.xhtml">Next</a>

@@ -11,31 +11,67 @@
 			Glossary
 		</h1>
 		<dl>
-			<dt>
-				<a name="html">HTML</a>
+			<dt name="command_line">
+				Command Line
 			</dt>
 			<dd>
-				Hypertext markup language.
+				The text environment for operating <a class="term" href="#unix">UNIX</a> systems.  Often replaced by graphical
+				windowing systems such as the <a class="external" href="http://www.xorg.org">X Window System</a>.
 			</dd>
-			<dt>
-				<a name="man_pages">Man Pages</a>
+			<dt name="html">
+				HTML
 			</dt>
 			<dd>
-				Short form of <q>UNIX manual pages</q>.
-				System documentation for UNIX machines.
-				Usually viewed using the <span class="cmd">man</span>.
+				Hypertext markup language.  A structured mark-up language standardised by the <a class="external"
+					href="http://www.w3.org">W3C</a>.  This is the predominant language for formatting world wide web
+				content.
 			</dd>
-			<dt>
-				<a name="rtf">RTF</a>
+			<dt name="man_pages">
+				Man Pages
 			</dt>
 			<dd>
-				Rich text format.
+				Short form of <q>UNIX manual pages</q>.  System documentation for <a class="term" href="#unix">UNIX</a> systems.
+				Usually viewed using the <span class="cmd">man</span> utility, which pages formatted manual documents using to
+				the screen.  Man pages are formatted by a utility such as <span class="cmd">troff</span> or <span
+					class="cmd">mandoc</span>.
 			</dd>
-			<dt>
-				<a name="unix">UNIX</a>
+			<dt name="mdoc">
+				Mdoc
 			</dt>
 			<dd>
-				Computer system...
+				Language for formatting <a class="term" href="#man_pages">man pages</a>.  Originally one of several available
+				macro package in the <span class="lang">roff</span> language for the <span class="cmd">troff</span> text
+				processor.
+			</dd>
+			<dt name="mdoc_macro">
+				Mdoc Macro
+			</dt>
+			<dd>
+				A short (two or three-letter) instruction in a <a class="term" href="#mdoc">mdoc</a> document.  Can accept flags
+				or arguments.
+			</dd>
+			<dt name="rtf">
+				RTF
+			</dt>
+			<dd>
+				Rich text format.  Proprietary document file format used in some popular word processors.
+			</dd>
+			<dt name="terminal">
+				Terminal
+			</dt>
+			<dd>
+				The <a class="term" href="#command_line">command line</a> environment on a computer.  This can either refer to a
+				terminal utility run within a graphical environment or the computer screen itself in text mode.
+			</dd>
+			<dt name="unix">
+				UNIX
+			</dt>
+			<dd>
+				Computer system originally developed by AT&amp;T Bell Labs in 1969.
+				Modern open-source derivations include <a class="external" href="http://www.gnu.org">GNU/Linux</a>, <a
+					class="external" href="http://www.freebsd.org">FreeBSD</a>, <a class="external"
+					href="http://www.netbsd.org">NetBSD</a>, <a class="external" href="http://www.openbsd.org">OpenBSD</a>,
+				etc.
 			</dd>
 		</dl>
 		<p class="edits">

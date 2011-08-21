@@ -12,8 +12,8 @@
 		</h2>
 		<p>
 			Commands are the way in which a user operates her computer.  Already I've noted the <span class="cmd">man</span>
-			command: if you've interacted with a UNIX machine, you've probably run at least <code class="cmdline">man intro</code>
-			or <code class="cmdline">man man</code> to learn about your system.
+			command: if you've interacted with a UNIX system, you've probably run at least <span class="cmdline">man intro</span>
+			or <span class="cmdline">man man</span> to learn about your system.
 		</p>
 		<p>
 			In this chapter, I'll discuss how to document these commands with <span class="lang">mdoc</span>.  
@@ -48,8 +48,9 @@
 			have a grasp of <span class="lang">mdoc</span> syntax and some of its more widely-used macros.
 		</p>
 		<p>
-			In general, I'll refer to commands as <span class="cmd">command</span> <span class="cmdopt"><span
-					class="cmdflag">flag</span> <span class="cmdarg">farg</span></span> <span class="cmdarg">arg</span>.
+			In general, I'll refer to commands as <span class="cmdline"><span class="cmd">command</span> <span class="cmdopt"><span
+						class="cmdflag">flag</span> <span class="cmdarg">farg</span></span> <span
+					class="cmdarg">arg</span></span>.
 		</p>
 		<p>
 			Here, <span class="cmd">command</span> refers to the command invocation name, <span class="cmdflag">flag</span> is a
