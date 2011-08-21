@@ -23,13 +23,17 @@
 		<p>
 			Let's start by documenting our command-line options in the <span class="sec">SYNOPSIS</span> section:
 		</p>
-		<pre>
-.Sh SYNOPSIS                  
-.Nm                           
-.Op Fl C                      
-.Op Fl o Ar output            
-.Op Ar prefix                 
-		</pre>
+		<div class="mdocin">
+			.Sh SYNOPSIS                  
+			<br />
+			.Nm                           
+			<br />
+			.Op Fl C                      
+			<br />
+			.Op Fl o Ar output            
+			<br />
+			.Op Ar prefix                 
+		</div>
 		<p>
 			Already, we begin to see the output take shape with the <span class="screen">C</span> and <span class="screen">o</span>
 			characters, and the <span class="screen">prefix</span>.  But what are these other words, <span class="screen">Fl</span>
@@ -107,25 +111,41 @@
 			With our command syntax documented, let's document the arguments themselves.  To do so, we detail the meaning of flags
 			and arguments in the <span class="sec">DESCRIPTION</span> section.
 		</p>
-		<pre>
-The
-.Nm
-function prints
-.Qq hello, world
-and returns.
-.Pp
-Its arguments are as follows:
-.Bl -tag -width Ds
-.It Fl C
-Print only uppercase letters.
-.It Fl o Ar output
-Write to file
-.Ar output .
-.It Ar prefix
-Prefix the output with
-.Ar prefix .
-.El
-		</pre>
+		<div class="mdocin">
+			The
+			<br />
+			.Nm
+			<br />
+			function prints
+			<br />
+			.Qq hello, world
+			<br />
+			and returns.
+			<br />
+			.Pp
+			<br />
+			Its arguments are as follows:
+			<br />
+			.Bl -tag -width Ds
+			<br />
+			.It Fl C
+			<br />
+			Print only uppercase letters.
+			<br />
+			.It Fl o Ar output
+			<br />
+			Write to file
+			<br />
+			.Ar output .
+			<br />
+			.It Ar prefix
+			<br />
+			Prefix the output with
+			<br />
+			.Ar prefix .
+			<br />
+			.El
+		</div>
 		<p>
 			Immediately, we see the introduction of several new macros: <span class="macro">Pp</span>, <span
 				class="macro">Bl</span>, <span class="macro">It</span>, and <span class="macro">El</span>.  More interestingly,
@@ -181,16 +201,16 @@ Prefix the output with
 		<p>
 			Let's look closer at the input line 
 		</p>
-		<pre>
-.Ar prefix .
-		</pre>
+		<div class="mdocin">
+			.Ar prefix .
+		</div>
 		<p>
 			Note that it's correctly rendered with the period flushed up against the text, although the period itself isn't
 			underlined.
 		</p>
 		<div class="mdocout">
 			<dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="mdoc-list mdoc-list-tag">
-				<dt class="mdoc-list-tag" style="margin-top: 1.00em;">
+				<dt class="mdoc-list-tag">
 					<i class="mdoc-arg">prefix</i></dt>
 				<dd class="mdoc-list-tag" style="margin-left: 6.00ex;">
 					Prefix the output with <i class="mdoc-arg">prefix</i>.</dd>
@@ -207,37 +227,65 @@ Prefix the output with
 			<span class="macro">Os</span> macros from the last section, although the <span class="macro">Dt</span> argument has
 			changed with our command name.
 		</p>
-		<pre>
-.Dd May 30, 2011
-.Dt HELLO 1
-.Os
-.Sh NAME
-.Nm hello
-.Nd print \(dqhello, world\(dq
-.Sh SYNOPSIS
-.Nm \" first use the command naem
-.Op Fl C \" then an optional flag
-.Op Fl o Ar output \" then an optional flag/argument pair
-.Op Ar prefix \" then an optional argument
-.Sh DESCRIPTION
-The
-.Nm
-function prints
-.Qq hello, world
-and returns.
-.Pp \" begin documenting arguments
-Its arguments are as follows:
-.Bl -tag -width Ds \" start a tagged list
-.It Fl C \" first the standalone flag
-Print only uppercase letters.
-.It Fl o Ar output \" now the flag with argument
-Write to file
-.Ar output .
-.It Ar prefix \" now the argument
-Prefix the output with
-.Ar prefix .
-.El
-		</pre>
+		<div class="mdocin">
+			.Dd May 30, 2011
+			<br />
+			.Dt HELLO 1
+			<br />
+			.Os
+			<br />
+			.Sh NAME
+			<br />
+			.Nm hello
+			<br />
+			.Nd print \(dqhello, world\(dq
+			<br />
+			.Sh SYNOPSIS
+			<br />
+			.Nm 
+			<br />
+			.Op Fl C 
+			<br />
+			.Op Fl o Ar output 
+			<br />
+			.Op Ar prefix 
+			<br />
+			.Sh DESCRIPTION
+			<br />
+			The
+			<br />
+			.Nm
+			<br />
+			function prints
+			<br />
+			.Qq hello, world
+			<br />
+			and returns.
+			<br />
+			.Pp 
+			<br />
+			Its arguments are as follows:
+			<br />
+			.Bl -tag -width Ds 
+			<br />
+			.It Fl C
+			<br />
+			Print only uppercase letters.
+			<br />
+			.It Fl o Ar output 
+			<br />
+			Write to file
+			<br />
+			.Ar output .
+			<br />
+			.It Ar prefix
+			<br />
+			Prefix the output with
+			<br />
+			.Ar prefix .
+			<br />
+			.El
+		</div>
 		<p>
 			Notice that we don't repeat the <span class="macro">Op</span> macros in the <span class="sec">DESCRIPTION</span>,
 			although we stipulate them in the <span class="sec">SYNOPSIS</span>.  This is because we document the flags and
@@ -249,10 +297,11 @@ Prefix the output with
 			this to <span class="file">hi.1</span> because we didn't stipulate any exit state; however, it's good practise to always
 			include this section, even if your command only exits in one way.
 		</p>
-		<pre>
-.Sh EXIT STATUS
-.Ex -std
-		</pre>
+		<div class="mdocin">
+			.Sh EXIT STATUS
+			<br />
+			.Ex -std
+		</div>
 		<p>
 			The <span class="macro">Ex</span> macro is special in that it always accepts a flag, <span class="macroflag">std</span>.
 			This is by convention.  Although you can specify an argument to <span class="macro">Ex</span>, it works like <span

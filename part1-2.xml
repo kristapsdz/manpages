@@ -46,10 +46,11 @@
 			Header files for the C language, such as in our examples, end with the <span class="file">.h</span> suffix.  A C
 			function prototype indicates the calling syntax of a function, such as the following.
 		</p>
-		<pre>
-int
-isspace(int c);
-		</pre>
+		<div class="mdocin">
+			int
+			<br />
+			isspace(int c);
+		</div>
 		<p>
 			In this, the C function <span class="screen">isspace</span>, notationally referred to as <span
 				class="func">isspace</span>, has a single argument <span class="screen">int c</span> (an integer named <span
