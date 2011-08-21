@@ -9,6 +9,13 @@ body			{ font-family: serif;
 
 p.nav			{ }
 
+a			{ color: #0000ff; 
+			  text-decoration: none; }
+
+a.term			{ border-bottom: 1px dotted #0000ff; }
+
+a:hover			{ color: #339999; }
+
 h1,
 h2,
 h3,

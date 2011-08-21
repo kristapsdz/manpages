@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Glossary</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<h1>
+			Glossary
+		</h1>
+		<dl>
+			<dt>
+				<a name="html">HTML</a>
+			</dt>
+			<dd>
+				Hypertext markup language.
+			</dd>
+			<dt>
+				<a name="man_pages">Man Pages</a>
+			</dt>
+			<dd>
+				Short form of <q>UNIX manual pages</q>.
+				System documentation for UNIX machines.
+				Usually viewed using the <span class="cmd">man</span>.
+			</dd>
+			<dt>
+				<a name="rtf">RTF</a>
+			</dt>
+			<dd>
+				Rich text format.
+			</dd>
+			<dt>
+				<a name="unix">UNIX</a>
+			</dt>
+			<dd>
+				Computer system...
+			</dd>
+		</dl>
+	</body>
+</html>

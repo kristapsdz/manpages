@@ -107,5 +107,11 @@
 				<content src="part2-3.xhtml"/>
 			</navPoint>
 		</navPoint>
+		<navPoint class="h1" id="glossary" playOrder="17">
+			<navLabel>
+				<text>Glossary</text>
+			</navLabel>
+			<content src="glossary.xhtml"/>
+		</navPoint>
 	</navMap>
 </ncx>

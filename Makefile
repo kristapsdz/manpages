@@ -6,6 +6,7 @@ SOURCE	= book.css \
 	  container.xml \
 	  css/book.css \
 	  external.png \
+	  glossary.xml \
 	  index.sgml \
 	  index.css \
 	  license.png \
@@ -27,7 +28,8 @@ SOURCE	= book.css \
 	  part2-2-2.xml \
 	  part2-3.xml
 
-XHTMLS	= preface.xhtml \
+XHTMLS	= glossary.xhtml \
+	  preface.xhtml \
 	  part1.xhtml \
 	  part1-1.xhtml \
 	  part1-1-1.xhtml \
@@ -81,6 +83,7 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf
 	(cd .book && zip -q -X ../$@ \
 		mimetype \
 		META-INF/container.xml \
+		OPS/glossary.xhtml \
 		OPS/preface.xhtml \
 		OPS/part1.xhtml \
 		OPS/part1-1.xhtml \

@@ -11,20 +11,19 @@
 			Preface
 		</h1>
 		<blockquote>
-			<p>
-				A utility without a manual is of no utility at all.
-			</p>
+			<q>A utility without a manual is of no utility at all.</q>
 		</blockquote>
 		<p>
 			This is a guide for writing UNIX manuals in the <span class="lang">mdoc</span> language.  If you're new to writing UNIX
 			manuals, or you want to learn about best practices for high-quality manuals, this book may benefit your work.
 		</p>
 		<p>
-			To those unfamiliar with UNIX, <span class="lang">mdoc</span> is a language for documenting utilities, programming
-			functions, file and wire formats, hardware device interfaces, and so on.  By a <span class="term">language</span> I mean
-			a structured, machine-readable document format such as HTML, the primary language of web pages; or RTF, used by word
+			To those unfamiliar with <a class="term" href="glossary.xhtml#unix">UNIX</a>, <span class="lang">mdoc</span> is a
+			language for documenting utilities, programming functions, file and wire formats, hardware device interfaces, and so on.
+			By a language I mean a structured, machine-readable document format such as <a class="term" href="glossary.xhtml#html">
+				HTML</a>, the primary language of web pages; or <a class="term" href="glossary.xhtml#rtf">RTF</a>, used by word
 			processors.  <span class="cmd">man</span> is the utility for querying documents in <span class="lang">mdoc</span> and
-			other languages, collectively called <span class="term">man pages</span>.  
+			other languages, collectively called <a class="term" href="glossary.xhtml#man_pages">man pages</a>.  
 		</p>
 		<p>
 			The following, for example, is a fragment of <span class="cmd">man</span> output for the <span class="cmd">cat</span>
