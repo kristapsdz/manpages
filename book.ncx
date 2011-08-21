@@ -19,90 +19,90 @@
 		</navPoint>
 		<navPoint class="h1" id="part1" playOrder="2">
 			<navLabel>
-				<text>Part 1</text>
+				<text>Tutorial Introduction</text>
 			</navLabel>
 			<content src="part1.xhtml"/>
 			<navPoint class="h2" id="part1-1" playOrder="3">
 				<navLabel>
-					<text>Part 1, Chapter 1</text>
+					<text>Commands</text>
 				</navLabel>
 				<content src="part1-1.xhtml"/>
 				<navPoint class="h3" id="part1-1-1" playOrder="4">
 					<navLabel>
-						<text>Part 1, Chapter 1, Section 1</text>
+						<text>Simple Command</text>
 					</navLabel>
 					<content src="part1-1-1.xhtml"/>
 				</navPoint>
 				<navPoint class="h3" id="part1-1-2" playOrder="5">
 					<navLabel>
-						<text>Part 1, Chapter 1, Section 2</text>
+						<text>Elaborate Command</text>
 					</navLabel>
 					<content src="part1-1-2.xhtml"/>
 				</navPoint>
 			</navPoint>
 			<navPoint class="h2" id="part1-2" playOrder="6">
 				<navLabel>
-					<text>Part 1, Chapter 2</text>
+					<text>Functions</text>
 				</navLabel>
 				<content src="part1-2.xhtml"/>
 				<navPoint class="h3" id="part1-2-1" playOrder="7">
 					<navLabel>
-						<text>Part 1, Chapter 2, Section 1</text>
+						<text>Simple Function</text>
 					</navLabel>
 					<content src="part1-2-1.xhtml"/>
 				</navPoint>
 				<navPoint class="h3" id="part1-2-2" playOrder="8">
 					<navLabel>
-						<text>Part 1, Chapter 2, Section 2</text>
+						<text>Elaborate Function</text>
 					</navLabel>
 					<content src="part1-2-2.xhtml"/>
 				</navPoint>
 			</navPoint>
 			<navPoint class="h2" id="part1-3" playOrder="9">
 				<navLabel>
-					<text>Part 1, Chapter 3</text>
+					<text>Function Library</text>
 				</navLabel>
 				<content src="part1-3.xhtml"/>
 			</navPoint>
 			<navPoint class="h2" id="part1-4" playOrder="10">
 				<navLabel>
-					<text>Part 1, Chapter 4</text>
+					<text>System Call</text>
 				</navLabel>
 				<content src="part1-4.xhtml"/>
 			</navPoint>
 		</navPoint>
 		<navPoint class="h1" id="part2" playOrder="11">
 			<navLabel>
-				<text>Part 2</text>
+				<text>Manual Syntax and Structure</text>
 			</navLabel>
 			<content src="part2.xhtml"/>
 			<navPoint class="h2" id="part2-1" playOrder="12">
 				<navLabel>
-					<text>Part 2, Chapter 1</text>
+					<text>Basic Syntax</text>
 				</navLabel>
 				<content src="part2-1.xhtml"/>
 			</navPoint>
 			<navPoint class="h2" id="part2-2" playOrder="13">
 				<navLabel>
-					<text>Part 2, Chapter 2</text>
+					<text>Structure</text>
 				</navLabel>
 				<content src="part2-2.xhtml"/>
 				<navPoint class="h3" id="part2-2-1" playOrder="14">
 					<navLabel>
-						<text>Part 2, Chapter 2, Section 1</text>
+						<text>Prologue</text>
 					</navLabel>
 					<content src="part2-2-1.xhtml"/>
 				</navPoint>
 				<navPoint class="h3" id="part2-2-2" playOrder="15">
 					<navLabel>
-						<text>Part 2, Chapter 2, Section 2</text>
+						<text>Document Body</text>
 					</navLabel>
 					<content src="part2-2-2.xhtml"/>
 				</navPoint>
 			</navPoint>
 			<navPoint class="h2" id="part2-3" playOrder="16">
 				<navLabel>
-					<text>Part 2, Chapter 3</text>
+					<text>Layout</text>
 				</navLabel>
 				<content src="part2-3.xhtml"/>
 			</navPoint>

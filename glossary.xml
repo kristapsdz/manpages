@@ -40,21 +40,35 @@
 			</dt>
 			<dd>
 				Language for formatting <a class="term" href="#man_pages">man pages</a>.  Originally one of several available
-				macro package in the <span class="lang">roff</span> language for the <span class="cmd">troff</span> text
-				processor.
+				macro package in the <span class="lang"><a class="term" href="#roff">roff</a></span> language for the <span
+					class="cmd">troff</span> text processor.
 			</dd>
 			<dt name="mdoc_macro">
 				Mdoc Macro
 			</dt>
 			<dd>
 				A short (two or three-letter) instruction in a <a class="term" href="#mdoc">mdoc</a> document.  Can accept flags
-				or arguments.
+				or arguments.  These macros were traditionally implemented as blocks in the <span class="lang"><a class="term"
+						href="#roff">roff</a></span> language.
+			</dd>
+			<dt name="roff">
+				Roff
+			</dt>
+			<dd>
+				A document language written for the original <a class="term" href="#unix">UNIX</a> implementation in 1970.  This
+				language was used for text processing.
 			</dd>
 			<dt name="rtf">
 				RTF
 			</dt>
 			<dd>
 				Rich text format.  Proprietary document file format used in some popular word processors.
+			</dd>
+			<dt name="mdoc_scope">
+				Mdoc Scope
+			</dt>
+			<dd>
+				Data in the scope of a 
 			</dd>
 			<dt name="terminal">
 				Terminal

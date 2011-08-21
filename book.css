@@ -25,6 +25,7 @@ span.term		{ font-style: italic; }
 span.sec		{ font-weight: bolder; }
 
 pre,
+div.mdocin,
 div.mdocout,
 div.mdocsyntax,
 span.cmd,

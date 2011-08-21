@@ -36,6 +36,7 @@ span.term		{ font-style: italic; }
 span.sec		{ font-weight: bolder; }
 
 pre,
+div.mdocin,
 div.mdocout,
 span.cmd,
 span.cmdflag,
@@ -72,12 +73,17 @@ pre			{ border: 1px dotted #dddddd;
 
 dl			{ margin-left: 2%; }
 
+div.mdocin,
 div.mdocout,
 div.mdocsyntax		{ border: 1px dotted #dddddd;
 			  max-width: 60em; 
-			  padding-left: 4%;
 			  margin-left: 2%; }
+
+div.mdocin,
+div.mdocsyntax		{ padding: 0.5ex 0 0.5ex 1.0ex; }
+
+div.mdocout		{ padding-left: 3ex; }
 
 div.mdocout h1		{ font-size: inherit; 
 			  margin-bottom: 0px;
-			  margin-left: -4%; } 
+			  margin-left: -2ex; } 
