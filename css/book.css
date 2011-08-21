@@ -9,6 +9,9 @@ body			{ font-family: serif;
 
 p.nav			{ }
 
+p.edits			{ font-size: smaller;
+			  color: #cccccc; }
+
 a			{ color: #0000ff; 
 			  text-decoration: none; }
 

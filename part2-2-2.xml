@@ -59,5 +59,8 @@ manuals.
 		<p class="nav">
 			<a href="part2-3.xhtml">Next</a>
 		</p>
+		<p class="edits">
+			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
+		</p>
 	</body>
 </html>
