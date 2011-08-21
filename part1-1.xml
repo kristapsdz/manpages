@@ -61,5 +61,8 @@
 			<span class="cmdopt"><span class="cmdflag">flag</span> <span class="cmdarg">farg</span></span> indicate an optional part of the invocation.
 			Since <span class="cmdarg">arg</span> is not bracketed, it is a mandatory part of the invocation.
 		</p>
+		<p class="nav">
+			<a href="part1-1-1.xhtml">Next</a>
+		</p>
 	</body>
 </html>

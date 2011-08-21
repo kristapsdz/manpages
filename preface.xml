@@ -80,5 +80,8 @@
 			reference, consult the manual distributed with your target computer system.  This work primarily addresses the elements
 			of <span class="lang">mdoc</span> common to any UNIX deployment, noting common pitfalls in portability.
 		</p>
+		<p class="nav">
+			<a href="part1.xhtml">Next</a>
+		</p>
 	</body>
 </html>

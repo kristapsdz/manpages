@@ -257,5 +257,8 @@ function returns 1 on success, 0 on failure.
 		<p>
 			From this information, a programmer should be able to interface with our library.
 		</p>
+		<p class="nav">
+			<a href="part1-4.xhtml">Next</a>
+		</p>
 	</body>
 </html>

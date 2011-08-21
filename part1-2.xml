@@ -56,5 +56,8 @@ isspace(int c);
 				class="var">c</span>) and returns a value of type <span class="type">int</span> (another integer).  Multiple
 			arguments are comma-separated.
 		</p>
+		<p class="nav">
+			<a href="part1-2-1.xhtml">Next</a>
+		</p>
 	</body>
 </html>

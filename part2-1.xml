@@ -23,6 +23,9 @@ Free-form text. \" A partial comment.
 		<p>
 			However, it's not quite the case that a 
 		</p>
+		<p class="nav">
+			<a href="part2-2.xhtml">Next</a>
+		</p>
 	</body>
 </html>
 

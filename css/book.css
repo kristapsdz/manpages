@@ -7,6 +7,8 @@ body			{ font-family: serif;
 			  line-height: 20px;
 			  font-size: 10pt; }
 
+p.nav			{ }
+
 h1,
 h2,
 h3,
@@ -68,4 +70,3 @@ div.mdocsyntax		{ border: 1px dotted #dddddd;
 div.mdocout h1		{ font-size: inherit; 
 			  margin-bottom: 0px;
 			  margin-left: -4%; } 
-

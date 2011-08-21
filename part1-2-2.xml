@@ -189,5 +189,8 @@ function returns 1 on success, 0 on failure.
 			arguments in the <span class="sec">DESCRIPTION</span> along with function operation.  This contains all we need to know
 			about the function.
 		</p>
+		<p class="nav">
+			<a href="part1-3.xhtml">Next</a>
+		</p>
 	</body>
 </html>
