@@ -8,8 +8,13 @@ body			{ font-family: serif;
 			  font-size: 10pt; }
 
 span.file,
+span.header,
 span.lang,
+span.lib,
+span.path,
 span.term		{ font-style: italic; } 
+
+span.sec		{ font-weight: bolder; }
 
 pre,
 div.mdocout,
@@ -23,6 +28,7 @@ span.macroarg,
 span.macroflag,
 span.screen,
 span.type,
+span.value,
 span.var		{ font-family: monospace; 
 			  line-height: 11pt;
 			  font-size: 9pt; } 
@@ -50,7 +56,6 @@ div.mdocout		{ border: 1px dotted #dddddd;
 			  margin-left: 2%; }
 
 div.mdocout h1		{ font-size: inherit; 
-			  margin-top: 0px;
 			  margin-bottom: 0px;
 			  margin-left: -4%; } 
 

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Part 1, Chapter 2: Function Library</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<p>
+			I've mentioned several times that the name provided to <span class="macro">Nm</span> doesn't necessarily refer to the
+			title of the manual in <span class="macro">Dt</span>.  Let's study a simple function library, using both <span
+				class="func">hi</span> and <span class="func">hello</span>, which demonstrates this concept.
+		</p>
+		<p>
+			This example applies to any plurality of functions belonging to the same library.  In fact, one commonly finds large
+			libraries spread over many manuals, each of which contain several similar functions.
+		</p>
+		<p>
+			For simplicity's sake, I'll call this C function library <span class="lib">libgreeting</span>, implying that the
+			installed library is called <span class="file">libgreeting.a</span> or <span class="file">libgreeting.so</span>.  It
+			will consist of two header files, <span class="header">hi.h</span> and <span class="header">hello.h</span>, containing
+			the function prototypes for <span class="func">hi</span> and <span class="func">hello</span>, respectively.
+		</p>
+		<p>
+			Let's begin with the first few macros, which are also called the manual prologue.
+		</p>
+		<pre>
+.Dd May 30, 2011
+.Dt GREETING 3
+.Os
+		</pre>
+		<p>
+			Note that I've changed the document title to be <span class="screen">GREETING</span> instead of choosing between
+			function names.  This is because the manual documents the entire function library, not just one particular function.  In
+			general, a function library should have its name not include the leading <q>lib</q>.
+		</p>
+		<p>
+			It's a good rule of thumb that the <span class="macro">Dt</span> title of your document matches its filename.
+		</p>
+		<p>
+			Next, I'll list the names of the functions being documented.  I also change the description of the manual to be more
+			generic, just in case I want to add new functions, later.
+		</p>
+		<pre>
+.Sh NAME
+.Nm hello ,
+.Nm hi
+.Nd print greeting messages
+		</pre>
+		<p>
+			Here I've used <span class="macro">Nm</span> twice to indicate that the manual documents two functions.  In doing so,
+			I'll have to be careful when invoking <span class="macro">Nm</span> in later parts of the manual, as it will produce
+			<span class="screen">hi</span> if I don't specify a name, and this is probably not desired (nor should it be depended
+			upon, as I may re-order the names).
+		</p>
+		<p>
+			If we were only documenting a single function in a library, we would only assign <span class="macro">Nm</span> and <span
+				class="macro">Nd</span> to the relevant function and not that of the library.
+		</p>
+		<p>
+			It's good practise to alphabetise the function names in the \Sh{NAME} section.  We must also be sure to comma-separate
+			each name, leaving the last invocation without a comma.  Let's look at the output so far.
+		</p>
+		<div class="mdocout">
+			<div class="mdoc-section">
+				<h1>NAME</h1>
+				<b class="mdoc-name">hello</b>, 
+				<b class="mdoc-name">hi</b> &#8212; <span class="mdoc-desc">print greeting messages</span>
+			</div>
+		</div>
+		<p>
+			We next add a new section to name the library itself.
+		</p>
+		<pre>
+.Sh LIBRARY
+.Lb greeting
+\end{verbatim}
+		</pre>
+		<p>
+			This uses the macro <span class="macro">Lb</span>, which accepts the name of the library (not including the leading
+			<q>lib</q>).  This macro is smart enough to know about <span class="term">standard libraries</span>, and will format the
+			output in a different way if it encounters such an argument.  Since our library is non-standard, it will print in a
+			generic way.  The intent of this section is to hint us on how to link to the installed library.
+		</p>
+		<div class="mdocout">
+			<div class="mdoc-section">
+				<h1>NAME</h1>
+				<b class="mdoc-name">hello</b>, 
+				<b class="mdoc-name">hi</b> &#8212; <span class="mdoc-desc">print greeting messages</span>
+			</div>
+			<div class="mdoc-section">
+				<h1>LIBRARY</h1>
+				<span class="mdoc-lib">library &#8220;greeting&#8221;</span>
+			</div>
+		</div>
+		<p>
+			The <span class="sec">SYNOPSIS</span> section will simply be a collection of the calling syntaxes for both functions,
+			which we've already studied.  If we were only documenting one function, would list only that function here.
+		</p>
+		<pre>
+.Sh SYNOPSIS
+.In hello.h
+.In hi.h
+.Ft int
+.Fo hello
+.Fa "int C" "const char *prefix"
+.Fc
+.Ft void
+.Fn hi
+\end{verbatim}
+		</pre>
+		<p>
+			Note that I've listed both include files prior to the function prototypes.  This is familiar to C programmers, where
+			functions may have multiple include files that need a specific order.  The functions are listed in the same order as
+			their <span class="macro">Nm</span> listing. 
+		</p>
+		<p>
+			Let's examine the output so far.
+		</p>
+		<div class="mdocout">
+			<div class="mdoc-section">
+				<h1>NAME</h1>
+				<b class="mdoc-name">hello</b>, 
+				<b class="mdoc-name">hi</b> &#8212; <span class="mdoc-desc">print greeting messages</span>
+			</div>
+			<div class="mdoc-section">
+				<h1>LIBRARY</h1>
+				<span class="mdoc-lib">library &#8220;greeting&#8221;</span>
+			</div>
+			<div class="mdoc-section">
+				<h1>SYNOPSIS</h1>
+				<b class="mdoc-includes">#include &lt;<a class="mdoc-link-includes">hello.h</a>&gt;</b><br/>
+				<b class="mdoc-includes">#include &lt;<a class="mdoc-link-includes">hi.h</a>&gt;</b><p/>
+				<i class="mdoc-ftype">int</i><br/>
+				<b class="mdoc-fname">hello</b>(<i class="mdoc-farg">int C</i>, <i class="mdoc-farg">const char *prefix</i>);<p/>
+				<i class="mdoc-ftype">void</i><br/>
+				<b class="mdoc-fname">hi</b>();
+			</div>
+		</div>
+		<p>
+			Already, a manual reader has lots of pertinent information: the name of the library, its header file, and the function
+			calling syntax.  Let's continue in documenting the functions and their arguments, but this time, we'll do so in a
+			different style than before.
+		</p>
+		<p>
+			Instead of using lists, we describe each function as a free-form stream of text.  We depend on the <span
+				class="sec">SYNOPSIS</span> to hint the reader as to the function argument types; there's no need to re-state
+			them.
+		</p>
+		<pre>
+.Sh DESCRIPTION
+The
+.Fn hi
+and
+.Fn hello
+functions print out greeting messages.
+.Pp
+The
+.Fn hi
+function accepts no arguments and prints out
+.Qq hello, world .
+.Pp
+The
+.Fn hello
+function accepts a value
+.Fa C ,
+which if non-zero indicates output should be uppercase; and
+.Fa prefix ,
+which, if non-NULL, shall be prefixed to the output.
+The
+.Fa prefix
+argument, if non-NULL, must be nil-terminated.
+\end{verbatim}
+		</pre>
+		<p>
+			Notice how each sentence in this fragment ends on its own line, for example,
+		</p>
+		<pre>
+which, if non-NULL, shall be prefixed to the output.
+The
+.Fa prefix
+		</pre>
+		<p>
+			By doing so, the formatter is able to recognise the end of sentence and correctly handle sentential spacing.  In most
+			cases, this means adding two spaces between the period and subsequent text.  From this follows a rule of thumb, <q>new
+				sentence, new line</q>.
+		</p>
+		<p>
+			In this <span class="sec">DESCRIPTION</span> we've captured what each function does and what its arguments are.  What
+			remains are return values.
+		</p>
+		<pre>
+.Sh RETURN VALUES
+The
+.Fn hi
+function does not return a value.
+.Pp
+The
+.Fn hello
+function returns 1 on success, 0 on failure.
+		</pre>
+		<p>
+			Let's collect these fragments into a single document and see if it's enough to use as a programming reference.
+		</p>
+		<div class="mdocout">
+			<div class="mdoc-section">
+				<h1>NAME</h1>
+				<b class="mdoc-name">hello</b>, 
+				<b class="mdoc-name">hi</b> &#8212; <span class="mdoc-desc">print greeting messages</span>
+			</div>
+			<div class="mdoc-section">
+				<h1>LIBRARY</h1>
+				<span class="mdoc-lib">library &#8220;greeting&#8221;</span>
+			</div>
+			<div class="mdoc-section">
+				<h1>SYNOPSIS</h1>
+				<b class="mdoc-includes">#include &lt;<a class="mdoc-link-includes">hello.h</a>&gt;</b>
+				<br/>
+				<b class="mdoc-includes">#include &lt;<a class="mdoc-link-includes">hi.h</a>&gt;</b>
+				<p/>
+				<i class="mdoc-ftype">int</i>
+				<br/>
+				<b class="mdoc-fname">hello</b>(<i class="mdoc-farg">int C</i>, <i class="mdoc-farg">const char *prefix</i>);
+				<p/>
+				<i class="mdoc-ftype">void</i>
+				<br/>
+				<b class="mdoc-fname">hi</b>();
+			</div>
+			<div class="mdoc-section">
+				<h1>DESCRIPTION</h1>
+				The <b class="mdoc-fname">hi</b>() and <b class="mdoc-fname">hello</b>() functions print out greeting messages.
+				<p/>
+				The <b class="mdoc-fname">hi</b>() function accepts no arguments and prints out &#8220;hello, world&#8221;.
+				<p/>
+				The <b class="mdoc-fname">hello</b>() function accepts a value <i class="mdoc-farg">C</i>, which if non-zero indicates
+				output should be uppercase; and <i class="mdoc-farg">prefix</i>, which, if non-NULL, shall be prefixed to the output.
+				The <i class="mdoc-farg">prefix</i> argument, if non-NULL, must be nil-terminated.
+			</div>
+			<div class="mdoc-section">
+				<h1>RETURN VALUES</h1>
+				The <b class="mdoc-fname">hi</b>() function does not return a value.
+				<p/>
+				The <b class="mdoc-fname">hello</b>() function returns 1 on success, 0 on failure.
+			</div>
+		</div>
+		<p>
+			We'll use our mental checklist as a guide.  First we stipulated linking information with the <span
+				class="macro">Lb</span> macro.  Then we introduced the calling syntax of each function, naming their arguments.
+			We also stipulated the necessary header files in the order they'd be included in source files.  In the <span
+				class="sec">DESCRIPTION</span>, we described each function and its arguments in full.  Lastly, we documented
+			return values in the <span class="sec">RETURN VALUES</span> section.
+		</p>
+		<p>
+			From this information, a programmer should be able to interface with our library.
+		</p>
+	</body>
+</html>

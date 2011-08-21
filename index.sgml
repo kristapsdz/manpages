@@ -84,6 +84,14 @@
 			<BR>
 			.Lk <SPAN>&nbsp;&nbsp;<A HREF="part1-2.xhtml">Chapter 2</A>: Functions</SPAN>
 			<BR>
+			.Lk <SPAN>&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="part1-2-1.xhtml">Section 1</A>: Simple Function</SPAN>
+			<BR>
+			.Lk <SPAN>&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="part1-2-2.xhtml">Section 2</A>: Elaborate Function</SPAN>
+			<BR>
+			.Lk <SPAN>&nbsp;&nbsp;<A HREF="part1-3.xhtml">Chapter 3</A>: Function Library</SPAN>
+			<BR>
+			.Lk <SPAN>&nbsp;&nbsp;<A HREF="part1-4.xhtml">Chapter 4</A>: System Call</SPAN>
+			<BR>
 			.
 			<BR>
 			.Ss <SPAN CLASS="h2">Off-line</SPAN>

@@ -5,7 +5,11 @@ XHTMLS	= preface.xhtml \
 	  part1-1.xhtml \
 	  part1-1-1.xhtml \
 	  part1-1-2.xhtml \
-	  part1-2.xhtml
+	  part1-2.xhtml \
+	  part1-2-1.xhtml \
+	  part1-2-2.xhtml \
+	  part1-3.xhtml \
+	  part1-4.xhtml
 
 VERSION	= 1.1.3
 DATE	= 16 August 2011
@@ -43,6 +47,10 @@ book.epub: $(XHTMLS) book.css book.ncx book.opf
 		OPS/part1-1-1.xhtml \
 		OPS/part1-1-2.xhtml \
 		OPS/part1-2.xhtml \
+		OPS/part1-2-1.xhtml \
+		OPS/part1-2-2.xhtml \
+		OPS/part1-3.xhtml \
+		OPS/part1-4.xhtml \
 		OPS/book.opf \
 		OPS/book.ncx \
 		OPS/css/book.css )

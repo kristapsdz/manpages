@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Part 1, Chapter 2, Section 1: Simple Function</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<p>
+			Let's study a simple C function, <span class="func">hi</span>, which prints <span class="screen">hello, world</span>
+			just like in prior sections.  We begin with the familiar first macros.
+		</p>
+		<pre>
+.Dd May 30, 2011
+.Dt HI 3
+.Os
+.Sh NAME
+.Nm hi
+.Nd print \(dqhello, world\(dq
+		</pre>
+		<p>
+			All that's changed is the manual section, from 1 to 3.  We'll discuss manual sections later in this book.  Suffice to
+			say that programming functions and libraries (not system calls!) are categorised in section 3.
+		</p>
+		<p>
+			The calling syntax of our function is documented in the <span class="sec">SYNOPSIS</span> section.  Assume that our
+			function prototype is within the header file <span class="file">hi.h</span> as <span class="screen">void
+				hi(void)</span>, which, in non-programming terms, declares that a function <span class="screen">hi</span>
+			accepts no arguments and does not return a value.
+		</p>
+		<pre>
+.Sh SYNOPSIS
+.In hi.h
+.Ft void
+.Fn hi
+		</pre>
+		<p>
+			This introduces three unfamiliar macros.  The <span class="macro">In</span> macro specifies an include file that
+			interfacing programmes will need to include.  The <span class="macro">Ft</span> and <span class="macro">Fn</span> macros
+			collectively document the function (return) type and function name.  Since not all languages have return types, the
+			<span class="macro">Ft</span> macro is optional in this context.
+		</p>
+		<div class="mdocout">
+			<div class="mdoc-section">
+				<h1>SYNOPSIS</h1>
+				<b class="mdoc-includes">#include &lt;<a class="mdoc-link-includes">hi.h</a>&gt;</b><p/>
+				<i class="mdoc-ftype">void</i>
+				<br/>
+				<b class="mdoc-fname">hi</b>();
+			</div>
+		</div>
+		<p>
+			By now it comes as now surprise that <span class="macro">Ft</span> is scoped to the end of its line, as is <span
+				class="macro">Fn</span> in this example.  In fact, all of these macros are <span class="term">in-line
+				macros</span>, which as we found in the first chapter, means their scopes can be closed by subsequent macros on
+			the same line.
+		</p>
+		<p>
+			Since our function has no arguments or return values, all we need to do is add some bits in the <span
+				class="sec">DESCRIPTION</span> section to complete this manual.
+		</p>
+		<pre>
+.Dd May 30, 2011
+.Dt HI 3
+.Os
+.Sh NAME
+.Nm hi
+.Nd print \(dqhello, world\(dq
+.Sh SYNOPSIS  \" invoking our function
+.In hi.h  \" ...its header file
+.Ft void  \" ...its return value
+.Fn hi \" ...its name
+.Sh DESCRIPTION  \" what we do
+The
+.Nm
+function prints
+.Qq hello, world  \" quote these terms
+and returns.
+.Pp
+It has no arguments.
+		</pre>
+		<p>
+			Let's also stipulate the function return value in its own section, <span class="sec">RETURN VALUES</span>.  This mirrors
+			the <span class="sec">EXIT STATUS</span> section I introduced for <span class="file">hello.1</span>.  Although we don't
+			have a return value, it's good practise to include this section anyway.  Again, the <span class="macro">Nm</span> macro,
+			when invoked without arguments, reproduces its last arguments.
+		</p>
+		<pre>
+.Sh RETURN VALUES
+The
+.Nm
+function does not return a value.
+		</pre>
+		<p>
+			Although this example is instructive, it's quite simple.  Let's review our checklist before moving on.
+		</p>
+		<dl>
+			<dt>Did I describe the preprocessing and linking information?</dt>
+			<dd>Yes, a header file.  There is no linking information.</dd>
+			<dt>Did I describe the calling syntax of each function and variable?</dt>
+			<dd>Yes, the <span class="func">hi</span> function.</dd>
+			<dt>Did I describe the type of each function and variable?</dt>
+			<dd>Yes, as <span class="func">hi</span> has neither type nor value.</dd>
+			<dt>Did I describe each argument in each calling syntax?</dt>
+			<dd>This does not apply, as it has none.</dd>
+			<dt>Did I describe each function's operation?</dt>
+			<dd>Yes, in that it prints <span class="screen">hello, world</span>.</dd>
+			<dt>Did I describe each function's side effects?</dt>
+			<dd>This does not apply, as it has none.</dd>
+		</dl>
+		<p>
+			Very few real-world functions are so simple.  In the next section, we introduce a more practical function with types and
+			arguments.
+		</p>
+	</body>
+</html>
