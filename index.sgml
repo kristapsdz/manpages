@@ -98,7 +98,9 @@
 			<BR>
 			.
 			<BR>
-			.Lk <SPAN><A>book.epub</A>: e-book archive, e-Pub 2.0.1 format</SPAN>
+			.Lk <SPAN><A>mdoc.epub</A>: e-book archive, e-Pub 2.0.1 format</SPAN>
+			<BR>
+			.Lk <SPAN><A HREF="mdoc.source.tgz">mdoc.source.tgz</A>: source archive</SPAN>
 			<BR>
 			.
 			<BR>
