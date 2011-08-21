@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Part 2, Chapter 2, Section 1: Document Body</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<p>
+			The document body begins with the first macro not in the prologue set (<span class="macro">Dd</span>, <span
+				class="macro">Dt</span>, and <span class="macro">Os</span>).  The document body consists of the manual content
+			itself, and varies significantly between categories and, of course, the material itself.
+		</p>
+		<pre>
+.\" Prologue follows:
+.Dd May 26 2011
+.Dt MDOC 7
+.Os
+.\" Document body follows:
+.Sh NAME
+.Nm mdoc
+.Nd mdoc language reference
+.Sh DESCRIPTION
+The
+.Nm mdoc
+language is used to format
+.Bx
+.Ux
+manuals.
+		</pre>
+		<p>
+			The content of the document body is divided into sections.  Sections are indicated by the <span class="macro">Sh</span>
+			macro.
+		</p>
+		<div class="mdocsyntax">
+			.<span class="macro">Sh</span> <span class="macroarg">SECTION NAME</span>
+			<br />
+			Text within the section...
+		</div>
+		<p>
+			As described in the introduction, a section consists of its line arguments and all subsequent lines until the end of
+			file or another <span class="macro">Sh</span> macro.
+		</p>
+		<p>
+			By convention, <span class="macro">Sh</span> arguments are capitalised.  I'll describe conventional sections at length
+			in the next chapter, as for the most part follow long-standing document conventions.
+		</p>
+		<p>
+			In general, the document body requires at least the <span class="sec">NAME</span> and <span
+				class="sec">DESCRIPTION</span> sections, and usually the <span class="sec">SYNOPSIS</span> section as well.  The
+			first section must be <span class="sec">NAME</span>, optionally followed by <span class="sec">SYNOPSIS</span>.  The
+			<span class="sec">DESCRIPTION</span> section must follow either the <span class="sec">NAME</span> or <span
+				class="sec">SYNOPSIS</span>.
+		</p>
+	</body>
+</html>

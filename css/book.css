@@ -7,6 +7,7 @@ body			{ font-family: serif;
 			  line-height: 20px;
 			  font-size: 10pt; }
 
+span.cat,
 span.file,
 span.header,
 span.lang,
@@ -37,6 +38,8 @@ span.cmdflag:before,
 span.macroflag:before	{ content: "-"; }
 span.cmdopt:before	{ content: "["; }
 span.cmdopt:after	{ content: "]"; }
+span.macroopt:before	{ content: "["; }
+span.macroopt:after	{ content: "]"; }
 span.func:after		{ content: "()"; }
 
 span.cmdline,
@@ -50,7 +53,8 @@ pre			{ border: 1px dotted #dddddd;
 
 dl			{ margin-left: 2%; }
 
-div.mdocout		{ border: 1px dotted #dddddd;
+div.mdocout,
+div.mdocsyntax		{ border: 1px dotted #dddddd;
 			  max-width: 60em; 
 			  padding-left: 4%;
 			  margin-left: 2%; }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Part 2, Chapter 2: Structure</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<p>
+			An <span class="lang">mdoc</span> manual is divided into two logical parts: the <span class="term">prologue</span> and
+			the <span class="term">document body</span>.
+		</p>
+		<pre>
+.\" Prologue follows:
+.Dd May 26 2011
+.Dt MDOC 7
+.Os
+.\" Document body follows:
+.Sh NAME
+.Nm mdoc
+.Nd mdoc language reference
+.Sh DESCRIPTION
+The
+.Nm mdoc
+language is used to format
+.Bx
+.Ux
+manuals.
+		</pre>
+		<p>
+			The prologue specifies information regarding the manual's classification.  For the most part, this information does not
+			change over the course of development.
+		</p>
+		<p>
+			The document body consists of the documentation content.  This material will change over the course of development.
+		</p>
+	</body>
+</html>

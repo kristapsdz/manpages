@@ -92,6 +92,18 @@
 			<BR>
 			.Lk <SPAN>&nbsp;&nbsp;<A HREF="part1-4.xhtml">Chapter 4</A>: System Call</SPAN>
 			<BR>
+			.Lk <SPAN><A HREF="part2.xhtml">Part 2</A>: Manual Syntax and Structure</SPAN>
+			<BR>
+			.Lk <SPAN>&nbsp;&nbsp;<A HREF="part2-1.xhtml">Chapter 1</A>: Basic Syntax</SPAN>
+			<BR>
+			.Lk <SPAN>&nbsp;&nbsp;<A HREF="part2-2.xhtml">Chapter 2</A>: Structure</SPAN>
+			<BR>
+			.Lk <SPAN>&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="part2-2-1.xhtml">Section 1</A>: Prologue</SPAN>
+			<BR>
+			.Lk <SPAN>&nbsp;&nbsp;&nbsp;&nbsp;<A HREF="part2-2-2.xhtml">Section 2</A>: Document Body</SPAN>
+			<BR>
+			.Lk <SPAN>&nbsp;&nbsp;<A HREF="part2-3.xhtml">Chapter 3</A>: Layout</SPAN>
+			<BR>
 			.
 			<BR>
 			.Ss <SPAN CLASS="h2">Off-line</SPAN>
@@ -101,6 +113,18 @@
 			.Lk <SPAN><A>mdoc.epub</A>: e-book archive, e-Pub 2.0.1 format</SPAN>
 			<BR>
 			.Lk <SPAN><A HREF="mdoc.source.tgz">mdoc.source.tgz</A>: source archive</SPAN>
+			<BR>
+			.
+			<BR>
+			.Sh <SPAN CLASS="h1">News</SPAN>
+			<BR>
+			.Bl -ohang
+			<BR>
+			.It <SPAN>21 August 2011</SPAN>
+			<DIV>
+				Initial release of the first part.
+			</DIV>
+			.El
 			<BR>
 			.
 			<BR>

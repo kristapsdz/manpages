@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Part 2, Chapter 2, Section 1: Prologue</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<p>
+			The prologue consists at most of the <span class="macro">Dd</span>, <span class="macro">Dt</span>, and <span
+				class="macro">Os</span> macros.  These always occur at the beginning of a manual.
+		</p>
+		<pre>
+.\" Prologue follows:
+.Dd May 26 2011
+.Dt MDOC 7
+.Os
+		</pre>
+		<p>
+			The only firm requirement of the <span class="lang">mdoc</span> prologue is that the <span class="macro">Dd</span> macro
+			comes first: many formatting systems will read up to the first macro to determine the formatting language.  If <span
+				class="macro">Dd</span> is not encountered first, the <span class="lang">mdoc</span> format may not be
+			recognised.
+		</p>
+		<p>
+			Following the <span class="macro">Dd</span>, the prologue is conventionally ordered as first <span
+				class="macro">Dt</span> and then <span class="macro">Os</span>.  The <span class="macro">Os</span> macro is
+			usually left without arguments, meaning that the manual applies to the current system.
+		</p>
+		<p>
+			After parsing the document prologue, the following is known:
+		</p>
+		<ul>
+			<li>The date of last modification.</li>
+			<li>The canonical title of the manual.</li>
+			<li>The manual category (<q>manual section</q>).</li>
+			<li>Whether the manual relates to a particular hardware architecture.</li>
+			<li>The relevant operating system.</li>
+		</ul>
+		<h1>
+			Date
+		</h1>
+		<p>
+			The date is specified by the <span class="macro">Dd</span> macro.
+		</p>
+		<div class="mdocsyntax">
+			.<span class="macro">Dd</span> <span class="macroarg">date</span>
+		</div>
+		<p>
+			While no particular date format is required, it's best to use the <span class="screen">month day, year</span> format,
+			where <span class="screen">month</span> is the month in English; <span class="screen">day</span> is the day of month;
+			and <span class="screen">year</span> is the four-digit year.  Arbitrary white-space may separate the tokens, which may
+			also be quoted.
+		</p>
+		<p>
+			Example of canonical form:
+		</p>
+		<pre>
+.Dd June 03, 1991
+		</pre>
+		<p>
+			Example of not zero-padded digit form:
+		</p>
+		<pre>
+.Dd June 3, 1991
+		</pre>
+		<p>
+			Example of quoted-string form:
+		</p>
+		<pre>
+.Dd "June 3, 1991"
+		</pre>
+		<p>
+			All of the above examples will normalise to the third of June, 1991.  It's especially important that the month be in
+			English, as not all operating systems support localisation.
+		</p>
+		<p>
+			Some formatters also support a special date format as follows:
+		</p>
+		<pre>
+.Dd $Mdocdate$
+		</pre>
+		<p>
+			This is usually used in conjunction with source-code control systems that automatically change the date.  Consult your
+			formatter's manual for whether it supports this feature.
+		</p>
+		<h1>
+			Title
+		</h1>
+		<p>
+			A manual's title identifies the entire manual document.  It is always specified in uppercase as the first argument of
+			the <span class="macro">Dt</span> macro, which conventionally follows the initial <span class="macro">Dd</span> macro.
+		</p>
+		<div class="mdocsyntax">
+			.<span class="macro">Dt</span> <span class="macroarg">TITLE</span> <span class="macroarg">category</span> 
+			<span class="macroopt"><span class="macroarg">architecture</span></span>
+		</div>
+		<p>
+			The title usually corresponds to the file-name of the document, but this is not necessarily the case.
+		</p>
+		<p>
+			In the case of a single-component manual, such as the manual for a single UNIX command or programming function, the
+			title corresponds to the manual name as specified with the <span class="sec">SYNOPSIS</span> <span
+				class="macro">Nm</span> macro argument.
+		</p>
+		<p>
+			In the event of multiple components, such as a programming library, the title usually corresponds to the library name.
+			If multiple commands are specified, such as with aliased names, the canonical form should be used.
+		</p>
+		<p>
+			Example of a title for the <span class="cmd">ls</span> utility:
+		</p>
+		<pre>
+.Dt LS 1
+		</pre>
+		<p>
+			Example of a title for the <span class="lib">libgreeting</span> function library, consisting of the <span
+				class="func">hi</span> and <span class="func">hello</span> functions:
+		</p>
+		<pre>
+.Dt GREETING 3
+		</pre>
+		<p>
+			If the title is left unspecified by omitting the <span class="macro">Dt</span> macro, behaviour is undefined.  Usually a
+			formatter will default to an empty string or <span class="screen">LOCAL</span>.  In general, however, a manual without
+			<span class="macro">Dt</span> may be considered incomplete.
+		</p>
+		<h1>
+			Category
+		</h1>
+		<p>
+			The category of a manual, sometimes called the manual section, specifies the type of component a manual describes.  It
+			is specified in the second argument of the <span class="macro">Dt</span> macro.
+		</p>
+		<div class="mdocsyntax">
+			.<span class="macro">Dt</span> <span class="macroarg">TITLE</span> <span class="macroarg">category</span> 
+			<span class="macroopt"><span class="macroarg">architecture</span></span>
+		</div>
+		<p>
+			These categorisations derive from the earliest UNIX systems, are generally numbers corresponding to the following.  Note
+			that not all systems have the mentioned examples.
+		</p>
+		<dl>
+			<dt><span class="cat">1</span>: user utilities.</dt>
+			<dd>
+				Most commands fall under this category.  A user utility is usable by all operators of a UNIX
+				system.  Common examples: <span class="cmd">ls</span>, <span class="cmd">find</span>, <span
+					class="cmd">cat</span>.
+			</dd>
+			<dt><span class="cat">2</span>: system calls.</dt>
+			<dd>
+				These are a special class of programming function, usually in C, that do not need header file or linking
+				information.  Common examples: <span class="func">open</span>, <span class="func">close</span>, <span
+					class="func">write</span>.
+			</dd>
+			<dt><span class="cat">3</span>: user programming functions.</dt>
+			<dd>
+				Most functions fall under this category.  A user programming function is available as standalone or library
+				function, although some, such as the C library, need not be explicitly linked.  Common examples: <span
+					class="func">strcpy</span>, <span class="func">isascii</span>.
+			</dd>
+			<dt><span class="cat">4</span>: device interfaces.</dt>
+			<dd>
+				This category is not as common as categories <span class="cat">1</span>&ndash;<span class="cat">3</span>; in
+				fact, not all systems use this section at all.  When used, it consists of manuals for hardware device drivers.
+				These manuals are usually tied to a particular architecture.
+			</dd>
+			<dt><span class="cat">5</span>: file formats.</dt>
+			<dd>
+				This category is not as common as categories <span class="cat">1</span>&ndash;<span class="cat">3</span>.  When
+				used, it consists of structure text file documentation.  Common example: <span class="file">passwd</span>.
+			</dd>
+			<dt><span class="cat">6</span>: games (and user utility miscellanea).</dt>
+			<dd>
+				This category is not as common as categories <span class="cat">1</span>&ndash;<span class="cat">3</span>, many
+				systems do not come pre-supplied with games.  When used, it refers to games or arcana utilities.
+			</dd>
+			<dt><span class="cat">7</span>: miscellaneous.</dt>
+			<dd>
+				Introductory materials or general text.  This category is common, but its contents vary from system to system.
+			</dd>
+			<dt><span class="cat">8</span>: administrative utilities.</dt>
+			<dd>
+				This consists of utilities for system administration, which may not be accessable or executable by general users
+				(see category <span class="cat">1</span>).  Common examples: <span class="cmd">dump</span>, <span class="cmd">restore</span>, <span
+					class="cmd">fsck</span>.
+			</dd>
+			<dt><span class="cat">9</span>: kernel programming functions.</dt>
+			<dd> 
+				This category is found on few operating systems.  Where applicable, it consists of those functions used in
+				operating system internal development (<q>kernel</q> development).
+			</dd>
+		</dl>
+		<p>
+			There are several refinements to the numerical category convention.  Perl, Fortran, and Tcl libraries are often grouped
+			under category <span class="cat">3p</span>, <span class="cat">3f</span>, and <span class="cat">3tcl</span>,
+			respectively.  Perl modules may also fall under <span class="cat">3pm</span>.  Tcl libraries are also found in the <span
+				class="cat">n</span> category.
+		</p>
+		<p>
+			Although some common libraries are traditionally referred to with a custom suffix, such as <span class="cat">3ssl</span>
+			for the OpenSSL library, this notation is heavily discouraged.
+		</p>
+		<p>
+			Manuals for the X Window System, traditionally bundled with UNIX systems, are categorised under <span
+				class="cat">X11</span>.  Manuals for the popular X11R6 distribution of the X Window System may also be listed
+			under <span class="cat">X11R6</span>.
+		</p>
+		<p>
+			The <span class="cat">paper</span> category historically consisted of longer papers, the <span class="cat">draft</span>
+			category consists of draft manuals, <span class="cat">unass</span> consists of uncategorised manuals, and <span
+				class="cat">local</span> consists of local system documentation.  These categories are rarely used and should be
+			avoided for portable, readable manuals.
+		</p>
+		<h1>
+			Architecture
+		</h1>
+		<p>
+			Some manuals, especially those in category <span class="cat">4</span> or <span class="cat">9</span>, relate only to a
+			particular hardware architecture.  This is a useful specifier in the machine-dependent manuals for category <span
+				class="cat">9</span> manuals.
+		</p>
+		<p>
+			These use the optional third argument of the <span class="macro">Dt</span> macro.
+		</p>
+		<div class="mdocsyntax">
+			.<span class="macro">Dt</span> <span class="macroarg">TITLE</span> <span class="macroarg">category</span> 
+			<span class="macroopt"><span class="macroarg">architecture</span></span>
+		</div>
+		<p>
+			A device referring to a particular architecture uses this to explicitly note its relevant architecture.  In normal
+			manuals, this should not be used.
+		</p>
+		<pre>
+.Dt 
+		</pre>
+		<h1>
+			Operating System
+		</h1>
+		<p>
+			Similar to architecture, some manuals only pertain to a particular operating system.  This system may be specified to
+			the <span class="macro">Os</span> macro of the prologue.
+		</p>
+		<div class="mdocsyntax">
+			.<span class="macro">Os</span> <span class="macroopt"><span class="macroarg">system</span></span>
+		</div>
+		<p>
+			If <span class="macroarg">system</span> is unspecified, the manual is assumed to apply to any operating system.
+		</p>
+		<p>
+			This form is useful when multiple operating systems have access to local-network administrative manuals, such as in a
+			networked file-system environment.  Otherwise, it is rarely used.
+		</p>
+	</body>
+</html>

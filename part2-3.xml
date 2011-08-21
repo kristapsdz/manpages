@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Part 2, Chapter 3: Layout</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<p>
+			An <span class="lang">mdoc</span> document body is divided into sections.  The names and ordering of these sections is
+			dictated by convention extending to the first published edition of UNIX.
+		</p>
+		<p>
+			As mentioned in the previous chapter, a section is begun by the <span class="macro">Sh</span> macro and continues until
+			the end of file or another section.
+		</p>
+		<div class="mdocsyntax">
+			.<span class="macro">Sh</span> <span class="macroarg">SECTION NAME</span>
+			<br />
+			Text within the section...
+		</div>
+		<p>
+			Section headers render as follows:
+		</p>
+		<div class="mdocout">
+			<div class="mdoc-section">
+				<h1>SECTION NAME</h1>
+				Text within the section...
+			</div>
+		</div>
+		<p>
+			The full set of conventional sections, and their order, is as follows.
+		</p>
+		<dl>
+			<dt><span class="sec">NAME</span></dt>
+			<dd>Name of all documented components and a collective description.</dd>
+			<dt><span class="sec">SYNOPSIS</span></dt>
+			<dd>Calling syntax of the components.</dd>
+			<dt><span class="sec">DESCRIPTION</span></dt>
+			<dd>Description of all components.  This constitutes the bulk of the manual.</dd>
+			<dt><span class="sec">IMPLEMENTATION NOTES</span></dt>
+			<dd>Specific notes on the implementation of a generic (e.g., standardised) component.</dd>
+			<dt><span class="sec">RETURN VALUES</span></dt>
+			<dd>Return values, if the components are functions.</dd>
+			<dt><span class="sec">ENVIRONMENT</span></dt>
+			<dd>Environmental variables affecting the components' operation.</dd>
+			<dt><span class="sec">FILES</span></dt>
+			<dd>Files affecting the components' operation.</dd>
+			<dt><span class="sec">EXIT STATUS</span></dt>
+			<dd>Exit status, if the components are commands.</dd>
+			<dt><span class="sec">EXAMPLES</span></dt>
+			<dd>Brief examples of invocation.</dd>
+			<dt><span class="sec">DIAGNOSIS</span></dt>
+			<dd>Error conditions, if a command or device driver.</dd>
+			<dt><span class="sec">ERRORS</span></dt>
+			<dd>Error conditions, if a function or library.</dd>
+			<dt><span class="sec">SEE ALSO</span></dt>
+			<dd>Links to other relevant manuals or references.</dd>
+			<dt><span class="sec">STANDARDS</span></dt>
+			<dd>Implemented or referenced standards.</dd>
+			<dt><span class="sec">HISTORY</span></dt>
+			<dd>A brief history of the components.</dd>
+			<dt><span class="sec">AUTHORS</span></dt>
+			<dd>The authors of the components.</dd>
+			<dt><span class="sec">CAVEATS</span></dt>
+			<dd>Caveats regarding the components' operation.</dd>
+			<dt><span class="sec">BUGS</span></dt>
+			<dd>Known bugs in the components.</dd>
+			<dt><span class="sec">SECURITY CONSIDERATIONS</span></dt>
+			<dd>Security precautions beyond the scope of the components.</dd>
+		</dl>
+		<p>
+			Only the <span class="sec">NAME</span> and <span class="sec">DESCRIPTION</span> sections are required in the document
+			body, although a <span class="sec">SYNOPSIS</span> should appear for most manuals as well.  Other sections are commonly
+			found depending on the category.  For example, <span class="sec">RETURN VALUES</span> is found for most category <span
+				class="cat">3</span> and <span class="cat">2</span> manuals; while <span class="sec">EXIT STATUS</span> is found
+			for most category <span class="cat">1</span>, <span class="cat">6</span>, and <span class="cat">8</span> manuals.
+		</p>
+		<h1>
+			Name
+		</h1>
+		<p>
+			The <span class="sec">NAME</span> section immediately follows the document prologue and is thus usually the first macro
+			of the document body.  It specifies the name of each documented component, and provides a brief description of the
+			components as a whole.
+		</p>
+		<p>
+			The following is an example of the <span class="sec">NAME</span> section for a single utility, <span class="cmd">hi</span>.
+		</p>
+		<pre>
+.Sh NAME
+.Nm foo
+.Nd print a simple greeting
+		</pre>
+		<p>
+			The <span class="macro">Nd</span> macro should consist of a single line without trailing punctuation or leading
+			capitalisation.  As a rule of thumb, this description should be a sentence clause in the imperative mood for commands
+			and functions, or simply a noun phrase for file formats, devices, and miscellanea.
+		</p>
+		<p>
+			Example imperative:
+		</p>
+		<pre>
+.Nm foo
+.Nd print a simple greeting
+		</pre>
+		<p>
+			Example noun phrase:
+		</p>
+		<pre>
+.Nm mdoc
+.Nd mdoc language reference
+		</pre>
+		<p>
+			In the event of multiple named components, such as a function library or aliased commands, comma-separate each command
+			but for the last.  It's common to alphabetically order this listing.
+		</p>
+		<pre>
+.Nm hello ,
+.Nm hi
+.Nd print greetings
+		</pre>
+		<p>
+			Note that the punctuation should be separate from the macro argument.  This allows the formatter to distinguish between
+			the name and trailing punctuation.
+		</p>
+		<h1>
+			Synopsis
+		</h1>
+		<p>
+			The <span class="sec">SYNOPSIS</span> section, if specified, follows the <span class="sec">NAME</span> section.  It
+			specifies the calling syntax of a component, thus, it is necessary for functions and commands.  The <span
+				class="sec">SYNOPSIS</span> section has a layout dictated by convention, and depends upon the category.
+		</p>
+		<h2>
+			Commands
+		</h2>
+		<p>
+			For command manuals in category <span class="cat">1</span>, <span class="cat">6</span>, and <span class="cat">9</span>,
+			each command must have its full syntax stipulated.
+		</p>
+		<pre>
+.Nm hello
+.Op Fl a
+.Op Fl o Ar output
+.Op Ar prefix
+		</pre>
+		<p>
+			This defines three optional arguments for the <span class="cmd">hi</span> command: a flag, a flag with an argument, and
+			an argument.  Flags should be purely alphabetical, without regard to whether a flag takes an argument.  Arguments should
+			also be alphabetised.
+		</p>
+		<p>
+			Note that if your manual only documents one component, it's unnecessary to re-write the command name for <span
+				class="macro">Nm</span>.  If omitted, the last specified <span class="macro">Nm</span> in the <span
+				class="sec">NAME</span> will be used.
+		</p>
+		<p>
+			Multiple commands are specified in the order they appear within the <span class="sec">NAME</span> section.
+		</p>
+		<pre>
+.Nm hello
+.Op Fl a
+.Op Fl o Ar output
+.Op Ar prefix
+.Nm hi
+		</pre>
+		<p>
+			Since there are multiple <span class="macro">Nm</span> macros in the <span class="sec">NAME</span> section, it's
+			necessary that we specify the name of each command.  In this example, an additional command <span class="cmd">hi</span>
+			is specified, which has neither flags nor arguments.
+		</p>
+		<h2>
+			Functions
+		</h2>
+		<p>
+			Function libraries are more complicated, as they involve more diverse content.  A function library <span
+				class="sec">SYNOPSIS</span> section consists of all documented material, including header files, functions,
+			variables, macros, and so on.
+		</p>
+		<p>
+			A minimum function manual consists of a single function call and the header file of its prototype (if in a language
+			requiring header files, such as C):
+		</p>
+		<pre>
+.In greeting.h
+.Ft int
+.Fo hello
+.Fa "int C"
+.Fa "const char *output"
+.Fc
+		</pre>
+		<p>
+			The header file comes before those functions it describes.  If one or more header files are required, list them in the
+			order of inclusion in source files.
+		</p>
+		<pre>
+.In sys/types.h
+.In greeting.h
+.Ft int
+.Fo hello
+.Fa "u_int C"
+.Fa "const char *output"
+.Fc
+		</pre>
+		<p>
+			If multiple functions are documented, list them in the order they appear in the <span class="sec">NAME</span> section.
+		</p>
+		<pre>
+.In sys/types.h
+.In greeting.h
+.Ft int
+.Fo hello
+.Fa "u_int C"
+.Fa "const char *output"
+.Fc
+.Ft void
+.Fn hi
+		</pre>
+		<p>
+			List any global variables with the <span class="macro">Vt</span> and/or <span class="macro">Va</span> macro following
+			function prototypes.
+		</p>
+		<pre>
+.In sys/types.h
+.In greeting.h
+.Ft int
+.Fo hello
+.Fa "u_int C"
+.Fa "const char *output"
+.Fc
+.Ft void
+.Fn hi
+.Vt extern const char * const * greetings;
+		</pre>
+		<p>
+			Macro definitions, however, should come before the function prototypes.  These use the <span class="macro">Fd</span>
+			macro and must include the preprocessor directive for the macro.
+		</p>
+		<pre>
+.In sys/types.h
+.In greeting.h
+.Fd #define GREETING
+.Ft int
+.Fo hello
+.Fa "u_int C"
+.Fa "const char *output"
+.Fc
+.Ft void
+.Fn hi
+.Vt extern const char * const * greetings;
+		</pre>
+		<p>
+			Some manuals define a range of functions with differing header dependencies.  In general it's not a good idea to group
+			these within the same manual. However, if necessary, arrange the functions and variables underneath their header file
+			<span class="macro">In</span> macros.  These need not necessarily much with the <span class="sec">NAME</span> section
+			ordering, but should be as close as possible.
+		</p>
+		<h1>
+			Description
+		</h1>
+		<p>
+			This section documents the component itself, and is usually the longest.  For commands, each command is described in
+			detail along with its arguments.  For functions, each function must be described along with its types and arguments.
+		</p>
+		<h2>
+			Commands
+		</h2>
+		<p>
+			A command or set of commands is documented in <span class="sec">DESCRIPTION</span> with a brief explanation of
+			behaviour, a list of arguments, and default behaviour regarding those arguments.
+		</p>
+		<pre>
+The
+.Nm
+command prints out a simple greeting.
+The arguments are as follows:
+.Bl -tag -width Ds
+.It Fl C
+Whether to uppercase the output.
+.It Fl o Ar output
+A file into which output should be written.
+.It Ar prefix
+A string prefixed to the output.
+.El
+.Pp
+By default,
+.Nm
+prints a mixed-case greeting to standard output.
+		</pre>
+		<p>
+			If multiple commands are included, they should be listed in the order they appear in <span class="sec">NAME</span> and
+			<span class="sec">DESCRIPTION</span>.  Remember to specify a documented command, in this case, whenever invoking the
+			<span class="macro">Nm</span> macro.  Command exit statuses are documented in <span class="sec">EXIT STATUS</span>.
+		</p>
+		<h2>
+			Functions
+		</h2>
+		<p>
+			Functions do not share the <span class="screen">The arguments are as follows</span> convention that commands enjoy.
+			Most often, a function is described in paragraph form.
+		</p>
+		<pre>
+The
+.Fn hello
+function prints a greeting to standard out.
+If
+.Fa C
+is non-zero, output is upper-cased.
+If
+.Fa prefix
+is non-NULL, it is prefixed to the output.
+		</pre>
+		<p>
+			A function with many variables, or complicated variables, may wish to choose the same listed-argument notation of
+			commands.
+		</p>
+		<pre>
+The
+.Fn hello
+function prints a greeting to standard out.
+The arguments are as follows:
+.Bl -tag -width Ds
+.It Fa "C"
+If non-zero, output is upper-cased.
+.It Fa "prefix"
+If non-NULL,
+.Fa prefix
+is prefixed to the output.
+.El
+		</pre>
+		<p>
+			Above all, you must be careful to document each argument to each function.  Function return values are usually
+			documented in <span class="sec">RETURN VALUES</span>.
+		</p>
+		<h1>
+			Implementation notes
+		</h1>
+		<p>
+			For components describing an algorithm, or implementing a generic interface, it's at time useful to document the
+			implementation itself.  As this is not relevant to the calling syntax or description of a component, this is relegated
+			to the <span class="sec">IMPLEMENTATION NOTES</span> section.
+		</p>
+		<p>
+			Consider a simple sorting function, <span class="func">mysort</span>.
+		</p>
+		<pre>
+.Sh SYNOPSIS
+.In mysort.h
+.Ft void
+.Fn mysort "int *input"
+.Sh DESCRIPTION
+The
+.Fn mysort
+function in-place sorts an integer array
+.Fa input .
+.Sh IMPLEMENTATION NOTES
+The
+.Fn mysort
+function uses a bubble-sort algorithm for sorting and thus operates in
+O(n^2) time with respect to input size.
+Since swapping is in-place, a constant number of allocations occur.
+		</pre>
+		<p>
+			In general, <span class="sec">IMPLEMENTATION NOTES</span> is not used, and is thus rarely found in UNIX manuals. 
+		</p>
+		<h1>
+			Return values
+		</h1>
+		<p>
+			Manuals describing functions (categories <span class="cat">2</span>, <span class="cat">3</span>, and <span
+				class="cat">9</span>) must use the <span class="sec">RETURN VALUES</span> section to document each function's
+			return value.  If a manual documents functions in a language without return values, or functions do not return a value,
+			they need not use this section.
+		</p>
+		<p>
+			System calls (category <span class="cat">2</span>) usually employ the <span class="macro">Rv</span> macro to stipulate a
+			standard return value statement.
+		</p>
+		<pre>
+.Sh RETURN VALUES
+.Rv -std
+		</pre>
+		<p>
+			Note that the <span class="macroflag">std</span> flag is a required argument to <span class="macro">Rv</span>, for
+			historical reasons.
+		</p>
+		<p>
+			For non-system functions, be as brief as possible.
+		</p>
+		<pre>
+.Sh RETURN VALUES
+The
+.Fn hello
+function returns zero on success and non-zero on failure.
+		</pre>
+		<h1>
+			Environment
+		</h1>
+		<p>
+			Both commands and functions may be affected by UNIX environmental
+			variables.  These must be documented in the <span class="sec">ENVIRONMENT</span> section of the manual.  Each variable
+			should be listed as a <span class="macro">Ev</span> along with its effect on the component.
+		</p>
+		<pre>
+.Sh ENVIRONMENT
+.Bl -tag -width Ds
+.It Ev TZ
+The time zone for when displaying dates.
+.El
+		</pre>
+		<p>
+			Some historical manuals use <span class="sec">ENVIRONMENT VARIABLES</span> instead of <span
+				class="sec">ENVIRONMENT</span>.
+		</p>
+		<h1>
+			Files
+		</h1>
+		<p>
+			Both commands and functions may also be affected by files, although this is mainly the purview of commands.  These files
+			should be listed in the <span class="sec">FILES</span> section in a tagged list.
+		</p>
+		<pre>
+.Sh FILES
+.Bl -tag -width Ds
+.It Pa ~/.profile
+User's login profile.
+.El
+		</pre>
+		<h1>
+			Exit Status
+		</h1>
+		<p>
+			This section is the dual of <span class="sec">RETURN VALUES</span> for commands in categories <span
+				class="cat">1</span>, <span class="cat">6</span>, and <span class="cat">8</span>.  It documents the exit status
+			of commands.  
+		</p>
+		<p>
+			If your utility exits with zero on success and greater than zero on failure (the standard for most utilities), use the
+			<span class="macro">Ex</span> macro.
+		</p>
+		<pre>
+.Sh EXIT STATUS
+.Ex -std
+		</pre>
+		<p>
+			More complex commands should document all possible exit status.
+		</p>
+		<h1>
+			Examples
+		</h1>
+		<p>
+			In many situations of casual use, the <span class="sec">EXAMPLES</span> section is the first visited in a manual.  It
+			should consist of concise, documented examples of the most common uses of your component.  
+		</p>
+		<p>
+			For commands, the <span class="sec">EXAMPLES</span> section should contain a handful of common use cases.  In general,
+			these should consist of standalone invocations and, if the input and output correspond to other utilities, invocations
+			as part of a pipeline.
+		</p>
+		<p>
+			Although the <span class="cmd">hello</span> example is almost too trivial for documentation, consider if it were used to
+			greet new users to a Unix system.  Thus, a common example would be the following:
+		</p>
+		<pre>
+.Sh EXAMPLES
+The following sends a greeting message to the new user
+.Qq joe .
+.Pp
+.Dl $ hello \*qDear Joe, \*q \(bv mail -s \*qHi!\*q joe
+		</pre>
+		<p>
+			The <span class="macro">Dl</span>, used for one-line literal displays, is a common macro in the <span
+				class="sec">EXAMPLES</span> section.  For multi-line displays, use the <span class="macro">Bd</span> <span
+				class="macroflag">literal</span> environment, usually with a default indentation with <span
+				class="macroflag">offset</span> <span class="macroarg">indent</span>.
+		</p>
+		<pre>
+.Sh EXAMPLES
+The following sends a greeting message to the new user
+.Qq joe .
+.Bd -literal -offset indent
+$ hello \*qDear Joe, \*q \(bv \e
+  mail -s \*qHi!\*q joe
+.Ed
+		</pre>
+		<p>
+			For functions and function libraries, it's more common to include a single, thorough source example than individual
+			examples for each function.  These always use the <span class="macro">Bd</span> <span class="macroflag">literal</span>
+			display environment and an indentation.
+		</p>
+		<pre>
+.Sh EXAMPLES
+The following is a simple utility interfacing with the
+.Nm
+library:
+.Bd -literal -offset indent
+#include &lt;stdlib.h&gt;
+#include "hello.h"
+
+int
+main(int argc, char *argv[]) {
+    hello(0, argc &gt; r ? argv[1] : NULL);
+    return(EXIT_SUCCESS);
+}
+.Ed
+		</pre>
+		<p>
+			Use terse syntax for your example, without error checking for functions not being documented, e.g., <span
+				class="func">open</span> or <span class="func">scanf</span>.
+		</p>
+		<p>
+			Some manuals will use the <span class="macro">vS</span> and <span class="macro">vE</span> macros around source code.
+			I'll discuss these later in this book, but they should be avoided for portable manuals.
+		</p>
+		<h1>
+			Diagnostics
+		</h1>
+		<p>
+			If your component emits regular debug, status, error, or warning messages, document the syntax of these messages in
+			<span class="sec">DIAGNOSTICS</span>.
+		</p>
+		<p>
+			Some historic manuals document function return values in this section, but modern practise is to do in <span
+				class="sec">RETURN VALUES</span> or, if setting the error constant of the C library, <span
+				class="sec">ERRORS</span>.
+		</p>
+		<p>
+			The <span class="macro">Bl</span> <span class="macroflag">diag</span> lists are most often used for documenting emitted
+			messages.
+		</p>
+		<pre>
+.Sh DIAGNOSTICS
+.Bl -diag
+.It "%file:%line:%col: %msg[: %extra]"
+An error occured when processing
+.Cm %file
+at line and column
+.Cm %line
+and
+.Cm %col ,
+respectively.
+The error message
+.Cm %msg
+may be followed by additional debugging information in
+.Cm %extra .
+.El
+		</pre>
+		<h1>
+			Errors
+		</h1>
+		<p>
+			This section is used exclusively by functions that set or return a regular error code.  The most common use is for
+			system calls (category two) setting error constants in the C library.  In either case, this section should consist of a
+			single list documenting all possible error codes.  In the latter case, each error should be labelled within the <span
+				class="macro">Er</span> macro.
+		</p>
+		<h1>
+			See Also
+		</h1>
+		<p>
+			This section consists of cross-references to other manuals or literature.  It is a standard section in most UNIX
+			manuals.  Any components referenced in your manual should be duplicated here along with any other bibliographic texts.
+		</p>
+		<p>
+			For UNIX manual cross-references, use the <span class="macro">Xr</span> macro.  These should be specified in a list
+			ordered first by section, then by name.  Non-terminal references should be comma-separated.
+		</p>
+		<pre>
+.Sh SEE ALSO
+.Xr mandoc 1 ,
+.Xr mandoc 3 ,
+.Xr man 7 ,
+.Xr mdoc 7
+		</pre>
+		<p>
+			If your manual references other documents or literature, you may include them in this section within a bibliographic
+			reference as well.  The <span class="macro">Rs</span> block is used for bibliographic references.  These should be
+			specified after any UNIX manual cross-references.
+		</p>
+		<pre>
+.Sh SEE ALSO
+.Xr mandoc 1 ,
+.Xr mandoc 3 ,
+.Xr man 7 ,
+.Xr mdoc 7
+.Rs
+.%A Brian W. Kernighan
+.%A Lorinda L. Cherry
+.%T System for Typesetting Mathematics
+.%J Communications of the ACM
+.%V 18
+.%P 151\(en157
+.%D March, 1975
+.Re
+		</pre>
+		<p>
+			Bibliographic references should be ordered by document title.  Advanced references will be covered later in this book.
+		</p>
+		<h1>
+			Standards
+		</h1>
+		<p>
+			If your component references any standards literature, it should be mentioned here.  Most standards (e.g., POSIX, ANSI,
+			etc.) may be semantically noted with the <span class="macro">St</span> macro.  When implementing standardised wire
+			protocols, references to RFC and other literature should also be mentioned here.  These differ from referenced standards
+			in terms of being implemented versus referred.
+		</p>
+		<pre>
+.Sh STANDARDS
+The
+.Nm
+utility is compliant with the
+.St -xpg4
+specification.
+		</pre>
+		<p>
+			If your component consists of deviations from a given standard, they should be mentioned in this section as well.  Some
+			historic manuals use a special <span class="sec">COMPATIBILITY</span> section for this, but this is discouraged unless
+			when discussing compatibility with non-standard but common utilities.
+		</p>
+		<p>
+			This section has also been referred to as <span class="sec">CONFORMING TO</span> on some GNU/Linux manuals.
+		</p>
+		<h1>
+			History
+		</h1>
+		<p>
+			Some components have a historical basis: this should be included here.  Keep this information terse and, above all,
+			correct.
+		</p>
+		<p>
+			If your manual includes prior implementations of your component, for example, it's common to include the dates and
+			developers of those prior implementations.
+		</p>
+		<h1>
+			Authors
+		</h1>
+		<p>
+			Another standard section for UNIX manuals is the <span class="sec">AUTHORS</span> section, which should always mention
+			the current contact for the utility.  The traditional text for this section is as follows.
+		</p>
+		<pre>
+.Sh AUTHORS
+The
+.Nm
+reference was written by
+.An Joe Foo Aq joe@example.com .
+		</pre>
+		<p>
+			However, in as e-mail addresses are a ubiquitous form of contact, it's considered good practise to use the correct
+			semantic notation.
+		</p>
+		<pre>
+.Sh AUTHORS
+The
+.Nm
+reference was written by
+.An Joe Foo ,
+.Mt joe@example.com .
+		</pre>
+		<p>
+			The term <span class="screen">reference</span> in this fragment should reflect the content of the manual.
+		</p>
+		<h1>
+			Caveats
+		</h1>
+		<p>
+			The <span class="sec">CAVEATS</span> section is not often used.  It consists of text relevant to unexpected (but
+			unchangeable) behaviour of the component.
+		</p>
+		<h1>
+			Bugs
+		</h1>
+		<p>
+			If the component has known bugs, they should be listed here.  In some historic manuals, authors used this section to
+			list <q>no bugs present</q>; however, this text can be misleading for machine-readers of manuals and should be avoided
+			in new manuals.
+		</p>
+		<h1>
+			Security Considerations
+		</h1>
+		<p>
+			The <span class="sec">SECURITY CONSIDERATIONS</span> section is reserved for components whose deployment may be
+			sensitive to security conditions, such as network daemons.  It should include suggestions on security measures beyond
+			the scope of the component.
+		</p>
+		<p>
+			This section was historically called <span class="sec">SECURITY</span>.
+		</p>
+	</body>
+</html>
