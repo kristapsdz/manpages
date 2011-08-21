@@ -14,23 +14,37 @@
 			An <span class="lang">mdoc</span> manual is divided into two logical parts: the <span class="term">prologue</span> and
 			the <span class="term">document body</span>.
 		</p>
-		<pre>
-.\" Prologue follows:
-.Dd May 26 2011
-.Dt MDOC 7
-.Os
-.\" Document body follows:
-.Sh NAME
-.Nm mdoc
-.Nd mdoc language reference
-.Sh DESCRIPTION
-The
-.Nm mdoc
-language is used to format
-.Bx
-.Ux
-manuals.
-		</pre>
+		<div class="mdocin">
+			.\" Prologue follows:
+			<br />
+			.Dd May 26 2011
+			<br />
+			.Dt MDOC 7
+			<br />
+			.Os
+			<br />
+			.\" Document body follows:
+			<br />
+			.Sh NAME
+			<br />
+			.Nm mdoc
+			<br />
+			.Nd mdoc language reference
+			<br />
+			.Sh DESCRIPTION
+			<br />
+			The
+			<br />
+			.Nm mdoc
+			<br />
+			language is used to format
+			<br />
+			.Bx
+			<br />
+			.Ux
+			<br />
+			manuals.
+		</div>
 		<p>
 			The prologue specifies information regarding the manual's classification.  For the most part, this information does not
 			change over the course of development.

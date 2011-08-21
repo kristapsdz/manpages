@@ -15,23 +15,37 @@
 				class="macro">Dt</span>, and <span class="macro">Os</span>).  The document body consists of the manual content
 			itself, and varies significantly between categories and, of course, the material itself.
 		</p>
-		<pre>
-.\" Prologue follows:
-.Dd May 26 2011
-.Dt MDOC 7
-.Os
-.\" Document body follows:
-.Sh NAME
-.Nm mdoc
-.Nd mdoc language reference
-.Sh DESCRIPTION
-The
-.Nm mdoc
-language is used to format
-.Bx
-.Ux
-manuals.
-		</pre>
+		<div class="mdocin">
+			.\" Prologue follows:
+			<br />
+			.Dd May 26 2011
+			<br />
+			.Dt MDOC 7
+			<br />
+			.Os
+			<br />
+			.\" Document body follows:
+			<br />
+			.Sh NAME
+			<br />
+			.Nm mdoc
+			<br />
+			.Nd mdoc language reference
+			<br />
+			.Sh DESCRIPTION
+			<br />
+			The
+			<br />
+			.Nm mdoc
+			<br />
+			language is used to format
+			<br />
+			.Bx
+			<br />
+			.Ux
+			<br />
+			manuals.
+		</div>
 		<p>
 			The content of the document body is divided into sections.  Sections are indicated by the <span class="macro">Sh</span>
 			macro.

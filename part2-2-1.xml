@@ -14,12 +14,15 @@
 			The prologue consists at most of the <span class="macro">Dd</span>, <span class="macro">Dt</span>, and <span
 				class="macro">Os</span> macros.  These always occur at the beginning of a manual.
 		</p>
-		<pre>
-.\" Prologue follows:
-.Dd May 26 2011
-.Dt MDOC 7
-.Os
-		</pre>
+		<div class="mdocin">
+			.\" Prologue follows:
+			<br />
+			.Dd May 26 2011
+			<br />
+			.Dt MDOC 7
+			<br />
+			.Os
+		</div>
 		<p>
 			The only firm requirement of the <span class="lang">mdoc</span> prologue is that the <span class="macro">Dd</span> macro
 			comes first: many formatting systems will read up to the first macro to determine the formatting language.  If <span
@@ -59,21 +62,21 @@
 		<p>
 			Example of canonical form:
 		</p>
-		<pre>
-.Dd June 03, 1991
-		</pre>
+		<div class="mdocin">
+			.Dd June 03, 1991
+		</div>
 		<p>
 			Example of not zero-padded digit form:
 		</p>
-		<pre>
-.Dd June 3, 1991
-		</pre>
+		<div class="mdocin">
+			.Dd June 3, 1991
+		</div>
 		<p>
 			Example of quoted-string form:
 		</p>
-		<pre>
-.Dd "June 3, 1991"
-		</pre>
+		<div class="mdocin">
+			.Dd "June 3, 1991"
+		</div>
 		<p>
 			All of the above examples will normalise to the third of June, 1991.  It's especially important that the month be in
 			English, as not all operating systems support localisation.
@@ -81,9 +84,9 @@
 		<p>
 			Some formatters also support a special date format as follows:
 		</p>
-		<pre>
-.Dd $Mdocdate$
-		</pre>
+		<div class="mdocin">
+			.Dd $Mdocdate$
+		</div>
 		<p>
 			This is usually used in conjunction with source-code control systems that automatically change the date.  Consult your
 			formatter's manual for whether it supports this feature.
@@ -114,16 +117,16 @@
 		<p>
 			Example of a title for the <span class="cmd">ls</span> utility:
 		</p>
-		<pre>
-.Dt LS 1
-		</pre>
+		<div class="mdocin">
+			.Dt LS 1
+		</div>
 		<p>
 			Example of a title for the <span class="lib">libgreeting</span> function library, consisting of the <span
 				class="func">hi</span> and <span class="func">hello</span> functions:
 		</p>
-		<pre>
-.Dt GREETING 3
-		</pre>
+		<div class="mdocin">
+			.Dt GREETING 3
+		</div>
 		<p>
 			If the title is left unspecified by omitting the <span class="macro">Dt</span> macro, behaviour is undefined.  Usually a
 			formatter will default to an empty string or <span class="screen">LOCAL</span>.  In general, however, a manual without
@@ -235,9 +238,6 @@
 			A device referring to a particular architecture uses this to explicitly note its relevant architecture.  In normal
 			manuals, this should not be used.
 		</p>
-		<pre>
-.Dt 
-		</pre>
 		<h1>
 			Operating System
 		</h1>

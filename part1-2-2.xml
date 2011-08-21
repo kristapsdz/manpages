@@ -20,15 +20,21 @@
 			integer of whether to capitalise, and an optional character string (a word) prefix.  Let's also stipulate an integer
 			return value.
 		</p>
-		<pre>
-.Sh SYNOPSIS
-.In hello.h
-.Ft int
-.Fo hello
-.Fa "int C"
-.Fa "const char *prefix"
-.Fc
-		</pre>
+		<div class="mdocin">
+			.Sh SYNOPSIS
+			<br />
+			.In hello.h
+			<br />
+			.Ft int
+			<br />
+			.Fo hello
+			<br />
+			.Fa "int C"
+			<br />
+			.Fa "const char *prefix"
+			<br />
+			.Fc
+		</div>
 		<p>
 			If you're not familiar with C, the <span class="screen">const char *</span> and <span class="screen">int</span> parts
 			are part of the C language.  Note that the <span class="screen">C</span> and <span class="screen">prefix</span> names
@@ -46,7 +52,7 @@
 		<div class="mdocout">
 			<div class="mdoc-section">
 				<h1>SYNOPSIS</h1>
-				<b class="mdoc-includes">#include &lt;<a class="mdoc-link-includes">hello.h</a>&gt;</b>
+				<b class="mdoc-includes">#include &lt;<span class="mdoc-link-includes">hello.h</span>&gt;</b>
 				<p/>
 				<i class="mdoc-ftype">int</i>
 				<br/>
@@ -62,12 +68,15 @@
 			If you're wondering why I didn't use <span class="macro">Fn</span> as in the last section, it's a matter of readability.
 			Using <span class="macro">Fn</span> puts everything on one long line, such as the following.
 		</p>
-		<pre>
-.Sh SYNOPSIS
-.In hello.h
-.Ft int
-.Fn hello "int C" "const char *prefix"
-		</pre>
+		<div class="mdocin">
+			.Sh SYNOPSIS
+			<br />
+			.In hello.h
+			<br />
+			.Ft int
+			<br />
+			.Fn hello "int C" "const char *prefix"
+		</div>
 		<p>
 			This works with two arguments, but can quickly run into long lines.  In general, your <span class="lang">mdoc</span>
 			manual shouldn't exceed 78 characters per line.  Shorter lines are useful in managing manuals in CVS or other code
@@ -79,15 +88,19 @@
 			arguments to a single <span class="macro">Fa</span>, the quotes are necessary for signifying a single argument type and
 			name.
 		</p>
-		<pre>
-.Sh SYNOPSIS
-.In hello.h
-.Ft int
-.Fo hello
-.Fa "int C" "const char *prefix"
-.Fc
-\end{verbatim}
-		</pre>
+		<div class="mdocin">
+			.Sh SYNOPSIS
+			<br />
+			.In hello.h
+			<br />
+			.Ft int
+			<br />
+			.Fo hello
+			<br />
+			.Fa "int C" "const char *prefix"
+			<br />
+			.Fc
+		</div>
 		<p>
 			In the C language, function prototypes don't necessarily need named function arguments.  However, it's good practise to
 			name arguments when documenting them in the <span class="sec">SYNOPSIS</span> so that we can consistently refer to them later on in the
@@ -98,28 +111,40 @@
 			body.  Sometimes this is done within the flow of a regular sentence.  Other times, as below, we'll introduce each
 			argument as part of a list.
 		</p>
-		<pre>
-.Sh DESCRIPTION
-The
-.Nm
-function prints
-.Qq hello, world .
-.Pp
-It accepts the following arguments:
-.Bl -tag -width Ds
-.It Fa "int C"
-Non-zero if the output should be uppercase.
-.It Fa "const char *prefix"
-A prefix to precede the output or NULL for no prefix.
-.El
-		</pre>
+		<div class="mdocin">
+			.Sh DESCRIPTION
+			<br />
+			The
+			<br />
+			.Nm
+			<br />
+			function prints
+			<br />
+			.Qq hello, world .
+			<br />
+			.Pp
+			<br />
+			It accepts the following arguments:
+			<br />
+			.Bl -tag -width Ds
+			<br />
+			.It Fa "int C"
+			<br />
+			Non-zero if the output should be uppercase.
+			<br />
+			.It Fa "const char *prefix"
+			<br />
+			A prefix to precede the output or NULL for no prefix.
+			<br />
+			.El
+		</div>
 		<p>
 			Here, we see the familiar <span class="macro">Bl</span> and <span class="macro">El</span> list enclosure.  Notice how I
 			re-use the <span class="macro">Fa</span> macro to document individual arguments, just like I re-used <span
 				class="macro">Fl</span> and <span class="macro">Ar</span> when documenting command-line flags and arguments.
 		</p>
 		<p>
-This renders as follows.
+			This renders as follows.
 		</p>
 		<div class="mdocout">
 			<div class="mdoc-section">
@@ -142,47 +167,77 @@ This renders as follows.
 			Finally, let's add a section documenting the return value of this function.  This will differ from the simple example in
 			that we actually return a value.  
 		</p>
-		<pre>
-.Sh RETURN VALUES
-The
-.Nm
-function returns 1 on success, 0 on failure.
-\end{verbatim}
-		</pre>
+		<div class="mdocin">
+			.Sh RETURN VALUES
+			<br />
+			The
+			<br />
+			.Nm
+			<br />
+			function returns 1 on success, 0 on failure.
+		</div>
 		<p>
 			Piecing this example together, we have the following the following respectable C function manual.
 		</p>
-		<pre>
-.Dd May 30, 2011
-.Dt HELLO 3
-.Os
-.Sh NAME
-.Nm hello
-.Nd print \(dqhello, world\(dq
-.Sh SYNOPSIS
-.In hello.h
-.Ft int
-.Fo hello
-.Fa "int C" "const char *prefix"
-.Fc
-.Sh DESCRIPTION
-The
-.Nm
-function prints
-.Qq hello, world .
-.Pp
-It accepts the following arguments:
-.Bl -tag -width Ds
-.It Fa "int C"
-Non-zero if the output should be uppercase.
-.It Fa "const char *prefix"
-A prefix to precede the output or NULL for no prefix.
-.El
-.Sh RETURN VALUES
-The
-.Nm
-function returns 1 on success, 0 on failure.
-		</pre>
+		<div class="mdocin">
+			.Dd May 30, 2011
+			<br />
+			.Dt HELLO 3
+			<br />
+			.Os
+			<br />
+			.Sh NAME
+			<br />
+			.Nm hello
+			<br />
+			.Nd print \(dqhello, world\(dq
+			<br />
+			.Sh SYNOPSIS
+			<br />
+			.In hello.h
+			<br />
+			.Ft int
+			<br />
+			.Fo hello
+			<br />
+			.Fa "int C" "const char *prefix"
+			<br />
+			.Fc
+			<br />
+			.Sh DESCRIPTION
+			<br />
+			The
+			<br />
+			.Nm
+			<br />
+			function prints
+			<br />
+			.Qq hello, world .
+			<br />
+			.Pp
+			<br />
+			It accepts the following arguments:
+			<br />
+			.Bl -tag -width Ds
+			<br />
+			.It Fa "int C"
+			<br />
+			Non-zero if the output should be uppercase.
+			<br />
+			.It Fa "const char *prefix"
+			<br />
+			A prefix to precede the output or NULL for no prefix.
+			<br />
+			.El
+			<br />
+			.Sh RETURN VALUES
+			<br />
+			The
+			<br />
+			.Nm
+			<br />
+			function returns 1 on success, 0 on failure.
+		</div>
 		<p>
 			Running through our checklist, we see that we've described preprocessor information with the header file <span
 				class="macro">In</span>; function calling syntax and types in the <span class="sec">SYNOPSIS</span>; and

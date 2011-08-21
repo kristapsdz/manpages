@@ -28,11 +28,13 @@
 		<p>
 			Let's begin with the first few macros, which are also called the manual prologue.
 		</p>
-		<pre>
-.Dd May 30, 2011
-.Dt GREETING 3
-.Os
-		</pre>
+		<div class="mdocin">
+			.Dd May 30, 2011
+			<br />
+			.Dt GREETING 3
+			<br />
+			.Os
+		</div>
 		<p>
 			Note that I've changed the document title to be <span class="screen">GREETING</span> instead of choosing between
 			function names.  This is because the manual documents the entire function library, not just one particular function.  In
@@ -45,12 +47,15 @@
 			Next, I'll list the names of the functions being documented.  I also change the description of the manual to be more
 			generic, just in case I want to add new functions, later.
 		</p>
-		<pre>
-.Sh NAME
-.Nm hello ,
-.Nm hi
-.Nd print greeting messages
-		</pre>
+		<div class="mdocin">
+			.Sh NAME
+			<br />
+			.Nm hello ,
+			<br />
+			.Nm hi
+			<br />
+			.Nd print greeting messages
+		</div>
 		<p>
 			Here I've used <span class="macro">Nm</span> twice to indicate that the manual documents two functions.  In doing so,
 			I'll have to be careful when invoking <span class="macro">Nm</span> in later parts of the manual, as it will produce
@@ -62,8 +67,8 @@
 				class="macro">Nd</span> to the relevant function and not that of the library.
 		</p>
 		<p>
-			It's good practise to alphabetise the function names in the \Sh{NAME} section.  We must also be sure to comma-separate
-			each name, leaving the last invocation without a comma.  Let's look at the output so far.
+			It's good practise to alphabetise the function names in the <span class="sec">NAME</span> section.  We must also be sure
+			to comma-separate each name, leaving the last invocation without a comma.  Let's look at the output so far.
 		</p>
 		<div class="mdocout">
 			<div class="mdoc-section">
@@ -75,11 +80,11 @@
 		<p>
 			We next add a new section to name the library itself.
 		</p>
-		<pre>
-.Sh LIBRARY
-.Lb greeting
-\end{verbatim}
-		</pre>
+		<div class="mdocin">
+			.Sh LIBRARY
+			<br />
+			.Lb greeting
+		</div>
 		<p>
 			This uses the macro <span class="macro">Lb</span>, which accepts the name of the library (not including the leading
 			<q>lib</q>).  This macro is smart enough to know about <span class="term">standard libraries</span>, and will format the
@@ -101,18 +106,25 @@
 			The <span class="sec">SYNOPSIS</span> section will simply be a collection of the calling syntaxes for both functions,
 			which we've already studied.  If we were only documenting one function, would list only that function here.
 		</p>
-		<pre>
-.Sh SYNOPSIS
-.In hello.h
-.In hi.h
-.Ft int
-.Fo hello
-.Fa "int C" "const char *prefix"
-.Fc
-.Ft void
-.Fn hi
-\end{verbatim}
-		</pre>
+		<div class="mdocin">
+			.Sh SYNOPSIS
+			<br />
+			.In hello.h
+			<br />
+			.In hi.h
+			<br />
+			.Ft int
+			<br />
+			.Fo hello
+			<br />
+			.Fa "int C" "const char *prefix"
+			<br />
+			.Fc
+			<br />
+			.Ft void
+			<br />
+			.Fn hi
+		</div>
 		<p>
 			Note that I've listed both include files prior to the function prototypes.  This is familiar to C programmers, where
 			functions may have multiple include files that need a specific order.  The functions are listed in the same order as
@@ -133,8 +145,8 @@
 			</div>
 			<div class="mdoc-section">
 				<h1>SYNOPSIS</h1>
-				<b class="mdoc-includes">#include &lt;<a class="mdoc-link-includes">hello.h</a>&gt;</b><br/>
-				<b class="mdoc-includes">#include &lt;<a class="mdoc-link-includes">hi.h</a>&gt;</b><p/>
+				<b class="mdoc-includes">#include &lt;<span class="mdoc-link-includes">hello.h</span>&gt;</b><br/>
+				<b class="mdoc-includes">#include &lt;<span class="mdoc-link-includes">hi.h</span>&gt;</b><p/>
 				<i class="mdoc-ftype">int</i><br/>
 				<b class="mdoc-fname">hello</b>(<i class="mdoc-farg">int C</i>, <i class="mdoc-farg">const char *prefix</i>);<p/>
 				<i class="mdoc-ftype">void</i><br/>
@@ -151,39 +163,61 @@
 				class="sec">SYNOPSIS</span> to hint the reader as to the function argument types; there's no need to re-state
 			them.
 		</p>
-		<pre>
-.Sh DESCRIPTION
-The
-.Fn hi
-and
-.Fn hello
-functions print out greeting messages.
-.Pp
-The
-.Fn hi
-function accepts no arguments and prints out
-.Qq hello, world .
-.Pp
-The
-.Fn hello
-function accepts a value
-.Fa C ,
-which if non-zero indicates output should be uppercase; and
-.Fa prefix ,
-which, if non-NULL, shall be prefixed to the output.
-The
-.Fa prefix
-argument, if non-NULL, must be nil-terminated.
-\end{verbatim}
-		</pre>
+		<div class="mdocin">
+			.Sh DESCRIPTION
+			<br />
+			The
+			<br />
+			.Fn hi
+			<br />
+			and
+			<br />
+			.Fn hello
+			<br />
+			functions print out greeting messages.
+			<br />
+			.Pp
+			<br />
+			The
+			<br />
+			.Fn hi
+			<br />
+			function accepts no arguments and prints out
+			<br />
+			.Qq hello, world .
+			<br />
+			.Pp
+			<br />
+			The
+			<br />
+			.Fn hello
+			<br />
+			function accepts a value
+			<br />
+			.Fa C ,
+			<br />
+			which if non-zero indicates output should be uppercase; and
+			<br />
+			.Fa prefix ,
+			<br />
+			which, if non-NULL, shall be prefixed to the output.
+			<br />
+			The
+			<br />
+			.Fa prefix
+			<br />
+			argument, if non-NULL, must be nil-terminated.
+		</div>
 		<p>
 			Notice how each sentence in this fragment ends on its own line, for example,
 		</p>
-		<pre>
-which, if non-NULL, shall be prefixed to the output.
-The
-.Fa prefix
-		</pre>
+		<div class="mdocin">
+			which, if non-NULL, shall be prefixed to the output.
+			<br />
+			The
+			<br />
+			.Fa prefix
+		</div>
 		<p>
 			By doing so, the formatter is able to recognise the end of sentence and correctly handle sentential spacing.  In most
 			cases, this means adding two spaces between the period and subsequent text.  From this follows a rule of thumb, <q>new
@@ -193,16 +227,23 @@ The
 			In this <span class="sec">DESCRIPTION</span> we've captured what each function does and what its arguments are.  What
 			remains are return values.
 		</p>
-		<pre>
-.Sh RETURN VALUES
-The
-.Fn hi
-function does not return a value.
-.Pp
-The
-.Fn hello
-function returns 1 on success, 0 on failure.
-		</pre>
+		<div class="mdocin">
+			.Sh RETURN VALUES
+			<br />
+			The
+			<br />
+			.Fn hi
+			<br />
+			function does not return a value.
+			<br />
+			.Pp
+			<br />
+			The
+			<br />
+			.Fn hello
+			<br />
+			function returns 1 on success, 0 on failure.
+		</div>
 		<p>
 			Let's collect these fragments into a single document and see if it's enough to use as a programming reference.
 		</p>
@@ -218,9 +259,9 @@ function returns 1 on success, 0 on failure.
 			</div>
 			<div class="mdoc-section">
 				<h1>SYNOPSIS</h1>
-				<b class="mdoc-includes">#include &lt;<a class="mdoc-link-includes">hello.h</a>&gt;</b>
+				<b class="mdoc-includes">#include &lt;<span class="mdoc-link-includes">hello.h</span>&gt;</b>
 				<br/>
-				<b class="mdoc-includes">#include &lt;<a class="mdoc-link-includes">hi.h</a>&gt;</b>
+				<b class="mdoc-includes">#include &lt;<span class="mdoc-link-includes">hi.h</span>&gt;</b>
 				<p/>
 				<i class="mdoc-ftype">int</i>
 				<br/>

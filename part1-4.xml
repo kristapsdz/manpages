@@ -21,14 +21,16 @@
 		</p>
 		<p>
 			The first difference between ordinary functions and system calls is the manual category.  Let's study a function <span
-				class="func">khello</span>, <span class="screen">kernel hello</span>, which is similar to the <span
-				class="func">hello</span> function described earlier.
+				class="func">khello</span>, <q>kernel hello</q>, which is similar to the <span class="func">hello</span>
+			function described earlier.
 		</p>
-		<pre>
-.Dd May 30, 2011
-.Dt KHELLO 2
-.Os
-		</pre>
+		<div class="mdocin">
+			.Dd May 30, 2011
+			<br />
+			.Dt KHELLO 2
+			<br />
+			.Os
+		</div>
 		<p>
 			All system calls are in category two.
 		</p>
@@ -40,34 +42,59 @@
 			<span class="header">hello.h</span> header file should be in the compiler's standard include path.  This is usually
 			<span class="path">/usr/include</span> on UNIX systems.
 		</p>
-		<pre>
-.Sh NAME
-.Nm hello
-.Nd print greeting messages
-.Sh SYNOPSIS
-.In hello.h
-.Ft int
-.Fo hello
-.Fa "int C" "const char *prefix"
-.Fc
-.Sh DESCRIPTION
-The
-.Nm
-function prints out a greeting message.
-.Pp
-It accepts a value
-.Fa C ,
-which if non-zero indicates output should be uppercase; and
-.Fa prefix ,
-which, if not
-.Dv NULL ,
-shall be prefixed to the output.
-The
-.Fa prefix
-argument, if not
-.Dv NULL ,
-must be nil-terminated.
-		</pre>
+		<div class="mdocin">
+			.Sh NAME
+			<br />
+			.Nm hello
+			<br />
+			.Nd print greeting messages
+			<br />
+			.Sh SYNOPSIS
+			<br />
+			.In hello.h
+			<br />
+			.Ft int
+			<br />
+			.Fo hello
+			<br />
+			.Fa "int C" "const char *prefix"
+			<br />
+			.Fc
+			<br />
+			.Sh DESCRIPTION
+			<br />
+			The
+			<br />
+			.Nm
+			<br />
+			function prints out a greeting message.
+			<br />
+			.Pp
+			<br />
+			It accepts a value
+			<br />
+			.Fa C ,
+			<br />
+			which if non-zero indicates output should be uppercase; and
+			<br />
+			.Fa prefix ,
+			<br />
+			which, if not
+			<br />
+			.Dv NULL ,
+			<br />
+			shall be prefixed to the output.
+			<br />
+			The
+			<br />
+			.Fa prefix
+			<br />
+			argument, if not
+			<br />
+			.Dv NULL ,
+			<br />
+			must be nil-terminated.
+		</div>
 		<p>
 			You'll notice I've omitted the <span class="sec">LIBRARY</span> section in this example, as system calls by definition
 			aren't a part of a library.  Furthermore, I've used the <span class="macro">Dv</span> macro to annotate the term <span
@@ -83,7 +110,7 @@ must be nil-terminated.
 			</div>
 			<div class="mdoc-section">
 				<h1>SYNOPSIS</h1>
-				<b class="mdoc-includes">#include &lt;<a class="mdoc-link-includes">hello.h</a>&gt;</b>
+				<b class="mdoc-includes">#include &lt;<span class="mdoc-link-includes">hello.h</span>&gt;</b>
 				<p/>
 				<i class="mdoc-ftype">int</i>
 				<br/>
@@ -105,10 +132,11 @@ must be nil-terminated.
 			setting the C library <span class="var">errno</span> variable when invoked within a C language context.  This is
 			documented with a special macro <span class="macro">Rv</span>.
 		</p>
-		<pre>
-.Sh RETURN VALUES
-.Rv -std
-		</pre>
+		<div class="mdocin">
+			.Sh RETURN VALUES
+			<br />
+			.Rv -std
+		</div>
 		<p>
 			The <span class="macroflag">std</span> flag is by convention always specified.  This macro will produce standard text
 			regarding the <span class="var">errno</span> value and that the function returns <span class="value">-1</span> on
@@ -122,14 +150,19 @@ must be nil-terminated.
 			Next, the possible values of <span class="var">errno</span> must be specified in the <span class="sec">ERRORS</span>
 			section as a list.  Let's assume that <span class="var">EFAULT</span> may be set if the pointer is invalid.
 		</p>
-		<pre>
-.Sh ERRORS
-.Bl -tag -width Er
-.It Er EFAULT
-.Fa prefix
-points outside the allocated address space.
-.El
-		</pre>
+		<div class="mdocin">
+			.Sh ERRORS
+			<br />
+			.Bl -tag -width Er
+			<br />
+			.It Er EFAULT
+			<br />
+			.Fa prefix
+			<br />
+			points outside the allocated address space.
+			<br />
+			.El
+		</div>
 		<p>
 			The syntax of this list differs from lists we've already encountered.
 			Earlier we used the special term <span class="screen">Ds</span> as an argument to
@@ -150,12 +183,15 @@ points outside the allocated address space.
 			you're adding the function to a fictional Foo OS.  Most modern UNIX operating systems have their own macros, such as
 			<span class="macro">Bx</span> for BSD UNIX.  Be sure to note the version of the operating system.
 		</p>
-		<pre>
-.Sh HISTORY
-The
-.Nm
-function call appeared in Foo OS version 1.0.
-		</pre>
+		<div class="mdocin">
+			.Sh HISTORY
+			<br />
+			The
+			<br />
+			.Nm
+			<br />
+			function call appeared in Foo OS version 1.0.
+		</div>
 		<p>
 			Let's put all of these sections together and preview the output.
 		</p>
@@ -166,7 +202,7 @@ function call appeared in Foo OS version 1.0.
 			</div>
 			<div class="mdoc-section">
 				<h1>SYNOPSIS</h1>
-				<b class="mdoc-includes">#include &lt;<a class="mdoc-link-includes">hello.h</a>&gt;</b>
+				<b class="mdoc-includes">#include &lt;<span class="mdoc-link-includes">hello.h</span>&gt;</b>
 				<p/>
 				<i class="mdoc-ftype">int</i><br/>
 				<b class="mdoc-fname">hello</b>(<i class="mdoc-farg">int C</i>, <i class="mdoc-farg">const char *prefix</i>);

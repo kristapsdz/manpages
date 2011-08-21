@@ -91,11 +91,13 @@
 		<p>
 			The following is an example of the <span class="sec">NAME</span> section for a single utility, <span class="cmd">hi</span>.
 		</p>
-		<pre>
-.Sh NAME
-.Nm foo
-.Nd print a simple greeting
-		</pre>
+		<div class="mdocin">
+			.Sh NAME
+			<br />
+			.Nm foo
+			<br />
+			.Nd print a simple greeting
+		</div>
 		<p>
 			The <span class="macro">Nd</span> macro should consist of a single line without trailing punctuation or leading
 			capitalisation.  As a rule of thumb, this description should be a sentence clause in the imperative mood for commands
@@ -104,26 +106,30 @@
 		<p>
 			Example imperative:
 		</p>
-		<pre>
-.Nm foo
-.Nd print a simple greeting
-		</pre>
+		<div class="mdocin">
+			.Nm foo
+			<br />
+			.Nd print a simple greeting
+		</div>
 		<p>
 			Example noun phrase:
 		</p>
-		<pre>
-.Nm mdoc
-.Nd mdoc language reference
-		</pre>
+		<div class="mdocin">
+			.Nm mdoc
+			<br />
+			.Nd mdoc language reference
+		</div>
 		<p>
 			In the event of multiple named components, such as a function library or aliased commands, comma-separate each command
 			but for the last.  It's common to alphabetically order this listing.
 		</p>
-		<pre>
-.Nm hello ,
-.Nm hi
-.Nd print greetings
-		</pre>
+		<div class="mdocin">
+			.Nm hello ,
+			<br />
+			.Nm hi
+			<br />
+			.Nd print greetings
+		</div>
 		<p>
 			Note that the punctuation should be separate from the macro argument.  This allows the formatter to distinguish between
 			the name and trailing punctuation.
@@ -143,12 +149,15 @@
 			For command manuals in category <span class="cat">1</span>, <span class="cat">6</span>, and <span class="cat">9</span>,
 			each command must have its full syntax stipulated.
 		</p>
-		<pre>
-.Nm hello
-.Op Fl a
-.Op Fl o Ar output
-.Op Ar prefix
-		</pre>
+		<div class="mdocin">
+			.Nm hello
+			<br />
+			.Op Fl a
+			<br />
+			.Op Fl o Ar output
+			<br />
+			.Op Ar prefix
+		</div>
 		<p>
 			This defines three optional arguments for the <span class="cmd">hi</span> command: a flag, a flag with an argument, and
 			an argument.  Flags should be purely alphabetical, without regard to whether a flag takes an argument.  Arguments should
@@ -162,13 +171,17 @@
 		<p>
 			Multiple commands are specified in the order they appear within the <span class="sec">NAME</span> section.
 		</p>
-		<pre>
-.Nm hello
-.Op Fl a
-.Op Fl o Ar output
-.Op Ar prefix
-.Nm hi
-		</pre>
+		<div class="mdocin">
+			.Nm hello
+			<br />
+			.Op Fl a
+			<br />
+			.Op Fl o Ar output
+			<br />
+			.Op Ar prefix
+			<br />
+			.Nm hi
+		</div>
 		<p>
 			Since there are multiple <span class="macro">Nm</span> macros in the <span class="sec">NAME</span> section, it's
 			necessary that we specify the name of each command.  In this example, an additional command <span class="cmd">hi</span>
@@ -186,74 +199,112 @@
 			A minimum function manual consists of a single function call and the header file of its prototype (if in a language
 			requiring header files, such as C):
 		</p>
-		<pre>
-.In greeting.h
-.Ft int
-.Fo hello
-.Fa "int C"
-.Fa "const char *output"
-.Fc
-		</pre>
+		<div class="mdocin">
+			.In greeting.h
+			<br />
+			.Ft int
+			<br />
+			.Fo hello
+			<br />
+			.Fa "int C"
+			<br />
+			.Fa "const char *output"
+			<br />
+			.Fc
+		</div>
 		<p>
 			The header file comes before those functions it describes.  If one or more header files are required, list them in the
 			order of inclusion in source files.
 		</p>
-		<pre>
-.In sys/types.h
-.In greeting.h
-.Ft int
-.Fo hello
-.Fa "u_int C"
-.Fa "const char *output"
-.Fc
-		</pre>
+		<div class="mdocin">
+			.In sys/types.h
+			<br />
+			.In greeting.h
+			<br />
+			.Ft int
+			<br />
+			.Fo hello
+			<br />
+			.Fa "u_int C"
+			<br />
+			.Fa "const char *output"
+			<br />
+			.Fc
+		</div>
 		<p>
 			If multiple functions are documented, list them in the order they appear in the <span class="sec">NAME</span> section.
 		</p>
-		<pre>
-.In sys/types.h
-.In greeting.h
-.Ft int
-.Fo hello
-.Fa "u_int C"
-.Fa "const char *output"
-.Fc
-.Ft void
-.Fn hi
-		</pre>
+		<div class="mdocin">
+			.In sys/types.h
+			<br />
+			.In greeting.h
+			<br />
+			.Ft int
+			<br />
+			.Fo hello
+			<br />
+			.Fa "u_int C"
+			<br />
+			.Fa "const char *output"
+			<br />
+			.Fc
+			<br />
+			.Ft void
+			<br />
+			.Fn hi
+		</div>
 		<p>
 			List any global variables with the <span class="macro">Vt</span> and/or <span class="macro">Va</span> macro following
 			function prototypes.
 		</p>
-		<pre>
-.In sys/types.h
-.In greeting.h
-.Ft int
-.Fo hello
-.Fa "u_int C"
-.Fa "const char *output"
-.Fc
-.Ft void
-.Fn hi
-.Vt extern const char * const * greetings;
-		</pre>
+		<div class="mdocin">
+			.In sys/types.h
+			<br />
+			.In greeting.h
+			<br />
+			.Ft int
+			<br />
+			.Fo hello
+			<br />
+			.Fa "u_int C"
+			<br />
+			.Fa "const char *output"
+			<br />
+			.Fc
+			<br />
+			.Ft void
+			<br />
+			.Fn hi
+			<br />
+			.Vt extern const char * const * greetings;
+		</div>
 		<p>
 			Macro definitions, however, should come before the function prototypes.  These use the <span class="macro">Fd</span>
 			macro and must include the preprocessor directive for the macro.
 		</p>
-		<pre>
-.In sys/types.h
-.In greeting.h
-.Fd #define GREETING
-.Ft int
-.Fo hello
-.Fa "u_int C"
-.Fa "const char *output"
-.Fc
-.Ft void
-.Fn hi
-.Vt extern const char * const * greetings;
-		</pre>
+		<div class="mdocin">
+			.In sys/types.h
+			<br />
+			.In greeting.h
+			<br />
+			.Fd #define GREETING
+			<br />
+			.Ft int
+			<br />
+			.Fo hello
+			<br />
+			.Fa "u_int C"
+			<br />
+			.Fa "const char *output"
+			<br />
+			.Fc
+			<br />
+			.Ft void
+			<br />
+			.Fn hi
+			<br />
+			.Vt extern const char * const * greetings;
+		</div>
 		<p>
 			Some manuals define a range of functions with differing header dependencies.  In general it's not a good idea to group
 			these within the same manual. However, if necessary, arrange the functions and variables underneath their header file
@@ -274,24 +325,39 @@
 			A command or set of commands is documented in <span class="sec">DESCRIPTION</span> with a brief explanation of
 			behaviour, a list of arguments, and default behaviour regarding those arguments.
 		</p>
-		<pre>
-The
-.Nm
-command prints out a simple greeting.
-The arguments are as follows:
-.Bl -tag -width Ds
-.It Fl C
-Whether to uppercase the output.
-.It Fl o Ar output
-A file into which output should be written.
-.It Ar prefix
-A string prefixed to the output.
-.El
-.Pp
-By default,
-.Nm
-prints a mixed-case greeting to standard output.
-		</pre>
+		<div class="mdocin">
+			The
+			<br />
+			.Nm
+			<br />
+			command prints out a simple greeting.
+			<br />
+			The arguments are as follows:
+			<br />
+			.Bl -tag -width Ds
+			<br />
+			.It Fl C
+			<br />
+			Whether to uppercase the output.
+			<br />
+			.It Fl o Ar output
+			<br />
+			A file into which output should be written.
+			<br />
+			.It Ar prefix
+			<br />
+			A string prefixed to the output.
+			<br />
+			.El
+			<br />
+			.Pp
+			<br />
+			By default,
+			<br />
+			.Nm
+			<br />
+			prints a mixed-case greeting to standard output.
+		</div>
 		<p>
 			If multiple commands are included, they should be listed in the order they appear in <span class="sec">NAME</span> and
 			<span class="sec">DESCRIPTION</span>.  Remember to specify a documented command, in this case, whenever invoking the
@@ -304,35 +370,54 @@ prints a mixed-case greeting to standard output.
 			Functions do not share the <span class="screen">The arguments are as follows</span> convention that commands enjoy.
 			Most often, a function is described in paragraph form.
 		</p>
-		<pre>
-The
-.Fn hello
-function prints a greeting to standard out.
-If
-.Fa C
-is non-zero, output is upper-cased.
-If
-.Fa prefix
-is non-NULL, it is prefixed to the output.
-		</pre>
+		<div class="mdocin">
+			The
+			<br />
+			.Fn hello
+			<br />
+			function prints a greeting to standard out.
+			<br />
+			If
+			<br />
+			.Fa C
+			<br />
+			is non-zero, output is upper-cased.
+			<br />
+			If
+			<br />
+			.Fa prefix
+			<br />
+			is non-NULL, it is prefixed to the output.
+		</div>
 		<p>
 			A function with many variables, or complicated variables, may wish to choose the same listed-argument notation of
 			commands.
 		</p>
-		<pre>
-The
-.Fn hello
-function prints a greeting to standard out.
-The arguments are as follows:
-.Bl -tag -width Ds
-.It Fa "C"
-If non-zero, output is upper-cased.
-.It Fa "prefix"
-If non-NULL,
-.Fa prefix
-is prefixed to the output.
-.El
-		</pre>
+		<div class="mdocin">
+			The
+			<br />
+			.Fn hello
+			<br />
+			function prints a greeting to standard out.
+			<br />
+			The arguments are as follows:
+			<br />
+			.Bl -tag -width Ds
+			<br />
+			.It Fa "C"
+			<br />
+			If non-zero, output is upper-cased.
+			<br />
+			.It Fa "prefix"
+			<br />
+			If non-NULL,
+			<br />
+			.Fa prefix
+			<br />
+			is prefixed to the output.
+			<br />
+			.El
+		</div>
 		<p>
 			Above all, you must be careful to document each argument to each function.  Function return values are usually
 			documented in <span class="sec">RETURN VALUES</span>.
@@ -348,23 +433,37 @@ is prefixed to the output.
 		<p>
 			Consider a simple sorting function, <span class="func">mysort</span>.
 		</p>
-		<pre>
-.Sh SYNOPSIS
-.In mysort.h
-.Ft void
-.Fn mysort "int *input"
-.Sh DESCRIPTION
-The
-.Fn mysort
-function in-place sorts an integer array
-.Fa input .
-.Sh IMPLEMENTATION NOTES
-The
-.Fn mysort
-function uses a bubble-sort algorithm for sorting and thus operates in
-O(n^2) time with respect to input size.
-Since swapping is in-place, a constant number of allocations occur.
-		</pre>
+		<div class="mdocin">
+			.Sh SYNOPSIS
+			<br />
+			.In mysort.h
+			<br />
+			.Ft void
+			<br />
+			.Fn mysort "int *input"
+			<br />
+			.Sh DESCRIPTION
+			<br />
+			The
+			<br />
+			.Fn mysort
+			<br />
+			function in-place sorts an integer array
+			<br />
+			.Fa input .
+			<br />
+			.Sh IMPLEMENTATION NOTES
+			<br />
+			The
+			<br />
+			.Fn mysort
+			<br />
+			function uses a bubble-sort algorithm for sorting and thus operates in
+			<br />
+			O(n^2) time with respect to input size.
+			<br />
+			Since swapping is in-place, a constant number of allocations occur.
+		</div>
 		<p>
 			In general, <span class="sec">IMPLEMENTATION NOTES</span> is not used, and is thus rarely found in UNIX manuals. 
 		</p>
@@ -381,10 +480,11 @@ Since swapping is in-place, a constant number of allocations occur.
 			System calls (category <span class="cat">2</span>) usually employ the <span class="macro">Rv</span> macro to stipulate a
 			standard return value statement.
 		</p>
-		<pre>
-.Sh RETURN VALUES
-.Rv -std
-		</pre>
+		<div class="mdocin">
+			.Sh RETURN VALUES
+			<br />
+			.Rv -std
+		</div>
 		<p>
 			Note that the <span class="macroflag">std</span> flag is a required argument to <span class="macro">Rv</span>, for
 			historical reasons.
@@ -392,12 +492,15 @@ Since swapping is in-place, a constant number of allocations occur.
 		<p>
 			For non-system functions, be as brief as possible.
 		</p>
-		<pre>
-.Sh RETURN VALUES
-The
-.Fn hello
-function returns zero on success and non-zero on failure.
-		</pre>
+		<div class="mdocin">
+			.Sh RETURN VALUES
+			<br />
+			The
+			<br />
+			.Fn hello
+			<br />
+			function returns zero on success and non-zero on failure.
+		</div>
 		<h4>
 			ENVIRONMENT
 		</h4>
@@ -406,13 +509,17 @@ function returns zero on success and non-zero on failure.
 			variables.  These must be documented in the <span class="sec">ENVIRONMENT</span> section of the manual.  Each variable
 			should be listed as a <span class="macro">Ev</span> along with its effect on the component.
 		</p>
-		<pre>
-.Sh ENVIRONMENT
-.Bl -tag -width Ds
-.It Ev TZ
-The time zone for when displaying dates.
-.El
-		</pre>
+		<div class="mdocin">
+			.Sh ENVIRONMENT
+			<br />
+			.Bl -tag -width Ds
+			<br />
+			.It Ev TZ
+			<br />
+			The time zone for when displaying dates.
+			<br />
+			.El
+		</div>
 		<p>
 			Some historical manuals use <span class="sec">ENVIRONMENT VARIABLES</span> instead of <span
 				class="sec">ENVIRONMENT</span>.
@@ -424,13 +531,17 @@ The time zone for when displaying dates.
 			Both commands and functions may also be affected by files, although this is mainly the purview of commands.  These files
 			should be listed in the <span class="sec">FILES</span> section in a tagged list.
 		</p>
-		<pre>
-.Sh FILES
-.Bl -tag -width Ds
-.It Pa ~/.profile
-User's login profile.
-.El
-		</pre>
+		<div class="mdocin">
+			.Sh FILES
+			<br />
+			.Bl -tag -width Ds
+			<br />
+			.It Pa ~/.profile
+			<br />
+			User's login profile.
+			<br />
+			.El
+		</div>
 		<h4>
 			EXIT STATUS
 		</h4>
@@ -443,10 +554,11 @@ User's login profile.
 			If your utility exits with zero on success and greater than zero on failure (the standard for most utilities), use the
 			<span class="macro">Ex</span> macro.
 		</p>
-		<pre>
-.Sh EXIT STATUS
-.Ex -std
-		</pre>
+		<div class="mdocin">
+			.Sh EXIT STATUS
+			<br />
+			.Ex -std
+		</div>
 		<p>
 			More complex commands should document all possible exit status.
 		</p>
@@ -466,49 +578,72 @@ User's login profile.
 			Although the <span class="cmd">hello</span> example is almost too trivial for documentation, consider if it were used to
 			greet new users to a Unix system.  Thus, a common example would be the following:
 		</p>
-		<pre>
-.Sh EXAMPLES
-The following sends a greeting message to the new user
-.Qq joe .
-.Pp
-.Dl $ hello \*qDear Joe, \*q \(bv mail -s \*qHi!\*q joe
-		</pre>
+		<div class="mdocin">
+			.Sh EXAMPLES
+			<br />
+			The following sends a greeting message to the new user
+			<br />
+			.Qq joe .
+			<br />
+			.Pp
+			<br />
+			.Dl $ hello \*qDear Joe, \*q \(bv mail -s \*qHi!\*q joe
+		</div>
 		<p>
 			The <span class="macro">Dl</span>, used for one-line literal displays, is a common macro in the <span
 				class="sec">EXAMPLES</span> section.  For multi-line displays, use the <span class="macro">Bd</span> <span
 				class="macroflag">literal</span> environment, usually with a default indentation with <span
 				class="macroflag">offset</span> <span class="macroarg">indent</span>.
 		</p>
-		<pre>
-.Sh EXAMPLES
-The following sends a greeting message to the new user
-.Qq joe .
-.Bd -literal -offset indent
-$ hello \*qDear Joe, \*q \(bv \e
-  mail -s \*qHi!\*q joe
-.Ed
-		</pre>
+		<div class="mdocin">
+			.Sh EXAMPLES
+			<br />
+			The following sends a greeting message to the new user
+			<br />
+			.Qq joe .
+			<br />
+			.Bd -literal -offset indent
+			<br />
+			$ hello \*qDear Joe, \*q \(bv \e
+			<br />
+			&nbsp;&nbsp;mail -s \*qHi!\*q joe
+			<br />
+			.Ed
+		</div>
 		<p>
 			For functions and function libraries, it's more common to include a single, thorough source example than individual
 			examples for each function.  These always use the <span class="macro">Bd</span> <span class="macroflag">literal</span>
 			display environment and an indentation.
 		</p>
-		<pre>
-.Sh EXAMPLES
-The following is a simple utility interfacing with the
-.Nm
-library:
-.Bd -literal -offset indent
-#include &lt;stdlib.h&gt;
-#include "hello.h"
-
-int
-main(int argc, char *argv[]) {
-    hello(0, argc &gt; r ? argv[1] : NULL);
-    return(EXIT_SUCCESS);
-}
-.Ed
-		</pre>
+		<div class="mdocin">
+			.Sh EXAMPLES
+			<br />
+			The following is a simple utility interfacing with the
+			<br />
+			.Nm
+			<br />
+			library:
+			<br />
+			.Bd -literal -offset indent
+			<br />
+			#include &lt;stdlib.h&gt;
+			<br />
+			#include "hello.h"
+			<br />
+			&nbsp;
+			<br />
+			int
+			<br />
+			main(int argc, char *argv[]) {
+			<br />
+			&nbsp;&nbsp;hello(0, argc &gt; r ? argv[1] : NULL);
+			<br />
+			&nbsp;&nbsp;return(EXIT_SUCCESS);
+			<br />
+			}
+			<br />
+			.Ed
+		</div>
 		<p>
 			Use terse syntax for your example, without error checking for functions not being documented, e.g., <span
 				class="func">open</span> or <span class="func">scanf</span>.
@@ -533,23 +668,37 @@ main(int argc, char *argv[]) {
 			The <span class="macro">Bl</span> <span class="macroflag">diag</span> lists are most often used for documenting emitted
 			messages.
 		</p>
-		<pre>
-.Sh DIAGNOSTICS
-.Bl -diag
-.It "%file:%line:%col: %msg[: %extra]"
-An error occured when processing
-.Cm %file
-at line and column
-.Cm %line
-and
-.Cm %col ,
-respectively.
-The error message
-.Cm %msg
-may be followed by additional debugging information in
-.Cm %extra .
-.El
-		</pre>
+		<div class="mdocin">
+			.Sh DIAGNOSTICS
+			<br />
+			.Bl -diag
+			<br />
+			.It "%file:%line:%col: %msg[: %extra]"
+			<br />
+			An error occured when processing
+			<br />
+			.Cm %file
+			<br />
+			at line and column
+			<br />
+			.Cm %line
+			<br />
+			and
+			<br />
+			.Cm %col ,
+			<br />
+			respectively.
+			<br />
+			The error message
+			<br />
+			.Cm %msg
+			<br />
+			may be followed by additional debugging information in
+			<br />
+			.Cm %extra .
+			<br />
+			.El
+		</div>
 		<h4>
 			ERRORS
 		</h4>
@@ -570,34 +719,51 @@ may be followed by additional debugging information in
 			For UNIX manual cross-references, use the <span class="macro">Xr</span> macro.  These should be specified in a list
 			ordered first by section, then by name.  Non-terminal references should be comma-separated.
 		</p>
-		<pre>
-.Sh SEE ALSO
-.Xr mandoc 1 ,
-.Xr mandoc 3 ,
-.Xr man 7 ,
-.Xr mdoc 7
-		</pre>
+		<div class="mdocin">
+			.Sh SEE ALSO
+			<br />
+			.Xr mandoc 1 ,
+			<br />
+			.Xr mandoc 3 ,
+			<br />
+			.Xr man 7 ,
+			<br />
+			.Xr mdoc 7
+		</div>
 		<p>
 			If your manual references other documents or literature, you may include them in this section within a bibliographic
 			reference as well.  The <span class="macro">Rs</span> block is used for bibliographic references.  These should be
 			specified after any UNIX manual cross-references.
 		</p>
-		<pre>
-.Sh SEE ALSO
-.Xr mandoc 1 ,
-.Xr mandoc 3 ,
-.Xr man 7 ,
-.Xr mdoc 7
-.Rs
-.%A Brian W. Kernighan
-.%A Lorinda L. Cherry
-.%T System for Typesetting Mathematics
-.%J Communications of the ACM
-.%V 18
-.%P 151\(en157
-.%D March, 1975
-.Re
-		</pre>
+		<div class="mdocin">
+			.Sh SEE ALSO
+			<br />
+			.Xr mandoc 1 ,
+			<br />
+			.Xr mandoc 3 ,
+			<br />
+			.Xr man 7 ,
+			<br />
+			.Xr mdoc 7
+			<br />
+			.Rs
+			<br />
+			.%A Brian W. Kernighan
+			<br />
+			.%A Lorinda L. Cherry
+			<br />
+			.%T System for Typesetting Mathematics
+			<br />
+			.%J Communications of the ACM
+			<br />
+			.%V 18
+			<br />
+			.%P 151\(en157
+			<br />
+			.%D March, 1975
+			<br />
+			.Re
+		</div>
 		<p>
 			Bibliographic references should be ordered by document title.  Advanced references will be covered later in this book.
 		</p>
@@ -610,14 +776,19 @@ may be followed by additional debugging information in
 			protocols, references to RFC and other literature should also be mentioned here.  These differ from referenced standards
 			in terms of being implemented versus referred.
 		</p>
-		<pre>
-.Sh STANDARDS
-The
-.Nm
-utility is compliant with the
-.St -xpg4
-specification.
-		</pre>
+		<div class="mdocin">
+			.Sh STANDARDS
+			<br />
+			The
+			<br />
+			.Nm
+			<br />
+			utility is compliant with the
+			<br />
+			.St -xpg4
+			<br />
+			specification.
+		</div>
 		<p>
 			If your component consists of deviations from a given standard, they should be mentioned in this section as well.  Some
 			historic manuals use a special <span class="sec">COMPATIBILITY</span> section for this, but this is discouraged unless
@@ -644,25 +815,34 @@ specification.
 			Another standard section for UNIX manuals is the <span class="sec">AUTHORS</span> section, which should always mention
 			the current contact for the utility.  The traditional text for this section is as follows.
 		</p>
-		<pre>
-.Sh AUTHORS
-The
-.Nm
-reference was written by
-.An Joe Foo Aq joe@example.com .
-		</pre>
+		<div class="mdocin">
+			.Sh AUTHORS
+			<br />
+			The
+			<br />
+			.Nm
+			<br />
+			reference was written by
+			<br />
+			.An Joe Foo Aq joe@example.com .
+		</div>
 		<p>
 			However, in as e-mail addresses are a ubiquitous form of contact, it's considered good practise to use the correct
 			semantic notation.
 		</p>
-		<pre>
-.Sh AUTHORS
-The
-.Nm
-reference was written by
-.An Joe Foo ,
-.Mt joe@example.com .
-		</pre>
+		<div class="mdocin">
+			.Sh AUTHORS
+			<br />
+			The
+			<br />
+			.Nm
+			<br />
+			reference was written by
+			<br />
+			.An Joe Foo ,
+			<br />
+			.Mt joe@example.com .
+		</div>
 		<p>
 			The term <span class="screen">reference</span> in this fragment should reflect the content of the manual.
 		</p>

@@ -11,15 +11,18 @@
 			Basic Syntax
 		</h2>
 		<p>
-			Before studying the structure of \mdoc{} manuals, let's formalise the language we've seen so far.  We've already noted
-			that \mdoc{} documents are line-based: some lines, demarked by a leading `.', are interpreted as macros.  Those without
-			the leading `.' are free-text.  We've even seen examples of partial-line and full-line comments.
+			Before studying the structure of <span class="lang">mdoc</span> manuals, let's formalise the language we've seen so far.
+			We've already noted that <span class="lang">mdoc</span> documents are line-based: some lines, demarked by a leading
+			<span class="screen">.</span>, are interpreted as macros.  Those without the leading <span class="screen">.</span> are
+			free-text.  We've even seen examples of partial-line and full-line comments.
 		</p>
-		<pre>
-.Xx Arguments to the macro Xx.
-Free-form text. \" A partial comment.
-.\" A full-line comment.
-		</pre>
+		<div class="mdocin">
+			.Xx Arguments to the macro Xx.
+			<br />
+			Free-form text. \" A partial comment.
+			<br />
+			.\" A full-line comment.
+		</div>
 		<p>
 			However, it's not quite the case that a 
 		</p>
