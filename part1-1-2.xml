@@ -75,16 +75,24 @@
 			child scopes, the <span class="macro">Ar</span> macro is able to close out the <span class="macro">Fl</span> scope and
 			begin its own.
 		</p>
-		<pre>
-.\underline{Op \{Fl C\}}
-.\underline{Op \{Fl o\} \{Ar output\}}
-.\underline{Op \{Ar prefix\}}
-		</pre>
 		<p>
-			Underlined parts are an <span class="term">outer scope</span>, while bracketed parts are an <span class="term">inner
-				scope</span>.  Now it's easy to see how <span class="macro">Fl</span> prefixes only the <span
-				class="screen">C</span> with a dash and not the arguments following: its scope is closed out by <span
-				class="macro">Ar</span>.
+			<span style="border: 1px solid green; padding: 2px;">.Op 
+				<span style="border: 1px solid blue;">Fl C</span></span>
+		</p>
+		<p>
+			<span style="border: 1px solid green; padding: 2px;">.Op 
+				<span style="border: 1px solid blue;">Fl o</span>
+				<span style="border: 1px solid blue;">Ar output</span></span>
+		</p>
+		<p>
+			<span style="border: 1px solid green; padding: 2px;">.Op 
+				<span style="border: 1px solid blue;">Ar prefix</span></span>
+		</p>
+		<p>
+			<span style="border: 1px solid green; padding: 1px;">Outer parts</span> are an <span class="term">outer scope</span>,
+			while <span style="border: 1px solid blue; padding: 1px;">inner parts</span> are an <span class="term">inner scope</span>.  Now it's
+			easy to see how <span class="macro">Fl</span> prefixes only the <span class="screen">C</span> with a dash and not the
+			arguments following: its scope is closed out by <span class="macro">Ar</span>.
 		</p>
 		<p>
 			When a macro can be closed out by another, we call it an <span class="term">in-line macro</span>.
