@@ -3,9 +3,6 @@
 <ncx version="2005-1" xml:lang="en" xmlns="http://www.daisy.org/z3986/2005/ncx/">
 	<head>
 		<meta name="dtb:uid" content="manpages.bsd.lv"/>
-		<meta name="dtb:depth" content="1"/>
-		<meta name="dtb:totalPageCount" content="0"/>
-		<meta name="dtb:maxPageNumber" content="0"/>
 	</head>
 	<docTitle>
 		<text>Practical UNIX Manuals: mdoc</text>
@@ -14,11 +11,101 @@
 		<text>Dzonsons, Kristaps</text>
 	</docAuthor>
 	<navMap>
-		<navPoint class="chapter" id="part1" playOrder="1">
+		<navPoint class="h1" id="preface" playOrder="1">
+			<navLabel>
+				<text>Preface</text>
+			</navLabel>
+			<content src="preface.xhtml"/>
+		</navPoint>
+		<navPoint class="h1" id="part1" playOrder="2">
 			<navLabel>
 				<text>Part 1</text>
 			</navLabel>
 			<content src="part1.xhtml"/>
+			<navPoint class="h2" id="part1-1" playOrder="3">
+				<navLabel>
+					<text>Part 1, Chapter 1</text>
+				</navLabel>
+				<content src="part1-1.xhtml"/>
+				<navPoint class="h3" id="part1-1-1" playOrder="4">
+					<navLabel>
+						<text>Part 1, Chapter 1, Section 1</text>
+					</navLabel>
+					<content src="part1-1-1.xhtml"/>
+				</navPoint>
+				<navPoint class="h3" id="part1-1-2" playOrder="5">
+					<navLabel>
+						<text>Part 1, Chapter 1, Section 2</text>
+					</navLabel>
+					<content src="part1-1-2.xhtml"/>
+				</navPoint>
+			</navPoint>
+			<navPoint class="h2" id="part1-2" playOrder="6">
+				<navLabel>
+					<text>Part 1, Chapter 2</text>
+				</navLabel>
+				<content src="part1-2.xhtml"/>
+				<navPoint class="h3" id="part1-2-1" playOrder="7">
+					<navLabel>
+						<text>Part 1, Chapter 2, Section 1</text>
+					</navLabel>
+					<content src="part1-2-1.xhtml"/>
+				</navPoint>
+				<navPoint class="h3" id="part1-2-2" playOrder="8">
+					<navLabel>
+						<text>Part 1, Chapter 2, Section 2</text>
+					</navLabel>
+					<content src="part1-2-2.xhtml"/>
+				</navPoint>
+			</navPoint>
+			<navPoint class="h2" id="part1-3" playOrder="9">
+				<navLabel>
+					<text>Part 1, Chapter 3</text>
+				</navLabel>
+				<content src="part1-3.xhtml"/>
+			</navPoint>
+			<navPoint class="h2" id="part1-4" playOrder="10">
+				<navLabel>
+					<text>Part 1, Chapter 4</text>
+				</navLabel>
+				<content src="part1-4.xhtml"/>
+			</navPoint>
+		</navPoint>
+		<navPoint class="h1" id="part2" playOrder="11">
+			<navLabel>
+				<text>Part 2</text>
+			</navLabel>
+			<content src="part2.xhtml"/>
+			<navPoint class="h2" id="part2-1" playOrder="12">
+				<navLabel>
+					<text>Part 2, Chapter 1</text>
+				</navLabel>
+				<content src="part2-1.xhtml"/>
+			</navPoint>
+			<navPoint class="h2" id="part2-2" playOrder="13">
+				<navLabel>
+					<text>Part 2, Chapter 2</text>
+				</navLabel>
+				<content src="part2-2.xhtml"/>
+				<navPoint class="h3" id="part2-2-1" playOrder="14">
+					<navLabel>
+						<text>Part 2, Chapter 2, Section 1</text>
+					</navLabel>
+					<content src="part2-2-1.xhtml"/>
+				</navPoint>
+				<navPoint class="h3" id="part2-2-2" playOrder="15">
+					<navLabel>
+						<text>Part 2, Chapter 2, Section 2</text>
+					</navLabel>
+					<content src="part2-2-2.xhtml"/>
+				</navPoint>
+			</navPoint>
+			<navPoint class="h2" id="part2-3" playOrder="16">
+				<navLabel>
+					<text>Part 2, Chapter 3</text>
+				</navLabel>
+				<content src="part2-3.xhtml"/>
+			</navPoint>
 		</navPoint>
 	</navMap>
 </ncx>

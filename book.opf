@@ -4,13 +4,44 @@
 		<dc:title>Practical UNIX Manuals: mdoc</dc:title>
 		<dc:language>en</dc:language>
 		<dc:identifier id="manpages.bsd.lv" opf:scheme="URL">http://manpages.bsd.lv</dc:identifier>
+		<dc:creator opf:role="aut">Kristaps Dzonsons</dc:creator>
 	</metadata>
 	<manifest>
+		<item id="preface" href="preface.xhtml" media-type="application/xhtml+xml"/>
 		<item id="part1" href="part1.xhtml" media-type="application/xhtml+xml"/>
+		<item id="part1-1" href="part1-1.xhtml" media-type="application/xhtml+xml"/>
+		<item id="part1-1-1" href="part1-1-1.xhtml" media-type="application/xhtml+xml"/>
+		<item id="part1-1-2" href="part1-1-2.xhtml" media-type="application/xhtml+xml"/>
+		<item id="part1-2" href="part1-2.xhtml" media-type="application/xhtml+xml"/>
+		<item id="part1-2-1" href="part1-2-1.xhtml" media-type="application/xhtml+xml"/>
+		<item id="part1-2-2" href="part1-2-2.xhtml" media-type="application/xhtml+xml"/>
+		<item id="part1-3" href="part1-3.xhtml" media-type="application/xhtml+xml"/>
+		<item id="part1-4" href="part1-4.xhtml" media-type="application/xhtml+xml"/>
+		<item id="part2" href="part2.xhtml" media-type="application/xhtml+xml"/>
+		<item id="part2-1" href="part2-1.xhtml" media-type="application/xhtml+xml"/>
+		<item id="part2-2" href="part2-2.xhtml" media-type="application/xhtml+xml"/>
+		<item id="part2-2-1" href="part2-2-1.xhtml" media-type="application/xhtml+xml"/>
+		<item id="part2-2-2" href="part2-2-2.xhtml" media-type="application/xhtml+xml"/>
+		<item id="part2-3" href="part2-3.xhtml" media-type="application/xhtml+xml"/>
 		<item id="stylesheet" href="css/book.css" media-type="text/css"/>
 		<item id="ncx" href="book.ncx" media-type="application/x-dtbncx+xml"/>
 	</manifest>
 	<spine toc="ncx">
+		<itemref idref="preface"/>
 		<itemref idref="part1"/>
+		<itemref idref="part1-1"/>
+		<itemref idref="part1-1-1"/>
+		<itemref idref="part1-1-2"/>
+		<itemref idref="part1-2"/>
+		<itemref idref="part1-2-1"/>
+		<itemref idref="part1-2-2"/>
+		<itemref idref="part1-3"/>
+		<itemref idref="part1-4"/>
+		<itemref idref="part2"/>
+		<itemref idref="part2-1"/>
+		<itemref idref="part2-2"/>
+		<itemref idref="part2-2-1"/>
+		<itemref idref="part2-2-2"/>
+		<itemref idref="part2-3"/>
 	</spine>
 </package>
