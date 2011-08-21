@@ -1,1 +1,52 @@
-p.nav		{ display: none; }
+html			{ }
+
+body			{ }
+
+p.nav			{ display: none; }
+
+h1,
+h2,
+h3,
+h4,
+h5			{ font-size: inherit; }
+
+span.cat,
+span.file,
+span.header,
+span.lang,
+span.lib,
+span.path,
+span.term		{ font-style: italic; } 
+
+span.sec		{ font-weight: bolder; }
+
+pre,
+div.mdocout,
+div.mdocsyntax,
+span.cmd,
+span.cmdflag,
+span.cmdarg,
+span.cmdline,
+span.func,
+span.macro,
+span.macroarg,
+span.macroflag,
+span.screen,
+span.type,
+span.value,
+span.var		{ font-family: monospace; }
+
+span.cmdflag:before,
+span.macroflag:before	{ content: "-"; }
+span.cmdopt:before	{ content: "["; }
+span.cmdopt:after	{ content: "]"; }
+span.macroopt:before	{ content: "["; }
+span.macroopt:after	{ content: "]"; }
+span.func:after		{ content: "()"; }
+
+pre			{ }
+
+dl			{ }
+
+div.mdocout h1		{ font-size: inherit; 
+			  margin-bottom: 0px; }
