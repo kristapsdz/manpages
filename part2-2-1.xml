@@ -144,8 +144,31 @@
 			<span class="macroopt"><span class="macroarg">architecture</span></span>
 		</div>
 		<p>
-			These categorisations derive from the earliest UNIX systems, are generally numbers corresponding to the following.  Note
-			that not all systems have the mentioned examples.
+			These catogies are dictated by convention extending to the first published edition of UNIX.  The original forms of these
+			sections are documented in the <a class="external" href="http://www.cs.bell-labs.com/who/dmr/1stEdman.html">UNIX
+				Programmer's Manual</a>, First Edition, 1971:
+		</p>
+		<blockquote cite="http://www.cs.bell-labs.com/who/dmr/1stEdman.html">
+			<p>
+				This manual is divided into seven sections:
+			</p>
+			<ol style="list-style-type: upper-roman">
+				<li>Commands</li>
+				<li>System calls</li>
+				<li>Subroutines</li>
+				<li>Special files</li>
+				<li>File formats</li>
+				<li>User-maintained programs</li>
+				<li>Miscellaneous</li>
+			</ol>
+			<p>
+				Commands are programs intended to be invoked directly by the user, in contradistinction to subroutines, which
+				are intended to be called by the user's programs. Commands generally reside in directory <u>bin</u> (for binary
+				programs). 
+			</p>
+		</blockquote>
+		<p>
+			These sections have been expanded and formalised in the intervening years, amounting to the following modern conventions.
 		</p>
 		<dl>
 			<dt><span class="cat">1</span>: user utilities.</dt>
