@@ -62,7 +62,8 @@
 			</DIV>
 			.Pp
 			<DIV>
-				Citation information: Dzonsons, Kristaps.  <I>Practical UNIX Manuals: mdoc</I>.
+				Citation information: <a class="external" href="http://kristaps.bsd.lv">Dzonsons, Kristaps</a>.  <I>Practical
+				UNIX Manuals: mdoc</I>.
 				<BR>
 				Current version: @VERSION@, @DATE@.
 			</DIV>

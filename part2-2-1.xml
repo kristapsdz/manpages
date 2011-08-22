@@ -44,9 +44,9 @@
 			<li>Whether the manual relates to a particular hardware architecture.</li>
 			<li>The relevant operating system.</li>
 		</ul>
-		<h1>
+		<h4>
 			Date
-		</h1>
+		</h4>
 		<p>
 			The date is specified by the <span class="macro">Dd</span> macro.
 		</p>
@@ -91,9 +91,9 @@
 			This is usually used in conjunction with source-code control systems that automatically change the date.  Consult your
 			formatter's manual for whether it supports this feature.
 		</p>
-		<h1>
+		<h4>
 			Title
-		</h1>
+		</h4>
 		<p>
 			A manual's title identifies the entire manual document.  It is always specified in uppercase as the first argument of
 			the <span class="macro">Dt</span> macro, which conventionally follows the initial <span class="macro">Dd</span> macro.
@@ -132,9 +132,9 @@
 			formatter will default to an empty string or <span class="screen">LOCAL</span>.  In general, however, a manual without
 			<span class="macro">Dt</span> may be considered incomplete.
 		</p>
-		<h1>
+		<h4>
 			Category
-		</h1>
+		</h4>
 		<p>
 			The category of a manual, sometimes called the manual section, specifies the type of component a manual describes.  It
 			is specified in the second argument of the <span class="macro">Dt</span> macro.
@@ -242,9 +242,9 @@
 				class="cat">local</span> consists of local system documentation.  These categories are rarely used and should be
 			avoided for portable, readable manuals.
 		</p>
-		<h1>
+		<h4>
 			Architecture
-		</h1>
+		</h4>
 		<p>
 			Some manuals, especially those in category <span class="cat">4</span> or <span class="cat">9</span>, relate only to a
 			particular hardware architecture.  This is a useful specifier in the machine-dependent manuals for category <span
@@ -261,9 +261,9 @@
 			A device referring to a particular architecture uses this to explicitly note its relevant architecture.  In normal
 			manuals, this should not be used.
 		</p>
-		<h1>
+		<h4>
 			Operating System
-		</h1>
+		</h4>
 		<p>
 			Similar to architecture, some manuals only pertain to a particular operating system.  This system may be specified to
 			the <span class="macro">Os</span> macro of the prologue.
