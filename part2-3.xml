@@ -17,23 +17,40 @@
 				Manual</a>, First Edition, 1971:
 		</p>
 		<blockquote cite="http://www.cs.bell-labs.com/who/dmr/1stEdman.html">
-			<p>
-				This manual is divided into seven sections:
-			</p>
-			<ol style="list-style-type: upper-roman">
-				<li>Commands</li>
-				<li>System calls</li>
-				<li>Subroutines</li>
-				<li>Special files</li>
-				<li>File formats</li>
-				<li>User-maintained programs</li>
-				<li>Miscellaneous</li>
-			</ol>
-			<p> 
-				Commands are programs intended to be invoked directly by the user, in contradistinction to subroutines, which
-				are intended to be called by the user's programs. Commands generally reside in directory bin (for binary
-				programs).
-			</p>
+			<ul>
+				<li>
+					The <u>name</u> section repeats the entry name and gives a very short description of its purpose.
+				</li>
+				<li>
+					The <u>synopsis</u> summarizes the use of the program being described. A few conventions are used, particularly
+					in the Commands section.  Underlined words are considered literals, and are typed just as they appear.
+					Square brackets ([]) around an argument indicate that the argument is optional. When an argument is
+					given as name, it always refers to a file name.  Ellipses ... are used to show that the previous
+					argument-prototype may be repeated.  A final convention is used by the commands themselves. An argument
+					beginning with a minus sign - is often taken to mean some sort of flag argument even if it appears in a
+					position where a file name could appear. Therefore, it is unwise to have files whose names begin with -.
+					The description section discusses in detail the subject at hand.
+				</li>
+				<li>
+					The <u>files</u> section gives the names of files which are built into the program.
+				</li>
+				<li> 
+					A <u>see also</u> section gives pointers to related information.
+				</li>
+				<li>
+					A <u>diagnostics</u> section discusses the diagnostics that may be produced. This section tends to be as
+					terse as the diagnostics themselves.
+				</li>
+				<li>
+					The <u>bugs</u> section gives known bugs and sometimes deficiencies. occasionally also the suggested fix
+					is described.
+				</li>
+				<li>
+					The <u>owner</u> section gives the name of the person or persons to be consulted in case of difficulty.
+					The rule has been that the last one to modify something owns it, so the owner is not necessarily the
+					author.
+				</li>
+			</ul>
 		</blockquote>
 		<p>
 			These conventional sections haven't changed much over the years, although more sections have been added and several have
