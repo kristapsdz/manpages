@@ -64,12 +64,6 @@
 			<dd>
 				Rich text format.  Proprietary document file format used in some popular word processors.
 			</dd>
-			<dt name="mdoc_scope">
-				Mdoc Scope
-			</dt>
-			<dd>
-				Data in the scope of a 
-			</dd>
 			<dt name="terminal">
 				Terminal
 			</dt>
