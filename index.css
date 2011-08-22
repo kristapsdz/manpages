@@ -34,3 +34,7 @@ span.h1		{ font-weight: bolder;
 
 span.h2		{ font-weight: bolder;
 		  margin-left: 1em; }
+
+span.part	{ }
+span.chap	{ padding-left: 2em; }
+span.sec	{ padding-left: 4em; }
