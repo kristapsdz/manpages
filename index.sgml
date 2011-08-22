@@ -110,6 +110,10 @@
 			<BR>
 			.
 			<BR>
+			.Lk <SPAN><A HREF="/cgi-bin/cvsweb/?cvsroot=manpages">cvsweb</A>: on-line source repository</SPAN>
+			<BR>
+			.
+			<BR>
 			.Ss <SPAN CLASS="h2">Off-line</SPAN>
 			<BR>
 			.
@@ -117,6 +121,8 @@
 			.Lk <SPAN><A HREF="mdoc.epub">mdoc.epub</A>: e-book archive, e-Pub 2.0.1 format</SPAN>
 			<BR>
 			.Lk <SPAN><A HREF="mdoc.source.tgz">mdoc.source.tgz</A>: source archive</SPAN>
+			<BR>
+			.Lk <SPAN><A HREF="mdoc.xhtml.tgz">mdoc.xhtml.tgz</A>: compressed archive of XHTML pages</SPAN>
 			<BR>
 			.
 			<BR>
@@ -126,15 +132,17 @@
 			<BR>
 			.It <SPAN>22 August 2011</SPAN>
 			<DIV>
+				Added off-line XHTML, added some glossary entries, split Layout into Sections.
+			</DIV>
+			<BR>
+			.It <SPAN>22 August 2011</SPAN>
+			<DIV>
 				Added glossary.  Converted all data to mark-up.  Tuned e-book formatting.  All initial content has been uploaded
 				and casually reviewed.
 			</DIV>
-			<BR>
-			.It <SPAN>21 August 2011</SPAN>
-			<DIV>
-				Initial release of the first part.
-			</DIV>
 			.El
+			<BR>
+			.Lk <SPAN>See <A HREF="/cgi-bin/cvsweb/index.sgml?cvsroot=manpages">cvsweb</A> for old news.</SPAN>
 			<BR>
 			.
 			<BR>

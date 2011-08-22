@@ -51,7 +51,7 @@ XHTMLS	= glossary.xhtml \
 VERSION	= 0.0.4
 DATE	= 22 August 2011
 
-all: $(XHTMLS) mdoc.epub index.html mdoc.source.tgz
+all: $(XHTMLS) mdoc.epub index.html mdoc.source.tgz mdoc.xhtml.tgz
 
 install: all
 	mkdir -p $(PREFIX)
@@ -63,7 +63,7 @@ install: all
 	install -m 0644 mdoc.epub $(PREFIX)
 
 clean:
-	rm -f index.html $(XHTMLS) mdoc.epub mdoc.source.tgz
+	rm -f index.html $(XHTMLS) mdoc.epub mdoc.source.tgz mdoc.xhtml.tgz
 
 mdoc.source.tgz:
 	mkdir .dist
@@ -71,6 +71,15 @@ mdoc.source.tgz:
 	tar cf - $(SOURCE) | tar -xf - -C .dist/mdoc
 	(cd .dist && tar zcf ../$@ mdoc)
 	rm -rf .dist
+
+mdoc.xhtml.tgz: $(XHTMLS)
+	mkdir .xhtml
+	mkdir .xhtml/mdoc
+	mkdir .xhtml/mdoc/css
+	install -m 0644 $(XHTMLS) .xhtml/mdoc
+	install -m 0644 css/book.css .xhtml/mdoc/css
+	(cd .xhtml && tar zcf ../$@ mdoc)
+	rm -rf .xhtml
 
 mdoc.epub: $(XHTMLS) book.css book.ncx book.opf
 	mkdir .book
