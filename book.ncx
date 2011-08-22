@@ -105,9 +105,15 @@
 					<text>Layout</text>
 				</navLabel>
 				<content src="part2-3.xhtml"/>
+				<navPoint class="h2" id="part2-3-1" playOrder="17">
+					<navLabel>
+						<text>Sections</text>
+					</navLabel>
+					<content src="part2-3-1.xhtml"/>
+				</navPoint>
 			</navPoint>
 		</navPoint>
-		<navPoint class="h1" id="glossary" playOrder="17">
+		<navPoint class="h1" id="glossary" playOrder="18">
 			<navLabel>
 				<text>Glossary</text>
 			</navLabel>

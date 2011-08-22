@@ -98,8 +98,9 @@
 			The <span class="screen">.Qq</span> is part of <span class="lang">mdoc</span>'s instruction syntax.  Input lines
 			beginning with a dot are instructions to the formatter called <a class="term" href="glossary.xhtml#mdoc_macro">mdoc
 				macros</a>, or just macros for short.  The macro name is a terse two or three-character word following the dot,
-			for example, <span class="macro">Qq</span>.  Text following the macro name may be interpreted as arguments in the scope
-			of the macro; that is, data interpreted within the context of the macro.
+			for example, <span class="macro">Qq</span>.  The words following the <span class="macro">Qq</span> to the end of line
+			are arguments in the <a class="term" href="glossary.xhtml#mdoc_scope">scope</a> of the macro; that is, data interpreted
+			within the context of the macro.
 		</p>
 		<p>
 			Thus, the fragment
@@ -113,15 +114,20 @@
 		</div>
 		<p>
 			is interpreted as text, then a macro <span class="macro">Qq</span> with scoped arguments <span class="screen">hello,
-				world</span>, then more text.  It's obvious, in looking at the input and output, that <span
-				class="macro">Qq</span> instructs the formatter to quote its arguments.
+				world</span>, then more text.
 		</p>
 		<p>
-			Most <span class="lang">mdoc</span> macros, such as <span class="macro">Qq</span>, are limited in scope to their
-			invocation line.  But notice that the formatter recognised the content between <span class="macro">Sh</span> macros as
-			requiring indentation.  Thus, it's clear that there's a notion of multi-line scope.  In fact, <span
-				class="macro">Sh</span> has both line arguments, for the name of the section; and multi-line arguments, for
-			section content.
+			It's obvious, in looking at the input and output, that <span class="macro">Qq</span> instructs the formatter to quote
+			its arguments.  Macro names vaguely identify their purpose with their choice of letter combination.
+		</p>
+		<p>
+			The <span class="macro">Qq</span> is limited in scope to its invocation line.  But notice that the formatter recognised
+			the content between <span class="macro">Sh</span> macros as requiring indentation.  So it's clear that <span
+				class="lang">mdoc</span> also has a concept of multi-line scope.
+		</p>
+		<p>
+			In fact, <span class="macro">Sh</span> has both line arguments, for the name of the section; and multi-line arguments,
+			for section content.
 		</p>
 		<div class="mdocin">
 			.Sh SECTION 1
@@ -146,10 +152,14 @@
 			.Qq Section text nested in a quote.
 		</div>
 		<p>
-			Although <span class="lang">mdoc</span> syntax may look strange, note its economy as regards screen real-estate, and
-			terseness as regards instruction.  The dot-notation seems unusual at first glance, but its utility will become more and
-			more clear as we examine complicated manuals and issues such as version control and parsing.
+			We can envision this scoping as follows, with an <span style="border: 1px solid green; padding: 2px;">outer scope</span>
+			and <span style="border: 1px solid blue; padding: 2px;">inner scope</span>:
 		</p>
+		<div class="mdocin" style="border: 1px solid green; padding: 2px;">
+			.Sh SECTION 2
+			<br />
+			.Qq <span style="border: 1px solid blue;">Section text nested in a quote.</span>
+		</div>
 		<p>
 			Now let's return to <span class="file">hi.1</span> with this new knowledge of macros and scopes.
 		</p>
@@ -163,9 +173,10 @@
 		<p>
 			Of the remaining macros, <span class="macro">Dd</span> accepts the last modification date of the manual in <q>month day,
 				year</q> format.  <span class="macro">Dt</span> refers to the manual's title, <span class="screen">HI</span>,
-			and its section.  Note that <span class="screen">HI</span> is uppercase: by convention, <span class="macro">Dt</span>
-			should always accept a capitalised document title.  We'll talk more about titles and sections in later chapters of this
-			book.  For now, let's assume that section number 1 consists of executable commands.  
+			and its category, <span class="cat">1</span>.  Note that <span class="screen">HI</span> is uppercase: by convention,
+			<span class="macro">Dt</span> should always accept a capitalised document title.  We'll talk more about titles and
+			sections in later chapters of this book.  For now, let's assume that a category number identifies the topic of the
+			manual, where <span class="cat">1</span> refers to utilities.
 		</p>
 		<p>
 			Next, <span class="macro">Os</span> indicates the operating system of the system running the formatter.  If left
@@ -177,11 +188,11 @@
 			<br />
 			.Dt HI 1
 			<br />
-			.Os
+			.Os \" Current operating system.
 		</div>
 		<p>
-			Note that text following the <span class="screen">\&quot;</span> marker is an <span class="lang">mdoc</span> comment.  A
-			comment spanning the full line looks like
+			Note that text following the <span class="screen">\&quot;</span> marker is an <span class="lang">mdoc</span> comment,
+			which may have the following syntax:
 		</p>
 		<div class="mdocin">
 			Text. \" Comment to end of the line.
@@ -201,9 +212,9 @@
 			.Nd print \(dqhello, world\(dq
 		</div>
 		<p>
-			You can see that in the <span class="sec">DESCRIPTION</span> we re-invoke the <span class="macro">Nm</span>, only
-			without arguments, when documenting our command's calling syntax.  The formatter is smart enough to fill in its argument
-			with the last supplied argument, in this case being <span class="screen">hi</span>.
+			You can see that we re-invoke <span class="macro">Nm</span> in the <span class="sec">DESCRIPTION</span>, only without
+			arguments.  The formatter is smart enough to fill in its argument with the last supplied argument, in this case being
+			<span class="screen">hi</span>.
 		</p>
 		<p>
 			Since our simple command has no command-line arguments, its invocation is simply the command name.
@@ -263,7 +274,7 @@
 		</div>
 		<p>
 			but this encourages dangerous behaviour in assuming that quoted arguments may not affect output.  This isn't always the
-			case!
+			case!  We'll see later how quoted terms on macro lines change the grouping of arguments&mdash;at times non-intuitively.
 		</p>
 		<p>
 			Before moving on to the next section, let's look quickly over our checklist for a well-formed manual.

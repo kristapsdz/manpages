@@ -35,12 +35,7 @@
 			.Op Ar prefix                 
 		</div>
 		<p>
-			Already, we begin to see the output take shape with the <span class="screen">C</span> and <span class="screen">o</span>
-			characters, and the <span class="screen">prefix</span>.  But what are these other words, <span class="screen">Fl</span>
-			and <span class="screen">Ar</span>?
-		</p>
-		<p>
-			Let's examine the rendered output:
+			The output renders as follows:
 		</p>
 		<div class="mdocout">
 			<div class="mdoc-section">
@@ -50,8 +45,7 @@
 					<col/>
 					<tbody>
 						<tr>
-							<td>
-								hello</td>
+							<td>hello</td>
 							<td>
 								&#91;<span class="mdoc-opt"><b class="mdoc-flag">&#45;C</b></span>&#93; 
 								&#91;<span class="mdoc-opt"><b class="mdoc-flag">&#45;o</b> 
@@ -64,42 +58,42 @@
 			</div>
 		</div>
 		<p>
-			It's clear that the <span class="macro">Op</span> macro surrounds its arguments in square brackets, just as <span
-				class="macro">Qq</span> surrounded its line in double-quotes.
+			Already, we begin to see the output take shape with the <span class="screen">C</span> and <span class="screen">o</span>
+			characters, and the <span class="screen">prefix</span>.  It's also clear that the <span class="macro">Op</span> macro
+			surrounds its arguments in square brackets, just as <span class="macro">Qq</span> surrounded its line in double-quotes.
 		</p>
 		<p>
-			How did the formatter know to prefix the <span class="screen">C</span> and <span class="screen">o</span> with a dash, or
-			underline the arguments <span class="screen">output</span> and <span class="screen">prefix</span>?  It's obvious this
-			has something to do with <span class="screen">Fl</span> and <span class="screen">Ar</span>.
+			But how did the formatter know to prefix the <span class="screen">C</span> and <span class="screen">o</span> with a
+			dash, or underline the arguments <span class="screen">output</span> and <span class="screen">prefix</span>?  
+		</p>
+		<p>
+			It's obvious this has something to do with <span class="screen">Fl</span> and <span class="screen">Ar</span>.
 		</p>
 		<p>
 			Macro lines may in fact consist of multiple macros&mdash;sometimes nesting further macros, sometimes closing prior
 			scopes to begin one anew.  The <span class="macro">Fl</span> and <span class="macro">Ar</span> words are macros nested
 			within the scope of <span class="macro">Op</span>.  However, while <span class="macro">Op</span> contains both of these
-			child scopes, the <span class="macro">Ar</span> macro is able to close out the <span class="macro">Fl</span> scope and
-			begin its own.
+			child scopes, the <span class="macro">Ar</span> macro closes out the <span class="macro">Fl</span> scope and begin its
+			own.
 		</p>
-		<p>
+		<div class="mdocin">
 			<span style="border: 1px solid green; padding: 2px;">.Op 
 				<span style="border: 1px solid blue;">Fl C</span></span>
-		</p>
-		<p>
+		</div>
+		<div class="mdocin">
 			<span style="border: 1px solid green; padding: 2px;">.Op 
 				<span style="border: 1px solid blue;">Fl o</span>
 				<span style="border: 1px solid blue;">Ar output</span></span>
-		</p>
-		<p>
+		</div>
+		<div class="mdocin">
 			<span style="border: 1px solid green; padding: 2px;">.Op 
 				<span style="border: 1px solid blue;">Ar prefix</span></span>
-		</p>
+		</div>
 		<p>
-			<span style="border: 1px solid green; padding: 1px;">Outer parts</span> are an <span class="term">outer scope</span>,
-			while <span style="border: 1px solid blue; padding: 1px;">inner parts</span> are an <span class="term">inner scope</span>.  Now it's
+			<span style="border: 1px solid green; padding: 2px;">Outer parts</span> are an <span class="term">outer scope</span>,
+			while <span style="border: 1px solid blue; padding: 2px;">inner parts</span> are an <span class="term">inner scope</span>.  Now it's
 			easy to see how <span class="macro">Fl</span> prefixes only the <span class="screen">C</span> with a dash and not the
 			arguments following: its scope is closed out by <span class="macro">Ar</span>.
-		</p>
-		<p>
-			When a macro can be closed out by another, we call it an <span class="term">in-line macro</span>.
 		</p>
 		<p>
 			Note that to document a flag <span class="screen">Ar</span>, we would need to quote its arguments as <span
@@ -180,9 +174,8 @@
 			Earlier, I introduced the concept of a multi-line scope for <span class="macro">Sh</span>, which was closed and
 			re-opened by subsequent invocations of <span class="macro">Sh</span>.  In this fragment, the <span
 				class="macro">Bl</span> macro (for <q>begin list</q>) is explicitly closed out by the <span
-				class="macro">El</span> maro (<q>end list</q>).  This is an example of <span class="term">explicit scope
-				closure</span>, versus the <span class="term">implicit scope closure</span> of <span class="macro">Sh</span>
-			sequences.
+				class="macro">El</span> maro (<q>end list</q>).  This is an example of explicit scope closure, versus the
+			implicit scope closure of <span class="macro">Sh</span> sequences.
 		</p>
 		<p>
 			Predictably, the <span class="macro">Bl</span> and <span class="macro">El</span> enclosure consists of list items, begun
@@ -196,7 +189,7 @@
 			macros also accept flags, which themselves may have arguments.  In our example, the <span class="macro">Bl</span> macro
 			accepts a second flag, <span class="macroflag">width</span>, which accepts the argument <span
 				class="macroarg">Ds</span>.  This instructs the formatter that the tag portion of the list has width <q>Ds</q>,
-			which is shorthand for about 6 spaces.
+			which is shorthand for <q>default spacing</q>.
 		</p>
 		<p>
 			Let's look closer at the input line 

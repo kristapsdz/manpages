@@ -48,14 +48,15 @@
 			have a grasp of <span class="lang">mdoc</span> syntax and some of its more widely-used macros.
 		</p>
 		<p>
-			In general, I'll refer to commands as <span class="cmdline"><span class="cmd">command</span> <span class="cmdopt"><span
-						class="cmdflag">flag</span> <span class="cmdarg">farg</span></span> <span
+			In this text, I'll refer to the invocation of commands as <span class="cmdline"><span class="cmd">command</span> <span
+					class="cmdopt"><span class="cmdflag">flag</span> <span class="cmdarg">farg</span></span> <span
 					class="cmdarg">arg</span></span>.
 		</p>
 		<p>
 			Here, <span class="cmd">command</span> refers to the command invocation name, <span class="cmdflag">flag</span> is a
 			flag (or switch) to that command, <span class="cmdarg">farg</span> is an argument to a flag (not all flags have
-			arguments), and <span class="cmdarg">arg</span> is an argument to the command.
+			arguments), and <span class="cmdarg">arg</span> is an argument to the command.  This convention is formalised by the <a
+				class="term" href="glossary.xhtml#posix">POSIX</a>.1-2008 standard (Base Definitions, sec. 12.1).
 		</p>
 		<p>
 			The dash in front of <span class="cmdflag">flag</span> indicates a flag, while the square brackets around 

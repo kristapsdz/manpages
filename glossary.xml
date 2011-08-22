@@ -11,6 +11,13 @@
 			Glossary
 		</h1>
 		<dl>
+			<dt name="c">
+				C
+			</dt>
+			<dd>
+				A programming language developed in 1969 by Dennis Ritchie at AT&amp;T Bell Labs.  This is the language of
+				choice for <a class="term" href="#unix">UNIX</a> development.
+			</dd>
 			<dt name="command_line">
 				Command Line
 			</dt>
@@ -25,6 +32,14 @@
 				Hypertext markup language.  A structured mark-up language standardised by the <a class="external"
 					href="http://www.w3.org">W3C</a>.  This is the predominant language for formatting world wide web
 				content.
+			</dd>
+			<dt name="libc">
+				libc
+			</dt>
+			<dd>
+				The C Standard Library.  A set of functions (including <a class="term" href="#system_call">system calls</a>) in
+				the <a class="term" href="#c">C programming language</a>.  Standardised by <a class="term"
+					href="#posix">POSIX</a>, among other standards bodies.
 			</dd>
 			<dt name="man_pages">
 				Man Pages
@@ -51,6 +66,21 @@
 				or arguments.  These macros were traditionally implemented as blocks in the <span class="lang"><a class="term"
 						href="#roff">roff</a></span> language.
 			</dd>
+			<dt name="mdoc_scope">
+				Mdoc Scope
+			</dt>
+			<dd>
+				The rules governing how <a class="term" href="#mdoc_macro">macros</a> accept arguments, which can be text or
+				nested macros.  These rules depend on the macro and can be quite complex.
+			</dd>
+			<dt name="posix">
+				POSIX
+			</dt>
+			<dd>
+				Portable Operating System Interface for Unix.  Most recently released as <a class="external"
+					href="http://pubs.opengroup.org/onlinepubs/9699919799/">POSIX.1-2008</a>, IEEE Std 1003.1-2008.
+					Informally called UNIX08.  Standards document for all UNIX implementations.
+			</dd>
 			<dt name="roff">
 				Roff
 			</dt>
@@ -63,6 +93,15 @@
 			</dt>
 			<dd>
 				Rich text format.  Proprietary document file format used in some popular word processors.
+			</dd>
+			<dt name="system_call">
+				System Call
+			</dt>
+			<dd>
+				A machine instruction that triggers the operating system to perform a privileged operation on behalf of the
+				user.  A typical example is to write a region of memory to a file.  In the <a class="term" href="#libc">C
+					standard library</a>, these instructions are encoded as function calls such as <span
+					class="func">write</span>.
 			</dd>
 			<dt name="terminal">
 				Terminal

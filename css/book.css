@@ -19,11 +19,21 @@ a.term			{ border-bottom: 1px dotted #0000ff; }
 
 a:hover			{ color: #339999; }
 
+div			{ margin-bottom: 1ex; }
+
+blockquote		{ padding-left: 1ex;
+			  border-left: 1px solid green; }
+
 h1,
 h2,
 h3,
 h4,
 h5			{ font-size: inherit; }
+
+h1			{ margin-left: -3em; }
+h2			{ margin-left: -2em; }
+h3			{ margin-left: -1em; }
+h4			{ margin-left: -1ex; }
 
 span.cat,
 span.file,
@@ -66,10 +76,6 @@ span.cmdline,
 span.screen		{ border: 1px dotted green; 
 			  padding: 2px; 
 			  background-color: #eeeeee; }
-
-pre			{ border: 1px dotted #dddddd;
-			  padding-left: 1ex;
-			  margin-left: 2%; }
 
 dl			{ margin-left: 2%; }
 

@@ -16,6 +16,7 @@ a.term			{ border-bottom: 1px dotted #0000ff; }
 
 a:hover			{ color: #339999; }
 
+div			{ margin-bottom: 1ex; }
 h1,
 h2,
 h3,
@@ -32,7 +33,6 @@ span.term		{ font-style: italic; }
 
 span.sec		{ font-weight: bolder; }
 
-pre,
 div.mdocin,
 div.mdocout,
 span.cmd,

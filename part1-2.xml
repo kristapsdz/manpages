@@ -11,15 +11,15 @@
 			Functions
 		</h2>
 		<p>
-			Programming functions are a significant part of the UNIX canon, from the system call interface to the C library.  If
-			you're a C or C++ developer, chances are you've at least glanced through the manuals of system functions such as <span
-				class="func">socket</span> or <span class="func">printf</span>, or C library functions like <span
+			Programming functions are a significant part of the UNIX canon, from the system call interface to the <a class="term"
+				href="glossary.xhtml#libc">C library</a>.  If you're a C or C++ developer, chances are you've at least glanced
+			through the manuals of functions such as <span class="func">socket</span>, <span class="func">printf</span>, or <span
 				class="func">memmove</span>.
 		</p>
 		<p>
-			The <span class="lang">mdoc</span> format is designed primarily with the C and Fortran languages in mind, although it
-			also works with C++, Perl, Tcl, and other imperative languages.  In fact, most any language with functions (or
-			subroutines) and variables will work, typed or not.
+			The <span class="lang">mdoc</span> format is designed primarily with the <a class="term" href="glossary.xhtml#c">C
+				language</a> and Fortran language in mind, although it also works with C++, Perl, Tcl, and other imperative
+			languages.  In fact, most any language with functions (or subroutines) and variables will work, typed or not.
 		</p>
 		<p>
 			Before beginning, we need to change our mental checklist for a complete manual.  Since function manuals can document
