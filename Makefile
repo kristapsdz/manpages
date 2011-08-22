@@ -60,7 +60,7 @@ install: all
 	install -m 0644 index.html index.css $(PREFIX)
 	install -m 0644 $(XHTMLS) $(PREFIX)
 	install -m 0644 css/book.css $(PREFIX)/css
-	install -m 0644 mdoc.epub $(PREFIX)
+	install -m 0644 mdoc.epub mdoc.source.tgz mdoc.xhtml.tgz $(PREFIX)
 
 clean:
 	rm -f index.html $(XHTMLS) mdoc.epub mdoc.source.tgz mdoc.xhtml.tgz
