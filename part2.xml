@@ -15,8 +15,28 @@
 			I'll study the structure of the UNIX manual itself.
 		</p>
 		<p>
-			The convention of UNIX manual structure, from the section names to the style of optional command arguments, extends to
-			the earliest versions of the UNIX operating system.
+			The syntax and structure of <span class="lang">mdoc</span> are closely tied to <a class="term"
+				href="glossary.xhtml#roff">roff</a>, a text processing language predating the first editions of <a class="term"
+				href="glossary.xhtml#unix">UNIX</a>.  In fact, the general syntax of <span class="lang">mdoc</span> can be
+			traced to the <a class="external"
+				href="http://mit.edu/saltzer/www/publications/ctss/AH.9.01.html">RUNOFF</a>
+			utility developed in 1964 by Jerome H. Saltzer for the
+			CTSS operating system.  
+		</p>
+		<blockquote cite="http://mit.edu/Saltzer/www/publications/CC-244.html">
+			<p>
+				<u>Control Words</u>:
+			</p>
+			<p>
+				Input generally consists of English text, 360 or  fewer characters to a line.  Control words must begin a new
+				line, and begin with a period so that they  may  be  distinguished from other text.  RUNOFF does not print the
+				control  words.
+			</p>
+		</blockquote>
+		<p>
+			The conventions of section names and manual categories were later formalised in the <a class="external"
+				href="http://www.cs.bell-labs.com/who/dmr/1stEdman.html">UNIX Programmer's Manual</a> for the First Edition
+			UNIX, 1971.
 		</p>
 		<p class="nav">
 			<a href="part2-1.xhtml">Next</a>
