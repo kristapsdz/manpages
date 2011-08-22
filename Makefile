@@ -48,7 +48,7 @@ XHTMLS	= glossary.xhtml \
 	  part2-3.xhtml \
 	  part2-3-1.xhtml
 
-VERSION	= 0.0.4
+VERSION	= 0.0.5
 DATE	= 22 August 2011
 
 all: $(XHTMLS) mdoc.epub index.html mdoc.source.tgz mdoc.xhtml.tgz
