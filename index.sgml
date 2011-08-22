@@ -122,6 +122,12 @@
 			<BR>
 			.Bl -ohang
 			<BR>
+			.It <SPAN>22 August 2011</SPAN>
+			<DIV>
+				Added glossary.  Converted all data to mark-up.  Tuned e-book formatting.  All initial content has been uploaded
+				and casually reviewed.
+			</DIV>
+			<BR>
 			.It <SPAN>21 August 2011</SPAN>
 			<DIV>
 				Initial release of the first part.
