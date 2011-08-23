@@ -274,7 +274,7 @@
 		</div>
 		<p>
 			but this encourages dangerous behaviour in assuming that quoted arguments may not affect output.  This isn't always the
-			case!  We'll see later how quoted terms on macro lines change the grouping of arguments&mdash;at times non-intuitively.
+			case!  We'll see later how quoted terms on macro lines change the grouping of arguments &mdash; at times non-intuitively.
 		</p>
 		<p>
 			Before moving on to the next section, let's look quickly over our checklist for a well-formed manual.

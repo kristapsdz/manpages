@@ -3,12 +3,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
-		<title>Basic Syntax</title>
+		<title>Syntax</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
 		<h2>
-			Basic Syntax
+			Syntax
 		</h2>
 		<p>
 			Before studying the structure of <span class="lang">mdoc</span> manuals, let's review the language we've seen so far.

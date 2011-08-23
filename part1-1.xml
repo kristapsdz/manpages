@@ -19,7 +19,7 @@
 			In this chapter, I'll discuss how to document these commands with <span class="lang">mdoc</span>.  
 		</p>
 		<p>
-			This may be unfamiliar if you're accustomed to graphical interfaces&mdash;all of our examples will refer to
+			This may be unfamiliar if you're accustomed to graphical interfaces &mdash; all of our examples will refer to
 			command-line, text-based commands.  If your target environment isn't a UNIX system, it's a good idea to read these
 			examples anyway, as as they will expose the rudimentary structure of the <span class="lang">mdoc</span> language.  As
 			mentioned before, reading an introductory text on UNIX will help avoid confusion.

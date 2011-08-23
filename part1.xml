@@ -26,7 +26,7 @@
 		<p>
 			I'll frequently refer to the screen output of <span class="lang">mdoc</span> documents as they're displayed by the
 			classical UNIX <span class="cmd">man</span> utility.  Furthermore, I'll refer to invoking utilities in the traditional
-			UNIX way&mdash;on the <a class="term" href="glossary.xhtml#command_line">command line</a>.  Due to both of these
+			UNIX way &mdash; on the <a class="term" href="glossary.xhtml#command_line">command line</a>.  Due to both of these
 			caveats, a bit of UNIX knowledge will help to avoid confusion, but I'll briefly introduce invocation syntaxes as the
 			need arises.
 		</p>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Macros</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<h3>
+			Macros
+		</h3>
+		<p>
+			So far we've considered several different types of macros.  A macro is usually a terse, two or three-character sequence
+			specified on a <a href="part2-1-1.xhtml#macro_line">macro line</a>.  In this section I formalise the various types of
+			macros, categorised by their scope rules.
+		</p>
+		<p>
+			In general, a macro is syntactically defined as having a macro name, and optionally flags and with optional flag
+			arguments.  The arguments to a macro depend on its scope rules.
+		</p>
+		<div class="mdocsyntax">
+			<span class="macro">Name</span> 
+			<span class="macroopt">
+				<span class="macroflag">Flag</span> 
+				<span class="macroopt">
+					<span class="macroarg">Arg</span>
+				</span>
+			</span>
+		</div>
+		<p>
+			The hyphen <span class="screen">-</span> indicates a macro flag only when the preceding macro accepts arguments.
+		</p>
+		<h4>
+			<a name="inline_macros" />
+			In-line Macro
+		</h4>
+		<p>
+			An in-line macro's arguments are scoped to the current line.  Its scope may also be closed out by subsequent macros: an
+			in-line macro can never contain a nested macro.
+		</p>
+		<div class="mdocsyntax">
+			<span class="macro">Name</span>
+			<span class="macroopt">
+				<span class="macroflag">Flag</span> 
+				<span class="macroopt">
+					<span class="macroarg">Flag Arg</span>
+				</span>
+			</span>
+			<span class="macroopt">
+				<span class="macroarg">Arg...</span>
+			</span>
+		</div>
+		<p>
+			Not all in-line macros accept arguments, and some in-line macros accept a fixed number of arguments.
+		</p>
+		<h4>
+			Block Macros
+		</h4>
+		<p>
+			Block macros, contrary to <a href="#inline_macros">in-line macros</a>, are scoped to multiple lines.  There are several
+			sub-types of block macros, again governed by scoping rules.
+		</p>
+		<h5>
+			Full Block Macros
+		</h5>
+		<h5>
+			Partial Block Macros
+		</h5>
+		<p class="nav">
+			<a class="nav-home" href="index.html">Home</a> |
+			<a href="part2-2.xhtml">Next</a>
+		</p>
+		<p class="edits">
+			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
+		</p>
+	</body>
+</html>
+

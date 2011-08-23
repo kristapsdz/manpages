@@ -22,19 +22,48 @@
 			Without exception, a well-formed <span class="lang">mdoc</span> document consists only of <a class="term"
 				href="glossary.xhtml#ascii">ASCII</a> printable characters, the space character, the newline character, and in
 			some cases the tab character.  Most modern formatters allow for CR+LF newlines <span class="screen">\r\n</span>, but
-			this is not portable.
+			this is not portable.  There is no limit to line length.
 		</p>
 		<p>
 			Unilaterally, the backslash <span class="screen">\</span> is always interpreted as the beginning of an <a
-				href="part2-1-2.xhtml">escape sequence</a>.
+				href="part2-1-2.xhtml">escape sequence</a>.  If an escape precedes a newline, it escapes the current line:
+		</p>
+		<div class="mdocin">
+			.Em This is considered one \
+			<br />
+			line of input.
+		</div>
+		<h4>
+			<a name="macro_line" />
+			Macro Line
+		</h4>
+		<p>
+			Formally speaking, a macro line is one beginning with a control character.  In <span class="lang">mdoc</span>, this is
+			traditionally the <span class="screen">.</span> character, although historical documents may also use the <span
+				class="screen">'</span> character.  This notation extends back to the <a class="external"
+				href="http://mit.edu/saltzer/www/publications/ctss/AH.9.01.html">RUNOFF</a> utility developed in 1964 by Jerome
+			H. Saltzer for the CTSS operating system.
+		</p>
+		<blockquote cite="http://mit.edu/Saltzer/www/publications/CC-244.html">
+			<p>
+				<u>Control Words</u>:
+			</p>
+			<p>
+				Input generally consists of English text, 360 or  fewer characters to a line.  Control words must begin a new
+				line, and begin with a period so that they  may  be  distinguished from other text.  RUNOFF does not print the
+				control  words.
+			</p>
+		</blockquote>
+		<p>
+			A line with only a control character followed by zero or more whitespace characters is stripped from input.
 		</p>
 		<p>
-			On text input lines (lines not beginning with a <a class="term" href="glossary.xhtml#mdoc_macro">macro</a>), any ASCII
-			character may be used and is considered text.
+			A macro line may, in some circumstances, contain more macros.  The first macro &mdash; the one following the control
+			character &mdash; may then be distinguished as the line macro.
 		</p>
 		<p>
-			On macro lines, however, the following non-alphanumeric characters are syntactically meaningful as follows.  These
-			characters are collectively called reserved characters.
+			On macro lines the following non-alphanumeric characters are syntactically meaningful as follows.  These characters are
+			collectively called reserved characters.
 		</p>
 		<a name="reserved" />
 		<table>
@@ -63,7 +92,7 @@
 				</tr>
 				<tr>
 					<td><span class="screen">-</span></td>
-					<td>control character (macro argument)</td>
+					<td>control character (<a href="part2-1-4.xhtml">macro argument</a>)</td>
 				</tr>
 				<tr>
 					<td><span class="screen">.</span></td>
@@ -101,6 +130,13 @@
 		</table>
 		<p>
 			To pass these characters along as literal text, you must either escape or quote them.
+		</p>
+		<h4>
+			Text Line
+		</h4>
+		<p>
+			A text line is any line <i>not</i> beginning with a control character.  Text lines are never parsed for macros and may
+			consist of printable ASCII character.
 		</p>
 		<p class="nav">
 			<a class="nav-home" href="index.html">Home</a> |

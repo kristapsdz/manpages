@@ -78,7 +78,7 @@
 			<content src="part2.xhtml"/>
 			<navPoint class="h2" id="part2-1" playOrder="12">
 				<navLabel>
-					<text>Basic Syntax</text>
+					<text>Syntax</text>
 				</navLabel>
 				<content src="part2-1.xhtml"/>
 				<navPoint class="h3" id="part2-1-1" playOrder="13">
@@ -93,31 +93,43 @@
 					</navLabel>
 					<content src="part2-1-2.xhtml"/>
 				</navPoint>
+				<navPoint class="h3" id="part2-1-3" playOrder="15">
+					<navLabel>
+						<text>Comments</text>
+					</navLabel>
+					<content src="part2-1-3.xhtml"/>
+				</navPoint>
+				<navPoint class="h3" id="part2-1-4" playOrder="16">
+					<navLabel>
+						<text>Macros</text>
+					</navLabel>
+					<content src="part2-1-4.xhtml"/>
+				</navPoint>
 			</navPoint>
-			<navPoint class="h2" id="part2-2" playOrder="15">
+			<navPoint class="h2" id="part2-2" playOrder="17">
 				<navLabel>
 					<text>Structure</text>
 				</navLabel>
 				<content src="part2-2.xhtml"/>
-				<navPoint class="h3" id="part2-2-1" playOrder="16">
+				<navPoint class="h3" id="part2-2-1" playOrder="18">
 					<navLabel>
 						<text>Prologue</text>
 					</navLabel>
 					<content src="part2-2-1.xhtml"/>
 				</navPoint>
-				<navPoint class="h3" id="part2-2-2" playOrder="17">
+				<navPoint class="h3" id="part2-2-2" playOrder="19">
 					<navLabel>
 						<text>Document Body</text>
 					</navLabel>
 					<content src="part2-2-2.xhtml"/>
 				</navPoint>
 			</navPoint>
-			<navPoint class="h2" id="part2-3" playOrder="18">
+			<navPoint class="h2" id="part2-3" playOrder="20">
 				<navLabel>
 					<text>Layout</text>
 				</navLabel>
 				<content src="part2-3.xhtml"/>
-				<navPoint class="h2" id="part2-3-1" playOrder="19">
+				<navPoint class="h2" id="part2-3-1" playOrder="21">
 					<navLabel>
 						<text>Sections</text>
 					</navLabel>
@@ -125,7 +137,7 @@
 				</navPoint>
 			</navPoint>
 		</navPoint>
-		<navPoint class="h1" id="glossary" playOrder="20">
+		<navPoint class="h1" id="glossary" playOrder="22">
 			<navLabel>
 				<text>Glossary</text>
 			</navLabel>

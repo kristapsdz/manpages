@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Comments</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<h3>
+			Comments
+		</h3>
+		<p>
+			Comments &mdash; words in an <span class="lang">mdoc</span> document not interpreted by the formatter &mdash; are
+			indicated by the <a href="part2-1-2.html#special_characters">special character</a> <span class="screen">\&quot;</span>.
+		</p>
+		<div class="mdocin">
+			Regular text. \" In a comment.
+			<br />
+			.Em A macro . \" Another comment.
+		</div>
+		<p>
+			The comment extends from the special character to the end of the line.  If the newline is escaped, the comment only
+			applies to the current line.  In other words, the newline escape is commented.
+		</p>
+		<div class="mdocin">
+			Not in a comment, \" in a comment \
+			<br />
+			Not in a comment.
+		</div>
+		<p>
+			A comment may span an entire line if it's specified as a pseudo-macro, that is, following the control character <span
+				class="screen">.</span>.
+		</p>
+		<div class="mdocin">
+			.\" This is a full-line comment.
+		</div>
+		<p class="nav">
+			<a class="nav-home" href="index.html">Home</a> |
+			<a href="part2-1-4.xhtml">Next</a>
+		</p>
+		<p class="edits">
+			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
+		</p>
+	</body>
+</html>
+

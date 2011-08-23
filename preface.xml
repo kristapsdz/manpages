@@ -67,7 +67,7 @@
 			I've mentioned UNIX several times already, but in fact, <span class="lang">mdoc</span> isn't exclusively tied to UNIX.
 			Although UNIX and <span class="lang">mdoc</span> are historically linked, open source <span class="lang">mdoc</span>
 			tools exist for any operating system.  Furthermore, the documentation capabilities of <span class="lang">mdoc</span>
-			apply to computing systems in general&mdash;not just UNIX.
+			apply to computing systems in general &mdash ;not just UNIX.
 		</p>
 		<p>
 			In this book I'll assume you are casually familiar with <span class="cmd">man</span> and its output.  This will allow us

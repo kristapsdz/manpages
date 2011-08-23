@@ -70,7 +70,7 @@
 			It's obvious this has something to do with <span class="screen">Fl</span> and <span class="screen">Ar</span>.
 		</p>
 		<p>
-			Macro lines may in fact consist of multiple macros&mdash;sometimes nesting further macros, sometimes closing prior
+			Macro lines may in fact consist of multiple macros &mdash; sometimes nesting further macros, sometimes closing prior
 			scopes to begin one anew.  The <span class="macro">Fl</span> and <span class="macro">Ar</span> words are macros nested
 			within the scope of <span class="macro">Op</span>.  However, while <span class="macro">Op</span> contains both of these
 			child scopes, the <span class="macro">Ar</span> macro closes out the <span class="macro">Fl</span> scope and begin its
