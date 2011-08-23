@@ -28,7 +28,7 @@ h4		{ margin-left: -1ex; }
 .header,
 .lang,
 .lib,
-.path,		{ font-style: italic; } 
+.path		{ font-style: italic; } 
 .sec		{ font-weight: bolder; }
 .cmd,
 .cmdflag,
