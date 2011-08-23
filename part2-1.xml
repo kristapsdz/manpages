@@ -11,20 +11,59 @@
 			Basic Syntax
 		</h2>
 		<p>
-			Before studying the structure of <span class="lang">mdoc</span> manuals, let's formalise the language we've seen so far.
-			We've already noted that <span class="lang">mdoc</span> documents are line-based: some lines, demarked by a leading
-			<span class="screen">.</span>, are interpreted as macros.  Those without the leading <span class="screen">.</span> are
-			free-text.  We've even seen examples of partial-line and full-line comments.
+			Before studying the structure of <span class="lang">mdoc</span> manuals, let's review the language we've seen so far.
+			Foremost, we've noticed that <span class="lang">mdoc</span> documents consist only of printable ASCII characters.
+		</p>
+		<p>
+			We noted that a period at the beginning of a line indicates a <a class="term"
+				href="glossary.xhtml#mdoc_macro">macro</a>:
 		</p>
 		<div class="mdocin">
-			.Xx Arguments to the macro Xx.
-			<br />
-			Free-form text. \" A partial comment.
-			<br />
-			.\" A full-line comment.
+			.Qq hello, world
 		</div>
 		<p>
-			This is unfinished...
+			It's safe to say, in this case, that <span class="lang">mdoc</span> is line-oriented in that programme flow is in part
+			governed by position on a line.  In the case of <span class="macro">Qq</span>, we saw how the macro extends to the end
+			of the line.  This is also the first notion of <a class="term" href="glossary.xhtml#mdoc_scope">scope</a>, specifically
+			scoping to the end of line.  We then saw examples where scope covers multiple lines and accomodates for nested macros as
+			well as text.
+		</p>
+		<div class="mdocin">
+			.Sh DESCRIPTION
+			<br />
+			The
+			<br />
+			.Nm
+			<br />
+			utility...
+		</div>
+		<p>
+			We were briefly introduced to the concept of macros accepting flags and flag arguments.
+		</p>
+		<div class="mdocin">
+			.Bl -tag -width Ds
+			<br />
+			.It List key.
+			<br />
+			List value.
+			<br />
+			.El
+		</div>
+		<p>
+			Finally, we noted that double-quotes have special semantic significance, which led to the topic of <a class="term"
+				href="glossary.xhtml#mdoc_escapes">escaped terms</a> such as <span class="screen">\(dq</span> for a double-quote
+			character.  We also saw how punctuation is treated in special ways when lying at line boundaries.
+		</p>
+		<div class="mdocin">
+			End of sentence, end of line.
+			<br />
+			Same goes with
+			<br />
+			.Em macros .
+		</div>
+		<p>
+			In this chapter, we'll formalise these concepts.  I'll draw my terminology from the literature of formal languages and
+			grammar, but it's not necessary to be familiar with the terms beforehand.
 		</p>
 		<p class="nav">
 			<a href="part2-2.xhtml">Next</a>
