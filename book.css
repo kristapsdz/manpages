@@ -1,94 +1,80 @@
-html			{ }
-
-body			{ font-family: serif;
-			  letter-spacing: 1px;
-			  line-height: 14pt;
-			  font-size: 10pt; }
-
-p.nav			{ display: none; }
-
-p.edits			{ display: none; }
-
-a			{ color: #0000ff; 
-			  text-decoration: none; }
-
-a.term			{ border-bottom: 1px dotted #0000ff; }
-
-a:hover			{ color: #339999; }
-
-div			{ margin-bottom: 1ex; }
+html		{ }
+body		{ font-family: serif;
+		  letter-spacing: 1px;
+		  line-height: 14pt;
+		  font-size: 10pt; }
+p.nav		{ display: none; }
+p.edits		{ display: none; }
+a		{ color: #0000ff; 
+		  text-decoration: none; }
+a.term		{ border-bottom: 1px dotted #0000ff; }
+a:hover		{ color: #339999; }
+div		{ margin-bottom: 1ex; }
+blockquote	{ padding-left: 1ex;
+		  border-left: 1px solid green; }
+dl		{ margin-left: 2%; }
 h1,
 h2,
 h3,
 h4,
-h5			{ font-size: inherit; }
-
-span.cat,
-span.file,
-span.header,
-span.lang,
-span.lib,
-span.path,
-span.term		{ font-style: italic; } 
-
-span.sec		{ font-weight: bolder; }
-
-div.mdocin,
-div.mdocout,
-span.cmd,
-span.cmdflag,
-span.cmdarg,
-span.cmdline,
-span.func,
-span.macro,
-span.macroarg,
-span.macroflag,
-span.screen,
-span.type,
-span.value,
-span.var		{ font-family: monospace; 
-			  line-height: 11pt;
-			  font-size: 9pt; } 
-
-span.cmdflag:before,
-span.macroflag:before	{ content: "-"; }
-span.cmdopt:before	{ content: "["; }
-span.cmdopt:after	{ content: "]"; }
-span.macroopt:before	{ content: "["; }
-span.macroopt:after	{ content: "]"; }
-span.func:after		{ content: "()"; }
-span.cmdline:before	{ content: "$ "; }
-
-span.cmdline,
-span.screen		{ border: 1px dotted green; 
-			  padding: 2px; 
-			  background-color: #eeeeee; }
-
-pre			{ border: 1px dotted #dddddd;
-			  padding-left: 1ex;
-			  margin-left: 2%; }
-
-dl			{ margin-left: 2%; }
-
-div.mdocin,
-div.mdocout,
-div.mdocsyntax		{ border: 1px dotted #dddddd;
-			  max-width: 60em; 
-			  margin-left: 2%; }
-
-div.mdocin,
-div.mdocsyntax		{ padding: 0.5ex 0 0.5ex 1.0ex; }
-
-div.mdocout		{ padding-left: 3ex; }
-
-div.mdocout h1		{ font-size: inherit; 
-			  margin-bottom: 0px;
-			  margin-left: -2ex; } 
-
-div.mdocout td		{ vertical-align: top; }
-
-div.mdocout table	{ width: 100%; margin-top: 0ex; margin-bottom: 0ex; } 
-
-div.mdocout blockquote	{ margin-left: 5ex; margin-top: 0ex; margin-bottom: 0ex; } 
-
-div.mdocout div.section	{ margin-bottom: 2ex; margin-left: 5ex; }
+h5		{ font-size: inherit; }
+.cat,
+.file,
+.header,
+.lang,
+.lib,
+.path		{ font-style: italic; } 
+.sec		{ font-weight: bolder; }
+.cmd,
+.cmdflag,
+.cmdarg,
+.cmdline,
+.func,
+.macro,
+.macroarg,
+.macroflag,
+.mdocin,
+.mdocout,
+.screen,
+.type,
+.value,
+.var		{ font-family: monospace; 
+		  line-height: 11pt;
+		  font-size: 9pt; } 
+.term		{ border-bottom: 1px dotted #0000ff; }
+.cmdflag:before,
+.macroflag:before	
+		{ content: "-"; }
+.cmdopt:before	{ content: "["; }
+.cmdopt:after	{ content: "]"; }
+.macroopt:before
+		{ content: "["; }
+.macroopt:after	{ content: "]"; }
+.func:after	{ content: "()"; }
+.cmdline:before	{ content: "$ "; }
+.cmdline,
+.screen		{ border: 1px dotted green; 
+		  padding: 2px; 
+		  background-color: #eeeeee; }
+.mdocin,
+.mdocout,
+.mdocsyntax	{ border: 1px dotted #dddddd;
+		  max-width: 60em; 
+		  margin-left: 2%; }
+.mdocin,
+.mdocsyntax	{ padding: 0.5ex 0 0.5ex 1.0ex; }
+.mdocout	{ padding-left: 3ex; }
+.mdocout h1	{ font-size: inherit; 
+		  margin-bottom: 0px;
+		  margin-left: -2ex; } 
+.mdocout td	{ vertical-align: top; }
+.mdocout table	{ width: 100%; 
+		  margin-top: 0ex; 
+		  margin-bottom: 0ex; } 
+.mdocout blockquote
+		{ margin-left: 5ex; 
+		  margin-top: 0ex; 
+		  margin-bottom: 0ex; } 
+.mdocout div.section
+		{ margin-bottom: 2ex; 
+		  margin-left: 5ex; }
