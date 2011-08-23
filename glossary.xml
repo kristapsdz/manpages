@@ -76,9 +76,9 @@
 				Mdoc Escapes
 			</dt>
 			<dd>
-				Encodes non-text characters (non-ASCII and reserved characters) for being passed to output.
-				In <a class="term" href="#mdoc">mdoc</a>, a sequence of characters is escaped when it begins with the forward
-				slash <span class="screen">\</span>.  There are three forms of escape sequences: one-letter escapes, <span
+				Encodes non-text characters (non-ASCII and reserved characters) for being passed to output.  In <a class="term"
+					href="#mdoc">mdoc</a>, a sequence of characters is escaped when it begins with the backslash <span
+					class="screen">\</span>.  There are three forms of escape sequences: one-letter escapes, <span
 					class="screen">\n</span>; two-letter escapes, <span class="screen">\(nn</span>; and <i>n</i>-letter
 				escapes, <span class="screen">\[N]</span>.
 			</dd>

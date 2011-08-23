@@ -97,6 +97,10 @@
 			<BR>
 			.Lk <SPAN CLASS="chap"><A HREF="part2-1.xhtml">Chapter 1</A>: Basic Syntax</SPAN>
 			<BR>
+			.Lk <SPAN CLASS="sec"><A HREF="part2-1-1.xhtml">Section 1</A>: Input Encoding</SPAN>
+			<BR>
+			.Lk <SPAN CLASS="sec"><A HREF="part2-1-2.xhtml">Section 2</A>: Escape Sequences</SPAN>
+			<BR>
 			.Lk <SPAN CLASS="chap"><A HREF="part2-2.xhtml">Chapter 2</A>: Structure</SPAN>
 			<BR>
 			.Lk <SPAN CLASS="sec"><A HREF="part2-2-1.xhtml">Section 1</A>: Prologue</SPAN>
