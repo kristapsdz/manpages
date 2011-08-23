@@ -139,14 +139,14 @@
 			<BR>
 			.Bl -ohang
 			<BR>
+			.It <SPAN>23 August 2011, <SPAN CLASS="ver">0.0.7</SPAN></SPAN>
+			<DIV>
+				Added Comments and initial Macros sections.  Reworked some other Part II sections.
+			</DIV>
+			<BR>
 			.It <SPAN>23 August 2011, <SPAN CLASS="ver">0.0.6</SPAN></SPAN>
 			<DIV>
 				Initial data for <del>Basic</del> Syntax in place.
-			</DIV>
-			<BR>
-			.It <SPAN>22 August 2011, <SPAN CLASS="ver">0.0.5</SPAN></SPAN>
-			<DIV>
-				Added off-line XHTML, added some glossary entries, split Layout into Sections.
 			</DIV>
 			.El
 			<BR>

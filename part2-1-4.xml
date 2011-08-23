@@ -55,18 +55,68 @@
 			Not all in-line macros accept arguments, and some in-line macros accept a fixed number of arguments.
 		</p>
 		<h4>
-			Block Macros
+			<a name="partial_block_macros" />
+			Partial Block Macros
 		</h4>
 		<p>
-			Block macros, contrary to <a href="#inline_macros">in-line macros</a>, are scoped to multiple lines.  There are several
-			sub-types of block macros, again governed by scoping rules.
+			A partial block macro is similar to an <a href="#inline_macros">in-line macro</a> in that its scope is restricted to the
+			current line.  However, unlike an in-line macro, it accepts nested macros.
 		</p>
-		<h5>
+		<div class="mdocsyntax">
+			<span class="macro">Name</span>
+			<span class="macroopt">
+				<span class="macroflag">Flag</span> 
+				<span class="macroopt">
+					<span class="macroarg">Flag Arg</span>
+				</span>
+			</span>
+			<span class="macroopt">
+				<span class="macroarg">Arg|Macro...</span>
+			</span>
+		</div>
+		<p>
+			The scope of a partial block macro is always closed by the end of the line; any macros between it and the end of line
+			are interpreted as nested macros.  Macros may be nested arbitrarily.
+		</p>
+		<p>
+			Be warned.  If you open a <a href="#full_block_macros">full block macro</a> before the end of the line, behaviour is not
+			always well-defined as the scope is broken.
+		</p>
+		<h4>
+			<a name="full_block_macros" />
 			Full Block Macros
-		</h5>
-		<h5>
-			Partial Block Macros
-		</h5>
+		</h4>
+		<p>
+			The simplest multi-line macro is a full block macro, which is opened and closed by two separate macros.  The pair of
+			macros involved in a full block macro are called the beginning and ending macros.
+		</p>
+		<div class="mdocsyntax">
+			.<span class="macro">Begin</span>
+			<span class="macroopt">
+				<span class="macroflag">Flag</span> 
+				<span class="macroopt">
+					<span class="macroarg">Flag Arg</span>
+				</span>
+			</span>
+			<span class="macroopt">
+				<span class="macroarg">Arg...</span>
+			</span>
+			<br />
+			<span class="macroopt">
+				<span class="macroarg">Arg...</span>
+			</span>
+			<br />
+			.<span class="macro">End</span>
+		</div>
+		<p>
+			One must be careful, in full block macros, not to break the scope of other full or <a
+				href="#partial_block_macros">partial block</a> macros, or behaviour is undefined.
+		</p>
+		<p>
+			A variant of the full block macro is one where the ending macro may be one of several macros.  This is at times referred
+			to as implicit scope closure.  There is no syntactic difference between this and the full block macro but that the <span
+				class="macro">End</span> macro is arbitrary.
+		</p>
 		<p class="nav">
 			<a class="nav-home" href="index.html">Home</a> |
 			<a href="part2-2.xhtml">Next</a>
