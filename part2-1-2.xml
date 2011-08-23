@@ -3,15 +3,88 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
-		<title>Escape Characters</title>
+		<title>Escape Sequences</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+		<style type="text/css">
+			table	{ border-spacing: 0px; 
+				  border-collapse: collapse;
+				  width: 96%;
+				  margin-left: auto;
+				  margin-right: auto; }
+			td	{ padding-left: 1em; }
+		</style>
 	</head>
 	<body>
 		<h3>
-			Escape Characters
+			Escape Sequences
 		</h3>
 		<p>
-			...
+			An escape sequence is any grouping of characters following a backslash <span class="screen">\</span>.  This may happen
+			anywhere in input.  What follows the escape sequence syntactically depends upon the first letter.  The following
+			sections describe common escape sequences.  The use of any other sequence is strongly discouraged for portable manuals.
+		</p>
+		<h4>
+			Special Characters
+		</h4>
+		<p>
+			Special characters allow the encoding of non-ASCII characters and, in <a class="term"
+				href="glossary.xhtml#mdoc_macro">macro</a> lines, the use of <a href="part2-1-1.xhtml#reserved">reserved
+				characters</a>.  Special characters may be invoked anywhere in input.
+		</p>
+		<p>
+			There are three forms of special character, distinguished by the number of letters in the sequence.
+		</p>
+		<table>
+			<col style="width: 5em;" />
+			<col />
+			<tbody>
+				<tr>
+					<td><span class="screen">\n</span></td>
+					<td>one-letter</td>
+				</tr>
+				<tr>
+					<td><span class="screen">\(nn</span></td>
+					<td>two-letter</td>
+				</tr>
+				<tr>
+					<td><span class="screen">\[N]</span></td>
+					<td><i>n</i>-letter</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			The <i>n</i>-letter form may be used to express any of the others.  For example, <span class="screen">\&amp;</span> (a
+			zero-width space) is equivalent to <span class="screen">\[&amp;]</span>.
+		</p>
+		<h4>
+			Predefined Strings
+		</h4>
+		<p>
+			An alternative form of special character is the predefined string.  These are legacy <a class="term"
+				href="glossary.xhtml#roff">roff</a> constructs of an escape sequence that may be programmatically set or unset.
+			The syntax for predefined strings follows:
+		</p>
+		<table>
+			<col style="width: 5em;" />
+			<col />
+			<tbody>
+				<tr>
+					<td><span class="screen">\*n</span></td>
+					<td>one-letter</td>
+				</tr>
+				<tr>
+					<td><span class="screen">\*(nn</span></td>
+					<td>two-letter</td>
+				</tr>
+				<tr>
+					<td><span class="screen">\*[N]</span></td>
+					<td><i>n</i>-letter</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			The use of predefined strings is discouraged in portable manuals, as available strings may differ between
+			implementations and formatters.
 		</p>
 		<p class="nav">
 			<a href="part2-2.xhtml">Next</a>

@@ -50,9 +50,9 @@
 			.El
 		</div>
 		<p>
-			Finally, we noted that double-quotes have special semantic significance, which led to the topic of <a class="term"
-				href="glossary.xhtml#mdoc_escapes">escaped terms</a> such as <span class="screen">\(dq</span> for a double-quote
-			character.  We also saw how punctuation is treated in special ways when lying at line boundaries.
+			Finally, we noted that double-quotes have special semantic significance, which led to the topic of escaped terms such as
+			<span class="screen">\(dq</span> for a double-quote character.  We also saw how punctuation is treated in special ways
+			when lying at line boundaries.
 		</p>
 		<div class="mdocin">
 			End of sentence, end of line.

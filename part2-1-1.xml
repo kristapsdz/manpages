@@ -5,6 +5,14 @@
 		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
 		<title>Input Encoding</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+		<style type="text/css">
+			table	{ border-spacing: 0px; 
+				  border-collapse: collapse;
+				  width: 96%;
+				  margin-left: auto;
+				  margin-right: auto; }
+			  td	{ padding-left: 1em; }
+		</style>
 	</head>
 	<body>
 		<h3>
@@ -17,74 +25,83 @@
 			this is not portable.
 		</p>
 		<p>
-			Unilaterally, the backslash <span class="screen">\</span> is always interpreted as the beginning of an <a class="term"
-				href="glossary.xhtml#mdoc_escapes">escape sequence</a>.
+			Unilaterally, the backslash <span class="screen">\</span> is always interpreted as the beginning of an <a
+				href="part2-1-2.xhtml">escape sequence</a>.
 		</p>
 		<p>
 			On text input lines (lines not beginning with a <a class="term" href="glossary.xhtml#mdoc_macro">macro</a>), any ASCII
 			character may be used and is considered text.
 		</p>
 		<p>
-			On macro lines, however, the following non-alphanumeric characters are syntactically meaningful as follows:
+			On macro lines, however, the following non-alphanumeric characters are syntactically meaningful as follows.  These
+			characters are collectively called reserved characters.
 		</p>
-		<table width="100%">
-			<tr>
-				<td>!</td>
-				<td>punctuation</td>
-			</tr>
-			<tr>
-				<td>"</td>
-				<td>control character</td>
-			</tr>
-			<tr>
-				<td>(</td>
-				<td>punctuation, control character</td>
-			</tr>
-			<tr>
-				<td>)</td>
-				<td>punctuation</td>
-			</tr>
-			<tr>
-				<td>,</td>
-				<td>punctuation</td>
-			</tr>
-			<tr>
-				<td>-</td>
-				<td>control character</td>
-			</tr>
-			<tr>
-				<td>.</td>
-				<td>punctuation</td>
-			</tr>
-			<tr>
-				<td>:</td>
-				<td>punctuation</td>
-			</tr>
-			<tr>
-				<td>;</td>
-				<td>punctuation</td>
-			</tr>
-			<tr>
-				<td>?</td>
-				<td>punctuation</td>
-			</tr>
-			<tr>
-				<td>[</td>
-				<td>punctuation, control character</td>
-			</tr>
-			<tr>
-				<td>\</td>
-				<td>control character</td>
-			</tr>
-			<tr>
-				<td>]</td>
-				<td>punctuation, control character</td>
-			</tr>
-			<tr>
-				<td>|</td>
-				<td>punctuation</td>
-			</tr>
+		<a name="reserved" />
+		<table>
+			<col style="width: 5em;" />
+			<col />
+			<tbody>
+				<tr>
+					<td><span class="screen">!</span></td>
+					<td>punctuation</td>
+				</tr>
+				<tr>
+					<td><span class="screen">&quot;</span></td>
+					<td>control character (quotation)</td>
+				</tr>
+				<tr>
+					<td><span class="screen">(</span></td>
+					<td>punctuation</td>
+				</tr>
+				<tr>
+					<td><span class="screen">)</span></td>
+					<td>punctuation</td>
+				</tr>
+				<tr>
+					<td><span class="screen">,</span></td>
+					<td>punctuation</td>
+				</tr>
+				<tr>
+					<td><span class="screen">-</span></td>
+					<td>control character (macro argument)</td>
+				</tr>
+				<tr>
+					<td><span class="screen">.</span></td>
+					<td>punctuation</td>
+				</tr>
+				<tr>
+					<td><span class="screen">:</span></td>
+					<td>punctuation</td>
+				</tr>
+				<tr>
+					<td><span class="screen">;</span></td>
+					<td>punctuation</td>
+				</tr>
+				<tr>
+					<td><span class="screen">?</span></td>
+					<td>punctuation</td>
+				</tr>
+				<tr>
+					<td><span class="screen">[</span></td>
+					<td>punctuation</td>
+				</tr>
+				<tr>
+					<td><span class="screen">\</span></td>
+					<td>control character (<a href="part2-1-2.xhtml">escape sequence</a>)</td>
+				</tr>
+				<tr>
+					<td><span class="screen">]</span></td>
+					<td>punctuation</td>
+				</tr>
+				<tr>
+					<td><span class="screen">|</span></td>
+					<td>punctuation</td>
+				</tr>
+			</tbody>
 		</table>
+		<p>
+			To pass these characters along as literal text, you must either escape or quote them.
+		</p>
 		<p class="nav">
 			<a href="part2-1-2.xhtml">Next</a>
 		</p>
