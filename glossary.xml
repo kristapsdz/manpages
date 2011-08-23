@@ -142,6 +142,9 @@
 				etc.
 			</dd>
 		</dl>
+		<p class="nav">
+			<a class="nav-home" href="index.html">Home</a>
+		</p>
 		<p class="edits">
 			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
 		</p>

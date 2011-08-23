@@ -65,7 +65,7 @@
 				Citation information: <a class="external" href="http://kristaps.bsd.lv">Dzonsons, Kristaps</a>.  <I>Practical
 				UNIX Manuals: mdoc</I>.
 				<BR>
-				Current version: @VERSION@, @DATE@.
+				Current version: @DATE@, <SPAN CLASS="ver">@VERSION@</SPAN>.
 			</DIV>
 			.
 			<BR>
@@ -135,15 +135,14 @@
 			<BR>
 			.Bl -ohang
 			<BR>
-			.It <SPAN>22 August 2011</SPAN>
+			.It <SPAN>23 August 2011, <SPAN CLASS="ver">0.0.6</SPAN></SPAN>
 			<DIV>
-				Added off-line XHTML, added some glossary entries, split Layout into Sections.
+				Initial data for Basic Syntax in place.
 			</DIV>
 			<BR>
-			.It <SPAN>22 August 2011</SPAN>
+			.It <SPAN>22 August 2011, <SPAN CLASS="ver">0.0.5</SPAN></SPAN>
 			<DIV>
-				Added glossary.  Converted all data to mark-up.  Tuned e-book formatting.  All initial content has been uploaded
-				and casually reviewed.
+				Added off-line XHTML, added some glossary entries, split Layout into Sections.
 			</DIV>
 			.El
 			<BR>

@@ -53,6 +53,7 @@
 			The document body consists of the documentation content.  This material will change over the course of development.
 		</p>
 		<p class="nav">
+			<a class="nav-home" href="index.html">Home</a> |
 			<a href="part2-2-1.xhtml">Next</a>
 		</p>
 		<p class="edits">
