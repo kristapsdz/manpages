@@ -144,10 +144,15 @@
 			Very few real-world functions are so simple.  In the next section, we introduce a more practical function with types and
 			arguments.
 		</p>
-		<p class="nav">
-			<a class="nav-home" href="index.html">Home</a> |
-			<a href="part1-2-2.xhtml">Next</a>
-		</p>
+		<table class="nav">
+			<tbody>
+				<tr>
+					<td class="nav-home"><a href="index.html">Home</a></td>
+					<td class="nav-next"><a href="part1-2-2.xhtml">Next</a></td>
+					<td class="nav-history"><a href="/cgi-bin/cvsweb/part1-2-1.xml?cvsroot=manpages">History</a></td>
+				</tr>
+			</tbody>
+		</table>
 		<p class="edits">
 			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
 		</p>

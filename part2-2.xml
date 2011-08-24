@@ -52,10 +52,15 @@
 		<p>
 			The document body consists of the documentation content.  This material will change over the course of development.
 		</p>
-		<p class="nav">
-			<a class="nav-home" href="index.html">Home</a> |
-			<a href="part2-2-1.xhtml">Next</a>
-		</p>
+		<table class="nav">
+			<tbody>
+				<tr>
+					<td class="nav-home"><a href="index.html">Home</a></td>
+					<td class="nav-next"><a href="part2-2-1.xhtml">Next</a></td>
+					<td class="nav-history"><a href="/cgi-bin/cvsweb/part2-2.xml?cvsroot=manpages">History</a></td>
+				</tr>
+			</tbody>
+		</table>
 		<p class="edits">
 			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
 		</p>

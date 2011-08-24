@@ -3,7 +3,7 @@ body		{ font-family: serif;
 		  letter-spacing: 1px;
 		  line-height: 14pt;
 		  font-size: 10pt; }
-p.nav		{ display: none; }
+.nav		{ display: none; }
 p.edits		{ display: none; }
 a		{ color: #0000ff; 
 		  text-decoration: none; }

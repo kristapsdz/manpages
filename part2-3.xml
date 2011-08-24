@@ -102,10 +102,15 @@
 				class="cat">3</span> and <span class="cat">2</span> manuals; while <span class="sec">EXIT STATUS</span> is found
 			for most category <span class="cat">1</span>, <span class="cat">6</span>, and <span class="cat">8</span> manuals.
 		</p>
-		<p class="nav">
-			<a class="nav-home" href="index.html">Home</a> |
-			<a href="part2-3-1.xhtml">Next</a>
-		</p>
+		<table class="nav">
+			<tbody>
+				<tr>
+					<td class="nav-home"><a href="index.html">Home</a></td>
+					<td class="nav-next"><a href="part2-3-1.xhtml">Next</a></td>
+					<td class="nav-history"><a href="/cgi-bin/cvsweb/part2-3.xml?cvsroot=manpages">History</a></td>
+				</tr>
+			</tbody>
+		</table>
 		<p class="edits">
 			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
 		</p>
