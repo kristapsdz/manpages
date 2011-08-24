@@ -90,8 +90,8 @@
 				<span style="border: 1px solid blue;">Ar prefix</span></span>
 		</div>
 		<p>
-			<span style="border: 1px solid green; padding: 2px;">Outer parts</span> are an <span class="term">outer scope</span>,
-			while <span style="border: 1px solid blue; padding: 2px;">inner parts</span> are an <span class="term">inner scope</span>.  Now it's
+			<span style="border: 1px solid green; padding: 2px;">Outer parts</span> are an outer scope,
+			while <span style="border: 1px solid blue; padding: 2px;">inner parts</span> are an inner scope.  Now it's
 			easy to see how <span class="macro">Fl</span> prefixes only the <span class="screen">C</span> with a dash and not the
 			arguments following: its scope is closed out by <span class="macro">Ar</span>.
 		</p>
@@ -330,7 +330,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="index.html">Home</a></td>
-					<td class="nav-next"><a href="part1-2.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part1-1-3.xhtml">Next</a></td>
 					<td class="nav-history"><a href="/cgi-bin/cvsweb/part1-1-2.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

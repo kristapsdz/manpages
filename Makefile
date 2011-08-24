@@ -16,6 +16,7 @@ SOURCE	= book.css \
 	  part1-1.xml \
 	  part1-1-1.xml \
 	  part1-1-2.xml \
+	  part1-1-3.xml \
 	  part1-2.xml \
 	  part1-2-1.xml \
 	  part1-2-2.xml \
@@ -40,6 +41,7 @@ XHTMLS	= glossary.xhtml \
 	  part1-1.xhtml \
 	  part1-1-1.xhtml \
 	  part1-1-2.xhtml \
+	  part1-1-3.xhtml \
 	  part1-2.xhtml \
 	  part1-2-1.xhtml \
 	  part1-2-2.xhtml \
@@ -110,6 +112,7 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf
 		OPS/part1-1.xhtml \
 		OPS/part1-1-1.xhtml \
 		OPS/part1-1-2.xhtml \
+		OPS/part1-1-3.xhtml \
 		OPS/part1-2.xhtml \
 		OPS/part1-2-1.xhtml \
 		OPS/part1-2-2.xhtml \
