@@ -5,14 +5,6 @@
 		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
 		<title>Escape Sequences</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
-		<style type="text/css">
-			table	{ border-spacing: 0px; 
-				  border-collapse: collapse;
-				  width: 96%;
-				  margin-left: auto;
-				  margin-right: auto; }
-			td	{ padding-left: 1em; }
-		</style>
 	</head>
 	<body>
 		<h3>
@@ -35,7 +27,7 @@
 		<p>
 			There are three forms of special character, distinguished by the number of letters in the sequence.
 		</p>
-		<table>
+		<table class="tbl">
 			<col style="width: 5em;" />
 			<col />
 			<tbody>
@@ -65,7 +57,7 @@
 				href="glossary.xhtml#roff">roff</a> constructs of an escape sequence that may be programmatically set or unset.
 			The syntax for predefined strings follows:
 		</p>
-		<table>
+		<table class="tbl">
 			<col style="width: 5em;" />
 			<col />
 			<tbody>

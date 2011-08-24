@@ -155,6 +155,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="index.html">Home</a></td>
+					<td class="nav-next" style="color: #dddddd;">Next</td>
 					<td class="nav-history"><a href="/cgi-bin/cvsweb/glossary.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

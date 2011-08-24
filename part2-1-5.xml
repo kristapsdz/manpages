@@ -5,14 +5,6 @@
 		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
 		<title>Punctuation</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
-		<style type="text/css">
-			table	{ border-spacing: 0px; 
-				  border-collapse: collapse;
-				  width: 96%;
-				  margin-left: auto;
-				  margin-right: auto; }
-			  td	{ padding-left: 1em; }
-		</style>
 	</head>
 	<body>
 		<h3>
@@ -27,7 +19,7 @@
 			The following characters are considered punctuation:
 		</p>
 		<a name="punctuation" />
-		<table>
+		<table class="tbl">
 			<col style="width: 5em;" />
 			<col />
 			<tbody>
@@ -85,8 +77,11 @@
 			These are treated specially by the formatter when used in macro lines and at the end of text lines.
 		</p>
 		<h4>
-			End of Sentence, End of Line
+			Sentential Punctuation
 		</h4>
+		<blockquote>
+			End of Sentence, End of Line.
+		</blockquote>
 		<p>
 			The end of a sentence should always be at the end of a line.  This way, the formatter can recognise a sentence by the
 			punctuation used and insert the correct amount of spaces.  If supported by the output media (<a class="term"
@@ -129,12 +124,14 @@
 		<p>
 			<a href="part2-1-1.xhtml#macro_line">Macro lines</a> are slightly more complicated.  The same rules apply, but
 			punctuation marks must be separated by spaces.  The formatter will understand the role of the punctuation and remove the
-			spaces accordingly.
+			spaces accordingly, or reorder sentence and closing punctuation.
 		</p>
 		<div class="mdocin">
 			Text (parenthesised
 			<br />
 			.Em text ) .
+			<br />
+			.Qq Properly period-closed quotation .
 		</div>
 		<p>
 			The punctuation may be escaped by either a trailing escape, as in the text case, or a preceding escape.  In this case it
@@ -148,16 +145,30 @@
 			.Em Not end of sentence .\&amp;
 		</div>
 		<h4>
-			Inter-Macro Punctuation
+			Regular Punctuation
 		</h4>
 		<p>
-			Text line punctuation &mdash; commas, parenthesis, quotes &quot; is a matter of literal printing.
+			Non-sentential text line punctuation &mdash; commas, parenthesis, quotes, etc.&mdash; is a matter of literal printing.
 		</p>
 		<div class="mdocin">
 			Some text (punctuation), another "clause".
 		</div>
 		<p>
-			The rules for macros are slightly more complicated, as not all 
+			The rules for macro lines are the same but for <a href="part2-1-4.xhtml#inline_macros">in-line macros</a>, which might
+			decorate individual terms with text.  In this case, punctuation as a standalone argument is specially treated in that it
+			is not decorated, and whitespace removed according to the punctuation type (opening, closing).
+		</p>
+		<div class="mdocin">
+			.Em ( Nicely spaced and decorated . )
+			<br />
+			.Em (All text decorated, no end-of-sentence.)
+			<br />
+			.Em ( Text alright , excepting the period \&amp;. )
+		</div>
+		<p>
+			In the second example, <span class="screen">(All</span> and <span class="screen">end-of-sentence.)</span> are considered
+			arguments, and thus not accomodated for in terms of punctuation.  In the third, the period is escaped and thus
+			considered regular text.
 		</p>
 		<table class="nav">
 			<tbody>

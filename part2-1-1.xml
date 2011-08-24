@@ -5,14 +5,6 @@
 		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
 		<title>Input Encoding</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
-		<style type="text/css">
-			table	{ border-spacing: 0px; 
-				  border-collapse: collapse;
-				  width: 96%;
-				  margin-left: auto;
-				  margin-right: auto; }
-			  td	{ padding-left: 1em; }
-		</style>
 	</head>
 	<body>
 		<h3>
@@ -66,7 +58,7 @@
 			collectively called reserved characters.
 		</p>
 		<a name="reserved" />
-		<table>
+		<table class="tbl">
 			<col style="width: 5em;" />
 			<col />
 			<tbody>
