@@ -47,6 +47,7 @@ h5		{ font-size: inherit; }
 .var		{ font-family: monospace; 
 		  line-height: 10pt;
 		  font-size: 8pt; } 
+.under		{ text-decoration: underline }
 .term		{ border-bottom: 1px dotted #0000ff; }
 .cmdflag:before,
 .macroflag:before	
