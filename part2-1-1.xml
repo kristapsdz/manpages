@@ -72,7 +72,7 @@
 			<tbody>
 				<tr>
 					<td><span class="screen">!</span></td>
-					<td>punctuation</td>
+					<td><a href="part2-1-5.xhtml">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">&quot;</span></td>
@@ -80,15 +80,15 @@
 				</tr>
 				<tr>
 					<td><span class="screen">(</span></td>
-					<td>punctuation</td>
+					<td><a href="part2-1-5.xhtml">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">)</span></td>
-					<td>punctuation</td>
+					<td><a href="part2-1-5.xhtml">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">,</span></td>
-					<td>punctuation</td>
+					<td><a href="part2-1-5.xhtml">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">-</span></td>
@@ -96,23 +96,23 @@
 				</tr>
 				<tr>
 					<td><span class="screen">.</span></td>
-					<td>punctuation</td>
+					<td><a href="part2-1-5.xhtml">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">:</span></td>
-					<td>punctuation</td>
+					<td><a href="part2-1-5.xhtml">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">;</span></td>
-					<td>punctuation</td>
+					<td><a href="part2-1-5.xhtml">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">?</span></td>
-					<td>punctuation</td>
+					<td><a href="part2-1-5.xhtml">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">[</span></td>
-					<td>punctuation</td>
+					<td><a href="part2-1-5.xhtml">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">\</span></td>
@@ -120,11 +120,11 @@
 				</tr>
 				<tr>
 					<td><span class="screen">]</span></td>
-					<td>punctuation</td>
+					<td><a href="part2-1-5.xhtml">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">|</span></td>
-					<td>punctuation</td>
+					<td><a href="part2-1-5.xhtml">punctuation</a></td>
 				</tr>
 			</tbody>
 		</table>
@@ -145,6 +145,7 @@
 			case, and produce the same output.
 		</p>
 		<h4>
+			<a name="text_line" />
 			Text Line
 		</h4>
 		<p>

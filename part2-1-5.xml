@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Punctuation</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+		<style type="text/css">
+			table	{ border-spacing: 0px; 
+				  border-collapse: collapse;
+				  width: 96%;
+				  margin-left: auto;
+				  margin-right: auto; }
+			  td	{ padding-left: 1em; }
+		</style>
+	</head>
+	<body>
+		<h3>
+			Punctuation
+		</h3>
+		<p>
+			The <span class="lang">mdoc</span> language, in descending from the type-setting language <a class="lang term"
+				href="glossary.xhtml#roff">roff</a>, has significant type-setting capabilities.  Punctuation is treated
+			specially in all <span class="lang">mdoc</span> documents, both in terms of macro and text lines.
+		</p>
+		<p>
+			The following characters are considered punctuation:
+		</p>
+		<a name="punctuation" />
+		<table>
+			<col style="width: 5em;" />
+			<col />
+			<tbody>
+				<tr>
+					<td><span class="screen">!</span></td>
+					<td>ending sentence</td>
+				</tr>
+				<tr>
+					<td><span class="screen">&quot;</span></td>
+					<td>ending enclosure</td>
+				</tr>
+				<tr>
+					<td><span class="screen">(</span></td>
+					<td>opening enclosure</td>
+				</tr>
+				<tr>
+					<td><span class="screen">)</span></td>
+					<td>ending enclosure</td>
+				</tr>
+				<tr>
+					<td><span class="screen">,</span></td>
+					<td>ending</td>
+				</tr>
+				<tr>
+					<td><span class="screen">.</span></td>
+					<td>ending sentence</td>
+				</tr>
+				<tr>
+					<td><span class="screen">:</span></td>
+					<td>ending</td>
+				</tr>
+				<tr>
+					<td><span class="screen">;</span></td>
+					<td>ending</td>
+				</tr>
+				<tr>
+					<td><span class="screen">?</span></td>
+					<td>ending sentence</td>
+				</tr>
+				<tr>
+					<td><span class="screen">[</span></td>
+					<td>opening enclosure</td>
+				</tr>
+				<tr>
+					<td><span class="screen">]</span></td>
+					<td>ending enclosure</td>
+				</tr>
+				<tr>
+					<td><span class="screen">|</span></td>
+					<td>intervening</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			These are treated specially by the formatter when used in macro lines and at the end of text lines.
+		</p>
+		<h4>
+			End of Sentence, End of Line
+		</h4>
+		<p>
+			The end of a sentence should always be at the end of a line.  This way, the formatter can recognise a sentence by the
+			punctuation used and insert the correct amount of spaces.  If supported by the output media (<a class="term"
+				href="glossary.xhtml#html">HTML</a>, for example, does not), all modern <span class="lang">mdoc</span>
+			formatters use <a class="term" href="glossary.xhtml#english_spacing">English spacing</a> to mark sentence boundaries.
+			The <q>ending sentence</q> punctuation in the <a href="#punctuation">punctuation table</a> marks an end of sentence.
+		</p>
+		<p>
+			In <a href="part2-1-1.xhtml#text_lines">text lines</a>, sentence punctuation should always occur at the end of the line.
+		</p>
+		<div class="mdocin">
+			End of sentence.
+			<br />
+			End of line.
+			<br />
+			(&quot;Even with nested sentences.&quot;)
+		</div>
+		<p>
+			Note, in the last sentence, that the formatter will recognise sentence punctuation even when followed by <q>ending
+				enclosure</q> punctuation as noted in the <a href="#punctuation">punctuation table</a>. 
+		</p>
+		<p>
+			However, take care that non-sentence punctuation, such as for abbreviations, does not happen to fall at
+			the line boundary.
+		</p>
+		<div class="mdocin">
+			Paging Dr.
+			<br />
+			Freud.
+		</div>
+		<p>
+			In this case, the formatter will interpret <span class="screen">Dr.</span> as ending a sentence.  In this event, you can
+			either restructure your line or add a zero-width escape following the period.
+		</p>
+		<div class="mdocin">
+			Paging Dr.\&amp;
+			<br />
+			Freud.
+		</div>
+		<p>
+			<a href="part2-1-1.xhtml#macro_line">Macro lines</a> are slightly more complicated.  The same rules apply, but
+			punctuation marks must be separated by spaces.  The formatter will understand the role of the punctuation and remove the
+			spaces accordingly.
+		</p>
+		<div class="mdocin">
+			Text (parenthesised
+			<br />
+			.Em text ) .
+		</div>
+		<p>
+			The punctuation may be escaped by either a trailing escape, as in the text case, or a preceding escape.  In this case it
+			is not considered punctuation, but regular text.  Note that this will also cause an intervening space to be printed.
+		</p>
+		<div class="mdocin">
+			.Em End of sentence .
+			<br />
+			.Em Not end of sentence \&amp;.
+			<br />
+			.Em Not end of sentence .\&amp;
+		</div>
+		<h4>
+			Inter-Macro Punctuation
+		</h4>
+		<p>
+			Text line punctuation &mdash; commas, parenthesis, quotes &quot; is a matter of literal printing.
+		</p>
+		<div class="mdocin">
+			Some text (punctuation), another "clause".
+		</div>
+		<p>
+			The rules for macros are slightly more complicated, as not all 
+		</p>
+		<table class="nav">
+			<tbody>
+				<tr>
+					<td class="nav-home"><a href="index.html">Home</a></td>
+					<td class="nav-next"><a href="part2-2.xhtml">Next</a></td>
+					<td class="nav-history"><a href="/cgi-bin/cvsweb/part2-1-5.xml?cvsroot=manpages">History</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="edits">
+			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
+		</p>
+	</body>
+</html>

@@ -35,6 +35,15 @@
 				windowing systems such as the <a class="external" href="http://www.xorg.org">X Window System</a>.
 			</dd>
 			<dt>
+				<a name="english_spacing" />
+				English Spacing
+			</dt>
+			<dd>
+				The practise of using two spaces between sentences as punctuated by <span class="screen">.</span>, <span
+					class="screen">!</span>, or <span class="screen">?</span>.  This applies even in the event that a sentence
+				is quoted or parenthesised, where the spaces follow the final sentence enclosure.
+			</dd>
+			<dt>
 				<a name="html" />
 				HTML
 			</dt>

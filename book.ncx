@@ -105,31 +105,37 @@
 					</navLabel>
 					<content src="part2-1-4.xhtml"/>
 				</navPoint>
+				<navPoint class="h3" id="part2-1-5" playOrder="17">
+					<navLabel>
+						<text>Punctuation</text>
+					</navLabel>
+					<content src="part2-1-5.xhtml"/>
+				</navPoint>
 			</navPoint>
-			<navPoint class="h2" id="part2-2" playOrder="17">
+			<navPoint class="h2" id="part2-2" playOrder="18">
 				<navLabel>
 					<text>Structure</text>
 				</navLabel>
 				<content src="part2-2.xhtml"/>
-				<navPoint class="h3" id="part2-2-1" playOrder="18">
+				<navPoint class="h3" id="part2-2-1" playOrder="19">
 					<navLabel>
 						<text>Prologue</text>
 					</navLabel>
 					<content src="part2-2-1.xhtml"/>
 				</navPoint>
-				<navPoint class="h3" id="part2-2-2" playOrder="19">
+				<navPoint class="h3" id="part2-2-2" playOrder="20">
 					<navLabel>
 						<text>Document Body</text>
 					</navLabel>
 					<content src="part2-2-2.xhtml"/>
 				</navPoint>
 			</navPoint>
-			<navPoint class="h2" id="part2-3" playOrder="20">
+			<navPoint class="h2" id="part2-3" playOrder="21">
 				<navLabel>
 					<text>Layout</text>
 				</navLabel>
 				<content src="part2-3.xhtml"/>
-				<navPoint class="h2" id="part2-3-1" playOrder="21">
+				<navPoint class="h2" id="part2-3-1" playOrder="22">
 					<navLabel>
 						<text>Sections</text>
 					</navLabel>
@@ -137,7 +143,7 @@
 				</navPoint>
 			</navPoint>
 		</navPoint>
-		<navPoint class="h1" id="glossary" playOrder="22">
+		<navPoint class="h1" id="glossary" playOrder="23">
 			<navLabel>
 				<text>Glossary</text>
 			</navLabel>
