@@ -131,12 +131,53 @@
 		<p>
 			To pass these characters along as literal text, you must either escape or quote them.
 		</p>
+		<p>
+			If an unescaped space character is encountered on a macro line, it is used to delimit macros, macro arguments, and
+			flags.  Multiple consecutive space characters have no effect on output.
+		</p>
+		<div class="mdocin">
+			.Em Hello,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;World
+			<br />
+			.Em Hello, World
+		</div>
+		<p>
+			The spaces between <span class="screen">Hello,</span> and <span class="screen">world</span> delimit arguments in this
+			case, and produce the same output.
+		</p>
 		<h4>
 			Text Line
 		</h4>
 		<p>
 			A text line is any line <i>not</i> beginning with a control character.  Text lines are never parsed for macros and may
-			consist of printable ASCII character.
+			consist of printable ASCII character.  Text lines are concatenated together when forming output, so unless in certain
+			circumstances, newlines are stripped from input.  Using a blank text line as a vertical separator is not portable.
+		</p>
+		<p>
+			If a space character is encountered on a text line, it is reproduced verbatim in the output.
+		</p>
+		<div class="mdocin">
+			Hello,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;World
+			<br />
+			Hello, World
+		</div>
+		<p>
+			Thus, the spaces between <span class="screen">Hello,</span> and <span class="screen">world</span> will be reproduced in
+			output.  In general, however, it is considered non-portable to use spaces on a text-line to shape output: <a
+				class="term" href="glossary.xhtml#html">HTML</a> by default collapses whitespace.  A literal display mode should
+			be used instead.
+		</p>
+		<p>
+			Furthermore, if the first letter of a text line is a space character, the output line shall be preceded by a newline.
+		</p>
+		<div class="mdocin">
+			Hello, World.
+			<br />
+			&nbsp;&nbsp;The newline and leading spaces are retained.
+			<br />
+			While this is not.
+		</div>
+		<p>
+			This behaviour should also not be assumed; a literal display mode should be opened instead.
 		</p>
 		<p class="nav">
 			<a class="nav-home" href="index.html">Home</a> |
