@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Case Study</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<h3>
+			Case Study
+		</h3>
+		<p>
+			I now introduce a case study of a real-world manual, in particular the <span class="cmd">cat</span> utility from <a
+				class="external" href="http://www.openbsd.org">OpenBSD</a>.  The original file may be viewed on-line at <a
+				class="external" href="http://www.openbsd.org/cgi-bin/cvsweb/src/bin/echo/echo.1">src/bin/echo/echo.1</a>.
+		</p>
+		<div class="mdocin">
+			.\"	$&#8203;OpenBSD: echo.1,v 1.20 2010/09/03 09:53:20 jmc Exp $&#8203;
+			<br />
+			.\"	$&#8203;NetBSD: echo.1,v 1.7 1995/03/21 09:04:26 cgd Exp $&#8203;
+		</div>
+		<p>
+			These initial comments are automatically created by the source-control system, <span class="cmd">cvs</span>.  It fills
+			in information about the last editor.  This indicates that the file was imported from <a class="external"
+				href="http://www.netbsd.org">NetBSD</a>, where it was last edited by <span class="screen">cgd</span> (a system
+			name, not the user's real name); and last edited in OpenBSD, its current form, by <span class="screen">jmc</span>.
+		</p>
+		<p>
+			If you're keeping your manual under source control, it's usually a good idea to begin your file with a similar line.
+		</p>
+		<div class="mdocin">
+			.\"	$&#8203;Id$
+		</div>
+		<p>
+			A tab character separates the comment marker from the text.  This will be covered later in this book.
+		</p>
+		<div class="mdocin">
+			.\" Copyright (c) 1990, 1993
+			<br />
+			.\"	The Regents of the University of California.  All rights reserved.
+			<br />
+			.\"
+			<br />
+			.\" This code is derived from software contributed to Berkeley by
+			<br />
+			.\" the Institute of Electrical and Electronics Engineers, Inc.
+			<br />
+			.\"
+			<br />
+			.\" Redistribution and use in source and binary forms, with or without
+			<br />
+			.\" modification, are permitted provided that the following conditions
+			<br />
+			.\" are met:
+			<br />
+			.\" 1. Redistributions of source code must retain the above copyright
+			<br />
+			.\"    notice, this list of conditions and the following disclaimer.
+			<br />
+			.\" 2. Redistributions in binary form must reproduce the above copyright
+			<br />
+			.\"    notice, this list of conditions and the following disclaimer in the
+			<br />
+			.\"    documentation and/or other materials provided with the distribution.
+			<br />
+			.\" 3. Neither the name of the University nor the names of its contributors
+			<br />
+			.\"    may be used to endorse or promote products derived from this software
+			<br />
+			.\"    without specific prior written permission.
+			<br />
+			.\"
+			<br />
+			.\" THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+			<br />
+			.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+			<br />
+			.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+			<br />
+			.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+			<br />
+			.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+			<br />
+			.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+			<br />
+			.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+			<br />
+			.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+			<br />
+			.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+			<br />
+			.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+			<br />
+			.\" SUCH DAMAGE.
+		</div>
+		<p>
+			This long comment is the license and copyright of the source file.  Of course, our use of this source file is compatible
+			with the license, as may be read from the text itself!
+		</p>
+		<div class="mdocin">
+			.\"	@(#)echo.1	8.1 (Berkeley) 7/22/93
+		</div>
+		<p>
+			This comment is of historical note.  The <span class="screen">@(#)</span> sequence was inserted by the <span
+				class="cmd">sccs</span> utility (Source Code Control System).  Although this utility is part of <a class="term"
+				href="glossary.xhtml#posix">POSIX</a>.1-2008, it has mostly been replaced by <span class="cmd">cvs</span>.  At
+			this point the manual content itself begins.
+		</p>
+		<div class="mdocin">
+			.Dd $Mdocdate$
+			<br />
+			.Dt ECHO 1
+			<br />
+			.Os
+		</div>
+		<p>
+			This indicates that the manual's title is <span class="screen">ECHO</span> in category <span class="cat">1</span>
+			(utilities) for the current installed operating system.
+		</p>
+		<div class="mdocin">
+			.Sh NAME
+			<br />
+			.Nm echo
+			<br />
+			.Nd write arguments to the standard output
+		</div>
+		<p>
+			This documents a single command, the <span class="cmd">echo</span> command, which does as mentioned.
+		</p>
+		<div class="mdocin">
+			.Sh SYNOPSIS
+			<br />
+			.Nm echo
+			<br />
+			.Op Fl n
+			<br />
+			.Op Ar string ...
+		</div>
+		<p>
+			The command accepts a single optional flag, <span class="cmdflag">n</span>, and an arbitrary number of optional
+			arguments <span class="cmdarg">string</span>.  Note that re-stating the command name for the <span
+				class="macro">Nm</span> is superfluous in this case.
+		</p>
+		<div class="mdocin">
+			.Sh DESCRIPTION
+			<br />
+			The
+			<br />
+			.Nm
+			<br />
+			utility writes any specified operands, separated by single blank
+			<br />
+			.Pq Sq \ \&amp;
+			<br />
+			characters and followed by a newline
+			<br />
+			.Pq Sq \en
+			<br />
+			character, to the standard
+			<br />
+			output.
+			<br />
+			When no operands are given, only the newline is written.
+		</div>
+		<p>
+			The <span class="sec">DESCRIPTION</span> opens with a brief explanation of the utility and its output.  The strange set
+			of backslash-escaped characters <span class="screen">\ \&amp;</span> is required to make the doubly-nested macros <span
+				class="macro">Pq</span> and <span class="macro">Sq</span> (parenthesise and single-quote, respectively)
+			correctly enclose a single space.
+		</p>
+		<div class="mdocin">
+			.Pp
+			<br />
+			The options are as follows:
+			<br />
+			.Bl -tag -width Ds
+			<br />
+			.It Fl n
+			<br />
+			Do not print the trailing newline character.
+			<br />
+			.El
+		</div>
+		<p>
+			This follows the standard form of documenting flags and arguments as a term/definition list.  Each one &mdash; in this
+			case only one &mdash; is documented in alphabetical ordered.
+		</p>
+		<div class="mdocin">
+			.Sh EXIT STATUS
+			<br />
+			.Ex -std echo
+		</div>
+		<p>
+			Notes the standard exit sequence.  Note that the argument to <span class="macro">Ex</span> is superfluous, as only one
+			command is listed for the manual.
+		</p>
+		<div class="mdocin">
+			.Sh SEE ALSO
+			<br />
+			.Xr csh 1 ,
+			<br />
+			.Xr ksh 1 ,
+			<br />
+			.Xr printf 1
+		</div>
+		<p>
+			Although these weren't cited in other sections of the manual, the author felt it necessary to link to them.  This is
+			probably because both utilities <span class="cmd">csh</span> and <span class="cmd">ksh</span> include internal
+			implementations of a function by the same name.
+		</p>
+		<div class="mdocin">
+			.Sh STANDARDS
+			<br />
+			The
+			<br />
+			.Nm
+			<br />
+			utility is compliant with the
+			<br />
+			.St -p1003.1-2008
+			<br />
+			specification.
+			<br />
+			.Pp
+			<br />
+			The flag
+			<br />
+			.Op Fl n
+			<br />
+			is an extension to that specification.
+			<br />
+			.Pp
+			<br />
+			.Nm
+			<br />
+			also exists as a built-in to
+			<br />
+			.Xr csh 1
+			<br />
+			and
+			<br />
+			.Xr ksh 1 ,
+			<br />
+			though with a different syntax.
+		</div>
+		<p>
+			This last section fully describes the utility's conformance to the <a class="term" href="glossary.xhtml#posix">POSIX</a>
+			standard, which is very important to those writing portable utilities.  The <span class="macro">St</span> macro expands
+			into the relevant standard's full name.
+		</p>
+		<table class="nav">
+			<tbody>
+				<tr>
+					<td class="nav-home"><a href="index.html">Home</a></td>
+					<td class="nav-next"><a href="part1-2.xhtml">Next</a></td>
+					<td class="nav-history"><a href="/cgi-bin/cvsweb/part1-1-3.xml?cvsroot=manpages">History</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="edits">
+			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
+		</p>
+	</body>
+</html>
