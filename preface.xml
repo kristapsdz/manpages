@@ -11,7 +11,9 @@
 			Preface
 		</h1>
 		<blockquote>
-			<q>A utility without a manual is of no utility at all.</q>
+			<p>
+				A utility without a manual is of no utility at all.
+			</p>
 		</blockquote>
 		<p>
 			This is a guide for writing UNIX manuals in the <span class="lang"><a class="term"
@@ -83,9 +85,9 @@
 		<table class="nav">
 			<tbody>
 				<tr>
-					<td class="nav-home"><a href="index.html">Home</a></td>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
 					<td class="nav-next"><a href="part1.xhtml">Next</a></td>
-					<td class="nav-history"><a href="/cgi-bin/cvsweb/preface.xml?cvsroot=manpages">History</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/preface.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>
 		</table>

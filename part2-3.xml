@@ -19,10 +19,10 @@
 		<blockquote cite="http://www.cs.bell-labs.com/who/dmr/1stEdman.html">
 			<ul>
 				<li>
-					The <u>name</u> section repeats the entry name and gives a very short description of its purpose.
+					The <span class="under">name</span> section repeats the entry name and gives a very short description of its purpose.
 				</li>
 				<li>
-					The <u>synopsis</u> summarizes the use of the program being described. A few conventions are used, particularly
+					The <span class="under">synopsis</span> summarizes the use of the program being described. A few conventions are used, particularly
 					in the Commands section.  Underlined words are considered literals, and are typed just as they appear.
 					Square brackets ([]) around an argument indicate that the argument is optional. When an argument is
 					given as name, it always refers to a file name.  Ellipses ... are used to show that the previous
@@ -32,21 +32,21 @@
 					The description section discusses in detail the subject at hand.
 				</li>
 				<li>
-					The <u>files</u> section gives the names of files which are built into the program.
+					The <span class="under">files</span> section gives the names of files which are built into the program.
 				</li>
 				<li> 
-					A <u>see also</u> section gives pointers to related information.
+					A <span class="under">see also</span> section gives pointers to related information.
 				</li>
 				<li>
-					A <u>diagnostics</u> section discusses the diagnostics that may be produced. This section tends to be as
+					A <span class="under">diagnostics</span> section discusses the diagnostics that may be produced. This section tends to be as
 					terse as the diagnostics themselves.
 				</li>
 				<li>
-					The <u>bugs</u> section gives known bugs and sometimes deficiencies. occasionally also the suggested fix
+					The <span class="under">bugs</span> section gives known bugs and sometimes deficiencies. occasionally also the suggested fix
 					is described.
 				</li>
 				<li>
-					The <u>owner</u> section gives the name of the person or persons to be consulted in case of difficulty.
+					The <span class="under">owner</span> section gives the name of the person or persons to be consulted in case of difficulty.
 					The rule has been that the last one to modify something owns it, so the owner is not necessarily the
 					author.
 				</li>
@@ -105,9 +105,9 @@
 		<table class="nav">
 			<tbody>
 				<tr>
-					<td class="nav-home"><a href="index.html">Home</a></td>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
 					<td class="nav-next"><a href="part2-3-1.xhtml">Next</a></td>
-					<td class="nav-history"><a href="/cgi-bin/cvsweb/part2-3.xml?cvsroot=manpages">History</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part2-3.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>
 		</table>

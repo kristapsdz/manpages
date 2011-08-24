@@ -11,31 +11,27 @@
 			Glossary
 		</h1>
 		<dl>
-			<dt>
-				<a name="ascii" />
+			<dt id="ascii">
 				ASCII
 			</dt>
 			<dd>
 				American Standard Code for Information Interchange.  The predominant computer encoding for the English alphabet.
 			</dd>
-			<dt>
-				<a name="c" />
+			<dt id="c">
 				C
 			</dt>
 			<dd>
 				A programming language developed in 1969 by Dennis Ritchie at AT&amp;T Bell Labs.  This is the language of
 				choice for <a class="term" href="#unix">UNIX</a> development.
 			</dd>
-			<dt>
-				<a name="command_line" />
+			<dt id="command_line">
 				Command Line
 			</dt>
 			<dd>
 				The text environment for operating <a class="term" href="#unix">UNIX</a> systems.  Often replaced by graphical
 				windowing systems such as the <a class="external" href="http://www.xorg.org">X Window System</a>.
 			</dd>
-			<dt>
-				<a name="english_spacing" />
+			<dt id="english_spacing">
 				English Spacing
 			</dt>
 			<dd>
@@ -43,8 +39,7 @@
 					class="screen">!</span>, or <span class="screen">?</span>.  This applies even in the event that a sentence
 				is quoted or parenthesised, where the spaces follow the final sentence enclosure.
 			</dd>
-			<dt>
-				<a name="html" />
+			<dt id="html">
 				HTML
 			</dt>
 			<dd>
@@ -52,8 +47,7 @@
 					href="http://www.w3.org">W3C</a>.  This is the predominant language for formatting world wide web
 				content.
 			</dd>
-			<dt>
-				<a name="libc" />
+			<dt id="libc">
 				libc
 			</dt>
 			<dd>
@@ -61,8 +55,7 @@
 				the <a class="term" href="#c">C programming language</a>.  Standardised by <a class="term"
 					href="#posix">POSIX</a>, among other standards bodies.
 			</dd>
-			<dt>
-				<a name="man_pages" />
+			<dt id="man_pages">
 				Man Pages
 			</dt>
 			<dd>
@@ -71,8 +64,7 @@
 				the screen.  Man pages are formatted by a utility such as <span class="cmd">troff</span> or <span
 					class="cmd">mandoc</span>.
 			</dd>
-			<dt>
-				<a name="mdoc" />
+			<dt id="mdoc">
 				Mdoc
 			</dt>
 			<dd>
@@ -80,8 +72,7 @@
 				macro package in the <span class="lang"><a class="term" href="#roff">roff</a></span> language for the <span
 					class="cmd">troff</span> text processor.
 			</dd>
-			<dt>
-				<a name="mdoc_macro" />
+			<dt id="mdoc_macro">
 				Mdoc Macro
 			</dt>
 			<dd>
@@ -89,16 +80,14 @@
 				or arguments.  These macros were traditionally implemented as blocks in the <span class="lang"><a class="term"
 						href="#roff">roff</a></span> language.
 			</dd>
-			<dt>
-				<a name="mdoc_scope" />
+			<dt id="mdoc_scope">
 				Mdoc Scope
 			</dt>
 			<dd>
 				The rules governing how <a class="term" href="#mdoc_macro">macros</a> accept arguments, which can be text or
 				nested macros.  These rules depend on the macro and can be quite complex.
 			</dd>
-			<dt>
-				<a name="posix" />
+			<dt id="posix">
 				POSIX
 			</dt>
 			<dd>
@@ -106,23 +95,20 @@
 					href="http://pubs.opengroup.org/onlinepubs/9699919799/">POSIX.1-2008</a>, IEEE Std 1003.1-2008.
 					Informally called UNIX08.  Standards document for all UNIX implementations.
 			</dd>
-			<dt>
-				<a name="roff" />
+			<dt id="roff">
 				Roff
 			</dt>
 			<dd>
 				A document language written for the original <a class="term" href="#unix">UNIX</a> implementation in 1970.  This
 				language was used for text processing.
 			</dd>
-			<dt>
-				<a name="rtf" />
+			<dt id="rtf">
 				RTF
 			</dt>
 			<dd>
 				Rich text format.  Proprietary document file format used in some popular word processors.
 			</dd>
-			<dt>
-				<a name="system_call" />
+			<dt id="system_call">
 				System Call
 			</dt>
 			<dd>
@@ -131,16 +117,14 @@
 					standard library</a>, these instructions are encoded as function calls such as <span
 					class="func">write</span>.
 			</dd>
-			<dt>
-				<a name="terminal" />
+			<dt id="terminal">
 				Terminal
 			</dt>
 			<dd>
 				The <a class="term" href="#command_line">command line</a> environment on a computer.  This can either refer to a
 				terminal utility run within a graphical environment or the computer screen itself in text mode.
 			</dd>
-			<dt>
-				<a name="unix" />
+			<dt id="unix">
 				UNIX
 			</dt>
 			<dd>
@@ -154,9 +138,9 @@
 		<table class="nav">
 			<tbody>
 				<tr>
-					<td class="nav-home"><a href="index.html">Home</a></td>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
 					<td class="nav-next" style="color: #dddddd;">Next</td>
-					<td class="nav-history"><a href="/cgi-bin/cvsweb/glossary.xml?cvsroot=manpages">History</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/glossary.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>
 		</table>

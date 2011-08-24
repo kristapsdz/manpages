@@ -25,8 +25,7 @@
 			<br />
 			line of input.
 		</div>
-		<h4>
-			<a name="macro_line" />
+		<h4 id="macro_line">
 			Macro Line
 		</h4>
 		<p>
@@ -38,7 +37,7 @@
 		</p>
 		<blockquote cite="http://mit.edu/Saltzer/www/publications/CC-244.html">
 			<p>
-				<u>Control Words</u>:
+				<span class="under">Control Words</span>:
 			</p>
 			<p>
 				Input generally consists of English text, 360 or  fewer characters to a line.  Control words must begin a new
@@ -57,8 +56,7 @@
 			On macro lines the following non-alphanumeric characters are syntactically meaningful as follows.  These characters are
 			collectively called reserved characters.
 		</p>
-		<a name="reserved" />
-		<table class="tbl">
+		<table id="reserved" class="tbl">
 			<col style="width: 5em;" />
 			<col />
 			<tbody>
@@ -136,8 +134,7 @@
 			The spaces between <span class="screen">Hello,</span> and <span class="screen">world</span> delimit arguments in this
 			case, and produce the same output.
 		</p>
-		<h4>
-			<a name="text_line" />
+		<h4 id="text_line">
 			Text Line
 		</h4>
 		<p>
@@ -175,9 +172,9 @@
 		<table class="nav">
 			<tbody>
 				<tr>
-					<td class="nav-home"><a href="index.html">Home</a></td>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
 					<td class="nav-next"><a href="part2-1-2.xhtml">Next</a></td>
-					<td class="nav-history"><a href="/cgi-bin/cvsweb/part2-1-1.xml?cvsroot=manpages">History</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part2-1-1.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>
 		</table>

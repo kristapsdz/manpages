@@ -163,8 +163,8 @@
 			</ol>
 			<p>
 				Commands are programs intended to be invoked directly by the user, in contradistinction to subroutines, which
-				are intended to be called by the user's programs. Commands generally reside in directory <u>bin</u> (for binary
-				programs). 
+				are intended to be called by the user's programs. Commands generally reside in directory <span
+					class="under">bin</span> (for binary programs). 
 			</p>
 		</blockquote>
 		<p>
@@ -281,9 +281,9 @@
 		<table class="nav">
 			<tbody>
 				<tr>
-					<td class="nav-home"><a href="index.html">Home</a></td>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
 					<td class="nav-next"><a href="part2-2-2.xhtml">Next</a></td>
-					<td class="nav-history"><a href="/cgi-bin/cvsweb/part2-2-1.xml?cvsroot=manpages">History</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part2-2-1.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>
 		</table>

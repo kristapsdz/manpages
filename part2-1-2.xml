@@ -15,8 +15,7 @@
 			anywhere in input.  What follows the escape sequence syntactically depends upon the first letter.  The following
 			sections describe common escape sequences.  The use of any other sequence is strongly discouraged for portable manuals.
 		</p>
-		<h4>
-			<a name="special_characters" />
+		<h4 id="special_characters">
 			Special Characters
 		</h4>
 		<p>
@@ -82,9 +81,9 @@
 		<table class="nav">
 			<tbody>
 				<tr>
-					<td class="nav-home"><a href="index.html">Home</a></td>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
 					<td class="nav-next"><a href="part2-1-3.xhtml">Next</a></td>
-					<td class="nav-history"><a href="/cgi-bin/cvsweb/part2-1-2.xml?cvsroot=manpages">History</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part2-1-2.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>
 		</table>

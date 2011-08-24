@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Case Study</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<h3>
+			Case Study
+		</h3>
+		<p>
+			I now introduce a case study of a real-world function library manual, in particular the manual for the <span
+				class="func">getc</span>, <span class="func">fgetc</span>, <span class="func">getw</span>, and <span
+				class="func">getchar</span> functions from <a class="external" href="http://www.openbsd.org">OpenBSD</a>.  The
+			original file may be viewed on-line at <a class="external"
+				href="http://www.openbsd.orghttp://manpages.bsd.lv/cgi-bin/cvsweb/src/lib/libc/stdio/getc.3">src/lib/libc/stdio/getc.3</a>.  This is
+			not the manual for the full function library, but only a handful of similar functions.
+		</p>
+		<div class="mdocin">
+			.\"	$&#8203;OpenBSD: getc.3,v 1.12 2007/05/31 19:19:31 jmc Exp &#8203;$
+			<br />
+			.\"
+			<br />
+			.\" Copyright (c) 1990, 1991, 1993
+			<br />
+			.\"	The Regents of the University of California.  All rights reserved.
+			<br />
+			.\"
+			<br />
+			.\" This code is derived from software contributed to Berkeley by
+			<br />
+			.\" Chris Torek and the American National Standards Committee X3,
+			<br />
+			.\" on Information Processing Systems.
+			<br />
+			.\"
+			<br />
+			.\" Redistribution and use in source and binary forms, with or without
+			<br />
+			.\" modification, are permitted provided that the following conditions
+			<br />
+			.\" are met:
+			<br />
+			.\" 1. Redistributions of source code must retain the above copyright
+			<br />
+			.\"    notice, this list of conditions and the following disclaimer.
+			<br />
+			.\" 2. Redistributions in binary form must reproduce the above copyright
+			<br />
+			.\"    notice, this list of conditions and the following disclaimer in the
+			<br />
+			.\"    documentation and/or other materials provided with the distribution.
+			<br />
+			.\" 3. Neither the name of the University nor the names of its contributors
+			<br />
+			.\"    may be used to endorse or promote products derived from this software
+			<br />
+			.\"    without specific prior written permission.
+			<br />
+			.\"
+			<br />
+			.\" THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+			<br />
+			.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+			<br />
+			.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+			<br />
+			.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+			<br />
+			.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+			<br />
+			.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+			<br />
+			.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+			<br />
+			.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+			<br />
+			.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+			<br />
+			.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+			<br />
+			.\" SUCH DAMAGE.
+		</div>
+		<p>
+			The <span class="cmd">cvs</span> identifier, copyright, and license comments of this file are very similar to that of
+			the <a href="part1-1-3.xhtml">Case Study</a> for commands.
+		</p>
+		<div class="mdocin">
+			.Dd $&#8203;Mdocdate: May 31 2007 &#8203;$
+			<br />
+			.Dt GETC 3
+			<br />
+			.Os
+		</div>
+		<p>
+			This classifies our manual in category <span class="cat">3</span> as a function or function library.  The title of the
+			manual, <span class="screen">GETC</span>, is chosen as the most general of those functions listed below in the <span
+				class="sec">NAME</span> section.
+		</p>
+		<div class="mdocin">
+			.Sh NAME
+			<br />
+			.Nm fgetc ,
+			<br />
+			.Nm getc ,
+			<br />
+			.Nm getchar ,
+			<br />
+			.Nm getw
+			<br />
+			.Nd get next character or word from input stream
+		</div>
+		<p>
+			Lists (alphabetically) all the functions that will be documented, and some general notes about their collective
+			function.  We next jump down into the <span class="sec">SYNOPSIS</span>; since this set of functions is part of the <a
+				class="term" href="glossary.xhtml#libc">C Standard Library</a>, it needs no special linking information.
+		</p>
+		<div class="mdocin">
+			.Sh SYNOPSIS
+			<br />
+			.Fd #include &lt;stdio.h&gt;
+			<br />
+			.Ft int
+			<br />
+			.Fn fgetc "FILE *stream"
+			<br />
+			.Ft int
+			<br />
+			.Fn getc "FILE *stream"
+			<br />
+			.Ft int
+			<br />
+			.Fn getchar "void"
+			<br />
+			.Ft int
+			<br />
+			.Fn getw "FILE *stream"
+		</div>
+		<p>
+			This documents the calling syntax of all functions.  Note that the <span class="macro">Fd</span> macro is used instead
+			of the <span class="macro">In</span> macro.  This invocation is historically relevant, but new manuals should always use
+			<span class="macro">In</span>.
+		</p>
+		<div class="mdocin">
+			.In stdio.h
+		</div>
+		<p>
+			Next, each function and its arguments is explained as a free-flowing paragraph.  This was probably chosen instead of
+			using a list item for each argument (with <span class="macro">Bl</span>) due to the small number of arguments.
+		</p>
+		<div class="mdocin">
+			.Sh DESCRIPTION
+			<br />
+			The
+			<br />
+			.Fn fgetc
+			<br />
+			function obtains the next input character (if present) from the stream
+			<br />
+			pointed at by
+			<br />
+			.Fa stream ,
+			<br />
+			or the next character pushed back on the stream via
+			<br />
+			.Xr ungetc 3 .
+			<br />
+			.Pp
+			<br />
+			The
+			<br />
+			.Fn getc
+			<br />
+			function acts essentially identically to
+			<br />
+			.Fn fgetc ,
+			<br />
+			but is a macro that expands in-line.
+			<br />
+			.Pp
+			<br />
+			The
+			<br />
+			.Fn getchar
+			<br />
+			function is equivalent to
+			<br />
+			.Fn getc
+			<br />
+			with the argument
+			<br />
+			.Em stdin .
+			<br />
+			.Pp
+			<br />
+			The
+			<br />
+			.Fn getw
+			<br />
+			function obtains the next
+			<br />
+			.Li int
+			<br />
+			(if present)
+			<br />
+			from the stream pointed at by
+			<br />
+			.Fa stream .
+		</div>
+		<p>
+			The usage of the <span class="macro">Em</span> macro is not correct: the <span class="macro">Va</span> or <span
+				class="macro">Dv</span> macro would have been more appropriate.  The same applies to the <span
+				class="macro">Li</span>.  The <span class="lang">mdoc</span> language is semantic, so using presentation macros
+			such as <span class="macro">Li</span> and <span class="macro">Em</span> is discouraged.
+		</p>
+		<div class="mdocin">
+			.Sh RETURN VALUES
+			<br />
+			If successful, these routines return the next requested object from the
+			<br />
+			.Fa stream .
+			<br />
+			If the stream is at end-of-file or a read error occurs, the routines return
+			<br />
+			.Dv EOF .
+			<br />
+			The routines
+			<br />
+			.Xr feof 3
+			and
+			<br />
+			.Xr ferror 3
+			<br />
+			must be used to distinguish between end-of-file and error.
+			<br />
+			If an error occurs, the global variable
+			<br />
+			.Va errno
+			<br />
+			is set to indicate the error.
+			<br />
+			The end-of-file condition is remembered, even on a terminal, and all
+			<br />
+			subsequent attempts to read will return
+			<br />
+			.Dv EOF
+			<br />
+			until the condition is cleared with
+			<br />
+			.Xr clearerr 3 .
+			<br />
+			.Sh SEE ALSO
+			<br />
+			.Xr ferror 3 ,
+			<br />
+			.Xr fopen 3 ,
+			<br />
+			.Xr fread 3 ,
+			<br />
+			.Xr putc 3 ,
+			<br />
+			.Xr ungetc 3
+		</div>
+		<p>
+			All possible return values are correctly documented in the <span class="sec">RETURN VALUES</span> section and relevant
+			functions cross-linked in the <span class="sec">SEE ALSO</span> section.  Note that the cross-linked manuals are also
+			alphabetically sorted.
+		</p>
+		<div class="mdocin">
+			.Sh STANDARDS
+			<br />
+			The
+			<br />
+			.Fn fgetc ,
+			<br />
+			.Fn getc ,
+			<br />
+			and
+			<br />
+			.Fn getchar
+			<br />
+			functions conform to
+			<br />
+			.St -ansiC .
+		</div>
+		<p>
+			Noting standards conformance is extremely important: it allows programmers and administrators to depend on your
+			component in a cross-platform fashion.  These functions are part of the <a class="term" href="glossary.xhtml#libc">C
+				Standard Library</a>.
+		</p>
+		<div class="mdocin">
+			.Sh BUGS
+			<br />
+			Since
+			<br />
+			.Dv EOF
+			<br />
+			is a valid integer value,
+			<br />
+			.Xr feof 3
+			<br />
+			and
+			<br />
+			.Xr ferror 3
+			<br />
+			must be used to check for failure after calling
+			<br />
+			.Fn getw .
+			<br />
+			.Pp
+			<br />
+			Since the size and byte order of an
+			<br />
+			.Vt int
+			<br />
+			may vary from one machine to another,
+			<br />
+			.Fn getw
+			<br />
+			is not recommended for portable applications.
+		</div>
+		<p>
+			The <span class="sec">BUGS</span> section should be used very carefully &mdash; bugs preferrably should be fixed.  In
+			this section, design bugs have been documented.  Whether the <span class="sec">CAVEATS</span> section would be more
+			appropriate is up to the manual author.
+		</p>
+		<table class="nav">
+			<tbody>
+				<tr>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
+					<td class="nav-next"><a href="part1-4.xhtml">Next</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part1-2-3.xml?cvsroot=manpages">History</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="edits">
+			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
+		</p>
+	</body>
+</html>

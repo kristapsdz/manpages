@@ -93,6 +93,8 @@
 			<BR>
 			.Lk <SPAN CLASS="chap"><A HREF="part1-3.xhtml">Chapter 3</A>: Function Library</SPAN>
 			<BR>
+			.Lk <SPAN CLASS="sec"><A HREF="part1-3-1.xhtml">Section 1</A>: Case Study</SPAN>
+			<BR>
 			.Lk <SPAN CLASS="chap"><A HREF="part1-4.xhtml">Chapter 4</A>: System Call</SPAN>
 			<BR>
 			.Lk <SPAN CLASS="part"><A HREF="part2.xhtml">Part 2</A>: Manual Syntax and Structure</SPAN>
@@ -145,7 +147,8 @@
 			<BR>
 			.It <SPAN>24 August 2011, <SPAN CLASS="ver">0.0.9</SPAN></SPAN>
 			<DIV>
-				Added <A HREF="part1-1-3.xhtml">Case Study</A> for utilities.
+				Added case studies for <A HREF="part1-1-3.xhtml">Utilities</A> and <A HREF="part1-3-1.xhtml">Function
+				Libraries</A>.
 			</DIV>
 			.
 			<BR>

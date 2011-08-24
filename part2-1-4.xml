@@ -31,8 +31,7 @@
 		<p>
 			The hyphen <span class="screen">-</span> indicates a macro flag only when the preceding macro accepts arguments.
 		</p>
-		<h4>
-			<a name="inline_macros" />
+		<h4 id="inline_macros">
 			In-line Macro
 		</h4>
 		<p>
@@ -54,8 +53,7 @@
 		<p>
 			Not all in-line macros accept arguments, and some in-line macros accept a fixed number of arguments.
 		</p>
-		<h4>
-			<a name="partial_block_macros" />
+		<h4 id="partial_block_macros">
 			Partial Block Macros
 		</h4>
 		<p>
@@ -82,8 +80,7 @@
 			Be warned.  If you open a <a href="#full_block_macros">full block macro</a> before the end of the line, behaviour is not
 			always well-defined as the scope is broken.
 		</p>
-		<h4>
-			<a name="full_block_macros" />
+		<h4 id="full_block_macros">
 			Full Block Macros
 		</h4>
 		<p>
@@ -120,9 +117,9 @@
 		<table class="nav">
 			<tbody>
 				<tr>
-					<td class="nav-home"><a href="index.html">Home</a></td>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
 					<td class="nav-next"><a href="part2-1-5.xhtml">Next</a></td>
-					<td class="nav-history"><a href="/cgi-bin/cvsweb/part2-1-4.xml?cvsroot=manpages">History</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part2-1-4.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>
 		</table>

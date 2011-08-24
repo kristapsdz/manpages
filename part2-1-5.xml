@@ -18,8 +18,7 @@
 		<p>
 			The following characters are considered punctuation:
 		</p>
-		<a name="punctuation" />
-		<table class="tbl">
+		<table id="punctuation" class="tbl">
 			<col style="width: 5em;" />
 			<col />
 			<tbody>
@@ -80,7 +79,9 @@
 			Sentential Punctuation
 		</h4>
 		<blockquote>
-			End of Sentence, End of Line.
+			<p>
+				End of Sentence, End of Line.
+			</p>
 		</blockquote>
 		<p>
 			The end of a sentence should always be at the end of a line.  This way, the formatter can recognise a sentence by the
@@ -90,7 +91,7 @@
 			The <q>ending sentence</q> punctuation in the <a href="#punctuation">punctuation table</a> marks an end of sentence.
 		</p>
 		<p>
-			In <a href="part2-1-1.xhtml#text_lines">text lines</a>, sentence punctuation should always occur at the end of the line.
+			In <a href="part2-1-1.xhtml#text_line">text lines</a>, sentence punctuation should always occur at the end of the line.
 		</p>
 		<div class="mdocin">
 			End of sentence.
@@ -173,9 +174,9 @@
 		<table class="nav">
 			<tbody>
 				<tr>
-					<td class="nav-home"><a href="index.html">Home</a></td>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
 					<td class="nav-next"><a href="part2-2.xhtml">Next</a></td>
-					<td class="nav-history"><a href="/cgi-bin/cvsweb/part2-1-5.xml?cvsroot=manpages">History</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part2-1-5.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>
 		</table>
