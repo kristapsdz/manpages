@@ -48,6 +48,13 @@
 			<DIV>
 				This guide is structured first as a series of tutorials, then as a reference and guide to UNIX manual best practises.
 			</DIV>
+			.Pp
+			<DIV> 
+				It is, moreover, a <I>work in progress</I>.  If you have questions, comments, or suggestions, write the mailing
+				list, disc<A CLASS="external" TITLE="Reveal this e-mail address"
+				HREF="http://www.google.com/recaptcha/mailhide/d?k=01fqH3xoy7rwp-l_5K0BumPA==&amp;c=NTI0bIlVxlrR2xLEqaJxCv-_SGL-rzM8DjAFEivPvNzLi2PxNha85zOyiFYPiprL">...</A>@manpages.bsd.lv
+				(subscription required).
+			</DIV>
 			.
 			<BR>
 			.Sh <SPAN CLASS="h1">Reference</SPAN>
@@ -56,9 +63,9 @@
 			<DIV>
 				<A HREF="http://creativecommons.org/licenses/by-sa/3.0/"><IMG SRC="license.png" ALT="CC BY-SA"></A>
 				<BR>
-				The guide is may be downloaded or viewed on-line.  All content is licensed under Creative Commons <A CLASS="external"
-				HREF="http://creativecommons.org/licenses/by-sa/3.0/">Attribution Share-Alike</A>, so deriving works must attribute the
-				author(s) and license similarly.  
+				The guide is may be downloaded or viewed on-line.  All content is licensed under Creative Commons' <A
+				CLASS="external" HREF="http://creativecommons.org/licenses/by-sa/3.0/">Attribution Share-Alike</A>, so deriving
+				works must attribute the author(s) and use a similar license.  
 			</DIV>
 			.Pp
 			<DIV>
@@ -126,6 +133,8 @@
 			.
 			<BR>
 			.Lk <SPAN><A HREF="/cgi-bin/cvsweb/?cvsroot=manpages">cvsweb</A>: on-line source repository</SPAN>
+			<BR>
+			.Lk <SPAN><A HREF="/archives/discuss/summary.html">mailing list</A>: discussion list archive</SPAN>
 			<BR>
 			.Ed
 			<BR>
