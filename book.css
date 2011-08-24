@@ -4,6 +4,12 @@ body		{ font-family: serif;
 		  line-height: 14pt;
 		  font-size: 10pt; }
 .nav		{ display: none; }
+table.tbl	{ border-spacing: 0px; 
+		  border-collapse: collapse;
+		  width: 96%;
+		  margin-left: auto;
+		  margin-right: auto; }
+table.tbl td	{ padding-left: 1em; }
 p.edits		{ display: none; }
 a		{ color: #0000ff; 
 		  text-decoration: none; }
@@ -39,8 +45,8 @@ h5		{ font-size: inherit; }
 .type,
 .value,
 .var		{ font-family: monospace; 
-		  line-height: 11pt;
-		  font-size: 9pt; } 
+		  line-height: 10pt;
+		  font-size: 8pt; } 
 .term		{ border-bottom: 1px dotted #0000ff; }
 .cmdflag:before,
 .macroflag:before	
