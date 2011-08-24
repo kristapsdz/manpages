@@ -141,14 +141,15 @@
 			<BR>
 			.Bl -ohang
 			<BR>
-			.It <SPAN>23 August 2011, <SPAN CLASS="ver">0.0.7</SPAN></SPAN>
+			.It <SPAN>24 August 2011, <SPAN CLASS="ver">0.0.8</SPAN></SPAN>
 			<DIV>
-				Added Comments and initial Macros sections.  Reworked some other Part II sections.
+				Added <A HREF="part2-1-5.xhtml">Punctuation</A> section.  This completes a minimum set of the complete content.
 			</DIV>
 			<BR>
-			.It <SPAN>23 August 2011, <SPAN CLASS="ver">0.0.6</SPAN></SPAN>
+			.It <SPAN>23 August 2011, <SPAN CLASS="ver">0.0.7</SPAN></SPAN>
 			<DIV>
-				Initial data for <del>Basic</del> Syntax in place.
+				Added <A HREF="part2-1-3.xhtml">Comments</a> and initial <A HREF="part2-1-4.xhtml">Macros</A> sections.
+				Reworked some other <A HREF="part2.xhtml">Part 2</A> sections.
 			</DIV>
 			.El
 			<BR>
