@@ -141,8 +141,8 @@
 		</div>
 		<p>
 			The command accepts a single optional flag, <span class="cmdflag">n</span>, and an arbitrary number of optional
-			arguments <span class="cmdarg">string</span>.  Note that re-stating the command name for the <span
-				class="macro">Nm</span> is superfluous in this case.
+			arguments <span class="cmdarg">string</span>.  Note that re-stating the command name for the <a
+				href="macros.xhtml#macro_nm" class="macro">Nm</a> is superfluous in this case.
 		</p>
 		<div class="mdocin">
 			.Sh DESCRIPTION
@@ -167,9 +167,9 @@
 		</div>
 		<p>
 			The <span class="sec">DESCRIPTION</span> opens with a brief explanation of the utility and its output.  The strange set
-			of backslash-escaped characters <span class="screen">\ \&amp;</span> is required to make the doubly-nested macros <span
-				class="macro">Pq</span> and <span class="macro">Sq</span> (parenthesise and single-quote, respectively)
-			correctly enclose a single space.
+			of backslash-escaped characters <span class="screen">\ \&amp;</span> is required to make the doubly-nested macros <a
+				href="macros.xhtml#macro_pq" class="macro">Pq</a> and <a href="macros.xhtml#macro_sq" class="macro">Sq</a>
+			(parenthesise and single-quote, respectively) correctly enclose a single space.
 		</p>
 		<div class="mdocin">
 			.Pp
@@ -194,8 +194,8 @@
 			.Ex -std echo
 		</div>
 		<p>
-			Notes the standard exit sequence.  Note that the argument to <span class="macro">Ex</span> is superfluous, as only one
-			command is listed for the manual.
+			Notes the standard exit sequence.  Note that the argument to <a href="macros.xhtml#macro_ex" class="macro">Ex</a> is
+			superfluous, as only one command is listed for the manual.
 		</p>
 		<div class="mdocin">
 			.Sh SEE ALSO
@@ -248,8 +248,8 @@
 		</div>
 		<p>
 			This last section fully describes the utility's conformance to the <a class="term" href="glossary.xhtml#posix">POSIX</a>
-			standard, which is very important to those writing portable utilities.  The <span class="macro">St</span> macro expands
-			into the relevant standard's full name.
+			standard, which is very important to those writing portable utilities.  The <a href="macros.xhtml#macro_st"
+				class="macro">St</a> macro expands into the relevant standard's full name.
 		</p>
 		<table class="nav">
 			<tbody>

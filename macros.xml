@@ -3,13 +3,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
-		<title>Glossary</title>
+		<title>Appendix: Macros</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
 		<h1>
-			Macros
+			Appendix: Macros
 		</h1>
+		<p>
+			This table consists of brief descriptions of <span class="lang">mdoc</span> macros, then links to full descriptions
+			according to the <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html">mdoc</a> reference on <a class="external"
+				href="http://mdocml.bsd.lv">http://mdocml.bsd.lv</a>.
+		</p>
 		<dl>
 			<dt id="macro_ar">
 				Ar
@@ -89,6 +94,12 @@
 			<dd>
 				Separate paragraphs with vertical space.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265070">Pp</a>.
 			</dd>
+			<dt id="macro_pq">
+				Pq
+			</dt>
+			<dd>
+				Parenthesise arguments.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265071">Pq</a>.
+			</dd>
 			<dt id="macro_qq">
 				Qq
 			</dt>
@@ -101,13 +112,25 @@
 			<dd>
 				Begin a manual section.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265368">Sh</a>.
 			</dd>
+			<dt id="macro_sq">
+				Sq
+			</dt>
+			<dd>
+				Single-quote arguments.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265371">Sq</a>.
+			</dd>
+			<dt id="macro_st">
+				St
+			</dt>
+			<dd>
+				Print a standard name.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265374">St</a>.
+			</dd>
 		</dl>
 		<table class="nav">
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
 					<td class="nav-next" style="color: #dddddd;">Next</td>
-					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/glossary.xml?cvsroot=manpages">History</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/macros.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>
 		</table>
