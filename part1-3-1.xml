@@ -139,16 +139,17 @@
 			.Fn getw "FILE *stream"
 		</div>
 		<p>
-			This documents the calling syntax of all functions.  Note that the <span class="macro">Fd</span> macro is used instead
-			of the <span class="macro">In</span> macro.  This invocation is historically relevant, but new manuals should always use
-			<span class="macro">In</span>.
+			This documents the calling syntax of all functions.  Note that the <a href="macros.xhtml#macro_fd" class="macro">Fd</a>
+			macro is used instead of the <a href="macros.xhtml#macro_in" class="macro">In</a> macro.  This invocation is
+			historically relevant, but new manuals should always use <a href="macros.xhtml#macro_in" class="macro">In</a>.
 		</p>
 		<div class="mdocin">
 			.In stdio.h
 		</div>
 		<p>
 			Next, each function and its arguments is explained as a free-flowing paragraph.  This was probably chosen instead of
-			using a list item for each argument (with <span class="macro">Bl</span>) due to the small number of arguments.
+			using a list item for each argument (with <a href="macros.xhtml#macro_bl" class="macro">Bl</a>) due to the small number
+			of arguments.
 		</p>
 		<div class="mdocin">
 			.Sh DESCRIPTION
@@ -210,10 +211,12 @@
 			.Fa stream .
 		</div>
 		<p>
-			The usage of the <span class="macro">Em</span> macro is not correct: the <span class="macro">Va</span> or <span
-				class="macro">Dv</span> macro would have been more appropriate.  The same applies to the <span
-				class="macro">Li</span>.  The <span class="lang">mdoc</span> language is semantic, so using presentation macros
-			such as <span class="macro">Li</span> and <span class="macro">Em</span> is discouraged.
+			The usage of the <a href="macros.xhtml#macro_em" class="macro">Em</a> macro is not correct: the <a
+				href="macros.xhtml#macro_va" class="macro">Va</a> or <a href="macros.xhtml#macro_dv" class="macro">Dv</a> macro
+			would have been more appropriate.  The same applies to the <a href="macros.xhtml#macro_li" class="macro">Li</a>.  The
+			<span class="lang">mdoc</span> language is semantic, so using presentation macros such as <a
+				href="macros.xhtml#macro_li" class="macro">Li</a> and <a href="macros.xhtml#macro_em" class="macro">Em</a> is
+			discouraged.
 		</p>
 		<div class="mdocin">
 			.Sh RETURN VALUES

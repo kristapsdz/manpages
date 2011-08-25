@@ -40,11 +40,23 @@
 			<dd>
 				Title and category of a manual.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264474">Dt</a>.
 			</dd>
+			<dt id="macro_dv">
+				Dv
+			</dt>
+			<dd>
+				Constant-value variables.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264476">Dv</a>.
+			</dd>
 			<dt id="macro_el">
 				El
 			</dt>
 			<dd>
 				End a list.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c26456c">El</a>.
+			</dd>
+			<dt id="macro_em">
+				Em
+			</dt>
+			<dd>
+				Text to be emphasised (presentational).  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c26456d">Em</a>.
 			</dd>
 			<dt id="macro_ex">
 				Ex
@@ -63,6 +75,12 @@
 			</dt>
 			<dd>
 				Close multi-line function prototype.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264663">Fc</a>.
+			</dd>
+			<dt id="macro_fd">
+				Fd
+			</dt>
+			<dd>
+				A preprocessor macro definition.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264664">Fd</a>.
 			</dd>
 			<dt id="macro_fl">
 				Fl
@@ -93,6 +111,12 @@
 			</dt>
 			<dd>
 				Include file (header file).  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c26496e">In</a>.
+			</dd>
+			<dt id="macro_li">
+				Li
+			</dt>
+			<dd>
+				Literal text (presentational).  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264c69">Li</a>.
 			</dd>
 			<dt id="macro_nd">
 				Nd
@@ -159,6 +183,12 @@
 			</dt>
 			<dd>
 				Print a standard name.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265374">St</a>.
+			</dd>
+			<dt id="macro_va">
+				Va
+			</dt>
+			<dd>
+				Variable name.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265661">Va</a>.
 			</dd>
 		</dl>
 		<table class="nav">
