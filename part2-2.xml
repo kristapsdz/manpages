@@ -11,8 +11,7 @@
 			Structure
 		</h2>
 		<p>
-			An <span class="lang">mdoc</span> manual is divided into two logical parts: the <span class="term">prologue</span> and
-			the <span class="term">document body</span>.
+			An <span class="lang">mdoc</span> manual is divided into two logical parts: the prologue and the document body.
 		</p>
 		<div class="mdocin">
 			.\" Prologue follows:

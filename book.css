@@ -13,8 +13,9 @@ table.tbl td	{ padding-left: 1em; }
 p.edits		{ display: none; }
 a		{ color: #0000ff; 
 		  text-decoration: none; }
-a.term		{ border-bottom: 1px dotted #0000ff; }
 a:hover		{ color: #339999; }
+a.external 	{ background: transparent url('../external.png') center right no-repeat; 
+		  padding-right: 12px; }
 div		{ margin-bottom: 1ex; }
 blockquote	{ padding-left: 1ex;
 		  border-left: 1px solid green; }

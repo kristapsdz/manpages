@@ -33,6 +33,7 @@
 		<item id="part2-3" href="part2-3.xhtml" media-type="application/xhtml+xml"/>
 		<item id="part2-3-1" href="part2-3-1.xhtml" media-type="application/xhtml+xml"/>
 		<item id="glossary" href="glossary.xhtml" media-type="application/xhtml+xml"/>
+		<item id="external" href="external.png" media-type="image/png"/>
 		<item id="stylesheet" href="css/book.css" media-type="text/css"/>
 		<item id="ncx" href="book.ncx" media-type="application/x-dtbncx+xml"/>
 	</manifest>

@@ -72,21 +72,6 @@
 				macro package in the <span class="lang"><a class="term" href="#roff">roff</a></span> language for the <span
 					class="cmd">troff</span> text processor.
 			</dd>
-			<dt id="mdoc_macro">
-				Mdoc Macro
-			</dt>
-			<dd>
-				A short (two or three-letter) instruction in a <a class="term" href="#mdoc">mdoc</a> document.  Can accept flags
-				or arguments.  These macros were traditionally implemented as blocks in the <span class="lang"><a class="term"
-						href="#roff">roff</a></span> language.
-			</dd>
-			<dt id="mdoc_scope">
-				Mdoc Scope
-			</dt>
-			<dd>
-				The rules governing how <a class="term" href="#mdoc_macro">macros</a> accept arguments, which can be text or
-				nested macros.  These rules depend on the macro and can be quite complex.
-			</dd>
 			<dt id="posix">
 				POSIX
 			</dt>

@@ -34,17 +34,17 @@
 			<li>Do I describe each function's side effects?</li>
 		</ul>
 		<p>
-			A <span class="term">function</span> is any callable instruction, be it a C function, routine, or macro.  A variable may
-			also be a C variable or macro.  I'll consistently use the function and variable terminology in this book.
+			A function is any callable instruction, be it a C function, routine, or macro.  A variable may also be a C variable or
+			macro.  I'll consistently use the function and variable terminology in this book.
 		</p>
 		<p>
 			In general, you don't have to be knowledgeable of C to understand this section, but it helps to have a grasp of basic
 			programming structure, such as functions, function prototypes, and header files.  
 		</p>
 		<p>
-			In any event, I'll refer to a <span class="term">header file</span> as a text file consisting of function prototypes.
-			Header files for the C language, such as in our examples, end with the <span class="file">.h</span> suffix.  A C
-			function prototype indicates the calling syntax of a function, such as the following.
+			In any event, I'll refer to a header file as a text file consisting of function prototypes.  Header files for the C
+			language, such as in our examples, end with the <span class="file">.h</span> suffix.  A C function prototype indicates
+			the calling syntax of a function, such as the following.
 		</p>
 		<div class="mdocin">
 			int

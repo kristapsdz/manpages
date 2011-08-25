@@ -87,9 +87,10 @@
 		</div>
 		<p>
 			This uses the macro <span class="macro">Lb</span>, which accepts the name of the library (not including the leading
-			<q>lib</q>).  This macro is smart enough to know about <span class="term">standard libraries</span>, and will format the
-			output in a different way if it encounters such an argument.  Since our library is non-standard, it will print in a
-			generic way.  The intent of this section is to hint us on how to link to the installed library.
+			<q>lib</q>).  This macro is smart enough to know about <a class="term" href="glossary.xhtml#libc">standard
+				libraries</a>, and will format the output in a different way if it encounters such an argument.  Since our
+			library is non-standard, it will print in a generic way.  The intent of this section is to hint us on how to link to the
+			installed library.
 		</p>
 		<div class="mdocout">
 			<div class="mdoc-section">

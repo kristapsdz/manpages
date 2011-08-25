@@ -11,9 +11,8 @@
 			System Call
 		</h2>
 		<p>
-			A <span class="term">system call</span> differs from a <span class="term">user-land function</span> in that it triggers
-			the operating system kernel to perform some operation.  This usually applies to I/O, such as reading from files or
-			sockets with <span class="func">write</span>.
+			A system call differs from a user-land function in that it triggers the operating system kernel to perform some
+			operation.  This usually applies to I/O, such as reading from files or sockets with <span class="func">write</span>.
 		</p>
 		<p>
 			In <span class="lang">mdoc</span>, A system call is a special function consisting of at least one section not found in

@@ -63,9 +63,9 @@
 		</div>
 		<p>
 			By now it comes as now surprise that <span class="macro">Ft</span> is scoped to the end of its line, as is <span
-				class="macro">Fn</span> in this example.  In fact, all of these macros are <span class="term">in-line
-				macros</span>, which as we found in the first chapter, means their scopes can be closed by subsequent macros on
-			the same line.
+				class="macro">Fn</span> in this example.  In fact, both of these macros are syntatically similar to the <span
+				class="macro">Ar</span> and <span class="macro">Ftl</span> found in the first chapter: their scopes are closed
+			by subsequent macros on the same line.
 		</p>
 		<p>
 			Since our function has no arguments or return values, all we need to do is add some bits in the <span

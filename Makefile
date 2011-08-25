@@ -82,7 +82,7 @@ install: all
 clean:
 	rm -f index.html 
 	rm -f $(XHTMLS) 
-	rm -f mdoc.epub mdoc.xhtml mdoc.xhtml.part
+	rm -f mdoc.epub mdoc.xhtml mdoc.xml mdoc.xml.part
 	rm -f mdoc.source.tgz 
 	rm -f mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz
 
@@ -93,25 +93,27 @@ mdoc.source.tgz: $(SOURCE)
 	(cd .dist && tar zcf ../$@ mdoc)
 	rm -rf .dist
 
-mdoc.multi-xhtml.tgz: $(XHTMLS) css/book.css
+mdoc.multi-xhtml.tgz: $(XHTMLS) css/book.css external.png
 	mkdir .xhtml-multi
 	mkdir .xhtml-multi/mdoc
 	mkdir .xhtml-multi/mdoc/css
 	install -m 0644 $(XHTMLS) .xhtml-multi/mdoc
+	install -m 0644 external.png .xhtml-multi/mdoc
 	install -m 0644 css/book.css .xhtml-multi/mdoc/css
 	(cd .xhtml-multi && tar zcf ../$@ mdoc)
 	rm -rf .xhtml-multi
 
-mdoc.single-xhtml.tgz: mdoc.xhtml css/book.css
+mdoc.single-xhtml.tgz: mdoc.xhtml css/book.css external.png
 	mkdir .xhtml-single
 	mkdir .xhtml-single/mdoc
 	mkdir .xhtml-single/mdoc/css
 	install -m 0644 mdoc.xhtml .xhtml-single/mdoc
+	install -m 0644 external.png .xhtml-single/mdoc
 	install -m 0644 css/book.css .xhtml-single/mdoc/css
 	(cd .xhtml-single && tar zcf ../$@ mdoc)
 	rm -rf .xhtml-single
 
-mdoc.xhtml: $(XHTMLS) full-head.xml full-tail.xml
+mdoc.xml: $(XHTMLS) full-head.xml full-tail.xml
 	rm -f $@.part
 	for f in $(XHTMLS); do \
 		sed -n '/<body>/,/<\/body>/p' $$f >>$@.part ; \
@@ -123,7 +125,7 @@ mdoc.xhtml: $(XHTMLS) full-head.xml full-tail.xml
 	cat full-tail.xml >>$@
 	rm -f $@.part
 
-mdoc.epub: $(XHTMLS) book.css book.ncx book.opf
+mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 	mkdir .book
 	mkdir .book/META-INF
 	mkdir .book/OPS
@@ -131,11 +133,13 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf
 	echo "application/epub+zip" > .book/mimetype
 	install -m 0644 container.xml .book/META-INF
 	install -m 0644 $(XHTMLS) .book/OPS
+	install -m 0644 external.png .book/OPS
 	install -m 0644 book.opf book.ncx .book/OPS
 	install -m 0644 book.css .book/OPS/css
 	(cd .book && zip -q -X ../$@ \
 		mimetype \
 		META-INF/container.xml \
+		OPS/external.png \
 		OPS/glossary.xhtml \
 		OPS/preface.xhtml \
 		OPS/part1.xhtml \

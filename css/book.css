@@ -23,6 +23,8 @@ p.edits		{ font-size: smaller;
 a		{ color: #0000ff; 
 		  text-decoration: none; }
 a:hover		{ color: #339999; }
+a.external 	{ background: transparent url('../external.png') center right no-repeat; 
+		  padding-right: 12px; }
 div		{ margin-bottom: 1ex; }
 blockquote	{ padding-left: 1ex;
 		  border-left: 1px solid green; }
