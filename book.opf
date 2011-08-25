@@ -5,6 +5,7 @@
 		<dc:language>en</dc:language>
 		<dc:identifier id="manpages.bsd.lv" opf:scheme="URL">http://manpages.bsd.lv</dc:identifier>
 		<dc:creator opf:role="aut">Kristaps Dzonsons</dc:creator>
+		<dc:rights>http://creativecommons.org/licenses/by-sa/3.0/</dc:rights>
 	</metadata>
 	<manifest>
 		<item id="preface" href="preface.xhtml" media-type="application/xhtml+xml"/>

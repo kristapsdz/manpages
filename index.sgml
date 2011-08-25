@@ -42,7 +42,7 @@
 				Foremost, formatters for the language are available by default on all modern UNIX installations and may be downloaded
 				for non-UNIX systems.  
 				Furthermore, <I>mdoc</I> semantically annotates content, allowing for search and reference analysis of your
-				documentation.
+				documentation.  (<A CLASS="external" HREF="http://www.usenix.org/publications/login/2009-10/pdfs/dzonsons.pdf">More...</A>)
 			</DIV>
 			.Pp
 			<DIV>
@@ -57,7 +57,7 @@
 			</DIV>
 			.
 			<BR>
-			.Sh <SPAN CLASS="h1">Reference</SPAN>
+			.Sh <SPAN CLASS="h1">Practical UNIX Manuals: <I>mdoc</I></SPAN>
 			<BR>
 			.
 			<DIV>
@@ -132,9 +132,11 @@
 			<BR>
 			.
 			<BR>
-			.Lk <SPAN><A HREF="/cgi-bin/cvsweb/?cvsroot=manpages">cvsweb</A>: on-line source repository</SPAN>
+			.Lk <SPAN><A HREF="mdoc.xhtml">Full Text</A>: single XHTML document</SPAN>
 			<BR>
-			.Lk <SPAN><A HREF="/archives/discuss/summary.html">mailing list</A>: discussion list archive</SPAN>
+			.Lk <SPAN><A HREF="/cgi-bin/cvsweb/?cvsroot=manpages">Repository</A>: on-line source repository</SPAN>
+			<BR>
+			.Lk <SPAN><A HREF="/archives/discuss/summary.html">Mailing List</A>: discussion list archive</SPAN>
 			<BR>
 			.Ed
 			<BR>
@@ -146,7 +148,9 @@
 			<BR>
 			.Lk <SPAN><A HREF="mdoc.source.tgz">mdoc.source.tgz</A>: source archive</SPAN>
 			<BR>
-			.Lk <SPAN><A HREF="mdoc.xhtml.tgz">mdoc.xhtml.tgz</A>: compressed archive of XHTML pages</SPAN>
+			.Lk <SPAN><A HREF="mdoc.multi-xhtml.tgz">mdoc.multi-xhtml.tgz</A>: compressed archive of individual XHTML/CSS pages</SPAN>
+			<BR>
+			.Lk <SPAN><A HREF="mdoc.single-xhtml.tgz">mdoc.single-xhtml.tgz</A>: compressed archive of one XHTML/CSS page</SPAN>
 			<BR>
 			.Ed
 			<BR>
@@ -154,16 +158,16 @@
 			<BR>
 			.Bl -ohang
 			<BR>
+			.It <SPAN>24 August 2011, <SPAN CLASS="ver">0.0.10</SPAN></SPAN>
+			<DIV>
+				Added <A HREF="mdoc.xhtml">Full Text</A> page and more downloads.
+			</DIV>
+			.
+			<BR>
 			.It <SPAN>24 August 2011, <SPAN CLASS="ver">0.0.9</SPAN></SPAN>
 			<DIV>
 				Added case studies for <A HREF="part1-1-3.xhtml">Utilities</A> and <A HREF="part1-3-1.xhtml">Function
 				Libraries</A>.
-			</DIV>
-			.
-			<BR>
-			.It <SPAN>24 August 2011, <SPAN CLASS="ver">0.0.8</SPAN></SPAN>
-			<DIV>
-				Added <A HREF="part2-1-5.xhtml">Punctuation</A> section.  This completes a minimum set of the complete content.
 			</DIV>
 			.El
 			<BR>
