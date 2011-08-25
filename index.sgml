@@ -46,7 +46,8 @@
 			</DIV>
 			.Pp
 			<DIV>
-				This guide is structured first as a series of tutorials, then as a reference and guide to UNIX manual best practises.
+				This guide is structured first as a series of tutorials, then as a guide to UNIX manual best practises.  It is
+				<B>not</B> a reference!  For that, refer to your local <I>mdoc</I> manual.
 			</DIV>
 			.Pp
 			<DIV> 
