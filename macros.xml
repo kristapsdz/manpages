@@ -52,11 +52,47 @@
 			<dd>
 				Exit code of a command.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264578">Ex</a>.
 			</dd>
+			<dt id="macro_fa">
+				Fa
+			</dt>
+			<dd>
+				Function argument.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264661">Fa</a>.
+			</dd>
+			<dt id="macro_fc">
+				Fc
+			</dt>
+			<dd>
+				Close multi-line function prototype.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264663">Fc</a>.
+			</dd>
 			<dt id="macro_fl">
 				Fl
 			</dt>
 			<dd>
 				Command flag (switch).  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c26466c">Fl</a>.
+			</dd>
+			<dt id="macro_fn">
+				Fn
+			</dt>
+			<dd>
+				Function name.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c26466e">Fn</a>.
+			</dd>
+			<dt id="macro_fo">
+				Fo
+			</dt>
+			<dd>
+				Open multi-line function prototype.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c26466f">Fo</a>.
+			</dd>
+			<dt id="macro_ft">
+				Ft
+			</dt>
+			<dd>
+				Function type.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264674">Ft</a>.
+			</dd>
+			<dt id="macro_in">
+				In
+			</dt>
+			<dd>
+				Include file (header file).  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c26496e">In</a>.
 			</dd>
 			<dt id="macro_nd">
 				Nd

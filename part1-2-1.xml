@@ -47,10 +47,11 @@
 			.Fn hi
 		</div>
 		<p>
-			This introduces three unfamiliar macros.  The <span class="macro">In</span> macro specifies an include file that
-			interfacing programmes will need to include.  The <span class="macro">Ft</span> and <span class="macro">Fn</span> macros
-			collectively document the function (return) type and function name.  Since not all languages have return types, the
-			<span class="macro">Ft</span> macro is optional in this context.
+			This introduces three unfamiliar macros.  The <a href="macros.xhtml#macro_in" class="macro">In</a> macro specifies an
+			include file that interfacing programmes will need to include.  The <a href="macros.xhtml#macro_ft" class="macro">Ft</a>
+			and <a href="macros.xhtml#macro_fn" class="macro">Fn</a> macros collectively document the function (return) type and
+			function name.  Since not all languages have return types, the <a href="macros.xhtml#macro_ft" class="macro">Ft</a>
+			macro is optional in this context.
 		</p>
 		<div class="mdocout">
 			<div class="mdoc-section">
@@ -62,10 +63,10 @@
 			</div>
 		</div>
 		<p>
-			By now it comes as now surprise that <span class="macro">Ft</span> is scoped to the end of its line, as is <span
-				class="macro">Fn</span> in this example.  In fact, both of these macros are syntatically similar to the <a
-				href="macros.xhtml#macro_ar" class="macro">Ar</a> and <span class="macro">Ftl</span> found in the first chapter:
-			their scopes are closed by subsequent macros on the same line.
+			By now it comes as now surprise that <a href="macros.xhtml#macro_ft" class="macro">Ft</a> is scoped to the end of its
+			line, as is <a href="macros.xhtml#macro_fn" class="macro">Fn</a> in this example.  In fact, both of these macros are
+			syntatically similar to the <a href="macros.xhtml#macro_ar" class="macro">Ar</a> and <a href="macros.xhtml#macro_fl"
+				class="macro">Fl</a> found in the first chapter: their scopes are closed by subsequent macros on the same line.
 		</p>
 		<p>
 			Since our function has no arguments or return values, all we need to do is add some bits in the <span
@@ -111,8 +112,8 @@
 		<p>
 			Let's also stipulate the function return value in its own section, <span class="sec">RETURN VALUES</span>.  This mirrors
 			the <span class="sec">EXIT STATUS</span> section I introduced for <span class="file">hello.1</span>.  Although we don't
-			have a return value, it's good practise to include this section anyway.  Again, the <span class="macro">Nm</span> macro,
-			when invoked without arguments, reproduces its last arguments.
+			have a return value, it's good practise to include this section anyway.  Again, the <a href="macros.xhtml#macro_nm"
+				class="macro">Nm</a> macro, when invoked without arguments, reproduces its last arguments.
 		</p>
 		<div class="mdocin">
 			.Sh RETURN VALUES

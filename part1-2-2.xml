@@ -41,10 +41,12 @@
 			haven't changed.
 		</p>
 		<p>
-			The include file (<span class="macro">In</span>) and function return type (<span class="macro">Ft</span>) are unchanged
-			but for the type (<span class="type">int</span> instead of <span class="type">void</span>).  I've added an
-			explicit-scope macro pair <span class="macro">Fo</span> and <span class="macro">Fc</span>, syntactically like <span
-				class="macro">Bl</span> and <span class="macro">El</span>, that encloses the function's arguments.
+			The include file (<a href="macros.xhtml#macro_in" class="macro">In</a>) and function return type (<a
+				href="macros.xhtml#macro_ft" class="macro">Ft</a>) are unchanged but for the type (<span class="type">int</span>
+			instead of <span class="type">void</span>).  I've added an explicit-scope macro pair <a href="macros.xhtml#macro_fo"
+				class="macro">Fo</a> and <a href="macros.xhtml#macro_fc" class="macro">Fc</a>, syntactically like <a
+				href="macros.xhtml#macro_bl" class="macro">Bl</a> and <a href="macros.xhtml#macro_el" class="macro">El</a>, that
+			encloses the function's arguments.
 		</p>
 		<p>
 			This renders as follows.
@@ -60,13 +62,15 @@
 			</div>
 		</div>
 		<p>
-			It's clear that the <span class="macro">Fo</span> macro accepts the function name (as <span class="macro">Fn</span> did
-			for the simple example), but it also opens a function prototype scope.  This scope is closed by <span
-				class="macro">Fc</span>.  The contained <span class="macro">Fa</span> macros are for function arguments.
+			It's clear that the <a href="macros.xhtml#macro_fo" class="macro">Fo</a> macro accepts the function name (as <a
+				href="macros.xhtml#macro_fn" class="macro">Fn</a> did for the simple example), but it also opens a function
+			prototype scope.  This scope is closed by <a href="macros.xhtml#macro_fc" class="macro">Fc</a>.  The contained <a
+				href="macros.xhtml#macro_fa" class="macro">Fa</a> macros are for function arguments.
 		</p>
 		<p>
-			If you're wondering why I didn't use <span class="macro">Fn</span> as in the last section, it's a matter of readability.
-			Using <span class="macro">Fn</span> puts everything on one long line, such as the following.
+			If you're wondering why I didn't use <a href="macros.xhtml#macro_fn" class="macro">Fn</a> as in the last section, it's a
+			matter of readability.  Using <a href="macros.xhtml#macro_fn" class="macro">Fn</a> puts everything on one long line,
+			such as the following.
 		</p>
 		<div class="mdocin">
 			.Sh SYNOPSIS
@@ -83,9 +87,9 @@
 			repositories&mdash;we'll discuss this in later sections of this book.
 		</p>
 		<p>
-			The quoted arguments to <span class="macro">Fa</span> may seem superfluous, but each argument to the <span
-				class="macro">Fa</span>, for the C language, refers to a type and variable name.  Since one may specify several
-			arguments to a single <span class="macro">Fa</span>, the quotes are necessary for signifying a single argument type and
+			The quoted arguments to <a href="macros.xhtml#macro_fa" class="macro">Fa</a> may seem superfluous, but each argument to the <a href="macros.xhtml#macro_fa"
+				class="macro">Fa</a>, for the C language, refers to a type and variable name.  Since one may specify several
+			arguments to a single <a href="macros.xhtml#macro_fa" class="macro">Fa</a>, the quotes are necessary for signifying a single argument type and
 			name.
 		</p>
 		<div class="mdocin">
@@ -139,9 +143,11 @@
 			.El
 		</div>
 		<p>
-			Here, we see the familiar <span class="macro">Bl</span> and <span class="macro">El</span> list enclosure.  Notice how I
-			re-use the <span class="macro">Fa</span> macro to document individual arguments, just like I re-used <span
-				class="macro">Fl</span> and <a href="macros.xhtml#macro_ar" class="macro">Ar</a> when documenting command-line flags and arguments.
+			Here, we see the familiar <a href="macros.xhtml#macro_bl" class="macro">Bl</a> and <a href="macros.xhtml#macro_el"
+				class="macro">El</a> list enclosure.  Notice how I re-use the <a href="macros.xhtml#macro_fa"
+				class="macro">Fa</a> macro to document individual arguments, just like I re-used <a href="macros.xhtml#macro_fl"
+				class="macro">Fl</a> and <a href="macros.xhtml#macro_ar" class="macro">Ar</a> when documenting command-line
+			flags and arguments.
 		</p>
 		<p>
 			This renders as follows.
@@ -239,10 +245,10 @@
 			function returns 1 on success, 0 on failure.
 		</div>
 		<p>
-			Running through our checklist, we see that we've described preprocessor information with the header file <span
-				class="macro">In</span>; function calling syntax and types in the <span class="sec">SYNOPSIS</span>; and
-			arguments in the <span class="sec">DESCRIPTION</span> along with function operation.  This contains all we need to know
-			about the function.
+			Running through our checklist, we see that we've described preprocessor information with the header file <a
+				href="macros.xhtml#macro_in" class="macro">In</a>; function calling syntax and types in the <span
+				class="sec">SYNOPSIS</span>; and arguments in the <span class="sec">DESCRIPTION</span> along with function
+			operation.  This contains all we need to know about the function.
 		</p>
 		<table class="nav">
 			<tbody>
