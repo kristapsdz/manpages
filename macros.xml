@@ -22,6 +22,12 @@
 			<dd>
 				Argument to a command or flag.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264172">Ar</a>.
 			</dd>
+			<dt id="macro_bd">
+				Bd
+			</dt>
+			<dd>
+				Begin a display.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264264">Bd</a>.
+			</dd>
 			<dt id="macro_bl">
 				Bl
 			</dt>
@@ -39,6 +45,12 @@
 			</dt>
 			<dd>
 				Date of manual's last edit.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264464">Dd</a>.
+			</dd>
+			<dt id="macro_dl">
+				Dl
+			</dt>
+			<dd>
+				Display a line of literal text.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c26446c">Dl</a>.
 			</dd>
 			<dt id="macro_dt">
 				Dt
@@ -69,6 +81,12 @@
 			</dt>
 			<dd>
 				Error constant.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264572">Er</a>.
+			</dd>
+			<dt id="macro_ev">
+				Ev
+			</dt>
+			<dd>
+				Environment variable.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264576">Ev</a>.
 			</dd>
 			<dt id="macro_ex">
 				Ex
@@ -184,6 +202,12 @@
 			<dd>
 				Enclose arguments in regular double quotes.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265171">Qq</a>.
 			</dd>
+			<dt id="macro_rs">
+				Rs
+			</dt>
+			<dd>
+				Begin a reference (bibliographic) block.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265273">Rs</a>.
+			</dd>
 			<dt id="macro_rv">
 				Rv
 			</dt>
@@ -213,6 +237,18 @@
 			</dt>
 			<dd>
 				Variable name.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265661">Va</a>.
+			</dd>
+			<dt id="macro_vt">
+				Vt
+			</dt>
+			<dd>
+				Variable type.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265674">Vt</a>.
+			</dd>
+			<dt id="macro_xr">
+				Xr
+			</dt>
+			<dd>
+				Manual cross-reference.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265872">Xr</a>.
 			</dd>
 		</dl>
 		<table class="nav">
