@@ -161,15 +161,15 @@
 			<BR>
 			.Bl -ohang
 			<BR>
-			.It <SPAN>25 August 2011, <SPAN CLASS="ver">0.0.11</SPAN></SPAN>
+			.It <SPAN>26 August 2011, <SPAN CLASS="ver">0.0.12</SPAN></SPAN>
 			<DIV>
-				Cleaned up linking within book for full-text version.  Also cleaned up some glossary terms.
+				Added jump table to proper reference for all macros.
 			</DIV>
 			.
 			<BR>
-			.It <SPAN>24 August 2011, <SPAN CLASS="ver">0.0.10</SPAN></SPAN>
+			.It <SPAN>25 August 2011, <SPAN CLASS="ver">0.0.11</SPAN></SPAN>
 			<DIV>
-				Added <A HREF="mdoc.xhtml">Full Text</A> page and more downloads.
+				Cleaned up linking within book for full-text version.  Also cleaned up some glossary terms.
 			</DIV>
 			.El
 			<BR>

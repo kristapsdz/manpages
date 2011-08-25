@@ -13,7 +13,8 @@
 		<p>
 			This table consists of brief descriptions of <span class="lang">mdoc</span> macros, then links to full descriptions
 			according to the <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html">mdoc</a> reference on <a class="external"
-				href="http://mdocml.bsd.lv">http://mdocml.bsd.lv</a>.
+				href="http://mdocml.bsd.lv">http://mdocml.bsd.lv</a>.  <i>Disclaimer</i>: I'm the principle author of this
+			system. 
 		</p>
 		<dl>
 			<dt id="macro_ar">
