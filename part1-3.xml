@@ -11,9 +11,10 @@
 			Function Library
 		</h2>
 		<p>
-			I've mentioned several times that the name provided to <span class="macro">Nm</span> doesn't necessarily refer to the
-			title of the manual in <span class="macro">Dt</span>.  Let's study a simple function library, using both <span
-				class="func">hi</span> and <span class="func">hello</span>, which demonstrates this concept.
+			I've mentioned several times that the name provided to <a href="macros.xhtml#macro_nm" class="macro">Nm</a> doesn't
+			necessarily refer to the title of the manual in <a href="macros.xhtml#macro_dt" class="macro">Dt</a>.  Let's study a
+			simple function library, using both <span class="func">hi</span> and <span class="func">hello</span>, which demonstrates
+			this concept.
 		</p>
 		<p>
 			This example applies to any plurality of functions belonging to the same library.  In fact, one commonly finds large
@@ -41,7 +42,8 @@
 			general, a function library should have its name not include the leading <q>lib</q>.
 		</p>
 		<p>
-			It's a good rule of thumb that the <span class="macro">Dt</span> title of your document matches its filename.
+			It's a good rule of thumb that the <a href="macros.xhtml#macro_dt" class="macro">Dt</a> title of your document matches
+			its filename.
 		</p>
 		<p>
 			Next, I'll list the names of the functions being documented.  I also change the description of the manual to be more
@@ -57,14 +59,15 @@
 			.Nd print greeting messages
 		</div>
 		<p>
-			Here I've used <span class="macro">Nm</span> twice to indicate that the manual documents two functions.  In doing so,
-			I'll have to be careful when invoking <span class="macro">Nm</span> in later parts of the manual, as it will produce
-			<span class="screen">hi</span> if I don't specify a name, and this is probably not desired (nor should it be depended
-			upon, as I may re-order the names).
+			Here I've used <a href="macros.xhtml#macro_nm" class="macro">Nm</a> twice to indicate that the manual documents two
+			functions.  In doing so, I'll have to be careful when invoking <a href="macros.xhtml#macro_nm" class="macro">Nm</a> in
+			later parts of the manual, as it will produce <span class="screen">hi</span> if I don't specify a name, and this is
+			probably not desired (nor should it be depended upon, as I may re-order the names).
 		</p>
 		<p>
-			If we were only documenting a single function in a library, we would only assign <span class="macro">Nm</span> and <span
-				class="macro">Nd</span> to the relevant function and not that of the library.
+			If we were only documenting a single function in a library, we would only assign <a href="macros.xhtml#macro_nm"
+				class="macro">Nm</a> and <a href="macros.xhtml#macro_nd" class="macro">Nd</a> to the relevant function and not
+			that of the library.
 		</p>
 		<p>
 			It's good practise to alphabetise the function names in the <span class="sec">NAME</span> section.  We must also be sure
@@ -86,11 +89,11 @@
 			.Lb greeting
 		</div>
 		<p>
-			This uses the macro <span class="macro">Lb</span>, which accepts the name of the library (not including the leading
-			<q>lib</q>).  This macro is smart enough to know about <a class="term" href="glossary.xhtml#libc">standard
-				libraries</a>, and will format the output in a different way if it encounters such an argument.  Since our
-			library is non-standard, it will print in a generic way.  The intent of this section is to hint us on how to link to the
-			installed library.
+			This uses the macro <a href="macros.xhtml#macro_lb" class="macro">Lb</a>, which accepts the name of the library (not
+			including the leading <q>lib</q>).  This macro is smart enough to know about <a class="term"
+				href="glossary.xhtml#libc">standard libraries</a>, and will format the output in a different way if it
+			encounters such an argument.  Since our library is non-standard, it will print in a generic way.  The intent of this
+			section is to hint us on how to link to the installed library.
 		</p>
 		<div class="mdocout">
 			<div class="mdoc-section">
@@ -129,7 +132,7 @@
 		<p>
 			Note that I've listed both include files prior to the function prototypes.  This is familiar to C programmers, where
 			functions may have multiple include files that need a specific order.  The functions are listed in the same order as
-			their <span class="macro">Nm</span> listing. 
+			their <a href="macros.xhtml#macro_nm" class="macro">Nm</a> listing. 
 		</p>
 		<p>
 			Let's examine the output so far.
@@ -290,11 +293,11 @@
 			</div>
 		</div>
 		<p>
-			We'll use our mental checklist as a guide.  First we stipulated linking information with the <span
-				class="macro">Lb</span> macro.  Then we introduced the calling syntax of each function, naming their arguments.
-			We also stipulated the necessary header files in the order they'd be included in source files.  In the <span
-				class="sec">DESCRIPTION</span>, we described each function and its arguments in full.  Lastly, we documented
-			return values in the <span class="sec">RETURN VALUES</span> section.
+			We'll use our mental checklist as a guide.  First we stipulated linking information with the <a
+				href="macros.xhtml#macro_lb" class="macro">Lb</a> macro.  Then we introduced the calling syntax of each
+			function, naming their arguments.  We also stipulated the necessary header files in the order they'd be included in
+			source files.  In the <span class="sec">DESCRIPTION</span>, we described each function and its arguments in full.
+			Lastly, we documented return values in the <span class="sec">RETURN VALUES</span> section.
 		</p>
 		<p>
 			From this information, a programmer should be able to interface with our library.

@@ -96,8 +96,8 @@
 		</div>
 		<p>
 			You'll notice I've omitted the <span class="sec">LIBRARY</span> section in this example, as system calls by definition
-			aren't a part of a library.  Furthermore, I've used the <span class="macro">Dv</span> macro to annotate the term <span
-				class="screen">NULL</span> as a constant variable.
+			aren't a part of a library.  Furthermore, I've used the <a href="macros.xhtml#macro_dv" class="macro">Dv</a> macro to
+			annotate the term <span class="screen">NULL</span> as a constant variable.
 		</p>
 		<p>
 			Let's examine the output so far.
@@ -129,7 +129,7 @@
 			In the <span class="func">hello</span> example, I included a section <span class="sec">RETURN VALUES</span> detailing
 			the return value of the function.  System calls, however, usually return a standard value and have a side effect of
 			setting the C library <span class="var">errno</span> variable when invoked within a C language context.  This is
-			documented with a special macro <span class="macro">Rv</span>.
+			documented with a special macro <a href="macros.xhtml#macro_rv" class="macro">Rv</a>.
 		</p>
 		<div class="mdocin">
 			.Sh RETURN VALUES
@@ -142,8 +142,8 @@
 			failure and <span class="value">0</span> on success.
 		</p>
 		<p>
-			If you have multiple functions specified in your manual, you must list them individually as arguments to <span
-				class="macro">Rv</span>.
+			If you have multiple functions specified in your manual, you must list them individually as arguments to <a
+				href="macros.xhtml#macro_rv" class="macro">Rv</a>.
 		</p>
 		<p>
 			Next, the possible values of <span class="var">errno</span> must be specified in the <span class="sec">ERRORS</span>
@@ -163,24 +163,26 @@
 			.El
 		</div>
 		<p>
-			The syntax of this list differs from lists we've already encountered.
-			Earlier we used the special term <span class="screen">Ds</span> as an argument to
-			<span class="macroflag">width</span> to specify a generic width.  Here, we used <span class="macro">Er</span>, which is
-			also specified at the start of each list tag (lines beginning with <span class="macro">It</span>).
+			The syntax of this list differs from lists we've already encountered.  Earlier we used the special term <span
+				class="screen">Ds</span> as an argument to <span class="macroflag">width</span> to specify a generic width.
+			Here, we used <a href="macros.xhtml#macro_er" class="macro">Er</a>, which is also specified at the start of each list
+			tag (lines beginning with <a href="macros.xhtml#macro_it" class="macro">It</a>).
 		</p>
 		<p>
-			The macro <span class="macro">Er</span> specifies a possible value of <span class="var">errno</span>.  There are many
-			standard variable names for <span class="var">errno</span> values, such as <span class="var">EFAULT</span> used in our
-			example.  When we stipulate this as the argument of <span class="macroflag">width</span>, the formatter is able to
-			translate this into a generic width of most <span class="macro">Er</span> macro contents.
+			The macro <a href="macros.xhtml#macro_er" class="macro">Er</a> specifies a possible value of <span
+				class="var">errno</span>.  There are many standard variable names for <span class="var">errno</span> values,
+			such as <span class="var">EFAULT</span> used in our example.  When we stipulate this as the argument of <span
+				class="macroflag">width</span>, the formatter is able to translate this into a generic width of most <a
+				href="macros.xhtml#macro_er" class="macro">Er</a> macro contents.
 		</p>
 		<p>
 			You should avoid using this construct unless it's in a conventional way, as it is here.
 		</p>
 		<p>
 			If your system call is part of an operating system, it's common to add some lines as to when it was added.  Let's assume
-			you're adding the function to a fictional Foo OS.  Most modern UNIX operating systems have their own macros, such as
-			<span class="macro">Bx</span> for BSD UNIX.  Be sure to note the version of the operating system.
+			you're adding the function to a fictional Foo OS.  Most modern UNIX operating systems have their own macros, such as <a
+				href="macros.xhtml#macro_bx" class="macro">Bx</a> for BSD UNIX.  Be sure to note the version of the operating
+			system.
 		</p>
 		<div class="mdocin">
 			.Sh HISTORY

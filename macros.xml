@@ -28,6 +28,12 @@
 			<dd>
 				Begin a list.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c26426c">Bl</a>.
 			</dd>
+			<dt id="macro_bx">
+				Bx
+			</dt>
+			<dd>
+				BSD UNIX text.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264278">Bx</a>.
+			</dd>
 			<dt id="macro_dd">
 				Dd
 			</dt>
@@ -57,6 +63,12 @@
 			</dt>
 			<dd>
 				Text to be emphasised (presentational).  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c26456d">Em</a>.
+			</dd>
+			<dt id="macro_er">
+				Er
+			</dt>
+			<dd>
+				Error constant.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264572">Er</a>.
 			</dd>
 			<dt id="macro_ex">
 				Ex
@@ -112,6 +124,12 @@
 			<dd>
 				Include file (header file).  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c26496e">In</a>.
 			</dd>
+			<dt id="macro_lb">
+				Lb
+			</dt>
+			<dd>
+				Library name.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264c62">Lb</a>.
+			</dd>
 			<dt id="macro_li">
 				Li
 			</dt>
@@ -165,6 +183,12 @@
 			</dt>
 			<dd>
 				Enclose arguments in regular double quotes.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265171">Qq</a>.
+			</dd>
+			<dt id="macro_rv">
+				Rv
+			</dt>
+			<dd>
+				Function return value.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265276">Rv</a>.
 			</dd>
 			<dt id="macro_sh">
 				Sh

@@ -11,8 +11,9 @@
 			Prologue
 		</h3>
 		<p>
-			The prologue consists at most of the <span class="macro">Dd</span>, <span class="macro">Dt</span>, and <span
-				class="macro">Os</span> macros.  These always occur at the beginning of a manual.
+			The prologue consists at most of the <a href="macros.xhtml#macro_dd" class="macro">Dd</a>, <a
+				href="macros.xhtml#macro_dt" class="macro">Dt</a>, and <a href="macros.xhtml#macro_os" class="macro">Os</a>
+			macros.  These always occur at the beginning of a manual.
 		</p>
 		<div class="mdocin">
 			.\" Prologue follows:
@@ -24,15 +25,16 @@
 			.Os
 		</div>
 		<p>
-			The only firm requirement of the <span class="lang">mdoc</span> prologue is that the <span class="macro">Dd</span> macro
-			comes first: many formatting systems will read up to the first macro to determine the formatting language.  If <span
-				class="macro">Dd</span> is not encountered first, the <span class="lang">mdoc</span> format may not be
-			recognised.
+			The only firm requirement of the <span class="lang">mdoc</span> prologue is that the <a href="macros.xhtml#macro_dd"
+				class="macro">Dd</a> macro comes first: many formatting systems will read up to the first macro to determine the
+			formatting language.  If <a href="macros.xhtml#macro_dd" class="macro">Dd</a> is not encountered first, the <span
+				class="lang">mdoc</span> format may not be recognised.
 		</p>
 		<p>
-			Following the <span class="macro">Dd</span>, the prologue is conventionally ordered as first <span
-				class="macro">Dt</span> and then <span class="macro">Os</span>.  The <span class="macro">Os</span> macro is
-			usually left without arguments, meaning that the manual applies to the current system.
+			Following the <a href="macros.xhtml#macro_dd" class="macro">Dd</a>, the prologue is conventionally ordered as first <a
+				href="macros.xhtml#macro_dt" class="macro">Dt</a> and then <a href="macros.xhtml#macro_os" class="macro">Os</a>.
+			The <a href="macros.xhtml#macro_os" class="macro">Os</a> macro is usually left without arguments, meaning that the
+			manual applies to the current system.
 		</p>
 		<p>
 			After parsing the document prologue, the following is known:
@@ -48,10 +50,10 @@
 			Date
 		</h4>
 		<p>
-			The date is specified by the <span class="macro">Dd</span> macro.
+			The date is specified by the <a href="macros.xhtml#macro_dd" class="macro">Dd</a> macro.
 		</p>
 		<div class="mdocsyntax">
-			.<span class="macro">Dd</span> <span class="macroarg">date</span>
+			.<a href="macros.xhtml#macro_dd" class="macro">Dd</a> <span class="macroarg">date</span>
 		</div>
 		<p>
 			While no particular date format is required, it's best to use the <span class="screen">month day, year</span> format,
@@ -96,19 +98,20 @@
 		</h4>
 		<p>
 			A manual's title identifies the entire manual document.  It is always specified in uppercase as the first argument of
-			the <span class="macro">Dt</span> macro, which conventionally follows the initial <span class="macro">Dd</span> macro.
+			the <a href="macros.xhtml#macro_dt" class="macro">Dt</a> macro, which conventionally follows the initial <a
+				href="macros.xhtml#macro_dd" class="macro">Dd</a> macro.
 		</p>
 		<div class="mdocsyntax">
-			.<span class="macro">Dt</span> <span class="macroarg">TITLE</span> <span class="macroarg">category</span> 
-			<span class="macroopt"><span class="macroarg">architecture</span></span>
+			.<a href="macros.xhtml#macro_dt" class="macro">Dt</a> <span class="macroarg">TITLE</span> <span
+				class="macroarg">category</span> <span class="macroopt"><span class="macroarg">architecture</span></span>
 		</div>
 		<p>
 			The title usually corresponds to the file-name of the document, but this is not necessarily the case.
 		</p>
 		<p>
 			In the case of a single-component manual, such as the manual for a single UNIX command or programming function, the
-			title corresponds to the manual name as specified with the <span class="sec">SYNOPSIS</span> <span
-				class="macro">Nm</span> macro argument.
+			title corresponds to the manual name as specified with the <span class="sec">SYNOPSIS</span> <a
+				href="macros.xhtml#macro_nm" class="macro">Nm</a> macro argument.
 		</p>
 		<p>
 			In the event of multiple components, such as a programming library, the title usually corresponds to the library name.
@@ -128,20 +131,20 @@
 			.Dt GREETING 3
 		</div>
 		<p>
-			If the title is left unspecified by omitting the <span class="macro">Dt</span> macro, behaviour is undefined.  Usually a
-			formatter will default to an empty string or <span class="screen">LOCAL</span>.  In general, however, a manual without
-			<span class="macro">Dt</span> may be considered incomplete.
+			If the title is left unspecified by omitting the <a href="macros.xhtml#macro_dt" class="macro">Dt</a> macro, behaviour
+			is undefined.  Usually a formatter will default to an empty string or <span class="screen">LOCAL</span>.  In general,
+			however, a manual without <a href="macros.xhtml#macro_dt" class="macro">Dt</a> may be considered incomplete.
 		</p>
 		<h4>
 			Category
 		</h4>
 		<p>
 			The category of a manual, sometimes called the manual section, specifies the type of component a manual describes.  It
-			is specified in the second argument of the <span class="macro">Dt</span> macro.
+			is specified in the second argument of the <a href="macros.xhtml#macro_dt" class="macro">Dt</a> macro.
 		</p>
 		<div class="mdocsyntax">
-			.<span class="macro">Dt</span> <span class="macroarg">TITLE</span> <span class="macroarg">category</span> 
-			<span class="macroopt"><span class="macroarg">architecture</span></span>
+			.<a href="macros.xhtml#macro_dt" class="macro">Dt</a> <span class="macroarg">TITLE</span> <span
+				class="macroarg">category</span> <span class="macroopt"><span class="macroarg">architecture</span></span>
 		</div>
 		<p>
 			These catogies are dictated by convention extending to the first published edition of UNIX.  The original forms of these
@@ -251,11 +254,11 @@
 				class="cat">9</span> manuals.
 		</p>
 		<p>
-			These use the optional third argument of the <span class="macro">Dt</span> macro.
+			These use the optional third argument of the <a href="macros.xhtml#macro_dt" class="macro">Dt</a> macro.
 		</p>
 		<div class="mdocsyntax">
-			.<span class="macro">Dt</span> <span class="macroarg">TITLE</span> <span class="macroarg">category</span> 
-			<span class="macroopt"><span class="macroarg">architecture</span></span>
+			.<a href="macros.xhtml#macro_dt" class="macro">Dt</a> <span class="macroarg">TITLE</span> <span
+				class="macroarg">category</span> <span class="macroopt"><span class="macroarg">architecture</span></span>
 		</div>
 		<p>
 			A device referring to a particular architecture uses this to explicitly note its relevant architecture.  In normal
@@ -266,10 +269,10 @@
 		</h4>
 		<p>
 			Similar to architecture, some manuals only pertain to a particular operating system.  This system may be specified to
-			the <span class="macro">Os</span> macro of the prologue.
+			the <a href="macros.xhtml#macro_os" class="macro">Os</a> macro of the prologue.
 		</p>
 		<div class="mdocsyntax">
-			.<span class="macro">Os</span> <span class="macroopt"><span class="macroarg">system</span></span>
+			.<a href="macros.xhtml#macro_os" class="macro">Os</a> <span class="macroopt"><span class="macroarg">system</span></span>
 		</div>
 		<p>
 			If <span class="macroarg">system</span> is unspecified, the manual is assumed to apply to any operating system.
