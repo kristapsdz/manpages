@@ -96,11 +96,11 @@
 		</p>
 		<p>
 			The <span class="screen">.Qq</span> is part of <span class="lang">mdoc</span>'s instruction syntax.  Input lines
-			beginning with a dot are instructions to the formatter called <a class="term" href="glossary.xhtml#mdoc_macro">mdoc
-				macros</a>, or just macros for short.  The macro name is a terse two or three-character word following the dot,
-			for example, <span class="macro">Qq</span>.  The words following the <span class="macro">Qq</span> to the end of line
-			are arguments in the <a class="term" href="glossary.xhtml#mdoc_scope">scope</a> of the macro; that is, data interpreted
-			within the context of the macro.
+			beginning with a dot are instructions to the formatter called mdoc macros, or just macros for short.  The macro name is
+			a terse two or three-character word following the dot, for example, <span class="macro">Qq</span>.  The words following
+			the <span class="macro">Qq</span> to the end of line are arguments in the <a class="term"
+				href="glossary.xhtml#mdoc_scope">scope</a> of the macro; that is, data interpreted within the context of the
+			macro.
 		</p>
 		<p>
 			Thus, the fragment

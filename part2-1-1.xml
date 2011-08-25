@@ -18,7 +18,8 @@
 		</p>
 		<p>
 			Unilaterally, the backslash <span class="screen">\</span> is always interpreted as the beginning of an <a
-				href="part2-1-2.xhtml">escape sequence</a>.  If an escape precedes a newline, it escapes the current line:
+				href="part2-1-2.xhtml#escape_sequences">escape sequence</a>.  If an escape precedes a newline, it escapes the
+			current line:
 		</p>
 		<div class="mdocin">
 			.Em This is considered one \
@@ -62,7 +63,7 @@
 			<tbody>
 				<tr>
 					<td><span class="screen">!</span></td>
-					<td><a href="part2-1-5.xhtml">punctuation</a></td>
+					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">&quot;</span></td>
@@ -70,51 +71,51 @@
 				</tr>
 				<tr>
 					<td><span class="screen">(</span></td>
-					<td><a href="part2-1-5.xhtml">punctuation</a></td>
+					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">)</span></td>
-					<td><a href="part2-1-5.xhtml">punctuation</a></td>
+					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">,</span></td>
-					<td><a href="part2-1-5.xhtml">punctuation</a></td>
+					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">-</span></td>
-					<td>control character (<a href="part2-1-4.xhtml">macro argument</a>)</td>
+					<td>control character (<a href="part2-1-4.xhtml#macros">macro argument</a>)</td>
 				</tr>
 				<tr>
 					<td><span class="screen">.</span></td>
-					<td><a href="part2-1-5.xhtml">punctuation</a></td>
+					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">:</span></td>
-					<td><a href="part2-1-5.xhtml">punctuation</a></td>
+					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">;</span></td>
-					<td><a href="part2-1-5.xhtml">punctuation</a></td>
+					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">?</span></td>
-					<td><a href="part2-1-5.xhtml">punctuation</a></td>
+					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">[</span></td>
-					<td><a href="part2-1-5.xhtml">punctuation</a></td>
+					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">\</span></td>
-					<td>control character (<a href="part2-1-2.xhtml">escape sequence</a>)</td>
+					<td>control character (<a href="part2-1-2.xhtml#escape_sequences">escape sequence</a>)</td>
 				</tr>
 				<tr>
 					<td><span class="screen">]</span></td>
-					<td><a href="part2-1-5.xhtml">punctuation</a></td>
+					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">|</span></td>
-					<td><a href="part2-1-5.xhtml">punctuation</a></td>
+					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
 				</tr>
 			</tbody>
 		</table>

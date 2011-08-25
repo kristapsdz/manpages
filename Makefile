@@ -118,7 +118,8 @@ mdoc.xhtml: $(XHTMLS) full-head.xml full-tail.xml
 	done
 	cat full-head.xml >$@
 	sed 's!<body>!<div class="page">!' $@.part | \
-		sed 's!<\/body>!</div>!' >>$@
+		sed 's!<\/body>!</div>!' | \
+		sed 's!href=\".*\.xhtml#!href="#!g' >>$@
 	cat full-tail.xml >>$@
 	rm -f $@.part
 

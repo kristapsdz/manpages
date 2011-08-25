@@ -15,8 +15,7 @@
 			Foremost, we've noticed that <span class="lang">mdoc</span> documents consist only of printable ASCII characters.
 		</p>
 		<p>
-			We noted that a period at the beginning of a line indicates a <a class="term"
-				href="glossary.xhtml#mdoc_macro">macro</a>:
+			We noted that a period at the beginning of a line indicates a <span class="lang">mdoc</span> macro:
 		</p>
 		<div class="mdocin">
 			.Qq hello, world

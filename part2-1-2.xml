@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
-		<h3>
+		<h3 id="escape_sequences">
 			Escape Sequences
 		</h3>
 		<p>
@@ -20,7 +20,7 @@
 		</h4>
 		<p>
 			Special characters allow the encoding of non-ASCII characters and, in <a class="term"
-				href="glossary.xhtml#mdoc_macro">macro</a> lines, the use of <a href="part2-1-1.xhtml#reserved">reserved
+				href="part2-1-1.xhtml#macro_line">macro lines</a>, the use of <a href="part2-1-1.xhtml#reserved">reserved
 				characters</a>.  Special characters may be invoked anywhere in input.
 		</p>
 		<p>

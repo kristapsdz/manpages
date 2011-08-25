@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
-		<h3>
+		<h3 id="punctuation">
 			Punctuation
 		</h3>
 		<p>
@@ -18,7 +18,7 @@
 		<p>
 			The following characters are considered punctuation:
 		</p>
-		<table id="punctuation" class="tbl">
+		<table id="punctuation_table" class="tbl">
 			<col style="width: 5em;" />
 			<col />
 			<tbody>
@@ -88,7 +88,7 @@
 			punctuation used and insert the correct amount of spaces.  If supported by the output media (<a class="term"
 				href="glossary.xhtml#html">HTML</a>, for example, does not), all modern <span class="lang">mdoc</span>
 			formatters use <a class="term" href="glossary.xhtml#english_spacing">English spacing</a> to mark sentence boundaries.
-			The <q>ending sentence</q> punctuation in the <a href="#punctuation">punctuation table</a> marks an end of sentence.
+			The <q>ending sentence</q> punctuation in the <a href="#punctuation_table">punctuation table</a> marks an end of sentence.
 		</p>
 		<p>
 			In <a href="part2-1-1.xhtml#text_line">text lines</a>, sentence punctuation should always occur at the end of the line.
@@ -102,7 +102,7 @@
 		</div>
 		<p>
 			Note, in the last sentence, that the formatter will recognise sentence punctuation even when followed by <q>ending
-				enclosure</q> punctuation as noted in the <a href="#punctuation">punctuation table</a>. 
+				enclosure</q> punctuation as noted in the <a href="#punctuation_table">punctuation table</a>. 
 		</p>
 		<p>
 			However, take care that non-sentence punctuation, such as for abbreviations, does not happen to fall at

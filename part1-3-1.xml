@@ -85,7 +85,7 @@
 		</div>
 		<p>
 			The <span class="cmd">cvs</span> identifier, copyright, and license comments of this file are very similar to that of
-			the <a href="part1-1-3.xhtml">Case Study</a> for commands.
+			the <a href="part1-1-3.xhtml#case_study_cmd">Case Study</a> for commands.
 		</p>
 		<div class="mdocin">
 			.Dd $&#8203;Mdocdate: May 31 2007 &#8203;$
