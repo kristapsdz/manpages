@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Glossary</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<h1>
+			Macros
+		</h1>
+		<dl>
+			<dt id="macro_ar">
+				Ar
+			</dt>
+			<dd>
+				Argument to a command or flag.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264172">Ar</a>.
+			</dd>
+			<dt id="macro_bl">
+				Bl
+			</dt>
+			<dd>
+				Begin a list.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c26426c">Bl</a>.
+			</dd>
+			<dt id="macro_dd">
+				Dd
+			</dt>
+			<dd>
+				Date of manual's last edit.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264464">Dd</a>.
+			</dd>
+			<dt id="macro_dt">
+				Dt
+			</dt>
+			<dd>
+				Title and category of a manual.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264474">Dt</a>.
+			</dd>
+			<dt id="macro_el">
+				El
+			</dt>
+			<dd>
+				End a list.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c26456c">El</a>.
+			</dd>
+			<dt id="macro_ex">
+				Ex
+			</dt>
+			<dd>
+				Exit code of a command.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264578">Ex</a>.
+			</dd>
+			<dt id="macro_fl">
+				Fl
+			</dt>
+			<dd>
+				Command flag (switch).  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c26466c">Fl</a>.
+			</dd>
+			<dt id="macro_nd">
+				Nd
+			</dt>
+			<dd>
+				A one-line description of the material.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264e64">Nd</a>.
+			</dd>
+			<dt id="macro_nm">
+				Nm
+			</dt>
+			<dd>
+				Set or get name of documented component.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264e6d">Nm</a>.
+			</dd>
+			<dt id="macro_os">
+				Os
+			</dt>
+			<dd>
+				Operating system applying to manual.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264f73">Os</a>.
+			</dd>
+			<dt id="macro_it">
+				It
+			</dt>
+			<dd>
+				List item.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264974">It</a>.
+			</dd>
+			<dt id="macro_op">
+				Op
+			</dt>
+			<dd>
+				Optional part of a command invocation.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264f70">Op</a>.
+			</dd>
+			<dt id="macro_pp">
+				Pp
+			</dt>
+			<dd>
+				Separate paragraphs with vertical space.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265070">Pp</a>.
+			</dd>
+			<dt id="macro_qq">
+				Qq
+			</dt>
+			<dd>
+				Enclose arguments in regular double quotes.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265171">Qq</a>.
+			</dd>
+			<dt id="macro_sh">
+				Sh
+			</dt>
+			<dd>
+				Begin a manual section.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265368">Sh</a>.
+			</dd>
+		</dl>
+		<table class="nav">
+			<tbody>
+				<tr>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
+					<td class="nav-next" style="color: #dddddd;">Next</td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/glossary.xml?cvsroot=manpages">History</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="edits">
+			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
+		</p>
+	</body>
+</html>

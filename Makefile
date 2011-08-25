@@ -13,6 +13,7 @@ SOURCE	= book.css \
 	  index.css \
 	  license.png \
 	  Makefile \
+	  macros.xml \
 	  preface.xml \
 	  part1.xml \
 	  part1-1.xml \
@@ -62,7 +63,8 @@ XHTMLS	= preface.xhtml \
 	  part2-2-2.xhtml \
 	  part2-3.xhtml \
 	  part2-3-1.xhtml \
-	  glossary.xhtml
+	  glossary.xhtml \
+	  macros.xhtml
 
 VERSION	= 0.0.11
 DATE	= 24 August 2011
@@ -140,7 +142,6 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 		mimetype \
 		META-INF/container.xml \
 		OPS/external.png \
-		OPS/glossary.xhtml \
 		OPS/preface.xhtml \
 		OPS/part1.xhtml \
 		OPS/part1-1.xhtml \
@@ -165,6 +166,8 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 		OPS/part2-2-2.xhtml \
 		OPS/part2-3.xhtml \
 		OPS/part2-3-1.xhtml \
+		OPS/glossary.xhtml \
+		OPS/macros.xhtml \
 		OPS/book.opf \
 		OPS/book.ncx \
 		OPS/css/book.css )

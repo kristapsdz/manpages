@@ -97,9 +97,9 @@
 		<p>
 			The <span class="screen">.Qq</span> is part of <span class="lang">mdoc</span>'s instruction syntax.  Input lines
 			beginning with a dot are instructions to the formatter called mdoc macros, or just macros for short.  The macro name is
-			a terse two or three-character word following the dot, for example, <span class="macro">Qq</span>.  The words following
-			the <span class="macro">Qq</span> to the end of line are arguments in the scope of the macro; that is, data interpreted
-			within the context of the macro.
+			a terse two or three-character word following the dot, for example, <a href="macros.xhtml#macro_qq"
+				class="macro">Qq</a>.  The words following the <a href="macros.xhtml#macro_qq" class="macro">Qq</a> to the end
+			of line are arguments in the scope of the macro; that is, data interpreted within the context of the macro.
 		</p>
 		<p>
 			Thus, the fragment
@@ -112,21 +112,22 @@
 			and exit.
 		</div>
 		<p>
-			is interpreted as text, then a macro <span class="macro">Qq</span> with scoped arguments <span class="screen">hello,
-				world</span>, then more text.
+			is interpreted as text, then a macro <a href="macros.xhtml#macro_qq" class="macro">Qq</a> with scoped arguments <span
+				class="screen">hello, world</span>, then more text.
 		</p>
 		<p>
-			It's obvious, in looking at the input and output, that <span class="macro">Qq</span> instructs the formatter to quote
-			its arguments.  Macro names vaguely identify their purpose with their choice of letter combination.
+			It's obvious, in looking at the input and output, that <a href="macros.xhtml#macro_qq" class="macro">Qq</a> instructs
+			the formatter to quote its arguments.  Macro names vaguely identify their purpose with their choice of letter
+			combination.
 		</p>
 		<p>
-			The <span class="macro">Qq</span> is limited in scope to its invocation line.  But notice that the formatter recognised
-			the content between <span class="macro">Sh</span> macros as requiring indentation.  So it's clear that <span
-				class="lang">mdoc</span> also has a concept of multi-line scope.
+			The <a href="macros.xhtml#macro_qq" class="macro">Qq</a> is limited in scope to its invocation line.  But notice that
+			the formatter recognised the content between <a href="macros.xhtml#macro_sh" class="macro">Sh</a> macros as requiring
+			indentation.  So it's clear that <span class="lang">mdoc</span> also has a concept of multi-line scope.
 		</p>
 		<p>
-			In fact, <span class="macro">Sh</span> has both line arguments, for the name of the section; and multi-line arguments,
-			for section content.
+			In fact, <a href="macros.xhtml#macro_sh" class="macro">Sh</a> has both line arguments, for the name of the section; and
+			multi-line arguments, for section content.
 		</p>
 		<div class="mdocin">
 			.Sh SECTION 1
@@ -138,8 +139,9 @@
 			New section text.
 		</div>
 		<p>
-			Furthermore, the existance of <span class="macro">Qq</span> within the <span class="macro">Sh</span> scope means that
-			scopes may be nested.  In the next section we'll see how multiple macros may even be specified on a single line.
+			Furthermore, the existance of <a href="macros.xhtml#macro_qq" class="macro">Qq</a> within the <a
+				href="macros.xhtml#macro_sh" class="macro">Sh</a> scope means that scopes may be nested.  In the next section
+			we'll see how multiple macros may even be specified on a single line.
 		</p>
 		<div class="mdocin">
 			.Sh SECTION 1
@@ -163,24 +165,27 @@
 			Now let's return to <span class="file">hi.1</span> with this new knowledge of macros and scopes.
 		</p>
 		<p>
-			We see seven macros in total, <span class="macro">Dd</span>, <span class="macro">Dt</span>, <span
-				class="macro">Os</span>, <span class="macro">Sh</span>, <span class="macro">Nm</span>, <span
-				class="macro">Nd</span>, and <span class="macro">Qq</span>.  We know now that <span class="macro">Qq</span>
-			encloses its arguments in double-quotes, <span class="macro">Sh</span> begins a named section with indented multi-line
-			arguments.  
+			We see seven macros in total, <a href="macros.xhtml#macro_dd" class="macro">Dd</a>, <a href="macros.xhtml#macro_dt"
+				class="macro">Dt</a>, <a href="macros.xhtml#macro_os" class="macro">Os</a>, <a href="macros.xhtml#macro_sh"
+				class="macro">Sh</a>, <a href="macros.xhtml#macro_nm" class="macro">Nm</a>, <a href="macros.xhtml#macro_nd"
+				class="macro">Nd</a>, and <a href="macros.xhtml#macro_qq" class="macro">Qq</a>.  We know now that <a
+				href="macros.xhtml#macro_qq" class="macro">Qq</a> encloses its arguments in double-quotes, <a
+				href="macros.xhtml#macro_sh" class="macro">Sh</a> begins a named section with indented multi-line arguments.  
 		</p>
 		<p>
-			Of the remaining macros, <span class="macro">Dd</span> accepts the last modification date of the manual in <q>month day,
-				year</q> format.  <span class="macro">Dt</span> refers to the manual's title, <span class="screen">HI</span>,
-			and its category, <span class="cat">1</span>.  Note that <span class="screen">HI</span> is uppercase: by convention,
-			<span class="macro">Dt</span> should always accept a capitalised document title.  We'll talk more about titles and
-			sections in later chapters of this book.  For now, let's assume that a category number identifies the topic of the
-			manual, where <span class="cat">1</span> refers to utilities.
+			Of the remaining macros, <a href="macros.xhtml#macro_dd" class="macro">Dd</a> accepts the last modification date of the
+			manual in <q>month day, year</q> format.  <a href="macros.xhtml#macro_dt" class="macro">Dt</a> refers to the manual's
+			title, <span class="screen">HI</span>, and its category, <span class="cat">1</span>.  Note that <span
+				class="screen">HI</span> is uppercase: by convention, <a href="macros.xhtml#macro_dt" class="macro">Dt</a>
+			should always accept a capitalised document title.  We'll talk more about titles and sections in later chapters of this
+			book.  For now, let's assume that a category number identifies the topic of the manual, where <span class="cat">1</span>
+			refers to utilities.
 		</p>
 		<p>
-			Next, <span class="macro">Os</span> indicates the operating system of the system running the formatter.  If left
-			unspecified, the formatter will return the current operating system (e.g., <span class="screen">OpenBSD 4.9</span>,
-			<span class="screen">Linux 2.6.32-5</span>, or <span class="screen">Microsoft Windows XP</span>).
+			Next, <a href="macros.xhtml#macro_os" class="macro">Os</a> indicates the operating system of the system running the
+			formatter.  If left unspecified, the formatter will return the current operating system (e.g., <span
+				class="screen">OpenBSD 4.9</span>, <span class="screen">Linux 2.6.32-5</span>, or <span class="screen">Microsoft
+				Windows XP</span>).
 		</p>
 		<div class="mdocin">
 			.Dd May 30, 2011
@@ -199,9 +204,10 @@
 			.\" Extending across the full line.
 		</div>
 		<p>
-			Moving along, <span class="macro">Nm</span> accepts the manual's name.  This differs from the title, <span
-				class="macro">Dt</span>, in that a single manual may document multiple components.  We'll see examples of this
-			in later chapters.  Finally, <span class="macro">Nd</span> accepts a brief, one-line description of the command.
+			Moving along, <a href="macros.xhtml#macro_nm" class="macro">Nm</a> accepts the manual's name.  This differs from the
+			title, <a href="macros.xhtml#macro_dt" class="macro">Dt</a>, in that a single manual may document multiple components.
+			We'll see examples of this in later chapters.  Finally, <a href="macros.xhtml#macro_nd" class="macro">Nd</a> accepts a
+			brief, one-line description of the command.
 		</p>
 		<div class="mdocin">
 			.Sh NAME
@@ -211,9 +217,9 @@
 			.Nd print \(dqhello, world\(dq
 		</div>
 		<p>
-			You can see that we re-invoke <span class="macro">Nm</span> in the <span class="sec">DESCRIPTION</span>, only without
-			arguments.  The formatter is smart enough to fill in its argument with the last supplied argument, in this case being
-			<span class="screen">hi</span>.
+			You can see that we re-invoke <a href="macros.xhtml#macro_nm" class="macro">Nm</a> in the <span
+				class="sec">DESCRIPTION</span>, only without arguments.  The formatter is smart enough to fill in its argument
+			with the last supplied argument, in this case being <span class="screen">hi</span>.
 		</p>
 		<p>
 			Since our simple command has no command-line arguments, its invocation is simply the command name.
@@ -252,12 +258,13 @@
 			and exit.
 		</div>
 		<p>
-			In this example, you've noticed that <span class="screen">\(dqhello, world\(dq</span> has the same behaviour of the
-			<span class="macro">Qq</span> invocation.  In <span class="lang">mdoc</span>, quotation marks signify literal strings.
-			Thus, we used an escape character <span class="screen">\(dq</span> to render <span class="screen">&quot;</span>.
+			In this example, you've noticed that <span class="screen">\(dqhello, world\(dq</span> has the same behaviour of the <a
+				href="macros.xhtml#macro_qq" class="macro">Qq</a> invocation.  In <span class="lang">mdoc</span>, quotation
+			marks signify literal strings.  Thus, we used an escape character <span class="screen">\(dq</span> to render <span
+				class="screen">&quot;</span>.
 		</p>
 		<p>
-			You may ask why not just use <span class="macro">Qq</span>, such as
+			You may ask why not just use <a href="macros.xhtml#macro_qq" class="macro">Qq</a>, such as
 		</p>
 		<div class="mdocin">
 			.Nd print
@@ -265,8 +272,8 @@
 			.Qq hello, world
 		</div>
 		<p>
-			For the time being, assume that <span class="macro">Nd</span> must have its scope on the invocation line.
-			Strictly-speaking, we could have written 
+			For the time being, assume that <a href="macros.xhtml#macro_nd" class="macro">Nd</a> must have its scope on the
+			invocation line.  Strictly-speaking, we could have written 
 		</p>
 		<div class="mdocin">
 			.Nd print "hello, world"

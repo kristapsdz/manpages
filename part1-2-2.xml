@@ -141,7 +141,7 @@
 		<p>
 			Here, we see the familiar <span class="macro">Bl</span> and <span class="macro">El</span> list enclosure.  Notice how I
 			re-use the <span class="macro">Fa</span> macro to document individual arguments, just like I re-used <span
-				class="macro">Fl</span> and <span class="macro">Ar</span> when documenting command-line flags and arguments.
+				class="macro">Fl</span> and <a href="macros.xhtml#macro_ar" class="macro">Ar</a> when documenting command-line flags and arguments.
 		</p>
 		<p>
 			This renders as follows.

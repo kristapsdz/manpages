@@ -157,9 +157,15 @@
 		</navPoint>
 		<navPoint class="h1" id="glossary" playOrder="25">
 			<navLabel>
-				<text>Glossary</text>
+				<text>Appendix: Glossary</text>
 			</navLabel>
 			<content src="glossary.xhtml"/>
+		</navPoint>
+		<navPoint class="h1" id="macros" playOrder="26">
+			<navLabel>
+				<text>Appendix: Macros</text>
+			</navLabel>
+			<content src="macros.xhtml"/>
 		</navPoint>
 	</navMap>
 </ncx>

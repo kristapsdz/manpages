@@ -59,8 +59,9 @@
 		</div>
 		<p>
 			Already, we begin to see the output take shape with the <span class="screen">C</span> and <span class="screen">o</span>
-			characters, and the <span class="screen">prefix</span>.  It's also clear that the <span class="macro">Op</span> macro
-			surrounds its arguments in square brackets, just as <span class="macro">Qq</span> surrounded its line in double-quotes.
+			characters, and the <span class="screen">prefix</span>.  It's also clear that the <a class="macro"
+				href="macros.xhtml#macro_op">Op</a> macro surrounds its arguments in square brackets, just as <a class="macro"
+				href="macros.xhtml#macro_qq">Qq</a> surrounded its line in double-quotes.
 		</p>
 		<p>
 			But how did the formatter know to prefix the <span class="screen">C</span> and <span class="screen">o</span> with a
@@ -71,10 +72,11 @@
 		</p>
 		<p>
 			Macro lines may in fact consist of multiple macros &mdash; sometimes nesting further macros, sometimes closing prior
-			scopes to begin one anew.  The <span class="macro">Fl</span> and <span class="macro">Ar</span> words are macros nested
-			within the scope of <span class="macro">Op</span>.  However, while <span class="macro">Op</span> contains both of these
-			child scopes, the <span class="macro">Ar</span> macro closes out the <span class="macro">Fl</span> scope and begin its
-			own.
+			scopes to begin one anew.  The <a href="macros.xhtml#macro_fl" class="macro">Fl</a> and <a class="macro"
+				href="macros.xhtml#macro_ar">Ar</a> words are macros nested within the scope of <a class="macro"
+				href="macros.xhtml#macro_op">Op</a>.  However, while <a class="macro" href="macros.xhtml#macro_op">Op</a>
+			contains both of these child scopes, the <a class="macro" href="macros.xhtml#macro_ar">Ar</a> macro closes out the <a
+				href="macros.xhtml#macro_fl" class="macro">Fl</a> scope and begin its own.
 		</p>
 		<div class="mdocin">
 			<span style="border: 1px solid green; padding: 2px;">.Op 
@@ -90,10 +92,10 @@
 				<span style="border: 1px solid blue;">Ar prefix</span></span>
 		</div>
 		<p>
-			<span style="border: 1px solid green; padding: 2px;">Outer parts</span> are an outer scope,
-			while <span style="border: 1px solid blue; padding: 2px;">inner parts</span> are an inner scope.  Now it's
-			easy to see how <span class="macro">Fl</span> prefixes only the <span class="screen">C</span> with a dash and not the
-			arguments following: its scope is closed out by <span class="macro">Ar</span>.
+			<span style="border: 1px solid green; padding: 2px;">Outer parts</span> are an outer scope, while <span style="border:
+				1px solid blue; padding: 2px;">inner parts</span> are an inner scope.  Now it's easy to see how <a
+				href="macros.xhtml#macro_fl" class="macro">Fl</a> prefixes only the <span class="screen">C</span> with a dash
+			and not the arguments following: its scope is closed out by <a href="macros.xhtml#macro_ar" class="macro">Ar</a>.
 		</p>
 		<p>
 			Note that to document a flag <span class="screen">Ar</span>, we would need to quote its arguments as <span
@@ -141,10 +143,11 @@
 			.El
 		</div>
 		<p>
-			Immediately, we see the introduction of several new macros: <span class="macro">Pp</span>, <span
-				class="macro">Bl</span>, <span class="macro">It</span>, and <span class="macro">El</span>.  More interestingly,
-			we notice the text on the <span class="macro">Bl</span> begins with a dash, just as when passing arguments on a command
-			line.  This is the first instance of a macro that accepts flags.  
+			Immediately, we see the introduction of several new macros: <a href="macros.xhtml#macro_pp" class="macro">Pp</a>, <a
+				href="macros.xhtml#macro_bl" class="macro">Bl</a>, <a href="macros.xhtml#macro_it" class="macro">It</a>, and <a
+				href="macros.xhtml#macro_el" class="macro">El</a>.  More interestingly, we notice the text on the <a
+				href="macros.xhtml#macro_bl" class="macro">Bl</a> begins with a dash, just as when passing arguments on a
+			command line.  This is the first instance of a macro that accepts flags.  
 		</p>
 		<p>
 			The rendered output of this fragment is as follows.
@@ -167,29 +170,31 @@
 			</dl>
 		</div>
 		<p>
-			It should be clear that the <span class="macro">Pp</span> macro, which always stands alone, introduces a vertical
-			paragraph break.
+			It should be clear that the <a href="macros.xhtml#macro_pp" class="macro">Pp</a> macro, which always stands alone,
+			introduces a vertical paragraph break.
 		</p>
 		<p>
-			Earlier, I introduced the concept of a multi-line scope for <span class="macro">Sh</span>, which was closed and
-			re-opened by subsequent invocations of <span class="macro">Sh</span>.  In this fragment, the <span
-				class="macro">Bl</span> macro (for <q>begin list</q>) is explicitly closed out by the <span
-				class="macro">El</span> maro (<q>end list</q>).  This is an example of explicit scope closure, versus the
-			implicit scope closure of <span class="macro">Sh</span> sequences.
+			Earlier, I introduced the concept of a multi-line scope for <a href="macros.xhtml#macro_sh" class="macro">Sh</a>, which
+			was closed and re-opened by subsequent invocations of <a href="macros.xhtml#macro_sh" class="macro">Sh</a>.  In this
+			fragment, the <a href="macros.xhtml#macro_bl" class="macro">Bl</a> macro (for <q>begin list</q>) is explicitly closed
+			out by the <a href="macros.xhtml#macro_el" class="macro">El</a> maro (<q>end list</q>).  This is an example of explicit
+			scope closure, versus the implicit scope closure of <a href="macros.xhtml#macro_sh" class="macro">Sh</a> sequences.
 		</p>
 		<p>
-			Predictably, the <span class="macro">Bl</span> and <span class="macro">El</span> enclosure consists of list items, begun
-			by the multi-line <span class="macro">It</span> macro lines.  Like <span class="macro">Sh</span>, the <span
-				class="macro">It</span> macro has its scope closed by subsequent invocations of <span class="macro">It</span>.
-			As expected, its scope also closes when the surrounding list is closed with <span class="macro">El</span>.
+			Predictably, the <a href="macros.xhtml#macro_bl" class="macro">Bl</a> and <a href="macros.xhtml#macro_el"
+				class="macro">El</a> enclosure consists of list items, begun by the multi-line <a href="macros.xhtml#macro_it"
+				class="macro">It</a> macro lines.  Like <a href="macros.xhtml#macro_sh" class="macro">Sh</a>, the <a
+				href="macros.xhtml#macro_it" class="macro">It</a> macro has its scope closed by subsequent invocations of <a
+				href="macros.xhtml#macro_it" class="macro">It</a>.  As expected, its scope also closes when the surrounding list
+			is closed with <a href="macros.xhtml#macro_el" class="macro">El</a>.
 		</p>
 		<p>
-			The notion of a <q>tagged</q> list comes from the flag provided to the <span class="macro">Bl</span> macro, <span
-				class="macroflag">tag</span>.  Until now, we've discussed only macros and macro arguments.  Only a handful of
-			macros also accept flags, which themselves may have arguments.  In our example, the <span class="macro">Bl</span> macro
-			accepts a second flag, <span class="macroflag">width</span>, which accepts the argument <span
-				class="macroarg">Ds</span>.  This instructs the formatter that the tag portion of the list has width <q>Ds</q>,
-			which is shorthand for <q>default spacing</q>.
+			The notion of a <q>tagged</q> list comes from the flag provided to the <a href="macros.xhtml#macro_bl"
+				class="macro">Bl</a> macro, <span class="macroflag">tag</span>.  Until now, we've discussed only macros and
+			macro arguments.  Only a handful of macros also accept flags, which themselves may have arguments.  In our example, the
+			<a href="macros.xhtml#macro_bl" class="macro">Bl</a> macro accepts a second flag, <span class="macroflag">width</span>,
+			which accepts the argument <span class="macroarg">Ds</span>.  This instructs the formatter that the tag portion of the
+			list has width <q>Ds</q>, which is shorthand for <q>default spacing</q>.
 		</p>
 		<p>
 			Let's look closer at the input line 
@@ -216,9 +221,10 @@
 			the argument itself.  This allows the formatter to correctly intuit end-of-line spacing.
 		</p>
 		<p>
-			Let's piece this all together.  You'll recognise the <span class="macro">Dd</span>, <span class="macro">Dt</span>, and
-			<span class="macro">Os</span> macros from the last section, although the <span class="macro">Dt</span> argument has
-			changed with our command name.
+			Let's piece this all together.  You'll recognise the <a href="macros.xhtml#macro_dd" class="macro">Dd</a>, <a
+				href="macros.xhtml#macro_dt" class="macro">Dt</a>, and <a href="macros.xhtml#macro_os" class="macro">Os</a>
+			macros from the last section, although the <a href="macros.xhtml#macro_dt" class="macro">Dt</a> argument has changed
+			with our command name.
 		</p>
 		<div class="mdocin">
 			.Dd May 30, 2011
@@ -280,9 +286,10 @@
 			.El
 		</div>
 		<p>
-			Notice that we don't repeat the <span class="macro">Op</span> macros in the <span class="sec">DESCRIPTION</span>,
-			although we stipulate them in the <span class="sec">SYNOPSIS</span>.  This is because we document the flags and
-			arguments themselves in the <span class="sec">DESCRIPTION</span>, not the calling syntax of the command.
+			Notice that we don't repeat the <a class="macro" href="macros.xhtml#macro_op">Op</a> macros in the <span
+				class="sec">DESCRIPTION</span>, although we stipulate them in the <span class="sec">SYNOPSIS</span>.  This is
+			because we document the flags and arguments themselves in the <span class="sec">DESCRIPTION</span>, not the calling
+			syntax of the command.
 		</p>
 		<p>
 			Finally, let's accomodate for command errors by stipulating the exit status of the command.  To do this, we add a new
@@ -296,10 +303,12 @@
 			.Ex -std
 		</div>
 		<p>
-			The <span class="macro">Ex</span> macro is special in that it always accepts a flag, <span class="macroflag">std</span>.
-			This is by convention.  Although you can specify an argument to <span class="macro">Ex</span>, it works like <span
-				class="macro">Nm</span> without arguments in that it reproduces the name of the document as last invoked with
-			<span class="macro">Nm</span>.  It prints a standardised message about the exit status of the command.
+			The <a href="macros.xhtml#macro_ex" class="macro">Ex</a> macro is special in that it always accepts a flag, <span
+				class="macroflag">std</span>.  This is by convention.  Although you can specify an argument to <a
+				href="macros.xhtml#macro_ex" class="macro">Ex</a>, it works like <a href="macros.xhtml#macro_nm"
+				class="macro">Nm</a> without arguments in that it reproduces the name of the document as last invoked with <a
+				href="macros.xhtml#macro_nm" class="macro">Nm</a>.  It prints a standardised message about the exit status of
+			the command.
 		</p>
 		<div class="mdocout">
 			<div class="mdoc-section">
