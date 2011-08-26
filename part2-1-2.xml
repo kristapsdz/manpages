@@ -19,9 +19,9 @@
 			Special Characters
 		</h4>
 		<p>
-			Special characters allow the encoding of non-ASCII characters and, in <a class="term"
-				href="part2-1-1.xhtml#macro_line">macro lines</a>, the use of <a href="part2-1-1.xhtml#reserved">reserved
-				characters</a>.  Special characters may be invoked anywhere in input.
+			Special characters allow the encoding of non-<a class="term" href="glossary.xhtml#ascii">ASCII</a> characters and, in <a
+				class="term" href="part2-1-1.xhtml#macro_line">macro lines</a>, the use of <a
+				href="part2-1-1.xhtml#reserved">reserved characters</a>.  Special characters may be invoked anywhere in input.
 		</p>
 		<p>
 			There are three forms of special character, distinguished by the number of letters in the sequence.

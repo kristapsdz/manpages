@@ -165,17 +165,16 @@
 			<BR>
 			.Bl -ohang
 			<BR>
+			.It <SPAN>26 August 2011, <SPAN CLASS="ver">0.0.15</SPAN></SPAN>
+			<DIV>
+				Clean-ups and readability improvements.
+			</DIV>
+			.
+			<BR>
 			.It <SPAN>26 August 2011, <SPAN CLASS="ver">0.0.14</SPAN></SPAN>
 			<DIV>
 				Added <A HREF="part1-4-1.xhtml">System Call</A> case study.  This completes all of the case studies in <A
 				HREF="part1.xhtml">Part 1</A>.
-			</DIV>
-			.
-			<BR>
-			.It <SPAN>26 August 2011, <SPAN CLASS="ver">0.0.13</SPAN></SPAN>
-			<DIV>
-				Added <A HREF="part1-2-3.xhtml">Function</A> case study.  Also added version to ePub metadata and fixed some
-				links here and there.
 			</DIV>
 			.El
 			<BR>

@@ -70,7 +70,7 @@ XHTMLS	= preface.xhtml \
 	  glossary.xhtml \
 	  macros.xhtml
 
-VERSION	= 0.0.14
+VERSION	= 0.0.15
 DATE	= 26 August 2011
 
 all: $(XHTMLS) mdoc.epub index.html mdoc.source.tgz mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz mdoc.xhtml
