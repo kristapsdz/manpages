@@ -44,10 +44,10 @@
 			How to display this manual page depends on the system you're using.
 		</p>
 		<p>
-			Historically, the command of choice for formatting UNIX manuals for a <a class="term"
-				href="glossary.xhtml#terminal">terminal</a> was <span class="cmd">nroff</span>.  For now, let's stick with that.
-			<!--If you're running on a non-UNIX system, or <span class="cmd">nroff</span> isn't installed, consult Part III of this
-			book for a list of alternatives.-->
+			Traditionally, the command of choice for formatting UNIX manuals for a <a class="term"
+				href="glossary.xhtml#terminal">terminal</a> is <a class="term" href="glossary.xhtml#nroff">nroff</a>.  For now,
+			let's stick with that (an alternative, <a class="term" href="glossary.xhtml#mandoc">mandoc</a>, was used to generate
+			output on this site, but is not widely-used).
 		</p>
 		<p>
 			To display output, you must invoke <span class="cmd">nroff</span> as <span class="cmdline">nroff -mandoc -Tascii

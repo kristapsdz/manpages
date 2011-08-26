@@ -72,6 +72,13 @@
 				the screen.  Man pages are formatted by a utility such as <span class="cmd">troff</span> or <span
 					class="cmd">mandoc</span>.
 			</dd>
+			<dt id="mandoc">
+				Mandoc
+			</dt>
+			<dd>
+				Alternative formatter for <a href="#mdoc" class="term lang">mdoc</a> documents: <a class="external"
+					href="http://mdocml.bsd.lv">mdocml</a>.
+			</dd>
 			<dt id="mdoc">
 				Mdoc
 			</dt>
@@ -85,6 +92,13 @@
 			</dt>
 			<dd>
 				A free BSD <a href="#unix" class="term">UNIX</a>, <a class="external" href="http://www.netbsd.org">NetBSD</a>.
+			</dd>
+			<dt id="nroff">
+				Nroff
+			</dt>
+			<dd>
+				The traditional formatter for <a href="#roff" class="term lang">roff</a> (and thus <a href="#mdoc" class="term
+					lang">mdoc</a>).
 			</dd>
 			<dt id="openbsd">
 				OpenBSD
@@ -137,6 +151,13 @@
 				Modern open-source derivations include <a class="external" href="http://www.gnu.org">GNU/Linux</a>, <a
 					class="external" href="http://www.freebsd.org">FreeBSD</a>, <a class="term" href="#netbsd">NetBSD</a>,
 				<a class="term" href="#openbsd">OpenBSD</a>, etc.
+			</dd>
+			<dt id="xhtml">
+				XHTML
+			</dt>
+			<dd>
+				Extensible Hypertext markup language.  XML-based form of the popular <a class="term" href="#html">HTML</a>
+				format.  Standardised by the <a class="external" href="http://www.w3.org">W3C</a>.
 			</dd>
 		</dl>
 		<table class="nav">
