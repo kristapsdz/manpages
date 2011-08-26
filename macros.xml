@@ -35,6 +35,12 @@
 			<dd>
 				Begin a list.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c26426c">Bl</a>.
 			</dd>
+			<dt id="macro_bq">
+				Bq
+			</dt>
+			<dd>
+				Square-bracket arguments.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264271">Bq</a>.
+			</dd>
 			<dt id="macro_bx">
 				Bx
 			</dt>

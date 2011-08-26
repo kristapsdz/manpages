@@ -340,7 +340,7 @@
 			The <span class="sec">ERRORS</span> section will be rigorously covered in the section on <a
 				href="part1-4.xhtml#sec_system_call">System Calls</a>.  In brief, since the <span class="var">errno</span> global error
 			variable is set, each possible value must be documented in a list using the <a href="macros.xhtml#macro_er"
-				class="macro">Er</a> macro.
+				class="macro">Er</a> macro.  These are always enclosed within <a href="macros.xhtml#macro_bq" class="macro">Bq</a>.
 		</p>
 		<p>
 			Furthermore, the error string in <span class="var">errstr</span> must also be documented.
