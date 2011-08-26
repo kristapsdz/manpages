@@ -79,21 +79,21 @@
 				href="macros.xhtml#macro_fl" class="macro">Fl</a> scope and begin its own.
 		</p>
 		<div class="mdocin">
-			<span style="border: 1px solid green; padding: 2px;">.Op 
+			<span style="border: 1px dashed green; padding: 2px;">.Op 
 				<span style="border: 1px solid blue;">Fl C</span></span>
 		</div>
 		<div class="mdocin">
-			<span style="border: 1px solid green; padding: 2px;">.Op 
+			<span style="border: 1px dashed green; padding: 2px;">.Op 
 				<span style="border: 1px solid blue;">Fl o</span>
 				<span style="border: 1px solid blue;">Ar output</span></span>
 		</div>
 		<div class="mdocin">
-			<span style="border: 1px solid green; padding: 2px;">.Op 
+			<span style="border: 1px dashed green; padding: 2px;">.Op 
 				<span style="border: 1px solid blue;">Ar prefix</span></span>
 		</div>
 		<p>
-			<span style="border: 1px solid green; padding: 2px;">Outer parts</span> are an outer scope, while <span style="border:
-				1px solid blue; padding: 2px;">inner parts</span> are an inner scope.  Now it's easy to see how <a
+			<span style="border: 1px dashed green; padding: 1px;">Outer parts</span> are an outer scope, while <span style="border:
+				1px solid blue; padding: 1px;">inner parts</span> are an inner scope.  Now it's easy to see how <a
 				href="macros.xhtml#macro_fl" class="macro">Fl</a> prefixes only the <span class="screen">C</span> with a dash
 			and not the arguments following: its scope is closed out by <a href="macros.xhtml#macro_ar" class="macro">Ar</a>.
 		</p>

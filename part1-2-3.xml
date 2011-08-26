@@ -13,9 +13,9 @@
 		<p>
 			I now introduce a case study of a real-world function manual, in particular the manual for the <span
 				class="func">strtonum</span> function, which is an extension to the <a class="term" href="glossary.xhtml#libc">C
-				Standard Library</a> found in <a class="external" href="http://www.openbsd.org">OpenBSD</a>.  The original file
-			may be viewed on-line at <a class="external"
-				href="http://www.openbsd.orghttp://manpages.bsd.lv/cgi-bin/cvsweb/src/lib/libc/stdlib/strtonum.3">src/lib/libc/stdlib/strtonum.3</a>,
+				Standard Library</a> found in <a class="term" href="glossary.xhtml#openbsd">OpenBSD</a>.  The original file may
+			be viewed on-line at <a class="external"
+				href="http://www.openbsd.org/cgi-bin/cvsweb/src/lib/libc/stdlib/strtonum.3">src/lib/libc/stdlib/strtonum.3</a>,
 			file version 1.14.
 		</p>
 		<div class="mdocin">
@@ -50,11 +50,11 @@
 			.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 		</div>
 		<p>
-			This is the standard comment header to manual files in <a class="external" href="http://www.openbsd.org">OpenBSD</a>.
-			Indeed, most distributed manuals begin with a copyright notice, then a license.  The <span
-				class="screen">$&#8203;OpenBSD$</span> line is automatically updated by the revision control system, <span
-				class="cmd">cvs</span>, whenever an update to the file is committed.  The line following is the copyright
-			message, and following that is the text form of the <a class="term" href="glossary.xhtml#isc_license">ISC license</a>.
+			This is the standard comment header to manual files in OpenBSD.  Indeed, most distributed manuals begin with a copyright
+			notice, then a license.  The <span class="screen">$&#8203;OpenBSD$</span> line is automatically updated by the revision
+			control system, <span class="cmd">cvs</span>, whenever an update to the file is committed.  The line following is the
+			copyright message, and following that is the text form of the <a class="term" href="glossary.xhtml#isc_license">ISC
+				license</a>.
 		</p>
 		<div class="mdocin">
 			.Dd $&#8203;Mdocdate: May 31 2007 $
@@ -400,10 +400,10 @@
 			.Ox 3.6 .
 		</div>
 		<p>
-			Since this function is included in <a href="http://www.openbsd.org">OpenBSD</a>'s <a href="glossary.xhtml#libc">C
-				Standard Library</a>, the fact that the function is not standard must absolutely be documented.  In this, the
-			<a href="macros.xhtml#macro_ox" class="macro">Ox</a> macro indicates the OpenBSD operating system (each BSD UNIX
-			free operating system has its own macro).
+			Since this function is included in OpenBSD's <a href="glossary.xhtml#libc" class="term">C Standard Library</a>, the fact that the
+			function is not standard must absolutely be documented.  In this, the <a href="macros.xhtml#macro_ox"
+				class="macro">Ox</a> macro indicates the OpenBSD operating system (each BSD UNIX free operating system has its
+			own macro).
 		</p>
 		<table class="nav">
 			<tbody>

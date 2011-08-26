@@ -80,6 +80,18 @@
 				macro package in the <span class="lang"><a class="term" href="#roff">roff</a></span> language for the <span
 					class="cmd">troff</span> text processor.
 			</dd>
+			<dt id="netbsd">
+				NetBSD
+			</dt>
+			<dd>
+				A free BSD <a href="#unix" class="term">UNIX</a>, <a class="external" href="http://www.netbsd.org">NetBSD</a>.
+			</dd>
+			<dt id="openbsd">
+				OpenBSD
+			</dt>
+			<dd>
+				A free BSD <a href="#unix" class="term">UNIX</a>, <a class="external" href="http://www.openbsd.org">OpenBSD</a>.
+			</dd>
 			<dt id="posix">
 				POSIX
 			</dt>
@@ -123,9 +135,8 @@
 			<dd>
 				Computer system originally developed by AT&amp;T Bell Labs in 1969.
 				Modern open-source derivations include <a class="external" href="http://www.gnu.org">GNU/Linux</a>, <a
-					class="external" href="http://www.freebsd.org">FreeBSD</a>, <a class="external"
-					href="http://www.netbsd.org">NetBSD</a>, <a class="external" href="http://www.openbsd.org">OpenBSD</a>,
-				etc.
+					class="external" href="http://www.freebsd.org">FreeBSD</a>, <a class="term" href="#netbsd">NetBSD</a>,
+				<a class="term" href="#openbsd">OpenBSD</a>, etc.
 			</dd>
 		</dl>
 		<table class="nav">

@@ -12,7 +12,7 @@
 		</h3>
 		<p>
 			I now introduce a case study of a real-world system call manual, in particular the manual for the <span
-				class="func">fsync</span> function from <a class="external" href="http://www.openbsd.org">OpenBSD</a>.  The
+				class="func">fsync</span> function from <a class="term" href="glossary.xhtml#openbsd">OpenBSD</a>.  The
 			original file may be viewed on-line at <a class="external"
 				href="http://www.openbsd.org/cgi-bin/cvsweb/src/lib/libc/sys/fsync.2">src/lib/libc/sys/fsync.2</a>, file version
 			1.9.
@@ -81,9 +81,9 @@
 			.\"     @(#)fsync.2	8.1 (Berkeley) 6/4/93
 		</div>
 		<p>
-			The <span class="cmd">cvs</span> identifiers (both from the current system, <a class="external"
-				href="http://www.openbsd.org">OpenBSD</a>, and the import source system, <a class="external"
-				href="http://www.netbsd.org">NetBSD</a>), copyright, license, and <span class="cmd">sccs</span> identifier (from
+			The <span class="cmd">cvs</span> identifiers (both from the current system, <a class="term"
+				href="glossary.xhtml#openbsd">OpenBSD</a>, and the import source system, <a class="term"
+				href="glossary.xhtml#netbsd">NetBSD</a>), copyright, license, and <span class="cmd">sccs</span> identifier (from
 			the original system) are presented in the usual way.
 		</p>
 		<div class="mdocin">

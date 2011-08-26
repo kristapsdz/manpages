@@ -37,7 +37,6 @@ h5		{ font-size: inherit; }
 .cmdarg,
 .cmdline,
 .func,
-.macro,
 .macroarg,
 .macroflag,
 .mdocin,
@@ -53,8 +52,11 @@ div.mdocout,
 div.mdoc	{ font-size: 7pt;
 		  line-height: 9pt; }
 .under		{ text-decoration: underline }
-.macro,
-.term		{ border-bottom: 1px dotted #0000ff; }
+a.macro,
+a.term		{ color: #666666;
+		  border-bottom: 1px dotted black; }
+a.macro:hover,
+a.term:hover	{ color: #339999; }
 .cmdflag:before,
 .macroflag:before	
 		{ content: "-"; }

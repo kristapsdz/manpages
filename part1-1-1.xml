@@ -153,10 +153,10 @@
 			.Qq Section text nested in a quote.
 		</div>
 		<p>
-			We can envision this scoping as follows, with an <span style="border: 1px solid green; padding: 2px;">outer scope</span>
+			We can envision this scoping as follows, with an <span style="border: 1px dashed green; padding: 2px;">outer scope</span>
 			and <span style="border: 1px solid blue; padding: 2px;">inner scope</span>:
 		</p>
-		<div class="mdocin" style="border: 1px solid green; padding: 2px;">
+		<div class="mdocin" style="border: 1px dashed green; padding: 2px;">
 			.Sh SECTION 2
 			<br />
 			.Qq <span style="border: 1px solid blue;">Section text nested in a quote.</span>

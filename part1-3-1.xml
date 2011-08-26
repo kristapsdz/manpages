@@ -13,7 +13,7 @@
 		<p>
 			I now introduce a case study of a real-world function library manual, in particular the manual for the <span
 				class="func">getc</span>, <span class="func">fgetc</span>, <span class="func">getw</span>, and <span
-				class="func">getchar</span> functions from <a class="external" href="http://www.openbsd.org">OpenBSD</a>.  The
+				class="func">getchar</span> functions from <a class="term" href="glossary.xhtml#openbsd">OpenBSD</a>.  The
 			original file may be viewed on-line at <a class="external"
 				href="http://www.openbsd.org/cgi-bin/cvsweb/src/lib/libc/stdio/getc.3">src/lib/libc/stdio/getc.3</a>,
 			file version 1.12.  This is not the manual for the full function library, but only a handful of similar functions.
