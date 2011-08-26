@@ -27,6 +27,7 @@ SOURCE	= book.css \
 	  part1-3.xml \
 	  part1-3-1.xml \
 	  part1-4.xml \
+	  part1-4-1.xml \
 	  part2.xml \
 	  part2-1.xml \
 	  part2-1-1.xml \
@@ -53,6 +54,7 @@ XHTMLS	= preface.xhtml \
 	  part1-3.xhtml \
 	  part1-3-1.xhtml \
 	  part1-4.xhtml \
+	  part1-4-1.xhtml \
 	  part2.xhtml \
 	  part2-1.xhtml \
 	  part2-1-1.xhtml \
@@ -68,7 +70,7 @@ XHTMLS	= preface.xhtml \
 	  glossary.xhtml \
 	  macros.xhtml
 
-VERSION	= 0.0.13
+VERSION	= 0.0.14
 DATE	= 26 August 2011
 
 all: $(XHTMLS) mdoc.epub index.html mdoc.source.tgz mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz mdoc.xhtml
@@ -157,6 +159,7 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 		OPS/part1-3.xhtml \
 		OPS/part1-3-1.xhtml \
 		OPS/part1-4.xhtml \
+		OPS/part1-4-1.xhtml \
 		OPS/part2.xhtml \
 		OPS/part2-1.xhtml \
 		OPS/part2-1-1.xhtml \

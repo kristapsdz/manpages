@@ -107,6 +107,8 @@
 			<BR>
 			.Lk <SPAN CLASS="chap"><A HREF="part1-4.xhtml">Chapter 4</A>: System Call</SPAN>
 			<BR>
+			.Lk <SPAN CLASS="sec"><A HREF="part1-4-1.xhtml">Section 1</A>: Case Study</SPAN>
+			<BR>
 			.Lk <SPAN CLASS="part"><A HREF="part2.xhtml">Part 2</A>: Manual Syntax and Structure</SPAN>
 			<BR>
 			.Lk <SPAN CLASS="chap"><A HREF="part2-1.xhtml">Chapter 1</A>: Syntax</SPAN>
@@ -163,16 +165,17 @@
 			<BR>
 			.Bl -ohang
 			<BR>
+			.It <SPAN>26 August 2011, <SPAN CLASS="ver">0.0.14</SPAN></SPAN>
+			<DIV>
+				Added <A HREF="part1-4-1.xhtml">System Call</A> case study.  This completes all of the case studies in <A
+				HREF="part1.xhtml">Part 1</A>.
+			</DIV>
+			.
+			<BR>
 			.It <SPAN>26 August 2011, <SPAN CLASS="ver">0.0.13</SPAN></SPAN>
 			<DIV>
 				Added <A HREF="part1-2-3.xhtml">Function</A> case study.  Also added version to ePub metadata and fixed some
 				links here and there.
-			</DIV>
-			.
-			<BR>
-			.It <SPAN>26 August 2011, <SPAN CLASS="ver">0.0.12</SPAN></SPAN>
-			<DIV>
-				Added jump table to proper reference for all macros.
 			</DIV>
 			.El
 			<BR>
