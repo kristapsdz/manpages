@@ -11,8 +11,9 @@
 			Appendix: Macros
 		</h1>
 		<p>
-			This table consists of brief descriptions of <span class="lang">mdoc</span> macros, then links to full descriptions
-			according to the <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html">mdoc</a> reference on <a class="external"
+			This table consists of brief descriptions of <span class="lang">mdoc</span> macros referenced in this book (meaning:
+			this is not a complete list!), then links to full descriptions according to the <a class="external"
+				href="http://mdocml.bsd.lv/mdoc.7.html">mdoc</a> reference on <a class="external"
 				href="http://mdocml.bsd.lv">http://mdocml.bsd.lv</a>.  <i>Disclaimer</i>: I'm the principle author of this
 			system. 
 		</p>
