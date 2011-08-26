@@ -1,8 +1,8 @@
-.SUFFIXES: .html .sgml .xml .xhtml
+.SUFFIXES: .html .sgml .xml .xhtml .opf
 
 SOURCE	= book.css \
 	  book.ncx \
-	  book.opf \
+	  book.xml \
 	  container.xml \
 	  css/book.css \
 	  external.png \
@@ -23,6 +23,7 @@ SOURCE	= book.css \
 	  part1-2.xml \
 	  part1-2-1.xml \
 	  part1-2-2.xml \
+	  part1-2-3.xml \
 	  part1-3.xml \
 	  part1-3-1.xml \
 	  part1-4.xml \
@@ -48,6 +49,7 @@ XHTMLS	= preface.xhtml \
 	  part1-2.xhtml \
 	  part1-2-1.xhtml \
 	  part1-2-2.xhtml \
+	  part1-2-3.xhtml \
 	  part1-3.xhtml \
 	  part1-3-1.xhtml \
 	  part1-4.xhtml \
@@ -66,7 +68,7 @@ XHTMLS	= preface.xhtml \
 	  glossary.xhtml \
 	  macros.xhtml
 
-VERSION	= 0.0.12
+VERSION	= 0.0.13
 DATE	= 26 August 2011
 
 all: $(XHTMLS) mdoc.epub index.html mdoc.source.tgz mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz mdoc.xhtml
@@ -84,7 +86,7 @@ install: all
 clean:
 	rm -f index.html 
 	rm -f $(XHTMLS) 
-	rm -f mdoc.epub mdoc.xhtml mdoc.xml mdoc.xml.part
+	rm -f mdoc.epub mdoc.xhtml mdoc.xml mdoc.xml.part book.opf
 	rm -f mdoc.source.tgz 
 	rm -f mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz
 
@@ -151,6 +153,7 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 		OPS/part1-2.xhtml \
 		OPS/part1-2-1.xhtml \
 		OPS/part1-2-2.xhtml \
+		OPS/part1-2-3.xhtml \
 		OPS/part1-3.xhtml \
 		OPS/part1-3-1.xhtml \
 		OPS/part1-4.xhtml \
@@ -180,3 +183,6 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 .xml.xhtml:
 	validate --xml --warn $<
 	sed -e "s!@VERSION@!$(VERSION)!g" -e "s!@DATE@!$(DATE)!g" $< >$@
+
+.xml.opf:
+	sed -e "s!@VERSION@!$(VERSION)!g" $< >$@

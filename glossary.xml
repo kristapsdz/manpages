@@ -39,6 +39,14 @@
 					class="screen">!</span>, or <span class="screen">?</span>.  This applies even in the event that a sentence
 				is quoted or parenthesised, where the spaces follow the final sentence enclosure.
 			</dd>
+			<dt id="isc_license">
+				ISC License
+			</dt>
+			<dd>
+				A permissive free software license issued by ISC, the <a class="external" href="http://www.isc.org">Internet
+					Systems Consortium</a>.  This is the license of choice for the <a class="external"
+					href="http://www.openbsd.org">OpenBSD</a> free <a class="term" href="#unix">UNIX</a> implementation.
+			</dd>
 			<dt id="html">
 				HTML
 			</dt>

@@ -99,6 +99,8 @@
 			<BR>
 			.Lk <SPAN CLASS="sec"><A HREF="part1-2-2.xhtml">Section 2</A>: Elaborate Function</SPAN>
 			<BR>
+			.Lk <SPAN CLASS="sec"><A HREF="part1-2-3.xhtml">Section 3</A>: Case Study</SPAN>
+			<BR>
 			.Lk <SPAN CLASS="chap"><A HREF="part1-3.xhtml">Chapter 3</A>: Function Library</SPAN>
 			<BR>
 			.Lk <SPAN CLASS="sec"><A HREF="part1-3-1.xhtml">Section 1</A>: Case Study</SPAN>
@@ -161,15 +163,16 @@
 			<BR>
 			.Bl -ohang
 			<BR>
-			.It <SPAN>26 August 2011, <SPAN CLASS="ver">0.0.12</SPAN></SPAN>
+			.It <SPAN>26 August 2011, <SPAN CLASS="ver">0.0.13</SPAN></SPAN>
 			<DIV>
-				Added jump table to proper reference for all macros.
+				Added <A HREF="part1-2-3.xhtml">Function</A> case study.  Also added version to ePub metadata and fixed some
+				links here and there.
 			</DIV>
 			.
 			<BR>
-			.It <SPAN>25 August 2011, <SPAN CLASS="ver">0.0.11</SPAN></SPAN>
+			.It <SPAN>26 August 2011, <SPAN CLASS="ver">0.0.12</SPAN></SPAN>
 			<DIV>
-				Cleaned up linking within book for full-text version.  Also cleaned up some glossary terms.
+				Added jump table to proper reference for all macros.
 			</DIV>
 			.El
 			<BR>

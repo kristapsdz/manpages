@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
-		<h2>
+		<h2 id="sec_system_call">
 			System Call
 		</h2>
 		<p>

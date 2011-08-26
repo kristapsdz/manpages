@@ -185,6 +185,12 @@
 			<dd>
 				Optional part of a command invocation.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264f70">Op</a>.
 			</dd>
+			<dt id="macro_ox">
+				Ox
+			</dt>
+			<dd>
+				Format the OpenBSD operating system name.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264f78">Ox</a>.
+			</dd>
 			<dt id="macro_pp">
 				Pp
 			</dt>
@@ -196,6 +202,12 @@
 			</dt>
 			<dd>
 				Parenthesise arguments.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265071">Pq</a>.
+			</dd>
+			<dt id="macro_ql">
+				Ql
+			</dt>
+			<dd>
+				Enclose literal argument in single quotes.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c26516c">Ql</a>.
 			</dd>
 			<dt id="macro_qq">
 				Qq

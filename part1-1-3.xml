@@ -13,8 +13,8 @@
 		<p>
 			I now introduce a case study of a real-world manual, in particular the <span class="cmd">cat</span> utility from <a
 				class="external" href="http://www.openbsd.org">OpenBSD</a>.  The original file may be viewed on-line at <a
-				class="external" href="http://www.openbsd.orghttp://manpages.bsd.lvhttp://manpages.bsd.lv/cgi-bin/cvsweb/src/bin/echo/echo.1">src/bin/echo/echo.1</a>.
-			I choose this mainly because of its simplicity.
+				class="external" href="http://www.openbsd.org/cgi-bin/cvsweb/src/bin/echo/echo.1">src/bin/echo/echo.1</a>, file
+			version 1.20.  I choose this mainly because of its simplicity.
 		</p>
 		<div class="mdocin">
 			.\"	$&#8203;OpenBSD: echo.1,v 1.20 2010/09/03 09:53:20 jmc Exp $&#8203;

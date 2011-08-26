@@ -15,8 +15,8 @@
 				class="func">getc</span>, <span class="func">fgetc</span>, <span class="func">getw</span>, and <span
 				class="func">getchar</span> functions from <a class="external" href="http://www.openbsd.org">OpenBSD</a>.  The
 			original file may be viewed on-line at <a class="external"
-				href="http://www.openbsd.orghttp://manpages.bsd.lv/cgi-bin/cvsweb/src/lib/libc/stdio/getc.3">src/lib/libc/stdio/getc.3</a>.  This is
-			not the manual for the full function library, but only a handful of similar functions.
+				href="http://www.openbsd.org/cgi-bin/cvsweb/src/lib/libc/stdio/getc.3">src/lib/libc/stdio/getc.3</a>,
+			file version 1.12.  This is not the manual for the full function library, but only a handful of similar functions.
 		</p>
 		<div class="mdocin">
 			.\"	$&#8203;OpenBSD: getc.3,v 1.12 2007/05/31 19:19:31 jmc Exp &#8203;$
@@ -334,7 +334,7 @@
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
 					<td class="nav-next"><a href="part1-4.xhtml">Next</a></td>
-					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part1-2-3.xml?cvsroot=manpages">History</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part1-3-1.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>
 		</table>
