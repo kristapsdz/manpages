@@ -147,9 +147,8 @@
 				class="macroarg">category</span> <span class="macroopt"><span class="macroarg">architecture</span></span>
 		</div>
 		<p>
-			These catogies are dictated by convention extending to the first published edition of UNIX.  The original forms of these
-			sections are documented in the <a class="external" href="http://www.cs.bell-labs.com/who/dmr/1stEdman.html">UNIX
-				Programmer's Manual</a>, First Edition, 1971:
+			These catogies are dictated by convention extending to the First Edition UNIX <a class="term"
+				href="glossary.xhtml#unix_programmers_manual">Programmer's Manual</a>.
 		</p>
 		<blockquote cite="http://www.cs.bell-labs.com/who/dmr/1stEdman.html">
 			<p>

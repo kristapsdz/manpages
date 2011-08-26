@@ -32,9 +32,8 @@
 		<p>
 			Formally speaking, a macro line is one beginning with a control character.  In <span class="lang">mdoc</span>, this is
 			traditionally the <span class="screen">.</span> character, although historical documents may also use the <span
-				class="screen">'</span> character.  This notation extends back to the <a class="external"
-				href="http://mit.edu/saltzer/www/publications/ctss/AH.9.01.html">RUNOFF</a> utility developed in 1964 by Jerome
-			H. Saltzer for the CTSS operating system.
+				class="screen">'</span> character.  This notation extends back to the historical <a class="term"
+				href="glossary.xhtml#runoff">RUNOFF</a> utility.
 		</p>
 		<blockquote cite="http://mit.edu/Saltzer/www/publications/CC-244.html">
 			<p>

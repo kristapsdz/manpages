@@ -39,6 +39,14 @@
 					class="screen">!</span>, or <span class="screen">?</span>.  This applies even in the event that a sentence
 				is quoted or parenthesised, where the spaces follow the final sentence enclosure.
 			</dd>
+			<dt id="unix_programmers_manual">
+				UNIX Programmer's Manual
+			</dt>
+			<dd>
+				A historical manual for programming and operating the <a class="term" href="#unix">UNIX</a> operating system.
+				The <a class="external" href="http://www.cs.bell-labs.com/who/dmr/1stEdman.html">First Edition</a>, 1971, is
+				preserved for reading.
+			</dd>
 			<dt id="isc_license">
 				ISC License
 			</dt>
@@ -120,6 +128,13 @@
 			<dd>
 				A document language written for the original <a class="term" href="#unix">UNIX</a> implementation in 1970.  This
 				language was used for text processing.
+			</dd>
+			<dt id="runoff">
+				RUNOFF
+			</dt>
+			<dd>
+				A simple text processing utility for the CTSS operating system, usually paired as <a class="external"
+					href="http://mit.edu/Saltzer/www/publications/CC-244.html">TYPSET and RUNOFF</a>, developed before 1965.
 			</dd>
 			<dt id="rtf">
 				RTF
