@@ -18,6 +18,12 @@
 			system. 
 		</p>
 		<dl>
+			<dt id="macro_ap">
+				Ap
+			</dt>
+			<dd>
+				Insert an apostrophe.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264170">Ap</a>.
+			</dd>
 			<dt id="macro_ar">
 				Ar
 			</dt>
@@ -173,6 +179,12 @@
 			</dt>
 			<dd>
 				Set or get name of documented component.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264e6d">Nm</a>.
+			</dd>
+			<dt id="macro_ns">
+				Ns
+			</dt>
+			<dd>
+				Suppress the following space and reset formatting.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264e73">Ns</a>.
 			</dd>
 			<dt id="macro_os">
 				Os

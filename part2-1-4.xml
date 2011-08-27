@@ -36,7 +36,9 @@
 		</h4>
 		<p>
 			An in-line macro's arguments are scoped to the current line.  Its scope may also be closed out by subsequent macros: an
-			in-line macro can never contain a nested macro.
+			in-line macro can never contain a nested macro.  For a complete reference, see <a class="external"
+				href="http://mdocml.bsd.lv/mdoc.7.html#x496e2d6c696e65">In-Line</a> macros in the <a class="external lang"
+				href="http://mdocml.bsd.lv/mdoc.7.html">mdoc</a> reference.
 		</p>
 		<div class="mdocsyntax">
 			<span class="macro">Name</span>
@@ -53,12 +55,66 @@
 		<p>
 			Not all in-line macros accept arguments, and some in-line macros accept a fixed number of arguments.
 		</p>
-		<h4 id="partial_block_macros">
-			Partial Block Macros
+		<p>
+			For example, the regular way of structuring command-line arguments, as described initially in the <a
+				href="part1-2-2.xhtml#elaborate_function">Elaborate Function</a> guide, is a command flag, followed by flag
+			arguments, followed by regular arguments.  We can put most invocation forms on one line as follows.
+		</p>
+		<div class="mdocsyntax">
+			.<span style="border: 1px dashed green; padding: 2px;"><a class="macro" href="macros.xhtml#macro_op">Op</a>
+				<span style="border: 1px solid blue;"><a class="macro" href="macros.xhtml#macro_ar">Fl</a>
+					<span class="macroarg">W</span></span>
+				<span style="border: 1px solid blue;"><a class="macro" href="macros.xhtml#macro_ns">Ns</a></span>
+				<span style="border: 1px solid blue;"><a class="macro" href="macros.xhtml#macro_ar">Ar</a>
+					<span class="macroarg">level</span></span>
+			</span>
+		</div>
+		<p>
+			In this example, <a href="macros.xhtml#macro_ar" class="macro">Ar</a>, <a href="macros.xhtml#macro_fl"
+				class="macro">Fl</a>, and <a href="macros.xhtml#macro_ns" class="macro">Ns</a> are in-line macros.  The <a
+				href="macros.xhtml#macro_op" class="macro">Op</a> is a block partial-implicit.  The <a
+				href="macros.xhtml#macro_fl" class="macro">Fl</a> macro opens within the <a href="macros.xhtml#macro_op"
+				class="macro">Op</a> and is closed by the <a href="macros.xhtml#macro_ns" class="macro">Ns</a>, which accepts no
+			arguments at all.  This suppresses the space between the flag and its arguments (this alternative style is used at
+			times, but discouraged).  The arguments are opened by <a href="macros.xhtml#macro_ar" class="macro">Ar</a> and close at
+			the end of the line.
+		</p>
+		<p>
+			The following is an example of macros with a fixed number of arguments:
+		</p>
+		<div class="mdocsyntax">
+			.<span style="border: 1px solid blue;"><a class="macro" href="macros.xhtml#macro_xr">Xr</a>
+				<span class="macroarg">mandoc</span>
+				<span class="macroarg">1</span></span>
+			<span style="border: 1px solid blue;"><a class="macro" href="macros.xhtml#macro_ap">Ap</a></span>
+			s
+		</div>
+		<p>
+			The <a class="macro" href="macros.xhtml#macro_xr">Xr</a> macro accepts the <span class="macroarg">mandoc</span> and
+			<span class="macroarg">1</span> arguments, then reverts to accepting text.  The <a class="macro"
+				href="macros.xhtml#macro_ap">Ap</a> accepts no arguments, so it immediately reverts to the trailing text.
+		</p>
+		<p>
+			Finally, an example of an in-line macro accepting flags follows:
+		</p>
+		<div class="mdocsyntax">
+			.<span style="border: 1px solid blue;"><a class="macro" href="macros.xhtml#macro_st">St</a>
+				<span class="macroflag">ansiC</span></span>
+		</div>
+		<p>
+			The argument to <a class="macro" href="macros.xhtml#macro_st">St</a> specifies the standard to be printed.
+		</p>
+		<h4 id="block_partial_implicit">
+			Block Partial Implicit
 		</h4>
 		<p>
-			A partial block macro is similar to an <a href="#inline_macros">in-line macro</a> in that its scope is restricted to the
-			current line.  However, unlike an in-line macro, it accepts nested macros.
+			A block partial macro is similar to an <a href="#inline_macros">in-line macro</a> in that its scope is restricted to the
+			current line: it is <i>implicitly</i> closed by the end of line (as opposed to <a href="#block_partial_explicit">block
+				partial explicit</a> macros) and <i>partial</i> in that it only extends to the current line (as opposed to <a
+				href="#block_full_implicit">block full implicit</a> macros).  Unlike an in-line macro, it accepts nested macros
+			(hence <i>block</i> macro).  For a complete reference, see <a class="external"
+				href="http://mdocml.bsd.lv/mdoc.7.html#x426c6f636b207061727469616c2d696d706c69636974">Block Partial Implicit</a>
+			macros in the <a class="external lang" href="http://mdocml.bsd.lv/mdoc.7.html">mdoc</a> reference.
 		</p>
 		<div class="mdocsyntax">
 			<span class="macro">Name</span>
@@ -80,12 +136,17 @@
 			Be warned.  If you open a <a href="#full_block_macros">full block macro</a> before the end of the line, behaviour is not
 			always well-defined as the scope is broken.
 		</p>
-		<h4 id="full_block_macros">
-			Full Block Macros
+		<h4 id="block_partial_explicit">
+			Block Partial Explicit
 		</h4>
 		<p>
-			The simplest multi-line macro is a full block macro, which is opened and closed by two separate macros.  The pair of
-			macros involved in a full block macro are called the beginning and ending macros.
+			The simplest multi-line macro is the block partial explicit, which is opened and closed by two separate
+			(<i>explicit</i>) macros.  It is <i>partial</i> because it does not differentiate between arguments on the current line
+			or subsequent lines, as opposed to <a href="#block_full_explicit">block full explicit</a> macros.  The pair of macros
+			involved in a full block macro are called the beginning and ending macros.
+			For a complete reference, see <a class="external"
+				href="http://mdocml.bsd.lv/mdoc.7.html#x426c6f636b207061727469616c2d6578706c69636974">Block Partial Explicit</a>
+			macros in the <a class="external lang" href="http://mdocml.bsd.lv/mdoc.7.html">mdoc</a> reference.
 		</p>
 		<div class="mdocsyntax">
 			.<span class="macro">Begin</span>
@@ -106,14 +167,19 @@
 			.<span class="macro">End</span>
 		</div>
 		<p>
-			One must be careful, in full block macros, not to break the scope of other full or <a
-				href="#partial_block_macros">partial block</a> macros, or behaviour is undefined.
+			One must be careful, in full block macros, not to break the scope of other block macros, or behaviour is undefined.
 		</p>
 		<p>
 			A variant of the full block macro is one where the ending macro may be one of several macros.  This is at times referred
 			to as implicit scope closure.  There is no syntactic difference between this and the full block macro but that the <span
 				class="macro">End</span> macro is arbitrary.
 		</p>
+		<h4 id="block_full_explicit">
+			Block Full Explicit
+		</h4>
+		<h4 id="block_full_implicit">
+			Block Full Implicit
+		</h4>
 		<table class="nav">
 			<tbody>
 				<tr>
