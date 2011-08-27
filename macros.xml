@@ -258,6 +258,12 @@
 			<dd>
 				Single-quote arguments.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265371">Sq</a>.
 			</dd>
+			<dt id="macro_ss">
+				Ss
+			</dt>
+			<dd>
+				Begin a manual subsection.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c265373">Ss</a>.
+			</dd>
 			<dt id="macro_st">
 				St
 			</dt>

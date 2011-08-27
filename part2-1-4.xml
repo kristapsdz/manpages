@@ -130,11 +130,74 @@
 		</div>
 		<p>
 			The scope of a partial block macro is always closed by the end of the line; any macros between it and the end of line
-			are interpreted as nested macros.  Macros may be nested arbitrarily.
+			are interpreted as nested macros.  We began this book with the block partial implicit macro <a class="macro"
+				href="macros.xhtml#macro_qq">Qq</a>.  The nested qualities of this macro category may be seen by embedding <a
+				class="macro" href="macros.xhtml#macro_qq">Qq</a> and <a class="macro" href="macros.xhtml#macro_pq">Pq</a>
 		</p>
+		<div class="mdocsyntax">
+			.<span style="border: 1px dashed green; padding: 2px;"><a class="macro" href="macros.xhtml#macro_pq">Pq</a>
+				<span style="border: 1px solid blue;"><a class="macro" href="macros.xhtml#macro_qq">Qq</a>
+					<span class="macroarg">Parenthesised quotation .</span>
+				</span>
+			</span>
+		</div>
 		<p>
-			Be warned.  If you open a <a href="#full_block_macros">full block macro</a> before the end of the line, behaviour is not
-			always well-defined as the scope is broken.
+			Be warned.  If you open but do not close a <a href="#block_partial_explicit">block partial explicit</a> macro before the
+			end of the line, behaviour is not always well-defined as the scope is broken.
+		</p>
+		<h4 id="block_full_implicit">
+			Block Full Implicit
+		</h4>
+		<p>
+			A macro seen early on, the <a class="macro" href="macros.xhtml#macro_sh">Sh</a> macro, is block full implicit.  Unlike
+			<a href="#block_partial_implicit">block partial implicit</a> macros, these consist of multiple lines (they are
+			<i>blocks</i>) and treat the line arguments and multi-line arguments differently (<i>full</i>).
+			For a complete reference, see <a class="external"
+				href="http://mdocml.bsd.lv/mdoc.7.html#x426c6f636b2066756c6c2d696d706c69636974">Block Full Implicit</a>
+			macros in the <a class="external lang" href="http://mdocml.bsd.lv/mdoc.7.html">mdoc</a> reference.
+		</p>
+		<div class="mdocsyntax">
+			.<span class="macro">Begin</span>
+			<span class="macroopt">
+				<span class="macroflag">Flag</span> 
+				<span class="macroopt">
+					<span class="macroarg">Flag Arg</span>
+				</span>
+			</span>
+			<span class="macroopt">
+				<span class="macroarg">Arg...</span>
+			</span>
+			<br />
+			<span class="macroopt">
+				<span class="macroarg">Arg...</span>
+			</span>
+		</div>
+		<p>
+			The scope of <span class="macro">Begin</span> is closed out implicitly &mdash; by one of several possible macros or the
+			end of file.  The notion of a <i>full</i> macro is obvious when consindering <a class="macro"
+				href="macros.xhtml#macro_sh">Sh</a>:
+		</p>
+		<div class="mdocsyntax">
+			<div style="border: 1px solid blue; padding: 2px;">
+				.<span style="border: 1px dashed green;"><a class="macro" href="macros.xhtml#macro_st">Sh</a> 
+					<span class="macroargs">SECTION 1</span></span>
+				<br style="margin: 2px;" />
+				<span style="border: 1px dashed green;">Sectional text.</span>
+			</div>
+			<div style="border: 1px solid blue; padding: 2px;">
+				.<span style="border: 1px dashed green;"><a class="macro" href="macros.xhtml#macro_st">Sh</a> 
+					<span class="macroargs">SECTION 2</span></span>
+				<br style="margin: 2px;" />
+				<span style="border: 1px dashed green;">Sectional text.</span>
+			</div>
+		</div>
+		<p>
+			In this, the macro must separately decorate its line arguments and multi-line arguments.  In this case, the line
+			arguments must be bolded while the multi-line arguments must be indented.  The <a class="macro"
+				href="macros.xhtml#macro_sh">Sh</a> macro is closed out by a subsequent <a class="macro"
+				href="macros.xhtml#macro_sh">Sh</a> or the end of file.  Compare this to <a class="macro"
+				href="macros.xhtml#macro_ss">Ss</a>, which closes out with a subsequent <a class="macro"
+				href="macros.xhtml#macro_sh">Sh</a>, <a class="macro" href="macros.xhtml#macro_ss">Ss</a>, or end of file.
 		</p>
 		<h4 id="block_partial_explicit">
 			Block Partial Explicit
@@ -177,9 +240,14 @@
 		<h4 id="block_full_explicit">
 			Block Full Explicit
 		</h4>
-		<h4 id="block_full_implicit">
-			Block Full Implicit
-		</h4>
+		<p>
+			The block full explicit macros are <i>full</i> in the sense that arguments on the macro line and arguments following are
+			treated differently.  The easiest example of this is the <a href="macros.xhtml#macro_bl" class="macro">Bl</a>.  These
+			macros are <i>explicitly</i> closed by a closing macro and may contain nested macros.
+			For a complete reference, see <a class="external"
+				href="http://mdocml.bsd.lv/mdoc.7.html#x426c6f636b2066756c6c2d6578706c69636974">Block Full Explicit</a>
+			macros in the <a class="external lang" href="http://mdocml.bsd.lv/mdoc.7.html">mdoc</a> reference.
+		</p>
 		<table class="nav">
 			<tbody>
 				<tr>
