@@ -242,11 +242,34 @@
 		</h4>
 		<p>
 			The block full explicit macros are <i>full</i> in the sense that arguments on the macro line and arguments following are
-			treated differently.  The easiest example of this is the <a href="macros.xhtml#macro_bl" class="macro">Bl</a>.  These
-			macros are <i>explicitly</i> closed by a closing macro and may contain nested macros.
-			For a complete reference, see <a class="external"
-				href="http://mdocml.bsd.lv/mdoc.7.html#x426c6f636b2066756c6c2d6578706c69636974">Block Full Explicit</a>
-			macros in the <a class="external lang" href="http://mdocml.bsd.lv/mdoc.7.html">mdoc</a> reference.
+			treated differently (like <a href="#block_full_implicit">block full implicit</a> macros).  The earliest example of this
+			is the <a href="macros.xhtml#macro_bl" class="macro">Bl</a>.  These macros are <i>explicitly</i> closed by a closing
+			macro and may contain nested macros.  For a complete reference, see <a class="external"
+				href="http://mdocml.bsd.lv/mdoc.7.html#x426c6f636b2066756c6c2d6578706c69636974">Block Full Explicit</a> macros
+			in the <a class="external lang" href="http://mdocml.bsd.lv/mdoc.7.html">mdoc</a> reference.
+		</p>
+		<p>
+			Consider the <a href="macros.xhtml#macro_bd" class="macro">Bd</a> macro, which does not accept line arguments (most
+			block full explicit macros do not accept line arguments).  It is manually closed by <a href="macros.xhtml#macro_ed"
+				class="macro">Ed</a>.
+		</p>
+		<div class="mdocsyntax">
+			<div style="border: 1px solid blue; padding: 2px;">
+				.<span style="border: 1px dashed green;"><a class="macro" href="macros.xhtml#macro_bd">Bd</a> 
+					<span class="macroflag">ragged</span>
+					<span class="macroflag">offset</span>
+					<span class="macroargs">indent</span></span>
+				<div style="border: 1px dashed green; margin: 2px;">
+					Display text.
+					<br />
+					More display text.
+				</div>
+				.<a class="macro" href="macros.xhtml#macro_ed">Ed</a> 
+			</div>
+		</div>
+		<p>
+			In this example, the text between the <a class="macro" href="macros.xhtml#macro_bd">Bd</a> and <a class="macro"
+				href="macros.xhtml#macro_ed">Ed</a> are treated specially.
 		</p>
 		<table class="nav">
 			<tbody>

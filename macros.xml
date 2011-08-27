@@ -78,6 +78,12 @@
 			<dd>
 				Constant-value variables.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264476">Dv</a>.
 			</dd>
+			<dt id="macro_ed">
+				Ed
+			</dt>
+			<dd>
+				End a display.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264564">Ed</a>.
+			</dd>
 			<dt id="macro_el">
 				El
 			</dt>
