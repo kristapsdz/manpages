@@ -1,6 +1,5 @@
 html		{ }
 body		{ font-family: serif;
-		  letter-spacing: 1px;
 		  line-height: 14pt;
 		  font-size: 10pt; }
 .nav		{ display: none; }

@@ -2,8 +2,7 @@ html		{ margin-top: 1em;
 		  width: 75%;
 		  margin-left: 4em; }
 body		{ font-family: serif;
-		  letter-spacing: 1px;
-		  line-height: 20px;
+		  line-height: 14pt;
 		  font-size: 10pt; }
 table.nav	{ width: 100%; }
 td.nav-home	{ width: 1%; }
