@@ -24,12 +24,25 @@
 				A programming language developed in 1969 by Dennis Ritchie at AT&amp;T Bell Labs.  This is the language of
 				choice for <a class="term" href="#unix">UNIX</a> development.
 			</dd>
+			<dt id="cddl">
+				CDDL
+			</dt>
+			<dd>
+				The Common Development and Distribution License, a free software license.
+			</dd>
 			<dt id="command_line">
 				Command Line
 			</dt>
 			<dd>
 				The text environment for operating <a class="term" href="#unix">UNIX</a> systems.  Often replaced by graphical
 				windowing systems such as the <a class="external" href="http://www.xorg.org">X Window System</a>.
+			</dd>
+			<dt id="dos_prompt">
+				DOS Prompt
+			</dt>
+			<dd>
+				Text (command line) interface to the historical Disk Operating System, usually Microsoft's Disk Operating System
+				(MS-DOS).
 			</dd>
 			<dt id="english_spacing">
 				English Spacing
@@ -39,13 +52,12 @@
 					class="screen">!</span>, or <span class="screen">?</span>.  This applies even in the event that a sentence
 				is quoted or parenthesised, where the spaces follow the final sentence enclosure.
 			</dd>
-			<dt id="unix_programmers_manual">
-				UNIX Programmer's Manual
+			<dt id="gnu">
+				GNU
 			</dt>
 			<dd>
-				A historical manual for programming and operating the <a class="term" href="#unix">UNIX</a> operating system.
-				The <a class="external" href="http://www.cs.bell-labs.com/who/dmr/1stEdman.html">First Edition</a>, 1971, is
-				preserved for reading.
+				The <a class="external" href="http://www.gnu.org">GNU</a> project is a UNIX-like operating system licensed under
+				on the <a href="http://www.gnu.org/copyleft/gpl.html" class="external">General Public License</a>.
 			</dd>
 			<dt id="isc_license">
 				ISC License
@@ -105,14 +117,21 @@
 				Nroff
 			</dt>
 			<dd>
-				The traditional formatter for <a href="#roff" class="term lang">roff</a> (and thus <a href="#mdoc" class="term
-					lang">mdoc</a>).
+				The traditional formatter of <a href="#roff" class="term lang">roff</a> (and thus <a href="#mdoc" class="term
+					lang">mdoc</a>) for UNIX <a class="term" href="#terminal">terminal</a> output.
 			</dd>
 			<dt id="openbsd">
 				OpenBSD
 			</dt>
 			<dd>
 				A free BSD <a href="#unix" class="term">UNIX</a>, <a class="external" href="http://www.openbsd.org">OpenBSD</a>.
+			</dd>
+			<dt id="pdf">
+				PDF
+			</dt>
+			<dd>
+				The <a class="external" href="http://www.adobe.com/pdf/">Portable Document Format</a> language used to format
+				documents, usually for printing.
 			</dd>
 			<dt id="posix">
 				POSIX
@@ -122,12 +141,26 @@
 					href="http://pubs.opengroup.org/onlinepubs/9699919799/">POSIX.1-2008</a>, IEEE Std 1003.1-2008.
 					Informally called UNIX08.  Standards document for all UNIX implementations.
 			</dd>
+			<dt id="ps">
+				PS
+			</dt>
+			<dd>
+				The <a class="external" href="http://www.adobe.com/products/postscript/">PostScript</a> language, usually used
+				as a page description language (e.g., printing).
+			</dd>
 			<dt id="roff">
 				Roff
 			</dt>
 			<dd>
 				A document language written for the original <a class="term" href="#unix">UNIX</a> implementation in 1970.  This
 				language was used for text processing.
+			</dd>
+			<dt id="roff_cmd">
+				Roff (Command)
+			</dt>
+			<dd>
+				Formatter used by the First Edition UNIX, accepting the <a href="#roff" class="term lang">roff</a> language.
+				Split apart into <a class="term cmd" href="#nroff">nroff</a> and <a class="term cmd" href="#troff">troff</a>.
 			</dd>
 			<dt id="runoff">
 				RUNOFF
@@ -158,6 +191,13 @@
 				The <a class="term" href="#command_line">command line</a> environment on a computer.  This can either refer to a
 				terminal utility run within a graphical environment or the computer screen itself in text mode.
 			</dd>
+			<dt id="troff">
+				Troff
+			</dt>
+			<dd>
+				The historical formatter of <a href="#roff" class="term lang">roff</a> (and thus <a href="#mdoc" class="term
+					lang">mdoc</a>) for printed/graphical output.
+			</dd>
 			<dt id="unix">
 				UNIX
 			</dt>
@@ -166,6 +206,14 @@
 				Modern open-source derivations include <a class="external" href="http://www.gnu.org">GNU/Linux</a>, <a
 					class="external" href="http://www.freebsd.org">FreeBSD</a>, <a class="term" href="#netbsd">NetBSD</a>,
 				<a class="term" href="#openbsd">OpenBSD</a>, etc.
+			</dd>
+			<dt id="unix_programmers_manual">
+				UNIX Programmer's Manual
+			</dt>
+			<dd>
+				A historical manual for programming and operating the <a class="term" href="#unix">UNIX</a> operating system.
+				The <a class="external" href="http://www.cs.bell-labs.com/who/dmr/1stEdman.html">First Edition</a>, 1971, is
+				preserved for reading.
 			</dd>
 			<dt id="xhtml">
 				XHTML

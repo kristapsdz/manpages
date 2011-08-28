@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Formatters</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<h2>
+			Formatters
+		</h2>
+		<p>
+			The most important part of the <a class="lang term" href="glossary.xhtml#mdoc">mdoc</a> tools is the formatter, which
+			compiles an <span class="lang">mdoc</span> document into an output format.
+		</p>
+		<div class="mdocout">
+			<div class="mdoc-section">
+				<h1>NAME</h1>
+				<b class="mdoc-name">cat</b> &#8212; <span class="mdoc-desc">concatenate and print files</span></div>
+			<div class="mdoc-section">
+				<h1>SYNOPSIS</h1>
+				<table class="mdoc-synopsis">
+					<col style="width: 3.00ex;"/>
+					<col/>
+					<tbody>
+						<tr>
+							<td>
+								cat
+							</td>
+							<td>
+								&#91;<span class="mdoc-opt"><b class="mdoc-flag">&#45;benstuv</b></span>&#93; 
+								&#91;<span class="mdoc-opt"><i class="mdoc-arg">file ...</i></span>&#93;
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="mdoc-section">
+				<h1>DESCRIPTION</h1>
+				The <b class="mdoc-name">cat</b> utility reads files sequentially, writing them to the standard output. The <i
+					class="mdoc-arg">file</i> operands are processed in command-line order.  If <i class="mdoc-arg">file</i>
+				is a single dash (&#8216;&#8203;-&#39;) or absent, <b class="mdoc-name">cat</b> reads from
+				the standard input.
+			</div>
+		</div>
+		<p>
+			All formatters must adhere to the general conventions set forth in the UNIX First Edition <a class="term"
+				href="glossary.xhtml#unix_programmers_manual">Programmer's Manual</a>, which details the terms that are in bold
+			and those that are italicised (rendered with underlines in terminals).
+		</p>
+		<p>
+			Most formatters also support printer-friendly output, usually to <a href="glossary.xhtml#ps" class="term">PS</a> or <a
+				href="glossary.xhtml#pdf" class="term">PDF</a>.  Some also include <a href="glossary.xhtml#html"
+				class="term">HTML</a> or <a href="glossary.xhtml#xhtml" class="term">XHTML</a> for web publication.
+		</p>
+		<p>
+			In this book, I'll focus only on contemporary formatters.  Originally, <span class="lang">mdoc</span>, as a macro set
+			for the <a href="glossary.xhtml#roff" class="term lang">roff</a> language, was exclusively formatted by the <a
+				href="glossary.xhtml#roff_cmd" class="term cmd">roff</a> command prior to the inception of UNIX.  This utility
+			was re-written for the First Edition UNIX, 1971, as <a href="glossary.xhtml#nroff" class="term cmd">nroff</a>, tailored
+			for the <a class="term" href="glossary.xhtml#terminal">terminal</a>; and <a href="glossary.xhtml#troff" class="term
+				cmd">troff</a>, which focussed on graphical output such as high-quality printers.
+		</p>
+		<p>
+			Most modern utilities, however, encompass both of these capabilities.  
+		</p>
+		<table class="nav">
+			<tbody>
+				<tr>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
+					<td class="nav-next"><a href="part3-1-1.xhtml">Next</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part3-1.xml?cvsroot=manpages">History</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="edits">
+			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
+		</p>
+	</body>
+</html>

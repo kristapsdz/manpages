@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Tools</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<h1>
+			Tools
+		</h1>
+		<p>
+			By now we've discussed the <a class="lang term" href="glossary.xhtml#mdoc">mdoc</a> language by way of example and a
+			non-authoritative reference.  I've even referenced some formatters, such as <a class="term"
+				href="glossary.xhtml#mandoc">mandoc</a> and <a class="term" href="glossary.xhtml#nroff">nroff</a>.  In this
+			part, I'll focus on the environment of <span class="lang">mdoc</span>: formatters, project integeration, and so on.
+		</p>
+		<p>
+			After reading this part, you'll have a much better idea of how to use <span class="lang">mdoc</span> on your operating
+			system.  Formatters and tools are available for most any system, <a href="glossary.xhtml#unix" class="term">UNIX</a> and
+			non-UNIX.
+		</p>
+		<table class="nav">
+			<tbody>
+				<tr>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
+					<td class="nav-next"><a href="part3-1.xhtml">Next</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part3.xml?cvsroot=manpages">History</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="edits">
+			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
+		</p>
+	</body>
+</html>

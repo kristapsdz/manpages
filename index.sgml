@@ -133,9 +133,19 @@
 			<BR>
 			.Lk <SPAN CLASS="sec"><A HREF="part2-3-1.xhtml">Section 1</A>: Sections</SPAN>
 			<BR>
-			.Lk <SPAN><A HREF="glossary.xhtml">Appendix: Glossary</A></SPAN>
+			.Lk <SPAN CLASS="part"><A HREF="part3.xhtml">Part 3</A>: Tools</SPAN>
 			<BR>
-			.Lk <SPAN><A HREF="macros.xhtml">Appendix: Macros</A></SPAN>
+			.Lk <SPAN CLASS="chap"><A HREF="part3-1.xhtml">Chapter 1</A>: Formatters</SPAN>
+			<BR>
+			.Lk <SPAN CLASS="sec"><A HREF="part3-1-1.xhtml">Section 1</A>: groff (GNU troff)</SPAN>
+			<BR>
+			.Lk <SPAN CLASS="sec"><A HREF="part3-1-2.xhtml">Section 2</A>: mandoc (mdocml)</SPAN>
+			<BR>
+			.Lk <SPAN CLASS="sec"><A HREF="part3-1-3.xhtml">Section 3</A>: troff (Heirloom troff)</SPAN>
+			<BR>
+			.Lk <SPAN CLASS="part"><A HREF="glossary.xhtml">Appendix: Glossary</A></SPAN>
+			<BR>
+			.Lk <SPAN CLASS="part"><A HREF="macros.xhtml">Appendix: Macros</A></SPAN>
 			<BR>
 			.
 			<BR>

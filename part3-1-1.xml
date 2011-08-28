@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>groff (GNU troff)</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<h3 class="groff">
+			groff (GNU troff)
+		</h3>
+		<p>
+			The <a class="term" href="glossary.xhtml#gnu">GNU</a> project wrote the <span class="cmd">groff</span> utility as a
+			reimplementation of <span class="cmd">ditroff</span>, which encompassed the functionality of the historical <a
+				class="term cmd" href="glossary.xhtml#nroff">nroff</a> and <a class="term cmd" href="glossary.xhtml">troff</a>
+			utilities.  Its first version was released in 1990, and it is still actively maintained.
+		</p>
+		<p>
+			<span class="cmd">groff</span> is significant in that it is the predominant implementation of <a class="term cmd"
+				href="glossary.xhtml#nroff">nroff</a> and <a class="term cmd" href="glossary.xhtml">troff</a> on contemporary
+			UNIX operating systems.  It significantly shepherded the development and evolution of <span class="lang">mdoc</span>.
+		</p>
+		<table class="nav">
+			<tbody>
+				<tr>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
+					<td class="nav-next"><a href="part3-1-2.xhtml">Next</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part3-1-1.xml?cvsroot=manpages">History</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="edits">
+			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
+		</p>
+	</body>
+</html>
