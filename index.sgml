@@ -165,15 +165,15 @@
 			<BR>
 			.Bl -ohang
 			<BR>
-			.It <SPAN>27 August 2011, <SPAN CLASS="ver">0.0.16</SPAN></SPAN>
+			.It <SPAN>28 August 2011, <SPAN CLASS="ver">0.0.17</SPAN></SPAN>
 			<DIV>
-				Lots of work in the <A HREF="part2-1-4.xhtml">Macros</A> section.
+				Finished <A HREF="part2-1-4.xhtml">Macros</A> examples, cleaned up font.
 			</DIV>
 			.
 			<BR>
-			.It <SPAN>26 August 2011, <SPAN CLASS="ver">0.0.15</SPAN></SPAN>
+			.It <SPAN>27 August 2011, <SPAN CLASS="ver">0.0.16</SPAN></SPAN>
 			<DIV>
-				Clean-ups and readability improvements.
+				Lots of work in the <A HREF="part2-1-4.xhtml">Macros</A> section.
 			</DIV>
 			.El
 			<BR>

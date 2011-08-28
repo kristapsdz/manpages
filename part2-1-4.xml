@@ -233,10 +233,20 @@
 			One must be careful, in full block macros, not to break the scope of other block macros, or behaviour is undefined.
 		</p>
 		<p>
-			A variant of the full block macro is one where the ending macro may be one of several macros.  This is at times referred
-			to as implicit scope closure.  There is no syntactic difference between this and the full block macro but that the <span
-				class="macro">End</span> macro is arbitrary.
+			We have not yet considered a block partial explicit macro pair in this book.  But we can do so by considering <a
+				href="macros.xhtml#macro_oo" class="macro">Oo</a> and <a class="macro" href="macros.xhtml#macro_oc">Oc</a>.  This pair of
+			macros, for option open and option close, extend the behaviour of <a href="macros.xhtml#macro_op" class="macro">Op</a>
+			to multiple lines.
 		</p>
+		<div class="mdocsyntax">
+			.<a class="macro" href="macros.xhtml#macro_fl">Fl</a> 
+			<span class="macroarg">W</span>
+			<a class="macro" href="macros.xhtml#macro_oo">Oo</a>
+			<br />
+			<span class="macroarg">warn</span>|<span class="macroarg">error</span>|<span class="macroarg">fatal</span>
+			<br />
+			.<a class="macro" href="macros.xhtml#macro_oc">Oc</a>
+		</div>
 		<h4 id="block_full_explicit">
 			Block Full Explicit
 		</h4>

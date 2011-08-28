@@ -204,6 +204,18 @@
 			<dd>
 				List item.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264974">It</a>.
 			</dd>
+			<dt id="macro_oc">
+				Oc
+			</dt>
+			<dd>
+				Close an optional part block.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264f63">Oc</a>.
+			</dd>
+			<dt id="macro_oo">
+				Oo
+			</dt>
+			<dd>
+				Open an optional part block.  Reference: <a class="external" href="http://mdocml.bsd.lv/mdoc.7.html#x5c264f6f">Oo</a>.
+			</dd>
 			<dt id="macro_op">
 				Op
 			</dt>
