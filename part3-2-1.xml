@@ -29,10 +29,21 @@
 			&nbsp;&nbsp;&nbsp;&nbsp;rm -f foo foo.o
 			<br />
 			<br />
+			install: all
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;install -m 0755 foo /usr/local/bin
+			<br />
+			<br />
 			foo: foo.o
 			<br />
 			&nbsp;&nbsp;&nbsp;&nbsp;cc -o foo foo.o
 		</div>
+		<p>
+			A rigorous analysis of this syntax is beyond the scope of this book (do consult your system's documenation for the <span
+				class="cmd">make</span> command with <span class="cmdline">man make</span>).  It defines the targets <span
+				class="screen">all</span>, <span class="screen">clean</span>, and <span class="screen">install</span>: build,
+			clean up, and install the utility, respectively.
+		</p>
 		<h4>
 			File Extension
 		</h4>
@@ -51,10 +62,10 @@
 			.SUFFIXES: .in.1 .1
 		</div>
 		<p>
-			If more categories are built, these would need to be added as appropriate.
+			If more categories are built, these would need to be added (e.g., <span class="screen">.in.3 .3</span>, etc.).
 		</p>
 		<h4>
-			Build Rule
+			Build Rules
 		</h4>
 		<p>
 			A build rule is required to translate input to output.  Let's begin with a general rule to establish that the <span
@@ -66,6 +77,8 @@
 			.in.1.1:
 			<br />
 			&nbsp;&nbsp;&nbsp;&nbsp;mandoc -Tlint $&lt;
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;#troff -mandoc $&lt; &gt;/dev/null
 			<br />
 			&nbsp;&nbsp;&nbsp;&nbsp;cp -f $&lt; $@
 		</div>
@@ -99,6 +112,13 @@
 			&nbsp;&nbsp;&nbsp;&nbsp;rm -f foo foo.o foo.1
 			<br />
 			<br />
+			install: all
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;install -m 0755 foo /usr/local/bin
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;install -m 0644 foo.1 /usr/local/share/man/man1
+			<br />
+			<br />
 			foo: foo.o
 			<br />
 			&nbsp;&nbsp;&nbsp;&nbsp;cc -o foo foo.o
@@ -108,8 +128,44 @@
 			<br />
 			&nbsp;&nbsp;&nbsp;&nbsp;mandoc -Tlint $&lt;
 			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;#troff -mandoc $&lt; &gt;/dev/null
+			<br />
 			&nbsp;&nbsp;&nbsp;&nbsp;cp -f $&lt; $@
 		</div>
+		<h4>
+			Formatted Output
+		</h4>
+		<p>
+			Let's build an <a class="term" href="glossary.xhtml#html">HTML</a> manual with the <span class="cmdline">make www</span>
+			rule.  For simplicity, we won't install this file; it's merely for instruction.  This rule will translate the built
+			manual <span class="file">foo.1</span> into an HTML file <span class="file">foo.1.html</span>.
+		</p>
+		<div class="screen">
+			.SUFFIXES: .in.1 .1 .1.html
+		</div>
+		<p>
+			Let's let our rule include a <a class="term" href="glossary.xhtml#css">CSS</a> file.  Note that the traditional <a
+				class="term cmd" href="glossary.xhtml#troff">troff</a> utility doesn't include HTML output.
+		</p>
+		<div class="screen">
+			foo.1.html: style.css
+			<br />
+			<br />
+			.1.1.html:
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;mandoc -Thtml -Ostyle=style.css $&lt; &gt;$@
+		</div>
+		<p>
+			The target rule is simply as follows:
+		</p>
+		<div class="screen">
+			www: foo.1.html
+		</div>
+		<p>
+			The reason for building from <span class="file">foo.1</span> instead of <span class="file">foo.in.1</span> is that we
+			may wish to postprocess the <span class="file">foo.1</span> file after it has been created.  However, this is entirely
+			decision of the programmer.
+		</p>
 		<table class="nav">
 			<tbody>
 				<tr>

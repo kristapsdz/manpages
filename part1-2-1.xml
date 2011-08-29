@@ -63,7 +63,7 @@
 			</div>
 		</div>
 		<p>
-			By now it comes as now surprise that <a href="macros.xhtml#macro_ft" class="macro">Ft</a> is scoped to the end of its
+			By now it comes as no surprise that <a href="macros.xhtml#macro_ft" class="macro">Ft</a> is scoped to the end of its
 			line, as is <a href="macros.xhtml#macro_fn" class="macro">Fn</a> in this example.  In fact, both of these macros are
 			syntatically similar to the <a href="macros.xhtml#macro_ar" class="macro">Ar</a> and <a href="macros.xhtml#macro_fl"
 				class="macro">Fl</a> found in the first chapter: their scopes are closed by subsequent macros on the same line.

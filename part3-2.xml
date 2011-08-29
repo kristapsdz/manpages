@@ -11,15 +11,19 @@
 			Project Integration
 		</h2>
 		<p>
-			<span class="lang">mdoc</span> documents fit perfectly into a UNIX development environment.  In general, this is defined
-			by a group of source files that produce executables as compiled and linked by <a class="cmd term"
-				href="glossary.xhtml#make">make</a>, called a build system.  Sources are usually version-controlled using <a
-				class="cmd term" href="glossary.xhtml#cvs">cvs</a>, called revision control.
+			<span class="lang">mdoc</span> documents fit perfectly into a <a class="term" href="glossary.xhtml#unix">UNIX</a>
+			development environment.  In general, this is defined by a group of source files that produce executables as compiled
+			and linked by <a class="cmd term" href="glossary.xhtml#make">make</a>, called a build system.  Sources are usually
+			version-controlled using <a class="cmd term" href="glossary.xhtml#cvs">cvs</a>, called revision control.
 		</p>
 		<p>
 			In this section, I discuss methods for integrating <span class="cmd">mdoc</span> documents into a source-controlled
 			build environment.  I'll focus on <a href="glossary.xhtml#mandoc" class="term cmd">mandoc</a> as a formatter, but
 			provide stubs for using <a href="glossary.xhtml#troff" class="term cmd">troff</a>.
+		</p>
+		<p>
+			Our examples will consider a project building a utility <span class="cmd">foo</span> from its single source file <span
+				class="file">foo.c</span>.
 		</p>
 		<table class="nav">
 			<tbody>

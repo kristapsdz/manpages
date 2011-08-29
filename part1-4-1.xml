@@ -18,9 +18,9 @@
 			1.9.
 		</p>
 		<div class="mdocin">
-			.\"	$&#8203;OpenBSD: fsync.2,v 1.9 2011/04/29 07:12:44 jmc Exp $
+			.\"&nbsp;&nbsp;&nbsp;&nbsp;$&#8203;OpenBSD: fsync.2,v 1.9 2011/04/29 07:12:44 jmc Exp $
 			<br />
-			.\"	$&#8203;NetBSD: fsync.2,v 1.4 1995/02/27 12:32:38 cgd Exp $
+			.\"&nbsp;&nbsp;&nbsp;&nbsp;$&#8203;NetBSD: fsync.2,v 1.4 1995/02/27 12:32:38 cgd Exp $
 			<br />
 			.\"
 			<br />

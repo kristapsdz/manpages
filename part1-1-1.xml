@@ -218,7 +218,7 @@
 		</div>
 		<p>
 			You can see that we re-invoke <a href="macros.xhtml#macro_nm" class="macro">Nm</a> in the <span
-				class="sec">DESCRIPTION</span>, only without arguments.  The formatter is smart enough to fill in its argument
+				class="sec">SYNOPSIS</span>, only without arguments.  The formatter is smart enough to fill in its argument
 			with the last supplied argument, in this case being <span class="screen">hi</span>.
 		</p>
 		<p>

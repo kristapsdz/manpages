@@ -16,8 +16,6 @@
 			macros.  These always occur at the beginning of a manual.
 		</p>
 		<div class="mdocin">
-			.\" Prologue follows:
-			<br />
 			.Dd May 26 2011
 			<br />
 			.Dt MDOC 7

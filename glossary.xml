@@ -43,6 +43,12 @@
 				The text environment for operating <a class="term" href="#unix">UNIX</a> systems.  Often replaced by graphical
 				windowing systems such as the <a class="external" href="http://www.xorg.org">X Window System</a>.
 			</dd>
+			<dt id="css">
+				CSS
+			</dt>
+			<dd>
+				Cascading style sheet.
+			</dd>
 			<dt id="cvs">
 				CVS
 			</dt>

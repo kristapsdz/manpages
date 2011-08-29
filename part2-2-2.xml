@@ -17,16 +17,6 @@
 			between categories and, of course, the material itself.
 		</p>
 		<div class="mdocin">
-			.\" Prologue follows:
-			<br />
-			.Dd May 26 2011
-			<br />
-			.Dt MDOC 7
-			<br />
-			.Os
-			<br />
-			.\" Document body follows:
-			<br />
 			.Sh NAME
 			<br />
 			.Nm mdoc

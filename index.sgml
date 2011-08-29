@@ -47,14 +47,10 @@
 			.Pp
 			<DIV>
 				This guide is structured first as a series of tutorials, then as a guide to UNIX manual best practises.  It is
-				<B>not</B> a reference!  For that, refer to your local <I>mdoc</I> manual.
-			</DIV>
-			.Pp
-			<DIV> 
-				It is, moreover, a <I>work in progress</I>.  If you have questions, comments, or suggestions, write the mailing
-				list, disc<A CLASS="external" TITLE="Reveal this e-mail address"
-				HREF="http://www.google.com/recaptcha/mailhide/d?k=01fqH3xoy7rwp-l_5K0BumPA==&amp;c=NTI0bIlVxlrR2xLEqaJxCv-_SGL-rzM8DjAFEivPvNzLi2PxNha85zOyiFYPiprL">...</A>@manpages.bsd.lv
-				(subscription required).
+				<B>not</B> a reference!  For that, refer to your local <I>mdoc</I> manual.  It is, however, a <I>work in
+				progress</I>.  If you have questions, comments, or suggestions, subscribe to the mailing list by writing a blank
+				message to disc<A CLASS="external" TITLE="Reveal this e-mail address"
+				HREF="http://www.google.com/recaptcha/mailhide/d?k=01fqH3xoy7rwp-l_5K0BumPA==&amp;c=NTI0bIlVxlrR2xLEqaJxCv-_SGL-rzM8DjAFEivPvNzLi2PxNha85zOyiFYPiprL">...</A>@manpages.bsd.lv.
 			</DIV>
 			.
 			<BR>
@@ -64,9 +60,9 @@
 			<DIV>
 				<A HREF="http://creativecommons.org/licenses/by-sa/3.0/"><IMG SRC="license.png" ALT="CC BY-SA"></A>
 				<BR>
-				The guide may be downloaded or viewed on-line.  All content is licensed under Creative Commons' <A
-				CLASS="external" HREF="http://creativecommons.org/licenses/by-sa/3.0/">Attribution Share-Alike</A>, so deriving
-				works must attribute the author(s) and use a similar license.  
+				All content licensed under Creative Commons' <A CLASS="external"
+				HREF="http://creativecommons.org/licenses/by-sa/3.0/">Attribution Share-Alike</A>: deriving works must
+				attribute the author(s) and use a similar license.  
 			</DIV>
 			.Pp
 			<DIV>
@@ -155,6 +151,8 @@
 			<BR>
 			.Lk <SPAN><A HREF="mdoc.xhtml">Full Text</A>: single XHTML document</SPAN>
 			<BR>
+			.Lk <SPAN><A HREF="mdoc.html">Full Text</A>: single HTML document</SPAN>
+			<BR>
 			.Lk <SPAN><A HREF="/cgi-bin/cvsweb/?cvsroot=manpages">Repository</A>: on-line source repository</SPAN>
 			<BR>
 			.Lk <SPAN><A HREF="/archives/discuss/summary.html">Mailing List</A>: discussion list archive</SPAN>
@@ -173,13 +171,15 @@
 			<BR>
 			.Lk <SPAN><A HREF="mdoc.single-xhtml.tgz">mdoc.single-xhtml.tgz</A>: compressed archive of one XHTML/CSS page</SPAN>
 			<BR>
+			.Lk <SPAN><A HREF="mdoc.single-html.tgz">mdoc.single-html.tgz</A>: compressed archive of one HTML/CSS page</SPAN>
+			<BR>
 			.Ed
 			<BR>
 			.Sh <SPAN CLASS="h1">News</SPAN>
 			<BR>
 			.Bl -ohang
 			<BR>
-			.It <SPAN>28 August 2011, <SPAN CLASS="ver">0.0.18</SPAN></SPAN>
+			.It <SPAN>29 August 2011, <SPAN CLASS="ver">0.0.18</SPAN></SPAN>
 			<DIV>
 				Installed initial <A HREF="part3.xhtml">Part 3</A>.
 			</DIV>

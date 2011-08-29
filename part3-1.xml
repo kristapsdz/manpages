@@ -59,9 +59,8 @@
 			for the <a href="glossary.xhtml#roff" class="term lang">roff</a> language, was exclusively formatted by the <a
 				href="glossary.xhtml#troff" class="term cmd">troff</a> and <a href="glossary.xhtml#nroff" class="term
 				cmd">nroff</a> utilities as distributed with <a class="term" href="glossary.xhtml#bsd_unix">BSD UNIX</a>.
-			Historically, <a href="glossary.xhtml#troff" class="term cmd">troff</a> was tailored for printers and graphical output,
-			while <a href="glossary.xhtml#nroff" class="term cmd">nroff</a> focussed on <a href="glossary.xhtml#terminal"
-				class="term">terminal</a> output.
+			Historically, <span class="cmd">troff</span> was tailored for printers and graphical output, while <span
+				class="cmd">nroff</span> focussed on <a href="glossary.xhtml#terminal" class="term">terminal</a> output.
 		</p>
 		<p>
 			Most modern utilities, however, encompass both of these capabilities.  

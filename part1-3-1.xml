@@ -19,7 +19,7 @@
 			file version 1.12.  This is not the manual for the full function library, but only a handful of similar functions.
 		</p>
 		<div class="mdocin">
-			.\"	$&#8203;OpenBSD: getc.3,v 1.12 2007/05/31 19:19:31 jmc Exp &#8203;$
+			.\"&nbsp;&nbsp;&nbsp;&nbsp;$&#8203;OpenBSD: getc.3,v 1.12 2007/05/31 19:19:31 jmc Exp &#8203;$
 			<br />
 			.\"
 			<br />

@@ -18,9 +18,9 @@
 			1990, and it is still actively maintained.
 		</p>
 		<p>
-			<span class="cmd">groff</span> is significant in that it is the predominant implementation of <a class="term cmd"
-				href="glossary.xhtml#nroff">nroff</a> and <a class="term cmd" href="glossary.xhtml#troff">troff</a> on
-			contemporary UNIX operating systems.  It also shepherded the evolution of <span class="lang">mdoc</span>.
+			<span class="cmd">groff</span> is significant in that it is the predominant implementation of <span
+				class="cmd">nroff</span> and <span class="cmd">troff</span> on contemporary UNIX operating systems.  It also
+			shepherded the evolution of <span class="lang">mdoc</span>.
 		</p>
 		<p>
 			On systems with GNU <span class="cmd">troff</span> installed, both <span class="cmd">troff</span> and <span

@@ -84,10 +84,10 @@ XHTMLS	= preface.xhtml \
 	  glossary.xhtml \
 	  macros.xhtml
 
-VERSION	= 0.0.17
-DATE	= 28 August 2011
+VERSION	= 0.0.18
+DATE	= 29 August 2011
 
-all: $(XHTMLS) mdoc.epub index.html mdoc.source.tgz mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz mdoc.xhtml
+all: $(XHTMLS) mdoc.epub index.html mdoc.source.tgz mdoc.single-xhtml.tgz mdoc.single-html.tgz mdoc.multi-xhtml.tgz mdoc.xhtml mdoc.html
 
 install: all
 	mkdir -p $(PREFIX)
@@ -96,15 +96,17 @@ install: all
 	install -m 0644 index.html index.css $(PREFIX)
 	install -m 0644 $(XHTMLS) $(PREFIX)
 	install -m 0644 css/book.css $(PREFIX)/css
-	install -m 0644 mdoc.epub mdoc.xhtml mdoc.source.tgz $(PREFIX)
+	install -m 0644 mdoc.epub mdoc.xhtml mdoc.html mdoc.source.tgz $(PREFIX)
 	install -m 0644 mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz $(PREFIX)
+	install -m 0644 mdoc.single-html.tgz $(PREFIX)
 
 clean:
 	rm -f index.html 
 	rm -f $(XHTMLS) 
-	rm -f mdoc.epub mdoc.xhtml mdoc.xml mdoc.xml.part book.opf
+	rm -f mdoc.epub mdoc.xhtml mdoc.html mdoc.sgml mdoc.xml mdoc.xml.part book.opf
 	rm -f mdoc.source.tgz 
 	rm -f mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz
+	rm -f mdoc.single-html.tgz 
 
 mdoc.source.tgz: $(SOURCE)
 	mkdir .dist
@@ -122,6 +124,16 @@ mdoc.multi-xhtml.tgz: $(XHTMLS) css/book.css external.png
 	install -m 0644 css/book.css .xhtml-multi/mdoc/css
 	(cd .xhtml-multi && tar zcf ../$@ mdoc)
 	rm -rf .xhtml-multi
+
+mdoc.single-html.tgz: mdoc.html css/book.css external.png
+	mkdir .html-single
+	mkdir .html-single/mdoc
+	mkdir .html-single/mdoc/css
+	install -m 0644 mdoc.html .html-single/mdoc
+	install -m 0644 external.png .html-single/mdoc
+	install -m 0644 css/book.css .html-single/mdoc/css
+	(cd .html-single && tar zcf ../$@ mdoc)
+	rm -rf .html-single
 
 mdoc.single-xhtml.tgz: mdoc.xhtml css/book.css external.png
 	mkdir .xhtml-single
@@ -210,3 +222,13 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 
 .xml.opf:
 	sed -e "s!@VERSION@!$(VERSION)!g" $< >$@
+
+.xml.sgml:
+	( echo "<!DOCTYPE HTML PUBLIC \
+		\"-//W3C//DTD HTML 4.01//EN\" \
+		\"http://www.w3.org/TR/html4/strict.dtd\">" ; \
+	  echo "<html>" ; \
+	  tail -n+4 $< | \
+	  	sed 's!application\/xhtml+xml!text/html!' ) | \
+	xmllint --html --htmlout - >$@
+

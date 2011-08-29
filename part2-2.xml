@@ -46,11 +46,42 @@
 		</div>
 		<p>
 			The prologue specifies information regarding the manual's classification.  For the most part, this information does not
-			change over the course of development.
+			change over the course of development.  It specifies the manual's title (which may encompass multiple documented
+			components) and category, the date of last editing, the other information.
 		</p>
+		<div class="mdocin">
+			.Dd May 26 2011
+			<br />
+			.Dt MDOC 7
+			<br />
+			.Os
+		</div>
 		<p>
-			The document body consists of the documentation content.  This material will change over the course of development.
+			The document body consists of the documentation content.  This material changes over the course of development, and is
+			the bulk of the manual page.  It minimally consists of the component name, invocation syntax (if applicable), and a
+			description of operation.
 		</p>
+		<div class="mdocin">
+			.Sh NAME
+			<br />
+			.Nm mdoc
+			<br />
+			.Nd mdoc language reference
+			<br />
+			.Sh DESCRIPTION
+			<br />
+			The
+			<br />
+			.Nm mdoc
+			<br />
+			language is used to format
+			<br />
+			.Bx
+			<br />
+			.Ux
+			<br />
+			manuals.
+		</div>
 		<table class="nav">
 			<tbody>
 				<tr>

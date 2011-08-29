@@ -10,6 +10,83 @@
 		<h3>
 			Revision Control
 		</h3>
+		<p>
+			Several examples in this book have covered the topic of integrating <span class="lang">mdoc</span> documents into
+			revision control systems.  In this section, I cover the few steps required to integrate these documents with <a
+				class="cmd term" href="glossary.xhtml#cvs">cvs</a>.
+		</p>
+		<p>
+			Assume a file <span class="file">foo.in.1.</span> consists of our <span class="lang">mdoc</span> source.  I assume, for
+			simplicity, that it is licensed with the <a class="term" href="glossary.xhtml#isc_license">ISC license</a> and
+			copyright-protected, both of which lead the document as a series of comments.
+		</p>
+		<div class="mdocin">
+			.\" Copyright (c) 2011 Kristaps Dzonsons &lt;kristaps@bsd.lv&gt;
+			<br />
+			.\"
+			<br />
+			.\" Permission to use, copy, modify, and distribute this software for any
+			<br />
+			.\" purpose with or without fee is hereby granted, provided that the above
+			<br />
+			.\" copyright notice and this permission notice appear in all copies.
+			<br />
+			.\"
+			<br />
+			.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+			<br />
+			.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+			<br />
+			.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+			<br />
+			.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+			<br />
+			.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+			<br />
+			.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+			<br />
+			.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+			<br />
+			.\"
+			<br />
+			.Dd August 18 2011
+			<br />
+			.Dt FOO 1
+			<br />
+			.Os
+		</div>
+		<p>
+			The first step is to add a useful message to the top of the file as the version of the file.  This is standard practise
+			in revision controlled files.
+		</p>
+		<div class="mdocin">
+			.\"&nbsp;&nbsp;&nbsp;&nbsp;$&#8203;Id$
+			<br />
+			.\"
+			<br />
+			.\" Copyright (c) 2011 Kristaps Dzonsons &lt;kristaps@bsd.lv&gt;
+		</div>
+		<p>
+			Make sure that the first line has a tab charater between the <span class="screen">$&#8203;Id$</span> and leading comment
+			marker.  This sequence is filled in with the file's last editor, revision, and checkin date.
+		</p>
+		<p>
+			Some <span class="cmd">cvs</span> servers (e.g., those in <a class="term" href="glossary.xhtml#netbsd">NetBSD</a> and <a
+				class="term" href="glossary.xhtml#openbsd">OpenBSD</a>) support the <span class="screen">Mdocdate</span>
+			sequence.  This is filled by in <span class="cmd">cvs</span> with the check-in date.
+		</p>
+		<div class="mdocin">
+			.Dd $&#8203;Mdocdate$
+			<br />
+			.Dt FOO 1
+			<br />
+			.Os
+		</div>
+		<p>
+			In performing these two steps, the file's last-modified date and source identifier will be properly filled in by the
+			<span class="cmd">cvs</span> server.  If your server does not support <span class="screen">Mdocdate</span>, you will
+			have to maintain the date by hand, or possibly override the build rule for your file.
+		</p>
 		<table class="nav">
 			<tbody>
 				<tr>

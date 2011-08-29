@@ -11,15 +11,15 @@
 			Case Study
 		</h3>
 		<p>
-			I now introduce a case study of a real-world manual, in particular the <span class="cmd">cat</span> utility from <a
+			I now introduce a case study of a real-world manual, in particular the <span class="cmd">echo</span> utility from <a
 				class="term" href="glossary.xhtml#openbsd">OpenBSD</a>.  The original file may be viewed on-line at <a
 				class="external" href="http://www.openbsd.org/cgi-bin/cvsweb/src/bin/echo/echo.1">src/bin/echo/echo.1</a>, file
 			version 1.20.  I choose this mainly because of its simplicity.
 		</p>
 		<div class="mdocin">
-			.\"	$&#8203;OpenBSD: echo.1,v 1.20 2010/09/03 09:53:20 jmc Exp $&#8203;
+			.\"&nbsp;&nbsp;&nbsp;&nbsp;$&#8203;OpenBSD: echo.1,v 1.20 2010/09/03 09:53:20 jmc Exp $&#8203;
 			<br />
-			.\"	$&#8203;NetBSD: echo.1,v 1.7 1995/03/21 09:04:26 cgd Exp $&#8203;
+			.\"&nbsp;&nbsp;&nbsp;&nbsp;$&#8203;NetBSD: echo.1,v 1.7 1995/03/21 09:04:26 cgd Exp $&#8203;
 		</div>
 		<p>
 			These initial comments are automatically created by the source-control system, <span class="cmd">cvs</span>.  It fills
@@ -31,7 +31,7 @@
 			If you're keeping your manual under source control, it's usually a good idea to begin your file with a similar line.
 		</p>
 		<div class="mdocin">
-			.\"	$&#8203;Id$
+			.\"&nbsp;&nbsp;&nbsp;&nbsp;$&#8203;Id$
 		</div>
 		<p>
 			A tab character separates the comment marker from the text.  This will be covered later in this book.
