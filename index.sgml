@@ -64,7 +64,7 @@
 			<DIV>
 				<A HREF="http://creativecommons.org/licenses/by-sa/3.0/"><IMG SRC="license.png" ALT="CC BY-SA"></A>
 				<BR>
-				The guide is may be downloaded or viewed on-line.  All content is licensed under Creative Commons' <A
+				The guide may be downloaded or viewed on-line.  All content is licensed under Creative Commons' <A
 				CLASS="external" HREF="http://creativecommons.org/licenses/by-sa/3.0/">Attribution Share-Alike</A>, so deriving
 				works must attribute the author(s) and use a similar license.  
 			</DIV>
@@ -140,8 +140,6 @@
 			.Lk <SPAN CLASS="sec"><A HREF="part3-1-1.xhtml">Section 1</A>: groff (GNU troff)</SPAN>
 			<BR>
 			.Lk <SPAN CLASS="sec"><A HREF="part3-1-2.xhtml">Section 2</A>: mandoc (mdocml)</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part3-1-3.xhtml">Section 3</A>: troff (Heirloom troff)</SPAN>
 			<BR>
 			.Lk <SPAN CLASS="part"><A HREF="glossary.xhtml">Appendix: Glossary</A></SPAN>
 			<BR>
