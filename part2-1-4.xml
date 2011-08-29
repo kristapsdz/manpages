@@ -173,7 +173,7 @@
 		</div>
 		<p>
 			The scope of <span class="macro">Begin</span> is closed out implicitly &mdash; by one of several possible macros or the
-			end of file.  The notion of a <i>full</i> macro is obvious when consindering <a class="macro"
+			end of file.  The notion of a <i>full</i> macro is obvious when considering <a class="macro"
 				href="macros.xml#macro_sh">Sh</a>:
 		</p>
 		<div class="mdocsyntax">

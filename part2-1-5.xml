@@ -167,7 +167,7 @@
 		</div>
 		<p>
 			In the second example, <span class="screen">(All</span> and <span class="screen">end-of-sentence.)</span> are considered
-			arguments, and thus not accomodated for in terms of punctuation.  In the third, the period is escaped and thus
+			arguments, and thus not accommodated for in terms of punctuation.  In the third, the period is escaped and thus
 			considered regular text.
 		</p>
 		<table class="nav">

@@ -26,7 +26,7 @@
 		</p>
 		<p>
 			By considering <span class="lang">mdoc</span> as a special language, <span class="cmd">mandoc</span> compiles its input
-			into a representation of semantic content.  This diverges from <span class="cmd">troff</span> and its descendents, which
+			into a representation of semantic content.  This diverges from <span class="cmd">troff</span> and its descendants, which
 			compile <span class="lang">mdoc</span> into its basis form, <span class="lang">roff</span>, then into a presentational
 			representation.  As such, <span class="cmd">mandoc</span> is also used for semantically querying manual content and for
 			the rigorous validation of manuals.

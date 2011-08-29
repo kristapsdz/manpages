@@ -324,7 +324,7 @@
 			is not recommended for portable applications.
 		</div>
 		<p>
-			The <span class="sec">BUGS</span> section should be used very carefully &mdash; bugs preferrably should be fixed.  In
+			The <span class="sec">BUGS</span> section should be used very carefully &mdash; bugs preferably should be fixed.  In
 			this section, design bugs have been documented.  Whether the <span class="sec">CAVEATS</span> section would be more
 			appropriate is up to the manual author.
 		</p>

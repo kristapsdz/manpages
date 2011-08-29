@@ -138,7 +138,7 @@
 			New section text.
 		</div>
 		<p>
-			Furthermore, the existance of <a href="macros.xml#macro_qq" class="macro">Qq</a> within the <a
+			Furthermore, the existence of <a href="macros.xml#macro_qq" class="macro">Qq</a> within the <a
 				href="macros.xml#macro_sh" class="macro">Sh</a> scope means that scopes may be nested.  In the next section
 			we'll see how multiple macros may even be specified on a single line.
 		</p>

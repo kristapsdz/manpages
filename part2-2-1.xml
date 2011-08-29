@@ -144,7 +144,7 @@
 				class="macroarg">category</span> <span class="macroopt"><span class="macroarg">architecture</span></span>
 		</div>
 		<p>
-			These catogies are dictated by convention extending to the First Edition UNIX <a class="term"
+			These categories are dictated by convention extending to the First Edition UNIX <a class="term"
 				href="glossary.xml#unix_programmers_manual">Programmer's Manual</a>.
 		</p>
 		<blockquote cite="http://www.cs.bell-labs.com/who/dmr/1stEdman.html">
@@ -210,7 +210,7 @@
 			</dd>
 			<dt><span class="cat">8</span>: administrative utilities.</dt>
 			<dd>
-				This consists of utilities for system administration, which may not be accessable or executable by general users
+				This consists of utilities for system administration, which may not be accessible or executable by general users
 				(see category <span class="cat">1</span>).  Common examples: <span class="cmd">dump</span>, <span class="cmd">restore</span>, <span
 					class="cmd">fsck</span>.
 			</dd>

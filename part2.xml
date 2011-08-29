@@ -24,7 +24,7 @@
 				Manual</a>.
 		</p>
 		<p>
-			Although the focus of this book is obviously on <span class="lang">mdoc</span>, a great deal of its idiosyncracies
+			Although the focus of this book is obviously on <span class="lang">mdoc</span>, a great deal of its idiosyncrasies
 			derive from <span class="lang">roff</span>, so we'll spend some time discussing seemingly-unnecessary complexity in the
 			context of general text processing.
 		</p>

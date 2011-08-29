@@ -176,7 +176,7 @@
 			Earlier, I introduced the concept of a multi-line scope for <a href="macros.xml#macro_sh" class="macro">Sh</a>, which
 			was closed and re-opened by subsequent invocations of <a href="macros.xml#macro_sh" class="macro">Sh</a>.  In this
 			fragment, the <a href="macros.xml#macro_bl" class="macro">Bl</a> macro (for <q>begin list</q>) is explicitly closed
-			out by the <a href="macros.xml#macro_el" class="macro">El</a> maro (<q>end list</q>).  This is an example of explicit
+			out by the <a href="macros.xml#macro_el" class="macro">El</a> macro (<q>end list</q>).  This is an example of explicit
 			scope closure, versus the implicit scope closure of <a href="macros.xml#macro_sh" class="macro">Sh</a> sequences.
 		</p>
 		<p>
