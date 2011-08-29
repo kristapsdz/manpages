@@ -7,14 +7,14 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
-		<h3>
+		<h3 id="mandoc_sec">
 			mandoc (mdocml)
 		</h3>
 		<p>
 			The <span class="cmd">mandoc</span> utility is a specialised <span class="lang">mdoc</span> formatter: although it also
 			supports some other UNIX manual formats, it is not a general-purpose <a class="lang term"
 				href="glossary.xhtml#roff">roff</a> formattter.  Development began in 2008 to replace <a
-				href="part3-1-1.xhtml#groff">groff</a> with an <a class="term" href="glossary.xhtml#isc_license">ISC
+				href="part3-1-1.xhtml#groff_sec">groff</a> with an <a class="term" href="glossary.xhtml#isc_license">ISC
 				licensed</a>, high-speed reimplementation.
 		</p>
 		<p>
@@ -42,8 +42,11 @@
 			Produce HTML with a style-sheet:
 		</p>
 		<div class="cmdline">
-			mandoc -Thtml -Ostyle=file.css file.1 >file.1.html
+			mandoc -Thtml -Ostyle=file.css file.1 &gt;file.1.html
 		</div>
+		<p>
+			The <span class="cmd">mandoc</span> utility is supported on both UNIX and non-UNIX operating systems.
+		</p>
 		<p>
 			<i>Disclaimer</i>: I am the principle author of the <span class="cmd">mandoc</span> utility.
 		</p>
@@ -51,7 +54,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="glossary.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part3-1-2.xhtml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part3-1-2.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

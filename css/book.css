@@ -81,9 +81,10 @@ a.term:hover	{ color: #339999; }
 		  padding: 2px; 
 		  background-color: #eeeeee; }
 div.cmdline,
-.mdocin,
-.mdocout,
-.mdocsyntax	{ border: 1px dotted #dddddd;
+div.screen,
+div.mdocin,
+div.mdocout,
+div.mdocsyntax	{ border: 1px dotted #dddddd;
 		  max-width: 60em; 
 		  margin-left: 2%; }
 .mdocin,

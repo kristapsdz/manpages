@@ -46,10 +46,6 @@ h5		{ font-size: inherit; }
 .value,
 .var		{ font-family: monospace; 
 		  font-size: 8pt; } 
-div.mdocin,
-div.mdocout,
-div.mdoc	{ font-size: 7pt;
-		  line-height: 9pt; }
 .under		{ text-decoration: underline }
 a.macro,
 a.term		{ color: #666666;
@@ -70,9 +66,13 @@ a.term:hover	{ color: #339999; }
 .screen		{ border: 1px dotted green; 
 		  padding: 2px; 
 		  background-color: #eeeeee; }
-.mdocin,
-.mdocout,
-.mdocsyntax	{ border: 1px dotted #dddddd;
+div.cmdline,
+div.screen,
+div.mdocin,
+div.mdocout,
+div.mdocsyntax	{ border: 1px dotted #dddddd;
+		  font-size: 7pt;
+		  line-height: 9pt;
 		  max-width: 60em; 
 		  margin-left: 2%; }
 .mdocin,

@@ -57,10 +57,11 @@
 		<p>
 			In this book, I'll focus only on contemporary formatters.  Originally, <span class="lang">mdoc</span>, as a macro set
 			for the <a href="glossary.xhtml#roff" class="term lang">roff</a> language, was exclusively formatted by the <a
-				href="glossary.xhtml#roff_cmd" class="term cmd">roff</a> command prior to the inception of UNIX.  This utility
-			was re-written for the First Edition UNIX, 1971, as <a href="glossary.xhtml#nroff" class="term cmd">nroff</a>, tailored
-			for the <a class="term" href="glossary.xhtml#terminal">terminal</a>; and <a href="glossary.xhtml#troff" class="term
-				cmd">troff</a>, which focussed on graphical output such as high-quality printers.
+				href="glossary.xhtml#troff" class="term cmd">troff</a> and <a href="glossary.xhtml#nroff" class="term
+				cmd">nroff</a> utilities as distributed with <a class="term" href="glossary.xhtml#bsd_unix">BSD UNIX</a>.
+			Historically, <a href="glossary.xhtml#troff" class="term cmd">troff</a> was tailored for printers and graphical output,
+			while <a href="glossary.xhtml#nroff" class="term cmd">nroff</a> focussed on <a href="glossary.xhtml#terminal"
+				class="term">terminal</a> output.
 		</p>
 		<p>
 			Most modern utilities, however, encompass both of these capabilities.  

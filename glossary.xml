@@ -17,6 +17,12 @@
 			<dd>
 				American Standard Code for Information Interchange.  The predominant computer encoding for the English alphabet.
 			</dd>
+			<dt id="bsd_unix">
+				BSD UNIX
+			</dt>
+			<dd>
+				A free implementation of the <a href="#unix" class="term">UNIX</a> operating system.
+			</dd>
 			<dt id="c">
 				C
 			</dt>
@@ -36,6 +42,12 @@
 			<dd>
 				The text environment for operating <a class="term" href="#unix">UNIX</a> systems.  Often replaced by graphical
 				windowing systems such as the <a class="external" href="http://www.xorg.org">X Window System</a>.
+			</dd>
+			<dt id="cvs">
+				CVS
+			</dt>
+			<dd>
+				A utility for revision control.
 			</dd>
 			<dt id="dos_prompt">
 				DOS Prompt
@@ -82,6 +94,13 @@
 				The C Standard Library.  A set of functions (including <a class="term" href="#system_call">system calls</a>) in
 				the <a class="term" href="#c">C programming language</a>.  Standardised by <a class="term"
 					href="#posix">POSIX</a>, among other standards bodies.
+			</dd>
+			<dt id="make">
+				Make
+			</dt>
+			<dd>
+				A utility for determining which pieces of a built system (e.g., binaries, libraries, etc.) are out of date and
+				need rebuilding.
 			</dd>
 			<dt id="man_pages">
 				Man Pages
@@ -154,13 +173,6 @@
 			<dd>
 				A document language written for the original <a class="term" href="#unix">UNIX</a> implementation in 1970.  This
 				language was used for text processing.
-			</dd>
-			<dt id="roff_cmd">
-				Roff (Command)
-			</dt>
-			<dd>
-				Formatter used by the First Edition UNIX, accepting the <a href="#roff" class="term lang">roff</a> language.
-				Split apart into <a class="term cmd" href="#nroff">nroff</a> and <a class="term cmd" href="#troff">troff</a>.
 			</dd>
 			<dt id="runoff">
 				RUNOFF

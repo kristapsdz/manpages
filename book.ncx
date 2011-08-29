@@ -190,14 +190,32 @@
 					<content src="part3-1-2.xhtml"/>
 				</navPoint>
 			</navPoint>
+			<navPoint class="h2" id="part3-2" playOrder="31">
+				<navLabel>
+					<text>Project Integration</text>
+				</navLabel>
+				<content src="part3-2.xhtml"/>
+				<navPoint class="h3" id="part3-2-1" playOrder="32">
+					<navLabel>
+						<text>Build System</text>
+					</navLabel>
+					<content src="part3-2-1.xhtml"/>
+				</navPoint>
+				<navPoint class="h3" id="part3-2-2" playOrder="33">
+					<navLabel>
+						<text>Revision Control</text>
+					</navLabel>
+					<content src="part3-2-2.xhtml"/>
+				</navPoint>
+			</navPoint>
 		</navPoint>
-		<navPoint class="h1" id="glossary" playOrder="31">
+		<navPoint class="h1" id="glossary" playOrder="34">
 			<navLabel>
 				<text>Appendix: Glossary</text>
 			</navLabel>
 			<content src="glossary.xhtml"/>
 		</navPoint>
-		<navPoint class="h1" id="macros" playOrder="32">
+		<navPoint class="h1" id="macros" playOrder="35">
 			<navLabel>
 				<text>Appendix: Macros</text>
 			</navLabel>

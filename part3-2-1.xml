@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<title>Build System</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<h3>
+			Build System
+		</h3>
+		<p>
+			On modern <a class="term" href="glossary.xhtml#unix">UNIX</a> systems, the method for build management is overwhelmingly
+			the <a class="cmd term" href="glossary.xhtml#make">make</a> utility.  Although there are two disjoint <span
+				class="cmd">make</span> implementations in use (namely by for <a href="glossary.xhtml#gnu" class="term">GNU</a>
+			and <a href="glossary.xhtml#bsd_unix" class="term">BSD UNIX</a> systems), I consider the syntax common to both.
+		</p>
+		<p>
+			In this section, I'll assume the file <span class="file">Makefile</span> already exists, and is used to build a system
+			where one wishes to incorporate <span class="lang">mdoc</span> files.
+		</p>
+		<div class="screen">
+			all: foo
+			<br />
+			<br />
+			clean:
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;rm -f foo foo.o
+			<br />
+			<br />
+			foo: foo.o
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;cc -o foo foo.o
+		</div>
+		<h4>
+			File Extension
+		</h4>
+		<p>
+			First, it's important to settle upon an input and output file extension, as <span class="cmd">make</span> tracks file
+			status by way of comparing the time-stamp of a file's input (which may be multiple files) and output (called the
+			target).  In short, if the target is older than any of the input files, it is rebuilt.  The input files are created and
+			maintained by the developer; the output files are built by <span class="cmd">make</span>.
+		</p>
+		<p>
+			For simplicity, I use the standard <span class="file">.1</span>, <span class="file">.2</span>, and so on convention for
+			the target (the output).  I then use <span class="file">.in.1</span> and so on for input.  Thus, it is necessary to
+			notify the <span class="cmd">make</span> utility of these new extensions before all other rules;
+		</p>
+		<div class="screen">
+			.SUFFIXES: .in.1 .1
+		</div>
+		<p>
+			If more categories are built, these would need to be added as appropriate.
+		</p>
+		<h4>
+			Build Rule
+		</h4>
+		<p>
+			A build rule is required to translate input to output.  Let's begin with a general rule to establish that the <span
+				class="lang">mdoc</span> syntax is correct.  We'll add this to the target building the main system: this way,
+			all changes to the <span class="cmd">mdoc</span> input file will be syntax-checked when <span
+				class="cmdline">make</span> is invoked.
+		</p>
+		<div class="screen">
+			.in.1.1:
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;mandoc -Tlint $&lt;
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;cp -f $&lt; $@
+		</div>
+		<p>
+			We also need to build the target and clean it.  Assume that <span class="file">foo.1</span> is the output file and <span
+				class="file">foo.in.1</span>, the input.
+		</p>
+		<div class="screen">
+			all: foo foo.1
+			<br />
+			<br />
+			clean:
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;rm -f foo foo.o foo.1
+		</div>
+		<h4>
+			Result
+		</h4>
+		<p>
+			Putting these together, the new <span class="file">Makefile</span> is as follows:
+		</p>
+		<div class="screen">
+			.SUFFIXES: .in.1 .1
+			<br />
+			<br />
+			all: foo foo.1
+			<br />
+			<br />
+			clean:
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;rm -f foo foo.o foo.1
+			<br />
+			<br />
+			foo: foo.o
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;cc -o foo foo.o
+			<br />
+			<br />
+			.in.1.1:
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;mandoc -Tlint $&lt;
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;cp -f $&lt; $@
+		</div>
+		<table class="nav">
+			<tbody>
+				<tr>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
+					<td class="nav-next"><a href="part3-2-2.xhtml">Next</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part3-2-1.xml?cvsroot=manpages">History</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="edits">
+			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
+		</p>
+	</body>
+</html>

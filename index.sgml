@@ -141,6 +141,12 @@
 			<BR>
 			.Lk <SPAN CLASS="sec"><A HREF="part3-1-2.xhtml">Section 2</A>: mandoc (mdocml)</SPAN>
 			<BR>
+			.Lk <SPAN CLASS="chap"><A HREF="part3-2.xhtml">Chapter 2</A>: Project Integration</SPAN>
+			<BR>
+			.Lk <SPAN CLASS="sec"><A HREF="part3-2-1.xhtml">Section 1</A>: Build System</SPAN>
+			<BR>
+			.Lk <SPAN CLASS="sec"><A HREF="part3-2-2.xhtml">Section 2</A>: Revision Control</SPAN>
+			<BR>
 			.Lk <SPAN CLASS="part"><A HREF="glossary.xhtml">Appendix: Glossary</A></SPAN>
 			<BR>
 			.Lk <SPAN CLASS="part"><A HREF="macros.xhtml">Appendix: Macros</A></SPAN>
@@ -173,15 +179,15 @@
 			<BR>
 			.Bl -ohang
 			<BR>
-			.It <SPAN>28 August 2011, <SPAN CLASS="ver">0.0.17</SPAN></SPAN>
+			.It <SPAN>28 August 2011, <SPAN CLASS="ver">0.0.18</SPAN></SPAN>
 			<DIV>
-				Finished <A HREF="part2-1-4.xhtml">Macros</A> examples, cleaned up font.
+				Installed initial <A HREF="part3.xhtml">Part 3</A>.
 			</DIV>
 			.
 			<BR>
-			.It <SPAN>27 August 2011, <SPAN CLASS="ver">0.0.16</SPAN></SPAN>
+			.It <SPAN>28 August 2011, <SPAN CLASS="ver">0.0.17</SPAN></SPAN>
 			<DIV>
-				Lots of work in the <A HREF="part2-1-4.xhtml">Macros</A> section.
+				Finished <A HREF="part2-1-4.xhtml">Macros</A> examples, cleaned up font.
 			</DIV>
 			.El
 			<BR>

@@ -43,7 +43,10 @@ SOURCE	= book.css \
 	  part3.xml \
 	  part3-1.xml \
 	  part3-1-1.xml \
-	  part3-1-2.xml
+	  part3-1-2.xml \
+	  part3-2.xml \
+	  part3-2-1.xml \
+	  part3-2-2.xml
 
 XHTMLS	= preface.xhtml \
 	  part1.xhtml \
@@ -75,6 +78,9 @@ XHTMLS	= preface.xhtml \
 	  part3-1.xhtml \
 	  part3-1-1.xhtml \
 	  part3-1-2.xhtml \
+	  part3-2.xhtml \
+	  part3-2-1.xhtml \
+	  part3-2-2.xhtml \
 	  glossary.xhtml \
 	  macros.xhtml
 
@@ -135,7 +141,7 @@ mdoc.xml: $(XHTMLS) full-head.xml full-tail.xml
 	cat full-head.xml >$@
 	sed 's!<body>!<div class="page">!' $@.part | \
 		sed 's!<\/body>!</div>!' | \
-		sed 's!href=\".*\.xhtml#!href="#!g' >>$@
+		sed 's!href=\"[^#]*#!href=\"#!g' >>$@
 	cat full-tail.xml >>$@
 	rm -f $@.part
 
@@ -184,6 +190,9 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 		OPS/part3-1.xhtml \
 		OPS/part3-1-1.xhtml \
 		OPS/part3-1-2.xhtml \
+		OPS/part3-2.xhtml \
+		OPS/part3-2-1.xhtml \
+		OPS/part3-2-2.xhtml \
 		OPS/glossary.xhtml \
 		OPS/macros.xhtml \
 		OPS/book.opf \
