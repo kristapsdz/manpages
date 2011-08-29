@@ -80,6 +80,7 @@ a.term:hover	{ color: #339999; }
 .screen		{ border: 1px dotted green; 
 		  padding: 2px; 
 		  background-color: #eeeeee; }
+div.cmdline,
 .mdocin,
 .mdocout,
 .mdocsyntax	{ border: 1px dotted #dddddd;

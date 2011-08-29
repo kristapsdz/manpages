@@ -14,13 +14,34 @@
 			The <a class="term" href="glossary.xhtml#gnu">GNU</a> project wrote the <span class="cmd">groff</span> utility as a
 			reimplementation of <span class="cmd">ditroff</span>, which encompassed the functionality of the historical <a
 				class="term cmd" href="glossary.xhtml#nroff">nroff</a> and <a class="term cmd" href="glossary.xhtml">troff</a>
-			utilities.  Its first version was released in 1990, and it is still actively maintained.
+			utilities.  <span class="cmd">groff</span>'s first version was released in 1990, and it is still actively maintained.
 		</p>
 		<p>
 			<span class="cmd">groff</span> is significant in that it is the predominant implementation of <a class="term cmd"
 				href="glossary.xhtml#nroff">nroff</a> and <a class="term cmd" href="glossary.xhtml">troff</a> on contemporary
-			UNIX operating systems.  It significantly shepherded the development and evolution of <span class="lang">mdoc</span>.
+			UNIX operating systems.  It also shepherded the evolution of <span class="lang">mdoc</span>.
 		</p>
+		<p>
+			On systems with GNU <span class="cmd">troff</span> installed, both <span class="cmd">troff</span> and <span
+				class="cmd">nroff</span> invoke the underlying <span class="cmd">groff</span> utility.  It is able to produce
+			the classical <a href="glossary.xhtml#terminal" class="term">terminal</a> and <a class="term"
+				href="glossary.xhtml#ps">PS</a> output, along with experimental support for <a class="term"
+				href="glossary.xhtml#XHTML">XHTML</a>, <a class="term" href="glossary.xhtml#html">HTML</a>, and <a class="term"
+				href="glossary.xhtml#pdf">PDF</a>.  It has strong support for non-<a class="term"
+				href="glossary.xhtml#ascii">ASCII</a> output on supporting media.
+		</p>
+		<p>
+			Paging a manual to a UNIX terminal:
+		</p>
+		<div class="cmdline">
+			groff -Tascii -mandoc file.1 | less
+		</div>
+		<p>
+			Generating PS output:
+		</p>
+		<div class="cmdline">
+			groff -Tps -mandoc file.1 >file.1.ps
+		</div>
 		<table class="nav">
 			<tbody>
 				<tr>

@@ -189,21 +189,15 @@
 					</navLabel>
 					<content src="part3-1-2.xhtml"/>
 				</navPoint>
-				<navPoint class="h3" id="part3-1-3" playOrder="31">
-					<navLabel>
-						<text>troff (Heirloom troff)</text>
-					</navLabel>
-					<content src="part3-1-3.xhtml"/>
-				</navPoint>
 			</navPoint>
 		</navPoint>
-		<navPoint class="h1" id="glossary" playOrder="32">
+		<navPoint class="h1" id="glossary" playOrder="31">
 			<navLabel>
 				<text>Appendix: Glossary</text>
 			</navLabel>
 			<content src="glossary.xhtml"/>
 		</navPoint>
-		<navPoint class="h1" id="macros" playOrder="33">
+		<navPoint class="h1" id="macros" playOrder="32">
 			<navLabel>
 				<text>Appendix: Macros</text>
 			</navLabel>
