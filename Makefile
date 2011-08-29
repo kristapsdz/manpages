@@ -147,7 +147,7 @@ install: all
 	install -m 0644 css/book.css $(PREFIX)/css
 	install -m 0644 mdoc.epub mdoc.xhtml mdoc.html mdoc.source.tgz $(PREFIX)
 	install -m 0644 mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz $(PREFIX)
-	install -m 0644 mdoc.single-html.tgz $(PREFIX)
+	install -m 0644 mdoc.single-html.tgz mdoc.multi-html.tgz $(PREFIX)
 
 clean:
 	rm -f index.html 
