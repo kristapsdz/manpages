@@ -123,7 +123,7 @@ XHTMLS	= preface.xhtml \
 	  glossary.xhtml \
 	  macros.xhtml
 
-VERSION	= 0.0.18
+VERSION	= 0.0.19
 DATE	= 29 August 2011
 
 all: index.html

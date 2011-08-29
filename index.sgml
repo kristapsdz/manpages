@@ -181,16 +181,17 @@
 			<BR>
 			.Bl -ohang
 			<BR>
+			.It <SPAN>29 August 2011, <SPAN CLASS="ver">0.0.19</SPAN></SPAN>
+			<DIV>
+				Now using HTML documents instead of XHTML for default display.  This required some bulky (if trivial) internal
+				restructuring where the Makefile converts source XML to XHTML, HTML, and so on.
+			</DIV>
+			.
+			<BR>
 			.It <SPAN>29 August 2011, <SPAN CLASS="ver">0.0.18</SPAN></SPAN>
 			<DIV>
 				Installed initial <A HREF="part3.html">Part 3</A>, a full-text <A HREF="mdoc.html">HTML</A> page, and off-line
 				<A HREF="mdoc.single-html.tgz">HTML</A> archive.
-			</DIV>
-			.
-			<BR>
-			.It <SPAN>28 August 2011, <SPAN CLASS="ver">0.0.17</SPAN></SPAN>
-			<DIV>
-				Finished <A HREF="part2-1-4.html">Macros</A> examples, cleaned up font.
 			</DIV>
 			.El
 			<BR>
