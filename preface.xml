@@ -17,7 +17,7 @@
 		<p>
 			This is a guide for writing UNIX manuals in the <span class="lang"><a class="term"
 					href="glossary.xml#mdoc">mdoc</a></span> language.  If you're new to writing UNIX manuals, or you want
-			to learn about best practices for high-quality manuals, this book may benefit your work.
+			to learn about best practises for high-quality manuals, this book may benefit your work.
 		</p>
 		<p>
 			To those unfamiliar with <a class="term" href="glossary.xml#unix">UNIX</a>, <span class="lang">mdoc</span> is a

@@ -38,7 +38,7 @@
 			&nbsp;&nbsp;&nbsp;&nbsp;cc -o foo foo.o
 		</div>
 		<p>
-			A rigorous analysis of this syntax is beyond the scope of this book (do consult your system's documenation for the <span
+			A rigorous analysis of this syntax is beyond the scope of this book (do consult your system's documentation for the <span
 				class="cmd">make</span> command with <span class="cmdline">man make</span>).  It defines the targets <span
 				class="screen">all</span>, <span class="screen">clean</span>, and <span class="screen">install</span>: build,
 			clean up, and install the utility, respectively.

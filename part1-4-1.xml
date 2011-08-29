@@ -105,7 +105,7 @@
 			.Nd "synchronize a file's in-core state with that on disk"
 		</div>
 		<p>
-			The <a href="macros.xml#macro_nd" class="macro">Nd</a> macro's arguments are supefluously quoted again.
+			The <a href="macros.xml#macro_nd" class="macro">Nd</a> macro's arguments are superfluously quoted again.
 		</p>
 		<div class="mdocin">
 			.Sh SYNOPSIS

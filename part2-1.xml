@@ -24,7 +24,7 @@
 			It's safe to say, in this case, that <span class="lang">mdoc</span> is line-oriented in that programme flow is in part
 			governed by position on a line.  In the case of <a href="macros.xml#macro_qq" class="macro">Qq</a>, we saw how the
 			macro extends to the end of the line.  This is also the first notion of scope, specifically scoping to the end of line.
-			We then saw examples where scope covers multiple lines and accomodates for nested macros as well as text.
+			We then saw examples where scope covers multiple lines and accommodates for nested macros as well as text.
 		</p>
 		<div class="mdocin">
 			.Sh DESCRIPTION

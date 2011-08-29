@@ -12,7 +12,7 @@
 		<p>
 			The <span class="cmd">mandoc</span> utility is a specialised <span class="lang">mdoc</span> formatter: although it also
 			supports some other UNIX manual formats, it is not a general-purpose <a class="lang term"
-				href="glossary.xml#roff">roff</a> formattter.  Development began in 2008 to replace <a
+				href="glossary.xml#roff">roff</a> formatter.  Development began in 2008 to replace <a
 				href="part3-1-1.xml#groff_sec">groff</a> with an <a class="term" href="glossary.xml#isc_license">ISC
 				licensed</a>, high-speed reimplementation.
 		</p>
