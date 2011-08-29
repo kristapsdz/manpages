@@ -152,7 +152,7 @@ install: all
 clean:
 	rm -f index.html 
 	rm -f $(XHTMLS) $(HTMLS)
-	rm -f mdoc.epub mdoc.xhtml mdoc.html mdoc.sgml mdoc.xml mdoc.xml.part book.opf
+	rm -f mdoc.epub mdoc.xhtml mdoc.html mdoc.sgml mdoc.xml book.opf
 	rm -f mdoc.source.tgz 
 	rm -f mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz
 	rm -f mdoc.single-html.tgz mdoc.multi-html.tgz
@@ -277,7 +277,6 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 	sed -e "s!@VERSION@!$(VERSION)!g" $< >$@
 
 .xml.xhtml:
-	validate --xml --warn $<
 	( echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" ; \
 	  echo "<!DOCTYPE html PUBLIC \
 		\"-//W3C//DTD XHTML 1.1//EN\" \
@@ -289,9 +288,9 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 	    -e "s!@DATE@!$(DATE)!g" \
 	    -e "s!\.xml!.xhtml!g" \
 	    -e "s!text\/xml!application/xhtml+xml!" >$@
+	validate --xml --warn $@ || rm -f $@
 
 .xml.html:
-	validate --xml --warn $<
 	( echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" ; \
 	  echo "<!DOCTYPE HTML PUBLIC \
 		\"-//W3C//DTD HTML 4.01//EN\" \
@@ -302,3 +301,4 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 	    -e "s!\/>!>!" \
 	    -e "s!\.xml!.html!g" \
 	    -e "s!text\/xml!text/html!" >$@
+	validate --warn $@ || rm -f $@
