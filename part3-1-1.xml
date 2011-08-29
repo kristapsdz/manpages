@@ -27,7 +27,7 @@
 				class="cmd">nroff</span> invoke the underlying <span class="cmd">groff</span> utility.  It is able to produce
 			the classical <a href="glossary.xhtml#terminal" class="term">terminal</a> and <a class="term"
 				href="glossary.xhtml#ps">PS</a> output, along with experimental support for <a class="term"
-				href="glossary.xhtml#XHTML">XHTML</a>, <a class="term" href="glossary.xhtml#html">HTML</a>, and <a class="term"
+				href="glossary.xhtml#xhtml">XHTML</a>, <a class="term" href="glossary.xhtml#html">HTML</a>, and <a class="term"
 				href="glossary.xhtml#pdf">PDF</a>.  It has strong support for non-<a class="term"
 				href="glossary.xhtml#ascii">ASCII</a> output on supporting media.
 		</p>

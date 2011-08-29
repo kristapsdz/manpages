@@ -19,7 +19,7 @@
 		<p>
 			In this section, I discuss methods for integrating <span class="cmd">mdoc</span> documents into a source-controlled
 			build environment.  I'll focus on <a href="glossary.xhtml#mandoc" class="term cmd">mandoc</a> as a formatter, but
-			provide stubs for using <a href="glossary.xhtml#groff" class="term cmd">groff</a>.
+			provide stubs for using <a href="glossary.xhtml#troff" class="term cmd">troff</a>.
 		</p>
 		<table class="nav">
 			<tbody>
