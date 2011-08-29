@@ -181,7 +181,8 @@
 			<BR>
 			.It <SPAN>29 August 2011, <SPAN CLASS="ver">0.0.18</SPAN></SPAN>
 			<DIV>
-				Installed initial <A HREF="part3.xhtml">Part 3</A>.
+				Installed initial <A HREF="part3.xhtml">Part 3</A>, a full-text <A HREF="mdoc.html">HTML</A> page, and off-line
+				<A HREF="mdoc.single-html.tgz">HTML</A> archive.
 			</DIV>
 			.
 			<BR>
