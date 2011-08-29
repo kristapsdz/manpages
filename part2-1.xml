@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Syntax</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -13,7 +12,7 @@
 		<p>
 			Before studying the structure of <span class="lang">mdoc</span> manuals, let's review the language we've seen so far.
 			Foremost, we've noticed that <span class="lang">mdoc</span> documents consist only of printable <a class="term"
-				href="glossary.xhtml#ascii">ASCII</a> characters.
+				href="glossary.xml#ascii">ASCII</a> characters.
 		</p>
 		<p>
 			We noted that a period at the beginning of a line indicates a <span class="lang">mdoc</span> macro:
@@ -23,7 +22,7 @@
 		</div>
 		<p>
 			It's safe to say, in this case, that <span class="lang">mdoc</span> is line-oriented in that programme flow is in part
-			governed by position on a line.  In the case of <a href="macros.xhtml#macro_qq" class="macro">Qq</a>, we saw how the
+			governed by position on a line.  In the case of <a href="macros.xml#macro_qq" class="macro">Qq</a>, we saw how the
 			macro extends to the end of the line.  This is also the first notion of scope, specifically scoping to the end of line.
 			We then saw examples where scope covers multiple lines and accomodates for nested macros as well as text.
 		</p>
@@ -68,7 +67,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part2-1-1.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part2-1-1.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part2-1.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Input Encoding</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -12,13 +11,13 @@
 		</h3>
 		<p>
 			Without exception, a well-formed <span class="lang">mdoc</span> document consists only of <a class="term"
-				href="glossary.xhtml#ascii">ASCII</a> printable characters, the space character, the newline character, and in
+				href="glossary.xml#ascii">ASCII</a> printable characters, the space character, the newline character, and in
 			some cases the tab character.  Most modern formatters allow for CR+LF newlines <span class="screen">\r\n</span>, but
 			this is not portable.  There is no limit to line length.
 		</p>
 		<p>
 			Unilaterally, the backslash <span class="screen">\</span> is always interpreted as the beginning of an <a
-				href="part2-1-2.xhtml#escape_sequences">escape sequence</a>.  If an escape precedes a newline, it escapes the
+				href="part2-1-2.xml#escape_sequences">escape sequence</a>.  If an escape precedes a newline, it escapes the
 			current line:
 		</p>
 		<div class="mdocin">
@@ -33,7 +32,7 @@
 			Formally speaking, a macro line is one beginning with a control character.  In <span class="lang">mdoc</span>, this is
 			traditionally the <span class="screen">.</span> character, although historical documents may also use the <span
 				class="screen">'</span> character.  This notation extends back to the historical <a class="term"
-				href="glossary.xhtml#runoff">RUNOFF</a> utility.
+				href="glossary.xml#runoff">RUNOFF</a> utility.
 		</p>
 		<blockquote cite="http://mit.edu/Saltzer/www/publications/CC-244.html">
 			<p>
@@ -62,7 +61,7 @@
 			<tbody>
 				<tr>
 					<td><span class="screen">!</span></td>
-					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
+					<td><a href="part2-1-5.xml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">&quot;</span></td>
@@ -70,51 +69,51 @@
 				</tr>
 				<tr>
 					<td><span class="screen">(</span></td>
-					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
+					<td><a href="part2-1-5.xml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">)</span></td>
-					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
+					<td><a href="part2-1-5.xml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">,</span></td>
-					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
+					<td><a href="part2-1-5.xml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">-</span></td>
-					<td>control character (<a href="part2-1-4.xhtml#macros">macro argument</a>)</td>
+					<td>control character (<a href="part2-1-4.xml#macros">macro argument</a>)</td>
 				</tr>
 				<tr>
 					<td><span class="screen">.</span></td>
-					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
+					<td><a href="part2-1-5.xml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">:</span></td>
-					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
+					<td><a href="part2-1-5.xml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">;</span></td>
-					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
+					<td><a href="part2-1-5.xml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">?</span></td>
-					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
+					<td><a href="part2-1-5.xml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">[</span></td>
-					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
+					<td><a href="part2-1-5.xml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">\</span></td>
-					<td>control character (<a href="part2-1-2.xhtml#escape_sequences">escape sequence</a>)</td>
+					<td>control character (<a href="part2-1-2.xml#escape_sequences">escape sequence</a>)</td>
 				</tr>
 				<tr>
 					<td><span class="screen">]</span></td>
-					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
+					<td><a href="part2-1-5.xml#punctuation">punctuation</a></td>
 				</tr>
 				<tr>
 					<td><span class="screen">|</span></td>
-					<td><a href="part2-1-5.xhtml#punctuation">punctuation</a></td>
+					<td><a href="part2-1-5.xml#punctuation">punctuation</a></td>
 				</tr>
 			</tbody>
 		</table>
@@ -153,7 +152,7 @@
 		<p>
 			Thus, the spaces between <span class="screen">Hello,</span> and <span class="screen">world</span> will be reproduced in
 			output.  In general, however, it is considered non-portable to use spaces on a text-line to shape output: <a
-				class="term" href="glossary.xhtml#html">HTML</a> by default collapses whitespace.  A literal display mode should
+				class="term" href="glossary.xml#html">HTML</a> by default collapses whitespace.  A literal display mode should
 			be used instead.
 		</p>
 		<p>
@@ -173,7 +172,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part2-1-2.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part2-1-2.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part2-1-1.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>System Call</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -96,7 +95,7 @@
 		</div>
 		<p>
 			You'll notice I've omitted the <span class="sec">LIBRARY</span> section in this example, as system calls by definition
-			aren't a part of a library.  Furthermore, I've used the <a href="macros.xhtml#macro_dv" class="macro">Dv</a> macro to
+			aren't a part of a library.  Furthermore, I've used the <a href="macros.xml#macro_dv" class="macro">Dv</a> macro to
 			annotate the term <span class="screen">NULL</span> as a constant variable.
 		</p>
 		<p>
@@ -129,7 +128,7 @@
 			In the <span class="func">hello</span> example, I included a section <span class="sec">RETURN VALUES</span> detailing
 			the return value of the function.  System calls, however, usually return a standard value and have a side effect of
 			setting the C library <span class="var">errno</span> variable when invoked within a C language context.  This is
-			documented with a special macro <a href="macros.xhtml#macro_rv" class="macro">Rv</a>.
+			documented with a special macro <a href="macros.xml#macro_rv" class="macro">Rv</a>.
 		</p>
 		<div class="mdocin">
 			.Sh RETURN VALUES
@@ -143,7 +142,7 @@
 		</p>
 		<p>
 			If you have multiple functions specified in your manual, you must list them individually as arguments to <a
-				href="macros.xhtml#macro_rv" class="macro">Rv</a>.
+				href="macros.xml#macro_rv" class="macro">Rv</a>.
 		</p>
 		<p>
 			Next, the possible values of <span class="var">errno</span> must be specified in the <span class="sec">ERRORS</span>
@@ -165,15 +164,15 @@
 		<p>
 			The syntax of this list differs from lists we've already encountered.  Earlier we used the special term <span
 				class="screen">Ds</span> as an argument to <span class="macroflag">width</span> to specify a generic width.
-			Here, we used <a href="macros.xhtml#macro_er" class="macro">Er</a>, which is also specified at the start of each list
-			tag (lines beginning with <a href="macros.xhtml#macro_it" class="macro">It</a>).
+			Here, we used <a href="macros.xml#macro_er" class="macro">Er</a>, which is also specified at the start of each list
+			tag (lines beginning with <a href="macros.xml#macro_it" class="macro">It</a>).
 		</p>
 		<p>
-			The macro <a href="macros.xhtml#macro_er" class="macro">Er</a> specifies a possible value of <span
+			The macro <a href="macros.xml#macro_er" class="macro">Er</a> specifies a possible value of <span
 				class="var">errno</span>.  There are many standard variable names for <span class="var">errno</span> values,
 			such as <span class="var">EFAULT</span> used in our example.  When we stipulate this as the argument of <span
 				class="macroflag">width</span>, the formatter is able to translate this into a generic width of most <a
-				href="macros.xhtml#macro_er" class="macro">Er</a> macro contents.
+				href="macros.xml#macro_er" class="macro">Er</a> macro contents.
 		</p>
 		<p>
 			You should avoid using this construct unless it's in a conventional way, as it is here.
@@ -181,7 +180,7 @@
 		<p>
 			If your system call is part of an operating system, it's common to add some lines as to when it was added.  Let's assume
 			you're adding the function to a fictional Foo OS.  Most modern UNIX operating systems have their own macros, such as <a
-				href="macros.xhtml#macro_bx" class="macro">Bx</a> for BSD UNIX.  Be sure to note the version of the operating
+				href="macros.xml#macro_bx" class="macro">Bx</a> for BSD UNIX.  Be sure to note the version of the operating
 			system.
 		</p>
 		<div class="mdocin">
@@ -255,7 +254,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part1-4-1.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part1-4-1.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part1-4.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

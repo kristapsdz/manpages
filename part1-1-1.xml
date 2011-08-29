@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Simple Command</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -45,8 +44,8 @@
 		</p>
 		<p>
 			Traditionally, the command of choice for formatting UNIX manuals for a <a class="term"
-				href="glossary.xhtml#terminal">terminal</a> is <a class="term" href="glossary.xhtml#nroff">nroff</a>.  For now,
-			let's stick with that (an alternative, <a class="term" href="glossary.xhtml#mandoc">mandoc</a>, was used to generate
+				href="glossary.xml#terminal">terminal</a> is <a class="term" href="glossary.xml#nroff">nroff</a>.  For now,
+			let's stick with that (an alternative, <a class="term" href="glossary.xml#mandoc">mandoc</a>, was used to generate
 			output on this site, but is not widely-used).
 		</p>
 		<p>
@@ -97,8 +96,8 @@
 		<p>
 			The <span class="screen">.Qq</span> is part of <span class="lang">mdoc</span>'s instruction syntax.  Input lines
 			beginning with a dot are instructions to the formatter called mdoc macros, or just macros for short.  The macro name is
-			a terse two or three-character word following the dot, for example, <a href="macros.xhtml#macro_qq"
-				class="macro">Qq</a>.  The words following the <a href="macros.xhtml#macro_qq" class="macro">Qq</a> to the end
+			a terse two or three-character word following the dot, for example, <a href="macros.xml#macro_qq"
+				class="macro">Qq</a>.  The words following the <a href="macros.xml#macro_qq" class="macro">Qq</a> to the end
 			of line are arguments in the scope of the macro; that is, data interpreted within the context of the macro.
 		</p>
 		<p>
@@ -112,21 +111,21 @@
 			and exit.
 		</div>
 		<p>
-			is interpreted as text, then a macro <a href="macros.xhtml#macro_qq" class="macro">Qq</a> with scoped arguments <span
+			is interpreted as text, then a macro <a href="macros.xml#macro_qq" class="macro">Qq</a> with scoped arguments <span
 				class="screen">hello, world</span>, then more text.
 		</p>
 		<p>
-			It's obvious, in looking at the input and output, that <a href="macros.xhtml#macro_qq" class="macro">Qq</a> instructs
+			It's obvious, in looking at the input and output, that <a href="macros.xml#macro_qq" class="macro">Qq</a> instructs
 			the formatter to quote its arguments.  Macro names vaguely identify their purpose with their choice of letter
 			combination.
 		</p>
 		<p>
-			The <a href="macros.xhtml#macro_qq" class="macro">Qq</a> is limited in scope to its invocation line.  But notice that
-			the formatter recognised the content between <a href="macros.xhtml#macro_sh" class="macro">Sh</a> macros as requiring
+			The <a href="macros.xml#macro_qq" class="macro">Qq</a> is limited in scope to its invocation line.  But notice that
+			the formatter recognised the content between <a href="macros.xml#macro_sh" class="macro">Sh</a> macros as requiring
 			indentation.  So it's clear that <span class="lang">mdoc</span> also has a concept of multi-line scope.
 		</p>
 		<p>
-			In fact, <a href="macros.xhtml#macro_sh" class="macro">Sh</a> has both line arguments, for the name of the section; and
+			In fact, <a href="macros.xml#macro_sh" class="macro">Sh</a> has both line arguments, for the name of the section; and
 			multi-line arguments, for section content.
 		</p>
 		<div class="mdocin">
@@ -139,8 +138,8 @@
 			New section text.
 		</div>
 		<p>
-			Furthermore, the existance of <a href="macros.xhtml#macro_qq" class="macro">Qq</a> within the <a
-				href="macros.xhtml#macro_sh" class="macro">Sh</a> scope means that scopes may be nested.  In the next section
+			Furthermore, the existance of <a href="macros.xml#macro_qq" class="macro">Qq</a> within the <a
+				href="macros.xml#macro_sh" class="macro">Sh</a> scope means that scopes may be nested.  In the next section
 			we'll see how multiple macros may even be specified on a single line.
 		</p>
 		<div class="mdocin">
@@ -165,24 +164,24 @@
 			Now let's return to <span class="file">hi.1</span> with this new knowledge of macros and scopes.
 		</p>
 		<p>
-			We see seven macros in total, <a href="macros.xhtml#macro_dd" class="macro">Dd</a>, <a href="macros.xhtml#macro_dt"
-				class="macro">Dt</a>, <a href="macros.xhtml#macro_os" class="macro">Os</a>, <a href="macros.xhtml#macro_sh"
-				class="macro">Sh</a>, <a href="macros.xhtml#macro_nm" class="macro">Nm</a>, <a href="macros.xhtml#macro_nd"
-				class="macro">Nd</a>, and <a href="macros.xhtml#macro_qq" class="macro">Qq</a>.  We know now that <a
-				href="macros.xhtml#macro_qq" class="macro">Qq</a> encloses its arguments in double-quotes, <a
-				href="macros.xhtml#macro_sh" class="macro">Sh</a> begins a named section with indented multi-line arguments.  
+			We see seven macros in total, <a href="macros.xml#macro_dd" class="macro">Dd</a>, <a href="macros.xml#macro_dt"
+				class="macro">Dt</a>, <a href="macros.xml#macro_os" class="macro">Os</a>, <a href="macros.xml#macro_sh"
+				class="macro">Sh</a>, <a href="macros.xml#macro_nm" class="macro">Nm</a>, <a href="macros.xml#macro_nd"
+				class="macro">Nd</a>, and <a href="macros.xml#macro_qq" class="macro">Qq</a>.  We know now that <a
+				href="macros.xml#macro_qq" class="macro">Qq</a> encloses its arguments in double-quotes, <a
+				href="macros.xml#macro_sh" class="macro">Sh</a> begins a named section with indented multi-line arguments.  
 		</p>
 		<p>
-			Of the remaining macros, <a href="macros.xhtml#macro_dd" class="macro">Dd</a> accepts the last modification date of the
-			manual in <q>month day, year</q> format.  <a href="macros.xhtml#macro_dt" class="macro">Dt</a> refers to the manual's
+			Of the remaining macros, <a href="macros.xml#macro_dd" class="macro">Dd</a> accepts the last modification date of the
+			manual in <q>month day, year</q> format.  <a href="macros.xml#macro_dt" class="macro">Dt</a> refers to the manual's
 			title, <span class="screen">HI</span>, and its category, <span class="cat">1</span>.  Note that <span
-				class="screen">HI</span> is uppercase: by convention, <a href="macros.xhtml#macro_dt" class="macro">Dt</a>
+				class="screen">HI</span> is uppercase: by convention, <a href="macros.xml#macro_dt" class="macro">Dt</a>
 			should always accept a capitalised document title.  We'll talk more about titles and sections in later chapters of this
 			book.  For now, let's assume that a category number identifies the topic of the manual, where <span class="cat">1</span>
 			refers to utilities.
 		</p>
 		<p>
-			Next, <a href="macros.xhtml#macro_os" class="macro">Os</a> indicates the operating system of the system running the
+			Next, <a href="macros.xml#macro_os" class="macro">Os</a> indicates the operating system of the system running the
 			formatter.  If left unspecified, the formatter will return the current operating system (e.g., <span
 				class="screen">OpenBSD 4.9</span>, <span class="screen">Linux 2.6.32-5</span>, or <span class="screen">Microsoft
 				Windows XP</span>).
@@ -204,9 +203,9 @@
 			.\" Extending across the full line.
 		</div>
 		<p>
-			Moving along, <a href="macros.xhtml#macro_nm" class="macro">Nm</a> accepts the manual's name.  This differs from the
-			title, <a href="macros.xhtml#macro_dt" class="macro">Dt</a>, in that a single manual may document multiple components.
-			We'll see examples of this in later chapters.  Finally, <a href="macros.xhtml#macro_nd" class="macro">Nd</a> accepts a
+			Moving along, <a href="macros.xml#macro_nm" class="macro">Nm</a> accepts the manual's name.  This differs from the
+			title, <a href="macros.xml#macro_dt" class="macro">Dt</a>, in that a single manual may document multiple components.
+			We'll see examples of this in later chapters.  Finally, <a href="macros.xml#macro_nd" class="macro">Nd</a> accepts a
 			brief, one-line description of the command.
 		</p>
 		<div class="mdocin">
@@ -217,7 +216,7 @@
 			.Nd print \(dqhello, world\(dq
 		</div>
 		<p>
-			You can see that we re-invoke <a href="macros.xhtml#macro_nm" class="macro">Nm</a> in the <span
+			You can see that we re-invoke <a href="macros.xml#macro_nm" class="macro">Nm</a> in the <span
 				class="sec">SYNOPSIS</span>, only without arguments.  The formatter is smart enough to fill in its argument
 			with the last supplied argument, in this case being <span class="screen">hi</span>.
 		</p>
@@ -259,12 +258,12 @@
 		</div>
 		<p>
 			In this example, you've noticed that <span class="screen">\(dqhello, world\(dq</span> has the same behaviour of the <a
-				href="macros.xhtml#macro_qq" class="macro">Qq</a> invocation.  In <span class="lang">mdoc</span>, quotation
+				href="macros.xml#macro_qq" class="macro">Qq</a> invocation.  In <span class="lang">mdoc</span>, quotation
 			marks signify literal strings.  Thus, we used an escape character <span class="screen">\(dq</span> to render <span
 				class="screen">&quot;</span>.
 		</p>
 		<p>
-			You may ask why not just use <a href="macros.xhtml#macro_qq" class="macro">Qq</a>, such as
+			You may ask why not just use <a href="macros.xml#macro_qq" class="macro">Qq</a>, such as
 		</p>
 		<div class="mdocin">
 			.Nd print
@@ -272,7 +271,7 @@
 			.Qq hello, world
 		</div>
 		<p>
-			For the time being, assume that <a href="macros.xhtml#macro_nd" class="macro">Nd</a> must have its scope on the
+			For the time being, assume that <a href="macros.xml#macro_nd" class="macro">Nd</a> must have its scope on the
 			invocation line.  Strictly-speaking, we could have written 
 		</p>
 		<div class="mdocin">
@@ -319,7 +318,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part1-1-2.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part1-1-2.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part1-1-1.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Formatters</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -11,7 +10,7 @@
 			Formatters
 		</h2>
 		<p>
-			The most important part of the <a class="lang term" href="glossary.xhtml#mdoc">mdoc</a> tools is the formatter, which
+			The most important part of the <a class="lang term" href="glossary.xml#mdoc">mdoc</a> tools is the formatter, which
 			compiles an <span class="lang">mdoc</span> document into an output format.
 		</p>
 		<div class="mdocout">
@@ -46,21 +45,21 @@
 		</div>
 		<p>
 			All formatters must adhere to the general conventions set forth in the UNIX First Edition <a class="term"
-				href="glossary.xhtml#unix_programmers_manual">Programmer's Manual</a>, which details the terms that are in bold
+				href="glossary.xml#unix_programmers_manual">Programmer's Manual</a>, which details the terms that are in bold
 			and those that are italicised (rendered with underlines in terminals).
 		</p>
 		<p>
-			Most formatters also support printer-friendly output, usually to <a href="glossary.xhtml#ps" class="term">PS</a> or <a
-				href="glossary.xhtml#pdf" class="term">PDF</a>.  Some also include <a href="glossary.xhtml#html"
-				class="term">HTML</a> or <a href="glossary.xhtml#xhtml" class="term">XHTML</a> for web publication.
+			Most formatters also support printer-friendly output, usually to <a href="glossary.xml#ps" class="term">PS</a> or <a
+				href="glossary.xml#pdf" class="term">PDF</a>.  Some also include <a href="glossary.xml#html"
+				class="term">HTML</a> or <a href="glossary.xml#xhtml" class="term">XHTML</a> for web publication.
 		</p>
 		<p>
 			In this book, I'll focus only on contemporary formatters.  Originally, <span class="lang">mdoc</span>, as a macro set
-			for the <a href="glossary.xhtml#roff" class="term lang">roff</a> language, was exclusively formatted by the <a
-				href="glossary.xhtml#troff" class="term cmd">troff</a> and <a href="glossary.xhtml#nroff" class="term
-				cmd">nroff</a> utilities as distributed with <a class="term" href="glossary.xhtml#bsd_unix">BSD UNIX</a>.
+			for the <a href="glossary.xml#roff" class="term lang">roff</a> language, was exclusively formatted by the <a
+				href="glossary.xml#troff" class="term cmd">troff</a> and <a href="glossary.xml#nroff" class="term
+				cmd">nroff</a> utilities as distributed with <a class="term" href="glossary.xml#bsd_unix">BSD UNIX</a>.
 			Historically, <span class="cmd">troff</span> was tailored for printers and graphical output, while <span
-				class="cmd">nroff</span> focussed on <a href="glossary.xhtml#terminal" class="term">terminal</a> output.
+				class="cmd">nroff</span> focussed on <a href="glossary.xml#terminal" class="term">terminal</a> output.
 		</p>
 		<p>
 			Most modern utilities, however, encompass both of these capabilities.  
@@ -69,7 +68,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part3-1-1.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part3-1-1.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part3-1.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

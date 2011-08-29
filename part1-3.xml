@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Function Library</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -11,8 +10,8 @@
 			Function Library
 		</h2>
 		<p>
-			I've mentioned several times that the name provided to <a href="macros.xhtml#macro_nm" class="macro">Nm</a> doesn't
-			necessarily refer to the title of the manual in <a href="macros.xhtml#macro_dt" class="macro">Dt</a>.  Let's study a
+			I've mentioned several times that the name provided to <a href="macros.xml#macro_nm" class="macro">Nm</a> doesn't
+			necessarily refer to the title of the manual in <a href="macros.xml#macro_dt" class="macro">Dt</a>.  Let's study a
 			simple function library, using both <span class="func">hi</span> and <span class="func">hello</span>, which demonstrates
 			this concept.
 		</p>
@@ -42,7 +41,7 @@
 			general, a function library should have its name not include the leading <q>lib</q>.
 		</p>
 		<p>
-			It's a good rule of thumb that the <a href="macros.xhtml#macro_dt" class="macro">Dt</a> title of your document matches
+			It's a good rule of thumb that the <a href="macros.xml#macro_dt" class="macro">Dt</a> title of your document matches
 			its filename.
 		</p>
 		<p>
@@ -59,14 +58,14 @@
 			.Nd print greeting messages
 		</div>
 		<p>
-			Here I've used <a href="macros.xhtml#macro_nm" class="macro">Nm</a> twice to indicate that the manual documents two
-			functions.  In doing so, I'll have to be careful when invoking <a href="macros.xhtml#macro_nm" class="macro">Nm</a> in
+			Here I've used <a href="macros.xml#macro_nm" class="macro">Nm</a> twice to indicate that the manual documents two
+			functions.  In doing so, I'll have to be careful when invoking <a href="macros.xml#macro_nm" class="macro">Nm</a> in
 			later parts of the manual, as it will produce <span class="screen">hi</span> if I don't specify a name, and this is
 			probably not desired (nor should it be depended upon, as I may re-order the names).
 		</p>
 		<p>
-			If we were only documenting a single function in a library, we would only assign <a href="macros.xhtml#macro_nm"
-				class="macro">Nm</a> and <a href="macros.xhtml#macro_nd" class="macro">Nd</a> to the relevant function and not
+			If we were only documenting a single function in a library, we would only assign <a href="macros.xml#macro_nm"
+				class="macro">Nm</a> and <a href="macros.xml#macro_nd" class="macro">Nd</a> to the relevant function and not
 			that of the library.
 		</p>
 		<p>
@@ -89,9 +88,9 @@
 			.Lb greeting
 		</div>
 		<p>
-			This uses the macro <a href="macros.xhtml#macro_lb" class="macro">Lb</a>, which accepts the name of the library (not
+			This uses the macro <a href="macros.xml#macro_lb" class="macro">Lb</a>, which accepts the name of the library (not
 			including the leading <q>lib</q>).  This macro is smart enough to know about <a class="term"
-				href="glossary.xhtml#libc">standard libraries</a>, and will format the output in a different way if it
+				href="glossary.xml#libc">standard libraries</a>, and will format the output in a different way if it
 			encounters such an argument.  Since our library is non-standard, it will print in a generic way.  The intent of this
 			section is to hint us on how to link to the installed library.
 		</p>
@@ -132,7 +131,7 @@
 		<p>
 			Note that I've listed both include files prior to the function prototypes.  This is familiar to C programmers, where
 			functions may have multiple include files that need a specific order.  The functions are listed in the same order as
-			their <a href="macros.xhtml#macro_nm" class="macro">Nm</a> listing. 
+			their <a href="macros.xml#macro_nm" class="macro">Nm</a> listing. 
 		</p>
 		<p>
 			Let's examine the output so far.
@@ -294,7 +293,7 @@
 		</div>
 		<p>
 			We'll use our mental checklist as a guide.  First we stipulated linking information with the <a
-				href="macros.xhtml#macro_lb" class="macro">Lb</a> macro.  Then we introduced the calling syntax of each
+				href="macros.xml#macro_lb" class="macro">Lb</a> macro.  Then we introduced the calling syntax of each
 			function, naming their arguments.  We also stipulated the necessary header files in the order they'd be included in
 			source files.  In the <span class="sec">DESCRIPTION</span>, we described each function and its arguments in full.
 			Lastly, we documented return values in the <span class="sec">RETURN VALUES</span> section.
@@ -306,7 +305,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part1-3-1.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part1-3-1.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part1-3.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

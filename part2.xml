@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Manual Syntax and Structure</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -12,16 +11,16 @@
 		</h1>
 		<p>
 			In the last part, I introduced some <span class="lang">mdoc</span> language syntax by way of example.  We covered <a
-				href="part1-1.xhtml#commands">Commands</a> and <a href="part1-2.xhtml#functions">Functions</a>.  In this part,
+				href="part1-1.xml#commands">Commands</a> and <a href="part1-2.xml#functions">Functions</a>.  In this part,
 			I'll study the structure of the UNIX manual itself.
 		</p>
 		<p>
 			Historically, the syntax and structure of <span class="lang">mdoc</span> derive from the <a class="lang term"
-				href="glossary.xhtml#roff">roff</a>, a text processing language predating the first editions of <a class="term"
-				href="glossary.xhtml#unix">UNIX</a>.  In fact, the general syntax of <span class="lang">roff</span> (and thus
-			<span class="lang">mdoc</span>) can be traced to the <a class="term" href="glossary.xhtml#runoff">RUNOFF</a> command
+				href="glossary.xml#roff">roff</a>, a text processing language predating the first editions of <a class="term"
+				href="glossary.xml#unix">UNIX</a>.  In fact, the general syntax of <span class="lang">roff</span> (and thus
+			<span class="lang">mdoc</span>) can be traced to the <a class="term" href="glossary.xml#runoff">RUNOFF</a> command
 			from the mid-sixties!  The conventions of section names and manual categories were formalised later, in the early
-			seventies, with the First Edition UNIX <a class="term" href="glossary.xhtml#unix_programmers_manual">Programmer's
+			seventies, with the First Edition UNIX <a class="term" href="glossary.xml#unix_programmers_manual">Programmer's
 				Manual</a>.
 		</p>
 		<p>
@@ -38,7 +37,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part2-1.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part2-1.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part2.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

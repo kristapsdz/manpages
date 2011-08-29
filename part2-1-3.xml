@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Comments</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -12,7 +11,7 @@
 		</h3>
 		<p>
 			Comments &mdash; words in an <span class="lang">mdoc</span> document not interpreted by the formatter &mdash; are
-			indicated by the <a href="part2-1-2.xhtml#special_characters">special character</a> <span class="screen">\&quot;</span>.
+			indicated by the <a href="part2-1-2.xml#special_characters">special character</a> <span class="screen">\&quot;</span>.
 		</p>
 		<div class="mdocin">
 			Regular text. \" In a comment.
@@ -39,7 +38,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part2-1-4.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part2-1-4.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part2-1-3.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

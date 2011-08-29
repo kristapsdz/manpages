@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Build System</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -11,10 +10,10 @@
 			Build System
 		</h3>
 		<p>
-			On modern <a class="term" href="glossary.xhtml#unix">UNIX</a> systems, the method for build management is overwhelmingly
-			the <a class="cmd term" href="glossary.xhtml#make">make</a> utility.  Although there are two disjoint <span
-				class="cmd">make</span> implementations in use (namely by for <a href="glossary.xhtml#gnu" class="term">GNU</a>
-			and <a href="glossary.xhtml#bsd_unix" class="term">BSD UNIX</a> systems), I consider the syntax common to both.
+			On modern <a class="term" href="glossary.xml#unix">UNIX</a> systems, the method for build management is overwhelmingly
+			the <a class="cmd term" href="glossary.xml#make">make</a> utility.  Although there are two disjoint <span
+				class="cmd">make</span> implementations in use (namely by for <a href="glossary.xml#gnu" class="term">GNU</a>
+			and <a href="glossary.xml#bsd_unix" class="term">BSD UNIX</a> systems), I consider the syntax common to both.
 		</p>
 		<p>
 			In this section, I'll assume the file <span class="file">Makefile</span> already exists, and is used to build a system
@@ -136,7 +135,7 @@
 			Formatted Output
 		</h4>
 		<p>
-			Let's build an <a class="term" href="glossary.xhtml#html">HTML</a> manual with the <span class="cmdline">make www</span>
+			Let's build an <a class="term" href="glossary.xml#html">HTML</a> manual with the <span class="cmdline">make www</span>
 			rule.  For simplicity, we won't install this file; it's merely for instruction.  This rule will translate the built
 			manual <span class="file">foo.1</span> into an HTML file <span class="file">foo.1.html</span>.
 		</p>
@@ -144,8 +143,8 @@
 			.SUFFIXES: .in.1 .1 .1.html
 		</div>
 		<p>
-			Let's let our rule include a <a class="term" href="glossary.xhtml#css">CSS</a> file.  Note that the traditional <a
-				class="term cmd" href="glossary.xhtml#troff">troff</a> utility doesn't include HTML output.
+			Let's let our rule include a <a class="term" href="glossary.xml#css">CSS</a> file.  Note that the traditional <a
+				class="term cmd" href="glossary.xml#troff">troff</a> utility doesn't include HTML output.
 		</p>
 		<div class="screen">
 			foo.1.html: style.css
@@ -170,7 +169,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part3-2-2.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part3-2-2.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part3-2-1.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

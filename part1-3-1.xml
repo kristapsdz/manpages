@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Case Study</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -13,7 +12,7 @@
 		<p>
 			I now introduce a case study of a real-world function library manual, in particular the manual for the <span
 				class="func">getc</span>, <span class="func">fgetc</span>, <span class="func">getw</span>, and <span
-				class="func">getchar</span> functions from <a class="term" href="glossary.xhtml#openbsd">OpenBSD</a>.  The
+				class="func">getchar</span> functions from <a class="term" href="glossary.xml#openbsd">OpenBSD</a>.  The
 			original file may be viewed on-line at <a class="external"
 				href="http://www.openbsd.org/cgi-bin/cvsweb/src/lib/libc/stdio/getc.3">src/lib/libc/stdio/getc.3</a>,
 			file version 1.12.  This is not the manual for the full function library, but only a handful of similar functions.
@@ -85,7 +84,7 @@
 		</div>
 		<p>
 			The <span class="cmd">cvs</span> identifier, copyright, and license comments of this file are very similar to that of
-			the <a href="part1-1-3.xhtml#case_study_cmd">Case Study</a> for commands.
+			the <a href="part1-1-3.xml#case_study_cmd">Case Study</a> for commands.
 		</p>
 		<div class="mdocin">
 			.Dd $&#8203;Mdocdate: May 31 2007 &#8203;$
@@ -115,7 +114,7 @@
 		<p>
 			Lists (alphabetically) all the functions that will be documented, and some general notes about their collective
 			function.  We next jump down into the <span class="sec">SYNOPSIS</span>; since this set of functions is part of the <a
-				class="term" href="glossary.xhtml#libc">C Standard Library</a>, it needs no special linking information.
+				class="term" href="glossary.xml#libc">C Standard Library</a>, it needs no special linking information.
 		</p>
 		<div class="mdocin">
 			.Sh SYNOPSIS
@@ -139,16 +138,16 @@
 			.Fn getw "FILE *stream"
 		</div>
 		<p>
-			This documents the calling syntax of all functions.  Note that the <a href="macros.xhtml#macro_fd" class="macro">Fd</a>
-			macro is used instead of the <a href="macros.xhtml#macro_in" class="macro">In</a> macro.  This invocation is
-			historically relevant, but new manuals should always use <a href="macros.xhtml#macro_in" class="macro">In</a>.
+			This documents the calling syntax of all functions.  Note that the <a href="macros.xml#macro_fd" class="macro">Fd</a>
+			macro is used instead of the <a href="macros.xml#macro_in" class="macro">In</a> macro.  This invocation is
+			historically relevant, but new manuals should always use <a href="macros.xml#macro_in" class="macro">In</a>.
 		</p>
 		<div class="mdocin">
 			.In stdio.h
 		</div>
 		<p>
 			Next, each function and its arguments is explained as a free-flowing paragraph.  This was probably chosen instead of
-			using a list item for each argument (with <a href="macros.xhtml#macro_bl" class="macro">Bl</a>) due to the small number
+			using a list item for each argument (with <a href="macros.xml#macro_bl" class="macro">Bl</a>) due to the small number
 			of arguments.
 		</p>
 		<div class="mdocin">
@@ -211,11 +210,11 @@
 			.Fa stream .
 		</div>
 		<p>
-			The usage of the <a href="macros.xhtml#macro_em" class="macro">Em</a> macro is not correct: the <a
-				href="macros.xhtml#macro_va" class="macro">Va</a> or <a href="macros.xhtml#macro_dv" class="macro">Dv</a> macro
-			would have been more appropriate.  The same applies to the <a href="macros.xhtml#macro_li" class="macro">Li</a>.  The
+			The usage of the <a href="macros.xml#macro_em" class="macro">Em</a> macro is not correct: the <a
+				href="macros.xml#macro_va" class="macro">Va</a> or <a href="macros.xml#macro_dv" class="macro">Dv</a> macro
+			would have been more appropriate.  The same applies to the <a href="macros.xml#macro_li" class="macro">Li</a>.  The
 			<span class="lang">mdoc</span> language is semantic, so using presentation macros such as <a
-				href="macros.xhtml#macro_li" class="macro">Li</a> and <a href="macros.xhtml#macro_em" class="macro">Em</a> is
+				href="macros.xml#macro_li" class="macro">Li</a> and <a href="macros.xml#macro_em" class="macro">Em</a> is
 			discouraged.
 		</p>
 		<div class="mdocin">
@@ -290,7 +289,7 @@
 		</div>
 		<p>
 			Noting standards conformance is extremely important: it allows programmers and administrators to depend on your
-			component in a cross-platform fashion.  These functions are part of the <a class="term" href="glossary.xhtml#libc">C
+			component in a cross-platform fashion.  These functions are part of the <a class="term" href="glossary.xml#libc">C
 				Standard Library</a>.
 		</p>
 		<div class="mdocin">
@@ -333,7 +332,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part1-4.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part1-4.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part1-3-1.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

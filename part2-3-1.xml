@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Sections</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -11,11 +10,11 @@
 			Sections
 		</h3>
 		<p>
-			As discussed previously, a section is begun by the <a href="macros.xhtml#macro_sh" class="macro">Sh</a> macro and
+			As discussed previously, a section is begun by the <a href="macros.xml#macro_sh" class="macro">Sh</a> macro and
 			continues until the end of file or another section.
 		</p>
 		<div class="mdocsyntax">
-			.<a href="macros.xhtml#macro_sh" class="macro">Sh</a> <span class="macroarg">SECTION NAME</span>
+			.<a href="macros.xml#macro_sh" class="macro">Sh</a> <span class="macroarg">SECTION NAME</span>
 			<br />
 			Text and macros within the section.
 		</div>
@@ -41,7 +40,7 @@
 			.Nd print a simple greeting
 		</div>
 		<p>
-			The <a href="macros.xhtml#macro_nd" class="macro">Nd</a> macro should consist of a single line without trailing
+			The <a href="macros.xml#macro_nd" class="macro">Nd</a> macro should consist of a single line without trailing
 			punctuation or leading capitalisation.  As a rule of thumb, this description should be a sentence clause in the
 			imperative mood for commands and functions, or simply a noun phrase for file formats, devices, and miscellanea.
 		</p>
@@ -107,8 +106,8 @@
 		</p>
 		<p>
 			Note that if your manual only documents one component, it's unnecessary to re-write the command name for <a
-				href="macros.xhtml#macro_nm" class="macro">Nm</a>.  If omitted, the last specified <a
-				href="macros.xhtml#macro_nm" class="macro">Nm</a> in the <span class="sec">NAME</span> will be used.
+				href="macros.xml#macro_nm" class="macro">Nm</a>.  If omitted, the last specified <a
+				href="macros.xml#macro_nm" class="macro">Nm</a> in the <span class="sec">NAME</span> will be used.
 		</p>
 		<p>
 			Multiple commands are specified in the order they appear within the <span class="sec">NAME</span> section.
@@ -125,7 +124,7 @@
 			.Nm hi
 		</div>
 		<p>
-			Since there are multiple <a href="macros.xhtml#macro_nm" class="macro">Nm</a> macros in the <span
+			Since there are multiple <a href="macros.xml#macro_nm" class="macro">Nm</a> macros in the <span
 				class="sec">NAME</span> section, it's necessary that we specify the name of each command.  In this example, an
 			additional command <span class="cmd">hi</span> is specified, which has neither flags nor arguments.
 		</p>
@@ -196,8 +195,8 @@
 			.Fn hi
 		</div>
 		<p>
-			List any global variables with the <a href="macros.xhtml#macro_vt" class="macro">Vt</a> and/or <a
-				href="macros.xhtml#macro_va" class="macro">Va</a> macro following function prototypes.
+			List any global variables with the <a href="macros.xml#macro_vt" class="macro">Vt</a> and/or <a
+				href="macros.xml#macro_va" class="macro">Va</a> macro following function prototypes.
 		</p>
 		<div class="mdocin">
 			.In sys/types.h
@@ -221,7 +220,7 @@
 			.Vt extern const char * const * greetings;
 		</div>
 		<p>
-			Macro definitions, however, should come before the function prototypes.  These use the <a href="macros.xhtml#macro_fd"
+			Macro definitions, however, should come before the function prototypes.  These use the <a href="macros.xml#macro_fd"
 				class="macro">Fd</a> macro and must include the preprocessor directive for the macro.
 		</p>
 		<div class="mdocin">
@@ -250,7 +249,7 @@
 		<p>
 			Some manuals define a range of functions with differing header dependencies.  In general it's not a good idea to group
 			these within the same manual. However, if necessary, arrange the functions and variables underneath their header file
-			<a href="macros.xhtml#macro_in" class="macro">In</a> macros.  These need not necessarily much with the <span
+			<a href="macros.xml#macro_in" class="macro">In</a> macros.  These need not necessarily much with the <span
 				class="sec">NAME</span> section ordering, but should be as close as possible.
 		</p>
 		<h4>
@@ -303,7 +302,7 @@
 		<p>
 			If multiple commands are included, they should be listed in the order they appear in <span class="sec">NAME</span> and
 			<span class="sec">DESCRIPTION</span>.  Remember to specify a documented command, in this case, whenever invoking the <a
-				href="macros.xhtml#macro_nm" class="macro">Nm</a> macro.  Command exit statuses are documented in <span
+				href="macros.xml#macro_nm" class="macro">Nm</a> macro.  Command exit statuses are documented in <span
 				class="sec">EXIT STATUS</span>.
 		</p>
 		<h5>
@@ -420,7 +419,7 @@
 			they need not use this section.
 		</p>
 		<p>
-			System calls (category <span class="cat">2</span>) usually employ the <a href="macros.xhtml#macro_rv"
+			System calls (category <span class="cat">2</span>) usually employ the <a href="macros.xml#macro_rv"
 				class="macro">Rv</a> macro to stipulate a standard return value statement.
 		</p>
 		<div class="mdocin">
@@ -429,7 +428,7 @@
 			.Rv -std
 		</div>
 		<p>
-			Note that the <span class="macroflag">std</span> flag is a required argument to <a href="macros.xhtml#macro_rv"
+			Note that the <span class="macroflag">std</span> flag is a required argument to <a href="macros.xml#macro_rv"
 				class="macro">Rv</a>, for historical reasons.
 		</p>
 		<p>
@@ -450,7 +449,7 @@
 		<p>
 			Both commands and functions may be affected by UNIX environmental variables.  These must be documented in the <span
 				class="sec">ENVIRONMENT</span> section of the manual.  Each variable should be listed as a <a
-				href="macros.xhtml#macro_ev" class="macro">Ev</a> along with its effect on the component.
+				href="macros.xml#macro_ev" class="macro">Ev</a> along with its effect on the component.
 		</p>
 		<div class="mdocin">
 			.Sh ENVIRONMENT
@@ -495,7 +494,7 @@
 		</p>
 		<p>
 			If your utility exits with zero on success and greater than zero on failure (the standard for most utilities), use the
-			<a href="macros.xhtml#macro_ex" class="macro">Ex</a> macro.
+			<a href="macros.xml#macro_ex" class="macro">Ex</a> macro.
 		</p>
 		<div class="mdocin">
 			.Sh EXIT STATUS
@@ -533,8 +532,8 @@
 			.Dl $ hello \*qDear Joe, \*q \(bv mail -s \*qHi!\*q joe
 		</div>
 		<p>
-			The <a href="macros.xhtml#macro_dl" class="macro">Dl</a>, used for one-line literal displays, is a common macro in the
-			<span class="sec">EXAMPLES</span> section.  For multi-line displays, use the <a href="macros.xhtml#macro_bd"
+			The <a href="macros.xml#macro_dl" class="macro">Dl</a>, used for one-line literal displays, is a common macro in the
+			<span class="sec">EXAMPLES</span> section.  For multi-line displays, use the <a href="macros.xml#macro_bd"
 				class="macro">Bd</a> <span class="macroflag">literal</span> environment, usually with a default indentation with
 			<span class="macroflag">offset</span> <span class="macroarg">indent</span>.
 		</p>
@@ -555,7 +554,7 @@
 		</div>
 		<p>
 			For functions and function libraries, it's more common to include a single, thorough source example than individual
-			examples for each function.  These always use the <a href="macros.xhtml#macro_bd" class="macro">Bd</a> <span
+			examples for each function.  These always use the <a href="macros.xml#macro_bd" class="macro">Bd</a> <span
 				class="macroflag">literal</span> display environment and an indentation.
 		</p>
 		<div class="mdocin">
@@ -609,7 +608,7 @@
 				class="sec">ERRORS</span>.
 		</p>
 		<p>
-			The <a href="macros.xhtml#macro_bl" class="macro">Bl</a> <span class="macroflag">diag</span> lists are most often used
+			The <a href="macros.xml#macro_bl" class="macro">Bl</a> <span class="macroflag">diag</span> lists are most often used
 			for documenting emitted messages.
 		</p>
 		<div class="mdocin">
@@ -650,7 +649,7 @@
 			This section is used exclusively by functions that set or return a regular error code.  The most common use is for
 			system calls (category two) setting error constants in the C library.  In either case, this section should consist of a
 			single list documenting all possible error codes.  In the latter case, each error should be labelled within the <a
-				href="macros.xhtml#macro_er" class="macro">Er</a> macro.
+				href="macros.xml#macro_er" class="macro">Er</a> macro.
 		</p>
 		<h4>
 			SEE ALSO
@@ -660,7 +659,7 @@
 			manuals.  Any components referenced in your manual should be duplicated here along with any other bibliographic texts.
 		</p>
 		<p>
-			For UNIX manual cross-references, use the <a href="macros.xhtml#macro_xr" class="macro">Xr</a> macro.  These should be
+			For UNIX manual cross-references, use the <a href="macros.xml#macro_xr" class="macro">Xr</a> macro.  These should be
 			specified in a list ordered first by section, then by name.  Non-terminal references should be comma-separated.
 		</p>
 		<div class="mdocin">
@@ -676,7 +675,7 @@
 		</div>
 		<p>
 			If your manual references other documents or literature, you may include them in this section within a bibliographic
-			reference as well.  The <a href="macros.xhtml#macro_rs" class="macro">Rs</a> block is used for bibliographic references.
+			reference as well.  The <a href="macros.xml#macro_rs" class="macro">Rs</a> block is used for bibliographic references.
 			These should be specified after any UNIX manual cross-references.
 		</p>
 		<div class="mdocin">
@@ -716,7 +715,7 @@
 		</h4>
 		<p>
 			If your component references any standards literature, it should be mentioned here.  Most standards (e.g., POSIX, ANSI,
-			etc.) may be semantically noted with the <a href="macros.xhtml#macro_st" class="macro">St</a> macro.  When implementing
+			etc.) may be semantically noted with the <a href="macros.xml#macro_st" class="macro">St</a> macro.  When implementing
 			standardised wire protocols, references to RFC and other literature should also be mentioned here.  These differ from
 			referenced standards in terms of being implemented versus referred.
 		</p>
@@ -820,7 +819,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part3.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part3.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part2-3-1.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

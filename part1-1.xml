@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Commands</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -56,7 +55,7 @@
 			Here, <span class="cmd">command</span> refers to the command invocation name, <span class="cmdflag">flag</span> is a
 			flag (or switch) to that command, <span class="cmdarg">farg</span> is an argument to a flag (not all flags have
 			arguments), and <span class="cmdarg">arg</span> is an argument to the command.  This convention is formalised by the <a
-				class="term" href="glossary.xhtml#posix">POSIX</a>.1-2008 standard (Base Definitions, sec. 12.1).
+				class="term" href="glossary.xml#posix">POSIX</a>.1-2008 standard (Base Definitions, sec. 12.1).
 		</p>
 		<p>
 			The dash in front of <span class="cmdflag">flag</span> indicates a flag, while the square brackets around 
@@ -67,7 +66,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part1-1-1.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part1-1-1.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part1-1.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

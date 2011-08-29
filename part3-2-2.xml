@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Revision Control</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -13,11 +12,11 @@
 		<p>
 			Several examples in this book have covered the topic of integrating <span class="lang">mdoc</span> documents into
 			revision control systems.  In this section, I cover the few steps required to integrate these documents with <a
-				class="cmd term" href="glossary.xhtml#cvs">cvs</a>.
+				class="cmd term" href="glossary.xml#cvs">cvs</a>.
 		</p>
 		<p>
 			Assume a file <span class="file">foo.in.1.</span> consists of our <span class="lang">mdoc</span> source.  I assume, for
-			simplicity, that it is licensed with the <a class="term" href="glossary.xhtml#isc_license">ISC license</a> and
+			simplicity, that it is licensed with the <a class="term" href="glossary.xml#isc_license">ISC license</a> and
 			copyright-protected, both of which lead the document as a series of comments.
 		</p>
 		<div class="mdocin">
@@ -71,8 +70,8 @@
 			marker.  This sequence is filled in with the file's last editor, revision, and checkin date.
 		</p>
 		<p>
-			Some <span class="cmd">cvs</span> servers (e.g., those in <a class="term" href="glossary.xhtml#netbsd">NetBSD</a> and <a
-				class="term" href="glossary.xhtml#openbsd">OpenBSD</a>) support the <span class="screen">Mdocdate</span>
+			Some <span class="cmd">cvs</span> servers (e.g., those in <a class="term" href="glossary.xml#netbsd">NetBSD</a> and <a
+				class="term" href="glossary.xml#openbsd">OpenBSD</a>) support the <span class="screen">Mdocdate</span>
 			sequence.  This is filled by in <span class="cmd">cvs</span> with the check-in date.
 		</p>
 		<div class="mdocin">
@@ -91,7 +90,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="glossary.xhtml">Next</a></td>
+					<td class="nav-next"><a href="glossary.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part3-2-2.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

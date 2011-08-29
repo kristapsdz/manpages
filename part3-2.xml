@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Project Integration</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -11,15 +10,15 @@
 			Project Integration
 		</h2>
 		<p>
-			<span class="lang">mdoc</span> documents fit perfectly into a <a class="term" href="glossary.xhtml#unix">UNIX</a>
+			<span class="lang">mdoc</span> documents fit perfectly into a <a class="term" href="glossary.xml#unix">UNIX</a>
 			development environment.  In general, this is defined by a group of source files that produce executables as compiled
-			and linked by <a class="cmd term" href="glossary.xhtml#make">make</a>, called a build system.  Sources are usually
-			version-controlled using <a class="cmd term" href="glossary.xhtml#cvs">cvs</a>, called revision control.
+			and linked by <a class="cmd term" href="glossary.xml#make">make</a>, called a build system.  Sources are usually
+			version-controlled using <a class="cmd term" href="glossary.xml#cvs">cvs</a>, called revision control.
 		</p>
 		<p>
 			In this section, I discuss methods for integrating <span class="cmd">mdoc</span> documents into a source-controlled
-			build environment.  I'll focus on <a href="glossary.xhtml#mandoc" class="term cmd">mandoc</a> as a formatter, but
-			provide stubs for using <a href="glossary.xhtml#troff" class="term cmd">troff</a>.
+			build environment.  I'll focus on <a href="glossary.xml#mandoc" class="term cmd">mandoc</a> as a formatter, but
+			provide stubs for using <a href="glossary.xml#troff" class="term cmd">troff</a>.
 		</p>
 		<p>
 			Our examples will consider a project building a utility <span class="cmd">foo</span> from its single source file <span
@@ -29,7 +28,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part3-2-1.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part3-2-1.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part3-2.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Escape Sequences</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -19,9 +18,9 @@
 			Special Characters
 		</h4>
 		<p>
-			Special characters allow the encoding of non-<a class="term" href="glossary.xhtml#ascii">ASCII</a> characters and, in <a
-				class="term" href="part2-1-1.xhtml#macro_line">macro lines</a>, the use of <a
-				href="part2-1-1.xhtml#reserved">reserved characters</a>.  Special characters may be invoked anywhere in input.
+			Special characters allow the encoding of non-<a class="term" href="glossary.xml#ascii">ASCII</a> characters and, in <a
+				class="term" href="part2-1-1.xml#macro_line">macro lines</a>, the use of <a
+				href="part2-1-1.xml#reserved">reserved characters</a>.  Special characters may be invoked anywhere in input.
 		</p>
 		<p>
 			There are three forms of special character, distinguished by the number of letters in the sequence.
@@ -53,7 +52,7 @@
 		</h4>
 		<p>
 			An alternative form of special character is the predefined string.  These are legacy <a class="term"
-				href="glossary.xhtml#roff">roff</a> constructs of an escape sequence that may be programmatically set or unset.
+				href="glossary.xml#roff">roff</a> constructs of an escape sequence that may be programmatically set or unset.
 			The syntax for predefined strings follows:
 		</p>
 		<table class="tbl">
@@ -82,7 +81,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part2-1-3.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part2-1-3.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part2-1-2.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

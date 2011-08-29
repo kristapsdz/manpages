@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>mandoc (mdocml)</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -13,16 +12,16 @@
 		<p>
 			The <span class="cmd">mandoc</span> utility is a specialised <span class="lang">mdoc</span> formatter: although it also
 			supports some other UNIX manual formats, it is not a general-purpose <a class="lang term"
-				href="glossary.xhtml#roff">roff</a> formattter.  Development began in 2008 to replace <a
-				href="part3-1-1.xhtml#groff_sec">groff</a> with an <a class="term" href="glossary.xhtml#isc_license">ISC
+				href="glossary.xml#roff">roff</a> formattter.  Development began in 2008 to replace <a
+				href="part3-1-1.xml#groff_sec">groff</a> with an <a class="term" href="glossary.xml#isc_license">ISC
 				licensed</a>, high-speed reimplementation.
 		</p>
 		<p>
 			<span class="cmd">mandoc</span> may be invoked as <span class="cmd">troff</span> or <span class="cmd">nroff</span>, as
 			its command-line arguments overlap.  It supports the classical <a class="term"
-				href="glossary.xhtml#terminal">terminal</a> and <a class="term" href="glossary.xhtml#ps">PS</a> forms, and has
-			very strong support for <a class="term" href="glossary.xhtml#html">HTML</a> and <a class="term"
-				href="glossary.xhtml#xhtml">XHTML</a>.  <a class="term" href="glossary.xhtml#pdf">PDF</a> output is support as
+				href="glossary.xml#terminal">terminal</a> and <a class="term" href="glossary.xml#ps">PS</a> forms, and has
+			very strong support for <a class="term" href="glossary.xml#html">HTML</a> and <a class="term"
+				href="glossary.xml#xhtml">XHTML</a>.  <a class="term" href="glossary.xml#pdf">PDF</a> output is support as
 			well.
 		</p>
 		<p>
@@ -54,7 +53,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part3-2.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part3-2.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part3-1-2.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

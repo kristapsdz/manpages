@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Prologue</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -11,8 +10,8 @@
 			Prologue
 		</h3>
 		<p>
-			The prologue consists at most of the <a href="macros.xhtml#macro_dd" class="macro">Dd</a>, <a
-				href="macros.xhtml#macro_dt" class="macro">Dt</a>, and <a href="macros.xhtml#macro_os" class="macro">Os</a>
+			The prologue consists at most of the <a href="macros.xml#macro_dd" class="macro">Dd</a>, <a
+				href="macros.xml#macro_dt" class="macro">Dt</a>, and <a href="macros.xml#macro_os" class="macro">Os</a>
 			macros.  These always occur at the beginning of a manual.
 		</p>
 		<div class="mdocin">
@@ -23,15 +22,15 @@
 			.Os
 		</div>
 		<p>
-			The only firm requirement of the <span class="lang">mdoc</span> prologue is that the <a href="macros.xhtml#macro_dd"
+			The only firm requirement of the <span class="lang">mdoc</span> prologue is that the <a href="macros.xml#macro_dd"
 				class="macro">Dd</a> macro comes first: many formatting systems will read up to the first macro to determine the
-			formatting language.  If <a href="macros.xhtml#macro_dd" class="macro">Dd</a> is not encountered first, the <span
+			formatting language.  If <a href="macros.xml#macro_dd" class="macro">Dd</a> is not encountered first, the <span
 				class="lang">mdoc</span> format may not be recognised.
 		</p>
 		<p>
-			Following the <a href="macros.xhtml#macro_dd" class="macro">Dd</a>, the prologue is conventionally ordered as first <a
-				href="macros.xhtml#macro_dt" class="macro">Dt</a> and then <a href="macros.xhtml#macro_os" class="macro">Os</a>.
-			The <a href="macros.xhtml#macro_os" class="macro">Os</a> macro is usually left without arguments, meaning that the
+			Following the <a href="macros.xml#macro_dd" class="macro">Dd</a>, the prologue is conventionally ordered as first <a
+				href="macros.xml#macro_dt" class="macro">Dt</a> and then <a href="macros.xml#macro_os" class="macro">Os</a>.
+			The <a href="macros.xml#macro_os" class="macro">Os</a> macro is usually left without arguments, meaning that the
 			manual applies to the current system.
 		</p>
 		<p>
@@ -48,10 +47,10 @@
 			Date
 		</h4>
 		<p>
-			The date is specified by the <a href="macros.xhtml#macro_dd" class="macro">Dd</a> macro.
+			The date is specified by the <a href="macros.xml#macro_dd" class="macro">Dd</a> macro.
 		</p>
 		<div class="mdocsyntax">
-			.<a href="macros.xhtml#macro_dd" class="macro">Dd</a> <span class="macroarg">date</span>
+			.<a href="macros.xml#macro_dd" class="macro">Dd</a> <span class="macroarg">date</span>
 		</div>
 		<p>
 			While no particular date format is required, it's best to use the <span class="screen">month day, year</span> format,
@@ -96,11 +95,11 @@
 		</h4>
 		<p>
 			A manual's title identifies the entire manual document.  It is always specified in uppercase as the first argument of
-			the <a href="macros.xhtml#macro_dt" class="macro">Dt</a> macro, which conventionally follows the initial <a
-				href="macros.xhtml#macro_dd" class="macro">Dd</a> macro.
+			the <a href="macros.xml#macro_dt" class="macro">Dt</a> macro, which conventionally follows the initial <a
+				href="macros.xml#macro_dd" class="macro">Dd</a> macro.
 		</p>
 		<div class="mdocsyntax">
-			.<a href="macros.xhtml#macro_dt" class="macro">Dt</a> <span class="macroarg">TITLE</span> <span
+			.<a href="macros.xml#macro_dt" class="macro">Dt</a> <span class="macroarg">TITLE</span> <span
 				class="macroarg">category</span> <span class="macroopt"><span class="macroarg">architecture</span></span>
 		</div>
 		<p>
@@ -109,7 +108,7 @@
 		<p>
 			In the case of a single-component manual, such as the manual for a single UNIX command or programming function, the
 			title corresponds to the manual name as specified with the <span class="sec">SYNOPSIS</span> <a
-				href="macros.xhtml#macro_nm" class="macro">Nm</a> macro argument.
+				href="macros.xml#macro_nm" class="macro">Nm</a> macro argument.
 		</p>
 		<p>
 			In the event of multiple components, such as a programming library, the title usually corresponds to the library name.
@@ -129,24 +128,24 @@
 			.Dt GREETING 3
 		</div>
 		<p>
-			If the title is left unspecified by omitting the <a href="macros.xhtml#macro_dt" class="macro">Dt</a> macro, behaviour
+			If the title is left unspecified by omitting the <a href="macros.xml#macro_dt" class="macro">Dt</a> macro, behaviour
 			is undefined.  Usually a formatter will default to an empty string or <span class="screen">LOCAL</span>.  In general,
-			however, a manual without <a href="macros.xhtml#macro_dt" class="macro">Dt</a> may be considered incomplete.
+			however, a manual without <a href="macros.xml#macro_dt" class="macro">Dt</a> may be considered incomplete.
 		</p>
 		<h4>
 			Category
 		</h4>
 		<p>
 			The category of a manual, sometimes called the manual section, specifies the type of component a manual describes.  It
-			is specified in the second argument of the <a href="macros.xhtml#macro_dt" class="macro">Dt</a> macro.
+			is specified in the second argument of the <a href="macros.xml#macro_dt" class="macro">Dt</a> macro.
 		</p>
 		<div class="mdocsyntax">
-			.<a href="macros.xhtml#macro_dt" class="macro">Dt</a> <span class="macroarg">TITLE</span> <span
+			.<a href="macros.xml#macro_dt" class="macro">Dt</a> <span class="macroarg">TITLE</span> <span
 				class="macroarg">category</span> <span class="macroopt"><span class="macroarg">architecture</span></span>
 		</div>
 		<p>
 			These catogies are dictated by convention extending to the First Edition UNIX <a class="term"
-				href="glossary.xhtml#unix_programmers_manual">Programmer's Manual</a>.
+				href="glossary.xml#unix_programmers_manual">Programmer's Manual</a>.
 		</p>
 		<blockquote cite="http://www.cs.bell-labs.com/who/dmr/1stEdman.html">
 			<p>
@@ -251,10 +250,10 @@
 				class="cat">9</span> manuals.
 		</p>
 		<p>
-			These use the optional third argument of the <a href="macros.xhtml#macro_dt" class="macro">Dt</a> macro.
+			These use the optional third argument of the <a href="macros.xml#macro_dt" class="macro">Dt</a> macro.
 		</p>
 		<div class="mdocsyntax">
-			.<a href="macros.xhtml#macro_dt" class="macro">Dt</a> <span class="macroarg">TITLE</span> <span
+			.<a href="macros.xml#macro_dt" class="macro">Dt</a> <span class="macroarg">TITLE</span> <span
 				class="macroarg">category</span> <span class="macroopt"><span class="macroarg">architecture</span></span>
 		</div>
 		<p>
@@ -266,10 +265,10 @@
 		</h4>
 		<p>
 			Similar to architecture, some manuals only pertain to a particular operating system.  This system may be specified to
-			the <a href="macros.xhtml#macro_os" class="macro">Os</a> macro of the prologue.
+			the <a href="macros.xml#macro_os" class="macro">Os</a> macro of the prologue.
 		</p>
 		<div class="mdocsyntax">
-			.<a href="macros.xhtml#macro_os" class="macro">Os</a> <span class="macroopt"><span class="macroarg">system</span></span>
+			.<a href="macros.xml#macro_os" class="macro">Os</a> <span class="macroopt"><span class="macroarg">system</span></span>
 		</div>
 		<p>
 			If <span class="macroarg">system</span> is unspecified, the manual is assumed to apply to any operating system.
@@ -282,7 +281,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part2-2-2.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part2-2-2.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part2-2-1.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

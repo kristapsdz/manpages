@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Case Study</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -12,8 +11,8 @@
 		</h3>
 		<p>
 			I now introduce a case study of a real-world function manual, in particular the manual for the <span
-				class="func">strtonum</span> function, which is an extension to the <a class="term" href="glossary.xhtml#libc">C
-				Standard Library</a> found in <a class="term" href="glossary.xhtml#openbsd">OpenBSD</a>.  The original file may
+				class="func">strtonum</span> function, which is an extension to the <a class="term" href="glossary.xml#libc">C
+				Standard Library</a> found in <a class="term" href="glossary.xml#openbsd">OpenBSD</a>.  The original file may
 			be viewed on-line at <a class="external"
 				href="http://www.openbsd.org/cgi-bin/cvsweb/src/lib/libc/stdlib/strtonum.3">src/lib/libc/stdlib/strtonum.3</a>,
 			file version 1.14.
@@ -53,7 +52,7 @@
 			This is the standard comment header to manual files in OpenBSD.  Indeed, most distributed manuals begin with a copyright
 			notice, then a license.  The <span class="screen">$&#8203;OpenBSD$</span> line is automatically updated by the revision
 			control system, <span class="cmd">cvs</span>, whenever an update to the file is committed.  The line following is the
-			copyright message, and following that is the text form of the <a class="term" href="glossary.xhtml#isc_license">ISC
+			copyright message, and following that is the text form of the <a class="term" href="glossary.xml#isc_license">ISC
 				license</a>.
 		</p>
 		<div class="mdocin">
@@ -78,8 +77,8 @@
 		</div>
 		<p>
 			Declares a single documented function, <span class="func">strtonum</span>, and its purpose.  The quotations within the
-			<a href="macros.xhtml#macro_nd" class="macro">Nd</a> macro are superfluous: like <a href="macros.xhtml#macro_qq"
-				class="macro">Qq</a> macro studied earlier, <a href="macros.xhtml#macro_nd" class="macro">Nd</a> accepts an
+			<a href="macros.xml#macro_nd" class="macro">Nd</a> macro are superfluous: like <a href="macros.xml#macro_qq"
+				class="macro">Qq</a> macro studied earlier, <a href="macros.xml#macro_nd" class="macro">Nd</a> accepts an
 			arbitrary number of arguments to format.  Quotation, in grouping these as one argument, serves little but to pass in
 			whitespace (there is no special whitespace to pass in).
 		</p>
@@ -110,10 +109,10 @@
 		</p>
 		<p>
 			Note that function arguments are quoted.  This allows each argument to be considered in entirety: type, qualifiers,
-			pointers, and so on.  Unlike for <a href="macros.xhtml#macro_nd" class="macro">Nd</a>, this is necessary.
+			pointers, and so on.  Unlike for <a href="macros.xml#macro_nd" class="macro">Nd</a>, this is necessary.
 		</p>
 		<p>
-			Note also that while <a href="macros.xhtml#macro_fn" class="macro">Fn</a> could have been used, it would have created a
+			Note also that while <a href="macros.xml#macro_fn" class="macro">Fn</a> could have been used, it would have created a
 			long input line.  The broken-down form was used for clarity.
 		</p>
 		<div class="mdocin">
@@ -134,10 +133,10 @@
 			value.
 		</div>
 		<p>
-			Note the reference to a function argument with <a href="macros.xhtml#macro_fa" class="macro">Fa</a> by its name, <span
-				class="screen">nptr</span>.  Also note that the <a href="macros.xhtml#macro_li" class="macro">Li</a> usage is
+			Note the reference to a function argument with <a href="macros.xml#macro_fa" class="macro">Fa</a> by its name, <span
+				class="screen">nptr</span>.  Also note that the <a href="macros.xml#macro_li" class="macro">Li</a> usage is
 			not good practise: since the <span class="screen">long long</span> refers to a type, it should be of type <a
-				href="macros.xhtml#macro_vt" class="macro">Vt</a>.
+				href="macros.xml#macro_vt" class="macro">Vt</a>.
 		</p>
 		<div class="mdocin">
 			The
@@ -210,7 +209,7 @@
 		</div>
 		<p>
 			The remainder of the <span class="sec">DESCRIPTION</span> section has completely captured the calling syntax and
-			behaviour of the function.  The usage of <a href="macros.xhtml#macro_ql" class="macro">Ql</a> macro is simply to set
+			behaviour of the function.  The usage of <a href="macros.xml#macro_ql" class="macro">Ql</a> macro is simply to set
 			aside non-alphanumeric letters from the regular stream of text.
 		</p>
 		<div class="mdocin">
@@ -338,9 +337,9 @@
 		</div>
 		<p>
 			The <span class="sec">ERRORS</span> section will be rigorously covered in the section on <a
-				href="part1-4.xhtml#sec_system_call">System Calls</a>.  In brief, since the <span class="var">errno</span> global error
-			variable is set, each possible value must be documented in a list using the <a href="macros.xhtml#macro_er"
-				class="macro">Er</a> macro.  These are always enclosed within <a href="macros.xhtml#macro_bq" class="macro">Bq</a>.
+				href="part1-4.xml#sec_system_call">System Calls</a>.  In brief, since the <span class="var">errno</span> global error
+			variable is set, each possible value must be documented in a list using the <a href="macros.xml#macro_er"
+				class="macro">Er</a> macro.  These are always enclosed within <a href="macros.xml#macro_bq" class="macro">Bq</a>.
 		</p>
 		<p>
 			Furthermore, the error string in <span class="var">errstr</span> must also be documented.
@@ -400,8 +399,8 @@
 			.Ox 3.6 .
 		</div>
 		<p>
-			Since this function is included in OpenBSD's <a href="glossary.xhtml#libc" class="term">C Standard Library</a>, the fact that the
-			function is not standard must absolutely be documented.  In this, the <a href="macros.xhtml#macro_ox"
+			Since this function is included in OpenBSD's <a href="glossary.xml#libc" class="term">C Standard Library</a>, the fact that the
+			function is not standard must absolutely be documented.  In this, the <a href="macros.xml#macro_ox"
 				class="macro">Ox</a> macro indicates the OpenBSD operating system (each BSD UNIX free operating system has its
 			own macro).
 		</p>
@@ -409,7 +408,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part1-3.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part1-3.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part1-2-3.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

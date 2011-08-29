@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Case Study</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -12,7 +11,7 @@
 		</h3>
 		<p>
 			I now introduce a case study of a real-world system call manual, in particular the manual for the <span
-				class="func">fsync</span> function from <a class="term" href="glossary.xhtml#openbsd">OpenBSD</a>.  The
+				class="func">fsync</span> function from <a class="term" href="glossary.xml#openbsd">OpenBSD</a>.  The
 			original file may be viewed on-line at <a class="external"
 				href="http://www.openbsd.org/cgi-bin/cvsweb/src/lib/libc/sys/fsync.2">src/lib/libc/sys/fsync.2</a>, file version
 			1.9.
@@ -82,8 +81,8 @@
 		</div>
 		<p>
 			The <span class="cmd">cvs</span> identifiers (both from the current system, <a class="term"
-				href="glossary.xhtml#openbsd">OpenBSD</a>, and the import source system, <a class="term"
-				href="glossary.xhtml#netbsd">NetBSD</a>), copyright, license, and <span class="cmd">sccs</span> identifier (from
+				href="glossary.xml#openbsd">OpenBSD</a>, and the import source system, <a class="term"
+				href="glossary.xml#netbsd">NetBSD</a>), copyright, license, and <span class="cmd">sccs</span> identifier (from
 			the original system) are presented in the usual way.
 		</p>
 		<div class="mdocin">
@@ -106,7 +105,7 @@
 			.Nd "synchronize a file's in-core state with that on disk"
 		</div>
 		<p>
-			The <a href="macros.xhtml#macro_nd" class="macro">Nd</a> macro's arguments are supefluously quoted again.
+			The <a href="macros.xml#macro_nd" class="macro">Nd</a> macro's arguments are supefluously quoted again.
 		</p>
 		<div class="mdocin">
 			.Sh SYNOPSIS
@@ -118,8 +117,8 @@
 			.Fn fsync "int fd"
 		</div>
 		<p>
-			Again, in historical manuals, <a href="macros.xhtml#macro_fd" class="macro">Fd</a> is sometimes used instead of the
-			modern <a href="macros.xhtml#macro_in" class="macro">In</a> macro.  Note also the inclusion of the function argument's
+			Again, in historical manuals, <a href="macros.xml#macro_fd" class="macro">Fd</a> is sometimes used instead of the
+			modern <a href="macros.xml#macro_in" class="macro">In</a> macro.  Note also the inclusion of the function argument's
 			name, <span class="screen">fd</span>, where regular C prototypes would usually only include the type.
 		</p>
 		<div class="mdocin">
@@ -159,7 +158,7 @@
 		</div>
 		<p>
 			This is not correct, as it omits information on the <span class="var">errno</span> global error being set.  The <a
-				href="macros.xhtml#macro_rv" class="macro">Rv</a> macro should be used instead.
+				href="macros.xml#macro_rv" class="macro">Rv</a> macro should be used instead.
 		</p>
 		<div class="mdocin">
 			.Sh ERRORS
@@ -213,15 +212,15 @@
 		</div>
 		<p>
 			Note that the cross-references in <span class="sec">SEE ALSO</span> are ordered first by section, then alphabetically.
-			The <a href="macros.xhtml#macro_bx" class="macro">Bx</a> is referenced as the origin of the system call.  The <span
+			The <a href="macros.xml#macro_bx" class="macro">Bx</a> is referenced as the origin of the system call.  The <span
 				class="sec">STANDARDS</span> section is sorely missing, as <span class="func">fsync</span> is a function
-			specified by <a href="glossary.xhtml#posix" class="term">POSIX</a>.1-2008 standard.
+			specified by <a href="glossary.xml#posix" class="term">POSIX</a>.1-2008 standard.
 		</p>
 		<table class="nav">
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part2.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part2.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part1-4-1.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

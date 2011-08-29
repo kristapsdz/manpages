@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Macros</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -12,7 +11,7 @@
 		</h3>
 		<p>
 			So far we've considered several different types of macros.  A macro is usually a terse, two or three-character sequence
-			specified on a <a href="part2-1-1.xhtml#macro_line">macro line</a>.  In this section I formalise the various types of
+			specified on a <a href="part2-1-1.xml#macro_line">macro line</a>.  In this section I formalise the various types of
 			macros, categorised by their scope rules.
 		</p>
 		<p>
@@ -57,52 +56,52 @@
 		</p>
 		<p>
 			For example, the regular way of structuring command-line arguments, as described initially in the <a
-				href="part1-2-2.xhtml#elaborate_function">Elaborate Function</a> guide, is a command flag, followed by flag
+				href="part1-2-2.xml#elaborate_function">Elaborate Function</a> guide, is a command flag, followed by flag
 			arguments, followed by regular arguments.  We can put most invocation forms on one line as follows.
 		</p>
 		<div class="mdocsyntax">
-			.<span style="border: 1px dashed green; padding: 2px;"><a class="macro" href="macros.xhtml#macro_op">Op</a>
-				<span style="border: 1px solid blue;"><a class="macro" href="macros.xhtml#macro_ar">Fl</a>
+			.<span style="border: 1px dashed green; padding: 2px;"><a class="macro" href="macros.xml#macro_op">Op</a>
+				<span style="border: 1px solid blue;"><a class="macro" href="macros.xml#macro_ar">Fl</a>
 					<span class="macroarg">W</span></span>
-				<span style="border: 1px solid blue;"><a class="macro" href="macros.xhtml#macro_ns">Ns</a></span>
-				<span style="border: 1px solid blue;"><a class="macro" href="macros.xhtml#macro_ar">Ar</a>
+				<span style="border: 1px solid blue;"><a class="macro" href="macros.xml#macro_ns">Ns</a></span>
+				<span style="border: 1px solid blue;"><a class="macro" href="macros.xml#macro_ar">Ar</a>
 					<span class="macroarg">level</span></span>
 			</span>
 		</div>
 		<p>
-			In this example, <a href="macros.xhtml#macro_ar" class="macro">Ar</a>, <a href="macros.xhtml#macro_fl"
-				class="macro">Fl</a>, and <a href="macros.xhtml#macro_ns" class="macro">Ns</a> are in-line macros.  The <a
-				href="macros.xhtml#macro_op" class="macro">Op</a> is a block partial-implicit.  The <a
-				href="macros.xhtml#macro_fl" class="macro">Fl</a> macro opens within the <a href="macros.xhtml#macro_op"
-				class="macro">Op</a> and is closed by the <a href="macros.xhtml#macro_ns" class="macro">Ns</a>, which accepts no
+			In this example, <a href="macros.xml#macro_ar" class="macro">Ar</a>, <a href="macros.xml#macro_fl"
+				class="macro">Fl</a>, and <a href="macros.xml#macro_ns" class="macro">Ns</a> are in-line macros.  The <a
+				href="macros.xml#macro_op" class="macro">Op</a> is a block partial-implicit.  The <a
+				href="macros.xml#macro_fl" class="macro">Fl</a> macro opens within the <a href="macros.xml#macro_op"
+				class="macro">Op</a> and is closed by the <a href="macros.xml#macro_ns" class="macro">Ns</a>, which accepts no
 			arguments at all.  This suppresses the space between the flag and its arguments (this alternative style is used at
-			times, but discouraged).  The arguments are opened by <a href="macros.xhtml#macro_ar" class="macro">Ar</a> and close at
+			times, but discouraged).  The arguments are opened by <a href="macros.xml#macro_ar" class="macro">Ar</a> and close at
 			the end of the line.
 		</p>
 		<p>
 			The following is an example of macros with a fixed number of arguments:
 		</p>
 		<div class="mdocsyntax">
-			.<span style="border: 1px solid blue;"><a class="macro" href="macros.xhtml#macro_xr">Xr</a>
+			.<span style="border: 1px solid blue;"><a class="macro" href="macros.xml#macro_xr">Xr</a>
 				<span class="macroarg">mandoc</span>
 				<span class="macroarg">1</span></span>
-			<span style="border: 1px solid blue;"><a class="macro" href="macros.xhtml#macro_ap">Ap</a></span>
+			<span style="border: 1px solid blue;"><a class="macro" href="macros.xml#macro_ap">Ap</a></span>
 			s
 		</div>
 		<p>
-			The <a class="macro" href="macros.xhtml#macro_xr">Xr</a> macro accepts the <span class="macroarg">mandoc</span> and
+			The <a class="macro" href="macros.xml#macro_xr">Xr</a> macro accepts the <span class="macroarg">mandoc</span> and
 			<span class="macroarg">1</span> arguments, then reverts to accepting text.  The <a class="macro"
-				href="macros.xhtml#macro_ap">Ap</a> accepts no arguments, so it immediately reverts to the trailing text.
+				href="macros.xml#macro_ap">Ap</a> accepts no arguments, so it immediately reverts to the trailing text.
 		</p>
 		<p>
 			Finally, an example of an in-line macro accepting flags follows:
 		</p>
 		<div class="mdocsyntax">
-			.<span style="border: 1px solid blue;"><a class="macro" href="macros.xhtml#macro_st">St</a>
+			.<span style="border: 1px solid blue;"><a class="macro" href="macros.xml#macro_st">St</a>
 				<span class="macroflag">ansiC</span></span>
 		</div>
 		<p>
-			The argument to <a class="macro" href="macros.xhtml#macro_st">St</a> specifies the standard to be printed.
+			The argument to <a class="macro" href="macros.xml#macro_st">St</a> specifies the standard to be printed.
 		</p>
 		<h4 id="block_partial_implicit">
 			Block Partial Implicit
@@ -131,12 +130,12 @@
 		<p>
 			The scope of a partial block macro is always closed by the end of the line; any macros between it and the end of line
 			are interpreted as nested macros.  We began this book with the block partial implicit macro <a class="macro"
-				href="macros.xhtml#macro_qq">Qq</a>.  The nested qualities of this macro category may be seen by embedding <a
-				class="macro" href="macros.xhtml#macro_qq">Qq</a> and <a class="macro" href="macros.xhtml#macro_pq">Pq</a>
+				href="macros.xml#macro_qq">Qq</a>.  The nested qualities of this macro category may be seen by embedding <a
+				class="macro" href="macros.xml#macro_qq">Qq</a> and <a class="macro" href="macros.xml#macro_pq">Pq</a>
 		</p>
 		<div class="mdocsyntax">
-			.<span style="border: 1px dashed green; padding: 2px;"><a class="macro" href="macros.xhtml#macro_pq">Pq</a>
-				<span style="border: 1px solid blue;"><a class="macro" href="macros.xhtml#macro_qq">Qq</a>
+			.<span style="border: 1px dashed green; padding: 2px;"><a class="macro" href="macros.xml#macro_pq">Pq</a>
+				<span style="border: 1px solid blue;"><a class="macro" href="macros.xml#macro_qq">Qq</a>
 					<span class="macroarg">Parenthesised quotation .</span>
 				</span>
 			</span>
@@ -149,7 +148,7 @@
 			Block Full Implicit
 		</h4>
 		<p>
-			A macro seen early on, the <a class="macro" href="macros.xhtml#macro_sh">Sh</a> macro, is block full implicit.  Unlike
+			A macro seen early on, the <a class="macro" href="macros.xml#macro_sh">Sh</a> macro, is block full implicit.  Unlike
 			<a href="#block_partial_implicit">block partial implicit</a> macros, these consist of multiple lines (they are
 			<i>blocks</i>) and treat the line arguments and multi-line arguments differently (<i>full</i>).
 			For a complete reference, see <a class="external"
@@ -175,17 +174,17 @@
 		<p>
 			The scope of <span class="macro">Begin</span> is closed out implicitly &mdash; by one of several possible macros or the
 			end of file.  The notion of a <i>full</i> macro is obvious when consindering <a class="macro"
-				href="macros.xhtml#macro_sh">Sh</a>:
+				href="macros.xml#macro_sh">Sh</a>:
 		</p>
 		<div class="mdocsyntax">
 			<div style="border: 1px solid blue; padding: 2px;">
-				.<span style="border: 1px dashed green;"><a class="macro" href="macros.xhtml#macro_st">Sh</a> 
+				.<span style="border: 1px dashed green;"><a class="macro" href="macros.xml#macro_st">Sh</a> 
 					<span class="macroargs">SECTION 1</span></span>
 				<br style="margin: 2px;" />
 				<span style="border: 1px dashed green;">Sectional text.</span>
 			</div>
 			<div style="border: 1px solid blue; padding: 2px;">
-				.<span style="border: 1px dashed green;"><a class="macro" href="macros.xhtml#macro_st">Sh</a> 
+				.<span style="border: 1px dashed green;"><a class="macro" href="macros.xml#macro_st">Sh</a> 
 					<span class="macroargs">SECTION 2</span></span>
 				<br style="margin: 2px;" />
 				<span style="border: 1px dashed green;">Sectional text.</span>
@@ -194,10 +193,10 @@
 		<p>
 			In this, the macro must separately decorate its line arguments and multi-line arguments.  In this case, the line
 			arguments must be bolded while the multi-line arguments must be indented.  The <a class="macro"
-				href="macros.xhtml#macro_sh">Sh</a> macro is closed out by a subsequent <a class="macro"
-				href="macros.xhtml#macro_sh">Sh</a> or the end of file.  Compare this to <a class="macro"
-				href="macros.xhtml#macro_ss">Ss</a>, which closes out with a subsequent <a class="macro"
-				href="macros.xhtml#macro_sh">Sh</a>, <a class="macro" href="macros.xhtml#macro_ss">Ss</a>, or end of file.
+				href="macros.xml#macro_sh">Sh</a> macro is closed out by a subsequent <a class="macro"
+				href="macros.xml#macro_sh">Sh</a> or the end of file.  Compare this to <a class="macro"
+				href="macros.xml#macro_ss">Ss</a>, which closes out with a subsequent <a class="macro"
+				href="macros.xml#macro_sh">Sh</a>, <a class="macro" href="macros.xml#macro_ss">Ss</a>, or end of file.
 		</p>
 		<h4 id="block_partial_explicit">
 			Block Partial Explicit
@@ -234,18 +233,18 @@
 		</p>
 		<p>
 			We have not yet considered a block partial explicit macro pair in this book.  But we can do so by considering <a
-				href="macros.xhtml#macro_oo" class="macro">Oo</a> and <a class="macro" href="macros.xhtml#macro_oc">Oc</a>.  This pair of
-			macros, for option open and option close, extend the behaviour of <a href="macros.xhtml#macro_op" class="macro">Op</a>
+				href="macros.xml#macro_oo" class="macro">Oo</a> and <a class="macro" href="macros.xml#macro_oc">Oc</a>.  This pair of
+			macros, for option open and option close, extend the behaviour of <a href="macros.xml#macro_op" class="macro">Op</a>
 			to multiple lines.
 		</p>
 		<div class="mdocsyntax">
-			.<a class="macro" href="macros.xhtml#macro_fl">Fl</a> 
+			.<a class="macro" href="macros.xml#macro_fl">Fl</a> 
 			<span class="macroarg">W</span>
-			<a class="macro" href="macros.xhtml#macro_oo">Oo</a>
+			<a class="macro" href="macros.xml#macro_oo">Oo</a>
 			<br />
 			<span class="macroarg">warn</span>|<span class="macroarg">error</span>|<span class="macroarg">fatal</span>
 			<br />
-			.<a class="macro" href="macros.xhtml#macro_oc">Oc</a>
+			.<a class="macro" href="macros.xml#macro_oc">Oc</a>
 		</div>
 		<h4 id="block_full_explicit">
 			Block Full Explicit
@@ -253,19 +252,19 @@
 		<p>
 			The block full explicit macros are <i>full</i> in the sense that arguments on the macro line and arguments following are
 			treated differently (like <a href="#block_full_implicit">block full implicit</a> macros).  The earliest example of this
-			is the <a href="macros.xhtml#macro_bl" class="macro">Bl</a>.  These macros are <i>explicitly</i> closed by a closing
+			is the <a href="macros.xml#macro_bl" class="macro">Bl</a>.  These macros are <i>explicitly</i> closed by a closing
 			macro and may contain nested macros.  For a complete reference, see <a class="external"
 				href="http://mdocml.bsd.lv/mdoc.7.html#x426c6f636b2066756c6c2d6578706c69636974">Block Full Explicit</a> macros
 			in the <a class="external lang" href="http://mdocml.bsd.lv/mdoc.7.html">mdoc</a> reference.
 		</p>
 		<p>
-			Consider the <a href="macros.xhtml#macro_bd" class="macro">Bd</a> macro, which does not accept line arguments (most
-			block full explicit macros do not accept line arguments).  It is manually closed by <a href="macros.xhtml#macro_ed"
+			Consider the <a href="macros.xml#macro_bd" class="macro">Bd</a> macro, which does not accept line arguments (most
+			block full explicit macros do not accept line arguments).  It is manually closed by <a href="macros.xml#macro_ed"
 				class="macro">Ed</a>.
 		</p>
 		<div class="mdocsyntax">
 			<div style="border: 1px solid blue; padding: 2px;">
-				.<span style="border: 1px dashed green;"><a class="macro" href="macros.xhtml#macro_bd">Bd</a> 
+				.<span style="border: 1px dashed green;"><a class="macro" href="macros.xml#macro_bd">Bd</a> 
 					<span class="macroflag">ragged</span>
 					<span class="macroflag">offset</span>
 					<span class="macroargs">indent</span></span>
@@ -274,18 +273,18 @@
 					<br />
 					More display text.
 				</div>
-				.<a class="macro" href="macros.xhtml#macro_ed">Ed</a> 
+				.<a class="macro" href="macros.xml#macro_ed">Ed</a> 
 			</div>
 		</div>
 		<p>
-			In this example, the text between the <a class="macro" href="macros.xhtml#macro_bd">Bd</a> and <a class="macro"
-				href="macros.xhtml#macro_ed">Ed</a> are treated specially.
+			In this example, the text between the <a class="macro" href="macros.xml#macro_bd">Bd</a> and <a class="macro"
+				href="macros.xml#macro_ed">Ed</a> are treated specially.
 		</p>
 		<table class="nav">
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part2-1-5.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part2-1-5.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part2-1-4.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

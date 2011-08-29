@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Preface</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -17,16 +16,16 @@
 		</blockquote>
 		<p>
 			This is a guide for writing UNIX manuals in the <span class="lang"><a class="term"
-					href="glossary.xhtml#mdoc">mdoc</a></span> language.  If you're new to writing UNIX manuals, or you want
+					href="glossary.xml#mdoc">mdoc</a></span> language.  If you're new to writing UNIX manuals, or you want
 			to learn about best practices for high-quality manuals, this book may benefit your work.
 		</p>
 		<p>
-			To those unfamiliar with <a class="term" href="glossary.xhtml#unix">UNIX</a>, <span class="lang">mdoc</span> is a
+			To those unfamiliar with <a class="term" href="glossary.xml#unix">UNIX</a>, <span class="lang">mdoc</span> is a
 			language for documenting utilities, programming functions, file and wire formats, hardware device interfaces, and so on.
-			By a language I mean a structured, machine-readable document format such as <a class="term" href="glossary.xhtml#html">
-				HTML</a>, the primary language of web pages; or <a class="term" href="glossary.xhtml#rtf">RTF</a>, used by word
+			By a language I mean a structured, machine-readable document format such as <a class="term" href="glossary.xml#html">
+				HTML</a>, the primary language of web pages; or <a class="term" href="glossary.xml#rtf">RTF</a>, used by word
 			processors.  <span class="cmd">man</span> is the utility for querying documents in <span class="lang">mdoc</span> and
-			other languages, collectively called <a class="term" href="glossary.xhtml#man_pages">man pages</a>.  
+			other languages, collectively called <a class="term" href="glossary.xml#man_pages">man pages</a>.  
 		</p>
 		<p>
 			The following, for example, is a fragment of <span class="cmd">man</span> output for the <span class="cmd">cat</span>
@@ -86,7 +85,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part1.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part1.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/preface.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

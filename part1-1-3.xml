@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Case Study</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -12,7 +11,7 @@
 		</h3>
 		<p>
 			I now introduce a case study of a real-world manual, in particular the <span class="cmd">echo</span> utility from <a
-				class="term" href="glossary.xhtml#openbsd">OpenBSD</a>.  The original file may be viewed on-line at <a
+				class="term" href="glossary.xml#openbsd">OpenBSD</a>.  The original file may be viewed on-line at <a
 				class="external" href="http://www.openbsd.org/cgi-bin/cvsweb/src/bin/echo/echo.1">src/bin/echo/echo.1</a>, file
 			version 1.20.  I choose this mainly because of its simplicity.
 		</p>
@@ -24,7 +23,7 @@
 		<p>
 			These initial comments are automatically created by the source-control system, <span class="cmd">cvs</span>.  It fills
 			in information about the last editor.  This indicates that the file was imported from <a class="term"
-				href="glossary.xhtml#netbsd">NetBSD</a>, where it was last edited by <span class="screen">cgd</span> (a system
+				href="glossary.xml#netbsd">NetBSD</a>, where it was last edited by <span class="screen">cgd</span> (a system
 			name, not the user's real name); and last edited in OpenBSD, its current form, by <span class="screen">jmc</span>.
 		</p>
 		<p>
@@ -105,7 +104,7 @@
 		<p>
 			This comment is of historical note.  The <span class="screen">@(#)</span> sequence was inserted by the <span
 				class="cmd">sccs</span> utility (Source Code Control System).  Although this utility is part of <a class="term"
-				href="glossary.xhtml#posix">POSIX</a>.1-2008, it has mostly been replaced by <span class="cmd">cvs</span>.  At
+				href="glossary.xml#posix">POSIX</a>.1-2008, it has mostly been replaced by <span class="cmd">cvs</span>.  At
 			this point the manual content itself begins.
 		</p>
 		<div class="mdocin">
@@ -142,7 +141,7 @@
 		<p>
 			The command accepts a single optional flag, <span class="cmdflag">n</span>, and an arbitrary number of optional
 			arguments <span class="cmdarg">string</span>.  Note that re-stating the command name for the <a
-				href="macros.xhtml#macro_nm" class="macro">Nm</a> is superfluous in this case.
+				href="macros.xml#macro_nm" class="macro">Nm</a> is superfluous in this case.
 		</p>
 		<div class="mdocin">
 			.Sh DESCRIPTION
@@ -168,7 +167,7 @@
 		<p>
 			The <span class="sec">DESCRIPTION</span> opens with a brief explanation of the utility and its output.  The strange set
 			of backslash-escaped characters <span class="screen">\ \&amp;</span> is required to make the doubly-nested macros <a
-				href="macros.xhtml#macro_pq" class="macro">Pq</a> and <a href="macros.xhtml#macro_sq" class="macro">Sq</a>
+				href="macros.xml#macro_pq" class="macro">Pq</a> and <a href="macros.xml#macro_sq" class="macro">Sq</a>
 			(parenthesise and single-quote, respectively) correctly enclose a single space.
 		</p>
 		<div class="mdocin">
@@ -194,7 +193,7 @@
 			.Ex -std echo
 		</div>
 		<p>
-			Notes the standard exit sequence.  Note that the argument to <a href="macros.xhtml#macro_ex" class="macro">Ex</a> is
+			Notes the standard exit sequence.  Note that the argument to <a href="macros.xml#macro_ex" class="macro">Ex</a> is
 			superfluous, as only one command is listed for the manual.
 		</p>
 		<div class="mdocin">
@@ -247,15 +246,15 @@
 			though with a different syntax.
 		</div>
 		<p>
-			This last section fully describes the utility's conformance to the <a class="term" href="glossary.xhtml#posix">POSIX</a>
-			standard, which is very important to those writing portable utilities.  The <a href="macros.xhtml#macro_st"
+			This last section fully describes the utility's conformance to the <a class="term" href="glossary.xml#posix">POSIX</a>
+			standard, which is very important to those writing portable utilities.  The <a href="macros.xml#macro_st"
 				class="macro">St</a> macro expands into the relevant standard's full name.
 		</p>
 		<table class="nav">
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part1-2.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part1-2.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part1-1-3.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

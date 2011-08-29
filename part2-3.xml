@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<html>
 	<head>
-		<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
 		<title>Layout</title>
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
@@ -13,7 +12,7 @@
 		<p>
 			An <span class="lang">mdoc</span> document body is divided into sections.  The names and ordering of these sections is
 			dictated by convention extending to the First Edition UNIX <a class="term"
-				href="glossary.xhtml#unix_programmers_manual">Programmer's Manual</a>.
+				href="glossary.xml#unix_programmers_manual">Programmer's Manual</a>.
 		</p>
 		<blockquote cite="http://www.cs.bell-labs.com/who/dmr/1stEdman.html">
 			<ul>
@@ -105,7 +104,7 @@
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="part2-3-1.xhtml">Next</a></td>
+					<td class="nav-next"><a href="part2-3-1.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part2-3.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>
