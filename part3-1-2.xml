@@ -10,18 +10,21 @@
 			mandoc (mdocml)
 		</h3>
 		<p>
+			Homepage: <a class="external" href="http://mdocml.bsd.lv">mdocml.bsd.lv</a>.
+		</p>
+		<p>
 			The <span class="cmd">mandoc</span> utility is a specialised <span class="lang">mdoc</span> formatter: although it also
-			supports some other UNIX manual formats, it is not a general-purpose <a class="lang term"
-				href="glossary.xml#roff">roff</a> formatter.  Development began in 2008 to replace <a
+			supports some other UNIX manual formats, it is not accept general-purpose <a class="lang term"
+				href="glossary.xml#roff">roff</a> input.  Development began in 2008 to replace <a
 				href="part3-1-1.xml#groff_sec">groff</a> with an <a class="term" href="glossary.xml#isc_license">ISC
 				licensed</a>, high-speed reimplementation.
 		</p>
 		<p>
-			<span class="cmd">mandoc</span> may be invoked as <span class="cmd">troff</span> or <span class="cmd">nroff</span>, as
+			<span class="cmd">mandoc</span> may be invoked as <span class="cmd">troff</span> or <span class="cmd">nroff</span> as
 			its command-line arguments overlap.  It supports the classical <a class="term"
 				href="glossary.xml#terminal">terminal</a> and <a class="term" href="glossary.xml#ps">PS</a> forms, and has
 			very strong support for <a class="term" href="glossary.xml#html">HTML</a> and <a class="term"
-				href="glossary.xml#xhtml">XHTML</a>.  <a class="term" href="glossary.xml#pdf">PDF</a> output is support as
+				href="glossary.xml#xhtml">XHTML</a>.  <a class="term" href="glossary.xml#pdf">PDF</a> output is supported as
 			well.
 		</p>
 		<p>
@@ -32,10 +35,26 @@
 			the rigorous validation of manuals.
 		</p>
 		<p>
+			The <span class="cmd">mandoc</span> utility is supported on both UNIX and non-UNIX operating systems.
+		</p>
+		<p>
+			<i>Disclaimer</i>: I am the principle author of the <span class="cmd">mandoc</span> utility.
+		</p>
+		<h4>
+			Examples
+		</h4>
+		<p>
 			To validate a manual:
 		</p>
 		<div class="cmdline">
 			mandoc -Tlint file.1
+		</div>
+		<p>
+			To page a manual in the current <a class="term" href="glossary.xml#locale">locale</a> (if supported) so that non-ASCII
+			special characters render as proper glyphs:
+		</p>
+		<div class="cmdline">
+			mandoc -Tlocale file.1 | less
 		</div>
 		<p>
 			Produce HTML with a style-sheet:
@@ -43,12 +62,6 @@
 		<div class="cmdline">
 			mandoc -Thtml -Ostyle=file.css file.1 &gt;file.1.html
 		</div>
-		<p>
-			The <span class="cmd">mandoc</span> utility is supported on both UNIX and non-UNIX operating systems.
-		</p>
-		<p>
-			<i>Disclaimer</i>: I am the principle author of the <span class="cmd">mandoc</span> utility.
-		</p>
 		<table class="nav">
 			<tbody>
 				<tr>

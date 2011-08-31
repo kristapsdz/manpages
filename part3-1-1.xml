@@ -10,14 +10,14 @@
 			groff (GNU troff)
 		</h3>
 		<p>
+			Homepage: <a class="external" href="http://www.gnu.org/s/groff/">www.gnu.org/s/groff</a>.
+		</p>
+		<p>
 			The <a class="term" href="glossary.xml#gnu">GNU</a> project wrote the <span class="cmd">groff</span> utility as a
 			reimplementation of <span class="cmd">ditroff</span>, which encompassed the functionality of the historical <a
 				class="term cmd" href="glossary.xml#nroff">nroff</a> and <a class="term cmd"
-				href="glossary.xml#troff">troff</a> utilities.  <span class="cmd">groff</span>'s first version was released in
-			1990, and it is still actively maintained.
-		</p>
-		<p>
-			<span class="cmd">groff</span> is significant in that it is the predominant implementation of <span
+				href="glossary.xml#troff">troff</a> utilities.  The first version was released in 1990, and it is still actively
+			maintained.  <span class="cmd">groff</span> is significant in that it is the predominant implementation of <span
 				class="cmd">nroff</span> and <span class="cmd">troff</span> on contemporary UNIX operating systems.  It also
 			shepherded the evolution of <span class="lang">mdoc</span>.
 		</p>
@@ -25,11 +25,24 @@
 			On systems with GNU <span class="cmd">troff</span> installed, both <span class="cmd">troff</span> and <span
 				class="cmd">nroff</span> invoke the underlying <span class="cmd">groff</span> utility.  It is able to produce
 			the classical <a href="glossary.xml#terminal" class="term">terminal</a> and <a class="term"
-				href="glossary.xml#ps">PS</a> output, along with experimental support for <a class="term"
+				href="glossary.xml#ps">PS</a> output, along with more recent support for <a class="term"
 				href="glossary.xml#xhtml">XHTML</a>, <a class="term" href="glossary.xml#html">HTML</a>, and <a class="term"
 				href="glossary.xml#pdf">PDF</a>.  It has strong support for non-<a class="term"
-				href="glossary.xml#ascii">ASCII</a> output on supporting media.
+				href="glossary.xml#ascii">ASCII</a> output on supporting media.  Consult your local <span
+				class="cmd">groff</span> manual all possible outputs via the <span class="cmdflag">T</span> flag.
 		</p>
+		<p>
+			The <span class="lang">mdoc</span> implementation in <span class="cmd">groff</span> was entirely re-written in version
+			1.17.  Prior to this, input documents had some severe restrictions.  Most notably, macro lines were limited to 9
+			arguments, <a href="macros.xml#macro_bl" class="macro">Bl</a> column macros had a restricted syntax, and displays such
+			as <a href="macros.xml#macro_bd" class="macro">Bd</a> could not be nested.
+		</p>
+		<p>
+			The <span class="cmd">groff</span> utility is supported on both UNIX and non-UNIX operating systems.
+		</p>
+		<h4>
+			Examples
+		</h4>
 		<p>
 			Paging a manual to a UNIX terminal:
 		</p>
@@ -37,14 +50,17 @@
 			groff -Tascii -mandoc file.1 | less
 		</div>
 		<p>
+			To strip the escape-character encoding of output to create clean, printable ASCII output:
+		</p>
+		<div class="cmdline">
+			groff -Tascii -mandoc file.1 | col -b &gt;file.1.txt
+		</div>
+		<p>
 			Generating PS output:
 		</p>
 		<div class="cmdline">
 			groff -Tps -mandoc file.1 &gt;file.1.ps
 		</div>
-		<p>
-			The <span class="cmd">groff</span> utility is supported on both UNIX and non-UNIX operating systems.
-		</p>
 		<table class="nav">
 			<tbody>
 				<tr>

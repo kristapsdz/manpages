@@ -100,6 +100,13 @@
 				the <a class="term" href="#c">C programming language</a>.  Standardised by <a class="term"
 					href="#posix">POSIX</a>, among other standards bodies.
 			</dd>
+			<dt id="locale">
+				Locale
+			</dt>
+			<dd>
+				A set of parameters defining a locality-specific user interface, such as special characters (glyphs), numerical
+				representations, and so on.
+			</dd>
 			<dt id="make">
 				Make
 			</dt>

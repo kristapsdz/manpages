@@ -22,6 +22,8 @@
 			<BR>
 			.Nd <SPAN><I>mdoc</I>: structure, style, and composition</SPAN>
 			<BR>
+			.\" <SPAN><SMALL>(Quick Download: <A HREF="mdoc.epub">ePub</A>, <A HREF="mdoc.source.tgz">source</A> | View: <A HREF="mdoc.html">HTML</A>)</SMALL></SPAN>
+			<BR>
 			.
 			<BR>
 			.Sh <SPAN CLASS="h1">Description</SPAN>
@@ -33,7 +35,7 @@
 			</DIV>
 			.Pp
 			<DIV>
-				<I>Practical UNIX Manuals: mdoc</I> is a guide for composing well-formed and maintainable UNIX manuals
+				<I>Practical UNIX Manuals: mdoc</I> is a guide for writing well-formed and maintainable UNIX manuals
 				(<Q>manpages</Q>) in the <I>mdoc</I> language.
 			</DIV>
 			.Pp
@@ -181,16 +183,16 @@
 			<BR>
 			.Bl -ohang
 			<BR>
-			.It <SPAN>29 August 2011, <SPAN CLASS="ver">0.0.20</SPAN></SPAN>
+			.It <SPAN>31 August 2011, <SPAN CLASS="ver">0.0.21</SPAN></SPAN>
 			<DIV>
-				All text spell-checked.  From now on I'll spell-check before checking in (it takes a long time).
+				Incremental updates to <A HREF="part3-1-1.html">groff</A> and <A HREF="part3-1-2.html">mandoc</A> section.
+				Added quick-links to this page.
 			</DIV>
 			.
 			<BR>
-			.It <SPAN>29 August 2011, <SPAN CLASS="ver">0.0.19</SPAN></SPAN>
+			.It <SPAN>29 August 2011, <SPAN CLASS="ver">0.0.20</SPAN></SPAN>
 			<DIV>
-				Now using HTML documents instead of XHTML for default display.  This required some bulky (if trivial) internal
-				restructuring where the Makefile converts source XML to XHTML, HTML, and so on.
+				All text spell-checked.  From now on I'll spell-check before checking in (it takes a long time).
 			</DIV>
 			.El
 			<BR>
