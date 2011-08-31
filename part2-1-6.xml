@@ -21,9 +21,9 @@
 			.Fl "Ar"
 		</div>
 		<p>
-			By quoting <span class="screen">Ar</span>, it is passed verbatim to the backend.  If not, it would be interpreted as the
-			macro <a class="macro" href="macros.xml#macro_ar">Ar</a> and open a new macro scope.  What's worse is that the syntax is
-			entirely legal!
+			By quoting <span class="screen">Ar</span>, it is passed verbatim to <a class="macro" href="macros.xml#macro_fl">Fl</a>
+			If not, it would be interpreted as the macro <a class="macro" href="macros.xml#macro_ar">Ar</a> and open a new macro
+			scope.  What's worse is that the syntax is entirely legal!
 		</p>
 		<p>
 			This could also have been avoided by beginning the argument <span class="screen">Ar</span> with a zero-width escape,
