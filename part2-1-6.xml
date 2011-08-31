@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
+		<title>Quotation</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<h3 id="quotation">
+			Quotation
+		</h3>
+		<p>
+			Several times I've mentioned how to interpret macro arguments as text &mdash; instead of, say, other macros &mdash; by
+			quotation.  In this section, I formalise the notion of quoting arguments.  The issue of quotation is fairly complex
+			owing to <span class="lang">mdoc</span>'s predecessor, <a class="term lang" href="glossary.xml#roff">roff</a>.  
+		</p>
+		<p>
+			In short, quoting arguments to macros passes the enclosed text verbatim as a single argument.  An obvious case follows:
+		</p>
+		<div class="mdocin">
+			.Fl "Ar"
+		</div>
+		<p>
+			By quoting <span class="screen">Ar</span>, it is passed verbatim to the backend.  If not, it would be interpreted as the
+			macro <a class="macro" href="macros.xml#macro_ar">Ar</a> and open a new macro scope.  What's worse is that the syntax is
+			entirely legal!
+		</p>
+		<p>
+			This could also have been avoided by beginning the argument <span class="screen">Ar</span> with a zero-width escape,
+			such as <span class="screen">\&amp;Ar</span>.  The need for quotation is more obvious with the <a class="macro"
+				href="macros.xml#macro_fn">Fn</a> macro:
+		</p>
+		<div class="mdocin">
+			.Fn 
+			<span style="border: 1px dashed green;">int</span> 
+			<span style="border: 1px dashed green;">foo</span> 
+			<span style="border: 1px dashed green;">int</span>
+			<span style="border: 1px dashed green;">bar</span>
+		</div>
+		<p>
+			The syntax of <a class="macro" href="macros.xml#macro_fn">Fn</a> is that it first accepts an optional function type,
+			then a function name, then arguments to the function.  These arguments usually include a type followed by a name.  In
+			our example, <span class="screen">int</span> refers to the function type, <span class="screen">foo</span> to the name,
+			and both <span class="screen">int</span> and <span class="screen">bar</span> as separate arguments.
+		</p>
+		<p>
+			Our intention, however, was to have <span class="screen">int bar</span> considered a single argument.  To do so, we
+			would need to quote.
+		</p>
+		<div class="mdocin">
+			.Fn 
+			<span style="border: 1px dashed green;">int</span> 
+			<span style="border: 1px dashed green;">foo</span> 
+			"<span style="border: 1px dashed green;">int bar</span>"
+		</div>
+		<p>
+			The <span class="screen">int bar</span> argument is now passed intact to the macro.
+		</p>
+		<p>
+			To include quotation marks in quoted text, use two quotation marks in a row.
+		</p>
+		<div class="mdocin">
+			.Li <span style="border: 1px dashed green;">"""&nbsp;&nbsp;&nbsp;&nbsp;"</span>
+		</div>
+		<p>
+			This artificial invocation, for example, passes a quotation mark followed by four whitespaces to the <a
+				href="macros.xml#macro_li" class="macro">Li</a> macro.
+		</p>
+		<table class="nav">
+			<tbody>
+				<tr>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
+					<td class="nav-next"><a href="part2-2.xml">Next</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part2-1-6.xml?cvsroot=manpages">History</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="edits">
+			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
+		</p>
+	</body>
+</html>

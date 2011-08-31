@@ -36,6 +36,7 @@ XMLS	= preface.xml \
 	  part2-1-3.xml \
 	  part2-1-4.xml \
 	  part2-1-5.xml \
+	  part2-1-6.xml \
 	  part2-2.xml \
 	  part2-2-1.xml \
 	  part2-2-2.xml \
@@ -72,6 +73,7 @@ HTMLS	= preface.html \
 	  part2-1-3.html \
 	  part2-1-4.html \
 	  part2-1-5.html \
+	  part2-1-6.html \
 	  part2-2.html \
 	  part2-2-1.html \
 	  part2-2-2.html \
@@ -108,6 +110,7 @@ XHTMLS	= preface.xhtml \
 	  part2-1-3.xhtml \
 	  part2-1-4.xhtml \
 	  part2-1-5.xhtml \
+	  part2-1-6.xhtml \
 	  part2-2.xhtml \
 	  part2-2-1.xhtml \
 	  part2-2-2.xhtml \
@@ -123,8 +126,8 @@ XHTMLS	= preface.xhtml \
 	  glossary.xhtml \
 	  macros.xhtml
 
-VERSION	= 0.0.21
-DATE	= 31 August 2011
+VERSION	= 0.0.22
+DATE	= 01 September 2011
 
 all: index.html
 
@@ -250,6 +253,7 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 		OPS/part2-1-3.xhtml \
 		OPS/part2-1-4.xhtml \
 		OPS/part2-1-5.xhtml \
+		OPS/part2-1-6.xhtml \
 		OPS/part2-2.xhtml \
 		OPS/part2-2-1.xhtml \
 		OPS/part2-2-2.xhtml \
