@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
+		<title>Editing</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<h3>
+			Editing
+		</h3>
+		<p>
+			Since <span class="lang">mdoc</span> is an ASCII-clean text format, it may be edited in any text editor.  In this
+			section, I introduce a variety of editors available on most <a class="term" href="glossary.xml#unix">UNIX</a> systems.
+		</p>
+		<h4>
+			Vi, Vim
+		</h4>
+		<p>
+			The <a class="term cmd" href="glossary.xml#vi">vi</a> editor...
+		</p>
+		<table class="nav">
+			<tbody>
+				<tr>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
+					<td class="nav-next"><a href="part3-3-2.xml">Next</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part3-3-1.xml?cvsroot=manpages">History</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="edits">
+			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
+		</p>
+	</body>
+</html>

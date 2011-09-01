@@ -42,6 +42,9 @@
 		<item id="part3-2" href="part3-2.xhtml" media-type="application/xhtml+xml"/>
 		<item id="part3-2-1" href="part3-2-1.xhtml" media-type="application/xhtml+xml"/>
 		<item id="part3-2-2" href="part3-2-2.xhtml" media-type="application/xhtml+xml"/>
+		<item id="part3-3" href="part3-3.xhtml" media-type="application/xhtml+xml"/>
+		<item id="part3-3-1" href="part3-3-1.xhtml" media-type="application/xhtml+xml"/>
+		<item id="part3-3-2" href="part3-3-2.xhtml" media-type="application/xhtml+xml"/>
 		<item id="glossary" href="glossary.xhtml" media-type="application/xhtml+xml"/>
 		<item id="macros" href="macros.xhtml" media-type="application/xhtml+xml"/>
 		<item id="external" href="external.png" media-type="image/png"/>
@@ -83,6 +86,9 @@
 		<itemref idref="part3-2"/>
 		<itemref idref="part3-2-1"/>
 		<itemref idref="part3-2-2"/>
+		<itemref idref="part3-3"/>
+		<itemref idref="part3-3-1"/>
+		<itemref idref="part3-3-2"/>
 		<itemref idref="glossary"/>
 		<itemref idref="macros"/>
 	</spine>

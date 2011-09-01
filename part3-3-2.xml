@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
+		<title>Spell-checking</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<h3>
+			Spell-checking
+		</h3>
+		<p>
+			The right or wrong spelling of terms in technical documents is very important.  Thus, it's always important to carefully
+			spell-check your manuals, making sure that both technical and general terms are correctly spelt.  In this section, I
+			introduce some common spell-checking utilities.  There is <i>no</i> <a class="term"
+				href="glossary.xml#posix">POSIX</a>.1-2008 standardised spell-checker.
+		</p>
+		<p>
+			The difficulty in spell-checking <span class="lang">mdoc</span> documents is foremost the parsing of macros.  Consider
+			spell-checking checking the following snippet.
+		</p>
+		<div class="mdocin">
+			.Fl Alu Ar input
+		</div>
+		<p>
+			By now we understand that <a class="macro" href="macros.xml#macro_fl">Fl</a> and <a class="macro"
+				href="macros.xml#macro_ar">Ar</a> are macros.  But it's unreasonable to expect a spell-checker to do so.  Thus,
+			spell-checking manuals often raise many false-positives.
+		</p>
+		<h4>
+			spell
+		</h4>
+		<p>
+			The <span class="cmd">spell</span> utility is distributed with many <a class="term" href="glossary.xml#bsd_unix">BSD
+				UNIX</a> operating systems as a simplistic spell-checker.  It reads in a file
+		</p>
+		<h4>
+			ispell
+		</h4>
+		<h4>
+			aspell
+		</h4>
+		<table class="nav">
+			<tbody>
+				<tr>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
+					<td class="nav-next"><a href="glossary.xml">Next</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part3-3-2.xml?cvsroot=manpages">History</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="edits">
+			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
+		</p>
+	</body>
+</html>

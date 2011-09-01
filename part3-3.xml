@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
+		<title>Composition</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<h2>
+			Composition
+		</h2>
+		<p>
+			Since the UNIX manual has such a rich history of development, it would be strange were it not to have a significant body
+			of supporting tools for composition.  In fact, the First Edition of <a class="term" href="glossary.xml#unix">UNIX</a>
+			was bundled with a set of tools, the UNIX Writer's Workbench, specifically for composing documents &mdash;
+			spell-checking, grammar-checking, editing, and so forth.
+		</p>
+		<p>
+			These tools are, sadly, no longer distributed with most UNIX systems.  Even the topic of spell-checking is no longer
+			standardised.  However, the situation isn't so grim: the <a class="term cmd" href="glossary.xml#vi">vi</a> editor is
+			stipulated by <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008.  And although a spell-checker is not, there
+			are several widely-distributed spell-checkers available.
+		</p>
+		<p>
+			One of the best parts of <span class="lang">mdoc</span> is that none of these specific tools are necessary: an <span
+				class="lang">mdoc</span> document is just a text file and may be composed in any editor.
+		</p>
+		<table class="nav">
+			<tbody>
+				<tr>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
+					<td class="nav-next"><a href="part3-3-1.xml">Next</a></td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part3-3.xml?cvsroot=manpages">History</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="edits">
+			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
+		</p>
+	</body>
+</html>
