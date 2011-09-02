@@ -30,22 +30,23 @@
 			spell
 		</h4>
 		<p>
-			The <span class="cmd">spell</span> utility is distributed with many <a class="term" href="glossary.xml#bsd_unix">BSD
-				UNIX</a> operating systems as a simplistic spell-checker.  In fact, it was first distributed with Version 6
-			AT&amp;T UNIX.  <span class="cmd">spell</span> preprocesses its input with <span class="cmd">deroff</span>, another
-			historic utility with some functionality of stripping <span class="lang">roff</span> instructions from files.
+			The <a class="cmd" href="commands.xml#cmd_spell">spell</a> utility is distributed with many <a class="term"
+				href="glossary.xml#bsd_unix">BSD UNIX</a> operating systems as a simplistic spell-checker.  In fact, it was
+			first distributed with Version 6 AT&amp;T UNIX.  <a href="commands.xml#cmd_spell" class="cmd">spell</a> preprocesses its
+			input with <a href="commands.xml#cmd_deroff" class="cmd">deroff</a>, another historic utility with some functionality of
+			stripping <span class="lang">roff</span> instructions from files.
 		</p>
 		<p>
-			To print a list of all unknown words, you can explicitly invoke <span class="cmd">deroff</span> and <span
-				class="cmd">spell</span> as follows:
+			To print a list of all unknown words, you can explicitly invoke <a href="commands.xml#cmd_deroff" class="cmd">deroff</a>
+			and <a href="commands.xml#cmd_spell" class="cmd">spell</a> as follows:
 		</p>
 		<div class="cmdline">
 			deroff -w file.1 | spell
 		</div>
 		<p>
 			A utility distributed with <a href="commands.xml#cmd_mandoc" class="cmd">mandoc</a>, <span class="cmd">demandoc</span>,
-			is significantly stronger than <span class="cmd">deroff</span>.  If available, it should be used instead.  It has the
-			same calling syntax of <span class="cmd">deroff</span>.
+			is significantly stronger than <a href="commands.xml#cmd_deroff" class="cmd">deroff</a>.  If available, it should be
+			used instead.  It has the same calling syntax of <a href="commands.xml#cmd_deroff" class="cmd">deroff</a>.
 		</p>
 		<div class="cmdline">
 			demandoc -w file.1 | spell
@@ -75,7 +76,7 @@
 				class="file">file.in.1</span> is well-formed, then spell-checks it against the ignored-words file.
 		</p>
 		<p>
-			The same can be accomplished on systems without <span class="cmd">mandoc</span>.
+			The same can be accomplished on systems without <a href="commands.xml#cmd_mandoc" class="cmd">mandoc</a>.
 		</p>
 		<div class="screen">
 			file.1: file.1.words
@@ -91,23 +92,24 @@
 			ispell, aspell
 		</h4>
 		<p>
-			Another common spell-checker is <span class="cmd">ispell</span> and its <a class="term" href="glossary.xml#gnu">GNU</a>
-			replacement <span class="cmd">aspell</span>.  I do not suggest using these utilities because of their poor internal
-			support for <span class="lang">mdoc</span>.  It's possible, however, to send stripped files for checking in a manner
-			similar to <span class="cmd">spell</span>:
+			Another common spell-checker is <a class="cmd" href="commands.xml#cmd_ispell">ispell</a> and its <a class="term"
+				href="glossary.xml#gnu">GNU</a> replacement <a class="cmd" href="commands.xml#cmd_aspell">aspell</a>.  I do not
+			suggest using these utilities because of their poor internal support for <span class="lang">mdoc</span>.  It's possible,
+			however, to send stripped files for checking in a manner similar to <a class="cmd"
+				href="commands.xml#cmd_spell">spell</a>:
 		</p>
 		<div class="cmdline">
 			demandoc -w file.1 | ispell -l
 		</div>
 		<p>
-			Or with <span class="cmd">deroff</span>:
+			Or with <a href="commands.xml#cmd_deroff" class="cmd">deroff</a>:
 		</p>
 		<div class="cmdline">
 			deroff -w file.1 | ispell -l
 		</div>
 		<p>
-			Both <span class="cmd">ispell</span> and <span class="cmd">aspell</span> also have a pipe mode for more meaningful
-			output:
+			Both <a href="commands.xml#cmd_ispell" class="cmd">ispell</a> and <a href="commands.xml#cmd_aspell"
+				class="cmd">aspell</a> also have a pipe mode for more meaningful output:
 		</p>
 		<div class="cmdline">
 			demandoc -w file.1 | ispell -a

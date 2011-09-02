@@ -16,11 +16,22 @@
 			<dd>
 				American Standard Code for Information Interchange.  The predominant computer encoding for the English alphabet.
 			</dd>
+			<dt id="bsd_license">
+				BSD License
+			</dt>
+			<dd>
+				A permissive open source license used for the <a class="term" href="#bsd_unix">BSD UNIX</a> operating systems
+				(among many, many other tools).  May refer to either the <a class="external"
+					href="http://www.opensource.org/licenses/bsd-license.php">two-part</a> or <a class="external"
+					href="http://www.opensource.org/licenses/BSD-3-Clause">three-part</a> (deprecated) form.
+			</dd>
 			<dt id="bsd_unix">
 				BSD UNIX
 			</dt>
 			<dd>
-				A free implementation of the <a href="#unix" class="term">UNIX</a> operating system.
+				A class of free implementations of the <a href="#unix" class="term">UNIX</a> operating system.  Licensed either
+				under the <a class="term" href="#bsd_license">BSD license</a> or the <a class="term" href="isc_license">ISC
+					license</a>.
 			</dd>
 			<dt id="c">
 				C
@@ -142,7 +153,8 @@
 				NetBSD
 			</dt>
 			<dd>
-				A free BSD <a href="#unix" class="term">UNIX</a>, <a class="external" href="http://www.netbsd.org">NetBSD</a>.
+				A free <a href="#bsd_unix" class="term">BSD UNIX</a> operating system, <a class="external"
+					href="http://www.netbsd.org">NetBSD</a>.
 			</dd>
 			<dt id="nroff">
 				Nroff
@@ -155,7 +167,8 @@
 				OpenBSD
 			</dt>
 			<dd>
-				A free BSD <a href="#unix" class="term">UNIX</a>, <a class="external" href="http://www.openbsd.org">OpenBSD</a>.
+				A free <a href="#bsd_unix" class="term">BSD UNIX</a> operating system, <a class="external"
+					href="http://www.openbsd.org">OpenBSD</a>.
 			</dd>
 			<dt id="pdf">
 				PDF

@@ -63,7 +63,7 @@ h5		{ font-size: inherit; }
 .under		{ text-decoration: underline }
 a.cmd,
 a.macro,
-a.term		{ color: #333333;
+a.term		{ color: #000000;
 		  border-bottom: 1px dotted #666666; }
 a.macro:hover,
 a.term:hover	{ color: #339999; }
