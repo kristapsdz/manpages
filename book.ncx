@@ -231,15 +231,21 @@
 					</navLabel>
 					<content src="part3-3-2.xhtml"/>
 				</navPoint>
+				<navPoint class="h3" id="part3-3-3" playOrder="38">
+					<navLabel>
+						<text>Grammar &amp; Style</text>
+					</navLabel>
+					<content src="part3-3-3.xhtml"/>
+				</navPoint>
 			</navPoint>
 		</navPoint>
-		<navPoint class="h1" id="glossary" playOrder="38">
+		<navPoint class="h1" id="glossary" playOrder="39">
 			<navLabel>
 				<text>Appendix: Glossary</text>
 			</navLabel>
 			<content src="glossary.xhtml"/>
 		</navPoint>
-		<navPoint class="h1" id="macros" playOrder="39">
+		<navPoint class="h1" id="macros" playOrder="40">
 			<navLabel>
 				<text>Appendix: Macros</text>
 			</navLabel>

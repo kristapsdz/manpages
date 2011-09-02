@@ -243,7 +243,8 @@
 				WWB
 			</dt>
 			<dd>
-				Writer's Workbench.
+				The Writer's Workbench.  This was a set of writing utilities first distributed in the Seventh Edition of the <a
+					class="term" href="#unix">UNIX</a> operating system.
 			</dd>
 			<dt id="xhtml">
 				XHTML

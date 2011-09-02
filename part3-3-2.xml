@@ -50,11 +50,54 @@
 		<div class="cmdline">
 			demandoc -w file.1 | spell
 		</div>
+		<p>
+			You can also maintain a per-manual list of technical terms by using additional word lists.  In the case of <span
+				class="file">file.1</span>, consider a sorted list of words <span class="file">file.1.words</span> we're
+			maintaining with special words (such as names).  We could then augment a <span class="cmd">make</span> rule to
+			automatically make sure additions are spell-checked.
+		</p>
+		<div class="screen">
+			file.1: file.1.words
+			<br />
+			<br />
+			.in.1.1:
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;mandoc -Tlint $&lt;
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;test -z `demandoc -w $&lt; | spell -b +$@.words`
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;cp -f $&lt; $@
+		</div>
+		<p>
+			This snippet first makes the build of <span class="file">file.1</span> depend upon its local word file, <span
+				class="file">file.1.words</span>, a sorted list of words to ignore.  When <span class="file">file.in.1</span> or
+			<span class="file">file.1.words</span> is updated, the rule is executed.  It first makes sure that <span
+				class="file">file.in.1</span> is well-formed, then spell-checks it against the ignored-words file.
+		</p>
+		<h4>
+			ispell, aspell
+		</h4>
+		<p>
+			Another common spell-checker is <span class="cmd">ispell</span> and its <a class="term" href="glossary.xml#gnu">GNU</a>
+			replacement <span class="cmd">aspell</span>.  I do not suggest using these utilities because of their poor internal
+			support for <span class="lang">mdoc</span>.  It's possible, however, to send stripped files for checking in a manner
+			similar to <span class="cmd">spell</span>:
+		</p>
+		<div class="cmdline">
+			demandoc -w file.1 | ispell -l
+		</div>
+		<p>
+			Both <span class="cmd">ispell</span> and <span class="cmd">aspell</span> also have a pipe mode for more meaningful
+			output:
+		</p>
+		<div class="cmdline">
+			demandoc -w file.1 | ispell -a
+		</div>
 		<table class="nav">
 			<tbody>
 				<tr>
 					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-next"><a href="glossary.xml">Next</a></td>
+					<td class="nav-next"><a href="part3-3-3.xml">Next</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/part3-3-2.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>

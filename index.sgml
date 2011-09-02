@@ -153,6 +153,8 @@
 			<BR>
 			.Lk <SPAN CLASS="sec"><A HREF="part3-3-2.html">Section 2</A>: Spell-checking</SPAN>
 			<BR>
+			.Lk <SPAN CLASS="sec"><A HREF="part3-3-3.html">Section 3</A>: Grammar &amp; Style</SPAN>
+			<BR>
 			.Lk <SPAN CLASS="part"><A HREF="glossary.html">Appendix: Glossary</A></SPAN>
 			<BR>
 			.Lk <SPAN CLASS="part"><A HREF="macros.html">Appendix: Macros</A></SPAN>
@@ -165,7 +167,7 @@
 			<BR>
 			.Lk <SPAN><A HREF="/cgi-bin/cvsweb/?cvsroot=manpages">Repository</A>: on-line source repository</SPAN>
 			<BR>
-			.Lk <SPAN><A HREF="/archives/discuss/summary.html">Mailing List</A>: discussion list archive</SPAN>
+			.Lk <SPAN><A HREF="/archives/discuss/">Mailing List</A>: discussion list archive</SPAN>
 			<BR>
 			.Ed
 			<BR>

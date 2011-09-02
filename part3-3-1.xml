@@ -33,7 +33,9 @@
 		<p>
 			The <span class="cmd">vi</span> and <span class="cmd">ex</span> editors were powerful additions to the UNIX system: they
 			allowed visual editing of files (versus line editing as with <span class="cmd">ed</span>).  This editor has inspired a
-			raft of clones, but being standardised, some form of the utility is available on all UNIX systems.
+			raft of clones, but being standardised, some form of the utility is available on all UNIX systems.  Furthermore, the
+			<span class="cmd">vim</span> clone of <span class="cmd">vi</span> comes bundled with <span class="lang">mdoc</span>
+			syntax highlighting.
 		</p>
 		<table class="nav">
 			<tbody>
