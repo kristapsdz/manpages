@@ -144,7 +144,7 @@
 				class="macroarg">category</span> <span class="macroopt"><span class="macroarg">architecture</span></span>
 		</div>
 		<p>
-			These categories are dictated by convention extending to the First Edition UNIX <a class="term"
+			These categories are dictated by convention extending to the Version 1 AT&amp;T UNIX <a class="term"
 				href="glossary.xml#unix_programmers_manual">Programmer's Manual</a>.
 		</p>
 		<blockquote cite="http://www.cs.bell-labs.com/who/dmr/1stEdman.html">

@@ -44,7 +44,7 @@
 			</div>
 		</div>
 		<p>
-			All formatters must adhere to the general conventions set forth in the UNIX First Edition <a class="term"
+			All formatters must adhere to the general conventions set forth in the Version 1 AT&amp;T UNIX <a class="term"
 				href="glossary.xml#unix_programmers_manual">Programmer's Manual</a>, which details the terms that are in bold
 			and those that are italicised (rendered with underlines in terminals).
 		</p>

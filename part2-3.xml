@@ -11,7 +11,7 @@
 		</h2>
 		<p>
 			An <span class="lang">mdoc</span> document body is divided into sections.  The names and ordering of these sections is
-			dictated by convention extending to the First Edition UNIX <a class="term"
+			dictated by convention extending to the Version 1 AT&amp;T UNIX <a class="term"
 				href="glossary.xml#unix_programmers_manual">Programmer's Manual</a>.
 		</p>
 		<blockquote cite="http://www.cs.bell-labs.com/who/dmr/1stEdman.html">

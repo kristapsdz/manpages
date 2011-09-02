@@ -11,10 +11,10 @@
 		</h2>
 		<p>
 			Since the UNIX manual has such a rich history of development, it would be strange were it not to have a significant body
-			of supporting tools for composition.  In fact, the seventh edition of <a class="term" href="glossary.xml#unix">UNIX</a>
-			was bundled with a set of tools, the UNIX <a class="term" href="glossary.xml#wwb">Writer's Workbench</a>, specifically
-			for composing documents &mdash; spell-checking, grammar-checking, and so forth.  Even then, sophisticated editors had
-			long since been a pivotal part of UNIX.
+			of supporting tools for composition.  In fact, Version 7 AT&amp;T <a class="term" href="glossary.xml#unix">UNIX</a> was
+			bundled with a set of tools, the UNIX <a class="term" href="glossary.xml#wwb">Writer's Workbench</a>, specifically for
+			composing documents &mdash; spell-checking, grammar-checking, and so forth.  Even then, sophisticated editors had long
+			since been a pivotal part of UNIX.
 		</p>
 		<p>
 			Although the <span class="cmd">ed</span>, <span class="cmd">ex</span>, and <span class="cmd">vi</span> editors are
@@ -24,7 +24,7 @@
 		</p>
 		<p>
 			In short, the situation is messy: composing <span class="lang">mdoc</span> documents (and in fact any <span
-				class="lang">roff</span> document) is tricky to do portably.
+				class="lang">roff</span> document) is tricky to do without downloading special software.
 		</p>
 		<p>
 			However, one of the best parts of <span class="lang">mdoc</span> is that none of these specific tools are necessary: an

@@ -31,8 +31,8 @@
 		</h4>
 		<p>
 			The <span class="cmd">spell</span> utility is distributed with many <a class="term" href="glossary.xml#bsd_unix">BSD
-				UNIX</a> operating systems as a simplistic spell-checker.  In fact, it was first distributed with the Sixth
-			Edition of UNIX.  <span class="cmd">spell</span> preprocesses its input with <span class="cmd">deroff</span>, another
+				UNIX</a> operating systems as a simplistic spell-checker.  In fact, it was first distributed with Version 6
+			AT&amp;T UNIX.  <span class="cmd">spell</span> preprocesses its input with <span class="cmd">deroff</span>, another
 			historic utility with some functionality of stripping <span class="lang">roff</span> instructions from files.
 		</p>
 		<p>
@@ -74,6 +74,19 @@
 			<span class="file">file.1.words</span> is updated, the rule is executed.  It first makes sure that <span
 				class="file">file.in.1</span> is well-formed, then spell-checks it against the ignored-words file.
 		</p>
+		<p>
+			The same can be accomplished on systems without <span class="cmd">mandoc</span>.
+		</p>
+		<div class="screen">
+			file.1: file.1.words
+			<br />
+			<br />
+			.in.1.1:
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;test -z `deroff -w $&lt; | spell -b +$@.words`
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;cp -f $&lt; $@
+		</div>
 		<h4>
 			ispell, aspell
 		</h4>
@@ -85,6 +98,12 @@
 		</p>
 		<div class="cmdline">
 			demandoc -w file.1 | ispell -l
+		</div>
+		<p>
+			Or with <span class="cmd">deroff</span>:
+		</p>
+		<div class="cmdline">
+			deroff -w file.1 | ispell -l
 		</div>
 		<p>
 			Both <span class="cmd">ispell</span> and <span class="cmd">aspell</span> also have a pipe mode for more meaningful

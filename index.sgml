@@ -193,17 +193,17 @@
 			<BR>
 			.Bl -ohang
 			<BR>
+			.It <SPAN>02 September 2011, <SPAN CLASS="ver">0.0.23</SPAN></SPAN>
+			<DIV>
+				Added <A HREF="part3-3.html">Composition</A> chapter.  This covers editing, spelling, and grammar.  This will
+				need some work, but it's there.
+			</DIV>
+			.
+			<BR>
 			.It <SPAN>01 September 2011, <SPAN CLASS="ver">0.0.22</SPAN></SPAN>
 			<DIV>
 				Added <A HREF="part2-1-6.html">Quotation</A> section.  To the best of my knowledge, this is the last bit of
 				syntactic information relevant to <I>mdoc</I>.
-			</DIV>
-			.
-			<BR>
-			.It <SPAN>31 August 2011, <SPAN CLASS="ver">0.0.21</SPAN></SPAN>
-			<DIV>
-				Incremental updates to <A HREF="part3-1-1.html">groff</A> and <A HREF="part3-1-2.html">mandoc</A> section.
-				Added quick-links to this page.
 			</DIV>
 			.El
 			<BR>

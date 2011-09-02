@@ -16,12 +16,11 @@
 		</p>
 		<p>
 			Historically, the syntax and structure of <span class="lang">mdoc</span> derive from the <a class="lang term"
-				href="glossary.xml#roff">roff</a>, a text processing language predating the first editions of <a class="term"
+				href="glossary.xml#roff">roff</a>, a text processing language predating <a class="term"
 				href="glossary.xml#unix">UNIX</a>.  In fact, the general syntax of <span class="lang">roff</span> (and thus
-			<span class="lang">mdoc</span>) can be traced to the <a class="term" href="glossary.xml#runoff">RUNOFF</a> command
-			from the mid-sixties!  The conventions of section names and manual categories were formalised later, in the early
-			seventies, with the First Edition UNIX <a class="term" href="glossary.xml#unix_programmers_manual">Programmer's
-				Manual</a>.
+			<span class="lang">mdoc</span>) can be traced to the <a class="term" href="glossary.xml#runoff">RUNOFF</a> command from
+			the mid-sixties!  The conventions of section names and manual categories were formalised later, in the early seventies,
+			with the Version 1 AT&amp;T UNIX <a class="term" href="glossary.xml#unix_programmers_manual">Programmer's Manual</a>.
 		</p>
 		<p>
 			Although the focus of this book is obviously on <span class="lang">mdoc</span>, a great deal of its idiosyncrasies

@@ -138,8 +138,8 @@ XHTMLS	= preface.xhtml \
 	  glossary.xhtml \
 	  macros.xhtml
 
-VERSION	= 0.0.22
-DATE	= 01 September 2011
+VERSION	= 0.0.23
+DATE	= 02 September 2011
 
 all: index.html
 
