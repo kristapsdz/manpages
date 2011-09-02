@@ -30,7 +30,7 @@
 			</dt>
 			<dd>
 				A class of free implementations of the <a href="#unix" class="term">UNIX</a> operating system.  Licensed either
-				under the <a class="term" href="#bsd_license">BSD license</a> or the <a class="term" href="isc_license">ISC
+				under the <a class="term" href="#bsd_license">BSD license</a> or the <a class="term" href="#isc_license">ISC
 					license</a>.
 			</dd>
 			<dt id="c">

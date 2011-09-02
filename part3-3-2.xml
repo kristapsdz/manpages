@@ -44,9 +44,10 @@
 			deroff -w file.1 | spell
 		</div>
 		<p>
-			A utility distributed with <a href="commands.xml#cmd_mandoc" class="cmd">mandoc</a>, <span class="cmd">demandoc</span>,
-			is significantly stronger than <a href="commands.xml#cmd_deroff" class="cmd">deroff</a>.  If available, it should be
-			used instead.  It has the same calling syntax of <a href="commands.xml#cmd_deroff" class="cmd">deroff</a>.
+			A utility distributed with <a href="commands.xml#cmd_mandoc" class="cmd">mandoc</a>, <a href="commands.xml#cmd_demandoc"
+				class="cmd">demandoc</a>, is significantly stronger than <a href="commands.xml#cmd_deroff"
+				class="cmd">deroff</a>.  If available, it should be used instead.  It has the same calling syntax of <a
+				href="commands.xml#cmd_deroff" class="cmd">deroff</a>.
 		</p>
 		<div class="cmdline">
 			demandoc -w file.1 | spell

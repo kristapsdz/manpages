@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<h1>
-			Appendix: Macros
+			Appendix: Commands
 		</h1>
 		<p>
 			This is a list of all commands mentioned in this book and how to find them on-line.  All referenced utilities are
@@ -22,13 +22,31 @@
 				non-<a href="glossary.xml#ascii" class="term">ASCII</a> input.  Available at <a class="external"
 					href="http://aspell.net/">aspell.net</a> under the <a class="term" href="glossary.xml#gpl">GPL</a>.
 			</dd>
+			<dt id="cmd_col">
+				Col
+			</dt>
+			<dd>
+				Filters line-feeds, usually used to strip backspaces from encoded documents.  Originally in Version 6 AT&amp;T
+				UNIX, standardised in <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008.
+			</dd>
 			<dt id="cmd_ispell">
 				Ispell
 			</dt>
 			<dd>
-				A re-write of <a class="cmd" href="#cmd_spell">spell</a> for international dictionaries.  Available at <a
-					class="external" href="http://lasr.cs.ucla.edu/geoff/ispell.html">lasr.cs.ucla.edu/geoff/ispell.html</a>
-				under its own license.
+				A re-write of <a class="cmd" href="#cmd_spell">spell</a> for international dictionaries.  Non-standard.
+				Available at <a class="external"
+					href="http://lasr.cs.ucla.edu/geoff/ispell.html">lasr.cs.ucla.edu/geoff/ispell.html</a> under its own
+				license.
+			</dd>
+			<dt id="cmd_demandoc">
+				Demandoc
+			</dt>
+			<dd>
+				Remove all <span class="lang">mdoc</span> (and other UNIX manual format) control statements from a file by
+				formally parsing input (via <a class="cmd" href="#cmd_mandoc">mandoc</a>).  Built to replace <a class="cmd"
+					href="#cmd_deroff">deroff</a> for <span class="lang">mdoc</span> UNIX manuals.  Non-standard.  Available
+				under the <a class="term" href="glossary.xml#isc_license">ISC license</a> at <a class="external"
+					href="http://mdocml.bsd.lv">mdocml.bsd.lv</a>.
 			</dd>
 			<dt id="cmd_deroff">
 				Deroff
@@ -36,8 +54,8 @@
 			<dd>
 				Remove [most] <span class="lang">roff</span> control statements from a file.  This utility uses heuristics
 				instead of properly parsing its input.  Originally in Version 7 AT&amp;T UNIX (if not before?) and used heavily
-				by the <a class="term" href="glossary.xml#wwb">Writer's Workbench</a>.  Available under the Lucent Public
-				License at <a class="external"
+				by the <a class="term" href="glossary.xml#wwb">Writer's Workbench</a>.  Non-standard. Available under the Lucent
+				Public License at <a class="external"
 					href="http://heirloom.sourceforge.net/tools.html">heirloom.sourceforge.net/tools.html</a> and under the
 				<a class="term" href="glossary.xml#gpl">GPL</a> at <a class="external"
 					href="http://marmaro.de/prog/deroff/">marmaro.de/prog/deroff/</a>.
@@ -47,23 +65,22 @@
 			</dt>
 			<dd>
 				Checks the diction of a (German or English) document.  Originally in the Version 6 AT&amp;T UNIX <a class="term"
-					href="glossary.xml#wwb">Writer's Workbench</a>.  A <a class="term" href="glossary.xml#gpl">GPL</a>
+					href="glossary.xml#wwb">Writer's Workbench</a>.  Non-standard. A <a class="term" href="glossary.xml#gpl">GPL</a>
 				version is available at <a class="external" href="https://www.gnu.org/s/diction/">www.gnu.org/s/diction</a>.
 			</dd>
 			<dt id="cmd_mandoc">
 				Mandoc
 			</dt>
 			<dd>
-				A specialised formatter for UNIX manuals.  Non-standardised.  <a class="term"
-					href="glossary.xml#bsd_license">BSD licensed</a>.  Available at <a class="external"
-					href="http://mdocml.bsd.lv">mdocml.bsd.lv</a>.
+				A specialised formatter for UNIX manuals.  Non-standard.  <a class="term" href="glossary.xml#isc_license">ISC
+					licensed</a>.  Available at <a class="external" href="http://mdocml.bsd.lv">mdocml.bsd.lv</a>.
 			</dd>
 			<dt id="cmd_spell">
 				Spell
 			</dt>
 			<dd>
-				The original (English-only) UNIX spell-checker distributed with Version 6 AT&amp;T UNIX.  Now <a class="term"
-					href="glossary.xml#bsd_license">BSD licensed</a> and available at <a class="external"
+				The original (English-only) UNIX spell-checker distributed with Version 6 AT&amp;T UNIX.  Non-standard. <a
+					class="term" href="glossary.xml#bsd_license">BSD licensed</a> and available at <a class="external"
 					href="https://code.google.com/p/unix-spell/">code.google.com/p/unix-spell/</a>.  Also may be emulated by
 				<a class="cmd" href="#cmd_ispell">ispell</a> and <a class="cmd" href="#cmd_aspell">aspell</a>.
 			</dd>
