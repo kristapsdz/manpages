@@ -13,7 +13,7 @@
 			<span class="lang">mdoc</span> documents fit perfectly into a <a class="term" href="glossary.xml#unix">UNIX</a>
 			development environment.  In general, this is defined by a group of source files that produce executables as compiled
 			and linked by <a class="cmd term" href="glossary.xml#make">make</a>, called a build system.  Sources are usually
-			version-controlled using <a class="cmd term" href="glossary.xml#cvs">cvs</a>, called revision control.
+			version-controlled using <a class="cmd" href="commands.xml#cmd_cvs">cvs</a>, called revision control.
 		</p>
 		<p>
 			In this section, I discuss methods for integrating <span class="cmd">mdoc</span> documents into a source-controlled

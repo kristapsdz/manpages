@@ -51,9 +51,9 @@
 		<p>
 			This is the standard comment header to manual files in OpenBSD.  Indeed, most distributed manuals begin with a copyright
 			notice, then a license.  The <span class="screen">$&#8203;OpenBSD$</span> line is automatically updated by the revision
-			control system, <span class="cmd">cvs</span>, whenever an update to the file is committed.  The line following is the
-			copyright message, and following that is the text form of the <a class="term" href="glossary.xml#isc_license">ISC
-				license</a>.
+			control system, <a href="commands.xml#cmd_cvs" class="cmd">cvs</a>, whenever an update to the file is committed.  The
+			line following is the copyright message, and following that is the text form of the <a class="term"
+				href="glossary.xml#isc_license">ISC license</a>.
 		</p>
 		<div class="mdocin">
 			.Dd $&#8203;Mdocdate: May 31 2007 $
@@ -66,7 +66,8 @@
 			These three standard macros establish the last modified date, manual title (same as the single documented function but
 			capitalised), manual category <span class="cat">3</span> (functions), and the default operating system.  The <span
 				class="screen">$&#8203;Mdocdate$</span> line, like the <span class="screen">$&#8203;OpenBSD$</span> line, is
-			automatically updated by <span class="cmd">cvs</span> whenever the document is committed to the source repository.
+			automatically updated by <a href="commands.xml#cmd_cvs" class="cmd">cvs</a> whenever the document is committed to the
+			source repository.
 		</p>
 		<div class="mdocin">
 			.Sh NAME

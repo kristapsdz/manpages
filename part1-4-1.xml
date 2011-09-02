@@ -80,7 +80,7 @@
 			.\"     @(#)fsync.2	8.1 (Berkeley) 6/4/93
 		</div>
 		<p>
-			The <span class="cmd">cvs</span> identifiers (both from the current system, <a class="term"
+			The <a href="commands.xml#cmd_cvs" class="cmd">cvs</a> identifiers (both from the current system, <a class="term"
 				href="glossary.xml#openbsd">OpenBSD</a>, and the import source system, <a class="term"
 				href="glossary.xml#netbsd">NetBSD</a>), copyright, license, and <span class="cmd">sccs</span> identifier (from
 			the original system) are presented in the usual way.

@@ -21,10 +21,11 @@
 			.\"&nbsp;&nbsp;&nbsp;&nbsp;$&#8203;NetBSD: echo.1,v 1.7 1995/03/21 09:04:26 cgd Exp $&#8203;
 		</div>
 		<p>
-			These initial comments are automatically created by the source-control system, <span class="cmd">cvs</span>.  It fills
-			in information about the last editor.  This indicates that the file was imported from <a class="term"
-				href="glossary.xml#netbsd">NetBSD</a>, where it was last edited by <span class="screen">cgd</span> (a system
-			name, not the user's real name); and last edited in OpenBSD, its current form, by <span class="screen">jmc</span>.
+			These initial comments are automatically created by the source-control system, <a href="commands.xml#cmd_cvs"
+				class="cmd">cvs</a>.  It fills in information about the last editor.  This indicates that the file was imported
+			from <a class="term" href="glossary.xml#netbsd">NetBSD</a>, where it was last edited by <span class="screen">cgd</span>
+			(a system name, not the user's real name); and last edited in OpenBSD, its current form, by <span
+				class="screen">jmc</span>.
 		</p>
 		<p>
 			If you're keeping your manual under source control, it's usually a good idea to begin your file with a similar line.
@@ -104,8 +105,8 @@
 		<p>
 			This comment is of historical note.  The <span class="screen">@(#)</span> sequence was inserted by the <span
 				class="cmd">sccs</span> utility (Source Code Control System).  Although this utility is part of <a class="term"
-				href="glossary.xml#posix">POSIX</a>.1-2008, it has mostly been replaced by <span class="cmd">cvs</span>.  At
-			this point the manual content itself begins.
+				href="glossary.xml#posix">POSIX</a>.1-2008, it has mostly been replaced by <a href="commands.xml#cmd_cvs"
+				class="cmd">cvs</a>.  At this point the manual content itself begins.
 		</p>
 		<div class="mdocin">
 			.Dd $&#8203;Mdocdate: September 3 2010 &#8203;$

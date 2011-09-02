@@ -12,7 +12,7 @@
 		<p>
 			Several examples in this book have covered the topic of integrating <span class="lang">mdoc</span> documents into
 			revision control systems.  In this section, I cover the few steps required to integrate these documents with <a
-				class="cmd term" href="glossary.xml#cvs">cvs</a>.
+				class="cmd" href="commands.xml#cmd_cvs">cvs</a>.
 		</p>
 		<p>
 			Assume a file <span class="file">foo.in.1.</span> consists of our <span class="lang">mdoc</span> source.  I assume, for
@@ -70,9 +70,10 @@
 			marker.  This sequence is filled in with the file's last editor, revision, and checkin date.
 		</p>
 		<p>
-			Some <span class="cmd">cvs</span> servers (e.g., those in <a class="term" href="glossary.xml#netbsd">NetBSD</a> and <a
-				class="term" href="glossary.xml#openbsd">OpenBSD</a>) support the <span class="screen">Mdocdate</span>
-			sequence.  This is filled by in <span class="cmd">cvs</span> with the check-in date.
+			Some <a href="commands.xml#cmd_cvs" class="cmd">cvs</a> servers (e.g., those in <a class="term"
+				href="glossary.xml#netbsd">NetBSD</a> and <a class="term" href="glossary.xml#openbsd">OpenBSD</a>) support the
+			<span class="screen">Mdocdate</span> sequence.  This is filled by in <a href="commands.xml#cmd_cvs" class="cmd">cvs</a>
+			with the check-in date.
 		</p>
 		<div class="mdocin">
 			.Dd $&#8203;Mdocdate$
@@ -82,9 +83,10 @@
 			.Os
 		</div>
 		<p>
-			In performing these two steps, the file's last-modified date and source identifier will be properly filled in by the
-			<span class="cmd">cvs</span> server.  If your server does not support <span class="screen">Mdocdate</span>, you will
-			have to maintain the date by hand, or possibly override the build rule for your file.
+			In performing these two steps, the file's last-modified date and source identifier will be properly filled in by the <a
+				href="commands.xml#cmd_cvs" class="cmd">cvs</a> server.  If your server does not support <span
+				class="screen">Mdocdate</span>, you will have to maintain the date by hand, or possibly override the build rule
+			for your file.
 		</p>
 		<table class="nav">
 			<tbody>

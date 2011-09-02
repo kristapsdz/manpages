@@ -29,6 +29,16 @@
 				Filters line-feeds, usually used to strip backspaces from encoded documents.  Originally in Version 6 AT&amp;T
 				UNIX, standardised in <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008.
 			</dd>
+			<dt id="cmd_col">
+				CVS
+			</dt>
+			<dd>
+				A revision management system (the concurrent version system).  Originally a client-server extension to prior
+				revision systems.  Non-standard.  Available under the <a class="term" href="glossary.xml#gpl">GPL</a> at <a
+					class="external" href="https://savannah.nongnu.org/projects/cvs">savannah.nongnu.org/projects/cvs</a> or
+				the <a class="term" href="glossary.xml#isc_license">ISC license</a> at <a class="external"
+					href="http://www.opencvs.org/">www.opencvs.org</a>.
+			</dd>
 			<dt id="cmd_ispell">
 				Ispell
 			</dt>
@@ -58,7 +68,7 @@
 				Public License at <a class="external"
 					href="http://heirloom.sourceforge.net/tools.html">heirloom.sourceforge.net/tools.html</a> and under the
 				<a class="term" href="glossary.xml#gpl">GPL</a> at <a class="external"
-					href="http://marmaro.de/prog/deroff/">marmaro.de/prog/deroff/</a>.
+					href="http://marmaro.de/prog/deroff/">marmaro.de/prog/deroff</a>.
 			</dd>
 			<dt id="cmd_diction">
 				Diction
@@ -81,7 +91,7 @@
 			<dd>
 				The original (English-only) UNIX spell-checker distributed with Version 6 AT&amp;T UNIX.  Non-standard. <a
 					class="term" href="glossary.xml#bsd_license">BSD licensed</a> and available at <a class="external"
-					href="https://code.google.com/p/unix-spell/">code.google.com/p/unix-spell/</a>.  Also may be emulated by
+					href="https://code.google.com/p/unix-spell/">code.google.com/p/unix-spell</a>.  Also may be emulated by
 				<a class="cmd" href="#cmd_ispell">ispell</a> and <a class="cmd" href="#cmd_aspell">aspell</a>.
 			</dd>
 			<dt id="cmd_tail">
