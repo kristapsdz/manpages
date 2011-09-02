@@ -22,9 +22,9 @@
 			diction
 		</h4>
 		<p>
-			The <span class="cmd">diction</span> utility is rarely distributed with default UNIX operating systems, although it may
-			be separately downloaded.  The input to <span class="cmd">diction</span> is best when it consists of well-formed
-			sentences, which only appear when manuals are post-formatted.
+			The <a class="cmd" href="commands.xml#cmd_diction">diction</a> utility is rarely distributed with default UNIX operating
+			systems, although it may be separately downloaded.  The input to <span class="cmd">diction</span> is best when it
+			consists of well-formed sentences, which only appear when manuals are post-formatted.
 		</p>
 		<div class="cmdline">
 			mandoc file.1 | col -b | tail -n+2 | diction
@@ -36,10 +36,10 @@
 			nroff -mandoc file.1 | col -b | tail -n+2 | diction
 		</div>
 		<p>
-			This first strips the text decoration (underlined and bold text) from <span class="cmd">nroff</span> or <span
-				class="cmd">mandoc</span> with <span class="cmd">col</span>.  The header is then stripped with <span
-				class="cmd">tail</span>.  Finally, the formatted output is fed to the <span class="cmd">diction</span> utility,
-			which analyses text for readability.
+			This first strips the text decoration (underlined and bold text) from <span class="cmd">nroff</span> or <a class="cmd"
+				href="commands.xml#cmd_mandoc">mandoc</a> with <span class="cmd">col</span>.  The header is then stripped with
+			<a class="cmd" href="commands.xml#cmd_tail">tail</a>.  Finally, the formatted output is fed to the <span
+				class="cmd">diction</span> utility, which analyses text for readability.
 		</p>
 		<table class="nav">
 			<tbody>

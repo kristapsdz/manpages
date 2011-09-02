@@ -74,7 +74,14 @@
 			</dt>
 			<dd>
 				The <a class="external" href="http://www.gnu.org">GNU</a> project is a UNIX-like operating system licensed under
-				on the <a href="http://www.gnu.org/copyleft/gpl.html" class="external">General Public License</a>.
+				on the <a class="term" href="#gpl">General Public License</a>.
+			</dd>
+			<dt id="gpl">
+				GPL
+			</dt>
+			<dd>
+				The <a href="http://www.gnu.org/copyleft/gpl.html" class="external">General Public License</a>.  This is the
+				license of choice for the <a class="term" href="#gnu">GNU</a> project.
 			</dd>
 			<dt id="isc_license">
 				ISC License
@@ -120,15 +127,8 @@
 			<dd>
 				Short form of <q>UNIX manual pages</q>.  System documentation for <a class="term" href="#unix">UNIX</a> systems.
 				Usually viewed using the <span class="cmd">man</span> utility, which pages formatted manual documents using to
-				the screen.  Man pages are formatted by a utility such as <span class="cmd">troff</span> or <span
-					class="cmd">mandoc</span>.
-			</dd>
-			<dt id="mandoc">
-				Mandoc
-			</dt>
-			<dd>
-				Alternative formatter for <a href="#mdoc" class="term lang">mdoc</a> documents: <a class="external"
-					href="http://mdocml.bsd.lv">mdocml</a>.
+				the screen.  Man pages are formatted by a utility such as <span class="cmd">troff</span> or <a class="cmd"
+					href="commands.xml#cmd_mandoc">mandoc</a>.
 			</dd>
 			<dt id="mdoc">
 				Mdoc

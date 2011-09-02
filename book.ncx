@@ -251,5 +251,11 @@
 			</navLabel>
 			<content src="macros.xhtml"/>
 		</navPoint>
+		<navPoint class="h1" id="commands" playOrder="41">
+			<navLabel>
+				<text>Appendix: Commands</text>
+			</navLabel>
+			<content src="commands.xhtml"/>
+		</navPoint>
 	</navMap>
 </ncx>

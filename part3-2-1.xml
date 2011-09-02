@@ -69,7 +69,7 @@
 		<p>
 			A build rule is required to translate input to output.  Let's begin with a general rule to establish that the <span
 				class="lang">mdoc</span> syntax is correct.  We'll add this to the target building the main system: this way,
-			all changes to the <span class="cmd">mdoc</span> input file will be syntax-checked when <span
+			all changes to the <span class="lang">mdoc</span> input file will be syntax-checked when <span
 				class="cmdline">make</span> is invoked.
 		</p>
 		<div class="screen">

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/xml; charset=utf-8"/>
+		<title>Appendix: Commands</title>
+		<link rel="stylesheet" href="css/book.css" type="text/css"/>
+	</head>
+	<body>
+		<h1>
+			Appendix: Macros
+		</h1>
+		<p>
+			This is a list of all commands mentioned in this book and how to find them on-line.  All referenced utilities are
+			open-source.
+		</p>
+		<dl>
+			<dt id="cmd_diction">
+				Diction
+			</dt>
+			<dd>
+				Checks the diction of a document.  Originally in the Version 6 AT&amp;T UNIX <a class="term"
+					href="glossary.xml#wwb">Writer's Workbench</a>.  A <a class="term" href="glossary.xml#gpl">GPL</a>
+				version is available at <a class="external" href="https://www.gnu.org/s/diction/">www.gnu.org/s/diction</a>.
+			</dd>
+			<dt id="cmd_mandoc">
+				Mandoc
+			</dt>
+			<dd>
+				A specialised formatter for UNIX manuals.  Non-standardised.  <a class="term"
+					href="glossary.xml#bsd_license">BSD licensed</a>.  Available at <a class="external"
+					href="http://mdocml.bsd.lv">mdocml.bsd.lv</a>.
+			</dd>
+			<dt id="cmd_tail">
+				Tail
+			</dt>
+			<dd>
+				A standard <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008 utility for outputting parts of a file.
+			</dd>
+		</dl>
+		<table class="nav">
+			<tbody>
+				<tr>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
+					<td class="nav-next" style="color: #dddddd;">Next</td>
+					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/commands.xml?cvsroot=manpages">History</a></td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="edits">
+			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
+		</p>
+	</body>
+</html>

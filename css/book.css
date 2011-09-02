@@ -61,9 +61,10 @@ h5		{ font-size: inherit; }
 		  line-height: 11pt;
 		  font-size: 9pt; } 
 .under		{ text-decoration: underline }
+a.cmd,
 a.macro,
-a.term		{ color: #666666;
-		  border-bottom: 1px dotted black; }
+a.term		{ color: #333333;
+		  border-bottom: 1px dotted #666666; }
 a.macro:hover,
 a.term:hover	{ color: #339999; }
 .cmdflag:before,

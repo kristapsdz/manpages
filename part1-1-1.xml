@@ -45,7 +45,7 @@
 		<p>
 			Traditionally, the command of choice for formatting UNIX manuals for a <a class="term"
 				href="glossary.xml#terminal">terminal</a> is <a class="term" href="glossary.xml#nroff">nroff</a>.  For now,
-			let's stick with that (an alternative, <a class="term" href="glossary.xml#mandoc">mandoc</a>, was used to generate
+			let's stick with that (an alternative, <a class="cmd" href="commands.xml#cmd_mandoc">mandoc</a>, was used to generate
 			output on this site, but is not widely-used).
 		</p>
 		<p>

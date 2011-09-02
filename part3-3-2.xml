@@ -43,7 +43,7 @@
 			deroff -w file.1 | spell
 		</div>
 		<p>
-			A utility distributed with <a href="glossary.xml#mandoc" class="cmd">mandoc</a>, <span class="cmd">demandoc</span>,
+			A utility distributed with <a href="commands.xml#cmd_mandoc" class="cmd">mandoc</a>, <span class="cmd">demandoc</span>,
 			is significantly stronger than <span class="cmd">deroff</span>.  If available, it should be used instead.  It has the
 			same calling syntax of <span class="cmd">deroff</span>.
 		</p>

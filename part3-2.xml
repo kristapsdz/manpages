@@ -17,7 +17,7 @@
 		</p>
 		<p>
 			In this section, I discuss methods for integrating <span class="cmd">mdoc</span> documents into a source-controlled
-			build environment.  I'll focus on <a href="glossary.xml#mandoc" class="term cmd">mandoc</a> as a formatter, but
+			build environment.  I'll focus on <a href="commands.xml#cmd_mandoc" class="cmd">mandoc</a> as a formatter, but
 			provide stubs for using <a href="glossary.xml#troff" class="term cmd">troff</a>.
 		</p>
 		<p>

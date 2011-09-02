@@ -54,7 +54,8 @@ XMLS	= preface.xml \
 	  part3-3-2.xml \
 	  part3-3-3.xml \
 	  glossary.xml \
-	  macros.xml
+	  macros.xml \
+	  commands.xml
 
 HTMLS	= preface.html \
 	  part1.html \
@@ -95,7 +96,8 @@ HTMLS	= preface.html \
 	  part3-3-2.html \
 	  part3-3-3.html \
 	  glossary.html \
-	  macros.html
+	  macros.html \
+	  commands.html
 
 XHTMLS	= preface.xhtml \
 	  part1.xhtml \
@@ -136,7 +138,8 @@ XHTMLS	= preface.xhtml \
 	  part3-3-2.xhtml \
 	  part3-3-3.xhtml \
 	  glossary.xhtml \
-	  macros.xhtml
+	  macros.xhtml \
+	  commands.xhtml
 
 VERSION	= 0.0.23
 DATE	= 02 September 2011
@@ -284,6 +287,7 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 		OPS/part3-3-3.xhtml \
 		OPS/glossary.xhtml \
 		OPS/macros.xhtml \
+		OPS/commands.xhtml \
 		OPS/book.opf \
 		OPS/book.ncx \
 		OPS/css/book.css )
