@@ -195,17 +195,17 @@
 			<BR>
 			.Bl -ohang
 			<BR>
+			.It <SPAN>02 September 2011, <SPAN CLASS="ver">0.0.24</SPAN></SPAN>
+			<DIV>
+				Added first bits of a <A HREF="commands.html">Command</A> jump-table.  All command names will eventually point
+				here, which will be used for a command's standardisation status, links to download, license, etc.
+			</DIV>
+			.
+			<BR>
 			.It <SPAN>02 September 2011, <SPAN CLASS="ver">0.0.23</SPAN></SPAN>
 			<DIV>
 				Added <A HREF="part3-3.html">Composition</A> chapter.  This covers editing, spelling, and grammar.  This will
 				need some work, but it's there.
-			</DIV>
-			.
-			<BR>
-			.It <SPAN>01 September 2011, <SPAN CLASS="ver">0.0.22</SPAN></SPAN>
-			<DIV>
-				Added <A HREF="part2-1-6.html">Quotation</A> section.  To the best of my knowledge, this is the last bit of
-				syntactic information relevant to <I>mdoc</I>.
 			</DIV>
 			.El
 			<BR>
