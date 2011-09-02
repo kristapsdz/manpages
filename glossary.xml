@@ -239,12 +239,11 @@
 				The <a class="external" href="http://www.cs.bell-labs.com/who/dmr/1stEdman.html">First Edition</a>, 1971, is
 				preserved for reading.
 			</dd>
-			<dt id="vi">
-				Vi
+			<dt id="wwb">
+				WWB
 			</dt>
 			<dd>
-				An editor first distributed with <a class="term" href="#bsd_unix">BSD UNIX</a>, now standardised in <a
-					class="term" href="#posix">POSIX</a>.1-2008.
+				Writer's Workbench.
 			</dd>
 			<dt id="xhtml">
 				XHTML

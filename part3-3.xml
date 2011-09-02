@@ -11,19 +11,25 @@
 		</h2>
 		<p>
 			Since the UNIX manual has such a rich history of development, it would be strange were it not to have a significant body
-			of supporting tools for composition.  In fact, the First Edition of <a class="term" href="glossary.xml#unix">UNIX</a>
-			was bundled with a set of tools, the UNIX Writer's Workbench, specifically for composing documents &mdash;
-			spell-checking, grammar-checking, editing, and so forth.
+			of supporting tools for composition.  In fact, the seventh edition of <a class="term" href="glossary.xml#unix">UNIX</a>
+			was bundled with a set of tools, the UNIX <a class="term" href="glossary.xml#wwb">Writer's Workbench</a>, specifically
+			for composing documents &mdash; spell-checking, grammar-checking, and so forth.  Even then, sophisticated editors had
+			long since been a pivotal part of UNIX.
 		</p>
 		<p>
-			These tools are, sadly, no longer distributed with most UNIX systems.  Even the topic of spell-checking is no longer
-			standardised.  However, the situation isn't so grim: the <a class="term cmd" href="glossary.xml#vi">vi</a> editor is
-			stipulated by <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008.  And although a spell-checker is not, there
-			are several widely-distributed spell-checkers available.
+			Although the <span class="cmd">ed</span>, <span class="cmd">ex</span>, and <span class="cmd">vi</span> editors are
+			stipulated by <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008, the Writer's Workbench has long since been
+			discontinued.  Even spell-checkers are not standard across modern UNIX systems, although many high-quality editors and
+			composition utilities may be downloaded.
 		</p>
 		<p>
-			One of the best parts of <span class="lang">mdoc</span> is that none of these specific tools are necessary: an <span
-				class="lang">mdoc</span> document is just a text file and may be composed in any editor.
+			In short, the situation is messy: composing <span class="lang">mdoc</span> documents (and in fact any <span
+				class="lang">roff</span> document) is tricky to do portably.
+		</p>
+		<p>
+			However, one of the best parts of <span class="lang">mdoc</span> is that none of these specific tools are necessary: an
+			<span class="lang">mdoc</span> document is just a text file and may be composed in any editor, and its text contents
+			analysed by any utility smart enough to ignore <span class="lang">mdoc</span> syntax.
 		</p>
 		<table class="nav">
 			<tbody>

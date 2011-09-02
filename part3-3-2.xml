@@ -11,13 +11,12 @@
 		</h3>
 		<p>
 			The right or wrong spelling of terms in technical documents is very important.  Thus, it's always important to carefully
-			spell-check your manuals, making sure that both technical and general terms are correctly spelt.  In this section, I
-			introduce some common spell-checking utilities.  There is <i>no</i> <a class="term"
-				href="glossary.xml#posix">POSIX</a>.1-2008 standardised spell-checker.
+			spell-check your manuals, making sure that both technical and general terms are correctly spelt.  
 		</p>
 		<p>
-			The difficulty in spell-checking <span class="lang">mdoc</span> documents is foremost the parsing of macros.  Consider
-			spell-checking checking the following snippet.
+			Unfortunately, spell-checking a <span class="lang">mdoc</span> document is fairly difficult, as the spell-checker must
+			have some knowledge of the language structure to discern text from macros.  Consider spell-checking checking the
+			following snippet.
 		</p>
 		<div class="mdocin">
 			.Fl Alu Ar input
@@ -32,14 +31,25 @@
 		</h4>
 		<p>
 			The <span class="cmd">spell</span> utility is distributed with many <a class="term" href="glossary.xml#bsd_unix">BSD
-				UNIX</a> operating systems as a simplistic spell-checker.  It reads in a file
+				UNIX</a> operating systems as a simplistic spell-checker.  In fact, it was first distributed with the Sixth
+			Edition of UNIX.  <span class="cmd">spell</span> preprocesses its input with <span class="cmd">deroff</span>, another
+			historic utility with some functionality of stripping <span class="lang">roff</span> instructions from files.
 		</p>
-		<h4>
-			ispell
-		</h4>
-		<h4>
-			aspell
-		</h4>
+		<p>
+			To print a list of all unknown words, you can explicitly invoke <span class="cmd">deroff</span> and <span
+				class="cmd">spell</span> as follows:
+		</p>
+		<div class="cmdline">
+			deroff -w file.1 | spell
+		</div>
+		<p>
+			A utility distributed with <a href="glossary.xml#mandoc" class="cmd">mandoc</a>, <span class="cmd">demandoc</span>,
+			is significantly stronger than <span class="cmd">deroff</span>.  If available, it should be used instead.  It has the
+			same calling syntax of <span class="cmd">deroff</span>.
+		</p>
+		<div class="cmdline">
+			demandoc -w file.1 | spell
+		</div>
 		<table class="nav">
 			<tbody>
 				<tr>

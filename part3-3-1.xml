@@ -12,12 +12,28 @@
 		<p>
 			Since <span class="lang">mdoc</span> is an ASCII-clean text format, it may be edited in any text editor.  In this
 			section, I introduce a variety of editors available on most <a class="term" href="glossary.xml#unix">UNIX</a> systems.
+			Since this topic is exhaustively covered in most any introductory UNIX book, I only introduce portable editors.
 		</p>
 		<h4>
-			Vi, Vim
+			Ed
 		</h4>
 		<p>
-			The <a class="term cmd" href="glossary.xml#vi">vi</a> editor...
+			The <span class="cmd">ed</span> utility is a line editor standardised by <a class="term"
+				href="glossary.xml#posix">POSIX</a>.1-2008.  The concept of a line editor may be familiar to those who have used
+			a typewriter or teleprinter, where only the current line of input may be edited (or viewed, in some cases) at a time.
+		</p>
+		<p>
+			Its inclusion is largely for historical reasons, as using <span class="cmd">ed</span> can be a frustrating experience
+			for those accustomed to visual editors.  I don't recommend using this utility for <span class="lang">mdoc</span>,
+			although its function as a line editor makes it perfect for the task.
+		</p>
+		<h4>
+			Ex, Vi
+		</h4>
+		<p>
+			The <span class="cmd">vi</span> and <span class="cmd">ex</span> editors were powerful additions to the UNIX system: they
+			allowed visual editing of files (versus line editing as with <span class="cmd">ed</span>).  This editor has inspired a
+			raft of clones, but being standardised, some form of the utility is available on all UNIX systems.
 		</p>
 		<table class="nav">
 			<tbody>
