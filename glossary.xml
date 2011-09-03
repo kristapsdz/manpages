@@ -40,6 +40,15 @@
 				A programming language developed in 1969 by Dennis Ritchie at AT&amp;T Bell Labs.  This is the language of
 				choice for <a class="term" href="#unix">UNIX</a> development.
 			</dd>
+			<dt id="cat_pages">
+				Cat Pages
+			</dt>
+			<dd>
+				Manual pages pre-formatted and installed with an operating system.  Historically, the <a class="cmd"
+					href="commands.xml#cmd_nroff">nroff</a> utility was quite slow: pre-formatted pages in a cache reduced
+				the wait time for <a class="cmd" href="commands.xml#cmd_man">man</a> to display a manual.  This has since become
+				the convention for most <a class="term" href="#unix">UNIX</a> operating systems.
+			</dd>
 			<dt id="cddl">
 				CDDL
 			</dt>
@@ -131,16 +140,17 @@
 			</dt>
 			<dd>
 				Short form of <q>UNIX manual pages</q>.  System documentation for <a class="term" href="#unix">UNIX</a> systems.
-				Usually viewed using the <span class="cmd">man</span> utility, which pages formatted manual documents using to
-				the screen.  Man pages are formatted by a utility such as <a href="commands.xml#cmd_nroff" class="cmd">nroff</a>
-				or <a class="cmd" href="commands.xml#cmd_mandoc">mandoc</a>.
+				Usually viewed using the <a href="commands.xml#cmd_man" class="cmd">man</a> utility, which pages formatted
+				manual documents using to the screen.  Man pages are formatted by a utility such as <a
+					href="commands.xml#cmd_nroff" class="cmd">nroff</a> or <a class="cmd"
+					href="commands.xml#cmd_mandoc">mandoc</a>.
 			</dd>
 			<dt id="mdoc">
 				Mdoc
 			</dt>
 			<dd>
 				Language for formatting <a class="term" href="#man_pages">man pages</a>.  Originally one of several available
-				macro package in the <span class="lang"><a class="term" href="#roff">roff</a></span> language for the <a
+				macro package in the <a class="term lang" href="#roff">roff</a> language for the <a
 					href="commands.xml#cmd_nroff" class="cmd">nroff</a> and <a href="commands.xml#cmd_troff"
 					class="cmd">troff</a> text processors.
 			</dd>

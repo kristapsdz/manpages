@@ -10,9 +10,9 @@
 			Commands
 		</h2>
 		<p>
-			Commands are the way in which a user operates her computer.  Already I've noted the <span class="cmd">man</span>
-			command: if you've interacted with a UNIX system, you've probably run at least <span class="cmdline">man intro</span>
-			or <span class="cmdline">man man</span> to learn about your system.
+			Commands are the way in which a user operates her computer.  Already I've noted the <a href="commands.xml#cmd_man"
+				class="cmd">man</a> command: if you've interacted with a UNIX system, you've probably run at least <span
+				class="cmdline">man intro</span> or <span class="cmdline">man man</span> to learn about your system.
 		</p>
 		<p>
 			In this chapter, I'll discuss how to document these commands with <span class="lang">mdoc</span>.  

@@ -24,12 +24,13 @@
 			language for documenting utilities, programming functions, file and wire formats, hardware device interfaces, and so on.
 			By a language I mean a structured, machine-readable document format such as <a class="term" href="glossary.xml#html">
 				HTML</a>, the primary language of web pages; or <a class="term" href="glossary.xml#rtf">RTF</a>, used by word
-			processors.  <span class="cmd">man</span> is the utility for querying documents in <span class="lang">mdoc</span> and
-			other languages, collectively called <a class="term" href="glossary.xml#man_pages">man pages</a>.  
+			processors.  <a href="commands.xml#cmd_man" class="cmd">man</a> is the utility for querying documents in <span
+				class="lang">mdoc</span> and other languages, collectively called <a class="term"
+				href="glossary.xml#man_pages">man pages</a>.  
 		</p>
 		<p>
-			The following, for example, is a fragment of <span class="cmd">man</span> output for the <span class="cmd">cat</span>
-			command.
+			The following, for example, is a fragment of <a href="commands.xml#cmd_man" class="cmd">man</a> output for the <a
+				href="commands.xml#cmd_cat" class="cmd">cat</a> command.
 		</p>
 		<div class="mdocout">
 			<div class="mdoc-section">
@@ -71,10 +72,11 @@
 			apply to computing systems in general &mdash; not just UNIX.
 		</p>
 		<p>
-			In this book I'll assume you are casually familiar with <span class="cmd">man</span> and its output.  This will allow us
-			to focus on manuals with the same formatted output in mind.  Thus, if you're unfamiliar with UNIX or <span
-				class="cmd">man</span>, this is a good time to read an introductory text on the subject, or at the very least,
-			read the output of <span class="cmdline">man man</span> (the manual page of the <span class="cmd">man</span> command).
+			In this book I'll assume you are casually familiar with <a href="commands.xml#cmd_man" class="cmd">man</a> and its
+			output.  This will allow us to focus on manuals with the same formatted output in mind.  Thus, if you're unfamiliar with
+			UNIX or <a href="commands.xml#cmd_man" class="cmd">man</a>, this is a good time to read an introductory text on the
+			subject, or at the very least, read the output of <span class="cmdline">man man</span> (the manual page of the <a
+				href="commands.xml#cmd_man" class="cmd">man</a> command).
 		</p>
 		<p>
 			This is not a canonical reference! The <span class="lang">mdoc</span> language is not standardised.  For official

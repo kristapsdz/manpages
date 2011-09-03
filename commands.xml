@@ -22,6 +22,13 @@
 				non-<a href="glossary.xml#ascii" class="term">ASCII</a> input.  Available at <a class="external"
 					href="http://aspell.net/">aspell.net</a> under the <a class="term" href="glossary.xml#gpl">GPL</a>.
 			</dd>
+			<dt id="cmd_cat">
+				Cat
+			</dt>
+			<dd>
+				Output a file directly to the <a class="term" href="glossary.xml#terminal">terminal</a>.  This utility is
+				standardised by <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008.
+			</dd>
 			<dt id="cmd_col">
 				Col
 			</dt>
@@ -86,6 +93,17 @@
 				Available at <a class="external"
 					href="http://lasr.cs.ucla.edu/geoff/ispell.html">lasr.cs.ucla.edu/geoff/ispell.html</a> under its own
 				license.
+			</dd>
+			<dt id="cmd_man">
+				Man
+			</dt>
+			<dd>
+				A <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008 standardised utility for viewing UNIX manpages.
+				The standard document only specifies that it accepts a name and returns output: no more.  <span
+					class="cmd">man</span> usually looks up the manual to display in a set of directories reserved for
+				manuals, then either pages pre-formatted manuals to the screen (<a href="glossary.xml#cat_pages"
+					class="term">cat pages</a>) or formats it on the spot with <a class="term" href="#cmd_nroff">nroff</a>
+				or <a class="term" href="#cmd_mandoc">mandoc</a>.
 			</dd>
 			<dt id="cmd_mandoc">
 				Mandoc
