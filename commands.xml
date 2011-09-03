@@ -88,8 +88,8 @@
 			</dt>
 			<dd>
 				A historical utility merging the code-bases of the original <a class="cmd" href="#cmd_nroff">nroff</a> and <a
-					class="cmd" href="cmd_troff">troff</a> into a device-independent utility.  All modern <a class="cmd"
-					href="#cmd_nroff">nroff</a> and <a class="cmd" href="cmd_troff">troff</a> utilities are implemented by a
+					class="cmd" href="#cmd_troff">troff</a> into a device-independent utility.  All modern <a class="cmd"
+					href="#cmd_nroff">nroff</a> and <a class="cmd" href="#cmd_troff">troff</a> utilities are implemented by a
 				<span class="cmd">ditroff</span> implementation such as <a href="#cmd_groff" class="cmd">groff</a>.  A version
 				of the pre-<a href="#cmd_groff" class="cmd">groff</a> utility is available under the Lucent Public License at <a
 					class="external"
@@ -101,7 +101,7 @@
 			<dd>
 				Backup a file-system.  This utility isn't standardised, but appears on most modern <a class="term"
 					href="glossary.xml#unix">UNIX</a> implementations regardless.  Dumped file-systems may be restored with
-				the dual <a href="cmd" href="#cmd_restore">restore</a> utility.
+				the dual <a class="cmd" href="#cmd_restore">restore</a> utility.
 			</dd>
 			<dt id="cmd_ed">
 				Ed
@@ -125,7 +125,7 @@
 			</dt>
 			<dd>
 				A file-system checker.  Although not standardised, this utility is present on most <a class="term"
-					href="commands.xml#cmd_unix">UNIX</a> systems.
+					href="glossary.xml#unix">UNIX</a> systems.
 			</dd>
 			<dt id="cmd_groff">
 				Groff
@@ -206,7 +206,7 @@
 			<dd>
 				Historically the dominant revision control system for <a class="term" href="glossary.xml#unix">UNIX</a> systems,
 				and standardised by <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008.  Despite being standardised, few
-				UNIX systems include this utility.  It has largely been replaced by <a href="#cmd_cvs" href="cmd">cvs</a>.
+				UNIX systems include this utility.  It has largely been replaced by <a href="#cmd_cvs" class="cmd">cvs</a>.
 			</dd>
 			<dt id="cmd_spell">
 				Spell
