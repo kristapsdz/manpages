@@ -82,8 +82,8 @@
 		<p>
 			The <a href="commands.xml#cmd_cvs" class="cmd">cvs</a> identifiers (both from the current system, <a class="term"
 				href="glossary.xml#openbsd">OpenBSD</a>, and the import source system, <a class="term"
-				href="glossary.xml#netbsd">NetBSD</a>), copyright, license, and <span class="cmd">sccs</span> identifier (from
-			the original system) are presented in the usual way.
+				href="glossary.xml#netbsd">NetBSD</a>), copyright, license, and <a href="commands.xml#cmd_sccs"
+				class="cmd">sccs</a> identifier (from the original system) are presented in the usual way.
 		</p>
 		<div class="mdocin">
 			.Dd $&#8203;Mdocdate: April 29 2011 $

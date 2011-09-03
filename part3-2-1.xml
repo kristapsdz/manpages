@@ -11,9 +11,10 @@
 		</h3>
 		<p>
 			On modern <a class="term" href="glossary.xml#unix">UNIX</a> systems, the method for build management is overwhelmingly
-			the <a class="cmd term" href="glossary.xml#make">make</a> utility.  Although there are two disjoint <span
-				class="cmd">make</span> implementations in use (namely by for <a href="glossary.xml#gnu" class="term">GNU</a>
-			and <a href="glossary.xml#bsd_unix" class="term">BSD UNIX</a> systems), I consider the syntax common to both.
+			the <a class="cmd term" href="glossary.xml#make">make</a> utility.  Although there are two disjoint <a
+				href="commands.xml#cmd_make" class="cmd">make</a> implementations in use (namely by for <a
+				href="glossary.xml#gnu" class="term">GNU</a> and <a href="glossary.xml#bsd_unix" class="term">BSD UNIX</a>
+			systems), I consider the syntax common to both.
 		</p>
 		<p>
 			In this section, I'll assume the file <span class="file">Makefile</span> already exists, and is used to build a system
@@ -38,24 +39,25 @@
 			&nbsp;&nbsp;&nbsp;&nbsp;cc -o foo foo.o
 		</div>
 		<p>
-			A rigorous analysis of this syntax is beyond the scope of this book (do consult your system's documentation for the <span
-				class="cmd">make</span> command with <span class="cmdline">man make</span>).  It defines the targets <span
-				class="screen">all</span>, <span class="screen">clean</span>, and <span class="screen">install</span>: build,
-			clean up, and install the utility, respectively.
+			A rigorous analysis of this syntax is beyond the scope of this book (do consult your system's documentation for the <a
+				href="commands.xml#cmd_make" class="cmd">make</a> command with <span class="cmdline">man make</span>).  It
+			defines the targets <span class="screen">all</span>, <span class="screen">clean</span>, and <span
+				class="screen">install</span>: build, clean up, and install the utility, respectively.
 		</p>
 		<h4>
 			File Extension
 		</h4>
 		<p>
-			First, it's important to settle upon an input and output file extension, as <span class="cmd">make</span> tracks file
-			status by way of comparing the time-stamp of a file's input (which may be multiple files) and output (called the
-			target).  In short, if the target is older than any of the input files, it is rebuilt.  The input files are created and
-			maintained by the developer; the output files are built by <span class="cmd">make</span>.
+			First, it's important to settle upon an input and output file extension, as <a href="commands.xml#cmd_make"
+				class="cmd">make</a> tracks file status by way of comparing the time-stamp of a file's input (which may be
+			multiple files) and output (called the target).  In short, if the target is older than any of the input files, it is
+			rebuilt.  The input files are created and maintained by the developer; the output files are built by <a
+				href="commands.xml#cmd_make" class="cmd">make</a>.
 		</p>
 		<p>
 			For simplicity, I use the standard <span class="file">.1</span>, <span class="file">.2</span>, and so on convention for
 			the target (the output).  I then use <span class="file">.in.1</span> and so on for input.  Thus, it is necessary to
-			notify the <span class="cmd">make</span> utility of these new extensions before all other rules;
+			notify the <a href="commands.xml#cmd_make" class="cmd">make</a> utility of these new extensions before all other rules;
 		</p>
 		<div class="screen">
 			.SUFFIXES: .in.1 .1

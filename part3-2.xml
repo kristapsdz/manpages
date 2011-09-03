@@ -16,7 +16,7 @@
 			version-controlled using <a class="cmd" href="commands.xml#cmd_cvs">cvs</a>, called revision control.
 		</p>
 		<p>
-			In this section, I discuss methods for integrating <span class="cmd">mdoc</span> documents into a source-controlled
+			In this section, I discuss methods for integrating <span class="lang">mdoc</span> documents into a source-controlled
 			build environment.  I'll focus on <a href="commands.xml#cmd_mandoc" class="cmd">mandoc</a> as a formatter, but
 			provide stubs for using <a href="commands.xml#cmd_nroff" class="cmd">nroff</a>.
 		</p>

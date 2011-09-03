@@ -46,6 +46,13 @@
 				the <a class="term" href="glossary.xml#isc_license">ISC license</a> at <a class="external"
 					href="http://www.opencvs.org/">www.opencvs.org</a>.
 			</dd>
+			<dt id="cmd_echo">
+				Echo
+			</dt>
+			<dd>
+				Echo input arguments back to the <a class="term" href="glossary.xml#terminal">terminal</a>.  This utility is
+				standardised by <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008.
+			</dd>
 			<dt id="cmd_demandoc">
 				Demandoc
 			</dt>
@@ -76,12 +83,57 @@
 					href="glossary.xml#wwb">Writer's Workbench</a>.  Non-standard. A <a class="term" href="glossary.xml#gpl">GPL</a>
 				version is available at <a class="external" href="https://www.gnu.org/s/diction/">www.gnu.org/s/diction</a>.
 			</dd>
+			<dt id="cmd_ditroff">
+				Ditroff
+			</dt>
+			<dd>
+				A historical utility merging the code-bases of the original <a class="cmd" href="#cmd_nroff">nroff</a> and <a
+					class="cmd" href="cmd_troff">troff</a> into a device-independent utility.  All modern <a class="cmd"
+					href="#cmd_nroff">nroff</a> and <a class="cmd" href="cmd_troff">troff</a> utilities are implemented by a
+				<span class="cmd">ditroff</span> implementation such as <a href="#cmd_groff" class="cmd">groff</a>.  A version
+				of the pre-<a href="#cmd_groff" class="cmd">groff</a> utility is available under the Lucent Public License at <a
+					class="external"
+					href="http://heirloom.sourceforge.net/doctools.html">heirloom.sourceforge.net/doctools.html</a>.
+			</dd>
+			<dt id="cmd_dump">
+				Dump
+			</dt>
+			<dd>
+				Backup a file-system.  This utility isn't standardised, but appears on most modern <a class="term"
+					href="glossary.xml#unix">UNIX</a> implementations regardless.  Dumped file-systems may be restored with
+				the dual <a href="cmd" href="#cmd_restore">restore</a> utility.
+			</dd>
+			<dt id="cmd_ed">
+				Ed
+			</dt>
+			<dd>
+				Edit a file line by line on a <a class="term" href="glossary.xml#terminal">terminal</a>.  This utility is
+				standardised by <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008.  It is the first editor to be
+				bundled with UNIX, extending to Version 1 AT&amp;T <a class="term" href="glossary.xml#unix">UNIX</a>.
+			</dd>
+			<dt id="cmd_ex">
+				Ex
+			</dt>
+			<dd>
+				Extends <a href="#cmd_ed" class="cmd">ed</a> to operate in visual (screen) mode.  This utility is standardised
+				by <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008.  It first appeared in Version 8 AT&amp;T <a
+					class="term" href="glossary.xml#unix">UNIX</a>, and is usually invoked as a special mode of <a
+					class="cmd" href="#cmd_vi">vi</a>.
+			</dd>
+			<dt id="cmd_fsck">
+				Fsck
+			</dt>
+			<dd>
+				A file-system checker.  Although not standardised, this utility is present on most <a class="term"
+					href="commands.xml#cmd_unix">UNIX</a> systems.
+			</dd>
 			<dt id="cmd_groff">
 				Groff
 			</dt>
 			<dd>
-				The <a href="glossary.xml#gnu" class="term">GNU</a> implementation of <a class="cmd" href="#cmd_troff">troff</a> and
-				<a class="cmd" href="#cmd_nroff">nroff</a>.  Non-standard.  Available under the <a class="term"
+				The <a href="glossary.xml#gnu" class="term">GNU</a> re-implementation of <a class="cmd"
+					href="#cmd_ditroff">ditroff</a>, thus providing <a class="cmd" href="#cmd_troff">troff</a> and <a
+					class="cmd" href="#cmd_nroff">nroff</a> utilities.  Non-standard.  Available under the <a class="term"
 					href="glossary.xml#gpl">GPL</a> at <a class="external"
 					href="https://www.gnu.org/s/groff/">www.gnu.org/s/groff</a>.
 			</dd>
@@ -93,6 +145,26 @@
 				Available at <a class="external"
 					href="http://lasr.cs.ucla.edu/geoff/ispell.html">lasr.cs.ucla.edu/geoff/ispell.html</a> under its own
 				license.
+			</dd>
+			<dt id="cmd_ls">
+				Ls
+			</dt>
+			<dd>
+				List the contents of a file-system directory.  This utility is standardised by <a class="term"
+					href="glossary.xml#posix">POSIX</a>.1-2008.
+			</dd>
+			<dt id="cmd_make">
+				Make
+			</dt>
+			<dd>
+				A build system that uses a graph of dependencies (by a file's last modified date) to determine when a target
+				needs to be rebuilt.  This utility is standardised by <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008
+				and was first released in Version 7 AT&amp;T <a href="glossary.xml#unix" class="term">UNIX</a>.  It has two
+				somewhat incompatible implementations, as the standardised syntax is fairly limited: under the <a class="term"
+					href="glossary.xml#gpl">GPL</a> at <a class="external"
+					href="https://www.gnu.org/software/make/">www.gnu.org/software/make</a>, referred to as <a class="term"
+					href="glossary.xml#gnu">GNU</a> make; or distributed with <a class="term"
+					href="glossary.xml#bsd_unix">BSD UNIX</a> systems as BSD make.
 			</dd>
 			<dt id="cmd_man">
 				Man
@@ -118,11 +190,23 @@
 			</dt>
 			<dd>
 				A re-write of the original formatter for the <span class="lang">roff</span> language (the name deriving from new
-				roff).  Built to accomodate for <a class="term" href="glossary.xml#terminal">terminals</a>.  Available under the
-				<a class="term" href="glossary.xml#gpl">GPL</a> at <a class="external"
-					href="https://www.gnu.org/s/groff/">www.gnu.org/s/groff</a> (<a class="cmd" href="#cmd_groff">groff</a>)
-				or under the Lucent Public License at <a class="external"
-					href="http://heirloom.sourceforge.net/doctools.html">heirloom.sourceforge.net/doctools.html</a>.
+				roff).  Built to accomodate for <a class="term" href="glossary.xml#terminal">terminals</a>.  Modern uses of this
+				utility are actually through a re-write, <a class="cmd" href="#cmd_ditroff">ditroff</a>.
+			</dd>
+			<dt id="cmd_restore">
+				Restore
+			</dt>
+			<dd>
+				The dual to <a class="cmd" href="#cmd_dump">dump</a>: restores a dumped file-system.  This utility is not
+				standardised, but found on most <a class="term" href="glossary.xml#unix">UNIX</a> operating systems anyway.
+			</dd>
+			<dt id="cmd_sccs">
+				Sccs
+			</dt>
+			<dd>
+				Historically the dominant revision control system for <a class="term" href="glossary.xml#unix">UNIX</a> systems,
+				and standardised by <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008.  Despite being standardised, few
+				UNIX systems include this utility.  It has largely been replaced by <a href="#cmd_cvs" href="cmd">cvs</a>.
 			</dd>
 			<dt id="cmd_spell">
 				Spell
@@ -145,10 +229,25 @@
 			<dd>
 				Traditional name of a formatter for the <span class="lang">roff</span> langage.  First released in Version 6
 				AT&amp;T UNIX as a printer and graphical-device version of <a class="cmd" href="#cmd_nroff">nroff</a> (the name
-				deriving from typesetter roff).  Available under the <a class="term" href="glossary.xml#gpl">GPL</a> at <a
-					class="external" href="https://www.gnu.org/s/groff/">www.gnu.org/s/groff</a> (<a class="cmd"
-					href="#cmd_groff">groff</a>) or under the Lucent Public License at <a class="external"
-					href="http://heirloom.sourceforge.net/doctools.html">heirloom.sourceforge.net/doctools.html</a>.
+				deriving from typesetter roff).  Modern uses of this utility are actually through a re-write, <a class="cmd"
+					href="#cmd_ditroff">ditroff</a>.
+			</dd>
+			<dt id="cmd_vi">
+				Vi
+			</dt>
+			<dd>
+				Extends <a href="#cmd_ed" class="cmd">ed</a> to operate in fully visual (screen) mode, extending <a
+					href="#cmd_ex" class="cmd">ex</a> in its display handling capability.  This utility is standardised by
+				<a class="term" href="glossary.xml#posix">POSIX</a>.1-2008.  It first appeared in Version 8 AT&amp;T <a
+					class="term" href="glossary.xml#unix">UNIX</a>.
+			</dd>
+			<dt id="cmd_vim">
+				Vim
+			</dt>
+			<dd>
+				A popular implementation of the <a class="cmd" href="#cmd_vi">vi</a> editor.  It is distributed under a custom
+				<a href="glossary.xml#gpl" class="term">GPL</a>-like license at <a class="external"
+					href="http://www.vim.org/">www.vim.org</a>.
 			</dd>
 		</dl>
 		<table class="nav">

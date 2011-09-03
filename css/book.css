@@ -64,7 +64,8 @@ h5		{ font-size: inherit; }
 a.cmd,
 a.macro,
 a.term		{ color: #000000;
-		  border-bottom: 1px dotted #cccccc; }
+		  border-bottom: 1px dotted #339999; }
+a.cmd:hover,
 a.macro:hover,
 a.term:hover	{ color: #339999; }
 .cmdflag:before,

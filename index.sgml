@@ -195,17 +195,15 @@
 			<BR>
 			.Bl -ohang
 			<BR>
+			.It <SPAN>03 September 2011, <SPAN CLASS="ver">0.0.25</SPAN></SPAN>
+			<DIV>
+				All commands now jump through a <A HREF="commands.html">Commands</A> jump table.
+			</DIV>
+			.
 			.It <SPAN>02 September 2011, <SPAN CLASS="ver">0.0.24</SPAN></SPAN>
 			<DIV>
 				Added first bits of a <A HREF="commands.html">Command</A> jump-table.  All command names will eventually point
 				here, which will be used for a command's standardisation status, links to download, license, etc.
-			</DIV>
-			.
-			<BR>
-			.It <SPAN>02 September 2011, <SPAN CLASS="ver">0.0.23</SPAN></SPAN>
-			<DIV>
-				Added <A HREF="part3-3.html">Composition</A> chapter.  This covers editing, spelling, and grammar.  This will
-				need some work, but it's there.
 			</DIV>
 			.El
 			<BR>

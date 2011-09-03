@@ -141,8 +141,8 @@ XHTMLS	= preface.xhtml \
 	  macros.xhtml \
 	  commands.xhtml
 
-VERSION	= 0.0.24
-DATE	= 02 September 2011
+VERSION	= 0.0.25
+DATE	= 03 September 2011
 
 all: index.html
 

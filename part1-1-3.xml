@@ -10,10 +10,11 @@
 			Case Study
 		</h3>
 		<p>
-			I now introduce a case study of a real-world manual, in particular the <span class="cmd">echo</span> utility from <a
-				class="term" href="glossary.xml#openbsd">OpenBSD</a>.  The original file may be viewed on-line at <a
-				class="external" href="http://www.openbsd.org/cgi-bin/cvsweb/src/bin/echo/echo.1">src/bin/echo/echo.1</a>, file
-			version 1.20.  I choose this mainly because of its simplicity.
+			I now introduce a case study of a real-world manual, in particular the <a href="commands.xml#cmd_echo"
+				class="cmd">echo</a> utility from <a class="term" href="glossary.xml#openbsd">OpenBSD</a>.  The original file
+			may be viewed on-line at <a class="external"
+				href="http://www.openbsd.org/cgi-bin/cvsweb/src/bin/echo/echo.1">src/bin/echo/echo.1</a>, file version 1.20.  I
+			choose this mainly because of its simplicity.
 		</p>
 		<div class="mdocin">
 			.\"&nbsp;&nbsp;&nbsp;&nbsp;$&#8203;OpenBSD: echo.1,v 1.20 2010/09/03 09:53:20 jmc Exp $&#8203;
@@ -103,10 +104,10 @@
 			.\"	@(#)echo.1	8.1 (Berkeley) 7/22/93
 		</div>
 		<p>
-			This comment is of historical note.  The <span class="screen">@(#)</span> sequence was inserted by the <span
-				class="cmd">sccs</span> utility (Source Code Control System).  Although this utility is part of <a class="term"
-				href="glossary.xml#posix">POSIX</a>.1-2008, it has mostly been replaced by <a href="commands.xml#cmd_cvs"
-				class="cmd">cvs</a>.  At this point the manual content itself begins.
+			This comment is of historical note.  The <span class="screen">@(#)</span> sequence was inserted by the <a
+				href="commands.xml#cmd_sccs" class="cmd">sccs</a> utility (Source Code Control System).  Although this utility
+			is part of <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008, it has mostly been replaced by <a
+				href="commands.xml#cmd_cvs" class="cmd">cvs</a>.  At this point the manual content itself begins.
 		</p>
 		<div class="mdocin">
 			.Dd $&#8203;Mdocdate: September 3 2010 &#8203;$
@@ -128,7 +129,8 @@
 			.Nd write arguments to the standard output
 		</div>
 		<p>
-			This documents a single command, the <span class="cmd">echo</span> command, which does as mentioned.
+			This documents a single command, the <a href="commands.xml#cmd_echo" class="cmd">echo</a> command, which does as
+			mentioned.
 		</p>
 		<div class="mdocin">
 			.Sh SYNOPSIS
@@ -208,7 +210,7 @@
 		</div>
 		<p>
 			Although these weren't cited in other sections of the manual, the author felt it necessary to link to them.  This is
-			probably because both utilities <span class="cmd">csh</span> and <span class="cmd">ksh</span> include internal
+			probably because both <span class="screen">csh</span> and <span class="screen">ksh</span> include internal
 			implementations of a function by the same name.
 		</p>
 		<div class="mdocin">

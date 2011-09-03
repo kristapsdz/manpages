@@ -115,7 +115,7 @@
 			If multiple commands are specified, such as with aliased names, the canonical form should be used.
 		</p>
 		<p>
-			Example of a title for the <span class="cmd">ls</span> utility:
+			Example of a title for the <a href="commands.xml#cmd_ls" class="cmd">ls</a> utility:
 		</p>
 		<div class="mdocin">
 			.Dt LS 1
@@ -172,9 +172,9 @@
 		<dl>
 			<dt><span class="cat">1</span>: user utilities.</dt>
 			<dd>
-				Most commands fall under this category.  A user utility is usable by all operators of a UNIX
-				system.  Common examples: <span class="cmd">ls</span>, <span class="cmd">find</span>, <span
-					class="cmd">cat</span>.
+				Most commands fall under this category.  A user utility is usable by all operators of a UNIX system.  Common
+				examples: <a href="commands.xml#cmd_ls" class="cmd">ls</a>, <a href="commands.xml#cmd_man" class="cmd">man</a>,
+				<a href="commands.xml#cmd_cat" class="cmd">cat</a>.
 			</dd>
 			<dt><span class="cat">2</span>: system calls.</dt>
 			<dd>
@@ -211,8 +211,9 @@
 			<dt><span class="cat">8</span>: administrative utilities.</dt>
 			<dd>
 				This consists of utilities for system administration, which may not be accessible or executable by general users
-				(see category <span class="cat">1</span>).  Common examples: <span class="cmd">dump</span>, <span class="cmd">restore</span>, <span
-					class="cmd">fsck</span>.
+				(see category <span class="cat">1</span>).  Common examples: <a href="commands.xml#cmd_dump"
+					class="cmd">dump</a>, <a href="commands.xml#cmd_restore" class="cmd">restore</a>, <a
+					href="commands.xml#cmd_fsck" class="cmd">fsck</a>.
 			</dd>
 			<dt><span class="cat">9</span>: kernel programming functions.</dt>
 			<dd> 
