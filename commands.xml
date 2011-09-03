@@ -6,9 +6,9 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
-		<h1>
+		<h2>
 			Appendix: Commands
-		</h1>
+		</h2>
 		<p>
 			This is a list of all commands mentioned in this book and how to find them on-line.  All referenced utilities are
 			open-source.

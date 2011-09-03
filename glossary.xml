@@ -6,9 +6,9 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
-		<h1>
+		<h2>
 			Appendix: Glossary
-		</h1>
+		</h2>
 		<dl>
 			<dt id="ascii">
 				ASCII

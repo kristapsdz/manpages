@@ -157,11 +157,13 @@
 			<BR>
 			.Lk <SPAN CLASS="sec"><A HREF="part3-3-3.html">Section 3</A>: Grammar &amp; Style</SPAN>
 			<BR>
-			.Lk <SPAN CLASS="part"><A HREF="glossary.html">Appendix: Glossary</A></SPAN>
+			.Lk <SPAN CLASS="part"><A HREF="part4.html">Appendices</A></SPAN>
 			<BR>
-			.Lk <SPAN CLASS="part"><A HREF="macros.html">Appendix: Macros</A></SPAN>
+			.Lk <SPAN CLASS="chap"><A HREF="glossary.html">Appendix 1: Glossary</A></SPAN>
 			<BR>
-			.Lk <SPAN CLASS="part"><A HREF="commands.html">Appendix: Commands</A></SPAN>
+			.Lk <SPAN CLASS="chap"><A HREF="macros.html">Appendix 2: Macros</A></SPAN>
+			<BR>
+			.Lk <SPAN CLASS="chap"><A HREF="commands.html">Appendix 3: Commands</A></SPAN>
 			<BR>
 			.
 			<BR>

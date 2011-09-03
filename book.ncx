@@ -245,23 +245,29 @@
 				</navPoint>
 			</navPoint>
 		</navPoint>
-		<navPoint class="h1" id="glossary" playOrder="40">
+		<navPoint class="h1" id="appendices" playOrder="40">
 			<navLabel>
-				<text>Appendix: Glossary</text>
+				<text>Appendices</text>
 			</navLabel>
-			<content src="glossary.xhtml"/>
-		</navPoint>
-		<navPoint class="h1" id="macros" playOrder="41">
-			<navLabel>
-				<text>Appendix: Macros</text>
-			</navLabel>
-			<content src="macros.xhtml"/>
-		</navPoint>
-		<navPoint class="h1" id="commands" playOrder="42">
-			<navLabel>
-				<text>Appendix: Commands</text>
-			</navLabel>
-			<content src="commands.xhtml"/>
+			<content src="part4.xhtml"/>
+			<navPoint class="h2" id="glossary" playOrder="41">
+				<navLabel>
+					<text>Appendix: Glossary</text>
+				</navLabel>
+				<content src="glossary.xhtml"/>
+			</navPoint>
+			<navPoint class="h2" id="macros" playOrder="42">
+				<navLabel>
+					<text>Appendix: Macros</text>
+				</navLabel>
+				<content src="macros.xhtml"/>
+			</navPoint>
+			<navPoint class="h2" id="commands" playOrder="43">
+				<navLabel>
+					<text>Appendix: Commands</text>
+				</navLabel>
+				<content src="commands.xhtml"/>
+			</navPoint>
 		</navPoint>
 	</navMap>
 </ncx>

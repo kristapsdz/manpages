@@ -6,9 +6,9 @@
 		<link rel="stylesheet" href="css/book.css" type="text/css"/>
 	</head>
 	<body>
-		<h1>
+		<h2>
 			Appendix: Macros
-		</h1>
+		</h2>
 		<p>
 			This table consists of brief descriptions of <span class="lang">mdoc</span> macros referenced in this book (meaning:
 			this is not a complete list!), then links to full descriptions according to the <a class="external"
