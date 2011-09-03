@@ -35,6 +35,7 @@
 		<item id="part2-2-2" href="part2-2-2.xhtml" media-type="application/xhtml+xml"/>
 		<item id="part2-3" href="part2-3.xhtml" media-type="application/xhtml+xml"/>
 		<item id="part2-3-1" href="part2-3-1.xhtml" media-type="application/xhtml+xml"/>
+		<item id="part2-3-2" href="part2-3-2.xhtml" media-type="application/xhtml+xml"/>
 		<item id="part3" href="part3.xhtml" media-type="application/xhtml+xml"/>
 		<item id="part3-1" href="part3-1.xhtml" media-type="application/xhtml+xml"/>
 		<item id="part3-1-1" href="part3-1-1.xhtml" media-type="application/xhtml+xml"/>
@@ -81,6 +82,7 @@
 		<itemref idref="part2-2-2"/>
 		<itemref idref="part2-3"/>
 		<itemref idref="part2-3-1"/>
+		<itemref idref="part2-3-2"/>
 		<itemref idref="part3"/>
 		<itemref idref="part3-1"/>
 		<itemref idref="part3-1-1"/>

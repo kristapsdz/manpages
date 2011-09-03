@@ -95,10 +95,13 @@
 		</dl>
 		<p>
 			Only the <span class="sec">NAME</span> and <span class="sec">DESCRIPTION</span> sections are required in the document
-			body, although a <span class="sec">SYNOPSIS</span> should appear for most manuals as well.  Other sections are commonly
-			found depending on the category.  For example, <span class="sec">RETURN VALUES</span> is found for most category <span
-				class="cat">3</span> and <span class="cat">2</span> manuals; while <span class="sec">EXIT STATUS</span> is found
-			for most category <span class="cat">1</span>, <span class="cat">6</span>, and <span class="cat">8</span> manuals.
+			body, although a <span class="sec">SYNOPSIS</span> should appear for most manuals as well.
+		</p>
+		<p>
+			Other sections may be necessary depending on the category.  For example, <span class="sec">RETURN VALUES</span> is found
+			for most category <span class="cat">3</span> and <span class="cat">2</span> manuals; while <span class="sec">EXIT
+				STATUS</span> is found for most category <span class="cat">1</span>, <span class="cat">6</span>, and <span
+				class="cat">8</span> manuals.
 		</p>
 		<table class="nav">
 			<tbody>

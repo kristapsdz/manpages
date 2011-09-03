@@ -167,71 +167,77 @@
 				<content src="part2-3.xhtml"/>
 				<navPoint class="h3" id="part2-3-1" playOrder="27">
 					<navLabel>
-						<text>Sections</text>
+						<text>Required Sections</text>
 					</navLabel>
 					<content src="part2-3-1.xhtml"/>
 				</navPoint>
+				<navPoint class="h3" id="part2-3-2" playOrder="28">
+					<navLabel>
+						<text>Optional Sections</text>
+					</navLabel>
+					<content src="part2-3-2.xhtml"/>
+				</navPoint>
 			</navPoint>
 		</navPoint>
-		<navPoint class="h1" id="part3" playOrder="28">
+		<navPoint class="h1" id="part3" playOrder="29">
 			<navLabel>
 				<text>Tools</text>
 			</navLabel>
 			<content src="part3.xhtml"/>
-			<navPoint class="h2" id="part3-1" playOrder="29">
+			<navPoint class="h2" id="part3-1" playOrder="30">
 				<navLabel>
 					<text>Formatters</text>
 				</navLabel>
 				<content src="part3-1.xhtml"/>
-				<navPoint class="h3" id="part3-1-1" playOrder="30">
+				<navPoint class="h3" id="part3-1-1" playOrder="31">
 					<navLabel>
 						<text>groff (GNU troff)</text>
 					</navLabel>
 					<content src="part3-1-1.xhtml"/>
 				</navPoint>
-				<navPoint class="h3" id="part3-1-2" playOrder="31">
+				<navPoint class="h3" id="part3-1-2" playOrder="32">
 					<navLabel>
 						<text>mandoc (mdocml)</text>
 					</navLabel>
 					<content src="part3-1-2.xhtml"/>
 				</navPoint>
 			</navPoint>
-			<navPoint class="h2" id="part3-2" playOrder="32">
+			<navPoint class="h2" id="part3-2" playOrder="33">
 				<navLabel>
 					<text>Project Integration</text>
 				</navLabel>
 				<content src="part3-2.xhtml"/>
-				<navPoint class="h3" id="part3-2-1" playOrder="33">
+				<navPoint class="h3" id="part3-2-1" playOrder="34">
 					<navLabel>
 						<text>Build System</text>
 					</navLabel>
 					<content src="part3-2-1.xhtml"/>
 				</navPoint>
-				<navPoint class="h3" id="part3-2-2" playOrder="34">
+				<navPoint class="h3" id="part3-2-2" playOrder="35">
 					<navLabel>
 						<text>Revision Control</text>
 					</navLabel>
 					<content src="part3-2-2.xhtml"/>
 				</navPoint>
 			</navPoint>
-			<navPoint class="h2" id="part3-3" playOrder="35">
+			<navPoint class="h2" id="part3-3" playOrder="36">
 				<navLabel>
 					<text>Composition</text>
 				</navLabel>
 				<content src="part3-3.xhtml"/>
-				<navPoint class="h3" id="part3-3-1" playOrder="36">
+				<navPoint class="h3" id="part3-3-1" playOrder="37">
 					<navLabel>
 						<text>Editing</text>
 					</navLabel>
 					<content src="part3-3-1.xhtml"/>
 				</navPoint>
-				<navPoint class="h3" id="part3-3-2" playOrder="37">
+				<navPoint class="h3" id="part3-3-2" playOrder="38">
 					<navLabel>
 						<text>Spell-checking</text>
 					</navLabel>
 					<content src="part3-3-2.xhtml"/>
 				</navPoint>
-				<navPoint class="h3" id="part3-3-3" playOrder="38">
+				<navPoint class="h3" id="part3-3-3" playOrder="39">
 					<navLabel>
 						<text>Grammar &amp; Style</text>
 					</navLabel>
@@ -239,19 +245,19 @@
 				</navPoint>
 			</navPoint>
 		</navPoint>
-		<navPoint class="h1" id="glossary" playOrder="39">
+		<navPoint class="h1" id="glossary" playOrder="40">
 			<navLabel>
 				<text>Appendix: Glossary</text>
 			</navLabel>
 			<content src="glossary.xhtml"/>
 		</navPoint>
-		<navPoint class="h1" id="macros" playOrder="40">
+		<navPoint class="h1" id="macros" playOrder="41">
 			<navLabel>
 				<text>Appendix: Macros</text>
 			</navLabel>
 			<content src="macros.xhtml"/>
 		</navPoint>
-		<navPoint class="h1" id="commands" playOrder="41">
+		<navPoint class="h1" id="commands" playOrder="42">
 			<navLabel>
 				<text>Appendix: Commands</text>
 			</navLabel>

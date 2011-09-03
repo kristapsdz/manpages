@@ -42,6 +42,7 @@ XMLS	= preface.xml \
 	  part2-2-2.xml \
 	  part2-3.xml \
 	  part2-3-1.xml \
+	  part2-3-2.xml \
 	  part3.xml \
 	  part3-1.xml \
 	  part3-1-1.xml \
@@ -84,6 +85,7 @@ HTMLS	= preface.html \
 	  part2-2-2.html \
 	  part2-3.html \
 	  part2-3-1.html \
+	  part2-3-2.html \
 	  part3.html \
 	  part3-1.html \
 	  part3-1-1.html \
@@ -126,6 +128,7 @@ XHTMLS	= preface.xhtml \
 	  part2-2-2.xhtml \
 	  part2-3.xhtml \
 	  part2-3-1.xhtml \
+	  part2-3-2.xhtml \
 	  part3.xhtml \
 	  part3-1.xhtml \
 	  part3-1-1.xhtml \
@@ -274,6 +277,7 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 		OPS/part2-2-2.xhtml \
 		OPS/part2-3.xhtml \
 		OPS/part2-3-1.xhtml \
+		OPS/part2-3-2.xhtml \
 		OPS/part3.xhtml \
 		OPS/part3-1.xhtml \
 		OPS/part3-1-1.xhtml \

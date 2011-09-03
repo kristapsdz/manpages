@@ -12,10 +12,8 @@
 		<p>
 			Before studying the structure of <span class="lang">mdoc</span> manuals, let's review the language we've seen so far.
 			Foremost, we've noticed that <span class="lang">mdoc</span> documents consist only of printable <a class="term"
-				href="glossary.xml#ascii">ASCII</a> characters.
-		</p>
-		<p>
-			We noted that a period at the beginning of a line indicates a <span class="lang">mdoc</span> macro:
+				href="glossary.xml#ascii">ASCII</a> characters.  We noted that a period at the beginning of a line indicates a
+			<span class="lang">mdoc</span> macro:
 		</p>
 		<div class="mdocin">
 			.Qq hello, world

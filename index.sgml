@@ -131,7 +131,9 @@
 			<BR>
 			.Lk <SPAN CLASS="chap"><A HREF="part2-3.html">Chapter 3</A>: Layout</SPAN>
 			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part2-3-1.html">Section 1</A>: Sections</SPAN>
+			.Lk <SPAN CLASS="sec"><A HREF="part2-3-1.html">Section 1</A>: Required Sections</SPAN>
+			<BR>
+			.Lk <SPAN CLASS="sec"><A HREF="part2-3-2.html">Section 2</A>: Optional Sections</SPAN>
 			<BR>
 			.Lk <SPAN CLASS="part"><A HREF="part3.html">Part 3</A>: Tools</SPAN>
 			<BR>
