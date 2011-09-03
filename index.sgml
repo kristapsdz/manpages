@@ -200,6 +200,7 @@
 				All commands now jump through a <A HREF="commands.html">Commands</A> jump table.
 			</DIV>
 			.
+			<BR>
 			.It <SPAN>02 September 2011, <SPAN CLASS="ver">0.0.24</SPAN></SPAN>
 			<DIV>
 				Added first bits of a <A HREF="commands.html">Command</A> jump-table.  All command names will eventually point
