@@ -147,7 +147,7 @@ XHTMLS	= preface.xhtml \
 	  macros.xhtml \
 	  commands.xhtml
 
-VERSION	= 0.0.26
+VERSION	= 0.0.27
 DATE	= 04 September 2011
 
 all: index.html
@@ -228,7 +228,7 @@ mdoc.single-xhtml.tgz: mdoc.xhtml css/book.css external.png
 	( cd .xhtml-single && tar zcf ../$@ mdoc )
 	rm -rf .xhtml-single
 
-mdoc.xml: full-head.xml full-tail.xml
+mdoc.xml: full-head.xml full-tail.xml $(XMLS)
 	( cat full-head.xml ; \
 	  for f in $(XMLS); do \
 		sed -n '/<body>/,/<\/body>/p' $$f | \

@@ -11,7 +11,7 @@
 		</h3>
 		<p>
 			On modern <a class="term" href="glossary.xml#unix">UNIX</a> systems, the method for build management is overwhelmingly
-			the <a class="cmd term" href="glossary.xml#make">make</a> utility.  Although there are two disjoint <a
+			the <a class="cmd" href="commands.xml#cmd_make">make</a> utility.  Although there are two disjoint <a
 				href="commands.xml#cmd_make" class="cmd">make</a> implementations in use (namely by for <a
 				href="glossary.xml#gnu" class="term">GNU</a> and <a href="glossary.xml#bsd_unix" class="term">BSD UNIX</a>
 			systems), I consider the syntax common to both.

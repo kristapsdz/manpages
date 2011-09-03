@@ -29,7 +29,10 @@
 				BSD UNIX
 			</dt>
 			<dd>
-				A class of free implementations of the <a href="#unix" class="term">UNIX</a> operating system.  Licensed either
+				A class of free implementations of the <a href="#unix" class="term">UNIX</a> operating system, originally
+				deriving from the Version 6 AT&amp;T UNIX.  This class consists primarily of <a class="external"
+					href="http://www.freebsd.org">FreeBSD</a>, <a class="external" href="http://www.netbsd.org">NetBSD</a>,
+				and <a class="external" href="http://www.openbsd.org">OpenBSD</a>.  These operating systems are licensed either
 				under the <a class="term" href="#bsd_license">BSD license</a> or the <a class="term" href="#isc_license">ISC
 					license</a>.
 			</dd>
@@ -38,7 +41,8 @@
 			</dt>
 			<dd>
 				A programming language developed in 1969 by Dennis Ritchie at AT&amp;T Bell Labs.  This is the language of
-				choice for <a class="term" href="#unix">UNIX</a> development.
+				choice for <a class="term" href="#unix">UNIX</a> development.  A compiler for C first appeared in Version 6
+				AT&amp;T UNIX, and one is stipulated now by <a class="term" href="#posix">POSIX</a>.1-2008.
 			</dd>
 			<dt id="cat_pages">
 				Cat Pages
@@ -53,7 +57,8 @@
 				CDDL
 			</dt>
 			<dd>
-				The Common Development and Distribution License, a free software license.
+				The <a href="http://www.opensource.org/licenses/CDDL-1.0" class="external">Common Development and Distribution
+					License</a>, a free software license.
 			</dd>
 			<dt id="command_line">
 				Command Line
@@ -66,7 +71,10 @@
 				CSS
 			</dt>
 			<dd>
-				Cascading style sheet.
+				Cascading style sheet, used primarily to style documents in <a class="term" href="#html">HTML</a> or <a
+					class="term" href="#xhtml">XHTML</a>.  The language is a <a class="external"
+					href="http://www.w3.org/Style/CSS/">standard</a> maintained by the <a class="external"
+					href="http://www.w3.org">World Wide Web Consortium</a>.
 			</dd>
 			<dt id="docbook">
 				DocBook
@@ -135,13 +143,6 @@
 				A set of parameters defining a locality-specific user interface, such as special characters (glyphs), numerical
 				representations, and so on.
 			</dd>
-			<dt id="make">
-				Make
-			</dt>
-			<dd>
-				A utility for determining which pieces of a built system (e.g., binaries, libraries, etc.) are out of date and
-				need rebuilding.
-			</dd>
 			<dt id="man_pages">
 				Man Pages
 			</dt>
@@ -151,15 +152,6 @@
 				manual documents using to the screen.  Man pages are formatted by a utility such as <a
 					href="commands.xml#cmd_nroff" class="cmd">nroff</a> or <a class="cmd"
 					href="commands.xml#cmd_mandoc">mandoc</a>.
-			</dd>
-			<dt id="mdoc">
-				Mdoc
-			</dt>
-			<dd>
-				Language for formatting <a class="term" href="#man_pages">man pages</a>.  Originally one of several available
-				macro package in the <a class="term lang" href="#roff">roff</a> language for the <a
-					href="commands.xml#cmd_nroff" class="cmd">nroff</a> and <a href="commands.xml#cmd_troff"
-					class="cmd">troff</a> text processors.
 			</dd>
 			<dt id="netbsd">
 				NetBSD

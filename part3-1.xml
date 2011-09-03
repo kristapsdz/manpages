@@ -10,8 +10,8 @@
 			Formatters
 		</h2>
 		<p>
-			The most important part of the <a class="lang term" href="glossary.xml#mdoc">mdoc</a> tools is the formatter, which
-			compiles an <span class="lang">mdoc</span> document into an output format.
+			The most important part of the <span class="lang">mdoc</span> tools is the formatter, which compiles an <span
+				class="lang">mdoc</span> document into an output format.
 		</p>
 		<div class="mdocout">
 			<div class="mdoc-section">
