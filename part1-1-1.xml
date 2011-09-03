@@ -44,15 +44,15 @@
 		</p>
 		<p>
 			Traditionally, the command of choice for formatting UNIX manuals for a <a class="term"
-				href="glossary.xml#terminal">terminal</a> is <a class="term" href="glossary.xml#nroff">nroff</a>.  For now,
+				href="glossary.xml#terminal">terminal</a> is <a class="term" href="commands.xml#cmd_nroff">nroff</a>.  For now,
 			let's stick with that (an alternative, <a class="cmd" href="commands.xml#cmd_mandoc">mandoc</a>, was used to generate
 			output on this site, but is not widely-used).
 		</p>
 		<p>
-			To display output, you must invoke <span class="cmd">nroff</span> as <span class="cmdline">nroff -mandoc -Tascii
-				file</span>.  The <span class="cmdflag">mandoc</span> flag indicates that input is in <span
-				class="lang">mdoc</span>.  Hereafter, I'll refer to <span class="cmd">nroff</span> simply as <q>the
-				formatter</q> to avoid confusion.
+			To display output, you must invoke <a href="commands.xml#cmd_nroff" class="cmd">nroff</a> as <span class="cmdline">nroff
+				-mandoc -Tascii file</span>.  The <span class="cmdflag">mandoc</span> flag indicates that input is in <span
+				class="lang">mdoc</span>.  Hereafter, I'll refer to <a href="commands.xml#cmd_nroff" class="cmd">nroff</a>
+			simply as <q>the formatter</q> to avoid confusion.
 		</p>
 		<div class="mdocout">
 			<div class="mdoc-section">

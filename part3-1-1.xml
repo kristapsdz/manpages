@@ -10,35 +10,34 @@
 			groff (GNU troff)
 		</h3>
 		<p>
-			Homepage: <a class="external" href="http://www.gnu.org/s/groff/">www.gnu.org/s/groff</a>.
+			The <a class="term" href="glossary.xml#gnu">GNU</a> project wrote the <a href="commands.xml#cmd_groff"
+				class="cmd">groff</a> utility as a reimplementation of <span class="cmd">ditroff</span>, which encompassed the
+			functionality of the historical <a class="cmd" href="commands.xml#cmd_nroff">nroff</a> and <a class="term cmd"
+				href="commands.xml#cmd_troff">troff</a> utilities.  The first version was released in 1990, and it is still
+			actively maintained.  <a href="commands.xml#cmd_groff" class="cmd">groff</a> is significant in that it is the
+			predominant implementation of <a href="commands.xml#cmd_nroff" class="cmd">nroff</a> and <a
+				href="commands.xml#cmd_troff" class="cmd">troff</a> on contemporary UNIX operating systems.  It also shepherded
+			the evolution of <span class="lang">mdoc</span>.
 		</p>
 		<p>
-			The <a class="term" href="glossary.xml#gnu">GNU</a> project wrote the <span class="cmd">groff</span> utility as a
-			reimplementation of <span class="cmd">ditroff</span>, which encompassed the functionality of the historical <a
-				class="term cmd" href="glossary.xml#nroff">nroff</a> and <a class="term cmd"
-				href="glossary.xml#troff">troff</a> utilities.  The first version was released in 1990, and it is still actively
-			maintained.  <span class="cmd">groff</span> is significant in that it is the predominant implementation of <span
-				class="cmd">nroff</span> and <span class="cmd">troff</span> on contemporary UNIX operating systems.  It also
-			shepherded the evolution of <span class="lang">mdoc</span>.
+			On systems with <a href="commands.xml#cmd_groff" class="cmd">groff</a> installed, both <a href="commands.xml#cmd_troff"
+				class="cmd">troff</a> and <a href="commands.xml#cmd_nroff" class="cmd">nroff</a> invoke the underlying <a
+				href="commands.xml#cmd_groff" class="cmd">groff</a> utility.  It is able to produce the classical <a
+				href="glossary.xml#terminal" class="term">terminal</a> and <a class="term" href="glossary.xml#ps">PS</a> output,
+			along with more recent support for <a class="term" href="glossary.xml#xhtml">XHTML</a>, <a class="term"
+				href="glossary.xml#html">HTML</a>, and <a class="term" href="glossary.xml#pdf">PDF</a>.  It has strong support
+			for non-<a class="term" href="glossary.xml#ascii">ASCII</a> output on supporting media.  Consult your local <a
+				href="commands.xml#cmd_groff" class="cmd">groff</a> manual all possible outputs via the <span
+				class="cmdflag">T</span> flag.
 		</p>
 		<p>
-			On systems with GNU <span class="cmd">troff</span> installed, both <span class="cmd">troff</span> and <span
-				class="cmd">nroff</span> invoke the underlying <span class="cmd">groff</span> utility.  It is able to produce
-			the classical <a href="glossary.xml#terminal" class="term">terminal</a> and <a class="term"
-				href="glossary.xml#ps">PS</a> output, along with more recent support for <a class="term"
-				href="glossary.xml#xhtml">XHTML</a>, <a class="term" href="glossary.xml#html">HTML</a>, and <a class="term"
-				href="glossary.xml#pdf">PDF</a>.  It has strong support for non-<a class="term"
-				href="glossary.xml#ascii">ASCII</a> output on supporting media.  Consult your local <span
-				class="cmd">groff</span> manual all possible outputs via the <span class="cmdflag">T</span> flag.
+			The <span class="lang">mdoc</span> implementation in <a href="commands.xml#cmd_groff" class="cmd">groff</a> was entirely
+			re-written in version 1.17.  Prior to this, input documents had some severe restrictions.  Most notably, macro lines
+			were limited to 9 arguments, <a href="macros.xml#macro_bl" class="macro">Bl</a> column macros had a restricted syntax,
+			and displays such as <a href="macros.xml#macro_bd" class="macro">Bd</a> could not be nested.
 		</p>
 		<p>
-			The <span class="lang">mdoc</span> implementation in <span class="cmd">groff</span> was entirely re-written in version
-			1.17.  Prior to this, input documents had some severe restrictions.  Most notably, macro lines were limited to 9
-			arguments, <a href="macros.xml#macro_bl" class="macro">Bl</a> column macros had a restricted syntax, and displays such
-			as <a href="macros.xml#macro_bd" class="macro">Bd</a> could not be nested.
-		</p>
-		<p>
-			The <span class="cmd">groff</span> utility is supported on both UNIX and non-UNIX operating systems.
+			The <a href="commands.xml#cmd_groff" class="cmd">groff</a> utility is supported on both UNIX and non-UNIX operating systems.
 		</p>
 		<h4>
 			Examples

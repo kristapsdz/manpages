@@ -12,7 +12,7 @@
 		<p>
 			By now we've discussed the <a class="lang term" href="glossary.xml#mdoc">mdoc</a> language by way of example and a
 			non-authoritative reference.  I've even referenced some formatters, such as <a class="cmd"
-				href="commands.xml#cmd_mandoc">mandoc</a> and <a class="term" href="glossary.xml#nroff">nroff</a>.  In this
+				href="commands.xml#cmd_mandoc">mandoc</a> and <a class="cmd" href="commands.xml#cmd_nroff">nroff</a>.  In this
 			part, I'll focus on the environment of <span class="lang">mdoc</span>: formatters, project integration, and so on.
 		</p>
 		<p>

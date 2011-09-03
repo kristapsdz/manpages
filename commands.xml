@@ -29,8 +29,8 @@
 				Filters line-feeds, usually used to strip backspaces from encoded documents.  Originally in Version 6 AT&amp;T
 				UNIX, standardised in <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008.
 			</dd>
-			<dt id="cmd_col">
-				CVS
+			<dt id="cmd_cvs">
+				Cvs
 			</dt>
 			<dd>
 				A revision management system (the concurrent version system).  Originally a client-server extension to prior
@@ -38,15 +38,6 @@
 					class="external" href="https://savannah.nongnu.org/projects/cvs">savannah.nongnu.org/projects/cvs</a> or
 				the <a class="term" href="glossary.xml#isc_license">ISC license</a> at <a class="external"
 					href="http://www.opencvs.org/">www.opencvs.org</a>.
-			</dd>
-			<dt id="cmd_ispell">
-				Ispell
-			</dt>
-			<dd>
-				A re-write of <a class="cmd" href="#cmd_spell">spell</a> for international dictionaries.  Non-standard.
-				Available at <a class="external"
-					href="http://lasr.cs.ucla.edu/geoff/ispell.html">lasr.cs.ucla.edu/geoff/ispell.html</a> under its own
-				license.
 			</dd>
 			<dt id="cmd_demandoc">
 				Demandoc
@@ -78,12 +69,42 @@
 					href="glossary.xml#wwb">Writer's Workbench</a>.  Non-standard. A <a class="term" href="glossary.xml#gpl">GPL</a>
 				version is available at <a class="external" href="https://www.gnu.org/s/diction/">www.gnu.org/s/diction</a>.
 			</dd>
+			<dt id="cmd_groff">
+				Groff
+			</dt>
+			<dd>
+				The <a href="glossary.xml#gnu" class="term">GNU</a> implementation of <a class="cmd" href="#cmd_troff">troff</a> and
+				<a class="cmd" href="#cmd_nroff">nroff</a>.  Non-standard.  Available under the <a class="term"
+					href="glossary.xml#gpl">GPL</a> at <a class="external"
+					href="https://www.gnu.org/s/groff/">www.gnu.org/s/groff</a>.
+			</dd>
+			<dt id="cmd_ispell">
+				Ispell
+			</dt>
+			<dd>
+				A re-write of <a class="cmd" href="#cmd_spell">spell</a> for international dictionaries.  Non-standard.
+				Available at <a class="external"
+					href="http://lasr.cs.ucla.edu/geoff/ispell.html">lasr.cs.ucla.edu/geoff/ispell.html</a> under its own
+				license.
+			</dd>
 			<dt id="cmd_mandoc">
 				Mandoc
 			</dt>
 			<dd>
-				A specialised formatter for UNIX manuals.  Non-standard.  <a class="term" href="glossary.xml#isc_license">ISC
-					licensed</a>.  Available at <a class="external" href="http://mdocml.bsd.lv">mdocml.bsd.lv</a>.
+				A specialised formatter for UNIX manuals designed to replace <a class="cmd" href="#cmd_groff">groff</a> for UNIX
+				manual input.  Non-standard.  <a class="term" href="glossary.xml#isc_license">ISC licensed</a>.  Available at <a
+					class="external" href="http://mdocml.bsd.lv">mdocml.bsd.lv</a>.
+			</dd>
+			<dt id="cmd_nroff">
+				Nroff
+			</dt>
+			<dd>
+				A re-write of the original formatter for the <span class="lang">roff</span> language (the name deriving from new
+				roff).  Built to accomodate for <a class="term" href="glossary.xml#terminal">terminals</a>.  Available under the
+				<a class="term" href="glossary.xml#gpl">GPL</a> at <a class="external"
+					href="https://www.gnu.org/s/groff/">www.gnu.org/s/groff</a> (<a class="cmd" href="#cmd_groff">groff</a>)
+				or under the Lucent Public License at <a class="external"
+					href="http://heirloom.sourceforge.net/doctools.html">heirloom.sourceforge.net/doctools.html</a>.
 			</dd>
 			<dt id="cmd_spell">
 				Spell
@@ -99,6 +120,17 @@
 			</dt>
 			<dd>
 				A standard <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008 utility for outputting parts of a file.
+			</dd>
+			<dt id="cmd_troff">
+				Troff
+			</dt>
+			<dd>
+				Traditional name of a formatter for the <span class="lang">roff</span> langage.  First released in Version 6
+				AT&amp;T UNIX as a printer and graphical-device version of <a class="cmd" href="#cmd_nroff">nroff</a> (the name
+				deriving from typesetter roff).  Available under the <a class="term" href="glossary.xml#gpl">GPL</a> at <a
+					class="external" href="https://www.gnu.org/s/groff/">www.gnu.org/s/groff</a> (<a class="cmd"
+					href="#cmd_groff">groff</a>) or under the Lucent Public License at <a class="external"
+					href="http://heirloom.sourceforge.net/doctools.html">heirloom.sourceforge.net/doctools.html</a>.
 			</dd>
 		</dl>
 		<table class="nav">

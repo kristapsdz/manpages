@@ -31,16 +31,17 @@
 			mandoc file.1 | col -b | tail -n+2 | diction
 		</div>
 		<p>
-			Alternatively, with <span class="cmd">nroff</span>:
+			Alternatively, with <a href="commands.xml#cmd_nroff" class="cmd">nroff</a>:
 		</p>
 		<div class="cmdline">
 			nroff -mandoc file.1 | col -b | tail -n+2 | diction
 		</div>
 		<p>
-			This first strips the text decoration (underlined and bold text) from <span class="cmd">nroff</span> or <a class="cmd"
-				href="commands.xml#cmd_mandoc">mandoc</a> with <a href="commands.xml#cmd_col" class="cmd">col</a>.  The header
-			is then stripped with <a class="cmd" href="commands.xml#cmd_tail">tail</a>.  Finally, the formatted output is fed to the
-			<a class="cmd" href="commands.xml#cmd_diction">diction</a> utility, which analyses text for readability.
+			This first strips the text decoration (underlined and bold text) from <a href="commands.xml#cmd_nroff"
+				class="cmd">nroff</a> or <a class="cmd" href="commands.xml#cmd_mandoc">mandoc</a> with <a
+				href="commands.xml#cmd_col" class="cmd">col</a>.  The header is then stripped with <a class="cmd"
+				href="commands.xml#cmd_tail">tail</a>.  Finally, the formatted output is fed to the <a class="cmd"
+				href="commands.xml#cmd_diction">diction</a> utility, which analyses text for readability.
 		</p>
 		<table class="nav">
 			<tbody>

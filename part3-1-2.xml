@@ -12,25 +12,25 @@
 		<p>
 			The <a class="cmd" href="commands.xml#cmd_mandoc">mandoc</a> utility is a specialised <span class="lang">mdoc</span>
 			formatter: although it also supports some other UNIX manual formats, it is not accept general-purpose <a class="lang
-				term" href="glossary.xml#roff">roff</a> input.  Development began in 2008 to replace <a
-				href="part3-1-1.xml#groff_sec">groff</a> with an <a class="term" href="glossary.xml#isc_license">ISC
-				licensed</a>, high-speed reimplementation.
+				term" href="glossary.xml#roff">roff</a> input.  Development began in 2008 to replace <a class="cmd"
+				href="commands.xml#cmd_groff">groff</a> with an <a class="term" href="glossary.xml#isc_license">ISC licensed</a>,
+			high-speed reimplementation.
 		</p>
 		<p>
-			<a class="cmd" href="commands.xml#cmd_mandoc">mandoc</a> may be invoked as <span class="cmd">troff</span> or <span
-				class="cmd">nroff</span> as its command-line arguments overlap.  It supports the classical <a class="term"
-				href="glossary.xml#terminal">terminal</a> and <a class="term" href="glossary.xml#ps">PS</a> forms, and has very
-			strong support for <a class="term" href="glossary.xml#html">HTML</a> and <a class="term"
-				href="glossary.xml#xhtml">XHTML</a>.  <a class="term" href="glossary.xml#pdf">PDF</a> output is supported as
-			well.
+			<a class="cmd" href="commands.xml#cmd_mandoc">mandoc</a> may be invoked as <a href="commands.xml#cmd_troff"
+				class="cmd">troff</a> or <a href="commands.xml#cmd_nroff" class="cmd">nroff</a> as its command-line arguments
+			overlap.  It supports the classical <a class="term" href="glossary.xml#terminal">terminal</a> and <a class="term"
+				href="glossary.xml#ps">PS</a> forms, and has very strong support for <a class="term"
+				href="glossary.xml#html">HTML</a> and <a class="term" href="glossary.xml#xhtml">XHTML</a>.  <a class="term"
+				href="glossary.xml#pdf">PDF</a> output is supported as well.
 		</p>
 		<p>
 			By considering <span class="lang">mdoc</span> as a special language, <a href="commands.xml#cmd_mandoc"
-				class="cmd">mandoc</a> compiles its input into a representation of semantic content.  This diverges from <span
-				class="cmd">troff</span> and its descendants, which compile <span class="lang">mdoc</span> into its basis form,
-			<span class="lang">roff</span>, then into a presentational representation.  As such, <a href="commands.xml#cmd_mandoc"
-				class="cmd">mandoc</a> is also used for semantically querying manual content and for the rigorous validation of
-			manuals.
+				class="cmd">mandoc</a> compiles its input into a representation of semantic content.  This diverges from <a
+				href="commands.xml#cmd_troff" class="cmd">troff</a> and its descendants, which compile <span
+				class="lang">mdoc</span> into its basis form, <span class="lang">roff</span>, then into a presentational
+			representation.  As such, <a href="commands.xml#cmd_mandoc" class="cmd">mandoc</a> is also used for semantically
+			querying manual content and for the rigorous validation of manuals.
 		</p>
 		<p>
 			The <a href="commands.xml#cmd_mandoc" class="cmd">mandoc</a> utility is supported on both UNIX and non-UNIX operating

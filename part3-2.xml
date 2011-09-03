@@ -18,7 +18,7 @@
 		<p>
 			In this section, I discuss methods for integrating <span class="cmd">mdoc</span> documents into a source-controlled
 			build environment.  I'll focus on <a href="commands.xml#cmd_mandoc" class="cmd">mandoc</a> as a formatter, but
-			provide stubs for using <a href="glossary.xml#troff" class="term cmd">troff</a>.
+			provide stubs for using <a href="commands.xml#cmd_nroff" class="cmd">nroff</a>.
 		</p>
 		<p>
 			Our examples will consider a project building a utility <span class="cmd">foo</span> from its single source file <span

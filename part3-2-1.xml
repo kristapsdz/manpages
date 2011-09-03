@@ -78,7 +78,7 @@
 			<br />
 			&nbsp;&nbsp;&nbsp;&nbsp;mandoc -Tlint $&lt;
 			<br />
-			&nbsp;&nbsp;&nbsp;&nbsp;#troff -mandoc $&lt; &gt;/dev/null
+			&nbsp;&nbsp;&nbsp;&nbsp;#nroff -mandoc $&lt; &gt;/dev/null
 			<br />
 			&nbsp;&nbsp;&nbsp;&nbsp;cp -f $&lt; $@
 		</div>
@@ -128,7 +128,7 @@
 			<br />
 			&nbsp;&nbsp;&nbsp;&nbsp;mandoc -Tlint $&lt;
 			<br />
-			&nbsp;&nbsp;&nbsp;&nbsp;#troff -mandoc $&lt; &gt;/dev/null
+			&nbsp;&nbsp;&nbsp;&nbsp;#nroff -mandoc $&lt; &gt;/dev/null
 			<br />
 			&nbsp;&nbsp;&nbsp;&nbsp;cp -f $&lt; $@
 		</div>
@@ -145,7 +145,7 @@
 		</div>
 		<p>
 			Let's let our rule include a <a class="term" href="glossary.xml#css">CSS</a> file.  Note that the traditional <a
-				class="term cmd" href="glossary.xml#troff">troff</a> utility doesn't include HTML output.
+				class="term cmd" href="commands.xml#cmd_nroff">nroff</a> utility doesn't include HTML output.
 		</p>
 		<div class="screen">
 			foo.1.html: style.css

@@ -132,16 +132,17 @@
 			<dd>
 				Short form of <q>UNIX manual pages</q>.  System documentation for <a class="term" href="#unix">UNIX</a> systems.
 				Usually viewed using the <span class="cmd">man</span> utility, which pages formatted manual documents using to
-				the screen.  Man pages are formatted by a utility such as <span class="cmd">troff</span> or <a class="cmd"
-					href="commands.xml#cmd_mandoc">mandoc</a>.
+				the screen.  Man pages are formatted by a utility such as <a href="commands.xml#cmd_nroff" class="cmd">nroff</a>
+				or <a class="cmd" href="commands.xml#cmd_mandoc">mandoc</a>.
 			</dd>
 			<dt id="mdoc">
 				Mdoc
 			</dt>
 			<dd>
 				Language for formatting <a class="term" href="#man_pages">man pages</a>.  Originally one of several available
-				macro package in the <span class="lang"><a class="term" href="#roff">roff</a></span> language for the <span
-					class="cmd">troff</span> text processor.
+				macro package in the <span class="lang"><a class="term" href="#roff">roff</a></span> language for the <a
+					href="commands.xml#cmd_nroff" class="cmd">nroff</a> and <a href="commands.xml#cmd_troff"
+					class="cmd">troff</a> text processors.
 			</dd>
 			<dt id="netbsd">
 				NetBSD
@@ -149,13 +150,6 @@
 			<dd>
 				A free <a href="#bsd_unix" class="term">BSD UNIX</a> operating system, <a class="external"
 					href="http://www.netbsd.org">NetBSD</a>.
-			</dd>
-			<dt id="nroff">
-				Nroff
-			</dt>
-			<dd>
-				The traditional formatter of <a href="#roff" class="term lang">roff</a> (and thus <a href="#mdoc" class="term
-					lang">mdoc</a>) for UNIX <a class="term" href="#terminal">terminal</a> output.
 			</dd>
 			<dt id="openbsd">
 				OpenBSD
@@ -221,13 +215,6 @@
 			<dd>
 				The <a class="term" href="#command_line">command line</a> environment on a computer.  This can either refer to a
 				terminal utility run within a graphical environment or the computer screen itself in text mode.
-			</dd>
-			<dt id="troff">
-				Troff
-			</dt>
-			<dd>
-				The historical formatter of <a href="#roff" class="term lang">roff</a> (and thus <a href="#mdoc" class="term
-					lang">mdoc</a>) for printed/graphical output.
 			</dd>
 			<dt id="unix">
 				UNIX
