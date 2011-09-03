@@ -24,18 +24,25 @@
 			mentioned before, reading an introductory text on UNIX will help avoid confusion.
 		</p>
 		<p>
-			Let's begin by making a mental checklist for the criteria that make a good manual for a command.
-		</p>
-		<p>
-			This checklist arises by inverting what a manual reader expects in opening a manual.  Namely: what does the command do
-			and how do I operate it?
+			Let's begin by making a mental checklist for the criteria that make a good manual for a command.  This checklist arises
+			by inverting what a manual reader expects in opening a manual: what does the command do and how do I operate it?
 		</p>
 		<ul>
-			<li>Do I describe the calling syntax of the command?</li>
-			<li>Do I describe each flag and argument of the command?</li>
-			<li>Do I describe the command's operation?</li>
-			<li>Do I describe the command's exit status?</li>
-			<li>Do I describe referenced files and environment variables?</li>
+			<li>
+				Do I describe the calling syntax of the command?
+			</li>
+			<li>
+				Do I describe each flag and argument of the command?
+			</li>
+			<li>
+				Do I describe the command's operation?
+			</li>
+			<li>
+				Do I describe the command's exit status?
+			</li>
+			<li>
+				Do I describe referenced files and environment variables?
+			</li>
 		</ul>
 		<p>
 			Above all, the best litmus test is whether a colleague or friend can read your manual and be able to use your command
@@ -47,20 +54,21 @@
 			have a grasp of <span class="lang">mdoc</span> syntax and some of its more widely-used macros.
 		</p>
 		<p>
-			In this text, I'll refer to the invocation of commands as <span class="cmdline"><span class="cmd">command</span> <span
+			In this text, I'll refer to the invocation of commands as <span class="cmdline"><span class="cmd">cmd</span> <span
 					class="cmdopt"><span class="cmdflag">flag</span> <span class="cmdarg">farg</span></span> <span
-					class="cmdarg">arg</span></span>.
+					class="cmdarg">arg</span></span>.  Here, <span class="cmd">cmd</span> refers to the command invocation
+			name, <span class="cmdflag">flag</span> is a flag (or switch) to that command, <span class="cmdarg">farg</span> is an
+			argument to a flag (not all flags have arguments), and <span class="cmdarg">arg</span> is an argument to the command.
 		</p>
 		<p>
-			Here, <span class="cmd">command</span> refers to the command invocation name, <span class="cmdflag">flag</span> is a
-			flag (or switch) to that command, <span class="cmdarg">farg</span> is an argument to a flag (not all flags have
-			arguments), and <span class="cmdarg">arg</span> is an argument to the command.  This convention is formalised by the <a
-				class="term" href="glossary.xml#posix">POSIX</a>.1-2008 standard (Base Definitions, sec. 12.1).
+			The dash in front of <span class="cmdflag">flag</span> indicates a flag, while the square brackets around <span
+				class="cmdopt"><span class="cmdflag">flag</span> <span class="cmdarg">farg</span></span> indicate an optional
+			part of the invocation.  Since <span class="cmdarg">arg</span> is not bracketed, it is a mandatory part of the
+			invocation.
 		</p>
 		<p>
-			The dash in front of <span class="cmdflag">flag</span> indicates a flag, while the square brackets around 
-			<span class="cmdopt"><span class="cmdflag">flag</span> <span class="cmdarg">farg</span></span> indicate an optional part of the invocation.
-			Since <span class="cmdarg">arg</span> is not bracketed, it is a mandatory part of the invocation.
+			This convention is formalised by the <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008 standard (Base
+			Definitions, sec. 12.1), so you can expect to see it often in the UNIX world.
 		</p>
 		<table class="nav">
 			<tbody>

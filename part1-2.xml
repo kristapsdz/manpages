@@ -21,6 +21,10 @@
 			languages.  In fact, most any language with functions (or subroutines) and variables will work, typed or not.
 		</p>
 		<p>
+			In this book, I focus exclusively on the C language.  This is due to the overwhelming presence of C libraries and
+			functions documented with <span class="lang">mdoc</span>.
+		</p>
+		<p>
 			Before beginning, we need to change our mental checklist for a complete manual.  Since function manuals can document
 			more than just function parts, our manual must grow to account for complexity.
 		</p>
@@ -38,12 +42,10 @@
 		</p>
 		<p>
 			In general, you don't have to be knowledgeable of C to understand this section, but it helps to have a grasp of basic
-			programming structure, such as functions, function prototypes, and header files.  
-		</p>
-		<p>
-			In any event, I'll refer to a header file as a text file consisting of function prototypes.  Header files for the C
-			language, such as in our examples, end with the <span class="file">.h</span> suffix.  A C function prototype indicates
-			the calling syntax of a function, such as the following.
+			programming structure, such as functions, function prototypes, and header files.  In any event, I'll refer to a header
+			file as a text file consisting of function prototypes.  Header files for the C language, such as in our examples, end
+			with the <span class="file">.h</span> suffix.  A C function prototype indicates the calling syntax of a function, such
+			as the following.
 		</p>
 		<div class="mdocin">
 			int

@@ -16,8 +16,14 @@
 			this concept.
 		</p>
 		<p>
-			This example applies to any plurality of functions belonging to the same library.  In fact, one commonly finds large
-			libraries spread over many manuals, each of which contain several similar functions.
+			A function library is a collection of object files, which consist mainly of programming functions, within a single file
+			called a library.  On most <a class="term" href="glossary.xml#unix">UNIX</a> systems, you can find libraries installed
+			in <span class="path">/usr/local</span>, ending in <span class="file">.a</span> or <span class="file">.so</span>.
+		</p>
+		<p>
+			This example applies to any number of functions belonging to the same library &mdash; not necessarily all functions in
+			the library.  In fact, one commonly finds large libraries spread over many manuals, each of which contain several
+			similar functions.
 		</p>
 		<p>
 			For simplicity's sake, I'll call this C function library <span class="lib">libgreeting</span>, implying that the

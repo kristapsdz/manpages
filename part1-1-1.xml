@@ -43,16 +43,15 @@
 			How to display this manual page depends on the system you're using.
 		</p>
 		<p>
-			Traditionally, the command of choice for formatting UNIX manuals for a <a class="term"
-				href="glossary.xml#terminal">terminal</a> is <a class="term" href="commands.xml#cmd_nroff">nroff</a>.  For now,
-			let's stick with that (an alternative, <a class="cmd" href="commands.xml#cmd_mandoc">mandoc</a>, was used to generate
-			output on this site, but is not widely-used).
+			Traditionally, the command for formatting UNIX manuals for a <a class="term" href="glossary.xml#terminal">terminal</a>
+			is <a class="cmd" href="commands.xml#cmd_nroff">nroff</a>.  For now, let's stick with that.
 		</p>
 		<p>
 			To display output, you must invoke <a href="commands.xml#cmd_nroff" class="cmd">nroff</a> as <span class="cmdline">nroff
-				-mandoc -Tascii file</span>.  The <span class="cmdflag">mandoc</span> flag indicates that input is in <span
+				-mandoc file</span>.  The <span class="cmdflag">mandoc</span> flag indicates that input is in <span
 				class="lang">mdoc</span>.  Hereafter, I'll refer to <a href="commands.xml#cmd_nroff" class="cmd">nroff</a>
-			simply as <q>the formatter</q> to avoid confusion.
+			simply as <q>the formatter</q> to avoid confusion, as there are many available <span class="lang">mdoc</span>
+			formatters.
 		</p>
 		<div class="mdocout">
 			<div class="mdoc-section">
@@ -85,23 +84,7 @@
 			capitalised <span class="screen">NAME</span> input is left-justified and in bold text.  Same with <span class="screen">
 				SYNOPSIS</span> and <span class="screen">DESCRIPTION</span>, although the preceding <span
 				class="screen">.Sh</span> is missing.  We can even see the output sentence <span class="screen">Print "hello,
-				world" and exit</span> spread over lines 10&ndash;12, although it's separated by the input line
-		</p>
-		<div class="mdocin">
-			.Qq hello, world
-		</div>
-		<p>
-			Let's take a closer look at this fragment.
-		</p>
-		<p>
-			The <span class="screen">.Qq</span> is part of <span class="lang">mdoc</span>'s instruction syntax.  Input lines
-			beginning with a dot are instructions to the formatter called mdoc macros, or just macros for short.  The macro name is
-			a terse two or three-character word following the dot, for example, <a href="macros.xml#macro_qq"
-				class="macro">Qq</a>.  The words following the <a href="macros.xml#macro_qq" class="macro">Qq</a> to the end
-			of line are arguments in the scope of the macro; that is, data interpreted within the context of the macro.
-		</p>
-		<p>
-			Thus, the fragment
+				world" and exit</span> spread over lines 10&ndash;12:
 		</p>
 		<div class="mdocin">
 			Print
@@ -111,8 +94,19 @@
 			and exit.
 		</div>
 		<p>
-			is interpreted as text, then a macro <a href="macros.xml#macro_qq" class="macro">Qq</a> with scoped arguments <span
-				class="screen">hello, world</span>, then more text.
+			Let's take a closer look at this fragment.
+		</p>
+		<p>
+			The <span class="screen">.Qq</span> is part of <span class="lang">mdoc</span>'s instruction syntax.  Input lines
+			beginning with a dot are instructions to the formatter called mdoc macros, or just macros for short.  The macro name is
+			a terse two or three-character word following the dot, for example, <a href="macros.xml#macro_qq"
+				class="macro">Qq</a>.  The words following the <a href="macros.xml#macro_qq" class="macro">Qq</a> to the end
+			of line are arguments in the scope of the macro &mdash; scope being the region interpreted within the context of the
+			macro.
+		</p>
+		<p>
+			Thus, the fragment is interpreted as text, then a macro <a href="macros.xml#macro_qq" class="macro">Qq</a> with scoped
+			arguments <span class="screen">hello, world</span>, then more text.
 		</p>
 		<p>
 			It's obvious, in looking at the input and output, that <a href="macros.xml#macro_qq" class="macro">Qq</a> instructs
@@ -152,8 +146,8 @@
 			.Qq Section text nested in a quote.
 		</div>
 		<p>
-			We can envision this scoping as follows, with an <span style="border: 1px dashed green; padding: 2px;">outer scope</span>
-			and <span style="border: 1px solid blue; padding: 2px;">inner scope</span>:
+			We can envision this scoping as follows, with an <span style="border: 1px dashed green; padding: 1px;">outer scope</span>
+			and <span style="border: 1px solid blue; padding: 1px;">inner scope</span>:
 		</p>
 		<div class="mdocin" style="border: 1px dashed green; padding: 2px;">
 			.Sh SECTION 2

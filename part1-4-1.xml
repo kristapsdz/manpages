@@ -83,7 +83,11 @@
 			The <a href="commands.xml#cmd_cvs" class="cmd">cvs</a> identifiers (both from the current system, <a class="term"
 				href="glossary.xml#openbsd">OpenBSD</a>, and the import source system, <a class="term"
 				href="glossary.xml#netbsd">NetBSD</a>), copyright, license, and <a href="commands.xml#cmd_sccs"
-				class="cmd">sccs</a> identifier (from the original system) are presented in the usual way.
+				class="cmd">sccs</a> identifier (from the original system) are presented in the usual way: the the <span
+				class="screen">$&#8203;OpenBSD$</span> and <span class="screen">$&#8203;NetBSD$</span> lines are automatically
+			updated by the revision control system, <a href="commands.xml#cmd_cvs" class="cmd">cvs</a>, whenever an update to the
+			file is committed.  The line following is the copyright message, and following that is the text form of the <a
+				class="term" href="glossary.xml#bsd_license">BSD license</a>.
 		</p>
 		<div class="mdocin">
 			.Dd $&#8203;Mdocdate: April 29 2011 $
@@ -215,6 +219,11 @@
 			The <a href="macros.xml#macro_bx" class="macro">Bx</a> is referenced as the origin of the system call.  The <span
 				class="sec">STANDARDS</span> section is sorely missing, as <span class="func">fsync</span> is a function
 			specified by <a href="glossary.xml#posix" class="term">POSIX</a>.1-2008 standard.
+		</p>
+		<p>
+			We again found several inconsistent uses of <span class="lang">mdoc</span> in this case study.  Let this serve as a
+			reminder that if you find bad or unusual <span class="lang">mdoc</span> in your manuals, notify the authors!  A bug in a
+			manual is just as important as a bug in the code.
 		</p>
 		<table class="nav">
 			<tbody>

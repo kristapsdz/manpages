@@ -49,6 +49,7 @@ h5		{ font-size: inherit; }
 .cmdarg,
 .cmdline,
 .func,
+.macro,
 .macroarg,
 .macroflag,
 .mdocin,
@@ -58,7 +59,6 @@ h5		{ font-size: inherit; }
 .type,
 .value,
 .var		{ font-family: monospace; 
-		  line-height: 11pt;
 		  font-size: 9pt; } 
 .under		{ text-decoration: underline }
 a.cmd,
@@ -80,13 +80,15 @@ a.term:hover	{ color: #339999; }
 .cmdline:before	{ content: "$ "; }
 .cmdline,
 .screen		{ border: 1px dotted green; 
-		  padding: 2px; 
+		  padding: 1px; 
 		  background-color: #eeeeee; }
+span.cmdline	{ white-space: nowrap; }
 div.cmdline,
 div.screen,
 div.mdocin,
 div.mdocout,
 div.mdocsyntax	{ border: 1px dotted #dddddd;
+		  line-height: 11pt;
 		  max-width: 60em; 
 		  margin-left: 2%; }
 .mdocin,

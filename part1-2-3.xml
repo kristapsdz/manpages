@@ -401,9 +401,9 @@
 		</div>
 		<p>
 			Since this function is included in OpenBSD's <a href="glossary.xml#libc" class="term">C Standard Library</a>, the fact that the
-			function is not standard must absolutely be documented.  In this, the <a href="macros.xml#macro_ox"
-				class="macro">Ox</a> macro indicates the OpenBSD operating system (each BSD UNIX free operating system has its
-			own macro).
+			function is not standard must absolutely be documented.  In this, the <a href="macros.xml#macro_ox" class="macro">Ox</a>
+			macro indicates the OpenBSD operating system (each <a href="glossary.xml#bsd_unix" class="term">BSD UNIX</a> operating
+			system has its own macro).
 		</p>
 		<table class="nav">
 			<tbody>

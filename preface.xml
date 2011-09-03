@@ -63,25 +63,45 @@
 			</div>
 		</div>
 		<p>
-			Any modern UNIX system can format <span class="lang">mdoc</span> manuals without needing special software.
+			Why <span class="lang">mdoc</span>?  After all, there are plenty of other UNIX manual languages out there, from the
+			historical <span class="lang">man</span> to <a class="term" href="glossary.xml#docbook">DocBook</a>.  In short, <span
+				class="lang">mdoc</span> is:
+		</p>
+		<ul>
+			<li>
+				portable, as any modern UNIX system can format it without needing clumsy toolchains;
+			</li>
+			<li>
+				expressive, capturing the semantic content of manpages instead of just presentation cues;
+			</li>
+			<li>
+				concise, making line-based source control painless; and
+			</li>
+			<li>
+				well-documented, well-supported, and actively maintained by a community of knowledgable developers.
+			</li>
+		</ul>
+		<p>
+			No other format can boast all of these points at once.
 		</p>
 		<p>
-			I've mentioned UNIX several times already, but in fact, <span class="lang">mdoc</span> isn't exclusively tied to UNIX.
-			Although UNIX and <span class="lang">mdoc</span> are historically linked, open source <span class="lang">mdoc</span>
-			tools exist for any operating system.  Furthermore, the documentation capabilities of <span class="lang">mdoc</span>
-			apply to computing systems in general &mdash; not just UNIX.
+			In fact, although I've mentioned UNIX several times already, <span class="lang">mdoc</span> isn't exclusively tied to
+			UNIX.  Although UNIX and <span class="lang">mdoc</span> are historically linked, open source <span
+				class="lang">mdoc</span> tools exist for any operating system.  Furthermore, the documentation capabilities of
+			<span class="lang">mdoc</span> apply to computing systems in general &mdash; not just UNIX.
 		</p>
 		<p>
-			In this book I'll assume you are casually familiar with <a href="commands.xml#cmd_man" class="cmd">man</a> and its
-			output.  This will allow us to focus on manuals with the same formatted output in mind.  Thus, if you're unfamiliar with
-			UNIX or <a href="commands.xml#cmd_man" class="cmd">man</a>, this is a good time to read an introductory text on the
-			subject, or at the very least, read the output of <span class="cmdline">man man</span> (the manual page of the <a
-				href="commands.xml#cmd_man" class="cmd">man</a> command).
+			In this book, however, I'll assume you are casually familiar with <a href="commands.xml#cmd_man" class="cmd">man</a> and
+			its output.  This will allow us to focus on manuals with the same formatted output in mind.  Thus, if you're unfamiliar
+			with the <a href="commands.xml#cmd_man" class="cmd">man</a> utility, this is a good time to read an introductory text on
+			the subject (such as a UNIX beginner's guide), or at the very least, read the output of <span class="cmdline">man
+				man</span> (the manual page of the <a href="commands.xml#cmd_man" class="cmd">man</a> command).
 		</p>
 		<p>
 			This is not a canonical reference! The <span class="lang">mdoc</span> language is not standardised.  For official
-			reference, consult the manual distributed with your target computer system.  This work primarily addresses the elements
-			of <span class="lang">mdoc</span> common to any UNIX deployment, noting common pitfalls in portability.
+			reference, consult the manual distributed with your target computer system with <span class="cmdline">man mdoc</span>.
+			This work primarily addresses the elements of <span class="lang">mdoc</span> common to any UNIX deployment, noting
+			common pitfalls in portability.
 		</p>
 		<table class="nav">
 			<tbody>

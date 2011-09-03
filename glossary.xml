@@ -68,6 +68,13 @@
 			<dd>
 				Cascading style sheet.
 			</dd>
+			<dt id="docbook">
+				DocBook
+			</dt>
+			<dd>
+				A documentation system maintained by <a href="http://www.oasis-open.org/" class="external">OASIS</a> and
+				developed at <a class="external" href="http://docbook.org">docbook.org</a>.
+			</dd>
 			<dt id="dos_prompt">
 				DOS Prompt
 			</dt>

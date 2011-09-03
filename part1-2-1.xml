@@ -27,8 +27,9 @@
 			.Nd print \(dqhello, world\(dq
 		</div>
 		<p>
-			All that's changed is the manual section, from 1 to 3.  We'll discuss manual sections later in this book.  Suffice to
-			say that programming functions and libraries (not system calls!) are categorised in section 3.
+			All that's changed is the manual category, from <span class="cat">1</span> to <span class="cat">3</span>.  We'll discuss
+			manual categories later in this book.  Suffice to say that programming functions and libraries (not system calls!) are
+			in category <span class="cat">3</span>.
 		</p>
 		<p>
 			The calling syntax of our function is documented in the <span class="sec">SYNOPSIS</span> section.  Assume that our

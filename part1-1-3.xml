@@ -22,11 +22,12 @@
 			.\"&nbsp;&nbsp;&nbsp;&nbsp;$&#8203;NetBSD: echo.1,v 1.7 1995/03/21 09:04:26 cgd Exp $&#8203;
 		</div>
 		<p>
-			These initial comments are automatically created by the source-control system, <a href="commands.xml#cmd_cvs"
-				class="cmd">cvs</a>.  It fills in information about the last editor.  This indicates that the file was imported
-			from <a class="term" href="glossary.xml#netbsd">NetBSD</a>, where it was last edited by <span class="screen">cgd</span>
-			(a system name, not the user's real name); and last edited in OpenBSD, its current form, by <span
-				class="screen">jmc</span>.
+			These initial comments are automatically created by the source-control system <a href="commands.xml#cmd_cvs"
+				class="cmd">cvs</a>, which fills in information about the last editor.  I'll talk about revision control and
+			those funny dollar-sign enclosures in <a href="part3.xml">Part 3</a>.  These particular comments indicate that the file
+			was initially imported from <a class="term" href="glossary.xml#netbsd">NetBSD</a> in 1995, where it was last edited by
+			<span class="screen">cgd</span> (a system name, not the user's real name).  It was last edited in OpenBSD, its current
+			form, by <span class="screen">jmc</span> in 2010.
 		</p>
 		<p>
 			If you're keeping your manual under source control, it's usually a good idea to begin your file with a similar line.
@@ -35,7 +36,8 @@
 			.\"&nbsp;&nbsp;&nbsp;&nbsp;$&#8203;Id$
 		</div>
 		<p>
-			A tab character separates the comment marker from the text.  This will be covered later in this book.
+			A tab character separates the comment marker from the text.  Again, this will be covered later in this book &mdash;
+			don't worry if it looks strange.
 		</p>
 		<div class="mdocin">
 			.\" Copyright (c) 1990, 1993
@@ -107,7 +109,11 @@
 			This comment is of historical note.  The <span class="screen">@(#)</span> sequence was inserted by the <a
 				href="commands.xml#cmd_sccs" class="cmd">sccs</a> utility (Source Code Control System).  Although this utility
 			is part of <a class="term" href="glossary.xml#posix">POSIX</a>.1-2008, it has mostly been replaced by <a
-				href="commands.xml#cmd_cvs" class="cmd">cvs</a>.  At this point the manual content itself begins.
+				href="commands.xml#cmd_cvs" class="cmd">cvs</a>.  You'll probably never encounter this string in your own
+			manuals, so it's safe to disregard.
+		</p>
+		<p>
+			At this point the manual content itself begins.
 		</p>
 		<div class="mdocin">
 			.Dd $&#8203;Mdocdate: September 3 2010 &#8203;$

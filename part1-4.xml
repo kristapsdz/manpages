@@ -12,10 +12,12 @@
 		<p>
 			A system call differs from a user-land function in that it triggers the operating system kernel to perform some
 			operation.  This usually applies to I/O, such as reading from files or sockets with <span class="func">write</span>.
+			Other than that, system calls are no different than regular functions &mdash; they're invoked, have return values, and
+			so on.
 		</p>
 		<p>
-			In <span class="lang">mdoc</span>, A system call is a special function consisting of at least one section not found in
-			ordinary function manuals.
+			In <span class="lang">mdoc</span>, however, a system call is a special function consisting of at least one section not
+			found in ordinary function manuals.
 		</p>
 		<p>
 			The first difference between ordinary functions and system calls is the manual category.  Let's study a function <span
@@ -30,10 +32,8 @@
 			.Os
 		</div>
 		<p>
-			All system calls are in category two.
-		</p>
-		<p>
-			Unless under special circumstances, system call manuals are each accorded their own manual.
+			All system calls are in category <span class="cat">2</span>.  Furthermore, unless under special circumstances, system call
+			manuals are each accorded their own manual.
 		</p>
 		<p>
 			I'll use the same descriptive text as in the <span class="func">hello</span> example.  Note that for system calls, the
@@ -180,8 +180,8 @@
 		<p>
 			If your system call is part of an operating system, it's common to add some lines as to when it was added.  Let's assume
 			you're adding the function to a fictional Foo OS.  Most modern UNIX operating systems have their own macros, such as <a
-				href="macros.xml#macro_bx" class="macro">Bx</a> for BSD UNIX.  Be sure to note the version of the operating
-			system.
+				href="macros.xml#macro_bx" class="macro">Bx</a> for <a class="term" href="glossary.xml#bsd_unix">BSD UNIX</a>.
+			Be sure to note the version of the operating system.
 		</p>
 		<div class="mdocin">
 			.Sh HISTORY

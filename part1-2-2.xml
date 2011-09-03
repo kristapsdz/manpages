@@ -82,8 +82,9 @@
 		</div>
 		<p>
 			This works with two arguments, but can quickly run into long lines.  In general, your <span class="lang">mdoc</span>
-			manual shouldn't exceed 78 characters per line.  Shorter lines are useful in managing manuals in CVS or other code
-			repositories&mdash;we'll discuss this in later sections of this book.
+			manual shouldn't exceed 78 characters per line.  Shorter lines are useful when managing manuals in <a class="cmd"
+				href="commands.xml#cmd_cvs">cvs</a> or other version management systems &mdash; we'll discuss this in later
+			sections of this book.
 		</p>
 		<p>
 			The quoted arguments to <a href="macros.xml#macro_fa" class="macro">Fa</a> may seem superfluous, but each argument to the <a href="macros.xml#macro_fa"
@@ -244,7 +245,7 @@
 			function returns 1 on success, 0 on failure.
 		</div>
 		<p>
-			Running through our checklist, we see that we've described preprocessor information with the header file <a
+			Running through our checklist, we see that we've described preprocessor information with the header file macro <a
 				href="macros.xml#macro_in" class="macro">In</a>; function calling syntax and types in the <span
 				class="sec">SYNOPSIS</span>; and arguments in the <span class="sec">DESCRIPTION</span> along with function
 			operation.  This contains all we need to know about the function.

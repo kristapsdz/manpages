@@ -83,8 +83,10 @@
 			.\" SUCH DAMAGE.
 		</div>
 		<p>
-			The <a href="commands.xml#cmd_cvs" class="cmd">cvs</a> identifier, copyright, and license comments of this file are very
-			similar to that of the <a href="part1-1-3.xml#case_study_cmd">Case Study</a> for commands.
+			This is the standard comment header to manual files in OpenBSD.  The <span class="screen">$&#8203;OpenBSD$</span> line
+			is automatically updated by the revision control system, <a href="commands.xml#cmd_cvs" class="cmd">cvs</a>, whenever an
+			update to the file is committed.  The line following is the copyright message, and following that is the text form of
+			the <a class="term" href="glossary.xml#bsd_license">BSD license</a>.
 		</p>
 		<div class="mdocin">
 			.Dd $&#8203;Mdocdate: May 31 2007 &#8203;$
@@ -327,6 +329,11 @@
 			The <span class="sec">BUGS</span> section should be used very carefully &mdash; bugs preferably should be fixed.  In
 			this section, design bugs have been documented.  Whether the <span class="sec">CAVEATS</span> section would be more
 			appropriate is up to the manual author.
+		</p>
+		<p>
+			We found several inconsistent uses of <span class="lang">mdoc</span> in this manual.  In general, if you find unusual or
+			erroneous macros or styles in UNIX manuals, notify the authors!  A bug in a manual is just as important as a bug in the
+			code.
 		</p>
 		<table class="nav">
 			<tbody>

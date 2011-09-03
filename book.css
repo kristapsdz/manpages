@@ -36,6 +36,7 @@ h5		{ font-size: inherit; }
 .cmdarg,
 .cmdline,
 .func,
+.macro,
 .macroarg,
 .macroflag,
 .mdocin,
@@ -66,8 +67,9 @@ a.term:hover	{ color: #339999; }
 .cmdline:before	{ content: "$ "; }
 .cmdline,
 .screen		{ border: 1px dotted green; 
-		  padding: 2px; 
+		  padding: 1px; 
 		  background-color: #eeeeee; }
+span.cmdline	{ white-space: nowrap; }
 div.cmdline,
 div.screen,
 div.mdocin,
