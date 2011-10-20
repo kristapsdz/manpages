@@ -1,0 +1,64 @@
+digraph manpages {
+	ranksep=.75; size = "7.5,7.5";
+
+	{
+		node [shape=plaintext, fontsize=16];
+		1964 -> 1968 -> 1971 -> 1973 -> 1979 -> 
+		1989 -> 1991 -> 1992 -> 1994 -> 2005 -> 
+		2008 -> "future";
+	}
+
+	node [shape=box];
+
+	roff [label="roff(1)"];
+
+	/* Jerry Saltzer, MIT CTSS. */
+	runoff1 [label="RUNOFF" URL="http://mit.edu/saltzer/www/publications/ctss/"]; 
+
+	/* Doug McIlroy, Multics (language: BCPL). */
+	runoff2 [label="runoff"]; 
+
+	/* Kristaps Dzonsons (language: C). */
+	mandoc [label="mandoc(1)" URL="http://mdocml.bsd.lv"]; 
+
+	/* Re-licensing (for OpenSolaris) of Sun's troff (language: C), deriving from UNIX ditroff. */
+	htroff [label="Heirloom troff(1)" URL="http://heirloom.sourceforge.net/doctools.html"]; 
+
+	/* GNU re-write of UNIX ditroff, James Clarke (language: C++). */
+	groff [label="GNU troff(1)" URL="http://www.gnu.org/s/groff/"];
+
+	/* Harry Spender (language: awk). */
+	awf [label="awf(1)" URL="http://ftp.sunet.se/pub/usenet/ftp.uu.net/comp.sources.unix/volume24/"];
+
+	/* Vic Abell (language: C). */
+	cawf [label="cawf(1)" URL="http://www.tux.org/pub/sites/vic.cc.purdue.edu/"];
+
+	/* Larry Wall, Perl 5.0 (language: Perl). */
+	perlpod [label="perlpod(1)" URL="http://perldoc.perl.org/perlpod.html"];
+
+	/* Richard Stallman, GNU (language: C). */
+	info [label="info(1)" URL="http://www.gnu.org/s/texinfo/"];
+
+	/* Brian Kernighan, Version 7 AT&T UNIX (language: C). */
+	ditroff [label="ditroff(1)" URL="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V7/usr/src/cmd/troff"];
+	
+	{ rank = same; 1964 runoff1; }
+	{ rank = same; 1968 runoff2; }
+	{ rank = same; 1971 roff };
+	{ rank = same; 1973; "troff(1)" "nroff(1)"; }
+	{ rank = same; 1979; ditroff; }
+	{ rank = same; 1989 groff; }
+	{ rank = same; 1991 awf cawf; }
+	{ rank = same; 1992 info; }
+	{ rank = same; 1994 perlpod; }
+	{ rank = same; 2005 htroff; }
+	{ rank = same; 2008 mandoc; }
+
+	runoff1 -> runoff2 -> roff;
+	roff -> "nroff(1)";
+	roff -> "troff(1)";
+	{ "nroff(1)" "troff(1)" } -> ditroff;
+	ditroff -> groff;
+	ditroff -> htroff;
+	awf -> cawf;
+}

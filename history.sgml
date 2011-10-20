@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+	<HEAD>
+		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+		<TITLE>The History of UNIX Manpages</TITLE>
+		<STYLE TYPE="text/css">
+			body { font-family: serif; line-height: 14pt; font-size: 10pt; }
+			#timeline-img { float: right; margin-left: 2em; }
+			dd { margin-bottom: 2em; }
+			.cmd { font-family: monospace; font-size: smaller; }
+			p.sources-primary, p.sources-secondary { margin-bottom: 0.25em; }
+			.ref-book { font-style: italic; }
+			.ref-title { font-style: italic; }
+			p.foot { margin-top: 1em; color: #666666; font-size: smaller; }
+		</STYLE>
+	</HEAD>
+	<BODY>
+		<H1>
+			A Not-So-Brief Timeline of UNIX Manpage Evolution
+		</H1>
+		<P ID="timeline-img">
+			<IMG SRC="apps.png" ALT="Timeline of UNIX manpage utilities">
+		</P>
+		<H2>
+			Antiquity
+		</H2>
+		<DL>
+			<DT>
+				1964: RUNOFF (<A HREF="http://mit.edu/saltzer/">Jerome H. Saltzer</A>)
+			</DT>
+			<DD>
+				<P>
+					Written in MAD assmebler (I think?).
+				</P>
+				<DIV CLASS="sources">
+					<P CLASS="sources-primary">
+						Primary sources: 
+					</P>
+					<UL CLASS="sources-primary">
+						<LI>
+							<I>No source code found</I>.
+						</LI>
+					</UL>
+					<P CLASS="sources-secondary">
+						Secondary sources:
+					</P>
+					<UL CLASS="sources-secondary">
+						<LI>
+							<SPAN CLASS="ref-editor">Patricia Crisman</SPAN>,
+							<SPAN CLASS="ref-author">Jerome H. Saltzer</SPAN>,
+							<SPAN CLASS="ref-title">Manuscript Typing and Editing</SPAN>,
+							<SPAN CLASS="ref-book">The Compatible Time-Sharing System, A Programmers Guide</SPAN>,
+							<SPAN CLASS="ref-sec">AH.9.01</SPAN>,
+							<SPAN CLASS="ref-edition">2</SPAN>,
+							<SPAN CLASS="ref-publisher">M.I.T. Press</SPAN>,
+							<SPAN CLASS="ref-date">1965</SPAN>,
+							<SPAN CLASS="ref-revised">December 1966</SPAN>,
+							<A CLASS="ref-link" HREF="http://web.mit.edu/Saltzer/www/publications/ctss/AH.9.01.pdf">PDF</A>.
+						</LI>
+						<LI>
+							<SPAN CLASS="ref-author">Jerome H. Saltzer</SPAN>,
+							<SPAN CLASS="ref-title">TYPSET and RUNOFF, memorandum editor and type-out commands</SPAN>,
+							<SPAN CLASS="ref-book">M.I.T. Computation Center Memorandum</SPAN>,
+							<SPAN CLASS="ref-sec">CC-244</SPAN>,
+							<SPAN CLASS="ref-date">6 November, 1964</SPAN>
+							<A CLASS="ref-link" HREF="http://mit.edu/saltzer/www/publications/ctss/ctss/CC-244.pdf">PDF</A>.
+						</LI>
+					</UL>
+				</DIV>
+			</DD>
+			<DT>
+				1968, runoff (<A HREF="http://www.cs.dartmouth.edu/~doug/">Douglas McIlroy</A>)
+			</DT>
+			<DD>
+				<P>
+					Written in BCPL for Multics.  Reference says that Bob Morris was a co-write?
+				</P>
+				<DIV CLASS="sources">
+					<P CLASS="sources-primary">
+						Primary sources: 
+					</P>
+					<UL CLASS="sources-primary">
+						<LI>
+							<I>No source code found</I>.
+						</LI>
+					</UL>
+					<P CLASS="sources-secondary">
+						Secondary sources:
+					</P>
+					<UL CLASS="sources-secondary">
+						<LI>
+							<SPAN CLASS="ref-title">Unix and Multics</SPAN>,
+							<SPAN CLASS="ref-author">Tom Van Vleck</SPAN>,
+							<SPAN CLASS="ref-date">21 March, 1993</SPAN>,
+							<SPAN CLASS="ref-revised">5 February, 1995</SPAN>,
+							<A CLASS="ref-link" HREF="http://www.multicians.org/unix.html">HTML</A>.
+						</LI>
+					</UL>
+				</DIV>
+			</DD>
+			<DT>
+				1971, roff (Joseph F. Ossanna)
+			</DT>
+			<DD>
+				<P>
+					Very little information can be found beyond the manual.  Written in PDP-11/20 assembly (I guess?) for
+					Version 1 AT&amp;T UNIX.  <A HREF="http://cm.bell-labs.com/who/dmr/">Dennis Ritchie</A> and <A
+					HREF="http://cm.bell-labs.com/who/ken/">Ken Thompson</A> are listed in the manpage as authors.  Did they
+					co-write?
+				</P>
+				<DIV CLASS="sources">
+					<P CLASS="sources-primary">
+						Primary sources: 
+					</P>
+					<UL CLASS="sources-primary">
+						<LI>
+							<I>No source code found</I>.
+						</LI>
+					</UL>
+					<P CLASS="sources-secondary">
+						Secondary sources:
+					</P>
+					<UL CLASS="sources-secondary">
+						<LI>
+							<SPAN CLASS="ref-author">Joseph F. Ossanna</SPAN>,
+							<SPAN CLASS="ref-title">roff(1)</SPAN>,
+							<SPAN CLASS="ref-book">UNIX Programmer's Manual</SPAN>,
+							<SPAN CLASS="ref-edition">1</SPAN>,
+							<SPAN CLASS="ref-date">3 November, 1971</SPAN>,
+							<A CLASS="ref-link" HREF="http://cm.bell-labs.com/who/dmr/1stEdman.html">HTML</A>.
+						</LI>
+					</UL>
+				</DIV>
+			</DD>
+			<DT>
+				1973, <SPAN CLASS="cmd">nroff(1)</SPAN>/<SPAN CLASS="cmd">roff(1)</SPAN>/<SPAN CLASS="cmd">troff(1)</SPAN> (Joseph F. Ossanna)
+			</DT>
+			<DD>
+				<P>
+					Source manuals (no actual source exists before Version 5 AT&amp;T UNIX) indicate a split between
+					<SPAN CLASS="cmd">roff(1)</SPAN> into <SPAN CLASS="cmd">nroff(1)</SPAN> for Version 3
+					AT&amp;T UNIX, then also into <SPAN CLASS="cmd">troff(1)</SPAN> for Version 4 AT&amp;T UNIX.
+				</P>
+				<P>
+					There exist PDP-11/20 assembly sources for <SPAN CLASS="cmd">roff(1)</SPAN> and <SPAN
+					CLASS="cmd">nroff(1)</SPAN> starting in Version 5 AT&amp;T UNIX sources (dated 27 November, 1974) and
+					Version 6 AT&amp;T UNIX sources (July, 1975).  Note that the Version 6 AT&amp;T UNIX <SPAN
+					CLASS="cmd">neqn(1)</SPAN> sources were, however, written in C.  I can't find any sources for <SPAN
+					CLASS="cmd">troff(1)</SPAN> this early, although obviously it was installed since Version 4 AT&amp;T
+					UNIX.
+				</P>
+				<DIV CLASS="sources">
+					<P CLASS="sources-primary">
+						Primary sources: 
+					</P>
+					<UL CLASS="sources-primary">
+						<LI>
+							Version 5 AT&amp;T UNIX <SPAN CLASS="cmd">roff(1)</SPAN> source:
+							<A CLASS="ref-link" HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V5/usr/source/s7">/usr/source/s7</A>.
+						</LI>
+						<LI>
+							Version 6 AT&amp;T UNIX <SPAN CLASS="cmd">roff(1)</SPAN> and <SPAN CLASS="cmd">nroff(1)</SPAN> source:
+							<A CLASS="ref-link" HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V6/usr/source/s7">/usr/source/s7</A>.
+						</LI>
+					</UL>
+					<P CLASS="sources-secondary">
+						Secondary sources:
+					</P>
+					<UL CLASS="sources-secondary">
+						<LI>
+							<SPAN CLASS="ref-title">nroff(1)</SPAN>,
+							<SPAN CLASS="ref-book">UNIX Programmer's Manual</SPAN>,
+							<SPAN CLASS="ref-edition">3</SPAN>,
+							<SPAN CLASS="ref-date">15 January, 1973</SPAN>,
+							<A CLASS="ref-link" HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V3/man/man1/nroff.1">ROFF</A>.
+						</LI>
+						<LI>
+							<SPAN CLASS="ref-title">roff(1)</SPAN>,
+							<SPAN CLASS="ref-book">UNIX Programmer's Manual</SPAN>,
+							<SPAN CLASS="ref-edition">3</SPAN>,
+							<SPAN CLASS="ref-date">6 December, 1972</SPAN>,
+							<A CLASS="ref-link" HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V3/man/man1/roff.1">ROFF</A>.
+						</LI>
+						<LI>
+							<SPAN CLASS="ref-title">troff(1)</SPAN>,
+							<SPAN CLASS="ref-book">UNIX Programmer's Manual</SPAN>,
+							<SPAN CLASS="ref-edition">4</SPAN>,
+							<SPAN CLASS="ref-date">15 January, 1973</SPAN>,
+							<A CLASS="ref-link" HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V4/man/man1/troff.1">ROFF</A>.
+						</LI>
+					</UL>
+				</DIV>
+			</DD>
+			<DT>
+				1979, <SPAN CLASS="cmd">ditroff(1)</SPAN> (Joseph F. Ossanna, <A HREF="http://www.cs.bell-labs.com/who/bwk/index.html">Brian Kernighan</A>)
+			</DT>
+			<DD>
+				<P>
+					In the sources, <SPAN CLASS="cmd">ditroff(1)</SPAN> doesn't appeared to be named as such (when was it
+					termed as such?); however, both <SPAN CLASS="cmd">nroff(1)</SPAN> and <SPAN CLASS="cmd">troff(1)</SPAN>
+					are built from the same C sources (note that <SPAN CLASS="cmd">roff(1)</SPAN> is still built in its
+					PDP-11/20 assembly in the Version 7 AT&amp;T UNIX sources.
+				</P>
+				<P>
+					The UNIX/32V port of Version 7 AT&amp;T UNIX to the VAX architecture also contains the <SPAN
+					CLASS="cmd">troff(1)</SPAN> sources (of course in C).
+				</P>
+				<DIV CLASS="sources">
+					<P CLASS="sources-primary">
+						Primary sources: 
+					</P>
+					<UL CLASS="sources-primary">
+						<LI>
+							Version 7 AT&amp;T UNIX <SPAN CLASS="cmd">nroff(1)</SPAN>/<SPAN CLASS="cmd">troff(1)</SPAN> source:
+							<A CLASS="ref-link" HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V7/usr/src/cmd/troff">/usr/src/cmd/troff</A>.
+						</LI>
+						<LI>
+							UNIX/32V <SPAN CLASS="cmd">nroff(1)</SPAN>/<SPAN CLASS="cmd">troff(1)</SPAN> source:
+							<A CLASS="ref-link" HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=32V/usr/src/cmd/troff">/usr/src/cmd/troff</A>.
+						</LI>
+					</UL>
+				</DIV>
+			</DD>
+		</DL>
+		<H2>
+			Renaissance
+		</H2>
+		<DL>
+			<DT>
+				1989: GNU troff (<A HREF="http://www.jclark.com/">James Clarke</A>)
+			</DT>
+			<DD>
+				<P>
+					TODO...
+				</P>
+			</DD>
+		</DL>
+		<P CLASS="foot">
+			<SMALL>
+				Copyright &copy; 2011 <A CLASS="external" HREF="http://kristaps.bsd.lv">Kristaps Dzonsons</A>, $Date$
+			</SMALL>
+		</P>
+	</BODY>
+</HTML>

@@ -1,4 +1,4 @@
-.SUFFIXES: .html .sgml .xml .xhtml .opf
+.SUFFIXES: .html .sgml .xml .xhtml .opf .svg .dot .png
 
 SOURCE	= book.css \
 	  book.ncx \
@@ -9,6 +9,7 @@ SOURCE	= book.css \
 	  full-head.xml \
 	  full-tail.xml \
 	  glossary.xml \
+	  history.sgml \
 	  index.sgml \
 	  index.css \
 	  license.png \
@@ -152,6 +153,8 @@ DATE	= 04 September 2011
 
 all: index.html
 
+history.html: apps.png
+
 index.html: mdoc.source.tgz \
 	mdoc.single-xhtml.tgz \
 	mdoc.single-html.tgz \
@@ -174,12 +177,13 @@ install: all
 	install -m 0644 mdoc.single-html.tgz mdoc.multi-html.tgz $(PREFIX)
 
 clean:
-	rm -f index.html 
+	rm -f index.html history.html
 	rm -f $(XHTMLS) $(HTMLS)
 	rm -f mdoc.epub mdoc.xhtml mdoc.html mdoc.sgml mdoc.xml book.opf
 	rm -f mdoc.source.tgz 
 	rm -f mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz
 	rm -f mdoc.single-html.tgz mdoc.multi-html.tgz
+	rm -f apps.png apps.svg
 
 mdoc.source.tgz: $(SOURCE)
 	mkdir .dist
@@ -334,3 +338,9 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 	    -e "s!\.xml!.html!g" \
 	    -e "s!text\/xml!text/html!" >$@
 	validate --warn $@ || rm -f $@
+
+.dot.svg:
+	dot -Tsvg $< >$@
+
+.dot.png:
+	dot -Tpng $< >$@
