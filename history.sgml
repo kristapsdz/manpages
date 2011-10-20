@@ -2,7 +2,7 @@
 <HTML>
 	<HEAD>
 		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
-		<TITLE>The History of UNIX Manpages</TITLE>
+		<TITLE>History of UNIX Manpages</TITLE>
 		<STYLE TYPE="text/css">
 			body { font-family: serif; line-height: 14pt; font-size: 10pt; padding-left: 2%; }
 			#timeline-img { float: right; margin-left: 2em; }
@@ -18,25 +18,48 @@
 	</HEAD>
 	<BODY>
 		<H1>
-			A Not-So-Brief Timeline of UNIX Manpage Evolution
+			History of UNIX Manpages
 		</H1>
+		<P>
+			This is a history of the utilities and formats relevant to the UNIX manpage.
+			I begin with <A HREF="#prehistory">prehistory</A>, from the time before UNIX, then continue with the <A
+			HREF="#classical">Classical Age</A> establishing the conventions that persist to the present day.
+			I then consider the <A HREF="#renaissance">Renaissance</A>, when earlier utilities were re-written (for various
+			reasons), and finally the <A HREF="#nextgen">Next Generation</A> of specialised utilities.
+		</P>
 		<P ID="timeline-img">
 			<IMG SRC="apps.png" ALT="Timeline of UNIX manpage utilities">
 		</P>
-		<H2>
-			Antiquity
+		<H2 ID="prehistory">
+			Prehistory: 1964&ndash;1970
 		</H2>
-		<P>
-			This covers the beginnings of the <SPAN CLASS="cmd">roff(1)</SPAN>, <SPAN CLASS="cmd">troff(1)</SPAN>, and <SPAN
-			CLASS="cmd">nroff(1)</SPAN> utilities.
-		</P>
 		<DL>
 			<DT>
 				1964: <SPAN CLASS="cmd">RUNOFF</SPAN> (<A HREF="http://mit.edu/saltzer/">Jerome H. Saltzer</A>)
 			</DT>
 			<DD>
 				<P>
-					Written in MAD assmebler (I think?).
+					Jerome H. Saltzer wrote the <SPAN CLASS="cmd">RUNOFF</SPAN> utility for MIT's CTSS operating system in
+					the MAD computer language.  Its legacy is considerable: at the very least, <SPAN
+					CLASS="cmd">RUNOFF</SPAN> introduced the familiar line-based, dot-preceeded syntax used in modern UNIX
+					manpages.  
+				</P>
+				<BLOCKQUOTE CITE="http://web.mit.edu/Saltzer/www/publications/ctss/AH.9.01.pdf">
+					<P>
+						Input generally consists of English text, 36O or fewer characters to a line. Control words must
+						begin a new line, and they begin with a period so that they may be distinguished from other
+						text. RUNOFF does not print the control words.
+					</P>
+				</BLOCKQUOTE>
+				<P>
+					In fact, several of the abbreviated <SPAN CLASS="cmd">RUNOFF</SPAN> control words are still common in
+					today's manpages, such as <CODE>sp</CODE> and <CODE>br</CODE>.
+				</P>
+				<P>
+					The primary source for this is the <SPAN CLASS="cmd">RUNOFF</SPAN> source itself, found in the <SPAN
+					CLASS="file">com5</SPAN> file in the source directory (invocation at line 19782, text processing from
+					line 20014).  Secondary sources are memoranda relating to the input format, which may also be deduced
+					from the text processing section of the source.
 				</P>
 				<DIV CLASS="sources">
 					<P CLASS="sources-primary">
@@ -44,7 +67,9 @@
 					</P>
 					<UL CLASS="sources-primary">
 						<LI>
-							<I>No source code found</I>.
+							<A CLASS="ref-link" HREF="http://www.piercefuller.com/library/ctss.html">CTSS source
+							listings</A>, hosted by <A HREF="http://www.piercefuller.com/">Paul Pierce</A>.
+							
 						</LI>
 					</UL>
 					<P CLASS="sources-secondary">
@@ -54,32 +79,37 @@
 						<LI>
 							<SPAN CLASS="ref-editor">Patricia Crisman</SPAN>,
 							<SPAN CLASS="ref-author">Jerome H. Saltzer</SPAN>,
-							<SPAN CLASS="ref-title">Manuscript Typing and Editing</SPAN>,
+							<A CLASS="ref-title ref-link"
+							HREF="http://web.mit.edu/Saltzer/www/publications/ctss/AH.9.01.pdf">Manuscript Typing
+							and Editing</A>,
 							<SPAN CLASS="ref-book">The Compatible Time-Sharing System, A Programmers Guide</SPAN>,
 							<SPAN CLASS="ref-sec">AH.9.01</SPAN>,
 							<SPAN CLASS="ref-edition">2</SPAN>,
 							<SPAN CLASS="ref-publisher">M.I.T. Press</SPAN>,
 							<SPAN CLASS="ref-date">1965</SPAN>,
-							<SPAN CLASS="ref-revised">December 1966</SPAN>,
-							<A CLASS="ref-link" HREF="http://web.mit.edu/Saltzer/www/publications/ctss/AH.9.01.pdf">PDF</A>.
+							<SPAN CLASS="ref-revised">December 1966</SPAN>.
 						</LI>
 						<LI>
 							<SPAN CLASS="ref-author">Jerome H. Saltzer</SPAN>,
-							<SPAN CLASS="ref-title">TYPSET and RUNOFF, memorandum editor and type-out commands</SPAN>,
+							<A CLASS="ref-title ref-link"
+							HREF="http://mit.edu/saltzer/www/publications/ctss/ctss/CC-244.pdf">TYPSET and RUNOFF,
+							memorandum editor and type-out commands</A>,
 							<SPAN CLASS="ref-book">M.I.T. Computation Center Memorandum</SPAN>,
 							<SPAN CLASS="ref-sec">CC-244</SPAN>,
-							<SPAN CLASS="ref-date">6 November, 1964</SPAN>
-							<A CLASS="ref-link" HREF="http://mit.edu/saltzer/www/publications/ctss/ctss/CC-244.pdf">PDF</A>.
+							<SPAN CLASS="ref-date">6 November, 1964</SPAN>.
 						</LI>
 					</UL>
 				</DIV>
 			</DD>
 			<DT>
-				1968: <SPAN CLASS="cmd">runoff</SPAN> (<A HREF="http://www.cs.dartmouth.edu/~doug/">Douglas McIlroy</A>)
+				1969: <SPAN CLASS="cmd">runoff</SPAN> (<A HREF="http://www.cs.dartmouth.edu/~doug/">Douglas McIlroy</A>)
 			</DT>
 			<DD>
 				<P>
-					Written in BCPL for Multics.  Reference says that Bob Morris was a co-write?
+					In 1969, Douglas McIlroy released a version of <SPAN CLASS="cmd">runoff</SPAN> for the Multics operating
+					system on the GE-645 computer.  (The link between Saltzer and McIlroy is not yet known.)  This was later
+					ported to the Honeywell 6180 by R. F. Mabee.  Accepting Multics as the predecessor to UNIX, it follows
+					that <SPAN CLASS="cmd">runoff</SPAN> was the proper predecessor to <SPAN CLASS="cmd">roff(1)</SPAN>.
 				</P>
 				<DIV CLASS="sources">
 					<P CLASS="sources-primary">
@@ -87,7 +117,11 @@
 					</P>
 					<UL CLASS="sources-primary">
 						<LI>
-							<I>No source code found</I>.
+							<A CLASS="ref-link"
+							HREF="http://web.mit.edu/multics-history/source/Multics/ldd/system_library_standard/source/bound_runoff_.s.archive">
+							Multics source listings</A>, hosted by the <A
+							HREF="http://web.mit.edu/multics-history/source/Multics_Internet_Server/Multics.html">Multics
+							Internet Server</A>.
 						</LI>
 					</UL>
 					<P CLASS="sources-secondary">
@@ -95,15 +129,20 @@
 					</P>
 					<UL CLASS="sources-secondary">
 						<LI>
-							<SPAN CLASS="ref-title">Unix and Multics</SPAN>,
+							<A CLASS="ref-title ref-link" HREF="http://www.multicians.org/unix.html">Unix and
+							Multics</A>,
 							<SPAN CLASS="ref-author">Tom Van Vleck</SPAN>,
 							<SPAN CLASS="ref-date">21 March, 1993</SPAN>,
-							<SPAN CLASS="ref-revised">5 February, 1995</SPAN>,
-							<A CLASS="ref-link" HREF="http://www.multicians.org/unix.html">HTML</A>.
+							<SPAN CLASS="ref-revised">5 February, 1995</SPAN>.
 						</LI>
 					</UL>
 				</DIV>
 			</DD>
+		</DL>
+		<H2 ID="classical">
+			Classical Age: 1971&ndash;1988
+		</H2>
+		<DL>
 			<DT>
 				1971: <SPAN CLASS="cmd">roff(1)</SPAN> (Joseph F. Ossanna)
 			</DT>
@@ -231,8 +270,8 @@
 				</DIV>
 			</DD>
 		</DL>
-		<H2>
-			Renaissance
+		<H2 ID="renaissance">
+			Renaissance: 1989&ndash;2007
 		</H2>
 		<P>
 			This covers re-implementations of the classic <SPAN CLASS="cmd">roff(1)</SPAN>, <SPAN CLASS="cmd">troff(1)</SPAN>, and
@@ -248,6 +287,9 @@
 				</P>
 			</DD>
 		</DL>
+		<H2 ID="nextgen">
+			Next Generation: 2008&ndash;present
+		</H2>
 		<P CLASS="foot">
 			<SMALL>
 				Copyright &copy; 2011 <A CLASS="external" HREF="http://kristaps.bsd.lv">Kristaps Dzonsons</A>, $Date$

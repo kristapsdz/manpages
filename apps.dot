@@ -3,7 +3,7 @@ digraph manpages {
 
 	{
 		node [shape=plaintext, fontsize=16];
-		1964 -> 1968 -> 1971 -> 1973 -> 1979 -> 
+		1964 -> 1969 -> 1971 -> 1973 -> 1979 -> 
 		1989 -> 1991 -> 1992 -> 1994 -> 2005 -> 
 		2008 -> "future";
 	}
@@ -43,7 +43,7 @@ digraph manpages {
 	ditroff [label="ditroff(1)" URL="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V7/usr/src/cmd/troff"];
 	
 	{ rank = same; 1964 runoff1; }
-	{ rank = same; 1968 runoff2; }
+	{ rank = same; 1969 runoff2; }
 	{ rank = same; 1971 roff };
 	{ rank = same; 1973; "troff(1)" "nroff(1)"; }
 	{ rank = same; 1979; ditroff; }
