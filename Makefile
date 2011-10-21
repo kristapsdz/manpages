@@ -1,4 +1,4 @@
-.SUFFIXES: .html .sgml .xml .xhtml .opf .svg .dot .png
+.SUFFIXES: .html .sgml .xml .xhtml .opf .dot .png .map
 
 SOURCE	= book.css \
 	  book.ncx \
@@ -153,7 +153,7 @@ DATE	= 04 September 2011
 
 all: index.html
 
-history.html: apps.png
+history.html: apps.png apps.map
 
 index.html: mdoc.source.tgz \
 	mdoc.single-xhtml.tgz \
@@ -183,7 +183,7 @@ clean:
 	rm -f mdoc.source.tgz 
 	rm -f mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz
 	rm -f mdoc.single-html.tgz mdoc.multi-html.tgz
-	rm -f apps.png apps.svg
+	rm -f apps.png apps.map 
 
 mdoc.source.tgz: $(SOURCE)
 	mkdir .dist
@@ -339,8 +339,8 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 	    -e "s!text\/xml!text/html!" >$@
 	validate --warn $@ || rm -f $@
 
-.dot.svg:
-	dot -Tsvg $< >$@
+.dot.map:
+	dot -Tcmapx -o $@ $<
 
 .dot.png:
-	dot -Tpng $< >$@
+	dot -Tpng -o $@ $<

@@ -4,11 +4,12 @@
 		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 		<TITLE>History of UNIX Manpages</TITLE>
 		<STYLE TYPE="text/css">
+			a img { border: 0; }
 			p.timeline-img { text-align: center; }
 			img.timeline-img { width: 60em; }
 			body { font-family: serif; line-height: 14pt; font-size: 10pt; padding-left: 2%; }
 			dd { margin-bottom: 2em; }
-			.cmd { font-style: italic; }
+			.cmd, .file { font-style: italic; }
 			p.sources-primary, p.sources-secondary { margin-bottom: 0.25em; }
 			.ref-book { font-style: italic; }
 			.ref-title { font-style: italic; }
@@ -23,17 +24,25 @@
 			History of UNIX Manpages
 		</H1>
 		<P>
-			This is a history of the utilities and formats relevant to the UNIX manpage.
-			I begin with <A HREF="#prehistory">Prehistory</A>, from the time before UNIX, then continue with the <A
-			HREF="#classical">Classical Age</A> establishing the conventions that persist to the present day.
-			I then consider the <A HREF="#renaissance">Renaissance</A>, when earlier utilities were re-written (for various
-			reasons), and finally the <A HREF="#nextgen">Next Generation</A> of specialised utilities.
+			Where do UNIX manpages come from?  Who introduced the section-based layout of NAME, SYNOPSIS, and so on?  For manpage
+			source writers and readers &mdash; where were those economical two- and three-letter instructions developed?
+		</P>
+		<P>
+			The many accounts available on the Internet are ambiguous and at times conflicting.  In this article, I reconstruct a
+			history of the UNIX manpage from the original sources, from the 1964 <SPAN CLASS="cmd">RUNOFF</SPAN> onward.
 		</P>
 		<H2>
 			Timeline
 		</H2>
+		<P>
+			This section is a time-oriented history of the utilities and formats relevant to the UNIX manpage.  I begin with <A
+			HREF="#prehistory">Prehistory</A>, from the time before UNIX, then continue with the <A HREF="#classical">Classical
+			Age</A> establishing the conventions that persist to the present day.  I then consider the <A
+			HREF="#renaissance">Renaissance</A>, when earlier utilities were re-written (for various reasons), and finally the <A
+			HREF="#nextgen">Next Generation</A> of specialised utilities.
+		</P>
 		<P CLASS="timeline-img">
-			<A HREF="apps.png"><IMG CLASS="timeline-img" SRC="apps.png" ALT="Timeline of UNIX manpage utilities"></A>
+			<IMG CLASS="timeline-img" SRC="apps.png" ALT="Timeline of UNIX manpage utilities">
 		</P>
 		<H3 ID="prehistory">
 			Prehistory: 1964&ndash;1970
@@ -46,7 +55,7 @@
 				<P>
 					<A HREF="#saltzer">Saltzer</A> wrote the <SPAN CLASS="cmd">RUNOFF</SPAN> utility for MIT's CTSS
 					operating system in the MAD computer language.  Its legacy is considerable: at the very least, <SPAN
-					CLASS="cmd">RUNOFF</SPAN> introduced the familiar line-based, dot-preceeded syntax used in modern UNIX
+					CLASS="cmd">RUNOFF</SPAN> introduced the familiar line-based, dot-control syntax used in modern UNIX
 					manpages.  
 				</P>
 				<BLOCKQUOTE CITE="http://web.mit.edu/Saltzer/www/publications/ctss/AH.9.01.pdf">
@@ -73,14 +82,10 @@
 					<UL CLASS="sources-primary">
 						<LI>
 							<A CLASS="ref-link" HREF="http://www.piercefuller.com/library/ctss.html">CTSS source
-							listings</A>, hosted by <A HREF="http://www.piercefuller.com/">Paul Pierce</A>.
-							
+							listings</A>, hosted by <A HREF="http://www.piercefuller.com/">Paul Pierce</A>.  A copy
+							of the <A HREF="RUNOFF.gz">source file</A> containing <SPAN CLASS="cmd">RUNOFF</SPAN> is
+							available locally with permission of Mr. Pierce.
 						</LI>
-					</UL>
-					<P CLASS="sources-secondary">
-						Secondary sources:
-					</P>
-					<UL CLASS="sources-secondary">
 						<LI>
 							<SPAN CLASS="ref-editor">Patricia Crisman</SPAN>,
 							<SPAN CLASS="ref-author">Jerome H. Saltzer</SPAN>,
@@ -107,16 +112,15 @@
 				</DIV>
 			</DD>
 			<DT>
-				1969: <SPAN CLASS="cmd">runoff</SPAN> (<A HREF="http://www.cs.dartmouth.edu/~doug/">Douglas McIlroy</A>)
+				1969: <SPAN CLASS="cmd">runoff</SPAN> (<A HREF="#mcilroy">Douglas McIlroy</A>)
 			</DT>
 			<DD>
 				<P>
-					In 1969, Douglas McIlroy released a version of <SPAN CLASS="cmd">runoff</SPAN> for the Multics operating
-					system on the GE-645 computer.  The link between CTSS and Multics is one of inheritence: CTSS (or the
-					group at MIT, Project MAC) begat Multics (for details see, e.g., <A
-					HREF="http://www.multicians.org/thvv/7094.html">the IBM 7094 and CTSS</A>).  
-					Accepting Multics as the predecessor to UNIX, it
-					follows that <SPAN CLASS="cmd">runoff</SPAN> was the proper predecessor to <SPAN
+					In 1969, <A HREF="#mcilroy">McIlroy</A> released a version of <SPAN CLASS="cmd">runoff</SPAN> for the
+					Multics operating system on the GE-645 computer.  The link between CTSS and Multics is one of
+					inheritence: CTSS (or the group at MIT, Project MAC) begat Multics (for details see, e.g., <A
+					HREF="http://www.multicians.org/thvv/7094.html">the IBM 7094 and CTSS</A>).  Accepting Multics as the
+					predecessor to UNIX, it follows that <SPAN CLASS="cmd">runoff</SPAN> was the proper predecessor to <SPAN
 					CLASS="cmd">roff(1)</SPAN>.
 				</P>
 				<P>
@@ -134,7 +138,7 @@
 				</BLOCKQUOTE>
 				<P>
 					I could only the Honeywell-6180 sources, ported by R. F. Mabee, and not the original GE-645 sources as
-					written by McIlroy.
+					written by <A HREF="#mcilroy">McIlroy</A>.
 				</P>
 				<DIV CLASS="sources">
 					<P CLASS="sources-primary">
@@ -146,7 +150,8 @@
 							HREF="http://web.mit.edu/multics-history/source/Multics/ldd/system_library_standard/source/bound_runoff_.s.archive">
 							Multics source listings</A>, hosted by the <A
 							HREF="http://web.mit.edu/multics-history/source/Multics_Internet_Server/Multics.html">Multics
-							Internet Server</A>.
+							Internet Server</A>.  A copy of the <A HREF="runoff.s.gz"><SPAN CLASS="cmd">runoff</SPAN>
+							source file</A> is available locally under the file's license terms.
 						</LI>
 					</UL>
 					<P CLASS="sources-secondary">
@@ -173,8 +178,8 @@
 			</DT>
 			<DD>
 				<P>
-					Most of the programming team for Multics (including <A HREF="#ossanna">Ossanna</A>, D. McIlroy, K.
-					Thompson, B. Kernighan, etc.) continued working with UNIX, so it's no surprise that Multics <SPAN
+					Most of the programming team for Multics (including <A HREF="#ossanna">Ossanna</A>, <A HREF="#mcilroy">McIlroy</A>, K.
+					Thompson, <A HREF="#kernighan">Kernighan</A>, etc.) continued working with UNIX, so it's no surprise that Multics <SPAN
 					CLASS="cmd">runoff</SPAN> was incorporated as UNIX <SPAN CLASS="cmd">roff(1)</SPAN>.  Unfortunately, the
 					first <SPAN CLASS="cmd">roff(1)</SPAN> versions, written in PDP-11/20 assembly for Version 1 AT&amp;T
 					UNIX, appear to be lost.  (Some sources were reconstructed from old tapes, but <SPAN
@@ -190,14 +195,6 @@
 						Primary sources: 
 					</P>
 					<UL CLASS="sources-primary">
-						<LI>
-							<I>No source code available</I>.
-						</LI>
-					</UL>
-					<P CLASS="sources-secondary">
-						Secondary sources:
-					</P>
-					<UL CLASS="sources-secondary">
 						<LI>
 							<SPAN CLASS="ref-author">Joseph F. Ossanna</SPAN>,
 							<A CLASS="ref-title ref-link"
@@ -290,8 +287,7 @@
 				</DIV>
 			</DD>
 			<DT>
-				1979: <SPAN CLASS="cmd">ditroff(1)</SPAN> (<A HREF="#ossanna">Joseph F. Ossanna</A>, <A
-				HREF="http://www.cs.bell-labs.com/who/bwk/index.html">Brian Kernighan</A>)
+				1979: <SPAN CLASS="cmd">ditroff(1)</SPAN> (<A HREF="#ossanna">Joseph F. Ossanna</A>, <A HREF="#kernighan">Brian Kernighan</A>)
 			</DT>
 			<DD>
 				<P>
@@ -351,19 +347,32 @@
 			People
 		</H2>
 		<DL>
-			<DT ID="saltzer">Jerome H. Saltzer</DT>
+			<DT ID="kernighan">Kernighan, Brian</DT>
 			<DD>
 				<P>
-					Author of <SPAN CLASS="cmd">RUNOFF</SPAN> while working in MIT's CTSS project.  Homepage: <A
-					HREF="http://mit.edu/saltzer/">mit.edu/saltzer</A>.
+					Homepage: <A HREF="http://www.cs.bell-labs.com/who/bwk/index.html">www.cs.bell-labs.com/who/bwk/</A>.
 				</P>
 			</DD>
-			<DT ID="ossanna">Joseph F. Ossanna</DT>
+			<DT ID="mcilroy">McIlroy, Douglas</DT>
+			<DD>
+				<P>
+					Ported <SPAN CLASS="cmd">RUNOFF</SPAN> to Multics while at Bell Telephone Labs.  Homepage: <A
+					HREF="http://www.cs.dartmouth.edu/~doug/">www.cs.dartmouth.edu/~doug</A>.
+				</P>
+			</DD>
+			<DT ID="ossanna">Ossanna, Joseph F.</DT>
 			<DD>
 				<P>
 					Worked on the PDP-11/20 assembly-language <SPAN CLASS="cmd">roff(1)</SPAN>, <SPAN
 					CLASS="cmd">nroff(1)</SPAN>, and <SPAN CLASS="cmd">troff(1)</SPAN> for Versions 1&ndash;7 AT&amp;T UNIX
 					while working at Bell Telephone Labs. 
+				</P>
+			</DD>
+			<DT ID="saltzer">Saltzer, Jerome H.</DT>
+			<DD>
+				<P>
+					Author of <SPAN CLASS="cmd">RUNOFF</SPAN> while working in MIT's CTSS project.  Homepage: <A
+					HREF="http://mit.edu/saltzer/">mit.edu/saltzer</A>.
 				</P>
 			</DD>
 		</DL>
