@@ -107,9 +107,12 @@
 			<DD>
 				<P>
 					In 1969, Douglas McIlroy released a version of <SPAN CLASS="cmd">runoff</SPAN> for the Multics operating
-					system on the GE-645 computer.  (The link between Saltzer and McIlroy is not yet known.)  This was later
-					ported to the Honeywell 6180 by R. F. Mabee.  Accepting Multics as the predecessor to UNIX, it follows
-					that <SPAN CLASS="cmd">runoff</SPAN> was the proper predecessor to <SPAN CLASS="cmd">roff(1)</SPAN>.
+					system on the GE-645 computer.  The link between CTSS and Multics is one of inheritence: CTSS (or the
+					group at MIT, Project MAC) begat Multics (for details see, e.g., <A
+					HREF="http://www.multicians.org/thvv/7094.html">the IBM 7094 and CTSS</A>).  The GE-645 sources were
+					later ported to the Honeywell 6180 by R. F. Mabee.  Accepting Multics as the predecessor to UNIX, it
+					follows that <SPAN CLASS="cmd">runoff</SPAN> was the proper predecessor to <SPAN
+					CLASS="cmd">roff(1)</SPAN>.
 				</P>
 				<DIV CLASS="sources">
 					<P CLASS="sources-primary">
@@ -148,10 +151,9 @@
 			</DT>
 			<DD>
 				<P>
-					Very little information can be found beyond the manual.  Written in PDP-11/20 assembly (I guess?) for
-					Version 1 AT&amp;T UNIX.  <A HREF="http://cm.bell-labs.com/who/dmr/">Dennis Ritchie</A> and <A
-					HREF="http://cm.bell-labs.com/who/ken/">Ken Thompson</A> are listed in the manpage as authors.  Did they
-					co-write?
+					Unfortunately, the first <SPAN CLASS="cmd">roff(1)</SPAN> utilities, written in PDP-11/20 assembly for
+					Version 1 AT&amp;T UNIX, appear to be lost.  (Some sources were reconstructed from old tapes, but <SPAN
+					CLASS="cmd">roff(1)</SPAN> was not among them.)  All that remains from this time are manual entries.
 				</P>
 				<DIV CLASS="sources">
 					<P CLASS="sources-primary">
@@ -159,7 +161,7 @@
 					</P>
 					<UL CLASS="sources-primary">
 						<LI>
-							<I>No source code found</I>.
+							<I>No source code available</I>.
 						</LI>
 					</UL>
 					<P CLASS="sources-secondary">
@@ -168,11 +170,11 @@
 					<UL CLASS="sources-secondary">
 						<LI>
 							<SPAN CLASS="ref-author">Joseph F. Ossanna</SPAN>,
-							<SPAN CLASS="ref-title">roff(1)</SPAN>,
+							<A CLASS="ref-title ref-link"
+							HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V1/man/man1/roff.1">roff(1)</A>,
 							<SPAN CLASS="ref-book">UNIX Programmer's Manual</SPAN>,
 							<SPAN CLASS="ref-edition">1</SPAN>,
-							<SPAN CLASS="ref-date">3 November, 1971</SPAN>,
-							<A CLASS="ref-link" HREF="http://cm.bell-labs.com/who/dmr/1stEdman.html">HTML</A>.
+							<SPAN CLASS="ref-date">November, 1971</SPAN>.
 						</LI>
 					</UL>
 				</DIV>
@@ -183,17 +185,22 @@
 			</DT>
 			<DD>
 				<P>
-					Source manuals (no actual source exists before Version 5 AT&amp;T UNIX) indicate a split between
-					<SPAN CLASS="cmd">roff(1)</SPAN> into <SPAN CLASS="cmd">nroff(1)</SPAN> for Version 3
-					AT&amp;T UNIX, then also into <SPAN CLASS="cmd">troff(1)</SPAN> for Version 4 AT&amp;T UNIX.
+					Source manuals indicate a split between <SPAN CLASS="cmd">roff(1)</SPAN> into <SPAN
+					CLASS="cmd">nroff(1)</SPAN> for Version 3 AT&amp;T UNIX, then into <SPAN CLASS="cmd">troff(1)</SPAN> for
+					Version 4 AT&amp;T UNIX.  (No coherent sources for these utilities remains from before Version 5
+					AT&amp;T UNIX.)
 				</P>
 				<P>
-					There exist PDP-11/20 assembly sources for <SPAN CLASS="cmd">roff(1)</SPAN> and <SPAN
+					UNIX PDP-11/20 assembly sources exist for <SPAN CLASS="cmd">roff(1)</SPAN> and <SPAN
 					CLASS="cmd">nroff(1)</SPAN> starting in Version 5 AT&amp;T UNIX sources (dated 27 November, 1974) and
-					Version 6 AT&amp;T UNIX sources (July, 1975).  Note that the Version 6 AT&amp;T UNIX <SPAN
-					CLASS="cmd">neqn(1)</SPAN> sources were, however, written in C.  I can't find any sources for <SPAN
-					CLASS="cmd">troff(1)</SPAN> this early, although obviously it was installed since Version 4 AT&amp;T
-					UNIX.
+					Version 6 AT&amp;T UNIX sources (July, 1975), respectively.  The former is copyright-dated to 1972, so it's not
+					unrealistic to assume these are modified versions of Ossanna's lost <SPAN CLASS="cmd">roff(1)</SPAN> for
+					pre-Version 5 AT&amp;T UNIX.  I can't find any sources for <SPAN CLASS="cmd">troff(1)</SPAN>, though 
+					Ken Wellsch's raw tape archives mention <SPAN CLASS="cmd">troff(1)</SPAN> assembly files alongside those
+					for <SPAN CLASS="cmd">nroff(1)</SPAN>. 
+				</P>
+				<P>
+					Note that the Version 6 AT&amp;T UNIX <SPAN CLASS="cmd">neqn(1)</SPAN> sources were written in C.
 				</P>
 				<DIV CLASS="sources">
 					<P CLASS="sources-primary">
@@ -201,12 +208,22 @@
 					</P>
 					<UL CLASS="sources-primary">
 						<LI>
-							Version 5 AT&amp;T UNIX <SPAN CLASS="cmd">roff(1)</SPAN> source:
-							<A CLASS="ref-link" HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V5/usr/source/s7">/usr/source/s7</A>.
+							<A CLASS="ref-link"
+							HREF="http://minnie.tuhs.org/Archive/PDP-11/Distributions/research/Ken_Wellsch_v6/">Version
+							6 AT&amp;T UNIX tape archive</A>, hosted by the <A HREF="http://www.tuhs.org">UNIX
+							Heritage Society</A>.
 						</LI>
 						<LI>
-							Version 6 AT&amp;T UNIX <SPAN CLASS="cmd">roff(1)</SPAN> and <SPAN CLASS="cmd">nroff(1)</SPAN> source:
-							<A CLASS="ref-link" HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V6/usr/source/s7">/usr/source/s7</A>.
+							<A CLASS="ref-link"
+							HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V5/usr/source/s7">Version 5 AT&amp;T
+							source listings</A>, hosted by the <A
+							HREF="http://www.tuhs.org">UNIX Heritage Society</A>.
+						</LI>
+						<LI>
+							<A CLASS="ref-link"
+							HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V6/usr/source/s7">Version 6 AT&amp;T
+							source listings</A>, hosted by the <A HREF="http://www.tuhs.org">UNIX Heritage
+							Society</A>.
 						</LI>
 					</UL>
 					<P CLASS="sources-secondary">
@@ -214,25 +231,25 @@
 					</P>
 					<UL CLASS="sources-secondary">
 						<LI>
-							<SPAN CLASS="ref-title">nroff(1)</SPAN>,
+							<A CLASS="ref-title ref-link"
+							HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V3/man/man1/nroff.1">nroff(1)</A>,
 							<SPAN CLASS="ref-book">UNIX Programmer's Manual</SPAN>,
 							<SPAN CLASS="ref-edition">3</SPAN>,
-							<SPAN CLASS="ref-date">15 January, 1973</SPAN>,
-							<A CLASS="ref-link" HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V3/man/man1/nroff.1">ROFF</A>.
+							<SPAN CLASS="ref-date">15 January, 1973</SPAN>.
 						</LI>
 						<LI>
-							<SPAN CLASS="ref-title">roff(1)</SPAN>,
+							<A CLASS="ref-title ref-link"
+							HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V3/man/man1/roff.1">roff(1)</A>,
 							<SPAN CLASS="ref-book">UNIX Programmer's Manual</SPAN>,
 							<SPAN CLASS="ref-edition">3</SPAN>,
-							<SPAN CLASS="ref-date">6 December, 1972</SPAN>,
-							<A CLASS="ref-link" HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V3/man/man1/roff.1">ROFF</A>.
+							<SPAN CLASS="ref-date">6 December, 1972</SPAN>.
 						</LI>
 						<LI>
-							<SPAN CLASS="ref-title">troff(1)</SPAN>,
+							<A CLASS="ref-title ref-link"
+							HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V4/man/man1/troff.1">troff(1)</A>,
 							<SPAN CLASS="ref-book">UNIX Programmer's Manual</SPAN>,
 							<SPAN CLASS="ref-edition">4</SPAN>,
-							<SPAN CLASS="ref-date">15 January, 1973</SPAN>,
-							<A CLASS="ref-link" HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V4/man/man1/troff.1">ROFF</A>.
+							<SPAN CLASS="ref-date">15 January, 1973</SPAN>.
 						</LI>
 					</UL>
 				</DIV>
@@ -242,10 +259,10 @@
 			</DT>
 			<DD>
 				<P>
-					In the sources, <SPAN CLASS="cmd">ditroff(1)</SPAN> doesn't appeared to be named as such (when was it
-					termed as such?); however, both <SPAN CLASS="cmd">nroff(1)</SPAN> and <SPAN CLASS="cmd">troff(1)</SPAN>
-					are built from the same C sources (note that <SPAN CLASS="cmd">roff(1)</SPAN> is still built in its
-					PDP-11/20 assembly in the Version 7 AT&amp;T UNIX sources.
+					This boasts the first intact UNIX <SPAN CLASS="cmd">troff(1)</SPAN> source: in the sources, <SPAN
+					CLASS="cmd">ditroff(1)</SPAN> isn't named as such (when was it termed as such?).  By Version 7 AT&amp;T
+					UNIX, both <SPAN CLASS="cmd">nroff(1)</SPAN> and <SPAN CLASS="cmd">troff(1)</SPAN> are built from the
+					same C sources while <SPAN CLASS="cmd">roff(1)</SPAN> is still built in its PDP-11/20 assembly.
 				</P>
 				<P>
 					The UNIX/32V port of Version 7 AT&amp;T UNIX to the VAX architecture also contains the <SPAN
@@ -257,14 +274,16 @@
 					</P>
 					<UL CLASS="sources-primary">
 						<LI>
-							Version 7 AT&amp;T UNIX <SPAN CLASS="cmd">nroff(1)</SPAN> and <SPAN
-							CLASS="cmd">troff(1)</SPAN> source: <A CLASS="ref-link"
-							HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V7/usr/src/cmd/troff">/usr/src/cmd/troff</A>.
+							<A CLASS="ref-link"
+							HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=32V/usr/src/cmd/troff">UNIX/32V
+							AT&amp;T source listings</A>, hosted by the <A HREF="http://www.tuhs.org">UNIX Heritage
+							Society</A>.
 						</LI>
 						<LI>
-							UNIX/32V <SPAN CLASS="cmd">nroff(1)</SPAN> and <SPAN CLASS="cmd">troff(1)</SPAN> source:
 							<A CLASS="ref-link"
-							HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=32V/usr/src/cmd/troff">/usr/src/cmd/troff</A>.
+							HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V7/usr/src/cmd/troff">Version 7
+							AT&amp;T source listings</A>, hosted by the <A HREF="http://www.tuhs.org">UNIX Heritage
+							Society</A>.
 						</LI>
 					</UL>
 				</DIV>
