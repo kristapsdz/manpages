@@ -4,8 +4,9 @@
 		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 		<TITLE>History of UNIX Manpages</TITLE>
 		<STYLE TYPE="text/css">
+			p.timeline-img { text-align: center; }
+			img.timeline-img { width: 60em; }
 			body { font-family: serif; line-height: 14pt; font-size: 10pt; padding-left: 2%; }
-			#timeline-img { float: right; margin-left: 2em; }
 			dd { margin-bottom: 2em; }
 			.cmd { font-style: italic; }
 			p.sources-primary, p.sources-secondary { margin-bottom: 0.25em; }
@@ -13,7 +14,8 @@
 			.ref-title { font-style: italic; }
 			p.foot { margin-top: 1em; color: #666666; font-size: smaller; }
 			h1 { margin-left: -1.5%; font-size: inherit; }
-			h2 { margin-left: -0.75%; font-size: inherit; }
+			h2 { margin-left: -1.0%; font-size: inherit; }
+			h3 { margin-left: -0.5%; font-size: inherit; }
 		</STYLE>
 	</HEAD>
 	<BODY>
@@ -22,25 +24,28 @@
 		</H1>
 		<P>
 			This is a history of the utilities and formats relevant to the UNIX manpage.
-			I begin with <A HREF="#prehistory">prehistory</A>, from the time before UNIX, then continue with the <A
+			I begin with <A HREF="#prehistory">Prehistory</A>, from the time before UNIX, then continue with the <A
 			HREF="#classical">Classical Age</A> establishing the conventions that persist to the present day.
 			I then consider the <A HREF="#renaissance">Renaissance</A>, when earlier utilities were re-written (for various
 			reasons), and finally the <A HREF="#nextgen">Next Generation</A> of specialised utilities.
 		</P>
-		<P ID="timeline-img">
-			<IMG SRC="apps.png" ALT="Timeline of UNIX manpage utilities">
-		</P>
-		<H2 ID="prehistory">
-			Prehistory: 1964&ndash;1970
+		<H2>
+			Timeline
 		</H2>
+		<P CLASS="timeline-img">
+			<A HREF="apps.png"><IMG CLASS="timeline-img" SRC="apps.png" ALT="Timeline of UNIX manpage utilities"></A>
+		</P>
+		<H3 ID="prehistory">
+			Prehistory: 1964&ndash;1970
+		</H3>
 		<DL>
 			<DT>
-				1964: <SPAN CLASS="cmd">RUNOFF</SPAN> (<A HREF="http://mit.edu/saltzer/">Jerome H. Saltzer</A>)
+				1964: <SPAN CLASS="cmd">RUNOFF</SPAN> (<A HREF="#saltzer">Jerome H. Saltzer</A>)
 			</DT>
 			<DD>
 				<P>
-					Jerome H. Saltzer wrote the <SPAN CLASS="cmd">RUNOFF</SPAN> utility for MIT's CTSS operating system in
-					the MAD computer language.  Its legacy is considerable: at the very least, <SPAN
+					<A HREF="#saltzer">Saltzer</A> wrote the <SPAN CLASS="cmd">RUNOFF</SPAN> utility for MIT's CTSS
+					operating system in the MAD computer language.  Its legacy is considerable: at the very least, <SPAN
 					CLASS="cmd">RUNOFF</SPAN> introduced the familiar line-based, dot-preceeded syntax used in modern UNIX
 					manpages.  
 				</P>
@@ -109,10 +114,27 @@
 					In 1969, Douglas McIlroy released a version of <SPAN CLASS="cmd">runoff</SPAN> for the Multics operating
 					system on the GE-645 computer.  The link between CTSS and Multics is one of inheritence: CTSS (or the
 					group at MIT, Project MAC) begat Multics (for details see, e.g., <A
-					HREF="http://www.multicians.org/thvv/7094.html">the IBM 7094 and CTSS</A>).  The GE-645 sources were
-					later ported to the Honeywell 6180 by R. F. Mabee.  Accepting Multics as the predecessor to UNIX, it
+					HREF="http://www.multicians.org/thvv/7094.html">the IBM 7094 and CTSS</A>).  
+					Accepting Multics as the predecessor to UNIX, it
 					follows that <SPAN CLASS="cmd">runoff</SPAN> was the proper predecessor to <SPAN
 					CLASS="cmd">roff(1)</SPAN>.
+				</P>
+				<P>
+					The development of Multics <SPAN CLASS="cmd">runoff</SPAN> is tersely documented in the BCPL source code
+					as a comment:
+				</P>
+				<BLOCKQUOTE CITE="http://web.mit.edu/multics-history/source/Multics/ldd/system_library_standard/source/bound_runoff_.s.archive">
+					<P>
+						The first ROFF for Multics was written in March, 1969, by Doug McIlroy of Bell Labs.  Art Evans
+						made extensive modifications to it in May and June, 1969, adding many comments and making
+						various changes.  Footnoting added by Dennis Capps in 1970.  Maintained by Harwell Thrasher in
+						1971.  Many new features added and bugs fixed by R Mabee in 1971-1972.  RUNOFF and BCPL were
+						brought over to the 6180 Multics (from 645) in May of 1973 by R F Mabee.
+					</P>
+				</BLOCKQUOTE>
+				<P>
+					I could only the Honeywell-6180 sources, ported by R. F. Mabee, and not the original GE-645 sources as
+					written by McIlroy.
 				</P>
 				<DIV CLASS="sources">
 					<P CLASS="sources-primary">
@@ -142,18 +164,26 @@
 				</DIV>
 			</DD>
 		</DL>
-		<H2 ID="classical">
+		<H3 ID="classical">
 			Classical Age: 1971&ndash;1988
-		</H2>
+		</H3>
 		<DL>
 			<DT>
-				1971: <SPAN CLASS="cmd">roff(1)</SPAN> (Joseph F. Ossanna)
+				1971: <SPAN CLASS="cmd">roff(1)</SPAN> (<A HREF="#ossanna">Joseph F. Ossanna</A>)
 			</DT>
 			<DD>
 				<P>
-					Unfortunately, the first <SPAN CLASS="cmd">roff(1)</SPAN> utilities, written in PDP-11/20 assembly for
-					Version 1 AT&amp;T UNIX, appear to be lost.  (Some sources were reconstructed from old tapes, but <SPAN
+					Most of the programming team for Multics (including <A HREF="#ossanna">Ossanna</A>, D. McIlroy, K.
+					Thompson, B. Kernighan, etc.) continued working with UNIX, so it's no surprise that Multics <SPAN
+					CLASS="cmd">runoff</SPAN> was incorporated as UNIX <SPAN CLASS="cmd">roff(1)</SPAN>.  Unfortunately, the
+					first <SPAN CLASS="cmd">roff(1)</SPAN> versions, written in PDP-11/20 assembly for Version 1 AT&amp;T
+					UNIX, appear to be lost.  (Some sources were reconstructed from old tapes, but <SPAN
 					CLASS="cmd">roff(1)</SPAN> was not among them.)  All that remains from this time are manual entries.
+				</P>
+				<P>
+					Secondary sources mention that <A HREF="#ossanna">Ossanna</A> is mostly responsible for <SPAN
+					CLASS="cmd">roff(1)</SPAN>; however, the manual entries show three authors: <A
+					HREF="#ossanna">Ossanna</A>, Ritchie, and Thompson.
 				</P>
 				<DIV CLASS="sources">
 					<P CLASS="sources-primary">
@@ -181,7 +211,7 @@
 			</DD>
 			<DT>
 				1973: <SPAN CLASS="cmd">nroff(1)</SPAN>, <SPAN CLASS="cmd">roff(1)</SPAN>, and <SPAN CLASS="cmd">troff(1)</SPAN>
-				(Joseph F. Ossanna)
+				(<A HREF="#ossanna">Joseph F. Ossanna</A>)
 			</DT>
 			<DD>
 				<P>
@@ -189,6 +219,11 @@
 					CLASS="cmd">nroff(1)</SPAN> for Version 3 AT&amp;T UNIX, then into <SPAN CLASS="cmd">troff(1)</SPAN> for
 					Version 4 AT&amp;T UNIX.  (No coherent sources for these utilities remains from before Version 5
 					AT&amp;T UNIX.)
+				</P>
+				<P>
+					Development on these utilities, judging by the manual authors, was between <A
+					HREF="#ossanna">Ossanna</A>, Dennis Ritchie, and Ken Thompson; however, secondary sources focus on <A
+					HREF="#ossanna">Ossanna</A> alone.
 				</P>
 				<P>
 					UNIX PDP-11/20 assembly sources exist for <SPAN CLASS="cmd">roff(1)</SPAN> and <SPAN
@@ -255,7 +290,8 @@
 				</DIV>
 			</DD>
 			<DT>
-				1979: <SPAN CLASS="cmd">ditroff(1)</SPAN> (Joseph F. Ossanna, <A HREF="http://www.cs.bell-labs.com/who/bwk/index.html">Brian Kernighan</A>)
+				1979: <SPAN CLASS="cmd">ditroff(1)</SPAN> (<A HREF="#ossanna">Joseph F. Ossanna</A>, <A
+				HREF="http://www.cs.bell-labs.com/who/bwk/index.html">Brian Kernighan</A>)
 			</DT>
 			<DD>
 				<P>
@@ -266,7 +302,9 @@
 				</P>
 				<P>
 					The UNIX/32V port of Version 7 AT&amp;T UNIX to the VAX architecture also contains the <SPAN
-					CLASS="cmd">troff(1)</SPAN> sources (of course in C).
+					CLASS="cmd">troff(1)</SPAN> sources (of course in C).  The inclusion of <SPAN
+					CLASS="cmd">troff(1)</SPAN> in ported systems quickly became the norm; most modern <SPAN
+					CLASS="cmd">troff(1)</SPAN> and <SPAN CLASS="cmd">nroff(1)</SPAN> systems descend from this utility.
 				</P>
 				<DIV CLASS="sources">
 					<P CLASS="sources-primary">
@@ -289,9 +327,9 @@
 				</DIV>
 			</DD>
 		</DL>
-		<H2 ID="renaissance">
+		<H3 ID="renaissance">
 			Renaissance: 1989&ndash;2007
-		</H2>
+		</H3>
 		<P>
 			This covers re-implementations of the classic <SPAN CLASS="cmd">roff(1)</SPAN>, <SPAN CLASS="cmd">troff(1)</SPAN>, and
 			<SPAN CLASS="cmd">nroff(1)</SPAN> utilities.
@@ -306,9 +344,29 @@
 				</P>
 			</DD>
 		</DL>
-		<H2 ID="nextgen">
+		<H3 ID="nextgen">
 			Next Generation: 2008&ndash;present
+		</H3>
+		<H2>
+			People
 		</H2>
+		<DL>
+			<DT ID="saltzer">Jerome H. Saltzer</DT>
+			<DD>
+				<P>
+					Author of <SPAN CLASS="cmd">RUNOFF</SPAN> while working in MIT's CTSS project.  Homepage: <A
+					HREF="http://mit.edu/saltzer/">mit.edu/saltzer</A>.
+				</P>
+			</DD>
+			<DT ID="ossanna">Joseph F. Ossanna</DT>
+			<DD>
+				<P>
+					Worked on the PDP-11/20 assembly-language <SPAN CLASS="cmd">roff(1)</SPAN>, <SPAN
+					CLASS="cmd">nroff(1)</SPAN>, and <SPAN CLASS="cmd">troff(1)</SPAN> for Versions 1&ndash;7 AT&amp;T UNIX
+					while working at Bell Telephone Labs. 
+				</P>
+			</DD>
+		</DL>
 		<P CLASS="foot">
 			<SMALL>
 				Copyright &copy; 2011 <A CLASS="external" HREF="http://kristaps.bsd.lv">Kristaps Dzonsons</A>, $Date$

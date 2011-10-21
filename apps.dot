@@ -1,5 +1,5 @@
 digraph manpages {
-	ranksep=.75; size = "7.5,7.5";
+	rankdir=LR;
 
 	{
 		node [shape=plaintext, fontsize=16];
