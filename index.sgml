@@ -3,7 +3,7 @@
 	<HEAD>
 		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 		<META NAME="resource-type" CONTENT="document">
-		<LINK REL="stylesheet" HREF="index.css" TYPE="text/css" MEDIA="all">
+		<LINK REL="stylesheet" HREF="css/index.css" TYPE="text/css" MEDIA="all">
 		<TITLE>Practical UNIX Manuals: mdoc</TITLE>
 	</HEAD>
 	<BODY>

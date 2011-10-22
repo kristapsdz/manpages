@@ -5,13 +5,15 @@ SOURCE	= book.css \
 	  book.xml \
 	  container.xml \
 	  css/book.css \
+	  css/history.css \
+	  css/index.css \
 	  external.png \
 	  full-head.xml \
 	  full-tail.xml \
 	  glossary.xml \
+	  history.dot \
 	  history.sgml \
 	  index.sgml \
-	  index.css \
 	  license.png \
 	  Makefile \
 	  $(XMLS)
@@ -151,9 +153,9 @@ XHTMLS	= preface.xhtml \
 VERSION	= 0.0.27
 DATE	= 04 September 2011
 
-all: index.html
+all: index.html history.html
 
-history.html: apps.png apps.map
+history.html: history.png history.map
 
 index.html: mdoc.source.tgz \
 	mdoc.single-xhtml.tgz \
@@ -169,9 +171,9 @@ install: all
 	mkdir -p $(PREFIX)
 	mkdir -p $(PREFIX)/css
 	install -m 0644 license.png external.png $(PREFIX)
-	install -m 0644 index.html index.css $(PREFIX)
+	install -m 0644 index.html history.html $(PREFIX)
 	install -m 0644 $(XHTMLS) $(HTMLS) $(PREFIX)
-	install -m 0644 css/book.css $(PREFIX)/css
+	install -m 0644 css/book.css css/history.css css/index.css $(PREFIX)/css
 	install -m 0644 mdoc.epub mdoc.xhtml mdoc.html mdoc.source.tgz $(PREFIX)
 	install -m 0644 mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz $(PREFIX)
 	install -m 0644 mdoc.single-html.tgz mdoc.multi-html.tgz $(PREFIX)
@@ -183,7 +185,7 @@ clean:
 	rm -f mdoc.source.tgz 
 	rm -f mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz
 	rm -f mdoc.single-html.tgz mdoc.multi-html.tgz
-	rm -f apps.png apps.map 
+	rm -f history.png history.map 
 
 mdoc.source.tgz: $(SOURCE)
 	mkdir .dist
@@ -305,6 +307,11 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 		OPS/css/book.css )
 	rm -rf .book
 
+history.html: history.sgml history.map
+	( sed -n '1,/<MAP/p' history.sgml ; \
+	  cat history.map ; \
+	  sed -n '/<\/MAP>/,$$p' history.sgml ; ) >$@
+
 .sgml.html:
 	validate --warn $<
 	sed -e "s!@VERSION@!$(VERSION)!g" -e "s!@DATE@!$(DATE)!g" $< >$@
@@ -340,7 +347,7 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 	validate --warn $@ || rm -f $@
 
 .dot.map:
-	dot -Tcmapx -o $@ $<
+	dot -Tcmap -o $@ $<
 
 .dot.png:
 	dot -Tpng -o $@ $<
