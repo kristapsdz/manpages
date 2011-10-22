@@ -155,8 +155,6 @@ DATE	= 04 September 2011
 
 all: index.html history.html
 
-history.html: history.png history.map
-
 index.html: mdoc.source.tgz \
 	mdoc.single-xhtml.tgz \
 	mdoc.single-html.tgz \
@@ -307,10 +305,13 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 		OPS/css/book.css )
 	rm -rf .book
 
-history.html: history.sgml history.map
+history.html: history.sgml history.map history.png
+	validate --warn index.sgml
 	( sed -n '1,/<MAP/p' history.sgml ; \
 	  cat history.map ; \
 	  sed -n '/<\/MAP>/,$$p' history.sgml ; ) >$@
+
+history.map history.png: history.dot
 
 .sgml.html:
 	validate --warn $<

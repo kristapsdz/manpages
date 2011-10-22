@@ -18,11 +18,11 @@ digraph manpages {
 	nroff [label="nroff(1)" URL="#x1972"];
 	troff [label="troff(1)" URL="#x1973"];
 	ditroff [label="ditroff(1)" URL="#x1979"];
-	mandoc [label="mandoc(1)" URL="http://mdocml.bsd.lv"]; 
-	htroff [label="Heirloom troff(1)" URL="http://heirloom.sourceforge.net/doctools.html"]; 
-	groff [label="GNU troff(1)" URL="http://www.gnu.org/s/groff/"];
-	awf [label="awf(1)" URL="http://ftp.sunet.se/pub/usenet/ftp.uu.net/comp.sources.unix/volume24/"];
-	cawf [label="cawf(1)" URL="http://www.tux.org/pub/sites/vic.cc.purdue.edu/"];
+	groff [label="groff(1)" URL="#x1989_groff"];
+	awf [label="awf(1)" URL="#x1991_awf"];
+	cawf [label="cawf(1)" URL="#x1991_cawf"];
+	htroff [label="troff(1)" URL="#x2005_troff"];
+	mandoc [label="mandoc(1)" URL="#x2008_mandoc"];
 
 	{ rank = same; 1964 runoff1 };
 	{ rank = same; 1967 script runoff2 };
@@ -50,5 +50,6 @@ digraph manpages {
 	troff -> ditroff;
 	ditroff -> groff;
 	ditroff -> htroff;
+	groff -> mandoc;
 	awf -> cawf;
 }

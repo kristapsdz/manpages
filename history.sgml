@@ -3,6 +3,7 @@
 	<HEAD>
 		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
 		<TITLE>History of UNIX Manpages</TITLE>
+		<LINK REL="stylesheet" HREF="css/book.css" TYPE="text/css" MEDIA="all">
 		<LINK REL="stylesheet" HREF="css/history.css" TYPE="text/css" MEDIA="all">
 	</HEAD>
 	<BODY>
@@ -28,7 +29,8 @@
 			HREF="http://www.piercefuller.com/library/ctss.html">source archive</A>; Bernard Nivelet for the <A
 			HREF="http://web.mit.edu/multics-history/source/Multics_Internet_Server/Multics_sources.html">Multics Internet
 			Server</A>; the <A HREF="http://www.tuhs.org">UNIX Heritage Society</A> for their research UNIX <A
-			HREF="http://minnie.tuhs.org/cgi-bin/utree.pl">source reconstruction</A>; and last but not least, Douglas McIlroy and
+			HREF="http://minnie.tuhs.org/cgi-bin/utree.pl">source reconstruction</A>; <A
+			HREF="http://www.bitsavers.org/">BitSavers</A> for their historical archive; and last but not least, Douglas McIlroy and
 			Jerome Saltzer for answering my requests for detailed information.
 		</P>
 		<H2>
@@ -42,7 +44,7 @@
 			HREF="#nextgen">Next Generation</A> of specialised utilities.
 		</P>
 		<P>
-			<IMG SRC="history.png" ALT="Timeline of UNIX manpage utilities" USEMAP="#manpages">
+			<IMG SRC="history.png" ALT="Timeline of UNIX manpage utilities" USEMAP="#manpages" BORDER="0">
 		</P>
 		<H3 ID="prehistory">
 			Prehistory: 1964&ndash;1970
@@ -53,10 +55,10 @@
 			</DT>
 			<DD>
 				<P>
-					<A HREF="#saltzer">Saltzer</A> wrote the <SPAN CLASS="cmd">RUNOFF</SPAN> utility for MIT's CTSS
+					<A HREF="#saltzer">Saltzer</A> wrote the <SPAN CLASS="cmd">RUNOFF</SPAN> utility for MIT's IBM 7094 CTSS
 					operating system in the MAD computer language.  Its legacy is considerable: at the very least, <SPAN
 					CLASS="cmd">RUNOFF</SPAN> introduced the familiar line-based, dot-control syntax used in modern UNIX
-					manpages.  
+					manpages.
 				</P>
 				<BLOCKQUOTE CITE="http://web.mit.edu/Saltzer/www/publications/ctss/AH.9.01.pdf">
 					<P>
@@ -67,7 +69,13 @@
 				</BLOCKQUOTE>
 				<P>
 					In fact, several of the abbreviated <SPAN CLASS="cmd">RUNOFF</SPAN> control words are still common in
-					today's manpages, such as <CODE>sp</CODE> and <CODE>br</CODE>.
+					today's manpages (formatted by modern <SPAN CLASS="cmd">troff</SPAN>-like systems), such as
+					<CODE>sp</CODE> and <CODE>br</CODE>.
+				</P>
+				<P>
+					According to <A HREF="#saltzer">Saltzer</A> and the source literature, the syntax of <SPAN
+					CLASS="cmd">RUNOFF</SPAN> inherits from the prior <SPAN CLASS="cmd">DITTO</SPAN>, <SPAN
+					CLASS="cmd">MEMO</SPAN>, and <SPAN CLASS="cmd">MODIFY</SPAN> utilities by M. L. Lowry, 1963.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -77,8 +85,9 @@
 						<LI>
 							<A CLASS="ref-link" HREF="http://www.piercefuller.com/library/ctss.html">CTSS source
 							listings</A>, hosted by <A HREF="http://www.piercefuller.com/">Paul Pierce</A>.  A copy
-							of the <A HREF="RUNOFF.gz">source file</A> containing <SPAN CLASS="cmd">RUNOFF</SPAN> is
-							available locally with permission of Mr. Pierce (see lines 19728, 20014).
+							of the <A HREF="history/RUNOFF.gz">source file</A> containing <SPAN CLASS="cmd">RUNOFF</SPAN> is
+							available locally with permission of Mr. Pierce (see lines 19728, 20014), as well as a
+							copy of the <A HREF="history/RUNOFF.info">manual</A>.
 						</LI>
 						<LI>
 							Patricia Crisman and Jerome H. Saltzer, <I><A
@@ -133,7 +142,21 @@
 			<DD>
 				<P>
 					In 1967, <A HREF="#madnick">Madnick</A> ported the <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> code to
-					the CP67/CMS.
+					the IBM CP67/CMS.  The documentation of <SPAN CLASS="cmd">SCRIPT</SPAN> explicitly mentions the
+					backspace-encoding convention used to this day by <SPAN CLASS="cmd">troff(1)</SPAN> descendants on UNIX
+					terminals (of course, this was common practice in mechanical type-writers before then):
+				</P>
+				<BLOCKQUOTE CITE="http://www.bitsavers.org/pdf/ibm/360/cp67/">
+					<P>
+						Thus the backspace key allows underscoring and overprinting at the terminal for SCRIPT files.
+						The logical backspace character prints only when entered and does not take up a column in the
+						record; it logically backspaces one column...
+					</P>
+				</BLOCKQUOTE>
+				<P>
+					According to IBM's z-OS product literature, direct descendents of <SPAN CLASS="cmd">SCRIPT</SPAN> are
+					still in use.  Source code for the original re-write of <A HREF="#x1964_RUNOFF">RUNOFF</A> could not be
+					located.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -145,6 +168,16 @@
 							HREF="http://web.mit.edu/smadnick/www/papers/J002.pdf">SCRIPT, an On-line Manuscript
 							Processing System</A></I>, <I>IEEE Transactions on Engineering Writing and Speech</I>,
 							Vol. EWS-11, No.  2.  August, 1968.
+						</LI>
+						<LI>
+							<I><A HREF="http://www.bitsavers.org/pdf/ibm/360/cp67/">Control Program-67/Cambridge
+							Monitor System (CP67/CMS) User's Guide</A></I>, Version 3, Program Number
+							3600-05.2.005.  October, 1970.
+						</LI>
+						<LI>
+							IBM <A
+							HREF="http://www-03.ibm.com/systems/z/os/zos/printsoftware/dcfhome_z_ww.html">Document
+							Composition Facility</A>, z-OS product literature.
 						</LI>
 						<LI>
 							Jerome Saltzer, <I>UNIX manpage history: CTSS RUNOFF</I>.  22 October, 2011.  Email to
@@ -193,8 +226,9 @@
 							HREF="http://web.mit.edu/multics-history/source/Multics/ldd/system_library_standard/source/bound_runoff_.s.archive">
 							Multics source listings</A>, hosted by the <A
 							HREF="http://web.mit.edu/multics-history/source/Multics_Internet_Server/Multics.html">Multics
-							Internet Server</A>.  A copy of the <A HREF="runoff.s.gz"><SPAN CLASS="cmd">runoff</SPAN>
-							source file</A> is available locally under the file's license terms.
+							Internet Server</A>.  A copy of the <A HREF="history/runoff.s.gz"><SPAN
+							CLASS="cmd">runoff</SPAN> source file</A> is available locally under the file's license
+							terms.
 						</LI>
 						<LI>
 							Douglas McIlroy, <I>UNIX manpage history: runoff</I>.  21 October, 2011.  Email to
@@ -399,27 +433,117 @@
 			sprang up to reimplement <SPAN CLASS="cmd">ditroff(1)</SPAN> without the license restrictions.
 		</P>
 		<DL>
-			<DT>
-				1989: GNU troff (<A HREF="#clarke">James Clarke</A>)
+			<DT ID="x1989_groff">
+				1989: groff (<A HREF="#clarke">James Clarke</A>)
 			</DT>
 			<DD>
 				<P>
-					In 1989, <A HREF="#clarke">Clarke</A> set about re-writing <SPAN CLASS="cmd">ditroff(1)</SPAN> 
+					In 1989, <A HREF="#clarke">Clarke</A> re-wrote <SPAN CLASS="cmd">ditroff(1)</SPAN> in C++.
+					<!--groff [label="GNU troff(1)" URL="http://www.gnu.org/s/groff/"];//-->
 				</P>
+			</DD>
+			<DT ID="x1991_awf">
+				1991: awf (<A HREF="#spencer">Henry Spencer</A>)
+			</DT>
+			<DD>
+				<P>
+					In 1991, <A HREF="#spencer">Spencer</A> sent a terse mail to USENET comp.sources.unix indicating that
+					he'd written an interpreter in the AWK language for the <I>man</I> and <I>ms</I> macro packages
+					documented in Version 7 AT&amp;T UNIX <A CLASS="cmd" HREF="#x1972">nroff(1)</A> and <A CLASS="cmd"
+					HREF="#x1979">ditroff(1)</A>.
+				</P>
+				<BLOCKQUOTE CITE="http://doc.cat-v.org/henry_spencer/awf/">
+					<P>
+						This is awf, the Amazingly Workable Formatter &ndash; a "nroff -man" or (subset) "nroff -ms"
+						clone written entirely in (old) awk.
+					</P>
+				</BLOCKQUOTE>
+
+				<P>
+					According to <A HREF="#spencer">Spencer</A>, <SPAN CLASS="cmd">awf</SPAN> was necessary for the
+					portability of C News, a USENET news server written by Spencer and Geoff Collyer in 1987.  The project
+					wished to distribute manpage sources, but since <A CLASS="cmd" HREF="#x1979">ditroff(1)</A> sources were
+					still license-encumbered, needed to guarantee portability to un-licensed UNIX systems.
+				</P>
+				<DIV CLASS="sources">
+					<P>
+						Sources: 
+					</P>
+					<UL>
+						<LI>
+							<A HREF="http://doc.cat-v.org/henry_spencer/awf/">Usenet comp.sources.unix message</A>,
+							hosted by the <A HREF="http://doc.cat-v.org/">Cat-v Document Archive</A>.
+						</LI>
+						<LI>
+							<A HREF="ftp://ftp.isc.org/usenet/comp.sources.unix/volume23/">Usenet comp.sources.unix
+							volume 23 sources</A>, hosted by the <A HREF="ftp://ftp.isc.org/">ISC Usenet newsgroup
+							archives</A>. 
+						</LI>
+						<LI>
+							<A HREF="ftp://ftp.cs.toronto.edu/pub/c-news/c-news.tar.Z">C News source listings</A>,
+							hosted by the University of Toronto <A HREF="http://web.cs.toronto.edu/">Computer
+							Science Department</A>.
+						</LI>
+						<LI>
+							Henry Spencer, <I>UNIX manpage history: awf</I>.  22 October, 2011.  Email to
+							Kristaps Dzonsons.
+						</LI>
+					</UL>
+				</DIV>
+			</DD>
+			<DT ID="x1991_cawf">
+				1991: cawf (<A HREF="#abell">Vic Abell</A>)
+			</DT>
+			<DD>
+				<P>
+					<!--cawf [label="cawf(1)" URL="http://www.tux.org/pub/sites/vic.cc.purdue.edu/"];//-->
+					...
+				</P>
+			</DD>
+			<DT ID="x2005_troff">
+				2005: troff (<A HREF="#ritter">Gunnar Ritter</A>)
+			</DT>
+			<DD>
+				<P>
+					...
+				</P>
+				<!-- htroff [label="troff(1)" URL="http://heirloom.sourceforge.net/doctools.html"];  //-->
 			</DD>
 		</DL>
 		<H3 ID="nextgen">
 			Next Generation: 2008&ndash;present
 		</H3>
+		<DL>
+			<DT ID="x2008_mandoc">
+				2008: mandoc (<A HREF="#dzonsons">Kristaps Dzonsons</A>)
+			</DT>
+			<DD>
+				<P>
+					...
+				</P>
+			</DD>
+		</DL>
 		<DIV ID="people">
 			<H2>
 				People
 			</H2>
 			<DL>
+				<DT ID="abell">Abell, Vic</DT>
+				<DD>
+					<P>
+						...
+					</P>
+				</DD>
 				<DT ID="clarke">Clarke, James</DT>
 				<DD>
 					<P>
 						Homepage: <A HREF="http://www.jclark.com/">James Clarke</A>.
+					</P>
+				</DD>
+				<DT ID="dzonsons">Dzonsons, Kristaps</DT>
+				<DD>
+					<P>
+						...
 					</P>
 				</DD>
 				<DT ID="kernighan">Kernighan, Brian</DT>
@@ -456,20 +580,52 @@
 						while working at Bell Telephone Labs. 
 					</P>
 				</DD>
+				<DT ID="ritchie">Ritchie, Dennis</DT>
+				<DD>
+					<P>
+						...
+					</P>
+				</DD>
+				<DT ID="ritter">Ritter, Gunnar</DT>
+				<DD>
+					<P>
+						...
+					</P>
+				</DD>
 				<DT ID="saltzer">Saltzer, Jerome H.</DT>
 				<DD>
 					<P>
-						Author of <SPAN CLASS="cmd">RUNOFF</SPAN> while working in MIT's CTSS project.  Homepage: <A
-						HREF="http://mit.edu/saltzer/">mit.edu/saltzer</A>.
+						Author of <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> while working in MIT's CTSS project.
+						Homepage: <A HREF="http://mit.edu/saltzer/">mit.edu/saltzer</A>.
+					</P>
+				</DD>
+				<DT ID="spencer">Spencer, Henry</DT>
+				<DD>
+					<P>
+						Wrote an AWK language formatter for the <I>man</I> and <I>ms</I> macro sets from <A CLASS="cmd"
+						HREF="#x1979">ditroff(1)</A> resources.
+					</P>
+				</DD>
+				<DT ID="thompson">Thompson, Ken</DT>
+				<DD>
+					<P>
+						...
 					</P>
 				</DD>
 			</DL>
 		</DIV>
-		<P CLASS="foot">
-			<SMALL>
-				Copyright &copy; 2011 <A CLASS="external" HREF="http://kristaps.bsd.lv">Kristaps Dzonsons</A>, $Date$
-			</SMALL>
-		</P>
+		<TABLE CLASS="nav">
+			<TBODY>
+				<TR>
+					<TD CLASS="nav-home"><A HREF="http://manpages.bsd.lv/index.html">Home</A></TD>
+					<TD CLASS="nav-next" STYLE="color: #dddddd;">Next</TD>
+					<TD CLASS="nav-history"><A href="http://manpages.bsd.lv/cgi-bin/cvsweb/history.sgml?cvsroot=manpages">History</A></TD>
+				</TR>
+			</TBODY>
+		</TABLE>
+		<P CLASS="edits">
+			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
+		</p>
 		<DIV>
 			<MAP ID="manpages" NAME="manpages">
 			</MAP>
