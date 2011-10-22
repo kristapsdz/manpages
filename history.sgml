@@ -10,17 +10,26 @@
 			History of UNIX Manpages
 		</H1>
 		<P>
-			Where do UNIX manpages come from?  Who introduced the section-based layout of NAME, SYNOPSIS, and so on?  And for
-			manpage source writers and readers: where were those economical two- and three-letter instructions developed?
+			Where do UNIX manpages come from?  Who introduced the section-based layout of <B>NAME</B>, <B>SYNOPSIS</B>, and so on?
+			And for manpage source writers and readers: where were those economical two- and three-letter instructions developed?
+			The many accounts available on the Internet are ambiguous and at times conflicting.  This is primarily due to the loss
+			of historical materials &mdash; both to time and software licensing &mdash; as well as the mix of software names,
+			developers, architectures, and so on.
 		</P>
 		<P>
-			The many accounts available on the Internet are ambiguous and at times conflicting.  In this article, I reconstruct a
-			history of the UNIX manpage from the original sources, from the 1964 <SPAN CLASS="cmd">RUNOFF</SPAN> onward.
+			In this article, I reconstruct a history of the UNIX manpage from the original sources, from the 1964 <SPAN
+			CLASS="cmd">RUNOFF</SPAN> onward.  I make significant use of the <Q
+			CITE="http://mirror.cc.vt.edu/pub/projects/Ancient_Unix/">Ancient UNIX</Q> source code permissively re-licensed by
+			Caldera International in 2002; the Multics source code as permissivelylicensed by M.I.T.; and the CTSS source code
+			(public domain?).
 		</P>
 		<P>
-			Thanks to Paul Pierce for his CTSS source archive; the Multics Internet Server for the Multics archive; the UNIX
-			Heritage Society for their research UNIX source reconstruction; and Douglas McIlroy and Jerome Saltzer for answering my
-			requests for detailed information.
+			Special thanks to <A HREF="http://www.piercefuller.com/">Paul Pierce</A> for his CTSS <A
+			HREF="http://www.piercefuller.com/library/ctss.html">source archive</A>; Bernard Nivelet for the <A
+			HREF="http://web.mit.edu/multics-history/source/Multics_Internet_Server/Multics_sources.html">Multics Internet
+			Server</A>; the <A HREF="http://www.tuhs.org">UNIX Heritage Society</A> for their research UNIX <A
+			HREF="http://minnie.tuhs.org/cgi-bin/utree.pl">source reconstruction</A>; and last but not least, Douglas McIlroy and
+			Jerome Saltzer for answering my requests for detailed information.
 		</P>
 		<H2>
 			Timeline
