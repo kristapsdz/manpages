@@ -30,8 +30,8 @@
 			HREF="http://web.mit.edu/multics-history/source/Multics_Internet_Server/Multics_sources.html">Multics Internet
 			Server</A>; the <A HREF="http://www.tuhs.org">UNIX Heritage Society</A> for their research UNIX <A
 			HREF="http://minnie.tuhs.org/cgi-bin/utree.pl">source reconstruction</A>; <A
-			HREF="http://www.bitsavers.org/">BitSavers</A> for their historical archive; and last but not least, Douglas McIlroy and
-			Jerome Saltzer for answering my requests for detailed information.
+			HREF="http://www.bitsavers.org/">BitSavers</A> for their historical archive; and last but not least, Douglas McIlroy,
+			Henry Spencer, and Jerome Saltzer for answering my requests for detailed information.
 		</P>
 		<H2>
 			Timeline
@@ -44,7 +44,7 @@
 			HREF="#nextgen">Next Generation</A> of specialised utilities.
 		</P>
 		<P>
-			<IMG SRC="history.png" ALT="Timeline of UNIX manpage utilities" USEMAP="#manpages" BORDER="0">
+			<IMG SRC="history.png" ALT="Timeline of UNIX manpage utilities" USEMAP="#manpages">
 		</P>
 		<H3 ID="prehistory">
 			Prehistory: 1964&ndash;1970
@@ -438,8 +438,7 @@
 			</DT>
 			<DD>
 				<P>
-					In 1989, <A HREF="#clarke">Clarke</A> re-wrote <SPAN CLASS="cmd">ditroff(1)</SPAN> in C++.
-					<!--groff [label="GNU troff(1)" URL="http://www.gnu.org/s/groff/"];//-->
+					...
 				</P>
 			</DD>
 			<DT ID="x1991_awf">
@@ -519,8 +518,32 @@
 			</DT>
 			<DD>
 				<P>
-					...
+					Similar to <A CLASS="cmd" HREF="#x1991_awf">awf</A>, <SPAN CLASS="cmd">mandoc(1)</SPAN> primarily reads
+					<A CLASS="cmd" HREF="#x1979">ditroff(1)</A> macro files, although it has some capability for non-macro
+					input.  It is the first fully semantic parser for manpages, introducing 
 				</P>
+				<P>
+					Since I wrote <SPAN CLASS="cmd">mandoc(1)</SPAN>, I suppose I can provide my own first-hand account.  I
+					wrote the first version of <SPAN CLASS="cmd">mandoc(1)</SPAN>, then called <SPAN
+					CLASS="cmd">mdocml(1)</SPAN>, in November, 2008 to format my <I>mdoc</I> manuals as HTML &mdash; <A
+					CLASS="cmd" HREF="#x1991_groff">groff(1)</A> did not allow CSS-styled output.  In February,
+					2009, I split this utility into <SPAN CLASS="cmd">mdocterm(1)</SPAN> and <SPAN
+					CLASS="cmd">mdoctree(1)</SPAN> after being taunted by Michael Dexter.  In March of 2009, during
+					AsiaBSDCon-2009, I renamed it to <SPAN CLASS="cmd">mandoc(1)</SPAN> with the encouragement of Theo
+					deRaadt, around which time it was committed to OpenBSD.  Ingo Schwarze (OpenBSD) starts working with
+					<SPAN CLASS="cmd">mandoc(1)</SPAN> in June, 2009, along with Joerg Sonnenberg (NetBSD).
+				</P>
+				<DIV CLASS="sources">
+					<P>
+						Sources: 
+					</P>
+					<UL>
+						<LI>
+							<A HREF="http://mdocml.bsd.lv/cgi-bin/cvsweb/?cvsroot=mdocml">CVS source archive</A>,
+							hosted by the <A HREF="http://bsd.lv/">BSD.lv Project</A>.
+						</LI>
+					</UL>
+				</DIV>
 			</DD>
 		</DL>
 		<DIV ID="people">
@@ -537,13 +560,15 @@
 				<DT ID="clarke">Clarke, James</DT>
 				<DD>
 					<P>
-						Homepage: <A HREF="http://www.jclark.com/">James Clarke</A>.
+						Homepage: <A HREF="http://www.jclark.com/">www.jclark.com</A>.
 					</P>
 				</DD>
 				<DT ID="dzonsons">Dzonsons, Kristaps</DT>
 				<DD>
 					<P>
-						...
+						I wrote <A CLASS="cmd" HREF="#x2008_mandoc">mandoc(1)</A> using <A CLASS="cmd"
+						HREF="#x1991_groff">groff(1)</A> manuals as a reference.
+						Homepage: <A HREF="http://kristaps.bsd.lv/">kristaps.bsd.lv</A>.
 					</P>
 				</DD>
 				<DT ID="kernighan">Kernighan, Brian</DT>
@@ -555,8 +580,8 @@
 				<DT ID="madnick">Madnick, Stuart</DT>
 				<DD>
 					<P>
-						Ported <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> to the CP67/CMS and renamed it <A CLASS="cmd"
-						HREF="#x1967_SCRIPT">SCRIPT</A>.
+						While at Honeywell, ported <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> to the CP67/CMS and
+						renamed it <A CLASS="cmd" HREF="#x1967_SCRIPT">SCRIPT</A>.
 					</P>
 				</DD>
 				<DT ID="mcilroy">McIlroy, Douglas</DT>
@@ -575,15 +600,15 @@
 				<DT ID="ossanna">Ossanna, Joseph F.</DT>
 				<DD>
 					<P>
-						Worked on the PDP-11/20 assembly-language <SPAN CLASS="cmd">roff(1)</SPAN>, <SPAN
-						CLASS="cmd">nroff(1)</SPAN>, and <SPAN CLASS="cmd">troff(1)</SPAN> for Versions 1&ndash;7 AT&amp;T UNIX
-						while working at Bell Telephone Labs. 
+						Worked on the PDP-11/20 assembly-language <A HREF="#x1971" CLASS="cmd">roff(1)</A>, <A
+						HREF="#x1972" CLASS="cmd">nroff(1)</A>, and <A HREF="#x1973" CLASS="cmd">troff(1)</A> for
+						Versions 1, 3, and 4 AT&amp;T UNIX while working at Bell Telephone Labs. 
 					</P>
 				</DD>
 				<DT ID="ritchie">Ritchie, Dennis</DT>
 				<DD>
 					<P>
-						...
+						Homepage: <A HREF="http://cm.bell-labs.com/who/dmr/">cm.bell-labs.com/who/dmr</A>.
 					</P>
 				</DD>
 				<DT ID="ritter">Ritter, Gunnar</DT>
@@ -609,7 +634,7 @@
 				<DT ID="thompson">Thompson, Ken</DT>
 				<DD>
 					<P>
-						...
+						Homepage: <A HREF="http://cm.bell-labs.com/who/ken/">cm.bell-labs.com/who/ken</A>.
 					</P>
 				</DD>
 			</DL>
@@ -628,6 +653,7 @@
 		</p>
 		<DIV>
 			<MAP ID="manpages" NAME="manpages">
+				<area shape="rect" href="#x1964_RUNOFF" title="RUNOFF" alt="" coords="4,116,64,144">
 			</MAP>
 		</DIV>
 	</BODY>

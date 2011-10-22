@@ -306,7 +306,7 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 	rm -rf .book
 
 history.html: history.sgml history.map history.png
-	validate --warn index.sgml
+	validate --warn history.sgml
 	( sed -n '1,/<MAP/p' history.sgml ; \
 	  cat history.map ; \
 	  sed -n '/<\/MAP>/,$$p' history.sgml ; ) >$@

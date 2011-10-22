@@ -35,8 +35,8 @@
 			</DIV>
 			.Pp
 			<DIV>
-				<I>Practical UNIX Manuals: mdoc</I> is a guide for writing well-formed and maintainable UNIX manuals
-				(<Q>manpages</Q>) in the <I>mdoc</I> language.
+				<I><A HREF="#mdoc">Practical UNIX Manuals: mdoc</A></I> is a guide for writing well-formed and maintainable UNIX
+				manuals (<Q>manpages</Q>) in the <I>mdoc</I> language.
 			</DIV>
 			.Pp
 			<DIV>
@@ -54,10 +54,11 @@
 				message to disc<A CLASS="external" TITLE="Reveal this e-mail address"
 				HREF="http://www.google.com/recaptcha/mailhide/d?k=01fqH3xoy7rwp-l_5K0BumPA==&amp;c=NTI0bIlVxlrR2xLEqaJxCv-_SGL-rzM8DjAFEivPvNzLi2PxNha85zOyiFYPiprL">...</A>@manpages.bsd.lv.
 			</DIV>
-			.
-			<BR>
-			.Sh <SPAN CLASS="h1">Practical UNIX Manuals: <I>mdoc</I></SPAN>
-			<BR>
+			.Pp
+			<DIV>
+				I also feature the <I><A HREF="#history">History of UNIX Manpages</A></I>, which unfolds the development of
+				manpages from the 1960s to the present day.
+			</DIV>
 			.
 			<DIV>
 				<A HREF="http://creativecommons.org/licenses/by-sa/3.0/"><IMG SRC="license.png" ALT="CC BY-SA"></A>
@@ -66,7 +67,11 @@
 				HREF="http://creativecommons.org/licenses/by-sa/3.0/">Attribution Share-Alike</A>: deriving works must
 				attribute the author(s) and use a similar license.  
 			</DIV>
-			.Pp
+			.
+			<BR>
+			.Sh <SPAN ID="mdoc" CLASS="h1">Practical UNIX Manuals: <I>mdoc</I></SPAN>
+			<BR>
+			.
 			<DIV>
 				Citation information: <a class="external" href="http://kristaps.bsd.lv">Dzonsons, Kristaps</a>.  <I>Practical
 				UNIX Manuals: mdoc</I>.
@@ -195,9 +200,32 @@
 			<BR>
 			.Ed
 			<BR>
+			.Sh <SPAN ID="history" CLASS="h1">The History of UNIX Manpages</SPAN>
+			<BR>
+			.
+			<DIV>
+				Citation information: <a class="external" href="http://kristaps.bsd.lv">Dzonsons, Kristaps</a>.  <I>The History
+				of UNIX Manpages</I>.
+				<BR>
+				Current version: @DATE@, <SPAN CLASS="ver">@VERSION@</SPAN>.
+			</DIV>
+			.
+			<BR>
+			.Lk <SPAN><A HREF="history.html">Full Text</A>: single HTML document</SPAN>
+			<BR>
+			.Lk <SPAN><A HREF="/cgi-bin/cvsweb/history.sgml?cvsroot=manpages">Repository</A>: on-line source repository</SPAN>
+			<BR>
+			.
+			<BR>
 			.Sh <SPAN CLASS="h1">News</SPAN>
 			<BR>
 			.Bl -ohang
+			<BR>
+			.It <SPAN>xx October 2011, <SPAN CLASS="ver">0.1.0</SPAN></SPAN>
+			<DIV>
+				Major addition of the <I><A HREF="#history">History of UNIX Manpages</A></I>.
+			</DIV>
+			.
 			<BR>
 			.It <SPAN>04 September 2011, <SPAN CLASS="ver">0.0.27</SPAN></SPAN>
 			<DIV>
