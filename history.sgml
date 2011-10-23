@@ -62,13 +62,11 @@
 				<P>
 					In fact, several of the abbreviated <SPAN CLASS="cmd">RUNOFF</SPAN> control words are still common in
 					today's manpages (formatted by modern <SPAN CLASS="cmd">troff</SPAN>-like systems), such as
-					<CODE>sp</CODE> and <CODE>br</CODE>.
-				</P>
-				<P>
-					According to <A HREF="#saltzer">Saltzer</A> and the source literature, the syntax of <SPAN
-					CLASS="cmd">RUNOFF</SPAN> inherits from the prior <SPAN CLASS="cmd">DITTO</SPAN>, <SPAN
-					CLASS="cmd">MEMO</SPAN>, and <SPAN CLASS="cmd">MODIFY</SPAN> utilities by M. L. Lowry, 1963.
-					Unfortunately, the sources for these utilities could not be located in the CTSS source archive.
+					<CODE>sp</CODE> and <CODE>br</CODE>.  According to <A HREF="#saltzer">Saltzer</A> and the source
+					literature, the syntax of <SPAN CLASS="cmd">RUNOFF</SPAN> inherits from the prior <SPAN
+					CLASS="cmd">DITTO</SPAN>, <SPAN CLASS="cmd">MEMO</SPAN>, and <SPAN CLASS="cmd">MODIFY</SPAN> utilities
+					by M. L. Lowry, 1963.  Unfortunately, the sources for these utilities could not be located in the CTSS
+					source archive.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -78,9 +76,10 @@
 						<LI>
 							<A CLASS="ref-link" HREF="http://www.piercefuller.com/library/ctss.html">CTSS source
 							listings</A>, hosted by <A HREF="http://www.piercefuller.com/">Paul Pierce</A>.  A copy
-							of the <A HREF="history/RUNOFF.gz">source file</A> containing <SPAN CLASS="cmd">RUNOFF</SPAN> is
-							available locally with permission of Mr. Pierce (see lines 19728, 20014), as well as a
-							copy of the <A HREF="history/RUNOFF.info">manual</A>.
+							of the <A HREF="history/RUNOFF.gz">source file</A> containing <SPAN
+							CLASS="cmd">RUNOFF</SPAN> is available locally with permission of Mr. Pierce and Mr.
+							Saltzer (see lines 19728, 20014), as well as a copy of the <A
+							HREF="history/RUNOFF.info">manual</A>.
 						</LI>
 						<LI>
 							Patricia Crisman and Jerome H. Saltzer, <I><A
@@ -95,8 +94,8 @@
 							Memorandum</I>, CC-244. 6 November, 1964.
 						</LI>
 						<LI>
-							Jerome Saltzer, <I>UNIX manpage history: CTSS RUNOFF</I>.  22 October, 2011.  Email to
-							Kristaps Dzonsons.
+							Jerome Saltzer, <I><A HREF="history/saltzer_22_10_2011.txt">UNIX manpage history: CTSS
+							RUNOFF</A></I>.  22 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 					</UL>
 				</DIV>
@@ -107,7 +106,13 @@
 			<DD>
 				<P>
 					Very little is known about this re-write of <A HREF="#x1964_RUNOFF" CLASS="cmd">RUNOFF</A>, only that it
-					was called <SPAN CLASS="cmd">roff</SPAN> and ran on Bell Labs' GE-635.
+					was called <SPAN CLASS="cmd">roff</SPAN> and ran on Bell Labs' GE-635.  <A HREF="#ritchie">Ritchie</A>
+					is commonly cited as participating in this port, and this is not disputed.  Rudd Canaday is also
+					mentioned, and <A HREF="#mcilroy">McIlroy</A> verifies this possibility.
+				</P>
+				<P>
+					The accounts of both <A HREF="#mcilroy">McIlroy</A> and <A HREF="#saltzer">Saltzer</A> conclude that
+					this version was likely written in BCPL, much like <A HREF="#x1969">runoff</A>.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -115,16 +120,24 @@
 					</P>
 					<UL>
 						<LI>
-							Douglas McIlroy, <I>UNIX manpage history: runoff</I>.  21 October, 2011.  Email to
-							Kristaps Dzonsons.
+							Douglas McIlroy, <I><A HREF="history/mcilroy_21_10_2011.txt">UNIX manpage history:
+							runoff</A></I>.  21 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 						<LI>
-							Douglas McIlroy, <I>UNIX manpage history: runoff</I>.  22 October, 2011.  Email to
-							Kristaps Dzonsons.
+							Douglas McIlroy, <I><A HREF="history/mcilroy_22_10_2011.txt">UNIX manpage history:
+							runoff</A></I>.  22 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 						<LI>
-							Jerome Saltzer, <I>UNIX manpage history: CTSS RUNOFF</I>.  22 October, 2011.  Email to
-							Kristaps Dzonsons.
+							Douglas McIlroy, <I><A HREF="history/mcilroy_23_10_2011.txt">UNIX manpage history:
+							runoff</A></I>.  23 October, 2011.  Email to Kristaps Dzonsons.
+						</LI>
+						<LI>
+							Jerome Saltzer, <I><A HREF="history/saltzer_22_10_2011.txt">UNIX manpage history: CTSS
+							RUNOFF</A></I>.  22 October, 2011.  Email to Kristaps Dzonsons.
+						</LI>
+						<LI>
+							Jerome Saltzer, <I><A HREF="history/saltzer_23_10_2011.txt">UNIX manpage history: CTSS
+							RUNOFF</A></I>.  23 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 					</UL>
 				</DIV>
@@ -136,8 +149,8 @@
 				<P>
 					In 1967, <A HREF="#madnick">Madnick</A> ported the <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> code to
 					the IBM CP67/CMS.  The documentation of <SPAN CLASS="cmd">SCRIPT</SPAN> explicitly mentions the
-					backspace-encoding convention used to this day by <SPAN CLASS="cmd">troff(1)</SPAN> descendants on UNIX
-					terminals (of course, this was common practice in mechanical type-writers before then):
+					backspace-encoding convention used to this day by manpage formatters on UNIX terminals (of course, this
+					was common practice in mechanical type-writers before then):
 				</P>
 				<BLOCKQUOTE CITE="http://www.bitsavers.org/pdf/ibm/360/cp67/">
 					<P>
@@ -147,9 +160,9 @@
 					</P>
 				</BLOCKQUOTE>
 				<P>
-					According to IBM's z-OS product literature, direct descendents of <SPAN CLASS="cmd">SCRIPT</SPAN> are
-					still in use (in 2011).  Source code for the original re-write of <A HREF="#x1964_RUNOFF">RUNOFF</A>
-					could not be located, but a considerable amount of documentation exists for this utility.
+					Source code for the original re-write of <A HREF="#x1964_RUNOFF">RUNOFF</A> could not be located,
+					although a considerable amount of documentation exists for this utility.  The dates of <A
+					HREF="#madnick">Madnick</A>'s porting derive from his publication and independent accounts.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -168,13 +181,8 @@
 							3600-05.2.005.  October, 1970.
 						</LI>
 						<LI>
-							IBM <A
-							HREF="http://www-03.ibm.com/systems/z/os/zos/printsoftware/dcfhome_z_ww.html">Document
-							Composition Facility</A>, z-OS product literature.
-						</LI>
-						<LI>
-							Jerome Saltzer, <I>UNIX manpage history: CTSS RUNOFF</I>.  22 October, 2011.  Email to
-							Kristaps Dzonsons.
+							Jerome Saltzer, <I><A HREF="saltzer_22_10_2011.txt">UNIX manpage history: CTSS
+							RUNOFF</A></I>.  22 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 					</UL>
 				</DIV>
@@ -184,11 +192,11 @@
 			</DT>
 			<DD>
 				<P>
-					In 1969, <A HREF="#mcilroy">McIlroy</A> released a BCPL port of <A CLASS="cmd"
-					HREF="#x1964_RUNOFF">RUNOFF</A> in order <Q>to extend the runoff model</Q> to the Multics GE-645
-					computer.  He did not refer to the CTSS <A HREF="#x1964_RUNOFF">RUNOFF</A> in writing <SPAN
-					CLASS="cmd">runoff</SPAN>, nor the GE-635 <A HREF="#x1967_runoff">runoff</A>.  The progress of this
-					utility subsequent 1969 is recorded in the Multics BCPL source as ported by R. F. Mabee in 1974:
+					In 1969, <A HREF="#mcilroy">McIlroy</A> released an influential BCPL port of <A CLASS="cmd"
+					HREF="#x1964_RUNOFF">RUNOFF</A> in order <Q>to extend the runoff model</Q> to the CTSS GE-645
+					computer.  He did not refer to the CTSS <A HREF="#x1964_RUNOFF">RUNOFF</A> source code in writing <SPAN
+					CLASS="cmd">runoff</SPAN>, nor the GE-635 <A HREF="#x1967_roff">roff</A>.  The progress of this utility
+					subsequent 1969 is recorded in the Multics BCPL source as ported by R. F. Mabee in 1974:
 				</P>
 				<BLOCKQUOTE CITE="http://web.mit.edu/multics-history/source/Multics/ldd/system_library_standard/source/bound_runoff_.s.archive">
 					<P>
@@ -228,16 +236,16 @@
 							terms.
 						</LI>
 						<LI>
-							Douglas McIlroy, <I>UNIX manpage history: runoff</I>.  21 October, 2011.  Email to
-							Kristaps Dzonsons.
+							Douglas McIlroy, <I><A HREF="history/mcilroy_21_10_2011.txt">UNIX manpage history:
+							runoff</A></I>.  21 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 						<LI>
-							Douglas McIlroy, <I>UNIX manpage history: runoff</I>.  22 October, 2011.  Email to
-							Kristaps Dzonsons.
+							Douglas McIlroy, <I><A HREF="history/mcilroy_22_10_2011.txt">UNIX manpage history:
+							runoff</A></I>.  22 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 						<LI>
-							Jerome Saltzer, <I>UNIX manpage history: CTSS RUNOFF</I>.  22 October, 2011.  Email to
-							Kristaps Dzonsons.
+							Jerome Saltzer, <I><A HREF="history/saltzer_22_10_2011.txt">UNIX manpage history: CTSS
+							RUNOFF</A></I>.  22 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 					</UL>
 				</DIV>
@@ -261,8 +269,23 @@
 			</DT>
 			<DD>
 				<P>
-					...
+					After being exposed to <A HREF="#mcilroy">McIlroy</A>'s <A HREF="#x1969">runoff</A> and <A
+					HREF="#saltzer">Saltzer</A>'s <A HREF="#x1964_RUNOFF">RUNOFF</A>, <A HREF="#kernighan">Kernighan</A>
+					wrote a port in Fortran while working on his doctoral thesis at Princeton (to format the thesis).  By
+					his account, the system was used for five more years by the student agency.  The punch-card source has
+					long since been lost.
 				</P>
+				<DIV CLASS="sources">
+					<P>
+						Sources: 
+					</P>
+					<UL>
+						<LI>
+							Brian Kernighan, <I><A HREF="history/kernighan_23_10_2011.txt">Reconstructing UNIX
+							manpage history: ditroff(1)</A></I>.  23 October, 2011.  Email to Kristaps Dzonsons.
+						</LI>
+					</UL>
+				</DIV>
 			</DD>
 			<DT ID="x1970_rf">
 				1970: <SPAN CLASS="cmd">rf</SPAN> (<A HREF="#thompson">Ken Thompson</A>)
@@ -270,8 +293,19 @@
 			</DT>
 			<DD>
 				<P>
-					...
+					
 				</P>
+				<DIV CLASS="sources">
+					<P>
+						Sources: 
+					</P>
+					<UL>
+						<LI>
+							Ken Thompson, <I><A HREF="history/thompson_23_10_2011.txt">UNIX manpages &amp; questions
+							regarding roff(1) history</A></I>.  23 October, 2011.  Email to Kristaps Dzonsons.
+						</LI>
+					</UL>
+				</DIV>
 			</DD>
 			<DT ID="x1971">
 				1971: <SPAN CLASS="cmd">roff(1)</SPAN> (<A HREF="#ritchie">Dennis Ritchie</A>)
@@ -317,24 +351,24 @@
 							Society</A>.
 						</LI>
 						<LI>
-							Douglas McIlroy, <I>UNIX manpage history: runoff</I>.  21 October, 2011.  Email to
-							Kristaps Dzonsons.
+							Douglas McIlroy, <I><A HREF="history/mcilroy_21_10_2011.txt">UNIX manpage history:
+							runoff</A></I>.  21 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 						<LI>
-							Douglas McIlroy, <I>UNIX manpage history: runoff</I>.  22 October, 2011.  Email to
-							Kristaps Dzonsons.
+							Douglas McIlroy, <I><A HREF="history/mcilroy_22_10_2011.txt">UNIX manpage history:
+							runoff</A></I>.  22 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 						<LI>
-							Jerome Saltzer, <I>UNIX manpage history: CTSS RUNOFF</I>.  22 October, 2011.  Email to
-							Kristaps Dzonsons.
+							Jerome Saltzer, <I><A HREF="history/saltzer_22_10_2011.txt">UNIX manpage history: CTSS
+							RUNOFF</A></I>.  22 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 						<LI>
-							Brian Kernighan, <I>UNIX manpage history: ditroff(1)</I>.  23 October, 2011.  Email to
-							Kristaps Dzonsons.
+							Brian Kernighan, <I><A HREF="history/kernighan_23_10_2011.txt">Reconstructing UNIX
+							manpage history: ditroff(1)</A></I>.  23 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 						<LI>
-							Ken Thompson, <I>UNIX manpage history: roff(1)</I>.  23 October, 2011.  Email to
-							Kristaps Dzonsons.
+							Ken Thompson, <I><A HREF="history/thompson_23_10_2011.txt">UNIX manpages & questions
+							regarding roff(1) history</A></I>.  23 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 					</UL>
 				</DIV>
@@ -372,12 +406,12 @@
 							<I>UNIX Programmer's Manual</I>, First Edition, Section 1.  November, 1971.
 						</LI>
 						<LI>
-							Douglas McIlroy, <I>UNIX manpage history: runoff</I>.  21 October, 2011.  Email to
-							Kristaps Dzonsons.
+							Douglas McIlroy, <I><A HREF="history/mcilroy_21_10_2011.txt">UNIX manpage history:
+							runoff</A></I>.  21 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 						<LI>
-							Ken Thompson, <I>UNIX manpage history: roff</I>.  23 October, 2011.  Email to
-							Kristaps Dzonsons.
+							Ken Thompson, <I><A HREF="history/thompson_23_10_2011.txt">UNIX manpages &amp; questions
+							regarding roff(1) history.</A></I>.  23 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 						<LI>
 							<I><A
@@ -430,8 +464,8 @@
 							Society</A>.
 						</LI>
 						<LI>
-							Douglas McIlroy, <I>UNIX manpage history: runoff</I>.  21 October, 2011.  Email to
-							Kristaps Dzonsons.
+							Douglas McIlroy, <I><A HREF="history/mcilroy_21_10_2011.txt">UNIX manpage history:
+							runoff</A></I>.  21 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 					</UL>
 				</DIV>
@@ -539,8 +573,8 @@
 							Science Department</A>.
 						</LI>
 						<LI>
-							Henry Spencer, <I>UNIX manpage history: awf</I>.  22 October, 2011.  Email to
-							Kristaps Dzonsons.
+							Henry Spencer, <I><A HREF="history/spencer_22_10_2011.txt">UNIX manpage history:
+							awf</A></I>.  22 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 					</UL>
 				</DIV>

@@ -11,7 +11,7 @@ digraph manpages {
 	subgraph { 
 		node [color=1];
 		runoff1 [label="RUNOFF" URL="#x1964_RUNOFF"];
-		runoff2 [label="roff1" URL="#x1967_roff"];
+		runoff2 [label="roff" URL="#x1967_roff"];
 		script [label="SCRIPT" URL="#x1967_SCRIPT"];
 		runoff3 [label="runoff" URL="#x1969"]; 
 		compose [label="compose" URL="#x1976_compose"]; 
