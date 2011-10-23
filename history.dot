@@ -14,7 +14,7 @@ digraph manpages {
 		runoff2 [label="roff" URL="#x1967_roff"];
 		script [label="SCRIPT" URL="#x1967_SCRIPT"];
 		runoff3 [label="runoff" URL="#x1969"]; 
-		compose [label="compose" URL="#x1976_compose"]; 
+		compose [label="compose" URL="#x1974_compose"]; 
 	}
 
 	subgraph {
@@ -52,7 +52,7 @@ digraph manpages {
 
 	subgraph {
 		1964 -> 1967 -> 1969 -> 1970 -> 1971 -> 1972 -> 
-		1973 -> 1976 -> 1979 -> 1989 -> 1991 -> 2005 -> 2008;
+		1973 -> 1974 -> 1979 -> 1989 -> 1991 -> 2005 -> 2008;
 	}
 
 	{ rank = same; 1964 runoff1 };
@@ -62,7 +62,7 @@ digraph manpages {
 	{ rank = same; 1971 roff1 };
 	{ rank = same; 1972 nroff };
 	{ rank = same; 1973 troff };
-	{ rank = same; 1976 compose };
+	{ rank = same; 1974 compose };
 	{ rank = same; 1979 ditroff };
 	{ rank = same; 1989 groff };
 	{ rank = same; 1991 awf cawf };

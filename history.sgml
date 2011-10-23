@@ -30,7 +30,11 @@
 			Server</A>; the <A HREF="http://www.tuhs.org">UNIX Heritage Society</A> for their research UNIX <A
 			HREF="http://minnie.tuhs.org/cgi-bin/utree.pl">source reconstruction</A>; <A
 			HREF="http://www.bitsavers.org/">BitSavers</A> for their historical archive; and last but not least, Brian Kernighan,
-			Douglas McIlroy, Jerome Saltzer, Henry Spencer, and Ken Thompson, for letting me pester them with questions.
+			Douglas McIlroy, Jerome Saltzer, Henry Spencer, Ken Thompson, and Tom Van Vleck for letting me pester them with
+			questions.
+		</P>
+		<P>
+			Please see the <A HREF="#copyright">Copyright</A> section if you plan on reproducing parts of this work.
 		</P>
 		<H2>
 			Timeline
@@ -106,13 +110,14 @@
 			<DD>
 				<P>
 					Very little is known about this re-write of <A HREF="#x1964_RUNOFF" CLASS="cmd">RUNOFF</A>, only that it
-					was called <SPAN CLASS="cmd">roff</SPAN> and ran on Bell Labs' GE-635.  <A HREF="#ritchie">Ritchie</A>
-					is commonly cited as participating in this port, and this is not disputed.  Rudd Canaday is also
-					mentioned, and <A HREF="#mcilroy">McIlroy</A> verifies this possibility.
+					was called <SPAN CLASS="cmd">roff</SPAN> and ran on Bell Labs' GCOS-II GE-635 (XXX: why was it ported?).
+					<A HREF="#ritchie">Ritchie</A> is commonly cited as participating in this port, and this is not
+					disputed.  Rudd Canaday is also mentioned as an author, and <A HREF="#mcilroy">McIlroy</A> verifies this
+					possibility.
 				</P>
 				<P>
 					The accounts of both <A HREF="#mcilroy">McIlroy</A> and <A HREF="#saltzer">Saltzer</A> conclude that
-					this version was likely written in BCPL, much like <A HREF="#x1969">runoff</A>.
+					this version was likely written in BCPL, much like <A CLASS="cmd" HREF="#x1969">runoff</A>.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -148,9 +153,10 @@
 			<DD>
 				<P>
 					In 1967, <A HREF="#madnick">Madnick</A> ported the <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> code to
-					the IBM CP67/CMS.  The documentation of <SPAN CLASS="cmd">SCRIPT</SPAN> explicitly mentions the
-					backspace-encoding convention used to this day by manpage formatters on UNIX terminals (of course, this
-					was common practice in mechanical type-writers before then):
+					the IBM CP67/CMS as <SPAN CLASS="cmd">SCRIPT</SPAN> (XXX: why did he rename it?).  The documentation of
+					<SPAN CLASS="cmd">SCRIPT</SPAN> explicitly mentions the backspace-encoding convention used to this day
+					by manpage formatters on UNIX terminals (of course, this was common practice in mechanical type-writers
+					before then):
 				</P>
 				<BLOCKQUOTE CITE="http://www.bitsavers.org/pdf/ibm/360/cp67/">
 					<P>
@@ -193,10 +199,10 @@
 			<DD>
 				<P>
 					In 1969, <A HREF="#mcilroy">McIlroy</A> released an influential BCPL port of <A CLASS="cmd"
-					HREF="#x1964_RUNOFF">RUNOFF</A> in order <Q>to extend the runoff model</Q> to the CTSS GE-645
-					computer.  He did not refer to the CTSS <A HREF="#x1964_RUNOFF">RUNOFF</A> source code in writing <SPAN
-					CLASS="cmd">runoff</SPAN>, nor the GE-635 <A HREF="#x1967_roff">roff</A>.  The progress of this utility
-					subsequent 1969 is recorded in the Multics BCPL source as ported by R. F. Mabee in 1974:
+					HREF="#x1964_RUNOFF">RUNOFF</A> in order <Q>to extend the runoff model</Q> to the CTSS GE-645 computer.
+					He did not refer to the CTSS <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> source code in writing <SPAN
+					CLASS="cmd">runoff</SPAN>, nor the GE-635 <A CLASS="cmd" HREF="#x1967_roff">roff</A>.  The progress of
+					this utility subsequent 1969 is recorded in the Multics BCPL source as ported by R. F. Mabee in 1974:
 				</P>
 				<BLOCKQUOTE CITE="http://web.mit.edu/multics-history/source/Multics/ldd/system_library_standard/source/bound_runoff_.s.archive">
 					<P>
@@ -218,8 +224,7 @@
 					CLASS="cmd">runoff</SPAN> in 1969.  By 1971 it was <SPAN CLASS="cmd">roff</SPAN>.  Now I'm not so sure I
 					got the name from <A HREF="#morris">Morris</A>.  Conceivably it came from <A
 					HREF="#thompson">Thompson</A>, who was big on shortening names.  My 1971 description came in January;
-					the first ediion Unix manual is dated December 1971.</Q>  In this article, I use the name <SPAN
-					CLASS="cmd">runoff</SPAN>.
+					the first ediion Unix manual is dated December 1971.</Q> 
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -229,7 +234,7 @@
 						<LI>
 							<A CLASS="ref-link"
 							HREF="http://web.mit.edu/multics-history/source/Multics/ldd/system_library_standard/source/bound_runoff_.s.archive">
-							Multics source listings</A>, hosted by the <A
+							Runoff source listings</A>, hosted by the <A
 							HREF="http://web.mit.edu/multics-history/source/Multics_Internet_Server/Multics.html">Multics
 							Internet Server</A>.  A copy of the <A HREF="history/runoff.s.gz"><SPAN
 							CLASS="cmd">runoff</SPAN> source file</A> is available locally under the file's license
@@ -250,13 +255,47 @@
 					</UL>
 				</DIV>
 			</DD>
-			<DT ID="x1976_compose">
-				1976: <SPAN CLASS="cmd">COMPOSE</SPAN> (<A HREF="#wallman">Edwin Wallman</A>)
+			<DT ID="x1974_compose">
+				1974: <SPAN CLASS="cmd">compose</SPAN> (<A HREF="#capps">Dennis Capps</A>)
 			</DT>
 			<DD>
 				<P>
-					...
+					The <SPAN CLASS="cmd">compose</SPAN> utility, which may have been born as <SPAN
+					CLASS="cmd">runoff</SPAN> before being renamed, was ported to PL/I by <A HREF="#capps">Capps</A> for the
+					Multics Honeywell 6180.  It was later tuned and improved by Ed Wallman.  Tom Van Vleck, Wallman's
+					manager in mid-1978, recounts the porting effort <Q>to produce photo-typset manuals and eliminate
+					dependence on BCPL</Q>.  (Note: the primary source erroneously refers to <A HREF="#ossanna">Ossanna</A>
+					as writing the BCPL <SPAN CLASS="cmd">runoff</SPAN>; it was in fact <A HREF="#mcilroy">McIlroy</A>.)
 				</P>
+				<DIV CLASS="sources">
+					<P>
+						Sources: 
+					</P>
+					<UL>
+						<LI>
+							MTB-346, 1977-10-11, New runoff Revisited, Ed Wallman.  (Not available.)
+						</LI>
+						<LI>
+							MTB-337, 1977-05-09, New runoff Implementation, Ed Wallman.  (Not available.)
+						</LI>
+						<LI>
+							MTB-165, 1975-03-03, New Runoff, Dennis Capps.  (Not available.)
+						</LI>
+						<LI>
+							Tom Van Vleck, <I><A HREF="history/vleck_22_10_2011.txt">Origin date of Wallman's
+							COMPOSE</A></I>. 22 October, 2011.  Email to Kristaps Dzonsons.
+						</LI>
+						<LI>
+							<A CLASS="ref-link"
+							HREF="http://web.mit.edu/multics-history/source/Multics/ldd/system_library_unbundled/source/bound_compose_.s.archive">
+							Compose source listings</A>, hosted by the <A
+							HREF="http://web.mit.edu/multics-history/source/Multics_Internet_Server/Multics.html">Multics
+							Internet Server</A>.  A copy of the <A HREF="history/compose.s.gz"><SPAN
+							CLASS="cmd">compose</SPAN> source file</A> is available locally under the file's license
+							terms.
+						</LI>
+					</UL>
+				</DIV>
 			</DD>
 		</DL>
 		<H3 ID="classical">
@@ -273,7 +312,7 @@
 					HREF="#saltzer">Saltzer</A>'s <A HREF="#x1964_RUNOFF">RUNOFF</A>, <A HREF="#kernighan">Kernighan</A>
 					wrote a port in Fortran while working on his doctoral thesis at Princeton (to format the thesis).  By
 					his account, the system was used for five more years by the student agency.  The punch-card source has
-					long since been lost.
+					long since been lost.  (XXX: what architecture/system was this?)
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -293,7 +332,10 @@
 			</DT>
 			<DD>
 				<P>
-					
+					<A HREF="#thompson">Thompson</A> wrote a PDP-7 port of either the BCPL <A CLASS="cmd"
+					HREF="#x1969">runoff</A> or directly from the CTSS <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A>.  This
+					fork was an evolutionary dead-end, replaced by the PDP-11 <A CLASS="cmd" HREF="#x1971">roff(1)</A> which
+					was written at around the same time.  The source code for this port has long since been lost.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -434,7 +476,9 @@
 				<P>
 					<A HREF="#ossanna">Ossanna</A> started writing <SPAN CLASS="cmd">troff(1)</SPAN> from his PDP-11/20 <A
 					CLASS="cmd" HREF="#x1972">nroff(1)</A> sources for Version 4 AT&amp;T UNIX.  It's widely asserted that
-					the driving motivation was to create output for the CAT phototypsetter.
+					the driving motivation was to create output for the CAT phototypsetter.  Unlike his earlier <A
+					CLASS="cmd" HREF="#x1972">nroff(1)</A> work, <SPAN CLASS="cmd">troff</SPAN> was written entirely in the
+					C language.  Unfortunately, Ossanna died (in late 1977) before completing this work.  
 				</P>
 				<P>
 					Original sources for this version of AT&amp;T UNIX are also lost; however, the manual still exists, and
@@ -446,6 +490,10 @@
 						Sources: 
 					</P>
 					<UL>
+						<LI>
+							Brian Kernighan, <I><A HREF="history/kernighan_23_10_2011.txt">Reconstructing UNIX
+							manpage history: ditroff(1)</A></I>.  23 October, 2011.  Email to Kristaps Dzonsons.
+						</LI>
 						<LI>
 							<I><A
 							HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V4/man/man1/troff.1">troff</A></I>,
@@ -475,21 +523,33 @@
 			</DT>
 			<DD>
 				<P>
-					Following <A CLASS="cmd" HREF="#x1973">troff(1)</A>, <A HREF="#ossanna">Ossanna</A> started re-writing
-					the PDP-11/20 sources in C.  Sadly, he died before completion, and the work was resumed by <A
-					HREF="#kernighan">Kernighan</A>.
+					The <A CLASS="cmd" HREF="#x1973">troff(1)</A> sources were untouched for nearly two years until resumed
+					by <A HREF="#kernighan">Kernighan</A>:
 				</P>
+				<BLOCKQUOTE CITE="history/kernighan_23_10_2011.txt">
+					<P>
+						After Joe <A HREF="#ossanna">Ossanna</A> died in late 1977, <A CLASS="cmd"
+						HREF="#x1973">troff</A> was static for probably close to two years, since no one had the time
+						and courage to touch it.  It was entirely in C at that point, somewhat over 9000 lines as I
+						remember.  I simply modified it, gradually getting around some of the limitations on fonts,
+						making use of dynamic memory, and generating "device-independent" output for devices whose
+						properties were specified in dynamically loaded files.
+					</P>
+				</BLOCKQUOTE>
 				<P>
-					The result is the first intact UNIX <SPAN CLASS="cmd">troff(1)</SPAN> source: in the sources, <SPAN
-					CLASS="cmd">ditroff(1)</SPAN> isn't named as such (when was it termed as such?).  By Version 7 AT&amp;T
+					The result is the first intact UNIX <SPAN CLASS="cmd">troff(1)</SPAN> source.  By Version 7 AT&amp;T
 					UNIX, both <SPAN CLASS="cmd">nroff(1)</SPAN> and <SPAN CLASS="cmd">troff(1)</SPAN> are built from the
-					same C sources while <SPAN CLASS="cmd">roff(1)</SPAN> is still built in its PDP-11/20 assembly.
+					same C sources, separated by preprocessor conditionals, while <SPAN CLASS="cmd">roff(1)</SPAN> was still
+					built in its PDP-11/20 assembly.  The <SPAN CLASS="cmd">ditroff(1)</SPAN> name origin is unknown.  <A
+					HREF="#kernighan">Kernighan</A> writes, <Q CITE="history/kernighan_23_10_2011.txt">I'm pretty sure that
+					I only talked about a "device independent troff"; the name "ditroff" came from somewhere else, and I've
+					never been fond of it.</Q>
 				</P>
 				<P>
-					The UNIX/32V port of Version 7 AT&amp;T UNIX to the VAX architecture also contains the <SPAN
-					CLASS="cmd">troff(1)</SPAN> sources (of course in C).  The inclusion of <SPAN
-					CLASS="cmd">troff(1)</SPAN> in ported systems quickly became the norm; most modern <SPAN
-					CLASS="cmd">troff(1)</SPAN> and <SPAN CLASS="cmd">nroff(1)</SPAN> systems descend from this utility.
+					The UNIX/32V port of Version 7 AT&amp;T UNIX to the VAX architecture also contains the new <SPAN
+					CLASS="cmd">troff(1)</SPAN> sources.  The inclusion of <SPAN CLASS="cmd">troff(1)</SPAN> in ported
+					systems quickly became the norm; most modern <SPAN CLASS="cmd">troff(1)</SPAN> and <SPAN
+					CLASS="cmd">nroff(1)</SPAN> systems descend from this utility.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -507,6 +567,15 @@
 							HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V7/usr/src/cmd/troff">Version 7
 							AT&amp;T source listings</A>, hosted by the <A HREF="http://www.tuhs.org">UNIX Heritage
 							Society</A>.
+						</LI>
+						<LI>
+							Brian Kernighan, <I><A HREF="history/kernighan_23_10_2011.txt">Reconstructing UNIX
+							manpage history: ditroff(1)</A></I>.  23 October, 2011.  Email to Kristaps Dzonsons.
+						</LI>
+						<LI>
+							<I><A
+							HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V7/usr/man/man1/troff.1">troff</A></I>,
+							<I>UNIX Programmer's Manual</I>, Seventh Edition, Section 1.  11 January, 1979.
 						</LI>
 					</UL>
 				</DIV>
@@ -638,6 +707,12 @@
 						...
 					</P>
 				</DD>
+				<DT ID="capps">Capps, Dennis</DT>
+				<DD>
+					<P>
+						...
+					</P>
+				</DD>
 				<DT ID="clarke">Clarke, James</DT>
 				<DD>
 					<P>
@@ -719,6 +794,28 @@
 					</P>
 				</DD>
 			</DL>
+		</DIV>
+		<DIV ID="copyright">
+			<H2>
+				Copyright
+			</H2>
+			<P>
+				The content of this page are available under Creative Commons' <A CLASS="external"
+				HREF="http://creativecommons.org/licenses/by-sa/3.0/">Attribution Share-Alike</A>: deriving works must attribute the
+				author(s) and use a similar license.  However, cited communications are copyright the sender, and not covered by this
+				license.  A list of these follows:
+			</P>
+			<UL>
+				<LI><A HREF="history/kernighan_23_10_2011.txt">history/kernighan_23_10_2011.txt</A></LI>
+				<LI><A HREF="history/mcilroy_21_10_2011.txt">history/mcilroy_21_10_2011.txt</A></LI>
+				<LI><A HREF="history/mcilroy_22_10_2011.txt">history/mcilroy_22_10_2011.txt</A></LI>
+				<LI><A HREF="history/mcilroy_23_10_2011.txt">history/mcilroy_23_10_2011.txt</A></LI>
+				<LI><A HREF="history/saltzer_22_10_2011.txt">history/saltzer_22_10_2011.txt</A></LI>
+				<LI><A HREF="history/saltzer_23_10_2011.txt">history/saltzer_23_10_2011.txt</A></LI>
+				<LI><A HREF="history/spencer_22_10_2011.txt">history/spencer_22_10_2011.txt</A></LI>
+				<LI><A HREF="history/thompson_23_10_2011.txt">history/thompson_23_10_2011.txt</A></LI>
+				<LI><A HREF="history/vleck_22_10_2011.txt">history/vleck_22_10_2011.txt</A></LI>
+			</UL>
 		</DIV>
 		<TABLE CLASS="nav">
 			<TBODY>
