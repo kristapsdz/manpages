@@ -13,16 +13,15 @@
 		<P>
 			Where do UNIX manpages come from?  Who introduced the section-based layout of <B>NAME</B>, <B>SYNOPSIS</B>, and so on?
 			And for manpage source writers and readers: where were those economical two- and three-letter instructions developed?
-			The many accounts available on the Internet are ambiguous and at times conflicting.  This is primarily due to the loss
-			of historical materials &mdash; both to time and software licensing &mdash; as well as the mix of software names,
-			developers, architectures, and so on.
+			The many accounts available on the Internet are ambiguous and at times conflicting.  This is due primarily to the loss
+			of historical materials &mdash; only recently were the primary historical sources re-licensed and made available to the
+			public.
 		</P>
 		<P>
-			In this article, I reconstruct a history of the UNIX manpage from the original sources, from the 1964 <SPAN
-			CLASS="cmd">RUNOFF</SPAN> onward.  I make significant use of the <Q
-			CITE="http://mirror.cc.vt.edu/pub/projects/Ancient_Unix/">Ancient UNIX</Q> source code permissively re-licensed by
-			Caldera International in 2002; the Multics source code as permissivelylicensed by M.I.T.; and the CTSS source code
-			(public domain?).
+			In this article, I reconstruct the history of the UNIX manpage from <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A>
+			onward.  I make significant use of the <Q CITE="http://mirror.cc.vt.edu/pub/projects/Ancient_Unix/">Ancient UNIX</Q>
+			source code permissively re-licensed by Caldera International in 2002; the Multics source code as permissively licensed
+			by M.I.T.; and the CTSS source code (public domain?).
 		</P>
 		<P>
 			Special thanks to <A HREF="http://www.piercefuller.com/">Paul Pierce</A> for his CTSS <A
@@ -30,20 +29,13 @@
 			HREF="http://web.mit.edu/multics-history/source/Multics_Internet_Server/Multics_sources.html">Multics Internet
 			Server</A>; the <A HREF="http://www.tuhs.org">UNIX Heritage Society</A> for their research UNIX <A
 			HREF="http://minnie.tuhs.org/cgi-bin/utree.pl">source reconstruction</A>; <A
-			HREF="http://www.bitsavers.org/">BitSavers</A> for their historical archive; and last but not least, Douglas McIlroy,
-			Henry Spencer, and Jerome Saltzer for answering my requests for detailed information.
+			HREF="http://www.bitsavers.org/">BitSavers</A> for their historical archive; and last but not least, Brian Kernighan,
+			Douglas McIlroy, Jerome Saltzer, Henry Spencer, and Ken Thompson, for letting me pester them with questions.
 		</P>
 		<H2>
 			Timeline
 		</H2>
-		<P>
-			This section is a time-oriented history of the utilities and formats relevant to the UNIX manpage.  I begin with <A
-			HREF="#prehistory">Prehistory</A>, from the time before UNIX, then continue with the <A HREF="#classical">Classical
-			Age</A> establishing the conventions that persist to the present day.  I then consider the <A
-			HREF="#renaissance">Renaissance</A>, when earlier utilities were re-written (for various reasons), and finally the <A
-			HREF="#nextgen">Next Generation</A> of specialised utilities.
-		</P>
-		<P>
+		<P STYLE="text-align: center;">
 			<IMG SRC="history.png" ALT="Timeline of UNIX manpage utilities" USEMAP="#manpages">
 		</P>
 		<H3 ID="prehistory">
@@ -64,7 +56,7 @@
 					<P>
 						Input generally consists of English text, 36O or fewer characters to a line. Control words must
 						begin a new line, and they begin with a period so that they may be distinguished from other
-						text. RUNOFF does not print the control words.
+						text. <SPAN CLASS="cmd">RUNOFF</SPAN> does not print the control words.
 					</P>
 				</BLOCKQUOTE>
 				<P>
@@ -114,7 +106,7 @@
 			<DD>
 				<P>
 					Very little is known about this re-write of <A HREF="#x1964_RUNOFF" CLASS="cmd">RUNOFF</A>, only that it
-					was called <SPAN CLASS="cmd">roff</SPAN> and [probably] ran on Bell Labs' GE-635.
+					was called <SPAN CLASS="cmd">roff</SPAN> and ran on Bell Labs' GE-635.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -148,15 +140,15 @@
 				</P>
 				<BLOCKQUOTE CITE="http://www.bitsavers.org/pdf/ibm/360/cp67/">
 					<P>
-						Thus the backspace key allows underscoring and overprinting at the terminal for SCRIPT files.
-						The logical backspace character prints only when entered and does not take up a column in the
-						record; it logically backspaces one column...
+						Thus the backspace key allows underscoring and overprinting at the terminal for <SPAN
+						CLASS="cmd">SCRIPT</SPAN> files.  The logical backspace character prints only when entered and
+						does not take up a column in the record; it logically backspaces one column...
 					</P>
 				</BLOCKQUOTE>
 				<P>
 					According to IBM's z-OS product literature, direct descendents of <SPAN CLASS="cmd">SCRIPT</SPAN> are
-					still in use.  Source code for the original re-write of <A HREF="#x1964_RUNOFF">RUNOFF</A> could not be
-					located.
+					still in use (in 2011).  Source code for the original re-write of <A HREF="#x1964_RUNOFF">RUNOFF</A>
+					could not be located, but a considerable amount of documentation exists for this utility.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -199,22 +191,26 @@
 				</P>
 				<BLOCKQUOTE CITE="http://web.mit.edu/multics-history/source/Multics/ldd/system_library_standard/source/bound_runoff_.s.archive">
 					<P>
-						The first ROFF for Multics was written in March, 1969, by Doug McIlroy of Bell Labs.  Art Evans
-						made extensive modifications to it in May and June, 1969, adding many comments and making
-						various changes.  Footnoting added by Dennis Capps in 1970.  Maintained by Harwell Thrasher in
-						1971.  Many new features added and bugs fixed by R Mabee in 1971-1972.  RUNOFF and BCPL were
-						brought over to the 6180 Multics (from 645) in May of 1973 by R F Mabee.
+						The first <SPAN CLASS="cmd">ROFF</SPAN> for Multics was written in March, 1969, by Doug <A
+						HREF="#mcilroy">McIlroy</A> of Bell Labs.  Art Evans made extensive modifications to it in May
+						and June, 1969, adding many comments and making various changes.  Footnoting added by Dennis
+						Capps in 1970.  Maintained by Harwell Thrasher in 1971.  Many new features added and bugs fixed
+						by R Mabee in 1971-1972.  <SPAN CLASS="cmd">RUNOFF</SPAN> and BCPL were brought over to the 6180
+						Multics (from 645) in May of 1973 by R F Mabee.
 					</P>
 				</BLOCKQUOTE>
 				<P>
 					The BCPL variant is at times referred to as <SPAN CLASS="cmd">runoff</SPAN>, at times as <SPAN
-					CLASS="cmd">roff</SPAN>.  <A HREF="#saltzer">Saltzer</A> writes, <Q>my understanding was that Doug did
-					the conversion of RUNOFF from the CTSS extended character set to ASCII, using BCPL, under CTSS.  He
-					chose to name the port 'roff', I think to distinguish the ASCII version from the CTSS extended character
-					set version.</Q>  <A HREF="#mcilroy">McIlroy</A> writes similarly, <Q>I see that I called it 'runoff' in
-					1969.  By 1971 it was 'roff'.  Now I'm not so sure I got the name from Morris.  Conceivably it came from
-					Thompson, who was big on shortening names.  My 1971 description came in January; the first ediion Unix
-					manual is dated December 1971.</Q>  In this article, I use the name <SPAN CLASS="cmd">runoff</SPAN>.
+					CLASS="cmd">roff</SPAN>.  <A HREF="#saltzer">Saltzer</A> writes, <Q>my understanding was that Doug [<A
+					HREF="#mcilroy">McIlroy</A>] did the conversion of <A HREF="#1964_RUNOFF">RUNOFF</A> from the CTSS
+					extended character set to ASCII, using BCPL, under CTSS.  He chose to name the port <SPAN
+					CLASS="cmd">roff</SPAN>, I think to distinguish the ASCII version from the CTSS extended character set
+					version.</Q>  <A HREF="#mcilroy">McIlroy</A> writes similarly, <Q>I see that I called it <SPAN
+					CLASS="cmd">runoff</SPAN> in 1969.  By 1971 it was <SPAN CLASS="cmd">roff</SPAN>.  Now I'm not so sure I
+					got the name from <A HREF="#morris">Morris</A>.  Conceivably it came from <A
+					HREF="#thompson">Thompson</A>, who was big on shortening names.  My 1971 description came in January;
+					the first ediion Unix manual is dated December 1971.</Q>  In this article, I use the name <SPAN
+					CLASS="cmd">runoff</SPAN>.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -251,7 +247,7 @@
 		</H3>
 		<DL>
 			<DT ID="x1971">
-				1971: <SPAN CLASS="cmd">roff(1)</SPAN> (<A HREF="#thompson">Ken Thompson</A>, <A HREF="#ritchie">Dennis Ritchie</A>)
+				1971: <SPAN CLASS="cmd">roff(1)</SPAN> (<A HREF="#ritchie">Dennis Ritchie</A>)
 				 
 			</DT>
 			<DD>
@@ -259,12 +255,23 @@
 					Most of the programming team for Multics continued working with UNIX, so it's no surprise that Multics
 					<SPAN CLASS="cmd">runoff</SPAN> was incorporated as UNIX <SPAN CLASS="cmd">roff(1)</SPAN> in Version 1
 					AT&amp;T UNIX, 1971.  This was a PDP-11/20 port of BCPL <A CLASS="cmd" HREF="#x1969_runoff">runoff</A>.
+					According to <A HREF="#thompson">Thompson</A>, <SPAN CLASS="cmd">roff(1)</SPAN> for formatting patent
+					applications was used as a justification for the PDP-11 purchase.
 				</P>
 				<P>
-					Unfortunately, the first <SPAN CLASS="cmd">roff(1)</SPAN> versions appear to be lost.  (Some sources
-					were reconstructed from old tapes, but <SPAN CLASS="cmd">roff(1)</SPAN> was not among them.)  All that
-					remains from this time are manual entries.  However, the PDP-11/20 source version for Version 5 AT&amp;T
-					UNIX does still exist.
+					There are many wildly differing accounts of who wrote this version, but most settle on <A
+					HREF="#ossanna">Ossanna</A>, <A HREF="#ritchie">Ritchie</A>, and <A HREF="#thompson">Thompson</A>.
+					However, the first-hand accounts of <A HREF="#mcilroy">McIlroy</A>, <A HREF="#kernighan">Kernighan</A>,
+					and Thompson settle on Ritchie as the primary author.  This is corroborated by Ritchie's expertise in
+					BCPL, as <SPAN CLASS="cmd">roff(1)</SPAN> was based upon McIlroy's BCPL <A
+					HREF="#x1969_runoff">runoff</A>.
+				</P>
+				<P>
+					Unfortunately, the first <SPAN CLASS="cmd">roff(1)</SPAN> version is lost.  Some sources from Version 1
+					AT&amp;T UNIX have been reconstructed from old tapes, but <SPAN CLASS="cmd">roff(1)</SPAN> was not among
+					them.  All that remains from this time are manual entries and first-hand acconts.  However, the
+					PDP-11/20 source for Version 5 AT&amp;T UNIX still exists, and by first-hand accounts, is a modified
+					form of the original.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -294,6 +301,14 @@
 							Jerome Saltzer, <I>UNIX manpage history: CTSS RUNOFF</I>.  22 October, 2011.  Email to
 							Kristaps Dzonsons.
 						</LI>
+						<LI>
+							Brian Kernighan, <I>UNIX manpage history: ditroff(1)</I>.  23 October, 2011.  Email to
+							Kristaps Dzonsons.
+						</LI>
+						<LI>
+							Ken Thompson, <I>UNIX manpage history: roff(1)</I>.  23 October, 2011.  Email to
+							Kristaps Dzonsons.
+						</LI>
 					</UL>
 				</DIV>
 			</DD>
@@ -302,13 +317,22 @@
 			</DT>
 			<DD>
 				<P>
-					<A HREF="#ossanna">Ossanna</A> took over the initial <A CLASS="cmd" HREF="#x1971">roff</A> and built
-					<SPAN CLASS="cmd">nroff</SPAN>, which focussed on outputting text onto terminals, for Version 2 AT&amp;T
-					UNIX.
+					<A HREF="#ossanna">Ossanna</A> took over the PDP-11 <A CLASS="cmd" HREF="#x1971">roff(1)</A> and built
+					<SPAN CLASS="cmd">nroff(1)</SPAN>, which focussed on outputting text onto terminals, for Version 2
+					AT&amp;T UNIX.  The exact motiviations for this are unknown, but are vaguely agreed as simply evolving
+					the utility.
 				</P>
 				<P>
-					Unfortunately, a source record of this effort is entirely lost; however, later versions of the PDP-11/20
-					source (for Version 6 AT&amp;T UNIX) and manual page (Version 3 AT&amp;T UNIX)  are available. 
+					Unfortunately, a source record of the original effort is entirely lost; however, later versions of the
+					PDP-11/20 source (for Version 6 AT&amp;T UNIX) and manual page (Version 3 AT&amp;T UNIX)  are available. 
+				</P>
+				<P>
+					<A HREF="#thompson">Thompson</A> mentions that <SPAN CLASS="cmd">nroff(1)</SPAN> introduced the notion
+					of programmable macros.  This is corroborated by the Version 6 AT&amp;T UNIX source for <SPAN
+					CLASS="cmd">nroff(1)</SPAN>, where files under the prefix <SPAN CLASS="file">/usr/lib/tmac.</SPAN> are
+					parsed for macros (see <SPAN CLASS="file">nroff.8</SPAN> in the Version 6 AT&amp;T archive).  This same
+					behaviour is not reproduced in the <A HREF="#x1971">roff(1)</A> sources from the same time, so it
+					makes sense that this is the first appearance of macros.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -322,6 +346,10 @@
 						</LI>
 						<LI>
 							Douglas McIlroy, <I>UNIX manpage history: runoff</I>.  21 October, 2011.  Email to
+							Kristaps Dzonsons.
+						</LI>
+						<LI>
+							Ken Thompson, <I>UNIX manpage history: roff</I>.  23 October, 2011.  Email to
 							Kristaps Dzonsons.
 						</LI>
 						<LI>
@@ -495,7 +523,6 @@
 			</DT>
 			<DD>
 				<P>
-					<!--cawf [label="cawf(1)" URL="http://www.tux.org/pub/sites/vic.cc.purdue.edu/"];//-->
 					...
 				</P>
 			</DD>
@@ -506,7 +533,6 @@
 				<P>
 					...
 				</P>
-				<!-- htroff [label="troff(1)" URL="http://heirloom.sourceforge.net/doctools.html"];  //-->
 			</DD>
 		</DL>
 		<H3 ID="nextgen">
@@ -518,20 +544,14 @@
 			</DT>
 			<DD>
 				<P>
-					Similar to <A CLASS="cmd" HREF="#x1991_awf">awf</A>, <SPAN CLASS="cmd">mandoc(1)</SPAN> primarily reads
-					<A CLASS="cmd" HREF="#x1979">ditroff(1)</A> macro files, although it has some capability for non-macro
-					input.  It is the first fully semantic parser for manpages, introducing 
+					<B>Disclaimer</B>: I wrote <SPAN CLASS="cmd">mandoc(1)</SPAN>.
 				</P>
 				<P>
-					Since I wrote <SPAN CLASS="cmd">mandoc(1)</SPAN>, I suppose I can provide my own first-hand account.  I
-					wrote the first version of <SPAN CLASS="cmd">mandoc(1)</SPAN>, then called <SPAN
-					CLASS="cmd">mdocml(1)</SPAN>, in November, 2008 to format my <I>mdoc</I> manuals as HTML &mdash; <A
-					CLASS="cmd" HREF="#x1991_groff">groff(1)</A> did not allow CSS-styled output.  In February,
-					2009, I split this utility into <SPAN CLASS="cmd">mdocterm(1)</SPAN> and <SPAN
-					CLASS="cmd">mdoctree(1)</SPAN> after being taunted by Michael Dexter.  In March of 2009, during
-					AsiaBSDCon-2009, I renamed it to <SPAN CLASS="cmd">mandoc(1)</SPAN> with the encouragement of Theo
-					deRaadt, around which time it was committed to OpenBSD.  Ingo Schwarze (OpenBSD) starts working with
-					<SPAN CLASS="cmd">mandoc(1)</SPAN> in June, 2009, along with Joerg Sonnenberg (NetBSD).
+					Like <A CLASS="cmd" HREF="#x1991_awf">awf</A>, <SPAN CLASS="cmd">mandoc(1)</SPAN> primarily reads <A
+					CLASS="cmd" HREF="#x1979">ditroff(1)</A> macro files (not general <A CLASS="cmd"
+					HREF="#x1979">ditroff(1)</A> input), although it has some capability for generalised input.  It is the
+					first fully semantic parser for manpages, exposing the annotated content of parsed documents.   I used
+					the <A CLASS="cmd" HREF="#x1991_groff">groff(1)</A> manuals as a basis for processing.
 				</P>
 				<DIV CLASS="sources">
 					<P>
