@@ -39,7 +39,7 @@
 			<IMG SRC="history.png" ALT="Timeline of UNIX manpage utilities" USEMAP="#manpages">
 		</P>
 		<H3 ID="prehistory">
-			Prehistory: 1964&ndash;1970
+			Prehistory
 		</H3>
 		<DL>
 			<DT ID="x1964_RUNOFF">
@@ -68,6 +68,7 @@
 					According to <A HREF="#saltzer">Saltzer</A> and the source literature, the syntax of <SPAN
 					CLASS="cmd">RUNOFF</SPAN> inherits from the prior <SPAN CLASS="cmd">DITTO</SPAN>, <SPAN
 					CLASS="cmd">MEMO</SPAN>, and <SPAN CLASS="cmd">MODIFY</SPAN> utilities by M. L. Lowry, 1963.
+					Unfortunately, the sources for these utilities could not be located in the CTSS source archive.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -241,11 +242,37 @@
 					</UL>
 				</DIV>
 			</DD>
+			<DT ID="x1976_compose">
+				1976: <SPAN CLASS="cmd">COMPOSE</SPAN> (<A HREF="#wallman">Edwin Wallman</A>)
+			</DT>
+			<DD>
+				<P>
+					...
+				</P>
+			</DD>
 		</DL>
 		<H3 ID="classical">
-			Classical Age: 1971&ndash;1988
+			Classical Age
 		</H3>
 		<DL>
+			<DT ID="x1969_roff">
+				1969: <SPAN CLASS="cmd">roff</SPAN> (<A HREF="#kernighan">Brian Kernighan</A>)
+				 
+			</DT>
+			<DD>
+				<P>
+					...
+				</P>
+			</DD>
+			<DT ID="x1970_rf">
+				1970: <SPAN CLASS="cmd">rf</SPAN> (<A HREF="#thompson">Ken Thompson</A>)
+				 
+			</DT>
+			<DD>
+				<P>
+					...
+				</P>
+			</DD>
 			<DT ID="x1971">
 				1971: <SPAN CLASS="cmd">roff(1)</SPAN> (<A HREF="#ritchie">Dennis Ritchie</A>)
 				 
@@ -452,7 +479,7 @@
 			</DD>
 		</DL>
 		<H3 ID="renaissance">
-			Renaissance: 1989&ndash;2007
+			Renaissance
 		</H3>
 		<P>
 			This covers re-implementations of the classic <SPAN CLASS="cmd">roff(1)</SPAN>, <SPAN CLASS="cmd">troff(1)</SPAN>, and
@@ -536,7 +563,7 @@
 			</DD>
 		</DL>
 		<H3 ID="nextgen">
-			Next Generation: 2008&ndash;present
+			Next Generation
 		</H3>
 		<DL>
 			<DT ID="x2008_mandoc">

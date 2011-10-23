@@ -11,14 +11,17 @@ digraph manpages {
 	subgraph { 
 		node [color=1];
 		runoff1 [label="RUNOFF" URL="#x1964_RUNOFF"];
-		runoff2 [label="roff" URL="#x1967_roff"];
+		runoff2 [label="roff1" URL="#x1967_roff"];
 		script [label="SCRIPT" URL="#x1967_SCRIPT"];
 		runoff3 [label="runoff" URL="#x1969"]; 
+		compose [label="compose" URL="#x1976_compose"]; 
 	}
 
 	subgraph {
 		node [color=2];
-		roff [label="roff(1)" URL="#x1971"];
+		rf [label="rf" URL="#x1970_rf"];
+		roff1 [label="roff(1)" URL="#x1971"];
+		roff2 [label="roff" URL="#x1969"];
 		nroff [label="nroff(1)" URL="#x1972"];
 		troff [label="troff(1)" URL="#x1973"];
 		ditroff [label="ditroff(1)" URL="#x1979"];
@@ -37,10 +40,9 @@ digraph manpages {
 		mandoc [label="mandoc(1)" URL="#x2008_mandoc"];
 	}
 
-	runoff1 -> runoff2 -> runoff3;
-	runoff1 -> script;
-	runoff3 -> roff;
-	roff -> nroff;
+	runoff1 -> { runoff2 runoff3 script };
+	runoff3 -> { roff1 compose rf roff2 };
+	roff1 -> nroff;
 	nroff -> troff;
 	troff -> ditroff;
 	ditroff -> groff;
@@ -49,16 +51,18 @@ digraph manpages {
 	awf -> cawf;
 
 	subgraph {
-		1964 -> 1967 -> 1969 -> 1971 -> 1972 -> 1973 -> 1979 -> 
-		1989 -> 1991 -> 2005 -> 2008;
+		1964 -> 1967 -> 1969 -> 1970 -> 1971 -> 1972 -> 
+		1973 -> 1976 -> 1979 -> 1989 -> 1991 -> 2005 -> 2008;
 	}
 
 	{ rank = same; 1964 runoff1 };
 	{ rank = same; 1967 script runoff2 };
-	{ rank = same; 1969 runoff3 };
-	{ rank = same; 1971 roff };
+	{ rank = same; 1969 runoff3 roff2 };
+	{ rank = same; 1970 rf };
+	{ rank = same; 1971 roff1 };
 	{ rank = same; 1972 nroff };
 	{ rank = same; 1973 troff };
+	{ rank = same; 1976 compose };
 	{ rank = same; 1979 ditroff };
 	{ rank = same; 1989 groff };
 	{ rank = same; 1991 awf cawf };
