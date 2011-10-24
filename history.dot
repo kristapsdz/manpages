@@ -50,7 +50,9 @@ digraph manpages {
 	groff -> mandoc;
 	awf -> cawf;
 
+
 	subgraph {
+		node[colorscheme=x11,color=white];
 		1964 -> 1967 -> 1969 -> 1970 -> 1971 -> 1972 -> 
 		1973 -> 1974 -> 1979 -> 1989 -> 1991 -> 2005 -> 2008;
 	}
