@@ -1,0 +1,118 @@
+Subject: Re: Reconstructing UNIX manpage history: ditroff(1)
+From: Brian Kernighan <bwk@xxxxxxxxxxxxxxxx>
+Date: 26/10/2011 01:45
+To: Kristaps Dzonsons <kristaps@xxxxxx>
+
+Kristaps --
+
+No problem if you want to include our correspondence.
+
+I did mean Saltzer's RUNOFF, which I used at least a little during the
+summer I spent working at Project MAC (1966).
+
+I don't recall anything about Bob Morris's involvement with any of this,
+though it's possible that Roger Faulkner might have picked up some of
+that code for the GE-635.  More likely it was Doug's code, though don't
+quote me on that.  Fortunately both Doug and Roger are around to ask.
+
+I'll see if I can scan my Roff manual.
+
+Brian
+
+On Sun, 23 Oct 2011, Brian Kernighan wrote:
+
+> there are two people who might know more about runoff/roff on gecos.
+> one is roger faulkner, now at oracle; i think he did a port or perhaps
+> some original code.  xxxxxxxxxxxxxxxxxxxxxxxxx.  tell him i sent you.
+>
+> the other is nils-peter ("peter") nelson, xxxxxxxxxxx.  he did a fair
+> amount with various aspects of typesetting, and might remember useful
+> things.  again, tell him i sent you.
+>
+> i will do more digging when i get dug out myself...
+>
+> brian
+>
+> On Mon, 24 Oct 2011, Kristaps Dzonsons wrote:
+>
+>> Professor,
+>>
+>> Thank you for your accounts!  I've corroborated the overlapping parts
+>> with Thompson, McIlroy, and a few others as best I can.  I have a
+>> very small number of remaining questions.  (I realise now, by the
+>> way, that I misaddressed you as "Ken", i.e. Ken Thompson, in my first
+>> email--oof, I'm sorry!)
+>>
+>> First, would you object if I included our correspondence as part of
+>> the record?  Of course, the email headers will be redacted (except
+>> the date bits).
+>>
+>>> I'm pretty sure that I only talked about a "device independent
+>>> troff"; the name "ditroff" came from somewhere else, and I've never
+>>> been fond of it. At some point I merged troff and nroff into a
+>>> single source, though with conditional compilation and probably
+>>> something in the makefile to keep the pieces organized. I don't now
+>>> remember whether it was actually a single executable or two
+>>> different ones with a lot of shared code.
+>>
+>> The V7 AT&T UNIX build emits separate executables, built from the
+>> same source (except for the glyph table) with a preprocessor switch.
+>> That symbol, however, is used quite a lot.
+>>
+>> http://minnie.tuhs.org/cgi-bin/utree.pl?file=V7/usr/src/cmd/troff
+>>
+>> On a side note, the ability of troff to switch modes (".if n") ended
+>> up quite the huckleberry when writing my compiler for the "man" and
+>> "mdoc" macrosets as standalone languages.  Instead of encoding
+>> conditionals into the AST, I ended up just assuming nroff mode (troff
+>> mode being rarely used for UNIX manuals these days).
+>>
+>>> As to my own formatter, when I was a grad student at Princeton, I
+>>> wrote a simple formatter that I called Roff ("an abbreviated version
+>>> of Runoff") and used it to print my thesis. I had encountered Jerry
+>>> Saltzer's Runoff at MIT (during the summer of 1966), and then seen
+>>> programs like Doug McIlroy's roff and Ossanna's nroff in 1967 and
+>>> 1968 during summers at Bell Labs. My roff was a 1000-line Fortran
+>>> program that interpreted a handful of commands like .sp for a blank
+>>> line (very much like all the other *roff's) and printed filled and
+>>> justified lines of text. The one point of novelty was that since the
+>>> input was on punched cards and thus all in upper case, it did
+>>> automatic capitalization of sentences, with some multi-punch
+>>> sequences to handle exceptions.
+>>
+>> As you wrote your thesis in '69 (from your biography), do you mean
+>> Saltzer's RUNOFF (CTSS, 1964)?  Ossanna's nroff was from 1972 (V2
+>> AT&T UNIX) and McIlroy's, from 1968/69 (CTSS).  Could you have looked
+>> at Bob Morris' fabled RUNOFF port?  (See note below on Morris, if
+>> yes!)
+>>
+>> And do you happen remember the computer system used at Princeton?
+>>
+>>> It was fine for my thesis, and it was picked up by a student agency
+>>> and used for another 5 or more years as a service: pay some money
+>>> and get neatly printed text. The code has long since disappeared (it
+>>> was a deck of cards) but I still have a copy of the original
+>>> documentation (on paper only).
+>>
+>> If you find this and a grad student handy, I'd be happy to include a
+>> scan of this manual for completion's sake!
+>>
+>>> Hope this helps. Good luck with chasing everything down. It's hard
+>>> to do good history, but it's important. Let me know if I can do
+>>> anything more.
+>>
+>> I'm indeed finding this to be the case, although I've more or less
+>> completed the record up til the "renaissance" systems (GNU troff et
+>> al.). The only major missing piece is Bob Morris' involvement.
+>> Apparently he'd ported Saltzer's RUNOFF to the GE-635 (GCOS-II, I
+>> suppose) in '67/'68. What's unknown is whether this went anywhere
+>> (DTSS apparently had a RUNOFF, and was also a GE-635) and its
+>> language (assembly?  BCPL seems more likely).  Nobody sems quite to
+>> know, and I'll probably attack the problem from the DTSS runoff port
+>> angle.
+>>
+>> Best wishes from a blustery Stockholm,
+>>
+>> Kristaps
+>>
+>

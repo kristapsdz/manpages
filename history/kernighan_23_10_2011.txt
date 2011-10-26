@@ -1,0 +1,114 @@
+Subject: Re: Reconstructing UNIX manpage history: ditroff(1)
+From: Brian Kernighan <bwk@xxxxxxxxxxxxxxxx>
+Date: 23/10/2011 01:40
+To: Kristaps Dzonsons <kristaps@xxxxxx>
+
+Hi, Kristaps --
+
+Maybe I can answer some questions, though memory keeps getting dimmer.
+
+After Joe Ossanna died in late 1977, troff was static for probably close
+to two years, since no one had the time and courage to touch it.  It was
+entirely in C at that point, somewhat over 9000 lines as I remember.  I
+simply modified it, gradually getting around some of the limitations on
+fonts, making use of dynamic memory, and generating "device-independent"
+output for devices whose properties were specified in dynamically loaded
+files.  I also added some simple graphics commands to permit lines,
+circles, and other curves; this was necessary for the Pic language that
+I was playing with.  I also played with characters that had longer names
+and that only had numbers, and for Plan 9 I did some tools that made it
+possible to handle Japanese, but that experiment wasn't picked up much.
+
+I'm pretty sure that I only talked about a "device independent troff";
+the name "ditroff" came from somewhere else, and I've never been fond of
+it.  At some point I merged troff and nroff into a single source, though
+with conditional compilation and probably something in the makefile to
+keep the pieces organized.  I don't now remember whether it was actually
+a single executable or two different ones with a lot of shared code.
+
+As to my own formatter, when I was a grad student at Princeton, I wrote
+a simple formatter that I called Roff ("an abbreviated version of
+Runoff") and used it to print my thesis.  I had encountered Jerry
+Saltzer's Runoff at MIT (during the summer of 1966), and then seen
+programs like Doug McIlroy's roff and Ossanna's nroff in 1967 and 1968
+during summers at Bell Labs.  My roff was a 1000-line Fortran program
+that interpreted a handful of commands like .sp for a blank line (very
+much like all the other *roff's) and printed filled and justified lines
+of text.  The one point of novelty was that since the input was on
+punched cards and thus all in upper case, it did automatic
+capitalization of sentences, with some multi-punch sequences to handle
+exceptions.
+
+It was fine for my thesis, and it was picked up by a student agency and
+used for another 5 or more years as a service: pay some money and get
+neatly printed text.  The code has long since disappeared (it was a deck
+of cards) but I still have a copy of the original documentation (on
+paper only).
+
+Hope this helps.  Good luck with chasing everything down.  It's hard to
+do good history, but it's important.  Let me know if I can do anything
+more.
+
+Brian
+
+On Sat, 22 Oct 2011, Kristaps Dzonsons wrote:
+
+> Ken,
+>
+> While researching an article on the "mdoc" roff macro package, I was
+> discouraged by the inconsistency of secondary sources regarding
+> initial development of the UNIX manpage.  It seemed every source had
+> slightly different (and at times conflicting) dates, developers,
+> places, and so on. So I've set about reconstructing the history from
+> primary sources, from Saltzer's CTSS source code onward.
+>
+> I wonder if you have time to answer a few questions about your pivotal
+> role in this process, as there are some holes in the primary record.
+>
+> There are four main gaps:
+>
+> (1) Bob Morris' involvement has no source record at all and neither
+> Saltzer nor McIlroy can recall the details of his circa-1967 runoff on
+> the GE-635 (or "pre-Multics" arch in general);
+> (2) Ritchie's pre-UNIX PDP-7 "rf" utility, possibly based on Morris'
+> port, has no source and no real record of existence beyond hearsay;
+> (3) the exact authorship of the PDP-11 roff/nroff/troff (V1, V2, V4
+> AT&T UNIX), although McIlroy's fairly sure and I'm waiting to hear
+> from Thompson; and lastly,
+> (4) the hand-off of Ossanna's C-language troff(1), after his untimely
+> death, to your own, then to what would become ditroff(1).
+>
+> I've written off (1) as totally unknown and (2) as something Thompson
+> may know.  (3) is shaping up, but could use corroboration since the
+> available source archives are incomplete.
+>
+> As for (4), can you give an account of this sequence?  How much of the
+> C-language troff(1) had been written, and did you use it as a basis or
+> start directly into your own?  When was ditroff(1) named as such, and
+> was there ever a distinct C-language troff(1) and one that would later
+> be named ditroff(1)?
+>
+> Furthermore, McIlroy hints that you'd written a formatter while at
+> Princeton before working on Ossanna's.  Did this work go anywhere, and
+> was it related to the roff set of tools?
+>
+> I understand that this is a lot of questioning, but the historical
+> record is quite sparse.  (Yes, I have more questions, but the above
+> would make a complete record from RUNOFF to runoff to roff, nroff,
+> troff, groff, and so on.  It's a start...)
+>
+> As to my own interest, I wrote mandoc(1) (http://mdocml.bsd.lv/), now
+> used in a few BSD UNIX systems instead of GNU troff; then the
+> [unpublished] mdoc book, http://manpages.bsd.lv/.  I've noticed that
+> many GNU/Linux types are in a balkanised mentality of texinfo (bad)
+> vs. "man" macro (inelegant) vs. "ad hoc on-line HOWTO" (awful).  This
+> segue into history stems from a LinuxJournal article on writing mdoc
+> manuals to, I hope, encourage some consistency.
+>
+> Lastly, please accept my sincere condolences regarding Ritchie's
+> death.  It was shocking news, and I'm sorry.
+>
+> Thank you and take care,
+>
+> Kristaps
+>

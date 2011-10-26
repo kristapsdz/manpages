@@ -1,0 +1,65 @@
+Subject: Re: History of UNIX manpages: awf
+From: Henry Spencer <henry@xxxxxxxxxxxxxxx>
+Date: 22/10/2011 18:24
+To: Kristaps Dzonsons <kristaps@xxxxxx>
+
+> > Your source code is readily available, of course...
+
+If you haven't seen it already, you might also want to look at my paper
+"Awk as a Major Systems Programming Language", which was in the winter
+1991 Usenix conference and ought to exist online at usenix.org.  It
+talks about my experience doing serious programming in awk, and awf is
+one of the major examples.
+
+> > I'm guessing, from the source comments, that your rewrite was
+> > inspired by licensing constraints, but is there a particular reason
+> > for the license conflict -- e.g., a system you wrote it for?
+
+The inspiration came from the other end of things, so to speak:  not a
+particular system we wanted nroff on, but a software package that we
+were trying to make highly portable.  C News ran on almost any Unix
+system, but one headache was how to distribute documentation:  we wanted
+to continue just shipping manpage sources, but a significant fraction of
+the audience didn't have nroff.
+
+The manpage source was simple enough -- especially since we rarely did
+anything elaborate even by manpage standards -- that I started wondering
+whether an awk program could process it into something halfway-readable.
+Things snowballed from there; once I had the basic framework in place,
+it was seductively easy to add more features.
+
+I can't remember for sure, but *probably* the tipping point was that a
+few of the C News manpages defined their own simple macros for a few
+things, so I had to implement at least a crude macro facility.  Once
+that was done, what had begun as a specialized manpage formatter rapidly
+turned into something more general, with manpage-specific complexity
+moving out of the awk code and into the macro package.  Doing the -ms
+subset was an obvious next move, since C News used -ms for its longer
+documents.
+
+The hard part was deciding where to stop, and in the end that was
+dictated mostly by "is it good enough to format all the C News
+documentation?".  One reason why awf complains about encountering
+requests it doesn't understand is that I was running the C News
+documents through awf as a test, and wanted to know if they used
+anything I hadn't implemented yet.
+
+> > The second question: which reference did you use in writing it?
+> > AT&T roff was spread over many systems by then.  Do you remember
+> > using a particular one as a reference?  Was it from the manual or
+> > one of the longer reference documents?
+
+Insofar as it was based on any specific roff, it was some combination of
+the nroff that came with V7, and the original Device-Independent Troff;
+I'd been using the former for a decade, and the latter for several
+years.  I really didn't refer to manuals much; I knew that stuff well,
+and my concern was much more with -man and -ms features than with nroff
+features.  I looked at our local man(7) manpage -- derived from the V7
+one -- to make sure I hadn't missed anything in the -man macros, and
+perhaps also the V7 troff reference document to check fine points of
+(e.g.) .if functionality.  (I had one of the original
+printed-by-Bell-Labs V7 document sets, and routinely used it as my main
+Unix reference.)
+
+Henry
+
