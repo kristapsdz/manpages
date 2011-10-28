@@ -29,9 +29,9 @@
 			HREF="http://web.mit.edu/multics-history/source/Multics_Internet_Server/Multics_sources.html">Multics Internet
 			Server</A>; the <A HREF="http://www.tuhs.org">UNIX Heritage Society</A> for their research UNIX <A
 			HREF="http://minnie.tuhs.org/cgi-bin/utree.pl">source reconstruction</A>; <A
-			HREF="http://www.bitsavers.org/">BitSavers</A> for their historical archive; and last but not least, Rudd Canaday, Brian
-			Kernighan, Douglas McIlroy, Jerome Saltzer, Henry Spencer, Ken Thompson, and Tom Van Vleck for letting me pester them
-			with questions.
+			HREF="http://www.bitsavers.org/">BitSavers</A> for their historical archive; and last but not least, Rudd Canaday, James
+			Clarke, Brian Kernighan, Douglas McIlroy, Jerome Saltzer, Henry Spencer, Ken Thompson, and Tom Van Vleck for letting me
+			pester them with questions.
 		</P>
 		<P>
 			Please see the <A HREF="#copyright">Copyright</A> section if you plan on reproducing parts of this work.
@@ -230,10 +230,11 @@
 			<DD>
 				<P>
 					In 1969, <A HREF="#mcilroy">McIlroy</A> released an influential BCPL port of <A CLASS="cmd"
-					HREF="#x1964_RUNOFF">RUNOFF</A> in order <Q>to extend the runoff model</Q> to the GECOS GE-645 computer.
-					He did not refer to the CTSS <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> source code in writing <SPAN
-					CLASS="cmd">runoff</SPAN>, nor the GE-635 <A CLASS="cmd" HREF="#x1967_roff">roff</A>.  The progress of
-					this utility subsequent 1969 is recorded in the Multics BCPL source as ported by R. F. Mabee in 1974:
+					HREF="#x1964_RUNOFF">RUNOFF</A> <Q>to extend the runoff model</Q> to the GECOS GE-645 computer at
+					AT&amp;T Bell Labs, Murray Hill.  He did not refer to the CTSS <A CLASS="cmd"
+					HREF="#x1964_RUNOFF">RUNOFF</A> source code in writing <SPAN CLASS="cmd">runoff</SPAN>, nor any other
+					speculated derivatives of <A HREF="#saltzer">Saltzer</A>'s utility.  The progress of this utility
+					subsequent 1969 is recorded in the Multics BCPL source as ported by R. F. Mabee:
 				</P>
 				<BLOCKQUOTE CITE="http://web.mit.edu/multics-history/source/Multics/ldd/system_library_standard/source/bound_runoff_.s.archive">
 					<P>
@@ -246,10 +247,10 @@
 					</P>
 				</BLOCKQUOTE>
 				<P>
-					The BCPL variant is at times referred to as <SPAN CLASS="cmd">runoff</SPAN>, at times as <SPAN
-					CLASS="cmd">roff</SPAN>.  <A HREF="#saltzer">Saltzer</A> writes, <Q>my understanding was that Doug [<A
-					HREF="#mcilroy">McIlroy</A>] did the conversion of <A HREF="#1964_RUNOFF">RUNOFF</A> from the CTSS
-					extended character set to ASCII, using BCPL, under CTSS.  He chose to name the port <SPAN
+					<A HREF="#mcilroy">McIlroy</A>'s port is at times referred to as <SPAN CLASS="cmd">runoff</SPAN>, at
+					times as <SPAN CLASS="cmd">roff</SPAN>.  <A HREF="#saltzer">Saltzer</A> writes, <Q>my understanding was
+					that Doug [<A HREF="#mcilroy">McIlroy</A>] did the conversion of <A HREF="#1964_RUNOFF">RUNOFF</A> from
+					the CTSS extended character set to ASCII, using BCPL, under CTSS.  He chose to name the port <SPAN
 					CLASS="cmd">roff</SPAN>, I think to distinguish the ASCII version from the CTSS extended character set
 					version.</Q>  (Ed., the mention of CTSS is incorrect; it was GECOS.) <A HREF="#mcilroy">McIlroy</A>
 					writes similarly, <Q>I see that I called it <SPAN CLASS="cmd">runoff</SPAN> in 1969.  By 1971 it was
@@ -641,8 +642,30 @@
 			</DT>
 			<DD>
 				<P>
-					...
+					The GNU <A HREF="#x1979">troff</A> is popularly considered to be the most wide-spread in modern UNIX
+					installations.  It's bundled by default on most GNU/Linux operating systems.  This port, renamed <SPAN
+					CLASS="cmd">groff</SPAN>, was written by James C. Clarke in 1989 specifically for the GNU project.  At
+					this time, no open-source implementation existed.
 				</P>
+				<P>
+					The <SPAN CLASS="cmd">groff</SPAN> port was based purely from <A HREF="#x1979">troff</A> documentation
+					as shipped with SunOS 4.1.4, and was written in C++ on Sun 4/110 (initial implementations of the GNU C++
+					compiler were on Sun, making it an ideal starting point).
+				</P>
+				<DIV CLASS="sources">
+					<P>
+						Sources: 
+					</P>
+					<UL>
+						<LI>
+							<I><A HREF="http://groff.ffii.org">GNU troff</A></I>.  Homepage.
+						</LI>
+						<LI>
+							James Clarke, <I><A HREF="history/clarke_27_10_2011.txt">UNIX manpage history:
+							groff</A></I>.  27 October, 2011.  Email to Kristaps Dzonsons.
+						</LI>
+					</UL>
+				</DIV>
 			</DD>
 			<DT ID="x1991_awf">
 				1991: awf (<A HREF="#spencer">Henry Spencer</A>)

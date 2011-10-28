@@ -1,0 +1,57 @@
+Subject: Re: UNIX manpage history: groff
+From: James Clark
+Date: 28/10/2011 16:15
+To: Kristaps Dzonsons
+
+> >
+> >  (1) What specific source did you use for re-writing dittroff as
+> >  groff?  In other words, was there a particular installation of
+> >  ditroff you used?
+
+It was the troff that came with SunOS 4.1.4.  IIRC, I did most of the
+development on a Sun 4/110.  At the time, Tiemann started on g++ using a
+Sun 4, so g++ worked best on a Sparc.
+
+The main documentation I used was the V7 troff manual.
+
+> > What was the original motivation?
+
+I wanted to donate something to GNU and I was also interested in
+typography (mostly as a result of having read the TeXBook). Troff was
+one of the few major classic Unix programs that had yet to be
+implemented at that point.
+
+> >
+> >  (2) Was the initial relase under the GPL, or did this happen later?
+> >  In other words, were you writing this for the GNU project, or was
+> >  it a side-project whose GNU-ification only occured later?
+
+The former. It was written in order to be contributed to GNU.
+
+> >
+> >  (3) Do you have any copies of the original groff releases?  I can't
+> >  seem to find any of the original releases on the Internet, and
+> >  would like to mirror a copy for the record.
+
+I can't find anything on my disk.  Maybe they are on a backup tape
+somewhere.  There might be something on a tape somewhere.  I have
+something that I think are the original RCS files I used for
+development.  I can send those to you if you want.
+
+> > I appreciate any time you can divulge.  Thusfar this "side-track"
+> > has pulled in Kernighan, Thompson, McIlroy, Canaday, Saltzer, and a
+> > few others in reconstructing both the pre-UNIX, UNIX, and post-UNIX
+> > evolution of the manpage.  It's quite an exciting history!
+> >
+> > Lastly, do you consent to the inclusion of any emails between us in
+> > the record?  I'll remove any non-relevant e-mail headers, of course.
+
+
+Sure. Thanks for your interest.
+
+James
+
+> > Thank you,
+> >
+> > Kristaps
+> >
