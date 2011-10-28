@@ -1,0 +1,28 @@
+Subject: Re: UNIX manpage history: runoff
+From: Doug McIlroy 
+Date: 22/10/2011 01:45
+To: Kristaps Dzonsons
+
+> >  am I correct in saying that Bob Morris' version of runoff/roff
+> >  predates your own?
+
+Yes
+
+> > Can you give a ballpark year of his production?
+
+I believe it happened after his year in Berkeley. That would probably
+make it about 1967 or 1968.
+
+> > did you use Saltzer's manuals/memoranda as a basis for writing the
+> > BCPL runoff?
+
+Yes.  AND...checking my files more carefully, I see that I called it
+"runoff" in 1969.  By 1971 it was "roff".  Now I'm not so sure I got the
+name from Morris.  Conceivably it came from Thompson, who was big on
+shortening names.  My 1971 description came in January; the first ediion
+Unix manual is dated December 1971.
+
+If you wish, I can (in the fullness of time) try to scan any of the
+three manuals: 1969 ( 12 pages), 1971 (18 pages), 1973 (32 pages).
+
+Doug

@@ -1,0 +1,35 @@
+Subject: Re: UNIX manpage history: runoff
+From: Doug McIlroy 
+Date: 23/10/2011 18:41
+To: Kristaps Dzonsons
+
+>> >> Doug McIlroy, Rudd Canaday, and Dennis Ritchie wrote a version of
+>> >> runoff for 645 Multics in BCPL, so that the Multics group could
+>> >> use its own system for documentation. Both of these runoffs took
+>> >> input lines beginning with dot as command lines.
+
+I was definitely not part of the first joint effort to convert runoff.
+I'm quite sure Morris was.  Canaday spent a year in our department about
+that time, so his participation is possible, I was too confident in
+writing that that conversion was done in assembly language; BCPL is a
+possibility. 
+
+>> >> Bob Morris and Dennis Ritchie moved the BCPL runoff to BTL's
+>> >> GE-635 and called it roff. McIlroy then wrote a roff from scratch
+>> >> in BCPL, expanding and improving on runoff; Ken Thompson and
+>> >> Dennis Ritchie then wrote a machine-language version of roff for
+>> >> their new system, UNIX, about 1970, to justify the purchase of the
+>> >> PDP-11.
+
+This paragraph, I think, is about as close to the truth as any of us can
+reconstruct at this distance in time.  I have no memory of Ritchie being
+involved, but then I didn't even know runoff was being ported until it
+was a fait accompli. I suspect 1971 is a better date than 1970 for
+Ritchie/Thompson roff--1970 would have been on the PDP7.
+
+Dennis is acknowledged in my 1969 memo--for upgrading BCPL "to cope with
+Runoff's special typographic needs."  That memo also cites "GE
+Runoff"--presumably the Morris (et al) port, with documentation coming
+from GE, and of course Saltzer.
+
+Doug

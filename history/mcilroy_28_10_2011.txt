@@ -1,0 +1,31 @@
+Subject: Re: UNIX manpage history: runoff
+From: Doug McIlroy 
+Date: 28/10/2011 15:58
+To: Kristaps Dzonsons
+
+> > Question: do you give permission for me to publish our
+> > correspondences
+
+Sure, no problem.
+
+> > where exactly were you working in 1969 when originally porting
+> > RUNOFF?
+
+Physically I was at Bell Labs in Murray Hill.  During the Multics
+project, though, we did lots of remote computing at CTSS.  I do not
+remember whether I began working on runoff before or after we withdrew
+from Multics.
+
+> > Saltzer in passing mentioned that you wrote runoff "under CTSS";
+> > however, the source record says GECOS.
+
+I'm quite sure it was GECOS.  If the BCPL got to CTSS, that resolves my
+uncertainty about timing relative to BTL's withdrawal from Multics.
+
+> > I
+assume GECOS is really GECOS-II, as GE hadn't been bought by Honeywell
+yet
+
+It was GE, not Honeywell.  I didn't pay attention to the nomenclature of
+GECOS versions.
+

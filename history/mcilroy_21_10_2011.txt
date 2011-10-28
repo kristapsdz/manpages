@@ -1,0 +1,39 @@
+Subject: Re: UNIX manpage history: runoff
+From: Doug McIlroy
+Date: 21/10/2011 22:09
+To: Kristaps Dzonsons
+
+> > First, do you know the whereabouts of your own MAD sources to the
+> > CTSS runoff utility for, if I'm correct, the GE-645 Multics? 
+
+Actually I never saw any source from the runoff trunk and branch of the
+family tree.  I can't remember what language Morris programmed his
+verion in.
+
+I don't perfectly remember the sequence of events, when runoff was
+ported to the pre-Multics platform, the GE-635.  I was not involved.  I
+wanted to extend the runoff model so began over, writing in BCPL.  This
+new roff ran in Bell Labs comp centers as long as they had GE machines.
+(I have the 1973 edition of the manual.) It was reimplemented for Unix
+by Thompson and Ritchie--in assembly language, I believe.
+
+> > the 1974 Multics sources don't mention Bob Morris at all, only
+> > Mabee.  So which version of runoff was ported to UNIX roff: yours,
+> > Mabee's, or Morris'?  Was Multics runoff renamed to roff before or
+> > after this?
+
+I believe Morris christened his port "roff" to distintuish it from
+runoff when both programs were running on CTSS.  I borrowed the name.  I
+do not know whether my roff was adopted by Multics.  You can tell by
+seeing whether the extensions are in the Multics manual.
+
+After T&R, Ossanna wrote nroff, which was still more elaborate, and
+parlayed that in turn to troff when the CAT phototypesetter arrived.
+Kernighan (who had written his own formatting program when he was at
+Princeton) stepped in upon Ossanna's death.
+
+Roff was in the first edition Unix manual, 1971; nroff appeared in the
+second, 1972; troff in the fourth, 1973.  Thanks to troff the fourth
+edition was the thinnest Unix manual ever printed.
+
+Doug
