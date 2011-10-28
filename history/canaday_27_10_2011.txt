@@ -1,0 +1,75 @@
+Subject: Re: the old days
+From: Rudd Canaday
+Date: Thu, 27 Oct 2011 08:40:06 -0700
+To: Kristaps Dzonsons
+CC: Tom Van Vleck
+
+Tom,
+
+Feel free to use anything from our correspondence. Also, feel free to
+use my name in connection with it.
+
+I don't remember what Bob Morris' involvement was in Multics. I don't
+think he was involved with UNIX at all until after I left. So far as I
+know, his UNIX involvement, if any, was peripheral.
+
+Bob may have ported runoff to the Murray Hill 635 (actually a 645, I
+think, by that time).  So far as I know he had no role at all in the
+NIKE TSS or the Whippany 635. I don't think any of the Murray Hill
+people had any involvement with NIKE TSS or the Whippany 635 (except me,
+of course).
+
+I've said that runoff may have been ported to the Whippany 635 as part
+of the NIKE project. I do not specifically remember this and it may very
+well never have happened. If it did happen, I believe it was done by the
+NIKE TSS team at Whippany (the GE contractors), not by Bob Morris.
+
+I believe that it is a coincidence that the contractors who worked on
+NIKE TSS were from GE. I don't think there was any connection with the
+fact that GE was part of the MULTICS effort. There were a number of
+contractors from GE working on the NIKE ABM system.
+
+Unfortunately, I have no documentation or code from the NIKE TSS. It
+probably exists in the NIKE archives at Bell Labs.  We worked with the
+code on punched cards and I don't remember it ever existing on disk.
+Probably it did exist on tape.
+
+As a side note, we began the NIKE TSS effort before the 635 was
+installed at Whippany. So, for the first couple of months, every night
+two team members would take all the punched cards to Boston at 5PM and
+run them on the 635 at MIT. We'd return on the redeye so the results of
+the run were available to the team by about 9AM the next morning. It was
+fun.
+
+ - Rudd
+
+On Oct 26, 2011, at 3:34 AM, Kristaps Dzonsons wrote:
+
+> Tom, Rudd,
+>
+> Thanks for your comments!  This fills in a previously-unknown port of
+> Saltzer's code.  Before beginning, would either of you object if I
+> include relevant correspondence in the record?  (Of course, I omit all
+> mail headers but date, subject, and email-obscured participants.)
+>
+> I have a few questions, which I'll ask as-is instead of in-line.
+>
+> A Big Pre-Unix Mystery is of the GE-635 and the involvement of Bob
+> Morris, who's mentioned inconsistently throughout the secondary
+> sources but is completely absent from the primary.
+>
+> Rumour has it that he ported RUNOFF to a GE-635 (which one is
+> unknown).  McIlroy estimates this effort was in '67 or '68, as he knew
+> of Morris' port, but nothing more than its existence.  If Saltzer
+> published RUNOFF in '64 and you moved on to Multics in '66, your
+> GE-635 Nike TSS RUNOFF would fall between.  McIlroy reimplemented
+> runoff with BCPL in '69.  Can you fill in the gaps, here?  Was Morris'
+> 635 port in fact your own?
+>
+> Lastly, do you know of a source-code trail for the GE-635 Nike TSS
+> port?
+>
+> Thanks again,
+>
+> Kristaps
+

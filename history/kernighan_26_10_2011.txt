@@ -1,7 +1,7 @@
 Subject: Re: Reconstructing UNIX manpage history: ditroff(1)
-From: Brian Kernighan <bwk@xxxxxxxxxxxxxxxx>
+From: Brian Kernighan 
 Date: 26/10/2011 01:45
-To: Kristaps Dzonsons <kristaps@xxxxxx>
+To: Kristaps Dzonsons 
 
 Kristaps --
 

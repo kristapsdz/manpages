@@ -1,0 +1,207 @@
+Subject: Re: the old days
+From: Rudd Canaday
+Date: Sun, 23 Oct 2011 16:46:34 -0700
+To: Tom Van Vleck
+CC: Kristaps Dzonsons
+
+Tom, Kristaps,
+
+Some comments & recollections:
+
+The CTSS I refer to is the MIT Compatible Time-Sharing System.  I had
+been much impressed by CTSS at MIT, and so I set out to build  a similar
+system at Bell Labs. The Nike TSS that I and my team wrote ran on the GE
+635 at Whippany. My memory is that we implemented it on the raw machine.
+I wrote the IO stuff and remember handling interrupts from the IO
+devices. However, my memory may be faulty here. I do know that we had to
+work at night when we could have the whole machine to ourselves. I think
+we wrote our own kernel (written, I believe, by Bob Harrison who later
+wrote the kernel for our back-end database machine). 
+
+The version we wrote on the GE 635 at Whippany was intended to be a
+prototype. The final system was built on the Nike hardware (the same
+hardware that ran the ABM system). That final version was written after
+I joined the Multics project at Murray Hill.
+
+The intent was that the GE 635 version of the Nike TSS was to be just a
+prototype. However, the Nike programmers fell in love with it and the
+comp center (which did not like it because they could not figure out how
+to bill for it) was unable to shut it down for 5 years. The final
+system, on the Nike hardware, was completed on time but never used.
+
+We implemented much of the same stuff that was on CTSS, although we did
+not use any CTSS code. We built the system from scratch in GE 635
+assembler. I am just guessing that we may have implemented a version of
+runoff.
+
+You are correct that the TSS at Indian Hill was TSS/360. Multics ran
+only at Murray Hill. It may have been abandoned when Bell Labs pulled
+out of the Multics project. I don't remember. Certainly Bell Labs
+management felt badly burned by Multics. The intent had been to use it
+in all the BTL comp centers.
+
+I thought I got BCPL from MIT, but if it was not at MIT until 1967 I
+must have gotten it elsewhere (Cambridge?). In any case, i think I got
+the code from somewhere and then re-wrote it, although I may have
+implemented it from scratch. Dennis, as I mentioned, implemented the IO
+library. I wrote the BCPL manual used at Bell Labs. Later Ken designed
+and built an interpreted language named Bon (after his wife Bonnie). Bon
++ BCPL became B, a short-lived language that then became C (by Dennis).
+
+As for PL/1, the company that was building the compiler had offices in
+New York. I spent one summer commuting there to "supervise" the work,
+although I did not accomplish much except to learn that the project was
+a mess. I thought it was CA but perhaps it was Digitek. I have a vague
+memory that EPL was intended to be an interim solution.
+
+All of this was a long time ago, and i have very few records from then.
+Because of other stuff in my life at that time (which I'm willing to
+share if you like) I was pretty distracted much of the time.
+
+ - Rudd
+
+
+On Oct 23, 2011, at 3:11 PM, Tom Van Vleck wrote:
+
+> > Hi Rudd, I am including Kristaps Dzonsons in this conversation.  He
+> > writes from Stockholm.  Thank you for the additional information.
+> > 
+> > This is going to be somewhat confusing, with two different operating
+> > systems named CTSS...  The MIT Compatible Time-Sharing System on
+> > MIT's 7094 was the one on which Saltzer developed his RUNOFF in MAD.
+> > As far as I know, neither MIT CTSS nor its RUNOFF were never run
+> > outside MIT.  (http://www.multicians.org/thvv/7094.html)
+> > 
+> > Martin Richards visited Project MAC in 12/66 and the first
+> > implementation of BCPL was on MIT CTSS in 1967.
+> > (http://www.cl.cam.ac.uk/~mr10/BCPL.html)  Did you visit Project MAC
+> > in that time frame?
+> > 
+> > I thought the Nike-X computer support was done a GE-635 at Whippany,
+> > perhaps on some variant of GECOS Timesharing, a facility much like
+> > TSO: that is, a GECOS job that gained privity and never terminated,
+> > and sub-dispatched its resources among terminal users.  Is this
+> > right?  Is this the "Nike TSS" you mention?  I got some idea of this
+> > from a BSTJ "SAFEGUARD Supplement" written in 1975.
+> > (http://srmsc.org/pdf/005224p0.pdf)
+> > 
+> > Multics PL/I compiler history is chronicled in
+> > http://www.multicians.org/pl1.html and if you have clarifications or
+> > additions they would be welcome.  In that page, Doug wrote that CA
+> > was not involved, which matches my recollection.  Maybe there were
+> > two contracts.  EPL was in use on MIT CTSS by April 1966, but I
+> > don't know if the decision to give up on Digitek and build EPL was
+> > strictly sequential; there might have been a time when Morris and
+> > McIlroy had started EPL while hoping that the real compiler would
+> > still be delivered.
+> > 
+> > (You say, "the only production copy of Multics at Bell Labs was at
+> > Indian Hill."  I think you mean Murray Hill.  Indian Hill in
+> > Naperville was a TSS/360 shop.)
+> > 
+> > regards, tom
+> > 
+> > 
+> > On Oct 23, 2011, at 3:36 PM, Rudd Canaday wrote:
+> > 
+>> >> Tom,
+>> >> 
+>> >> Here are some notes, mostly from memory, on my involvement with
+>> >> Multics and roff.
+>> >> 
+>> >> I am the person who brought BCPL to Bell Labs, as part of the
+>> >> Multics effort. I probably also am responsible for the first
+>> >> runoff (roff) at Bell Labs.
+>> >> 
+>> >> I joined Bell Labs at Whippany on the Nike-X anti-ballistic
+>> >> missile system in 1964 after receiving my Ph.D. at MIT. Soon
+>> >> dissatisfied with my assignments on Nike-X, I convinced my
+>> >> management to let me put together a team of 10 GE contractors to
+>> >> build a copy of CTSS, the Nike TSS.
+>> >> 
+>> >> Like most Bell Labs comp centers, Whippany had an under-utilized
+>> >> GE 635 in anticipation of Multics, which was already behind
+>> >> schedule. My team and I built a prototype of the Nike TSS on the
+>> >> GE 635 at Whippany, which proved so popular that it was used in
+>> >> the Nike effort for 5 years. It is probable that the Nike TSS
+>> >> included runoff (or roff), so that would be the first runoff at
+>> >> Bell Labs and probably the first on a GE machine.
+>> >> 
+>> >> In 1966 I joined the Multics effort. One of the first things I did
+>> >> there was to port BCPL from MIT to the GE 645 being used for
+>> >> Multics development. (Dennis Ritchie did the BCPL IO library.) I
+>> >> also took over supervision of a contract with Computer Associates
+>> >> (Massachusetts) to build a PL-1 compiler for Multics. This
+>> >> compiler, when finally delivered, very late, was a bloated
+>> >> monstrosity which, so far as I know, was never used. (This might
+>> >> be the Digitek compiler, but I supervised it in 1967 or 1968 after
+>> >> supposedly Digitek had been fired.)
+>> >> 
+>> >> So far as I know, the only production copy of Multics at Bell Labs
+>> >> was at Indian Hill. The other GE machines at Bell Labs ran Nike
+>> >> TSS (only at Whippany) or GECOS (not time sharing).
+>> >> 
+>> >> When Bell Labs abandoned MULTICS, Ken Thompson came up with the
+>> >> idea of building a TSS on a small machine (DEC). Ken, Dennis, and
+>> >> I worked on the design of Unix. (The only patent application on
+>> >> UNIX, for the file system, lists me, Ken, and Dennis as inventors.
+>> >> It was denied.)
+>> >> 
+>> >> In 1969 Ken, Dennis, and I went to our executive director to ask
+>> >> for a PDP-11 to build UNIX. He told us that Bell Labs had been
+>> >> badly burned by the Multics effort and would never support more
+>> >> work on a time sharing system. I believed him and went to another
+>> >> area of Bell Labs where I created a research group. There I and my
+>> >> group built a back end database machine (described in CACM Volume
+>> >> 17 #10) and later built the Programmers' Workbench (Wikipedia),
+>> >> the first Bell-Labs-wide application on UNIX. (I built the vugraph
+>> >> macros, among other things.)
+>> >> 
+>> >> Of course Ken and Dennis did get a machine for UNIX. The story I
+>> >> heard is that they convinced the patent department to buy them a
+>> >> machine by promising that it would do their paperwork, which is
+>> >> why the early UNIX had so many text tools (nroff, troff). However,
+>> >> published accounts differ from my memory.
+>> >> 
+>> >> If you'd like any more information or to discuss this with me,
+>> >> please feel free to phone or email.
+>> >> 
+>> >> - Rudd
+>> >> 
+>> >> Rudd Canaday xxx-xxx-xxxx (home office)
+>> >> 
+>> >> 
+>> >> 
+>> >> On Oct 23, 2011, at 4:03 AM, Tom Van Vleck wrote:
+>> >> 
+>>> >>> Hello Rudd, You may be interested in http://www.multicians.org
+>>> >>> which chronicles the Multics operating system.  You are on the
+>>> >>> list of multicians and you are mentioned a few times on the
+>>> >>> site.
+>>> >>> 
+>>> >>> Yesterday I got mail from someone in Sweden who is researching
+>>> >>> the history of Unix documentation.  He asked about the early
+>>> >>> days of BCPL and runoff at Bell Labs.  As I understand it, there
+>>> >>> were several programs: Saltzer's CTSS RUNOFF command, written in
+>>> >>> MAD; a version of runoff for the Multics environment written in
+>>> >>> BCPL; a version of runoff called roff for the GE-635
+>>> >>> environment; and a machine-language version of roff for early
+>>> >>> Unix.  One question is whether the 635 version or the Multics
+>>> >>> version came first.
+>>> >>> 
+>>> >>> I know little about the use of the GE-635 at Bell Labs in the
+>>> >>> 60s.  I presume this was the "GECOS timesharing" environment but
+>>> >>> don't know if it was modified by Labs folks, what the
+>>> >>> limitations were, etc.
+>>> >>> 
+>>> >>> I remember that you worked on BCPL for Multics, and may have
+>>> >>> contributed to the runoff effort.
+>>> >>> 
+>>> >>> If you are interested, have the time, and can remember any of
+>>> >>> the history, I'd like to help the Swedish guy out, and make the
+>>> >>> Multics part of the story accurate.
+>>> >>> 
+>>> >>> regards, tom editor, multicians.org
+>>> >>> 
+> > 
+

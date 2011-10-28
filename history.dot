@@ -11,6 +11,7 @@ digraph manpages {
 	subgraph { 
 		node [color=1];
 		runoff1 [label="RUNOFF" URL="#x1964_RUNOFF"];
+		runoff4 [label="RUNOFF" URL="#x1966_RUNOFF"];
 		runoff2 [label="roff" URL="#x1967_roff"];
 		script [label="SCRIPT" URL="#x1967_SCRIPT"];
 		runoff3 [label="runoff" URL="#x1969"]; 
@@ -21,7 +22,7 @@ digraph manpages {
 		node [color=2];
 		rf [label="rf" URL="#x1970_rf"];
 		roff1 [label="roff(1)" URL="#x1971"];
-		roff2 [label="roff" URL="#x1969"];
+		roff2 [label="roff" URL="#x1969_roff"];
 		nroff [label="nroff(1)" URL="#x1972"];
 		troff [label="troff(1)" URL="#x1973"];
 		ditroff [label="ditroff(1)" URL="#x1979"];
@@ -40,7 +41,7 @@ digraph manpages {
 		mandoc [label="mandoc(1)" URL="#x2008_mandoc"];
 	}
 
-	runoff1 -> { runoff2 runoff3 script };
+	runoff1 -> { runoff4 runoff2 runoff3 script };
 	runoff3 -> { roff1 compose rf roff2 };
 	roff1 -> nroff;
 	nroff -> troff;
@@ -53,7 +54,7 @@ digraph manpages {
 
 	subgraph {
 		node[colorscheme=x11,color=white];
-		1964 -> 1967 -> 1969 -> 1970 -> 1971 -> 1972 -> 
+		1964 -> 1966 -> 1967 -> 1969 -> 1970 -> 1971 -> 1972 -> 
 		1973 -> 1974 -> 1979 -> 1989 -> 1991 -> 2005 -> 2008;
 	}
 

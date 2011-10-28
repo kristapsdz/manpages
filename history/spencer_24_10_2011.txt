@@ -1,7 +1,7 @@
 Subject: Re: History of UNIX manpages: awf
-From: Henry Spencer <henry@xxxxxxxxxxxxxxx>
+From: Henry Spencer 
 Date: 24/10/2011 04:52
-To: Kristaps Dzonsons <kristaps@xxxxxx>
+To: Kristaps Dzonsons 
 
 > > However -- I guess I do have one more -- would you object if I posted 
 > > our mail exchange as part of the record?  I of course obscure the mail 

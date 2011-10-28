@@ -1,7 +1,7 @@
 Subject: Re: History of UNIX manpages: awf
-From: Henry Spencer <henry@xxxxxxxxxxxxxxx>
+From: Henry Spencer 
 Date: 22/10/2011 18:24
-To: Kristaps Dzonsons <kristaps@xxxxxx>
+To: Kristaps Dzonsons 
 
 > > Your source code is readily available, of course...
 
