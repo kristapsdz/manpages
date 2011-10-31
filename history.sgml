@@ -13,25 +13,20 @@
 		<P>
 			Where do UNIX manpages come from?  Who introduced the section-based layout of <B>NAME</B>, <B>SYNOPSIS</B>, and so on?
 			And for manpage source writers and readers: where were those economical two- and three-letter instructions developed?
-			The many accounts available on the Internet are ambiguous and at times conflicting.  This is due primarily to the loss
-			of historical materials &mdash; only recently were the primary historical sources re-licensed and made available to the
-			public.
+			The many accounts available on the Internet lack citations and at times inconsistent.
 		</P>
 		<P>
-			In this article, I reconstruct the history of the UNIX manpage from <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A>
-			onward.  I make significant use of the <Q CITE="http://mirror.cc.vt.edu/pub/projects/Ancient_Unix/">Ancient UNIX</Q>
-			source code permissively re-licensed by Caldera International in 2002; the Multics source code as permissively licensed
-			by M.I.T.; and the CTSS source code (public domain?).
+			In this article, I reconstruct the history of the UNIX manpage based on source code, manuals, and first-hand accounts.
 		</P>
 		<P>
-			Special thanks to <A HREF="http://www.piercefuller.com/">Paul Pierce</A> for his CTSS <A
-			HREF="http://www.piercefuller.com/library/ctss.html">source archive</A>; Bernard Nivelet for the <A
-			HREF="http://web.mit.edu/multics-history/source/Multics_Internet_Server/Multics_sources.html">Multics Internet
+			Special thanks to <A HREF="http://www.piercefuller.com/">Paul Pierce</A> for his <ABBR TITLE="Compatible Time-Sharing
+			System">CTSS</ABBR> <A HREF="http://www.piercefuller.com/library/ctss.html">source archive</A>; Bernard Nivelet for the
+			<A HREF="http://web.mit.edu/multics-history/source/Multics_Internet_Server/Multics_sources.html">Multics Internet
 			Server</A>; the <A HREF="http://www.tuhs.org">UNIX Heritage Society</A> for their research UNIX <A
 			HREF="http://minnie.tuhs.org/cgi-bin/utree.pl">source reconstruction</A>; <A
 			HREF="http://www.bitsavers.org/">BitSavers</A> for their historical archive; and last but not least, Rudd Canaday, James
-			Clarke, Brian Kernighan, Douglas McIlroy, Jerome Saltzer, Henry Spencer, Ken Thompson, and Tom Van Vleck for letting me
-			pester them with questions.
+			Clarke, Brian Kernighan, Douglas McIlroy, Nils-Peter Nelson, Jerome Saltzer, Henry Spencer, Ken Thompson, and Tom Van
+			Vleck for letting me pester them with questions.
 		</P>
 		<P>
 			Please see the <A HREF="#copyright">Copyright</A> section if you plan on reproducing parts of this work.
@@ -51,11 +46,15 @@
 			</DT>
 			<DD>
 				<P>
-					<A HREF="#saltzer">Saltzer</A> wrote the <SPAN CLASS="cmd">RUNOFF</SPAN> utility for MIT's IBM 7094 CTSS
-					operating system in the MAD computer language.  Its legacy is considerable: not only can manpages trace
-					their ancestry to to <SPAN CLASS="cmd">RUNOFF</SPAN>, but so can XML and its precursor SGML!  In this
-					article, however, I only consider <SPAN CLASS="cmd">RUNOFF</SPAN> in its introduction of the familiar
-					line-based, dot-control syntax used in modern UNIX manpages.
+					<A HREF="#saltzer">Saltzer</A> wrote the <SPAN CLASS="cmd">RUNOFF</SPAN> utility for <ABBR
+					TITLE="Massachusettes Institute of Technology">MIT</ABBR>'s <ABBR TITLE="International Business
+					Machines">IBM</ABBR> 7094 <ABBR TITLE="Compatible Time-Sharing System">CTSS</ABBR> operating system in
+					the <ABBR TITLE="Michigan Algorithm Decoder">MAD</ABBR> computer language.  Its legacy is considerable:
+					not only can manpages trace their ancestry to to <SPAN CLASS="cmd">RUNOFF</SPAN>, but so can <ABBR
+					TITLE="Extensible Mark-up Language">XML</ABBR> and its precursor <ABBR TITLE="Standard Generalised
+					Mark-up Language">SGML</ABBR>!  In this article, however, I only consider <SPAN
+					CLASS="cmd">RUNOFF</SPAN> in its introduction of the familiar line-based, dot-control syntax used in
+					modern UNIX manpages.
 				</P>
 				<BLOCKQUOTE CITE="http://web.mit.edu/Saltzer/www/publications/ctss/AH.9.01.pdf">
 					<P>
@@ -70,8 +69,8 @@
 					<CODE>sp</CODE> and <CODE>br</CODE>.  According to <A HREF="#saltzer">Saltzer</A> and the source
 					literature, the syntax of <SPAN CLASS="cmd">RUNOFF</SPAN> inherits loosely from the prior <SPAN
 					CLASS="cmd">DITTO</SPAN>, <SPAN CLASS="cmd">MEMO</SPAN>, and <SPAN CLASS="cmd">MODIFY</SPAN> utilities
-					by M. L. Lowry, 1963.  Unfortunately, the sources for these utilities could not be located in the CTSS
-					source archive.
+					by M. L. Lowry, 1963.  Unfortunately, the sources for these utilities could not be located in the <ABBR
+					TITLE="Compatible Time-Sharing System">CTSS</ABBR> source archive.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -111,9 +110,11 @@
 			<DD>
 				<P>
 					While working at AT&amp;T Bell Labs' Whippany centre, <A HREF="#canaday">Canaday</A> led a porting
-					effort of the CTSS at MIT to the GE-635 (in 635 assembly).  The <A HREF="#1964_RUNOFF">RUNOFF</A>
-					utility is suspected to be part of this port.  The ported CTSS was originally intended as a prototype
-					(to be replaced by Nike hardware), but ended up being used for five more years.
+					effort of the <ABBR TITLE="Compatible Time-Sharing System">CTSS</ABBR> at <ABBR TITLE="Massachusettes
+					Institute of Technology">MIT</ABBR> to the GE-635 (in 635 assembly).  The <A CLASS="cmd"
+					HREF="#1964_RUNOFF">RUNOFF</A> utility is suspected to be part of this port.  The ported <ABBR
+					TITLE="Compatible Time-Sharing System">CTSS</ABBR> was originally intended as a prototype (to be
+					replaced by Nike hardware), but ended up being used for five more years.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -137,14 +138,16 @@
 			<DD>
 				<P>
 					Little is known about this re-write of <A HREF="#x1964_RUNOFF" CLASS="cmd">RUNOFF</A>, only that it was
-					called <SPAN CLASS="cmd">roff</SPAN> and [probably] ran on Bell Labs' GCOS-II GE-635.  <A
-					HREF="#ritchie">Ritchie</A> is commonly cited as participating in this port, and this is not disputed.
-					<A HREF="#canaday">Canaday</A> is also mentioned as an author, though this is not the case by his own
+					called <SPAN CLASS="cmd">roff</SPAN> and [probably] ran on Bell Labs' <ABBR TITLE="General Comprehensive
+					Operating System">GCOS</ABBR>-II GE-635.  <A HREF="#ritchie">Ritchie</A> is commonly cited as
+					participating in this port, and this is not disputed.  <A HREF="#canaday">Canaday</A> is also mentioned
+					as an author, though this is not the case by his own
 					account.
 				</P>
 				<P>
 					The accounts of both <A HREF="#mcilroy">McIlroy</A> and <A HREF="#saltzer">Saltzer</A> conclude that
-					this version was likely written in BCPL, much like <A CLASS="cmd" HREF="#x1969">runoff</A>.
+					this version was likely written in <ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR>, much
+					like <A CLASS="cmd" HREF="#x1969">runoff</A>.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -184,10 +187,10 @@
 			<DD>
 				<P>
 					In 1967, <A HREF="#madnick">Madnick</A> ported the <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> code
-					to the IBM CP67/CMS at IBM as <SPAN CLASS="cmd">SCRIPT</SPAN> (XXX: why did he rename it?).  The
-					documentation of <SPAN CLASS="cmd">SCRIPT</SPAN> explicitly mentions the backspace-encoding convention
-					used to this day by manpage formatters on UNIX terminals (of course, this was common practice in
-					mechanical type-writers before then):
+					to the <ABBR TITLE="International Business Machines">IBM</ABBR> CP67/CMS at IBM as <SPAN
+					CLASS="cmd">SCRIPT</SPAN>.  The documentation of <SPAN CLASS="cmd">SCRIPT</SPAN> explicitly mentions the
+					backspace-encoding convention used to this day by manpage formatters on UNIX terminals (of course, this
+					was common practice in mechanical type-writers before then):
 				</P>
 				<BLOCKQUOTE CITE="http://www.bitsavers.org/pdf/ibm/360/cp67/">
 					<P>
@@ -197,8 +200,8 @@
 					</P>
 				</BLOCKQUOTE>
 				<P>
-					Source code for the original re-write of <A HREF="#x1964_RUNOFF">RUNOFF</A> could not be located,
-					although a considerable amount of documentation exists for this utility.  The dates of <A
+					Source code for the original re-write of <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> could not be
+					located, although a considerable amount of documentation exists for this utility.  The dates of <A
 					HREF="#madnick">Madnick</A>'s porting derive from his publication and independent accounts.
 				</P>
 				<DIV CLASS="sources">
@@ -229,12 +232,14 @@
 			</DT>
 			<DD>
 				<P>
-					In 1969, <A HREF="#mcilroy">McIlroy</A> released an influential BCPL port of <A CLASS="cmd"
-					HREF="#x1964_RUNOFF">RUNOFF</A> <Q>to extend the runoff model</Q> to the GECOS GE-645 computer at
-					AT&amp;T Bell Labs, Murray Hill.  He did not refer to the CTSS <A CLASS="cmd"
+					In 1969, <A HREF="#mcilroy">McIlroy</A> released an influential <ABBR TITLE="Basic Combined Programming
+					Language">BCPL</ABBR> port of <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> <Q>to extend the runoff
+					model</Q> to the <ABBR TITLE="General Electric Comprehensive Operating Supervisor">GECOS</ABBR> GE-645
+					computer at AT&amp;T Bell Labs, Murray Hill.  He did not refer to the CTSS <A CLASS="cmd"
 					HREF="#x1964_RUNOFF">RUNOFF</A> source code in writing <SPAN CLASS="cmd">runoff</SPAN>, nor any other
 					speculated derivatives of <A HREF="#saltzer">Saltzer</A>'s utility.  The progress of this utility
-					subsequent 1969 is recorded in the Multics BCPL source as ported by R. F. Mabee:
+					subsequent 1969 is recorded in the Multics <ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR>
+					source as ported by R. F. Mabee:
 				</P>
 				<BLOCKQUOTE CITE="http://web.mit.edu/multics-history/source/Multics/ldd/system_library_standard/source/bound_runoff_.s.archive">
 					<P>
@@ -250,13 +255,18 @@
 					<A HREF="#mcilroy">McIlroy</A>'s port is at times referred to as <SPAN CLASS="cmd">runoff</SPAN>, at
 					times as <SPAN CLASS="cmd">roff</SPAN>.  <A HREF="#saltzer">Saltzer</A> writes, <Q>my understanding was
 					that Doug [<A HREF="#mcilroy">McIlroy</A>] did the conversion of <A HREF="#1964_RUNOFF">RUNOFF</A> from
-					the CTSS extended character set to ASCII, using BCPL, under CTSS.  He chose to name the port <SPAN
-					CLASS="cmd">roff</SPAN>, I think to distinguish the ASCII version from the CTSS extended character set
-					version.</Q>  (Ed., the mention of CTSS is incorrect; it was GECOS.) <A HREF="#mcilroy">McIlroy</A>
-					writes similarly, <Q>I see that I called it <SPAN CLASS="cmd">runoff</SPAN> in 1969.  By 1971 it was
-					<SPAN CLASS="cmd">roff</SPAN>.  Now I'm not so sure I got the name from <A HREF="#morris">Morris</A>.
-					Conceivably it came from <A HREF="#thompson">Thompson</A>, who was big on shortening names.  My 1971
-					description came in January; the first ediion Unix manual is dated December 1971.</Q> 
+					the <ABBR TITLE="Compatible Time-Sharing System">CTSS</ABBR> extended character set to <ABBR
+					TITLE="American Standard Code for Information Interchange">ASCII</ABBR>, using <ABBR TITLE="Basic
+					Combined Programming Language">BCPL</ABBR>, under <ABBR TITLE="Compatible Time-Sharing
+					System">CTSS</ABBR>.  He chose to name the port <SPAN CLASS="cmd">roff</SPAN>, I think to distinguish
+					the ASCII version from the <ABBR TITLE="Compatible Time-Sharing System">CTSS</ABBR> extended character
+					set version.</Q>  (Ed., the mention of <ABBR TITLE="Compatible Time-Sharing System">CTSS</ABBR> is
+					incorrect; it was <ABBR TITLE="General Electric Comprehensive Operating Supervisor">GECOS</ABBR>.) <A
+					HREF="#mcilroy">McIlroy</A> writes similarly, <Q>I see that I called it <SPAN CLASS="cmd">runoff</SPAN>
+					in 1969.  By 1971 it was <SPAN CLASS="cmd">roff</SPAN>.  Now I'm not so sure I got the name from <A
+					HREF="#morris">Morris</A>.  Conceivably it came from <A HREF="#thompson">Thompson</A>, who was big on
+					shortening names.  My 1971 description came in January; the first ediion Unix manual is dated December
+					1971.</Q> 
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -280,7 +290,7 @@
 						<LI>
 							Douglas McIlroy, <I><A HREF="history/runoff69.low.pdf">Runoff</A></I>, AT&amp;T Bell
 							Labs Technical Memorandum.  17 September, 1969.  Available with permission of the
-							author.  (<A HREF="history/roff69.high.pdf.gz>">High-quality</A> version.)
+							author.  (<A HREF="history/runoff69.high.pdf.gz>">High-quality</A> version.)
 						</LI>
 						<LI>
 							Douglas McIlroy, <I><A HREF="history/mcilroy_21_10_2011.txt">UNIX manpage history:
@@ -306,8 +316,10 @@
 					CLASS="cmd">runoff</SPAN> before being renamed, was ported to PL/I by <A HREF="#capps">Capps</A> for the
 					Multics Honeywell 6180.  It was later tuned and improved by Ed Wallman.  Tom Van Vleck, Wallman's
 					manager in mid-1978, recounts the porting effort <Q>to produce photo-typset manuals and eliminate
-					dependence on BCPL</Q>.  (Note: the primary source erroneously refers to <A HREF="#ossanna">Ossanna</A>
-					as writing the BCPL <SPAN CLASS="cmd">runoff</SPAN>; it was in fact <A HREF="#mcilroy">McIlroy</A>.)
+					dependence on <ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR></Q>.  (Note: the primary
+					source erroneously refers to <A HREF="#ossanna">Ossanna</A> as writing the <ABBR TITLE="Basic Combined
+					Programming Language">BCPL</ABBR> <SPAN CLASS="cmd">runoff</SPAN>; it was in fact <A
+					HREF="#mcilroy">McIlroy</A>.)
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -350,11 +362,11 @@
 			</DT>
 			<DD>
 				<P>
-					After being exposed to <A HREF="#x1964_RUNOFF">RUNOFF</A> while at M.I.T. in summer 1966, <A
-					HREF="#kernighan">Kernighan</A> wrote a port in Fortran while working on his doctoral thesis at
-					Princeton (to format the thesis).  By his account, the system was used for five more years by the
-					student agency.  The punch-card source has long since been lost.  (XXX: what architecture/system was
-					this?)
+					After being exposed to <A HREF="#x1964_RUNOFF">RUNOFF</A> while at <ABBR TITLE="Massachusettes Institute
+					of Technology">MIT</ABBR> in summer 1966, <A
+					HREF="#kernighan">Kernighan</A> wrote a port in Fortran (for an IBM System/360) while working on his
+					doctoral thesis at Princeton (to format the thesis).  By his account, the system was used for five more
+					years by the student agency.  The punch-card source has long since been lost. 
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -369,6 +381,11 @@
 							Brian Kernighan, <I><A HREF="history/kernighan_26_10_2011.txt">Reconstructing UNIX
 							manpage history: ditroff(1)</A></I>.  26 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
+						<LI>
+							Brian Kernighan, <I><A HREF="history/roff69.low.pdf">Manuscript Printing under OS/360:
+							ROFF</A></I>.  Available with permission of the author.  (<A
+							HREF="history/roff69.high.pdf.gz>">High-quality</A> version.)
+						</LI>
 					</UL>
 				</DIV>
 			</DD>
@@ -378,8 +395,9 @@
 			</DT>
 			<DD>
 				<P>
-					<A HREF="#thompson">Thompson</A> wrote a PDP-7 port of either the BCPL <A CLASS="cmd"
-					HREF="#x1969">runoff</A> or directly from the CTSS <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A>.  This
+					<A HREF="#thompson">Thompson</A> wrote a PDP-7 port of either the <ABBR TITLE="Basic Combined
+					Programming Language">BCPL</ABBR> <A CLASS="cmd" HREF="#x1969">runoff</A> or directly from the <ABBR
+					TITLE="Compatible Time-Sharing System">CTSS</ABBR> <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A>.  This
 					fork was an evolutionary dead-end, replaced by the PDP-11 <A CLASS="cmd" HREF="#x1971">roff(1)</A> which
 					was written at around the same time.  The source code for this port has long since been lost.
 				</P>
@@ -401,18 +419,21 @@
 			</DT>
 			<DD>
 				<P>
-					Most of the programming team for Multics continued working with UNIX, so it's no surprise that Multics
-					<SPAN CLASS="cmd">runoff</SPAN> was incorporated as UNIX <SPAN CLASS="cmd">roff(1)</SPAN> in Version 1
-					AT&amp;T UNIX, 1971.  This was a PDP-11/20 port of BCPL <A CLASS="cmd" HREF="#x1969_runoff">runoff</A>.
-					According to <A HREF="#thompson">Thompson</A>, <SPAN CLASS="cmd">roff(1)</SPAN> for formatting patent
-					applications was used as a justification for the PDP-11 purchase.
+					Most of the programming team for Multics continued working with UNIX at AT&amp;T Bell Labs, Murray Hill,
+					so it's no surprise that Multics <SPAN CLASS="cmd">runoff</SPAN> was incorporated as UNIX <SPAN
+					CLASS="cmd">roff(1)</SPAN> in Version 1 AT&amp;T UNIX, 1971.  This was a PDP-11 assembly-language port
+					of the <ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR> <A CLASS="cmd"
+					HREF="#x1969_runoff">runoff</A>.  According to <A HREF="#thompson">Thompson</A>, <SPAN
+					CLASS="cmd">roff(1)</SPAN> for formatting patent applications was used as a justification for the PDP-11
+					purchase.
 				</P>
 				<P>
 					There are many wildly differing accounts of who wrote this version, but most settle on <A
 					HREF="#ossanna">Ossanna</A>, <A HREF="#ritchie">Ritchie</A>, and <A HREF="#thompson">Thompson</A>.
 					However, the first-hand accounts of <A HREF="#mcilroy">McIlroy</A>, <A HREF="#kernighan">Kernighan</A>,
 					and Thompson settle on Ritchie as the primary author.  This is corroborated by Ritchie's expertise in
-					BCPL, as <SPAN CLASS="cmd">roff(1)</SPAN> was based upon McIlroy's BCPL <A
+					<ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR>, as <SPAN CLASS="cmd">roff(1)</SPAN> was
+					based upon McIlroy's <ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR> <A
 					HREF="#x1969_runoff">runoff</A>.
 				</P>
 				<P>
@@ -592,10 +613,13 @@
 					never been fond of it.</Q>
 				</P>
 				<P>
-					The UNIX/32V port of Version 7 AT&amp;T UNIX to the VAX architecture also contains the new <SPAN
-					CLASS="cmd">troff(1)</SPAN> sources.  The inclusion of <SPAN CLASS="cmd">troff(1)</SPAN> in ported
-					systems quickly became the norm; most modern <SPAN CLASS="cmd">troff(1)</SPAN> and <SPAN
-					CLASS="cmd">nroff(1)</SPAN> systems descend from this utility.
+					<A HREF="#kernighan">Kernighan</A>'s device-independent <SPAN CLASS="cmd">troff(1)</SPAN> was repackaged
+					in commercial AT&amp;T (and derivative) UNIX systems for years to come.  In circa 1978, the <ABBR
+					TITLE="Documenter's Workbench">DWB</ABBR> featured <SPAN CLASS="cmd">troff(1)</SPAN> as its mainstay;
+					later, the <ABBR TITLE="Writer's Workbench">WWB</ABBR> bolted on many additional word-processing
+					utilities.  These applications were later repackaed by <ABBR TITLE="Unix System Laboratories">USL</ABBR>
+					in 1989, a subsidiary of AT&amp;T Bell Laboratories.  The DWB tools were then bought by SoftQuad in
+					circa 1978, which rebranded <SPAN CLASS="cmd">troff(1)</SPAN> as <SPAN CLASS="cmd">sqtroff(1)</SPAN>.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -603,10 +627,22 @@
 					</P>
 					<UL>
 						<LI>
-							<A 
-							HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=32V/usr/src/cmd/troff">UNIX/32V
-							AT&amp;T source listings</A>, hosted by the <A HREF="http://www.tuhs.org">UNIX Heritage
-							Society</A>.
+							B. W. Kernighan, M. E. Lesk, and J. F. Ossanna, <I><A
+							HREF="http://www.alcatel-lucent.com/bstj/vol57-1978/articles/bstj57-6-2115.pdf">UNIX
+							Time-sharing System: Document Preparation</A></I>, AT&amp;T Bell System Technical
+							Journal, Vol. 57, No. 6.  July 1978.
+						</LI>
+						<LI>
+							L. E. McMahon, L. L. Cherry, and R. Morris, <I><A
+							HREF="http://www.alcatel-lucent.com/bstj/vol57-1978/articles/bstj57-6-2137.pdf">UNIX
+							Time-sharing System: Statistical Text Processing</A></I>, AT&amp;T Bell System Technical
+							Journal, Vol. 57, No. 6.  July, 1978.
+						</LI>
+						<LI>
+							B. W. Kernighan, M. E. Lesk, and J. F. Ossanna, <I><A
+							HREF="http://www.alcatel-lucent.com/bstj/vol57-1978/articles/bstj57-6-2115.pdf">UNIX
+							Time-sharing System: Document Preparation</A></I>, AT&amp;T Bell System Technical
+							Journal, Vol. 57, No. 6.  July, 1978.
 						</LI>
 						<LI>
 							<A 
@@ -630,12 +666,6 @@
 		<H3 ID="renaissance">
 			Renaissance
 		</H3>
-		<P>
-			This covers re-implementations of the classic <SPAN CLASS="cmd">roff(1)</SPAN>, <SPAN CLASS="cmd">troff(1)</SPAN>, and
-			<SPAN CLASS="cmd">nroff(1)</SPAN> utilities.  At the time, the UNIX <SPAN CLASS="cmd">dittroff(1)</SPAN> utilities were
-			licensed by AT&amp;T Bell Laboratories and not free.  With the significant popularity of UNIX clones, several projects
-			sprang up to reimplement <SPAN CLASS="cmd">ditroff(1)</SPAN> without the license restrictions.
-		</P>
 		<DL>
 			<DT ID="x1989_groff">
 				1989: groff (<A HREF="#clarke">James Clarke</A>)
@@ -838,7 +868,8 @@
 				<DT ID="ritchie">Ritchie, Dennis</DT>
 				<DD>
 					<P>
-						Homepage: <A HREF="http://cm.bell-labs.com/who/dmr/">cm.bell-labs.com/who/dmr</A>.
+						Wrote <A HREF="#x1971">roff(1)</A> for Version 1 AT&amp;T UNIX while working at .  Homepage: <A
+						HREF="http://cm.bell-labs.com/who/dmr/">cm.bell-labs.com/who/dmr</A>.
 					</P>
 				</DD>
 				<DT ID="ritter">Ritter, Gunnar</DT>
@@ -850,21 +881,25 @@
 				<DT ID="saltzer">Saltzer, Jerome H.</DT>
 				<DD>
 					<P>
-						Author of <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> while working in MIT's CTSS project.
-						Homepage: <A HREF="http://mit.edu/saltzer/">mit.edu/saltzer</A>.
+						Wrote <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> while working in <ABBR
+						TITLE="Massachusettes Institute of Technology">MIT</ABBR>'s <ABBR TITLE="Compatible Time-Sharing
+						System">CTSS</ABBR> project.  Homepage: <A HREF="http://mit.edu/saltzer/">mit.edu/saltzer</A>.
 					</P>
 				</DD>
 				<DT ID="spencer">Spencer, Henry</DT>
 				<DD>
 					<P>
-						Wrote an AWK language formatter for the <I>man</I> and <I>ms</I> macro sets from <A CLASS="cmd"
-						HREF="#x1979">ditroff(1)</A> resources.
+						Wrote the <A CLASS="cmd" HREF="#x1991_awf">awf</A> formatter for the <I>man</I> and <I>ms</I>
+						macro sets.  Homepage: <A
+						HREF="http://www.hq.nasa.gov/alsj/henry.html">www.hq.nasa.gov/alsj/henry.html</A>.
 					</P>
 				</DD>
 				<DT ID="thompson">Thompson, Ken</DT>
 				<DD>
 					<P>
-						Homepage: <A HREF="http://cm.bell-labs.com/who/ken/">cm.bell-labs.com/who/ken</A>.
+						Contributed to <A CLASS="cmd" HREF="#x1971">roff(1)</A>, <A CLASS="cmd"
+						HREF="#x1972">nroff(1)</A>, and <A CLASS="cmd" HREF="#x1973">troff(1)</A>.  Homepage: <A
+						HREF="http://cm.bell-labs.com/who/ken/">cm.bell-labs.com/who/ken</A>.
 					</P>
 				</DD>
 			</DL>

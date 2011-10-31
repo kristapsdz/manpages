@@ -5,14 +5,11 @@ SOURCE	= book.css \
 	  book.xml \
 	  container.xml \
 	  css/book.css \
-	  css/history.css \
 	  css/index.css \
 	  external.png \
 	  full-head.xml \
 	  full-tail.xml \
 	  glossary.xml \
-	  history.dot \
-	  history.sgml \
 	  index.sgml \
 	  license.png \
 	  Makefile \

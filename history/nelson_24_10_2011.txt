@@ -1,0 +1,80 @@
+Subject: Re: UNIX manpage history 
+From: Nils-Peter Nelson 
+Date: Mon, 24 Oct 2011 06:12:02 -0700 
+To: Kristaps Dzonsons
+
+Runoff produced fixed width characters for a line printer or teletype.
+The Bell Labs version was called roff and served until linotype devices
+were available.  The first troff port to the GE-635 was done by Roger
+Faulkner, now at Sun.  though it may be that Bob Morris started it. I
+was indeed the supervisor of the DWB project, but I knew Kernighan well
+and the DWB version was always the same as his. However, that was inside
+A&T.  Unix Systems Lab continued to sell a version of DWB with an old
+version; they never kept up. Then they dropped it completely, selling
+the rights to a company in Canada, SoftQuad. Eventually, USL started
+selling our version.
+
+[redacted]
+
+Ossanna'a original troff only worked with the typesetter in the Unix
+room. Whole idea of ditroff was to make it easier to put on back ends
+for other devices. We bought the first laser printer made (ours was the
+first on the East Coast), an Imagen Imprint 10, so that was an early
+post-processor.
+
+My recollection is that most of Kernighan's ditroff versions were bug
+fixes rather than language changes, though I think he did add features
+to make pic and eqn work properly.
+
+Rich Drechsler of my group wrote dpost, the postprocessor for PostScript
+devices, and from then on we only bought devices that used PostScript.
+HP must have had a dozen internal languages and we didn't want to be
+bothered.
+
+
+
+----- Original Message ---- 
+From: Kristaps Dzonsons 
+To: Nils-Peter Nelson
+Sent: Mon, October 24, 2011 7:01:51 AM 
+Subject: UNIX manpage history
+
+Nils-peter,
+
+Brian Kernighan suggested that I write to you on a matter of history,
+namely that of UNIX manpages.
+
+I've been constructing a primary-source account of the manpage from
+Saltzer's RUNOFF onward, inspired by the significant inconsistency of
+the secondary record.  I think the "prehistorical" age is fleshed out
+(the sixties), with the exception of a mysterious GE-635 port by Bob
+Morris; the "classical" age (seventies) focussing on UNIX and proto-UNIX
+(Thompson, Ossanna, Ritchie, and Kernighan); and the open source
+"renaissance" (eighties and nineties) reimplementations of groff, awf,
+and cawf.  And of course my own which neatly slips in as
+"next-generation" (exporting an AST).
+
+Kernighan suggested contacting you, I suppose (he didn't say exactly
+why), for an account of the continued branching of ditroff within AT&T.
+Unfortunately, I assume a lot of this code is still closed-source, and
+this makes it difficult to construct a source-record per se (are you
+aware of any primary sources for creating a primary record?).
+
+My current assumption is that Kernighan's device-independent troff
+continued its way through most AT&T projects (including the DWB), but
+I'm unsure of how much it changed over time.  My interest, in this
+regard, is more in full ports/re-writes than repackaging unless it's a
+big event, like Heirloom troff after Sun released their troff.
+
+(I see your "Where does one get real troff these days?" thread; can you
+verify this is your work?  If so, I can at least mention the various
+branches from Kernighan's troff.)
+
+I appreciate any time you can invest in answering, and I'm sorry I can't
+ask any more specific questions beyond asking for a general history and
+primary source references.
+
+Thanks,
+
+Kristaps
+

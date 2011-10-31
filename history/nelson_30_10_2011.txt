@@ -1,0 +1,63 @@
+Subject: Re: UNIX manpage history
+From: Nils-Peter Nelson <npn@att.net>
+Date: Sun, 30 Oct 2011 09:14:19 -0700
+To: Kristaps Dzonsons <kristaps@bsd.lv>
+
+There was a group in Bell Labs, not in Research but the Development
+side, that supported Unix, mostly for the telephone companies. Headed by
+Joe Maranzano, they packaged and supported DWB, which consisted mostly
+of programs developed in Research. The original DWB supporters included
+Molly Wagner.  This group was eventually spun off as Unix Systems
+Laboratory.
+
+[redacted]
+
+The starting point of DWB is mentioned here, though that name is never
+mentioned. But the pieces are there.  So I'm guessing around 1978 for
+the start of DWB.
+
+http://www.alcatel-lucent.com/bstj/vol57-1978/articles/bstj57-6-2115.pdf
+
+
+----- Original Message ----
+From: Kristaps Dzonsons 
+To: Nils-Peter Nelson 
+Sent: Sun, October 30, 2011 10:40:08 AM
+Subject: Re: UNIX manpage history
+
+> > Runoff produced fixed width characters for a line printer or
+> > teletype. The Bell Labs version was called roff and served until
+> > linotype devices were available. The first troff port to the GE-635
+> > was done by Roger Faulkner, now at Sun. though it may be that Bob
+> > Morris started it. I was indeed the supervisor of the DWB project,
+> > but I knew Kernighan well and the DWB version was always the same as
+> > his. However, that was inside A&T. Unix Systems Lab continued to
+> > sell a version of DWB with an old version; they never kept up. Then
+> > they dropped it completely, selling the rights to a company in
+> > Canada, SoftQuad. Eventually, USL started selling our version.
+
+Nils-Peter,
+
+Thanks for your response!  This has set me upon a track that's
+surprisingly difficult to follow from public sources: the DWB.
+
+Do you know of any documentation (or source) of the original DWB?  I
+can't find exactly when troff formally begat it: can you fill in any
+dates and places?
+
+> > My recollection is that most of Kernighan's ditroff versions were
+> > bug fixes rather than language changes, though I think he did add
+> > features to make pic and eqn work properly.
+
+Yes, he corroborates this (eqn in particular has a nice long source
+trail in the UNIX archives).
+
+[redacted]
+
+Lastly, do you mind if I include these letters in the history?  Of
+course, I'll redact all email headers (except date, subject, and names).
+
+Thanks,
+
+Kristaps
+
