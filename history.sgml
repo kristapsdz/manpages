@@ -313,7 +313,7 @@
 			<DD>
 				<P>
 					The <SPAN CLASS="cmd">compose</SPAN> utility, which may have been born as <SPAN
-					CLASS="cmd">runoff</SPAN> before being renamed, was ported to PL/I by <A HREF="#capps">Capps</A> for the
+					CLASS="cmd">runoff</SPAN> before being renamed, was ported to PL/1 by <A HREF="#capps">Capps</A> for the
 					Multics Honeywell 6180.  It was later tuned and improved by Ed Wallman.  Tom Van Vleck, Wallman's
 					manager in mid-1978, recounts the porting effort <Q>to produce photo-typset manuals and eliminate
 					dependence on <ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR></Q>.  (Note: the primary
@@ -440,7 +440,7 @@
 					Unfortunately, the first <SPAN CLASS="cmd">roff(1)</SPAN> version is lost.  Some sources from Version 1
 					AT&amp;T UNIX have been reconstructed from old tapes, but <SPAN CLASS="cmd">roff(1)</SPAN> was not among
 					them.  All that remains from this time are manual entries and first-hand acconts.  However, the
-					PDP-11/20 source for Version 5 AT&amp;T UNIX still exists, and by first-hand accounts, is a modified
+					PDP-11 source for Version 5 AT&amp;T UNIX still exists, and by first-hand accounts, is a modified
 					form of the original.
 				</P>
 				<DIV CLASS="sources">
@@ -494,7 +494,7 @@
 				</P>
 				<P>
 					Unfortunately, a source record of the original effort is entirely lost; however, later versions of the
-					PDP-11/20 source (for Version 6 AT&amp;T UNIX) and manual page (Version 3 AT&amp;T UNIX)  are available. 
+					PDP-11 source (for Version 6 AT&amp;T UNIX) and manual page (Version 3 AT&amp;T UNIX)  are available. 
 				</P>
 				<P>
 					<A HREF="#thompson">Thompson</A> mentions that <SPAN CLASS="cmd">nroff(1)</SPAN> introduced the notion
@@ -541,7 +541,7 @@
 			</DT>
 			<DD>
 				<P>
-					<A HREF="#ossanna">Ossanna</A> started writing <SPAN CLASS="cmd">troff(1)</SPAN> from his PDP-11/20 <A
+					<A HREF="#ossanna">Ossanna</A> started writing <SPAN CLASS="cmd">troff(1)</SPAN> from his PDP-11 <A
 					CLASS="cmd" HREF="#x1972">nroff(1)</A> sources for Version 4 AT&amp;T UNIX.  It's widely asserted that
 					the driving motivation was to create output for the CAT phototypsetter.  Unlike his earlier <A
 					CLASS="cmd" HREF="#x1972">nroff(1)</A> work, <SPAN CLASS="cmd">troff</SPAN> was written entirely in the
@@ -607,7 +607,7 @@
 					The result is the first intact UNIX <SPAN CLASS="cmd">troff(1)</SPAN> source.  By Version 7 AT&amp;T
 					UNIX, both <SPAN CLASS="cmd">nroff(1)</SPAN> and <SPAN CLASS="cmd">troff(1)</SPAN> are built from the
 					same C sources, separated by preprocessor conditionals, while <SPAN CLASS="cmd">roff(1)</SPAN> was still
-					built in its PDP-11/20 assembly.  The <SPAN CLASS="cmd">ditroff(1)</SPAN> name origin is unknown.  <A
+					built in its PDP-11 assembly.  The <SPAN CLASS="cmd">ditroff(1)</SPAN> name origin is unknown.  <A
 					HREF="#kernighan">Kernighan</A> writes, <Q CITE="history/kernighan_23_10_2011.txt">I'm pretty sure that
 					I only talked about a "device independent troff"; the name "ditroff" came from somewhere else, and I've
 					never been fond of it.</Q>
@@ -649,6 +649,14 @@
 							HREF="http://minnie.tuhs.org/cgi-bin/utree.pl?file=V7/usr/src/cmd/troff">Version 7
 							AT&amp;T source listings</A>, hosted by the <A HREF="http://www.tuhs.org">UNIX Heritage
 							Society</A>.
+						</LI>
+						<LI>
+							Nils-Peter Nelson, <I><A HREF="history/nelson_24_10_2011.txt">UNIX manpage
+							history</A></I>.  24 October, 2011.  Email to Kristaps Dzonsons.
+						</LI>
+						<LI>
+							Nils-Peter Nelson, <I><A HREF="history/nelson_30_10_2011.txt">UNIX manpage
+							history</A></I>.  30 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 						<LI>
 							Brian Kernighan, <I><A HREF="history/kernighan_23_10_2011.txt">Reconstructing UNIX
@@ -820,55 +828,62 @@
 				<DT ID="clarke">Clarke, James</DT>
 				<DD>
 					<P>
-						Homepage: <A HREF="http://www.jclark.com/">www.jclark.com</A>.
+						Wrote <A CLASS="cmd" HREF="#x1989_groff">groff(1)</A> for the GNU project, <A
+						HREF="http://groff.ffii.org">groff.ffii.org</A>.  Homepage: <A
+						HREF="http://www.jclark.com/">www.jclark.com</A>.
 					</P>
 				</DD>
 				<DT ID="dzonsons">Dzonsons, Kristaps</DT>
 				<DD>
 					<P>
-						I wrote <A CLASS="cmd" HREF="#x2008_mandoc">mandoc(1)</A> using <A CLASS="cmd"
-						HREF="#x1991_groff">groff(1)</A> manuals as a reference.
-						Homepage: <A HREF="http://kristaps.bsd.lv/">kristaps.bsd.lv</A>.
+						Wrote <A CLASS="cmd" HREF="#x2008_mandoc">mandoc(1)</A>, <A
+						HREF="http://mdocml.bsd.lv">mdocml.bsd.lv</A>.  Homepage: <A
+						HREF="http://kristaps.bsd.lv/">kristaps.bsd.lv</A>.
 					</P>
 				</DD>
 				<DT ID="kernighan">Kernighan, Brian</DT>
 				<DD>
 					<P>
-						Homepage: <A HREF="http://www.cs.bell-labs.com/who/bwk/index.html">www.cs.bell-labs.com/who/bwk/</A>.
+						Completed <A HREF="#x1979">ditroff(1)</A> while at AT&amp;T Bell Labs, Murray Hill.  Homepage:
+						<A HREF="http://www.cs.bell-labs.com/who/bwk/index.html">www.cs.bell-labs.com/who/bwk/</A>.
 					</P>
 				</DD>
 				<DT ID="madnick">Madnick, Stuart</DT>
 				<DD>
 					<P>
-						While at Honeywell, ported <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> to the CP67/CMS and
-						renamed it <A CLASS="cmd" HREF="#x1967_SCRIPT">SCRIPT</A>.
+						While at Honeywell, ported <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> to the <ABBR
+						TITLE="International Business Machines">IBM</ABBR> CP67/CMS and renamed it <A CLASS="cmd"
+						HREF="#x1967_SCRIPT">SCRIPT</A>.
 					</P>
 				</DD>
 				<DT ID="mcilroy">McIlroy, Douglas</DT>
 				<DD>
 					<P>
-						Ported <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> to Multics while at Bell Telephone Labs.  Homepage:
-						<A HREF="http://www.cs.dartmouth.edu/~doug/">www.cs.dartmouth.edu/~doug</A>.
+						Ported <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> to  <ABBR TITLE="General Electric
+						Comprehensive Operating Supervisor">GECOS</ABBR> GE-645 while at AT&amp;T Bell Labs, Murray
+						Hill.  Homepage: <A HREF="http://www.cs.dartmouth.edu/~doug/">www.cs.dartmouth.edu/~doug</A>.
 					</P>
 				</DD>
 				<DT ID="morris">Morris, Robert</DT>
 				<DD>
 					<P>
-						Ported <A HREF="#x1964_RUNOFF" CLASS="cmd">RUNOFF</A> to a pre-Multics GE-635.
+						Possibly ported <A HREF="#x1964_RUNOFF" CLASS="cmd">RUNOFF</A> to a <ABBR TITLE="General
+						Electric Comprehensive Operating Supervisor">GECOS</ABBR> GE-635.
 					</P>
 				</DD>
 				<DT ID="ossanna">Ossanna, Joseph F.</DT>
 				<DD>
 					<P>
-						Worked on the PDP-11/20 assembly-language <A HREF="#x1971" CLASS="cmd">roff(1)</A>, <A
-						HREF="#x1972" CLASS="cmd">nroff(1)</A>, and <A HREF="#x1973" CLASS="cmd">troff(1)</A> for
-						Versions 1, 3, and 4 AT&amp;T UNIX while working at Bell Telephone Labs. 
+						Worked on the PDP-11 assembly-language <A HREF="#x1971" CLASS="cmd">roff(1)</A>, <A
+						HREF="#x1972" CLASS="cmd">nroff(1)</A>, and <A HREF="#x1973" CLASS="cmd">troff(1)</A> while
+						working at AT&amp;T Bell Labs, Murray Hill.
 					</P>
 				</DD>
 				<DT ID="ritchie">Ritchie, Dennis</DT>
 				<DD>
 					<P>
-						Wrote <A HREF="#x1971">roff(1)</A> for Version 1 AT&amp;T UNIX while working at .  Homepage: <A
+						Wrote the PDP-11 assembly-language <A CLASS="cmd" HREF="#x1971">roff(1)</A> while working at AT&amp;T Bell
+						Labs, Murray Hill.  Homepage: <A
 						HREF="http://cm.bell-labs.com/who/dmr/">cm.bell-labs.com/who/dmr</A>.
 					</P>
 				</DD>
@@ -898,7 +913,8 @@
 				<DD>
 					<P>
 						Contributed to <A CLASS="cmd" HREF="#x1971">roff(1)</A>, <A CLASS="cmd"
-						HREF="#x1972">nroff(1)</A>, and <A CLASS="cmd" HREF="#x1973">troff(1)</A>.  Homepage: <A
+						HREF="#x1972">nroff(1)</A>, and <A CLASS="cmd" HREF="#x1973">troff(1)</A> while at AT&amp;T Bell
+						Labs, Murray Hill.  Homepage: <A
 						HREF="http://cm.bell-labs.com/who/ken/">cm.bell-labs.com/who/ken</A>.
 					</P>
 				</DD>
@@ -910,23 +926,10 @@
 			</H2>
 			<P>
 				The content of this page are available under Creative Commons' <A CLASS="external"
-				HREF="http://creativecommons.org/licenses/by-sa/3.0/">Attribution Share-Alike</A>: deriving works must attribute the
-				author(s) and use a similar license.  However, cited communications are copyright the sender, and not covered by this
-				license.  A list of these follows (note all e-mail addresses have been obscured):
+				HREF="http://creativecommons.org/licenses/by-sa/3.0/">Attribution Share-Alike</A>: deriving works must attribute
+				the author(s) and use a similar license.  However, cited communications (and copies of source materials) are
+				copyright the sender/author, and not covered by this license.
 			</P>
-			<UL>
-				<LI><A HREF="history/kernighan_23_10_2011.txt">history/kernighan_23_10_2011.txt</A></LI>
-				<LI><A HREF="history/kernighan_26_10_2011.txt">history/kernighan_26_10_2011.txt</A></LI>
-				<LI><A HREF="history/mcilroy_21_10_2011.txt">history/mcilroy_21_10_2011.txt</A></LI>
-				<LI><A HREF="history/mcilroy_22_10_2011.txt">history/mcilroy_22_10_2011.txt</A></LI>
-				<LI><A HREF="history/mcilroy_23_10_2011.txt">history/mcilroy_23_10_2011.txt</A></LI>
-				<LI><A HREF="history/saltzer_22_10_2011.txt">history/saltzer_22_10_2011.txt</A></LI>
-				<LI><A HREF="history/saltzer_23_10_2011.txt">history/saltzer_23_10_2011.txt</A></LI>
-				<LI><A HREF="history/spencer_22_10_2011.txt">history/spencer_22_10_2011.txt</A></LI>
-				<LI><A HREF="history/spencer_24_10_2011.txt">history/spencer_24_10_2011.txt</A></LI>
-				<LI><A HREF="history/thompson_23_10_2011.txt">history/thompson_23_10_2011.txt</A></LI>
-				<LI><A HREF="history/vleck_22_10_2011.txt">history/vleck_22_10_2011.txt</A></LI>
-			</UL>
 		</DIV>
 		<TABLE CLASS="nav">
 			<TBODY>

@@ -1,5 +1,6 @@
 img 		{ border: 0; }
 dd 		{ margin-bottom: 2em; }
+span.cmd	{ font-family: inherit; font-style: italic; }
 a.cmd		{ font-family: inherit; font-style: italic; border-bottom: 0; color: #0000ff; }
 div.sources p   { margin-bottom: 0.25em; }
 p.foot 		{ margin-top: 1em; color: #666666; font-size: smaller; }
