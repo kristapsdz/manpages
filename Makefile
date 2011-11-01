@@ -327,7 +327,7 @@ history.map history.png: history.dot
 	  tail -n+3 $< ) | \
 	sed -e "s!@VERSION@!$(VERSION)!g" \
 	    -e "s!@DATE@!$(DATE)!g" \
-	    -e "s!\.xml!.xhtml!g" \
+	    -e "/manpages.bsd.lv\/cgi-bin\/cvsweb/!s/\.xml/\.xhtml/g" \
 	    -e "s!text\/xml!application/xhtml+xml!" >$@
 	validate --xml --warn $@ || rm -f $@
 
@@ -340,7 +340,7 @@ history.map history.png: history.dot
 	sed -e "s!@VERSION@!$(VERSION)!g" \
 	    -e "s!@DATE@!$(DATE)!g" \
 	    -e "s!\/>!>!" \
-	    -e "s!\.xml!.html!g" \
+	    -e "/manpages.bsd.lv\/cgi-bin\/cvsweb/!s/\.xml/\.html/g" \
 	    -e "s!text\/xml!text/html!" >$@
 	validate --warn $@ || rm -f $@
 
