@@ -26,6 +26,8 @@ digraph manpages {
 		nroff [label="nroff(1)" URL="#x1972"];
 		troff [label="troff(1)" URL="#x1973"];
 		ditroff [label="ditroff(1)" URL="#x1979"];
+		ptroff [label="troff(1)" URL="#x1992"];
+		htroff [label="troff(1)" URL="#x2005_troff"];
 	}
 
 	subgraph {
@@ -33,7 +35,6 @@ digraph manpages {
 		groff [label="groff(1)" URL="#x1989_groff"];
 		awf [label="awf(1)" URL="#x1991_awf"];
 		cawf [label="cawf(1)" URL="#x1991_cawf"];
-		htroff [label="troff(1)" URL="#x2005_troff"];
 	}
 
 	subgraph {
@@ -46,8 +47,7 @@ digraph manpages {
 	roff1 -> nroff;
 	nroff -> troff;
 	troff -> ditroff;
-	ditroff -> groff;
-	ditroff -> htroff;
+	ditroff -> { groff htroff ptroff awf };
 	groff -> mandoc;
 	awf -> cawf;
 
@@ -55,7 +55,7 @@ digraph manpages {
 	subgraph {
 		node[colorscheme=x11,color=white];
 		1964 -> 1966 -> 1967 -> 1969 -> 1970 -> 1971 -> 1972 -> 
-		1973 -> 1974 -> 1979 -> 1989 -> 1991 -> 2005 -> 2008;
+		1973 -> 1974 -> 1979 -> 1989 -> 1991 -> 1992 -> 2005 -> 2008;
 	}
 
 	{ rank = same; 1964 runoff1 };
@@ -69,6 +69,7 @@ digraph manpages {
 	{ rank = same; 1979 ditroff };
 	{ rank = same; 1989 groff };
 	{ rank = same; 1991 awf cawf };
+	{ rank = same; 1992 ptroff };
 	{ rank = same; 2005 htroff };
 	{ rank = same; 2008 mandoc };
 
