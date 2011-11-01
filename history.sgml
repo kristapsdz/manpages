@@ -96,7 +96,7 @@
 						</LI>
 						<LI>
 							Jerome H. Saltzer, <I><A
-							HREF="http://mit.edu/saltzer/www/publications/ctss/ctss/CC-244.pdf">TYPSET and RUNOFF,
+							HREF="http://mit.edu/saltzer/www/publications/ctss/ctss/CC-244.pdf">TYPESET and RUNOFF,
 							memorandum editor and type-out commands</A></I>, <I>M.I.T. Computation Center
 							Memorandum</I>, CC-244. 6 November, 1964.
 						</LI>
@@ -193,7 +193,7 @@
 					to the <ABBR TITLE="International Business Machines">IBM</ABBR> CP67/CMS at IBM as <SPAN
 					CLASS="cmd">SCRIPT</SPAN>.  The documentation of <SPAN CLASS="cmd">SCRIPT</SPAN> explicitly mentions the
 					backspace-encoding convention used to this day by manpage formatters on UNIX terminals (of course, this
-					was common practice in mechanical type-writers before then):
+					was common practise in mechanical type-writers before then):
 				</P>
 				<BLOCKQUOTE CITE="http://www.bitsavers.org/pdf/ibm/360/cp67/">
 					<P>
@@ -319,7 +319,7 @@
 					CLASS="cmd">runoff</SPAN> before being renamed, was a port of <A HREF="#x1964_RUNOFF"
 					CLASS="cmd">RUNOFF</A> to PL/1 by <A HREF="#capps">Capps</A> for the Multics Honeywell 6180.  It was
 					later tuned and improved by Ed Wallman.  Tom Van Vleck, Wallman's manager in mid-1978, recounts the
-					porting effort <Q>to produce photo-typset manuals and eliminate dependence on <ABBR TITLE="Basic
+					porting effort <Q>to produce photo-typeset manuals and eliminate dependence on <ABBR TITLE="Basic
 					Combined Programming Language">BCPL</ABBR></Q>.  (Note: the primary source erroneously refers to <A
 					HREF="#ossanna">Ossanna</A> as writing the <ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR>
 					<SPAN CLASS="cmd">runoff</SPAN>; it was in fact <A HREF="#mcilroy">McIlroy</A>.)
@@ -442,7 +442,7 @@
 				<P>
 					Unfortunately, the first <SPAN CLASS="cmd">roff(1)</SPAN> version is lost.  Some sources from Version 1
 					AT&amp;T UNIX have been reconstructed from old tapes, but <SPAN CLASS="cmd">roff(1)</SPAN> was not among
-					them.  All that remains from this time are manual entries and first-hand acconts.  However, the
+					them.  All that remains from this time are manual entries and first-hand accounts.  However, the
 					PDP-11 source for Version 5 AT&amp;T UNIX still exists, and by first-hand accounts, is a modified
 					form of the original.
 				</P>
@@ -507,7 +507,7 @@
 				<P>
 					<A HREF="#ossanna">Ossanna</A> took over the PDP-11 <A CLASS="cmd" HREF="#x1971">roff(1)</A> and built
 					<SPAN CLASS="cmd">nroff(1)</SPAN>, which focussed on outputting text onto terminals, for Version 2
-					AT&amp;T UNIX.  The exact motiviations for this are unknown, but are vaguely agreed as simply evolving
+					AT&amp;T UNIX.  The exact motivations for this are unknown, but are vaguely agreed as simply evolving
 					the utility.
 				</P>
 				<P>
@@ -562,7 +562,7 @@
 					<A HREF="#ossanna">Ossanna</A> started writing <SPAN CLASS="cmd">troff(1)</SPAN> from his PDP-11 <A
 					CLASS="cmd" HREF="#x1972">nroff(1)</A> sources for Version 4 AT&amp;T UNIX.  It's widely asserted that
 					the driving motivation was to create output for the <ABBR TITLE="Computer Assisted
-					Typesetter">CAT</ABBR> phototypsetter.  
+					Typesetter">CAT</ABBR> phototypesetter.  
 				</P>
 				<P>
 					Original sources for this version of AT&amp;T UNIX are also lost; however, the manual still exists, and
@@ -725,7 +725,7 @@
 			<DD>
 				<P>
 					In 2005, Sun Microsystems published an CDDL-licenced variant of their Solaris operating system called
-					OpenSolaris.  This included a re-licenced descendent of <A HREF="#x1973" CLASS="cmd">troff(1)</A> as
+					OpenSolaris.  This included a re-licenced descendant of <A HREF="#x1973" CLASS="cmd">troff(1)</A> as
 					imported into AT&amp;T UNIX System V UNIX in 1983.  <A HREF="#ritter">Ritter</A> incorporated this
 					software into the Heirloom project in August, 2005.
 				</P>
@@ -894,7 +894,7 @@
 				<DT ID="canaday">Canaday, Rudd</DT>
 				<DD>
 					<P>
-						May have ported <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> to the GE-635 while at AT&amp;T Bell Labs, Whippany, 
+						May have ported <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> to the GE-635 while at AT&amp;T Bell Labs, Whippany.
 					</P>
 				</DD>
 				<DT ID="capps">Capps, Dennis</DT>
