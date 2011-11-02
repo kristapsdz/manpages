@@ -152,7 +152,7 @@ DATE	= 04 September 2011
 
 all: index.html history.html
 
-index.html: mdoc.source.tgz \
+index.html: \
 	mdoc.single-xhtml.tgz \
 	mdoc.single-html.tgz \
 	mdoc.multi-xhtml.tgz \
@@ -169,7 +169,7 @@ install: all
 	install -m 0644 index.html history.html $(PREFIX)
 	install -m 0644 $(XHTMLS) $(HTMLS) $(PREFIX)
 	install -m 0644 css/book.css css/history.css css/index.css $(PREFIX)/css
-	install -m 0644 mdoc.epub mdoc.xhtml mdoc.html mdoc.source.tgz $(PREFIX)
+	install -m 0644 mdoc.epub mdoc.xhtml mdoc.html $(PREFIX)
 	install -m 0644 mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz $(PREFIX)
 	install -m 0644 mdoc.single-html.tgz mdoc.multi-html.tgz $(PREFIX)
 
@@ -177,17 +177,9 @@ clean:
 	rm -f index.html history.html
 	rm -f $(XHTMLS) $(HTMLS)
 	rm -f mdoc.epub mdoc.xhtml mdoc.html mdoc.sgml mdoc.xml book.opf
-	rm -f mdoc.source.tgz 
 	rm -f mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz
 	rm -f mdoc.single-html.tgz mdoc.multi-html.tgz
 	rm -f history.png history.map 
-
-mdoc.source.tgz: $(SOURCE)
-	mkdir .dist
-	mkdir .dist/mdoc
-	tar cf - $(SOURCE) | tar -xf - -C .dist/mdoc
-	( cd .dist && tar zcf ../$@ mdoc )
-	rm -rf .dist
 
 mdoc.multi-html.tgz: $(HTMLS) css/book.css external.png
 	mkdir .html-multi

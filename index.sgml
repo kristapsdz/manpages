@@ -22,7 +22,7 @@
 			<BR>
 			.Nd <SPAN><I>mdoc</I>: structure, style, and composition</SPAN>
 			<BR>
-			.\" <SPAN><SMALL>(Quick Download: <A HREF="mdoc.epub">ePub</A>, <A HREF="mdoc.source.tgz">source</A> | View: <A HREF="mdoc.html">HTML</A>)</SMALL></SPAN>
+			.\" <SPAN><SMALL>(Quick Download: <A HREF="mdoc.epub">ePub</A> | View: <A HREF="mdoc.html">HTML</A>)</SMALL></SPAN>
 			<BR>
 			.
 			<BR>
@@ -90,77 +90,27 @@
 			<BR>
 			.Lk <SPAN CLASS="chap"><A HREF="part1-1.html">Chapter 1</A>: Commands</SPAN>
 			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part1-1-1.html">Section 1</A>: Simple Command</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part1-1-2.html">Section 2</A>: Elaborate Command</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part1-1-3.html">Section 3</A>: Case Study</SPAN>
-			<BR>
 			.Lk <SPAN CLASS="chap"><A HREF="part1-2.html">Chapter 2</A>: Functions</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part1-2-1.html">Section 1</A>: Simple Function</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part1-2-2.html">Section 2</A>: Elaborate Function</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part1-2-3.html">Section 3</A>: Case Study</SPAN>
 			<BR>
 			.Lk <SPAN CLASS="chap"><A HREF="part1-3.html">Chapter 3</A>: Function Library</SPAN>
 			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part1-3-1.html">Section 1</A>: Case Study</SPAN>
-			<BR>
 			.Lk <SPAN CLASS="chap"><A HREF="part1-4.html">Chapter 4</A>: System Call</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part1-4-1.html">Section 1</A>: Case Study</SPAN>
 			<BR>
 			.Lk <SPAN CLASS="part"><A HREF="part2.html">Part 2</A>: Manual Syntax and Structure</SPAN>
 			<BR>
 			.Lk <SPAN CLASS="chap"><A HREF="part2-1.html">Chapter 1</A>: Syntax</SPAN>
 			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part2-1-1.html">Section 1</A>: Input Encoding</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part2-1-2.html">Section 2</A>: Escape Sequences</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part2-1-3.html">Section 3</A>: Comments</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part2-1-4.html">Section 4</A>: Macros</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part2-1-5.html">Section 5</A>: Punctuation</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part2-1-6.html">Section 6</A>: Quotation</SPAN>
-			<BR>
 			.Lk <SPAN CLASS="chap"><A HREF="part2-2.html">Chapter 2</A>: Structure</SPAN>
 			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part2-2-1.html">Section 1</A>: Prologue</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part2-2-2.html">Section 2</A>: Document Body</SPAN>
-			<BR>
 			.Lk <SPAN CLASS="chap"><A HREF="part2-3.html">Chapter 3</A>: Layout</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part2-3-1.html">Section 1</A>: Required Sections</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part2-3-2.html">Section 2</A>: Optional Sections</SPAN>
 			<BR>
 			.Lk <SPAN CLASS="part"><A HREF="part3.html">Part 3</A>: Tools</SPAN>
 			<BR>
 			.Lk <SPAN CLASS="chap"><A HREF="part3-1.html">Chapter 1</A>: Formatters</SPAN>
 			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part3-1-1.html">Section 1</A>: groff (GNU troff)</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part3-1-2.html">Section 2</A>: mandoc (mdocml)</SPAN>
-			<BR>
 			.Lk <SPAN CLASS="chap"><A HREF="part3-2.html">Chapter 2</A>: Project Integration</SPAN>
 			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part3-2-1.html">Section 1</A>: Build System</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part3-2-2.html">Section 2</A>: Revision Control</SPAN>
-			<BR>
 			.Lk <SPAN CLASS="chap"><A HREF="part3-3.html">Chapter 3</A>: Composition</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part3-3-1.html">Section 1</A>: Editing</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part3-3-2.html">Section 2</A>: Spell-checking</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="sec"><A HREF="part3-3-3.html">Section 3</A>: Grammar &amp; Style</SPAN>
 			<BR>
 			.Lk <SPAN CLASS="part"><A HREF="part4.html">Appendices</A></SPAN>
 			<BR>
@@ -178,8 +128,6 @@
 			<BR>
 			.Lk <SPAN><A HREF="/cgi-bin/cvsweb/?cvsroot=manpages">Repository</A>: on-line source repository</SPAN>
 			<BR>
-			.Lk <SPAN><A HREF="/archives/discuss/">Mailing List</A>: discussion list archive</SPAN>
-			<BR>
 			.Ed
 			<BR>
 			.Ss <SPAN CLASS="h2">Off-line</SPAN>
@@ -187,8 +135,6 @@
 			.Bd -unfilled
 			<BR>
 			.Lk <SPAN><A HREF="mdoc.epub">mdoc.epub</A>: e-book archive, e-Pub 2.0.1 format</SPAN>
-			<BR>
-			.Lk <SPAN><A HREF="mdoc.source.tgz">mdoc.source.tgz</A>: source archive</SPAN>
 			<BR>
 			.Lk <SPAN><A HREF="mdoc.multi-xhtml.tgz">mdoc.multi-xhtml.tgz</A>: compressed archive of individual XHTML/CSS pages</SPAN>
 			<BR>
@@ -211,11 +157,15 @@
 			</DIV>
 			.
 			<BR>
+			.Ss <SPAN CLASS="h2">On-line</SPAN>
+			<BR>
+			.Bd -unfilled
+			<BR>
 			.Lk <SPAN><A HREF="history.html">Full Text</A>: single HTML document</SPAN>
 			<BR>
 			.Lk <SPAN><A HREF="/cgi-bin/cvsweb/history.sgml?cvsroot=manpages">Repository</A>: on-line source repository</SPAN>
 			<BR>
-			.
+			.Ed
 			<BR>
 			.Sh <SPAN CLASS="h1">News</SPAN>
 			<BR>
