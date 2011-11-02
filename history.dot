@@ -35,10 +35,6 @@ digraph manpages {
 		groff [label="groff(1)" URL="#x1989_groff"];
 		awf [label="awf(1)" URL="#x1991_awf"];
 		cawf [label="cawf(1)" URL="#x1991_cawf"];
-	}
-
-	subgraph {
-		node [color=4];
 		mandoc [label="mandoc(1)" URL="#x2008_mandoc"];
 	}
 

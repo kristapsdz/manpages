@@ -847,11 +847,6 @@
 					</UL>
 				</DIV>
 			</DD>
-		</DL>
-		<H3 ID="nextgen">
-			Next Generation
-		</H3>
-		<DL>
 			<DT ID="x2008_mandoc">
 				2008: mandoc (<A HREF="#dzonsons">Kristaps Dzonsons</A>)
 			</DT>
