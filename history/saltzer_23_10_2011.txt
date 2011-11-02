@@ -1,0 +1,82 @@
+Subject: Re: UNIX manpage history: CTSS RUNOFF
+From: Jerry Saltzer 
+Date: 23/10/2011 18:04
+To: Kristaps Dzonsons
+
+On Oct 23, 2011, at 9:09 AM, Kristaps Dzonsons wrote:
+> > On a side note: Pierce (CTSS source listing archiver) gave me
+> > permission to mirror your source, but as he's not sure who can
+> > assert copyright, I feel I should ask you as well.  Do I have your
+> > permission to maintain a copy and directly link to your RUNOFF
+> > sources and manual?
+
+Kristaps,
+
+You have my permission.  I believe that the only other entity that could
+assert copyright is MIT, and its claim would be weak, because I never
+assigned copyright on either the sources or the documentation.
+
+>> >> ...I was unaware that Bob was involved in any of the RUNOFF or
+>> >> roff ports, and I was surprised to see roff mentioned  in his
+>> >> obituary.  Your suggestion that he might have ported it to GE-635
+>> >> assembler language seems quite far-fetched to me.  It might be a
+>> >> good idea to contact Doug to get that part of the story straight.
+> > 
+> > This is still a mystery, and I'm afraid it may stay that way without
+> > a source record.  Everybody asserts that Bob Morris did something
+> > with RUNOFF and that it probably involved the GE-635, but nobody is
+> > quite sure what.  Doug can only guess at the year, "I believe it
+> > happened after his year in Berkeley. That would probably make it
+> > about 1967 or 1968."  Secondary sources erroneously note that
+> > Ritchie based a pre-UNIX PDP-7 version called rf on Morris' code,
+> > but it was in fact Thompson (by his own account), and based on
+> > McIlroy's BCPL re-write.
+
+A comment on the name "rf":  Because the modems and the mechanical
+terminals of the day were slow, Multics gave most commands two names, a
+long descriptive name and a short one for ease of typing.  Thus Multics
+"runoff" was also named "rf".  (See the Multics Programmer's Guide for
+documentation.)  When Thompson and Ritchie went off to develop Unix,
+they generally adopted just the short names.  Thus the Multics "list |
+ls"  became Unix "ls", etc.
+
+>> >> Quite separately, someone at Dartmouth College did a port of
+>> >> RUNOFF to DTSS...
+
+Given the rumored GE-635 connection, I wonder if Bob Morris might have
+had something to do with the Dartmouth College DTSS port?  It may be
+worth looking for a DTSS historian and for the sources of the DTSS
+version of RUNOFF.  I also recall that there was a GECOS-II TSS version
+of RUNOFF which might have its roots in something that Bob did.  If Bob
+was involved, probably his first step would have been to port BCPL to
+GECOS II, rather than rewriting RUNOFF in 635 assembler.  And it may be
+that the DTSS RUNOFF was just the binary of the GECOS-II TSS RUNOFF.
+
+>> >> The main question of this mail regards "compose", actually, which
+>> >> is another evolutionary path and one with some holes.  "compose"
+>> >> was apparently a PL/I re-write of RUNOFF on Multics.  I found the
+>> >> source for this utility, but it's poorly documented.  Tom van
+>> >> Vleck asserts that Edwin Wallman had been working on this utility
+>> >> since around 1976 to eliminate dependence upon BCPL.  This implies
+>> >> that it's based on Doug's BCPL runoff.  However, while Ed is noted
+>> >> in the sources, the secondary record shows Dennis Capps as
+>> >> starting compose in 1974.  Do you have any recollection of this
+>> >> branch?
+
+As you probably have figured out, Multics runoff was written in BCPL.
+I don't know who did that port, but it was done by recompiling Doug's
+CTSS ROFF using the version of BCPL that produced GE-645 code.  The
+Multics BCPL sources of runoff from many years later are on-line, and
+they have Bob Mabee's name all over them, but he may have just been a
+later maintainer.
+
+I only vaguely recall hearing about the compose project--I don't recall
+any direct involvement.  Tom Van Vleck is almost certainly the most
+authoritative source on that.
+
+> > Best wishes from a sunny Stockholm,
+
+And best regards from sunny Boise, Idaho.  I'm glad to see someone
+working to get to the bottom of some of these historical mysteries.
+
+                                                  Jerry

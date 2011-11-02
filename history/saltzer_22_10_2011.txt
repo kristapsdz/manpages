@@ -1,0 +1,105 @@
+Subject: Re: UNIX manpage history: CTSS RUNOFF
+From: Jerry Saltzer 
+Date: 22/10/2011 04:10
+To: Kristaps Dzonsons
+
+Kristaps,
+
+Recording this historical stuff accurately is getting harder with each
+passing year, as the principals from the 1960s have increasing trouble
+recalling details, or worse, die off.
+
+To get to your questions, TYPSET and RUNOFF were designed, implemented,
+and made public at MIT in the fall of 1964.  In addition to the
+documents you found, there are some other things on-line that you might
+find helpful.  One is on my publications page, at
+
+     http://web.mit.edu/Saltzer/www/publications/pubs.html
+
+Look for "section AH.9.01" of the CTSS programmer's guide, which at the
+bottom of its first page lists some of the prior art that was
+incorporated in TYPSET and RUNOFF.  The dot-at-line-beginning convention
+was inherited from the Memo, Modify, and Ditto command set of CTSS,
+implemented a year or two earlier.  I don't know if that convention was
+original with the designers of that command set or if that idea came
+from elsewhere.  The user's guide to Memo, Modify, and Ditto is in the
+first edition of the CTSS programmer's guide.  You may be able to find
+that manual on-line at bitsavers.org
+
+In the description of AH.9.01 is a link to my 1964 memorandum
+CC-244/MAC-M-193 describing RUNOFF.  The page containing that memo also
+has a link to my Programming Staff Note PSN-40, which is of interest
+only if you want to trace the development of specific RUNOFF commands.
+
+Starting in 1965 and 1966, several Bell Labs staff members, including
+Bob Morris, Doug McIlroy, Ken Thompson, and Dennis Ritchie were working
+on the Multics project, which was implemented using CTSS as a staging
+system, so they all knew about RUNOFF and had access to the sources,
+which were in the MAD language, an early partial implementation of
+ALGOL.  My understanding was that Doug did the conversion of RUNOFF from
+the CTSS extended character set to ASCII, using BCPL, under CTSS.  He
+chose to name the port "roff", I think to distinguish the ASCII version
+from the CTSS extended character set version.  When Bell Labs management
+abandoned participation in the Multics project in 1969, Ken Thompson and
+Dennis Ritchie went on to design Unix (effectively a much-stripped down
+and simplified Multics) and C (an advance on B which itself was an
+advance on BCPL) and ported McIlroy's roff into that system so that Unix
+would have an immediate killer app.  If I recall correctly, Joe Ossanna
+was also involved and a significant contributor to the roff-nroff-troff
+series of commands, but I lack first-hand knowledge of that path.
+
+Bell Labs had a GE-635 computer, but as far as I know it ran only GECOS,
+a batch-processing system.  Bob and Doug together designed and
+implemented the first PL/I compiler for Multics (staged on CTSS), but I
+was unaware that Bob was involved in any of the RUNOFF or roff ports,
+and I was surprised to see roff mentioned  in his obituary.  Your
+suggestion that he might have ported it to GE-635 assembler language
+seems quite far-fetched to me.  It might be a good idea to contact Doug
+to get that part of the story straight.
+
+Quite separately, someone at Dartmouth College did a port of RUNOFF to
+DTSS, and Stu Madnick ported RUNOFF to CP/CMS at IBM, renaming it
+"SCRIPT".  Therein began another branch--Goldfarb, Mosher and Lorie at
+IBM found the RUNOFF/SCRIPT language so frustratingly unsystematic that
+they developed a much more systematic extension for SCRIPT named GML.
+GML is the parent of SGML and HTML, and grandparent of today's XML.  But
+that is another story.
+
+If you have any other questions, don't hesitate to ask.
+
+                                            Jerry Saltzer
+
+On Oct 21, 2011, at 3:44 PM, Kristaps Dzonsons wrote:
+
+> > Professor,
+> > 
+> > While composing an article on UNIX manpages, I've been side-tracked
+> > in creating a history of UNIX manpages from primary sources.  (The
+> > Internet is a mess of secondary sources, most of them, it turns out,
+> > completely wrong.)  The domain of my side-track is from your CTSS
+> > RUNOFF to the next-generation tools (after GNU troff).
+> > 
+> > In short, I wonder if you have time for a few questions on this
+> > matter.  Fortunately, the CTSS source listings managed by Paul
+> > Pierce contain your RUNOFF sources, which constitute the primary
+> > sources for my pre-UNIX period of study.
+> > 
+> > First question: Bob Morris' roff (nee runoff) clone on the GE-635
+> > (DTSS, I'm guessing).  This bit of code seems completely lost (or?).
+> > Did you work with Bob on this utility?  If so, am I correct in
+> > assuming it was in GE-635 assembler?  Can you give a ballpark year
+> > of its production?
+> > 
+> > Second, and a bit more vaguely, were you inspired by any prior
+> > utilities or ideas for developing the line-based, dot-controlled
+> > RUNOFF language?
+> > 
+> > That about wraps it up!  Beyond digging through sources from the
+> > CTSS listings to McIlroy's BCPL source, Kernighan's troff, etc., I'm
+> > trying to reconstruct the chain of influence from RUNOFF onward --
+> > hence the last question.
+> > 
+> > Thank you,
+> > 
+> > Kristaps
+
