@@ -315,14 +315,14 @@
 			</DT>
 			<DD>
 				<P>
-					The <SPAN CLASS="cmd">compose</SPAN> utility, which may have been born as <SPAN
-					CLASS="cmd">runoff</SPAN> before being renamed, was a port of <A HREF="#x1964_RUNOFF"
-					CLASS="cmd">RUNOFF</A> to PL/1 by <A HREF="#capps">Capps</A> for the Multics Honeywell 6180.  It was
-					later tuned and improved by Ed Wallman.  Tom Van Vleck, Wallman's manager in mid-1978, recounts the
-					porting effort <Q>to produce photo-typeset manuals and eliminate dependence on <ABBR TITLE="Basic
-					Combined Programming Language">BCPL</ABBR></Q>.  (Note: the primary source erroneously refers to <A
-					HREF="#ossanna">Ossanna</A> as writing the <ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR>
-					<SPAN CLASS="cmd">runoff</SPAN>; it was in fact <A HREF="#mcilroy">McIlroy</A>.)
+					The <SPAN CLASS="cmd">compose</SPAN> utility, n&eacute; <SPAN CLASS="cmd">runoff</SPAN>, was a port of
+					<A HREF="#x1964_RUNOFF" CLASS="cmd">RUNOFF</A> to PL/1 by <A HREF="#capps">Capps</A> for the Multics
+					Honeywell 6180.  It was later tuned and improved by Ed Wallman.  Tom Van Vleck, Wallman's manager in
+					mid-1978, recounts the porting effort <Q>to produce photo-typeset manuals and eliminate dependence on
+					<ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR></Q>.  (Note: the primary source
+					erroneously refers to <A HREF="#ossanna">Ossanna</A> as writing the <ABBR TITLE="Basic Combined
+					Programming Language">BCPL</ABBR> <SPAN CLASS="cmd">runoff</SPAN>; it was in fact <A
+					HREF="#mcilroy">McIlroy</A>.)
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -900,7 +900,7 @@
 				<DT ID="capps">Capps, Dennis</DT>
 				<DD>
 					<P>
-						Wrote <A HREF="#x1974_compose" CLASS="cmd">COMPOSE</A> while at Honeywell.
+						Wrote <A HREF="#x1974_compose" CLASS="cmd">compose</A> while at Honeywell.
 					</P>
 				</DD>
 				<DT ID="clarke">Clarke, James</DT>

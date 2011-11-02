@@ -1,0 +1,53 @@
+Subject: Re: Origin date of Wallman's COMPOSE
+From: Tom Van Vleck 
+Date: 22/10/2011 22:29
+To: Kristaps Dzonsons
+
+
+On Oct 22, 2011, at 1:11 PM, Kristaps Dzonsons wrote:
+> > I'm researching the history of the UNIX manpage, which of course
+> > extends to CTSS via Saltzer's RUNOFF.  After speaking with Saltzer
+> > to fill some holes, I found mention of the COMPOSE utility in the
+> > source archives.  Unfortunately, the author, Edwin Wallman, seems to
+> > have passed away.
+> > 
+> > My question: would you happen to know when Wallman began working on
+> > COMPOSE?  The PL/1 source and info manual are inconsistent in terms
+> > of dates.
+
+I took over as Ed's manager in Phoenix in mid-1978. He was already
+working on compose (the correct name is lower case) by then.  I glanced
+quickly at the source at MIT and saw no dates at all.. the archive dates
+are all 1985, which is not helpful.  I believe that Ed started work on
+compose in about 1976, as part of a project to produce photo-typeset
+manuals and eliminate dependence on BCPL. 
+
+Ed died in 1996 at the age on 68.
+
+The Multics compose command, in the 1978 time frame, was very like CTSS
+RUNOFF and Joe Ossanna's runoff for Multics written in BCPL: that is, it
+read an input file and wrote a formatted document.  Saltzer's RUNOFF was
+one-pass.  The Ossanna runoff, and subsequent descendants, could make
+more than one pass over the input.
+
+The compose command could drive different kinds of typesetting output
+devices.  Users asked for new features all the time, and Wallman put
+them in and fixed bugs. He had to fix a lot of bugs. Compose was our
+second generation text processor, replacing the BCPL-coded runoff
+command; we had hoped that it would have fewer bugs, but it seemed to
+have more. Ed would fix a bug here and the fix would cause a bug
+somewhere else. Adding a new feature in one place would cause some other
+feature to stop working.
+
+It occurred to me that the real problem was that compose was written in
+PL/I, which was too low-level a language for the problem we were trying
+to solve. If compose had been written in "compose-tran," a hypothetical
+text formatting language, we could have tested it in two phases: first
+test the compose-tran interpreter, and prove that its atoms worked
+correctly no matter what order its operations were invoked in. Then,
+test the compose program written in compose-tran. This strategy would
+reduce the number of tests required from astronomical to merely huge.
+
+Hope This Helps,
+tom
+

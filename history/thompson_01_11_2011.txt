@@ -1,0 +1,56 @@
+Subject: Re: UNIX manpages & questions regarding roff(1) history.
+From: Ken Thompson
+Date: 01/11/2011 18:11
+To: Kristaps Dzonsons
+
+the basic answers are: yes, no, no.
+
+on thinking about it, i revise the part about the c roff use for patent
+application.  it was definitely joe's nroff version that was used for
+patents.
+
+if what i say conflicts with anyone else, use their version. i would
+stack their memory up against mine any day.
+
+ken
+
+On Tue, Nov 1, 2011 at 6:49 AM, Kristaps Dzonsons wrote:
+> > Ken,
+> >
+> > Thanks for your response!  I've integrated these parts, along with
+> > those of a few others from Bell Labs at the time, into the history.
+> > Quick question: would you object to including your mail with the
+> > record?  I of course redact all mail headers but for date, subject,
+> > and participant names.
+> >
+> > I also have a follow-up quick question or two, if I can claim
+> > another minute of time...
+> >
+>> >> the roffs all descend from runoff from mit's ctss system.  i wrote
+>> >> rf (then roff) for the pdp-7 for some early manual work someone
+>> >> else (probably dennis) wrote roff in c on the pdp-11.  this
+>> >> version of roff was written to do patent applications.  the patent
+>> >> application was the justification for getting the pdp-11.
+> >
+> > Would you happen to have a copy of the PDP-7 work somewhere, or know
+> > where it may be found?
+> >
+>> >> joe ossanna wrote nroff, which was kinda programmable via macros.
+>> >> then with a large set of macros it could emulate roff. he then
+>> >> added fonts and sizes to make troff for the newly interfaced
+>> >> typesetter.  brian kernighan (i think) combined nroff and troff to
+>> >> be the same program.
+>> >>
+>> >> i did the start of the man pages and set up the title/synopsis/...
+>> >> stuff. the loose prototype for the man pages was the multics man
+>> >> (MSPM). the mspm was much wordier and less structured, but many
+>> >> sections had similar headings.
+> >
+> > This is quite interesting, thanks!  Do you know of any mails or
+> > documents prior to the V1 AT&T Prog. Manual that mention this
+> > structure?
+> >
+> > Thanks again,
+> >
+> > Kristaps
+> >

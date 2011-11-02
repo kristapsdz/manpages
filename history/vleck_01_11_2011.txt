@@ -1,0 +1,16 @@
+Subject: Re: Origin date of Wallman's COMPOSE
+From: Tom Van Vleck 
+Date: 01/11/2011 15:57
+To: Kristaps Dzonsons 
+
+> > Capps, interestingly, ported Saltzer's RUNOFF as the compose utility
+> > for Multics, 1974, later taken on by Ed Wallmann.
+
+Hi Kristaps, One correction.. Dennis Capp's version of RUNOFF was
+written in PL/I but was not called "compose", it was called "runoff".
+MTB-102, 1974-07-26, New runoff Command Written in PL/I, Dennis Capps
+This MTB may be available in the MHP scans.  You could also write to
+Dennis.
+
+regards, tom
+

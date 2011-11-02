@@ -1,0 +1,91 @@
+Subject: Re: UNIX manpages & questions regarding roff(1) history.
+From: Ken Thompson
+Date: 23/10/2011 09:49
+To: Kristaps Dzonsons
+
+the roffs all descend from runoff from mit's ctss system.  i wrote rf
+(then roff) for the pdp-7 for some early manual work someone else
+(probably dennis) wrote roff in c on the pdp-11.  this version of roff
+was written to do patent applications.  the patent application was the
+justification for getting the pdp-11.
+
+joe ossanna wrote nroff, which was kinda programmable via macros. then
+with a large set of macros it could emulate roff. he then added fonts
+and sizes to make troff for the newly interfaced typesetter.  brian
+kernighan (i think) combined nroff and troff to be the same program.
+
+i did the start of the man pages and set up the title/synopsis/...
+stuff. the loose prototype for the man pages was the multics man (MSPM).
+the mspm was much wordier and less structured, but many sections had
+similar headings.
+
+this is my best recollection, but certainly could be wrong.
+
+ken
+
+On Fri, Oct 21, 2011 at 4:16 PM, Kristaps Dzonsons wrote:
+> > Ken,
+> >
+> > While writing an article on UNIX manpage composition (to address the
+> > rather sad state of affairs in the Linux world), I've been
+> > side-tracked in producing an accurate history of the UNIX manpage.
+> > The various [secondary] Internet sources are ambiguous and, in turns
+> > out, at times wildly wrong.
+> >
+> > (Back-story: I wrote mandoc(1) [1], now in most BSD UNIX systems, as
+> > a domain-specific compiler for the mdoc and man roff macro packages,
+> > and the unpublished mdoc book [2].  This is for a LinuxJournal
+> > article, to bring some proper manpageness to the masses.)
+> >
+> > So in short, after combing through the extant V1-7 AT&T UNIX sources
+> > [5] and those for Multics [3] and CTSS [4] before, I still have some
+> > questions unanswered by the corpus of source material.  I wonder if
+> > you can divulge me with some questions regarding the first versions
+> > of roff(1).
+> >
+> > But first, please accept my condolences regarding Dennis Ritchie's
+> > death.  It was shocking news.  I've never really used anything
+> > beyond UNIX-ish systems, and to find a part of this picture suddenly
+> > missing affects me deeply.  I'm sorry.
+> >
+> > My question lies in V1 AT&T UNIX roff(1).  In secondary sources, I
+> > find frequent mention of Ossanna writing the PDP-11 versions of V1
+> > AT&T UNIX roff(1), then nroff(1) in V2, then troff(1) in V4.  But
+> > then in a recent email exchange, Doug McIlroy fingered you and
+> > Ritchie as writing the original roff(1) for V1, with Ossanna only
+> > taking over for nroff(1) and troff(1).  The source for V2 and V4
+> > nroff(1) and troff(1) is gone, but the manuals remain and indicate
+> > all three of you (jfo, ken, dmr).  Can you straighten the record?
+> >
+> > (I'll separately mail Kernighan regarding ditroff(1) and the
+> > C-language rewrite in general.)
+> >
+> > Assuming it was your initial work and not Ossanna's, the next
+> > question is the prior work.  It's asserted that V1 AT&T UNIX roff(1)
+> > is a re-write of McIlroy's BCPL roff.  But there's also mention of
+> > Morris' GE-635 roff.  Which was the jumping-off point for UNIX's
+> > roff?
+> >
+> > Lastly: there's mysterious reference to a pre-UNIX PDP-7 rf by
+> > Ritchie.  Do you know anything of this?  Sources, references?
+> >
+> > Well... one less-important question that's just been bothering me
+> > for a long time: the V1 AT&T UNIX Programmer's Manual, regarding the
+> > structure of manpages, is very specific.  Were there documents
+> > before this that you drew from?  I've long been curious whether
+> > there's more to the history of the NAME/SYNOPSIS layout and
+> > bold/underline and [optional] conventions.
+> >
+> > I appreciate any thoughts you might have on these missing pieces of
+> > the historical record.
+> >
+> > Thank you,
+> >
+> > Kristaps
+> >
+> >
+> > [1] http://mdocml.bsd.lv/ [2] http://manpages.bsd.lv/ [3] From the
+> > Multics Internet Server.  [4] From Paul Pierce's CTSS source
+> > listings.  [5] From the TUHS archive and Ken Wellsch's raw tape
+> > dumps.
+> >
