@@ -5,12 +5,14 @@ body		{ font-family: serif;
 		  line-height: 14pt;
 		  font-size: 10pt; }
 table.nav	{ width: 100%; }
-td.nav-home	{ width: 1%; }
+td.nav-contents,
+td.nav-history	{ width: 1%; }
+td.nav-home,
+td.nav-next	{ width: 49%; }
+td.nav-home	{ text-align: right; }
+td.nav-contents:after,
 td.nav-home:after	
 		{ content: "\A0|"; }
-td.nav-next	{ width: 1%; }
-td.nav-history	{ width: 98%;
-		  text-align: right; }
 table.tbl	{ border-spacing: 0px; 
 		  border-collapse: collapse;
 		  width: 96%;

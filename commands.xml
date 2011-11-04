@@ -253,8 +253,9 @@
 		<table class="nav">
 			<tbody>
 				<tr>
-					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
+					<td class="nav-contents"><a href="toc.xml">Contents</a></td>
 					<td class="nav-next" style="color: #dddddd;">Next</td>
+					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
 					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/commands.xml?cvsroot=manpages">History</a></td>
 				</tr>
 			</tbody>
