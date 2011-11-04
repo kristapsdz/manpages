@@ -1010,7 +1010,6 @@
 			<TBODY>
 				<TR>
 					<TD CLASS="nav-home"><A HREF="http://manpages.bsd.lv/index.html">Home</A></TD>
-					<TD CLASS="nav-next" STYLE="color: #dddddd;">Next</TD>
 					<TD CLASS="nav-history"><A href="http://manpages.bsd.lv/cgi-bin/cvsweb/history.sgml?cvsroot=manpages">History</A></TD>
 				</TR>
 			</TBODY>

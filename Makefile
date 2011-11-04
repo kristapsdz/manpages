@@ -2,6 +2,36 @@
 
 CFLAGS  += -W -Wall -Wstrict-prototypes -Wno-unused-parameter -Wwrite-strings
 
+HISTORY = history/RUNOFF.gz \
+	  history/RUNOFF.info \
+	  history/canaday_24_10_2011.txt \
+	  history/canaday_27_10_2011.txt \
+	  history/clarke_28_10_2011.txt \
+	  history/compose.s.gz \
+	  history/kernighan_23_10_2011.txt \
+	  history/kernighan_26_10_2011.txt \
+	  history/mcilroy_21_10_2011.txt \
+	  history/mcilroy_22_10_2011.txt \
+	  history/mcilroy_23_10_2011.txt \
+	  history/mcilroy_28_10_2011.txt \
+	  history/nelson_24_10_2011.txt \
+	  history/nelson_30_10_2011.txt \
+	  history/roff69.high.pdf.gz \
+	  history/roff69.low.pdf \
+	  history/roff71.high.pdf.gz \
+	  history/roff71.low.pdf \
+	  history/runoff.s.gz \
+	  history/runoff69.high.pdf.gz \
+	  history/runoff69.low.pdf \
+	  history/saltzer_22_10_2011.txt \
+	  history/saltzer_23_10_2011.txt \
+	  history/spencer_22_10_2011.txt \
+	  history/spencer_24_10_2011.txt \
+	  history/thompson_01_11_2011.txt \
+	  history/thompson_23_10_2011.txt \
+	  history/vleck_01_11_2011.txt \
+	  history/vleck_22_10_2011.txt
+
 SOURCE	= book.css \
 	  book.ncx \
 	  book.xml \
@@ -171,6 +201,7 @@ index.html: \
 install: all
 	mkdir -p $(PREFIX)
 	mkdir -p $(PREFIX)/css
+	mkdir -p $(PREFIX)/history
 	install -m 0644 license.png external.png $(PREFIX)
 	install -m 0644 index.html history.html $(PREFIX)
 	install -m 0644 toc.xhtml toc.html $(PREFIX)
@@ -179,6 +210,7 @@ install: all
 	install -m 0644 mdoc.epub mdoc.xhtml mdoc.html $(PREFIX)
 	install -m 0644 mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz $(PREFIX)
 	install -m 0644 mdoc.single-html.tgz mdoc.multi-html.tgz $(PREFIX)
+	install -m 0644 $(HISTORY) $(PREFIX)/history
 
 clean:
 	rm -f index.html history.html

@@ -6,3 +6,6 @@ div.sources p   { margin-bottom: 0.25em; }
 p.foot 		{ margin-top: 1em; color: #666666; font-size: smaller; }
 div#people dd	{ margin-bottom: 1em; }
 div#people dd p { margin-bottom: 0.0em; margin-top: 0em; }
+td.nav-home	{ text-align: right; width: 99%; }
+td.nav-home:after	
+		{ content: "\A0|"; }
