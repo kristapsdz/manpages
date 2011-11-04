@@ -44,15 +44,17 @@
 				Foremost, formatters for the language are available by default on all modern UNIX installations and may be downloaded
 				for non-UNIX systems.  
 				Furthermore, <I>mdoc</I> semantically annotates content, allowing for search and reference analysis of your
-				documentation.  (<A CLASS="external" HREF="http://www.usenix.org/publications/login/2009-10/pdfs/dzonsons.pdf">More...</A>)
+				documentation.  
+				For an analysis of <I>mdoc</I> and competing formats, refer to
+				<I><A CLASS="external" HREF="http://www.usenix.org/publications/login/2009-10/pdfs/dzonsons.pdf">Fixing on a
+				Standard Language for UNIX Manuals</A></I>, published in the USENIX magazine.
 			</DIV>
 			.Pp
 			<DIV>
 				This guide is structured first as a series of tutorials, then as a guide to UNIX manual best practises.  It is
 				<B>not</B> a reference!  For that, refer to your local <I>mdoc</I> manual.  It is, however, a <I>work in
-				progress</I>.  If you have questions, comments, or suggestions, subscribe to the mailing list by writing a blank
-				message to disc<A CLASS="external" TITLE="Reveal this e-mail address"
-				HREF="http://www.google.com/recaptcha/mailhide/d?k=01fqH3xoy7rwp-l_5K0BumPA==&amp;c=NTI0bIlVxlrR2xLEqaJxCv-_SGL-rzM8DjAFEivPvNzLi2PxNha85zOyiFYPiprL">...</A>@manpages.bsd.lv.
+				progress</I> &mdash; if you have questions, comments, or suggestions, please contact <A CLASS="external"
+				HREF="http://kristaps.bsd.lv">Kristaps</A>.
 			</DIV>
 			.Pp
 			<DIV>
@@ -125,9 +127,11 @@
 			<BR>
 			.Bl -ohang
 			<BR>
-			.It <SPAN>xx October 2011, <SPAN CLASS="ver">0.1.0</SPAN></SPAN>
+			.It <SPAN>05 November 2011, <SPAN CLASS="ver">0.1.2</SPAN></SPAN>
 			<DIV>
-				Major addition of the <I><A HREF="#history">History of UNIX Manpages</A></I>.
+				Major addition of the <I><A HREF="#history">History of UNIX Manpages</A></I> study.
+				Also moved this page's Table of Contents to its own page (to free up space).
+				Numerous editorial fixes thanks to outside contributions: fixed History links, ...
 			</DIV>
 			.
 			<BR>
@@ -135,13 +139,6 @@
 			<DIV>
 				Collected appendices into <A HREF="part4.html">Appendices</A> part.  From now on, only minor editing before I
 				freeze a minor number release.
-			</DIV>
-			.
-			<BR>
-			.It <SPAN>04 September 2011, <SPAN CLASS="ver">0.0.26</SPAN></SPAN>
-			<DIV>
-				Editing: typos and adding explanatory text.  Also split <A HREF="part2-3.html">Layout</A> chapter sections
-				apart.
 			</DIV>
 			.El
 			<BR>

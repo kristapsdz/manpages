@@ -1,5 +1,8 @@
 .SUFFIXES: .html .sgml .xml .xhtml .opf .dot .png .map
 
+VERSION	= 0.1.2
+DATE	= 05 November 2011
+
 CFLAGS  += -W -Wall -Wstrict-prototypes -Wno-unused-parameter -Wwrite-strings
 
 HISTORY = history/RUNOFF.gz \
@@ -179,9 +182,6 @@ XHTMLS	= preface.xhtml \
 	  glossary.xhtml \
 	  macros.xhtml \
 	  commands.xhtml
-
-VERSION	= 0.0.27
-DATE	= 04 September 2011
 
 all: index.html history.html
 

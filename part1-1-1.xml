@@ -82,9 +82,9 @@
 		<p>
 			Let's start by studying the input and output.  We can see most of the text translated into output, for instance, the
 			capitalised <span class="screen">NAME</span> input is left-justified and in bold text.  Same with <span class="screen">
-				SYNOPSIS</span> and <span class="screen">DESCRIPTION</span>, although the preceding <span
-				class="screen">.Sh</span> is missing.  We can even see the output sentence <span class="screen">Print "hello,
-				world" and exit</span> spread over lines 10&ndash;12:
+				SYNOPSIS</span> and <span class="screen">DESCRIPTION</span>, although the <span class="screen">.Sh</span> text
+			before this terms is missing.  We can even see the output sentence <span class="screen">Print "hello, world" and
+				exit</span> spread over lines 10&ndash;12:
 		</p>
 		<div class="mdocin">
 			Print
@@ -99,27 +99,31 @@
 		<p>
 			The <span class="screen">.Qq</span> is part of <span class="lang">mdoc</span>'s instruction syntax.  Input lines
 			beginning with a dot are instructions to the formatter called mdoc macros, or just macros for short.  The macro name is
-			a terse two or three-character word following the dot, for example, <a href="macros.xml#macro_qq"
-				class="macro">Qq</a>.  The words following the <a href="macros.xml#macro_qq" class="macro">Qq</a> to the end
-			of line are arguments in the scope of the macro &mdash; scope being the region interpreted within the context of the
-			macro.
+			a terse two or three-character word following the dot, for example, <a href="macros.xml#macro_qq" class="macro">Qq</a>.
+			The name of a macro tersely hints at its function.  The words following the <a href="macros.xml#macro_qq"
+				class="macro">Qq</a> to the end of line are arguments in the scope of the macro.
 		</p>
 		<p>
-			Thus, the fragment is interpreted as text, then a macro <a href="macros.xml#macro_qq" class="macro">Qq</a> with scoped
-			arguments <span class="screen">hello, world</span>, then more text.
+			Scope, a technical term in the field of programming languages, refers to the body of input within the context of an
+			instruction or variable.  In <span class="lang">mdoc</span>, a macro's scope is the block of text and instructions in
+			the formatting context of that macro.  Looking at the input and output, we can infer the scope of <a
+				href="macros.xml#macro_qq" class="macro">Qq</a> by seeing what's surrounded by quotes (the formatting, in this
+			case).
 		</p>
+		<div class="mdocin">
+			.Qq <span style="border: thin solid blue;">hello, world</span>
+		</div>
+		<div class="mdocout">
+			<div class="mdoc-section">
+				Print &#8220;<span style="border: thin solid blue;">hello, world</span>&#8221; and exit.
+			</div>
+		</div>
 		<p>
-			It's obvious, in looking at the input and output, that <a href="macros.xml#macro_qq" class="macro">Qq</a> instructs
-			the formatter to quote its arguments.  Macro names vaguely identify their purpose with their choice of letter
-			combination.
-		</p>
-		<p>
-			The <a href="macros.xml#macro_qq" class="macro">Qq</a> is limited in scope to its invocation line.  But notice that
-			the formatter recognised the content between <a href="macros.xml#macro_sh" class="macro">Sh</a> macros as requiring
-			indentation.  So it's clear that <span class="lang">mdoc</span> also has a concept of multi-line scope.
-		</p>
-		<p>
-			In fact, <a href="macros.xml#macro_sh" class="macro">Sh</a> has both line arguments, for the name of the section; and
+			As we explore more and more macros in this book, we'll see that each macro follows one of a handful of scope rules.
+			It's already clear that <a href="macros.xml#macro_qq" class="macro">Qq</a> is limited in scope to its invocation line.
+			But notice that the formatter recognised the content between <a href="macros.xml#macro_sh" class="macro">Sh</a> macros
+			as requiring indentation.  So it's clear that <span class="lang">mdoc</span> also has a concept of multi-line scope.  In
+			fact, <a href="macros.xml#macro_sh" class="macro">Sh</a> has both line arguments, for the name of the section; and
 			multi-line arguments, for section content.
 		</p>
 		<div class="mdocin">
@@ -146,7 +150,7 @@
 			.Qq Section text nested in a quote.
 		</div>
 		<p>
-			We can envision this scoping as follows, with an <span style="border: 1px dashed green; padding: 1px;">outer scope</span>
+			We can visualise this scoping as follows, with an <span style="border: 1px dashed green; padding: 1px;">outer scope</span>
 			and <span style="border: 1px solid blue; padding: 1px;">inner scope</span>:
 		</p>
 		<div class="mdocin" style="border: 1px dashed green; padding: 2px;">
@@ -168,11 +172,12 @@
 		<p>
 			Of the remaining macros, <a href="macros.xml#macro_dd" class="macro">Dd</a> accepts the last modification date of the
 			manual in <q>month day, year</q> format.  <a href="macros.xml#macro_dt" class="macro">Dt</a> refers to the manual's
-			title, <span class="screen">HI</span>, and its category, <span class="cat">1</span>.  Note that <span
-				class="screen">HI</span> is uppercase: by convention, <a href="macros.xml#macro_dt" class="macro">Dt</a>
-			should always accept a capitalised document title.  We'll talk more about titles and sections in later chapters of this
-			book.  For now, let's assume that a category number identifies the topic of the manual, where <span class="cat">1</span>
-			refers to utilities.
+			title, <span class="screen">HI</span>, and its category, <span class="cat">1</span>.
+			Numbered manual categories are UNIX conventions, but applicable to any operating system.  We'll explore more standard
+			categories throughout this book.  Note that <span class="screen">HI</span> is uppercase: by convention, <a
+				href="macros.xml#macro_dt" class="macro">Dt</a> should always accept a capitalised document title.  We'll talk
+			more about titles and sections in later chapters of this book.  For now, let's assume that a category number identifies
+			the topic of the manual, where <span class="cat">1</span> refers to utilities.
 		</p>
 		<p>
 			Next, <a href="macros.xml#macro_os" class="macro">Os</a> indicates the operating system of the system running the
@@ -189,12 +194,18 @@
 		</div>
 		<p>
 			Note that text following the <span class="screen">\&quot;</span> marker is an <span class="lang">mdoc</span> comment,
-			which may have the following syntax:
+			which has the following syntax:
 		</p>
 		<div class="mdocin">
 			Text. \" Comment to end of the line.
 			<br />
 			.\" Extending across the full line.
+		</div>
+		<p>
+			Comments are line-scoped, like <a href="macros.xml#macro_qq" class="macro">Qq</a>:
+		</p>
+		<div class="mdocin">
+			.\" <span style="border: thin solid blue;">.Sh NAME</span>
 		</div>
 		<p>
 			Moving along, <a href="macros.xml#macro_nm" class="macro">Nm</a> accepts the manual's name.  This differs from the

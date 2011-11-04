@@ -50,7 +50,7 @@
 		</p>
 		<p>
 			I'll begin with a simple command, <span class="cmd">hi</span>, which prints <span class="screen">hello, world</span> to
-			the screen.  I'll then add some command-line arguments to this command.  By the time you exit this chapter, you should
+			the screen.  I'll then add some command-line arguments to this command.  By the time you finish this chapter, you should
 			have a grasp of <span class="lang">mdoc</span> syntax and some of its more widely-used macros.
 		</p>
 		<p>
