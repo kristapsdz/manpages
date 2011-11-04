@@ -1,5 +1,7 @@
 .SUFFIXES: .html .sgml .xml .xhtml .opf .dot .png .map
 
+CFLAGS  += -W -Wall -Wstrict-prototypes -Wno-unused-parameter -Wwrite-strings
+
 SOURCE	= book.css \
 	  book.ncx \
 	  book.xml \
@@ -13,6 +15,7 @@ SOURCE	= book.css \
 	  index.sgml \
 	  license.png \
 	  Makefile \
+	  toc.xml \
 	  $(XMLS)
 
 XMLS	= preface.xml \
@@ -160,13 +163,17 @@ index.html: \
 	mdoc.xhtml \
 	mdoc.html \
 	mdoc.epub \
-	$(HTMLS)
+	toc.html \
+	toc.xhtml \
+	$(HTMLS) \
+	$(XHTMLS)
 
 install: all
 	mkdir -p $(PREFIX)
 	mkdir -p $(PREFIX)/css
 	install -m 0644 license.png external.png $(PREFIX)
 	install -m 0644 index.html history.html $(PREFIX)
+	install -m 0644 toc.xhtml toc.html $(PREFIX)
 	install -m 0644 $(XHTMLS) $(HTMLS) $(PREFIX)
 	install -m 0644 css/book.css css/history.css css/index.css $(PREFIX)/css
 	install -m 0644 mdoc.epub mdoc.xhtml mdoc.html $(PREFIX)
@@ -175,26 +182,29 @@ install: all
 
 clean:
 	rm -f index.html history.html
+	rm -f toc.html toc.xhtml
 	rm -f $(XHTMLS) $(HTMLS)
 	rm -f mdoc.epub mdoc.xhtml mdoc.html mdoc.sgml mdoc.xml book.opf
 	rm -f mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz
 	rm -f mdoc.single-html.tgz mdoc.multi-html.tgz
 	rm -f history.png history.map 
 
-mdoc.multi-html.tgz: $(HTMLS) css/book.css external.png
+mdoc.multi-html.tgz: toc.html $(HTMLS) css/book.css external.png
 	mkdir .html-multi
 	mkdir .html-multi/mdoc
 	mkdir .html-multi/mdoc/css
+	install -m 0644 toc.html .html-multi/mdoc
 	install -m 0644 $(HTMLS) .html-multi/mdoc
 	install -m 0644 external.png .html-multi/mdoc
 	install -m 0644 css/book.css .html-multi/mdoc/css
 	( cd .html-multi && tar zcf ../$@ mdoc )
 	rm -rf .html-multi
 
-mdoc.multi-xhtml.tgz: $(XHTMLS) css/book.css external.png
+mdoc.multi-xhtml.tgz: toc.xhtml $(XHTMLS) css/book.css external.png
 	mkdir .xhtml-multi
 	mkdir .xhtml-multi/mdoc
 	mkdir .xhtml-multi/mdoc/css
+	install -m 0644 toc.xhtml .xhtml-multi/mdoc
 	install -m 0644 $(XHTMLS) .xhtml-multi/mdoc
 	install -m 0644 external.png .xhtml-multi/mdoc
 	install -m 0644 css/book.css .xhtml-multi/mdoc/css

@@ -84,49 +84,9 @@
 			<BR>
 			.Bd -unfilled
 			<BR>
-			.Lk <SPAN CLASS="part"><A HREF="preface.html">Preface</A></SPAN>
+			.Lk <SPAN><A HREF="toc.html">Table of Contents</A>: tree of HTML documents (<A HREF="toc.xhtml">XHTML</A>)</SPAN>
 			<BR>
-			.Lk <SPAN CLASS="part"><A HREF="part1.html">Part 1</A>: Tutorial Introduction</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="chap"><A HREF="part1-1.html">Chapter 1</A>: Commands</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="chap"><A HREF="part1-2.html">Chapter 2</A>: Functions</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="chap"><A HREF="part1-3.html">Chapter 3</A>: Function Library</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="chap"><A HREF="part1-4.html">Chapter 4</A>: System Call</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="part"><A HREF="part2.html">Part 2</A>: Manual Syntax and Structure</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="chap"><A HREF="part2-1.html">Chapter 1</A>: Syntax</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="chap"><A HREF="part2-2.html">Chapter 2</A>: Structure</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="chap"><A HREF="part2-3.html">Chapter 3</A>: Layout</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="part"><A HREF="part3.html">Part 3</A>: Tools</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="chap"><A HREF="part3-1.html">Chapter 1</A>: Formatters</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="chap"><A HREF="part3-2.html">Chapter 2</A>: Project Integration</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="chap"><A HREF="part3-3.html">Chapter 3</A>: Composition</SPAN>
-			<BR>
-			.Lk <SPAN CLASS="part"><A HREF="part4.html">Appendices</A></SPAN>
-			<BR>
-			.Lk <SPAN CLASS="chap"><A HREF="glossary.html">Appendix 1: Glossary</A></SPAN>
-			<BR>
-			.Lk <SPAN CLASS="chap"><A HREF="macros.html">Appendix 2: Macros</A></SPAN>
-			<BR>
-			.Lk <SPAN CLASS="chap"><A HREF="commands.html">Appendix 3: Commands</A></SPAN>
-			<BR>
-			.
-			<BR>
-			.Lk <SPAN><A HREF="mdoc.xhtml">Full Text</A>: single XHTML document</SPAN>
-			<BR>
-			.Lk <SPAN><A HREF="mdoc.html">Full Text</A>: single HTML document</SPAN>
-			<BR>
-			.Lk <SPAN><A HREF="/cgi-bin/cvsweb/?cvsroot=manpages">Repository</A>: on-line source repository</SPAN>
+			.Lk <SPAN><A HREF="mdoc.html">Full Text</A>: single HTML document (<A HREF="mdoc.xhtml">XHTML</A>)</SPAN>
 			<BR>
 			.Ed
 			<BR>
@@ -134,15 +94,11 @@
 			<BR>
 			.Bd -unfilled
 			<BR>
-			.Lk <SPAN><A HREF="mdoc.epub">mdoc.epub</A>: e-book archive, e-Pub 2.0.1 format</SPAN>
+			.Lk <SPAN><A HREF="mdoc.epub">e-Book</A>: e-Pub 2.0.1 archive</SPAN>
 			<BR>
-			.Lk <SPAN><A HREF="mdoc.multi-xhtml.tgz">mdoc.multi-xhtml.tgz</A>: compressed archive of individual XHTML/CSS pages</SPAN>
+			.Lk <SPAN><A HREF="mdoc.multi-html.tgz">Document Tree</A>: archive of HTML tree (<A HREF="mdoc.multi-xhtml.tgz">XHTML</A>)</SPAN>
 			<BR>
-			.Lk <SPAN><A HREF="mdoc.multi-html.tgz">mdoc.multi-html.tgz</A>: compressed archive of individual HTML/CSS pages</SPAN>
-			<BR>
-			.Lk <SPAN><A HREF="mdoc.single-xhtml.tgz">mdoc.single-xhtml.tgz</A>: compressed archive of one XHTML/CSS page</SPAN>
-			<BR>
-			.Lk <SPAN><A HREF="mdoc.single-html.tgz">mdoc.single-html.tgz</A>: compressed archive of one HTML/CSS page</SPAN>
+			.Lk <SPAN><A HREF="mdoc.single-html.tgz">Single Document</A>: archive of HTML document (<A HREF="mdoc.single-xhtml.tgz">XHTML</A>)</SPAN>
 			<BR>
 			.Ed
 			<BR>
@@ -162,8 +118,6 @@
 			.Bd -unfilled
 			<BR>
 			.Lk <SPAN><A HREF="history.html">Full Text</A>: single HTML document</SPAN>
-			<BR>
-			.Lk <SPAN><A HREF="/cgi-bin/cvsweb/history.sgml?cvsroot=manpages">Repository</A>: on-line source repository</SPAN>
 			<BR>
 			.Ed
 			<BR>

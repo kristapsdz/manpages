@@ -87,9 +87,9 @@
 					<text>System Call</text>
 				</navLabel>
 				<content src="part1-4.xhtml"/>
-				<navPoint class="h2" id="part1-4-1" playOrder="14">
+				<navPoint class="h3" id="part1-4-1" playOrder="14">
 					<navLabel>
-						<text>System Call</text>
+						<text>Case Study</text>
 					</navLabel>
 					<content src="part1-4-1.xhtml"/>
 				</navPoint>
