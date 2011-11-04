@@ -188,22 +188,25 @@
 			is closed with <a href="macros.xml#macro_el" class="macro">El</a>.
 		</p>
 		<p>
-			The notion of a <q>tagged</q> list comes from the flag provided to the <a href="macros.xml#macro_bl"
-				class="macro">Bl</a> macro, <span class="macroflag">tag</span>.  Until now, we've discussed only macros and
-			macro arguments.  Only a handful of macros also accept flags, which themselves may have arguments.  In our example, the
-			<a href="macros.xml#macro_bl" class="macro">Bl</a> macro accepts a second flag, <span class="macroflag">width</span>,
-			which accepts the argument <span class="macroarg">Ds</span>.  This instructs the formatter that the tag portion of the
-			list has width <q>Ds</q>, which is shorthand for <q>default spacing</q>.
+			Until now, we've discussed only macros and macro arguments.  But a handful of macros &mdash; <a
+				href="macros.xml#macro_bl" class="macro">Bl</a> included &mdash; also accept flags which themselves may have
+			arguments.  In our example, the <span class="macroflag">tag</span> flag to <a href="macros.xml#macro_bl"
+				class="macro">Bl</a> stipulates a tagged list.  A tagged list entry consists of two parts: a tag and data,
+			similar to the <span class="screen">&lt;DL&gt;</span> descriptive lists in <a href="glossary.xml#html">HTML</a>
+			consisting of a key and data.  <a href="macros.xml#macro_bl" class="macro">Bl</a> accepts a second flag, <span
+				class="macroflag">width</span>, which accepts the argument <span class="macroarg">Ds</span>.  This instructs the
+			formatter that the tag portion of the list has width <span class="screen">Ds</span>, which is shorthand for default
+			spacing.
 		</p>
 		<p>
-			Let's look closer at the input line 
+			Next, let's look closer at the input line 
 		</p>
 		<div class="mdocin">
 			.Ar prefix .
 		</div>
 		<p>
-			Note that it's correctly rendered with the period flushed up against the text, although the period itself isn't
-			underlined.
+			Note that it's correctly rendered with the period flushed up against the text, whereas the period is space-separated in
+			the input.  (The period itself isn't font-decorated, although this is difficult to see in the media you're reading.)
 		</p>
 		<div class="mdocout">
 			<dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="mdoc-list mdoc-list-tag">
@@ -219,6 +222,25 @@
 				class="lang">mdoc</span> manual, punctuation should always be separated from macro arguments unless it's part of
 			the argument itself.  This allows the formatter to correctly intuit end-of-line spacing.
 		</p>
+		<p>
+			If we hadn't done so, the formatter wouldn't distinguish period from word.  This is more intuitive when re-using the
+			familiar <a href="macro.xml#macro_qq" class="macro">Qq</a>.
+		</p>
+		<div class="mdocin">
+			.Qq <span style="border: thin solid blue;">first</span> .
+		</div>
+		<div class="mdocin">
+			.Qq <span style="border: thin solid blue;">second.</span>
+		</div>
+		<p>
+			We can now see the difference in the placement of punctuation:
+		</p>
+		<div class="mdocout">
+			<div class="mdoc-section">
+				&#8220;<span style="border: thin solid blue;">first</span>&#8221;. 
+				&#8220;<span style="border: thin solid blue;">second.</span>&#8221;
+			</div>
+		</div>
 		<p>
 			Let's piece this all together.  You'll recognise the <a href="macros.xml#macro_dd" class="macro">Dd</a>, <a
 				href="macros.xml#macro_dt" class="macro">Dt</a>, and <a href="macros.xml#macro_os" class="macro">Os</a>
