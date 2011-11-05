@@ -13,7 +13,7 @@
 		<P>
 			Where do UNIX manpages come from?  Who introduced the section-based layout of <B>NAME</B>, <B>SYNOPSIS</B>, and so on?
 			And for manpage source writers and readers: where were those economical two- and three-letter instructions developed?
-			The many accounts available on the Internet lack citations and at times inconsistent.
+			The many accounts available on the Internet lack citations and are at times inconsistent.
 		</P>
 		<P>
 			In this article, I reconstruct the history of the UNIX manpage based on source code, manuals, and first-hand accounts.
