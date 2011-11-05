@@ -257,19 +257,19 @@
 				<P>
 					<A HREF="#mcilroy">McIlroy</A>'s port is at times referred to as <SPAN CLASS="cmd">runoff</SPAN>, at
 					times as <SPAN CLASS="cmd">roff</SPAN>.  <A HREF="#saltzer">Saltzer</A> writes, <Q>my understanding was
-					that Doug [<A HREF="#mcilroy">McIlroy</A>] did the conversion of <A HREF="#1964_RUNOFF">RUNOFF</A> from
-					the <ABBR TITLE="Compatible Time-Sharing System">CTSS</ABBR> extended character set to <ABBR
-					TITLE="American Standard Code for Information Interchange">ASCII</ABBR>, using <ABBR TITLE="Basic
-					Combined Programming Language">BCPL</ABBR>, under <ABBR TITLE="Compatible Time-Sharing
-					System">CTSS</ABBR>.  He chose to name the port <SPAN CLASS="cmd">roff</SPAN>, I think to distinguish
-					the ASCII version from the <ABBR TITLE="Compatible Time-Sharing System">CTSS</ABBR> extended character
-					set version.</Q>  (Ed., the mention of <ABBR TITLE="Compatible Time-Sharing System">CTSS</ABBR> is
-					incorrect; it was <ABBR TITLE="General Electric Comprehensive Operating Supervisor">GECOS</ABBR>.) <A
-					HREF="#mcilroy">McIlroy</A> writes similarly, <Q>I see that I called it <SPAN CLASS="cmd">runoff</SPAN>
-					in 1969.  By 1971 it was <SPAN CLASS="cmd">roff</SPAN>.  Now I'm not so sure I got the name from <A
-					HREF="#morris">Morris</A>.  Conceivably it came from <A HREF="#thompson">Thompson</A>, who was big on
-					shortening names.  My 1971 description came in January; the first ediion Unix manual is dated December
-					1971.</Q> 
+					that Doug [<A HREF="#mcilroy">McIlroy</A>] did the conversion of <A CLASS="cmd"
+					HREF="#1964_RUNOFF">RUNOFF</A> from the <ABBR TITLE="Compatible Time-Sharing System">CTSS</ABBR>
+					extended character set to <ABBR TITLE="American Standard Code for Information Interchange">ASCII</ABBR>,
+					using <ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR>, under <ABBR TITLE="Compatible
+					Time-Sharing System">CTSS</ABBR>.  He chose to name the port <SPAN CLASS="cmd">roff</SPAN>, I think to
+					distinguish the ASCII version from the <ABBR TITLE="Compatible Time-Sharing System">CTSS</ABBR> extended
+					character set version.</Q>  (Ed., the mention of <ABBR TITLE="Compatible Time-Sharing
+					System">CTSS</ABBR> is incorrect; it was <ABBR TITLE="General Electric Comprehensive Operating
+					Supervisor">GECOS</ABBR>.) <A HREF="#mcilroy">McIlroy</A> writes similarly, <Q>I see that I called it
+					<SPAN CLASS="cmd">runoff</SPAN> in 1969.  By 1971 it was <SPAN CLASS="cmd">roff</SPAN>.  Now I'm not so
+					sure I got the name from <A HREF="#morris">Morris</A>.  Conceivably it came from <A
+					HREF="#thompson">Thompson</A>, who was big on shortening names.  My 1971 description came in January;
+					the first ediion Unix manual is dated December 1971.</Q> 
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -369,8 +369,8 @@
 			</DT>
 			<DD>
 				<P>
-					After being exposed to <A HREF="#x1964_RUNOFF">RUNOFF</A> while at <ABBR TITLE="Massachusettes Institute
-					of Technology">MIT</ABBR> in summer 1966, <A
+					After being exposed to <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> while at <ABBR
+					TITLE="Massachusettes Institute of Technology">MIT</ABBR> in summer 1966, <A
 					HREF="#kernighan">Kernighan</A> wrote a port in Fortran (for an IBM System/360) while working on his
 					doctoral thesis at Princeton (to format the thesis).  By his account, the system was used for five more
 					years by the student agency.  The punch-card source has long since been lost. 
@@ -441,7 +441,7 @@
 					and Thompson settle on Ritchie as the primary author.  This is corroborated by Ritchie's expertise in
 					<ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR>, as <SPAN CLASS="cmd">roff(1)</SPAN> was
 					based upon McIlroy's <ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR> <A
-					HREF="#x1969_runoff">runoff</A>.
+					HREF="#x1969_runoff" CLASS="cmd">runoff</A>.
 				</P>
 				<P>
 					Unfortunately, the first <SPAN CLASS="cmd">roff(1)</SPAN> version is lost.  Some sources from Version 1
@@ -523,8 +523,8 @@
 					of programmable macros.  This is corroborated by the Version 6 AT&amp;T UNIX source for <SPAN
 					CLASS="cmd">nroff(1)</SPAN>, where files under the prefix <SPAN CLASS="file">/usr/lib/tmac.</SPAN> are
 					parsed for macros (see <SPAN CLASS="file">nroff.8</SPAN> in the Version 6 AT&amp;T archive).  This same
-					behaviour is not reproduced in the <A HREF="#x1971">roff(1)</A> sources from the same time, so it
-					makes sense that this is the first appearance of macros.
+					behaviour is not reproduced in the <A CLASS="cmd" HREF="#x1971">roff(1)</A> sources from the same time,
+					so it makes sense that this is the first appearance of macros.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -699,10 +699,10 @@
 			<DD>
 				<P>
 					The Plan 9 operating system, initially released in 1991 from AT&amp;T Bell Labs, Murray Hill, is a
-					research system extending the UNIX model.  It included <A HREF="#x1979">ditroff(1)</A>, which was
-					steadily improved by <A HREF="#kernighan">Kernighan</A> to include features such as <ABBR TITLE="UCS
-					Transformation Format">UTF</ABBR> encoding.  The <SPAN CLASS="cmd">troff(1)</SPAN> for Plan 9 was not
-					free software until the Third Edition in June, 2000, when sources were licensed under the Plan 9
+					research system extending the UNIX model.  It included <A CLASS="cmd" HREF="#x1979">ditroff(1)</A>,
+					which was steadily improved by <A HREF="#kernighan">Kernighan</A> to include features such as <ABBR
+					TITLE="UCS Transformation Format">UTF</ABBR> encoding.  The <SPAN CLASS="cmd">troff(1)</SPAN> for Plan 9
+					was not free software until the Third Edition in June, 2000, when sources were licensed under the Plan 9
 					license.  It was again re-licenced in 2002 under the Lucent Public Licence 1.02.
 				</P>
 				<DIV CLASS="sources">
@@ -756,15 +756,15 @@
 			</DT>
 			<DD>
 				<P>
-					The GNU <A HREF="#x1979">troff</A> is popularly considered to be the most wide-spread in modern UNIX
-					installations.  It's bundled by default on most GNU/Linux operating systems.  This port, renamed <SPAN
-					CLASS="cmd">groff</SPAN>, was written by James C. Clarke in 1989 specifically for the GNU project.  At
-					this time, no open-source implementation existed.
+					The GNU <A CLASS="cmd" HREF="#x1979">troff</A> is popularly considered to be the most wide-spread in
+					modern UNIX installations.  It's bundled by default on most GNU/Linux operating systems.  This port,
+					renamed <SPAN CLASS="cmd">groff</SPAN>, was written by James C. Clarke in 1989 specifically for the GNU
+					project.  At this time, no open-source implementation existed.
 				</P>
 				<P>
-					The <SPAN CLASS="cmd">groff</SPAN> port was based purely from <A HREF="#x1979">troff</A> documentation
-					as shipped with SunOS 4.1.4, and was written in C++ on Sun 4/110 (initial implementations of the GNU C++
-					compiler were on Sun, making it an ideal starting point).
+					The <SPAN CLASS="cmd">groff</SPAN> port was based purely from <A HREF="#x1979" CLASS="cmd" >troff</A>
+					documentation as shipped with SunOS 4.1.4, and was written in C++ on Sun 4/110 (initial implementations
+					of the GNU C++ compiler were on Sun, making it an ideal starting point).
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -921,7 +921,7 @@
 				<DT ID="kernighan">Kernighan, Brian</DT>
 				<DD>
 					<P>
-						Completed <A HREF="#x1979">ditroff(1)</A> while at AT&amp;T Bell Labs, Murray Hill.  Homepage:
+						Completed <A CLASS="cmd" HREF="#x1979">ditroff(1)</A> while at AT&amp;T Bell Labs, Murray Hill.  Homepage:
 						<A HREF="http://www.cs.bell-labs.com/who/bwk/index.html">www.cs.bell-labs.com/who/bwk/</A>.
 					</P>
 				</DD>
