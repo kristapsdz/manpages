@@ -33,7 +33,7 @@
 		</div>
 		<p>
 			All system calls are in category <span class="cat">2</span>.  Furthermore, unless under special circumstances, system call
-			manuals are each accorded their own manual.
+			are each accorded their own manual.
 		</p>
 		<p>
 			I'll use the same descriptive text as in the <span class="func">hello</span> example.  Note that for system calls, the
