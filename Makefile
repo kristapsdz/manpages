@@ -204,6 +204,7 @@ install: all
 	mkdir -p $(PREFIX)/history
 	install -m 0644 license.png external.png $(PREFIX)
 	install -m 0644 index.html history.html $(PREFIX)
+	install -m 0644 history.png history.map $(PREFIX)
 	install -m 0644 toc.xhtml toc.html $(PREFIX)
 	install -m 0644 $(XHTMLS) $(HTMLS) $(PREFIX)
 	install -m 0644 css/book.css css/history.css css/index.css $(PREFIX)/css
