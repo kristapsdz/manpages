@@ -304,6 +304,10 @@
 							runoff</A></I>.  22 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 						<LI>
+							Douglas McIlroy, <I><A HREF="history/mcilroy_28_10_2011.txt">UNIX manpage history:
+							runoff</A></I>.  28 October, 2011.  Email to Kristaps Dzonsons.
+						</LI>
+						<LI>
 							Jerome Saltzer, <I><A HREF="history/saltzer_22_10_2011.txt">UNIX manpage history: CTSS
 							RUNOFF</A></I>.  22 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
@@ -948,9 +952,9 @@
 				<DT ID="ossanna">Ossanna, Joseph F.</DT>
 				<DD>
 					<P>
-						Worked on the PDP-11 assembly-language <A HREF="#x1971" CLASS="cmd">roff(1)</A>, <A
-						HREF="#x1972" CLASS="cmd">nroff(1)</A>, and <A HREF="#x1973" CLASS="cmd">troff(1)</A> while
-						working at AT&amp;T Bell Labs, Murray Hill.
+						Worked on the PDP-11 assembly-language <A HREF="#x1972" CLASS="cmd">nroff(1)</A> and <A
+						HREF="#x1973" CLASS="cmd">troff(1)</A> (also converted the latter to C) while working at
+						AT&amp;T Bell Labs, Murray Hill.
 					</P>
 				</DD>
 				<DT ID="ritchie">Ritchie, Dennis</DT>
@@ -1002,8 +1006,8 @@
 			<P>
 				The content of this page are available under Creative Commons' <A CLASS="external"
 				HREF="http://creativecommons.org/licenses/by-sa/3.0/">Attribution Share-Alike</A>: deriving works must attribute
-				the author(s) and use a similar license.  However, cited communications (and copies of source materials) are
-				copyright the sender/author, and not covered by this license.
+				the author(s) and use a similar license.  However, cited communications (and copies of source materials),
+				available <A HREF="history">here</A>, are copyright the sender/author, and not covered by this license.
 			</P>
 		</DIV>
 		<TABLE CLASS="nav">
