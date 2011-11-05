@@ -102,9 +102,24 @@
 			<br />
 			.Fo hello
 			<br />
-			.Fa "int C" "const char *prefix"
+			.Fa "<span style="border: thin solid blue;">int C</span>" 
+			    "<span style="border: thin solid blue;">const char *prefix</span>"
 			<br />
 			.Fc
+		</div>
+		<p>
+			This renders as follows, with the <a href="macros.xml#macro_fa" class="macro">Fa</a> scope highlighted.
+		</p>
+		<div class="mdocout">
+			<div class="mdoc-section">
+				<h1>SYNOPSIS</h1> 
+				<b class="mdoc-includes">#include &lt;<span class="link-includes">hi.h</span>&gt;</b>
+				<p />
+				<i class="mdoc-ftype">void</i>
+				<br />
+				<b class="mdoc-fname">hello</b>(<i class="mdoc-farg" style="border: thin solid blue;">int C</i>, 
+				<i class="mdoc-farg" style="border: thin solid blue;">const char *prefix</i>);
+			</div>
 		</div>
 		<p>
 			In the C language, function prototypes don't necessarily need named function arguments.  However, it's good practise to

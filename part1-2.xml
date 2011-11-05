@@ -17,9 +17,9 @@
 		</p>
 		<p>
 			In general, the <span class="lang">mdoc</span> macros used for documenting programming functions are the same as those
-			used for <a href="part1-1.xml#commands">Commands</A>; however, there are some domain-specific bits to annotate the
-			various parts of function versus command invocation.  You'll see that each command invocation macro, such as <a
-				href="macros.xml#macro_fl" class="macro">Fl</a> for a flag, has an analogue for programming functions, such as
+			used for <a href="part1-1.xml#commands">Commands</a>; however, there are some domain-specific bits to annotate the
+			various parts of function versus command invocation.  You'll see that each command invocation macro, such as 
+			<a href="macros.xml#macro_fl" class="macro">Fl</a> for a flag, has an analogue for programming functions, such as
 			the <a href="macros.xml#macro_fa" class="macro">Fa</a>, for a function argument.
 		</p>
 		<p>

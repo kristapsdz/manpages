@@ -108,18 +108,27 @@
 			.Fc
 		</div>
 		<p>
-			This declares the function prototype and calling syntax.  The <span class="header">stdlib.h</span> must be included.
-			Note that each function argument includes its name (e.g., <span class="screen">nptr</span> and <span
+			This declares the function prototype and calling syntax.  First, let's examine the new <a href="macros.xml#macro_fd"
+				class="macro">Fd</a> macro.  The use of this macro for a header inclusion is obsolete: new manuals should always
+			use <a href="macros.xml#macro_in" class="macro">In</a>.  This makes it easier for parsers to understand a header file
+			&mdash; and possibly link to it &mdash; instead of being a generic preprocessor statement.  The re-written form would
+			begin as follows:
+		</p>
+		<div class="mdocin">
+			.Sh SYNOPSIS
+			<br />
+			.In stdlib.h
+		</div>
+		<p>
+			Moving along, we see that each function argument includes its name (e.g., <span class="screen">nptr</span> and <span
 				class="screen">minval</span>).  While not common in header file prototypes, this allows later references of
-			function invocation in the manual to refer back to the prototype for type and context information.
+			function invocation in the manual to refer back to the prototype for type and context information.  In the previous
+			section, we discussed the relevance of quotation with <a href="macros.xml#macro_fa" class="macro">Fa</a>: the same is
+			done here.
 		</p>
 		<p>
-			Note that function arguments are quoted.  This allows each argument to be considered in entirety: type, qualifiers,
-			pointers, and so on.  Unlike for <a href="macros.xml#macro_nd" class="macro">Nd</a>, this is necessary.
-		</p>
-		<p>
-			Note also that while <a href="macros.xml#macro_fn" class="macro">Fn</a> could have been used, it would have created a
-			long input line.  Using <a href="macros.xml#macro_fn" class="macro">Fn</a> instead of <a href="macros.xml#macro_fo"
+			While we could have used <a href="macros.xml#macro_fn" class="macro">Fn</a>, it would have created an overly long input
+			line.  Using <a href="macros.xml#macro_fn" class="macro">Fn</a> instead of <a href="macros.xml#macro_fo"
 				class="macro">Fo</a> is purely a matter of convenience and has no effect on parsing or formatting.
 		</p>
 		<div class="mdocin">
@@ -140,10 +149,18 @@
 			value.
 		</div>
 		<p>
-			Note the reference to a function argument with <a href="macros.xml#macro_fa" class="macro">Fa</a> by its name, <span
-				class="screen">nptr</span>.  Also note that the <a href="macros.xml#macro_li" class="macro">Li</a> usage is
-			not good practise: since the <span class="screen">long long</span> refers to a type, it should be of type <a
-				href="macros.xml#macro_vt" class="macro">Vt</a>.
+			In the <span class="sec">SYNOPSIS</span>, the <a href="macros.xml#macro_fa" class="macro">Fa</a> included the full type
+			information.  Here, however,
+			we use <a href="macros.xml#macro_fa" class="macro">Fa</a> with just its name, <span
+				class="screen">nptr</span>.  We could have done the same in the <span class="sec">SYNOPSIS</span>, but the C
+			language includes all type information in its prototypes.
+		</p>
+		<p>
+			The <a href="macros.xml#macro_li" class="macro">Li</a> macro here isn't good practise: since the <span
+				class="screen">long long</span> refers to a type, it should be of type <a href="macros.xml#macro_vt"
+				class="macro">Vt</a>.  This behaviour &mdash; using a presentation macro instead of a semantic one &mdash; is a
+			holder from legacy manual forms that are purely presentational.  If you find yourself applying a style, think twice
+			whether it's a good idea!
 		</p>
 		<div class="mdocin">
 			The

@@ -130,15 +130,15 @@
 			<div class="mdoc-section">
 				<h1>SYNOPSIS</h1>
 				<b class="includes">#include &lt;<span class="link-includes">hi.h</span>&gt;</b>
-				<p>
+				<p />
 				<i class="ftype">void</i>
-				<br>
+				<br />
 				<b class="fname">hi</b>();
 			</div>
 			<div class="mdoc-section">
 				<h1>DESCRIPTION</h1> 
 				The <b class="fname">hi</b>() function prints &#8220;hello, world&#8221; and returns.
-				<p>
+				<p />
 				It has no arguments.
 			</div>
 		</div>
