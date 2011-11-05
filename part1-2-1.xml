@@ -70,7 +70,7 @@
 		</p>
 		<p>
 			Since our function has no arguments or return values, all we need to do is add some bits in the <span
-				class="sec">DESCRIPTION</span> section to complete this manual.
+				class="sec">DESCRIPTION</span> section to complete this manual. 
 		</p>
 		<div class="mdocin">
 			.Dd May 30, 2011
@@ -97,7 +97,7 @@
 			<br />
 			The
 			<br />
-			.Nm
+			.Fn hi
 			<br />
 			function prints
 			<br />
@@ -110,17 +110,49 @@
 			It has no arguments.
 		</div>
 		<p>
-			Let's also stipulate the function return value in its own section, <span class="sec">RETURN VALUES</span>.  This mirrors
-			the <span class="sec">EXIT STATUS</span> section I introduced for <span class="file">hello.1</span>.  Although we don't
-			have a return value, it's good practise to include this section anyway.  Again, the <a href="macros.xml#macro_nm"
-				class="macro">Nm</a> macro, when invoked without arguments, reproduces its last arguments.
+			Here, you'll notice a difference between a function and command manual.  It's clear that we refer back to our invoked
+			command using <a href="macros.xml#macro_fn" class="macro">Fn</a> instead of <a href="macros.xml#macro_nm"
+				class="cmd">Nm</a>.  Why is this?  The <a href="macros.xml#macro_nm" class="macro">Nm</a> macro, when used in
+			the body of a manual, refers to the command name, <i>not</i> the manual name, as we used <a href="macros.xml#macro_nm"
+				class="macro">Nm</a> to annotate that utility name in the <span class="sec">SYNOPSIS</span>.  In functions, we
+			use the <a href="macros.xml#macro_fn" class="macro">Fn</a> macro.  The difference is that <a href="macros.xml#macro_fn"
+				class="macro">Fn</a> won't repeat the manual name if used without arguments.  This complexity is simply the
+			result of poor planning in the <span class="lang">mdoc</span> language.
+		</p>
+		<p>
+			Let's visualise the output so far:
+		</p>
+		<div class="mdocout">
+			<div class="mdoc-section">
+				<h1>NAME</h1>
+				<b class="mdoc-name">hi</b> &#8212; <span class="mdoc-desc">print &#34;hello, world&#34;</span>
+			</div>
+			<div class="mdoc-section">
+				<h1>SYNOPSIS</h1>
+				<b class="includes">#include &lt;<span class="link-includes">hi.h</span>&gt;</b>
+				<p>
+				<i class="ftype">void</i>
+				<br>
+				<b class="fname">hi</b>();
+			</div>
+			<div class="mdoc-section">
+				<h1>DESCRIPTION</h1> 
+				The <b class="fname">hi</b>() function prints &#8220;hello, world&#8221; and returns.
+				<p>
+				It has no arguments.
+			</div>
+		</div>
+		<p>
+			Lastly, let's stipulate the function return value in its own section, <span class="sec">RETURN VALUES</span>.  This
+			mirrors the <span class="sec">EXIT STATUS</span> introduced for <span class="file">hello.1</span>.  Although we don't
+			have a return value, it's good practise to include this section anyway.
 		</p>
 		<div class="mdocin">
 			.Sh RETURN VALUES
 			<br />
 			The
 			<br />
-			.Nm
+			.Fn hi
 			<br />
 			function does not return a value.
 		</div>

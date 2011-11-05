@@ -17,6 +17,11 @@
 				href="http://www.openbsd.org/cgi-bin/cvsweb/src/lib/libc/stdlib/strtonum.3">src/lib/libc/stdlib/strtonum.3</a>,
 			file version 1.14.
 		</p>
+		<p>
+			In this case study, I've chosen a manual with some bad behaviour &mdash; not broken, but bad.  This is intentional to
+			show how real-world manuals deviate from recommended forms.  I'll explicitly note each instance of bad behaviour as we
+			explore the manual's contents.
+		</p>
 		<div class="mdocin">
 			.\"&nbsp;&nbsp;&nbsp;&nbsp;$&#8203;OpenBSD: strtonum.3,v 1.14 2007/05/31 19:19:31 jmc Exp $
 			<br />
@@ -114,7 +119,8 @@
 		</p>
 		<p>
 			Note also that while <a href="macros.xml#macro_fn" class="macro">Fn</a> could have been used, it would have created a
-			long input line.  The broken-down form was used for clarity.
+			long input line.  Using <a href="macros.xml#macro_fn" class="macro">Fn</a> instead of <a href="macros.xml#macro_fo"
+				class="macro">Fo</a> is purely a matter of convenience and has no effect on parsing or formatting.
 		</p>
 		<div class="mdocin">
 			.Sh DESCRIPTION

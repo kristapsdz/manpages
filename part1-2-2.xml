@@ -48,7 +48,8 @@
 			encloses the function's arguments.
 		</p>
 		<p>
-			This renders as follows.
+			This renders as follows.  Note that the formatter is smart enough to comma-separate the <a href="macros.xml#macro_fa"
+				class="macro">Fa</a> macros.
 		</p>
 		<div class="mdocout">
 			<div class="mdoc-section">
@@ -120,7 +121,7 @@
 			<br />
 			The
 			<br />
-			.Nm
+			.Fn hello
 			<br />
 			function prints
 			<br />
@@ -147,7 +148,8 @@
 				class="macro">El</a> list enclosure.  Notice how I re-use the <a href="macros.xml#macro_fa"
 				class="macro">Fa</a> macro to document individual arguments, just like I re-used <a href="macros.xml#macro_fl"
 				class="macro">Fl</a> and <a href="macros.xml#macro_ar" class="macro">Ar</a> when documenting command-line
-			flags and arguments.
+			flags and arguments.  In the last section, I mentioned why we use <a href="macros.xml#macro_fn" class="macro">Fn</a>
+			instead of <a href="macros.xml#macro_nm" class="macro">Nm</a> for re-stating the name.
 		</p>
 		<p>
 			This renders as follows.
@@ -155,7 +157,7 @@
 		<div class="mdocout">
 			<div class="mdoc-section">
 				<h1>DESCRIPTION</h1>
-				The <b class="mdoc-name">hello</b> function prints &#8220;hello, world&#8221;.<p/>
+				The <b class="mdoc-name">hello</b>() function prints &#8220;hello, world&#8221;.<p/>
 				It accepts the following arguments:
 				<dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="mdoc-list mdoc-list-tag">
 					<dt class="mdoc-list-tag" style="margin-top: 1.00em;">
@@ -178,7 +180,7 @@
 			<br />
 			The
 			<br />
-			.Nm
+			.Fn hello
 			<br />
 			function returns 1 on success, 0 on failure.
 		</div>
@@ -214,7 +216,7 @@
 			<br />
 			The
 			<br />
-			.Nm
+			.Fn hello
 			<br />
 			function prints
 			<br />
