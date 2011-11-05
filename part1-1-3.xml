@@ -194,7 +194,7 @@
 		</div>
 		<p>
 			This follows the standard form of documenting flags and arguments as a term/definition list.  Each one &mdash; in this
-			case only one &mdash; is documented in alphabetical ordered.
+			case only one &mdash; is documented in alphabetical order.
 		</p>
 		<div class="mdocin">
 			.Sh EXIT STATUS
@@ -257,7 +257,9 @@
 		<p>
 			This last section fully describes the utility's conformance to the <a class="term" href="glossary.xml#posix">POSIX</a>
 			standard, which is very important to those writing portable utilities.  The <a href="macros.xml#macro_st"
-				class="macro">St</a> macro expands into the relevant standard's full name.
+				class="macro">St</a> macro expands into the relevant standard's full name, <span class="screen">IEEE Std
+				1003.1-2008 (&#8220;POSIX.1&#8221;)</span>.  For a full list of standards, consult your local documentation for
+			the macro.
 		</p>
 		<table class="nav">
 			<tbody>
