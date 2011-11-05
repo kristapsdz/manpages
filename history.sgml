@@ -53,11 +53,8 @@
 					TITLE="Massachusettes Institute of Technology">MIT</ABBR>'s <ABBR TITLE="International Business
 					Machines">IBM</ABBR> 7094 <ABBR TITLE="Compatible Time-Sharing System">CTSS</ABBR> operating system in
 					the <ABBR TITLE="Michigan Algorithm Decoder">MAD</ABBR> computer language.  Its legacy is considerable:
-					not only can manpages trace their ancestry to to <SPAN CLASS="cmd">RUNOFF</SPAN>, but so can <ABBR
-					TITLE="Extensible Mark-up Language">XML</ABBR> and its precursor <ABBR TITLE="Standard Generalised
-					Mark-up Language">SGML</ABBR>!  In this article, however, I only consider <SPAN
-					CLASS="cmd">RUNOFF</SPAN> in its introduction of the familiar line-based, dot-control syntax used in
-					modern UNIX manpages.
+					not only do contemporary manpages inherit from <SPAN CLASS="cmd">RUNOFF</SPAN>, many of them, in fact,
+					use instructions identical to those specified in the original <oSPAN CLASS="cmd">RUNOFF</SPAN> manual.
 				</P>
 				<BLOCKQUOTE CITE="http://web.mit.edu/Saltzer/www/publications/ctss/AH.9.01.pdf">
 					<P>
@@ -67,9 +64,8 @@
 					</P>
 				</BLOCKQUOTE>
 				<P>
-					In fact, several of the abbreviated <SPAN CLASS="cmd">RUNOFF</SPAN> control words are still common in
-					today's manpages (formatted by modern <SPAN CLASS="cmd">troff</SPAN>-like systems), such as
-					<CODE>sp</CODE> and <CODE>br</CODE>.  According to <A HREF="#saltzer">Saltzer</A> and the source
+					Of the many abbreviated <SPAN CLASS="cmd">RUNOFF</SPAN> control words, macros such as <CODE>sp</CODE>
+					and <CODE>br</CODE> are still common-place.  According to <A HREF="#saltzer">Saltzer</A> and the source
 					literature, the syntax of <SPAN CLASS="cmd">RUNOFF</SPAN> inherits loosely from the prior <SPAN
 					CLASS="cmd">DITTO</SPAN>, <SPAN CLASS="cmd">MEMO</SPAN>, and <SPAN CLASS="cmd">MODIFY</SPAN> utilities
 					by M. L. Lowry, 1963.  Unfortunately, the sources for these utilities could not be located in the <ABBR
@@ -92,13 +88,15 @@
 							Patricia Crisman and Jerome H. Saltzer, <I><A
 							HREF="http://web.mit.edu/Saltzer/www/publications/ctss/AH.9.01.pdf">Manuscript Typing
 							and Editing</A></I>, <I>The Compatible Time-Sharing System, A Programmers Guide</I>,
-							AH.9.01 (second edition).  M.I.T. Press, 1965 (revised December 1966).
+							AH.9.01 (second edition).  M.I.T. Press, 1965 (revised December 1966).  (<A
+							HREF="http://web.mit.edu/Saltzer/www/publications/ctss/AH.9.01.html">HTML</A>)
 						</LI>
 						<LI>
 							Jerome H. Saltzer, <I><A
-							HREF="http://mit.edu/saltzer/www/publications/ctss/ctss/CC-244.pdf">TYPESET and RUNOFF,
+							HREF="http://mit.edu/saltzer/www/publications/CC-244.pdf">TYPESET and RUNOFF,
 							memorandum editor and type-out commands</A></I>, <I>M.I.T. Computation Center
 							Memorandum</I>, CC-244. 6 November, 1964.
+							(<A HREF="http://mit.edu/Saltzer/www/publications/CC-244.html">HTML</A>)
 						</LI>
 						<LI>
 							Jerome Saltzer, <I><A HREF="history/saltzer_22_10_2011.txt">UNIX manpage history: CTSS
@@ -117,7 +115,8 @@
 					Institute of Technology">MIT</ABBR> to the GE-635 (in 635 assembly).  The <A CLASS="cmd"
 					HREF="#1964_RUNOFF">RUNOFF</A> utility is suspected to be part of this port.  The ported <ABBR
 					TITLE="Compatible Time-Sharing System">CTSS</ABBR> was originally intended as a prototype (to be
-					replaced by Nike hardware), but ended up being used for five more years.
+					replaced by Nike hardware), but ended up being used for five more years.  No sources could be located
+					for this CTSS port.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -140,17 +139,14 @@
 			</DT>
 			<DD>
 				<P>
-					Little is known about this re-write of <A HREF="#x1964_RUNOFF" CLASS="cmd">RUNOFF</A>, only that it was
-					called <SPAN CLASS="cmd">roff</SPAN> and [probably] ran on Bell Labs' <ABBR TITLE="General Comprehensive
-					Operating System">GCOS</ABBR>-II GE-635.  <A HREF="#ritchie">Ritchie</A> is commonly cited as
-					participating in this port, and this is not disputed.  <A HREF="#canaday">Canaday</A> is also mentioned
-					as an author, though this is not the case by his own
-					account.
-				</P>
-				<P>
-					The accounts of both <A HREF="#mcilroy">McIlroy</A> and <A HREF="#saltzer">Saltzer</A> conclude that
-					this version was likely written in <ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR>, much
-					like <A CLASS="cmd" HREF="#x1969">runoff</A>.
+					Little is known about this speculated port of <A HREF="#x1964_RUNOFF" CLASS="cmd">RUNOFF</A>, only that
+					it was called <SPAN CLASS="cmd">roff</SPAN> and probably ran on Bell Labs' <ABBR TITLE="General
+					Comprehensive Operating System">GCOS</ABBR>-II GE-635.  <A HREF="#ritchie">Ritchie</A> is commonly cited
+					as participating in this port, and this is not disputed.  <A HREF="#canaday">Canaday</A> is also
+					mentioned as an author, though this is not the case by his own account.  Both <A
+					HREF="#mcilroy">McIlroy</A> and <A HREF="#saltzer">Saltzer</A> speculate that this version, if written,
+					was likely in <ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR>, much like <A CLASS="cmd"
+					HREF="#x1969">runoff</A>.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -511,8 +507,8 @@
 				<P>
 					<A HREF="#ossanna">Ossanna</A> took over the PDP-11 <A CLASS="cmd" HREF="#x1971">roff(1)</A> and built
 					<SPAN CLASS="cmd">nroff(1)</SPAN>, which focussed on outputting text onto terminals, for Version 2
-					AT&amp;T UNIX.  The exact motivations for this are unknown, but are vaguely agreed as simply evolving
-					the utility.
+					AT&amp;T UNIX.  The exact motivations for this are unknown, but are vaguely agreed as evolving the
+					utility and language to support more advanced formatting.
 				</P>
 				<P>
 					Unfortunately, a source record of the original effort is entirely lost; however, later versions of the
@@ -694,7 +690,7 @@
 				</DIV>
 			</DD>
 			<DT ID="x1992">
-				1991: troff (<A HREF="#kernighan">Brian Kernighan</A>)
+				1991: <SPAN CLASS="cmd">troff(1)</SPAN> (<A HREF="#kernighan">Brian Kernighan</A>)
 			</DT>
 			<DD>
 				<P>
@@ -724,7 +720,7 @@
 				</DIV>
 			</DD>
 			<DT ID="x2005_troff">
-				2005: troff (<A HREF="#ritter">Gunnar Ritter</A>)
+				2005: <SPAN CLASS="cmd">troff(1)</SPAN> (<A HREF="#ritter">Gunnar Ritter</A>)
 			</DT>
 			<DD>
 				<P>
@@ -752,7 +748,7 @@
 		</H3>
 		<DL>
 			<DT ID="x1989_groff">
-				1989: groff (<A HREF="#clarke">James Clarke</A>)
+				1989: <SPAN CLASS="cmd">groff(1)</SPAN> (<A HREF="#clarke">James Clarke</A>)
 			</DT>
 			<DD>
 				<P>
@@ -782,7 +778,7 @@
 				</DIV>
 			</DD>
 			<DT ID="x1991_awf">
-				1991: awf (<A HREF="#spencer">Henry Spencer</A>)
+				1991: <SPAN CLASS="cmd">awf(1)</SPAN> (<A HREF="#spencer">Henry Spencer</A>)
 			</DT>
 			<DD>
 				<P>
@@ -831,7 +827,7 @@
 				</DIV>
 			</DD>
 			<DT ID="x1991_cawf">
-				1991: cawf (<A HREF="#abell">Vic Abell</A>)
+				1991: <SPAN CLASS="cmd">cawf(1)</SPAN> (<A HREF="#abell">Vic Abell</A>)
 			</DT>
 			<DD>
 				<P>
@@ -852,18 +848,18 @@
 				</DIV>
 			</DD>
 			<DT ID="x2008_mandoc">
-				2008: mandoc (<A HREF="#dzonsons">Kristaps Dzonsons</A>)
+				2008: <SPAN CLASS="cmd">mandoc(1)</SPAN> (<A HREF="#dzonsons">Kristaps Dzonsons</A>)
 			</DT>
 			<DD>
-				<P>
-					<B>Disclaimer</B>: I wrote <SPAN CLASS="cmd">mandoc(1)</SPAN>.
-				</P>
 				<P>
 					Like <A CLASS="cmd" HREF="#x1991_awf">awf</A>, <SPAN CLASS="cmd">mandoc(1)</SPAN> primarily reads <A
 					CLASS="cmd" HREF="#x1979">ditroff(1)</A> macro files (not general <A CLASS="cmd"
 					HREF="#x1979">ditroff(1)</A> input), although it has some capability for generalised input.  It is the
-					first fully semantic parser for manpages, exposing the annotated content of parsed documents.   I used
-					the <A CLASS="cmd" HREF="#x1991_groff">groff(1)</A> manuals as a basis for processing.
+					first fully semantic parser for manpages, exposing the annotated content of parsed documents.   <A
+					CLASS="cmd" HREF="#x1991_groff">groff(1)</A> manuals were the predominant basis for this port.
+				</P>
+				<P>
+					<B>Disclaimer</B>: the author of this document wrote <SPAN CLASS="cmd">mandoc(1)</SPAN>.
 				</P>
 				<DIV CLASS="sources">
 					<P>
