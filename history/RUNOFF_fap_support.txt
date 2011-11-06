@@ -1,0 +1,56 @@
+FAP (Fortran Assembly Program) supporting routines for RUNOFF
+
+interludes that extend memory
+
+ FRAME.  extends memory and calls FRAME1.
+ PRPIX.  extends memory and calls PRPIX1.
+ RSMEM.  releases extended memory buffer control
+ ASSIGN.  assigns name to output file
+ WRWORD.  writes a word to output file
+ FILE.    closes output file
+ SEEK.    opens a file for reading
+ RDWORD.  reads a word from input file
+ ENDRD.   closes input file
+
+character packing & unpacking
+
+ WRITE.   writes a line to output file
+ READ.    reads a line from input file
+ BOTTOM.  moves to end of input file
+ CLOSEW.  closes output file
+
+runoff output routine
+
+ PACK.    set up output buffers
+ SETPK.   add charactrers to output page
+ PKOFF.   shut down page operations
+ PRPAGE.  print out page
+ RSPAGE.  reset page
+ WAIT.    wait for user to hit return key
+
+BCD to binary routine
+
+ BIN.     convert BCD to binary
+
+Character remapping package
+
+ REMAP.   convert one character
+ CHBALL.  set mapping table
+
+Supervisor call interlude and transfer vector
+
+ SETBRK.  define break character
+ CHNCOM.  terminate command
+ COMARG.  get command argument
+ GETBUF   get buffers from supervisor
+ SETBCD   set character mode to 6-bit BCD
+ SETFUL   set character mode to 12-bit extended
+ WRFLX    write to console, append return
+ WRFLXA   write to console, no return
+ OPEN     open file
+ WRWAIT   write to file
+ RDWAIT   read from file
+ CLOSE    close file
+ FSTATE   get file state
+ WHOAMI   get user info (device type)  
+

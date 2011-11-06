@@ -54,7 +54,7 @@
 					Machines">IBM</ABBR> 7094 <ABBR TITLE="Compatible Time-Sharing System">CTSS</ABBR> operating system in
 					the <ABBR TITLE="Michigan Algorithm Decoder">MAD</ABBR> computer language.  Its legacy is considerable:
 					not only do contemporary manpages inherit from <SPAN CLASS="cmd">RUNOFF</SPAN>, many of them, in fact,
-					use instructions identical to those specified in the original <oSPAN CLASS="cmd">RUNOFF</SPAN> manual.
+					use instructions identical to those specified in the original <SPAN CLASS="cmd">RUNOFF</SPAN> manual.
 				</P>
 				<BLOCKQUOTE CITE="http://web.mit.edu/Saltzer/www/publications/ctss/AH.9.01.pdf">
 					<P>
@@ -68,8 +68,7 @@
 					and <CODE>br</CODE> are still common-place.  According to <A HREF="#saltzer">Saltzer</A> and the source
 					literature, the syntax of <SPAN CLASS="cmd">RUNOFF</SPAN> inherits loosely from the prior <SPAN
 					CLASS="cmd">DITTO</SPAN>, <SPAN CLASS="cmd">MEMO</SPAN>, and <SPAN CLASS="cmd">MODIFY</SPAN> utilities
-					by M. L. Lowry, 1963.  Unfortunately, the sources for these utilities could not be located in the <ABBR
-					TITLE="Compatible Time-Sharing System">CTSS</ABBR> source archive.
+					by M. J. Leslie Lowry, Fernando J. Corbat&oacute;, and J. Richard Steinberg, 1963.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -78,25 +77,34 @@
 					<UL>
 						<LI>
 							<A CLASS="ref-link" HREF="http://www.piercefuller.com/library/ctss.html">CTSS source
-							listings</A>, hosted by <A HREF="http://www.piercefuller.com/">Paul Pierce</A>.  A copy
-							of the <A HREF="history/RUNOFF.gz">source file</A> containing <SPAN
-							CLASS="cmd">RUNOFF</SPAN> is available locally with permission of Mr. Pierce and Mr.
-							Saltzer (see lines 19728, 20014), as well as a copy of the <A
-							HREF="history/RUNOFF.info">manual</A>.
+							listings</A>, hosted by <A HREF="http://www.piercefuller.com/">Paul Pierce</A>.
 						</LI>
 						<LI>
-							Patricia Crisman and Jerome H. Saltzer, <I><A
+							RUNOFF source: <A HREF="history/RUNOFF_fap_archive.txt">MAD</A>, <A
+							HREF="history/RUNOFF_mad_archive.txt">FAP</A> supporting routines, and the <A
+							HREF="history/RUNOFF_fap_support.txt">interface</A> for the supporting routines.
+							Provided by Mr. Saltzer.
+						</LI>
+						<LI>
+							Jerome H. Saltzer, <I><A
 							HREF="http://web.mit.edu/Saltzer/www/publications/ctss/AH.9.01.pdf">Manuscript Typing
-							and Editing</A></I>, <I>The Compatible Time-Sharing System, A Programmers Guide</I>,
-							AH.9.01 (second edition).  M.I.T. Press, 1965 (revised December 1966).  (<A
+							and Editing</A></I>, section AH.9.01 of <I>The Compatible Time-Sharing System, A
+							Programmers Guide</I>, Patricia Crisman, editor (second edition). M.I.T. Press, 1965
+							(revised December 1966).  (<A
 							HREF="http://web.mit.edu/Saltzer/www/publications/ctss/AH.9.01.html">HTML</A>)
 						</LI>
 						<LI>
 							Jerome H. Saltzer, <I><A
-							HREF="http://mit.edu/saltzer/www/publications/CC-244.pdf">TYPESET and RUNOFF,
+							HREF="http://mit.edu/saltzer/www/publications/CC-244.pdf">TYPSET and RUNOFF,
 							memorandum editor and type-out commands</A></I>, <I>M.I.T. Computation Center
 							Memorandum</I>, CC-244. 6 November, 1964.
 							(<A HREF="http://mit.edu/Saltzer/www/publications/CC-244.html">HTML</A>)
+						</LI>
+						<LI>
+							M. J. Leslie Lowry, Fernando J. Corbat&oacute;, and J. Richard Steinberg,
+							<I><A HREF="history/CC-205.pdf">Memo, Modify, and Ditto Commands in the Compatible
+							Time Sharing System</A></I>, <I>M.I.T. Computation Center Memorandum</I>, CC-205. 11
+							March, 1963.  Provided by Mr Saltzer.
 						</LI>
 						<LI>
 							Jerome Saltzer, <I><A HREF="history/saltzer_22_10_2011.txt">UNIX manpage history: CTSS
@@ -220,7 +228,7 @@
 							3600-05.2.005.  October, 1970.
 						</LI>
 						<LI>
-							Jerome Saltzer, <I><A HREF="saltzer_22_10_2011.txt">UNIX manpage history: CTSS
+							Jerome Saltzer, <I><A HREF="history/saltzer_22_10_2011.txt">UNIX manpage history: CTSS
 							RUNOFF</A></I>.  22 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 					</UL>

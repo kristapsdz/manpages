@@ -1,0 +1,1425 @@
+***************************    FAP supporting routines for RUNOFF  *****************************
+
+
+INTERFACE TO PROVIDE EXTENDED MEMORY ARRAY.
+                  
+                              *      J. H. SALTZER, JANUARY, 1965.
+                              *     
+                       00004         ENTRY FRAME
+                       00017         ENTRY PRPIX
+                       00022         ENTRY   RSMEM    
+                              *     
+                  
+        TRANSFER VECTOR 
+      00000  265121442501     FRAME1
+      00001  475147316701     PRPIX1
+                  
+            LINKAGE DIRECTOR  
+      00002  000000000000     
+      00003  265121442560     
+                  
+      00004  0634 00 4 00015   FRAME SXA     FRX4,4        SAVE RETURN. 
+      00005  0074 00 4 00030         TSX     GETMEM,4      GET LOCATION OF ARRAY.   
+      00006  0621 00 0 00034         STA     SAVMEM        SAVE FOR RESET ROUTINE.  
+      00007  0361 00 0 00035         ACL     =5401    
+      00010  0621 00 0 00013         STA     CAL1          SET UP CALLING SEQUENCE. 
+      00011  0074 00 4 00027         TSX     SETMEM,4      MOVE BOUND.  
+      00012  0074 00 4 00000   CAL0  TSX     $FRAME1,4     GO TO MAD.   
+      00013  3 00033 0 00000  CAL1   TXH     --,,DIM  
+ TD   00014  3 00000 0 00033         TXH     DIM           SO IT CAN BE CHANGED.    
+      00015  0774 00 4 00000   FRX4  AXT     --,4     
+      00016  0020 00 4 00001         TRA     1,4           RETURN TO CALLER WITH AC.
+                              *     
+      00017  0634 00 4 00015   PRPIX SXA     FRX4,4        SAVE RETURN. 
+      00020 -0774 00 4 00012         AXC     CAL0,4        SET UP CALLING SEQUENCE. 
+      00021  0020 00 0 00001         TRA     $PRPIX1       BUT CALL DIFFERENT ENTRY.
+                              *     
+      00022  0634 00 4 00025   RSMEM SXA     RSX4,4        SAVE RETURN. 
+      00023 -0500 00 0 00034         CAL     SAVMEM          RESET MEMORY BOUND.    
+      00024  0074 00 4 00027         TSX     SETMEM,4 
+      00025  0774 00 4 00000   RSX4  AXT     --,4     
+      00026  0020 00 4 00001         TRA     1,4
+                              *     
+      00027  0101 00 0 00037  SETMEM TIA     =HSETMEM 
+      00030  0101 00 0 00036  GETMEM TIA     =HGETMEM 
+                              *     
+      00031  0 00000 0 00000                 -- 
+      00032 +000000000001            DEC     1             BASE   
+      00033 +000000000002            DEC     2             DIMENSIONS.  
+                       00033   DIM   SYN     *-1           DIMENSION VECTOR.  
+      00034  0 00000 0 00000  SAVMEM
+                              *     
+                              *     
+                                     END  
+                  
+                  
+BUFFER CONTROL ROUTINE FOR DISK INPUT AND OUTPUT.
+                  
+                              *      NOTE, INDEX REGISTERS SIX AND SEVEN MUST BE PRESERVED
+                              *      BY THE CALLING PROGRAM.
+                              *      THIS ROUTINE MAKES TYPEWRITER COMMENTS, BUT DOES NOT 
+                              *      AFFECT THE BCD-FULL MODE SWITCH.   
+                              *     
+                              *           J. H. SALTZER, JANUARY, 1965. 
+                              *     
+                       00015         ENTRY   ASSIGN        TO ASSIGN A NAME TO THE WRITE FILE.  
+                       00057         ENTRY   WRWORD        TO ADD A WORD TO THE FILE.     
+                       00100         ENTRY   FILE          TO CLOSE THE FILE. 
+                              *     
+                       00160         ENTRY   SEEK          TO OPEN A FILE FOR READING.    
+                       00242         ENTRY   RDWORD        TO GET A WORD FROM FILE. 
+                       00275         ENTRY   ENDRD         TO CLOSE THE FILE. 
+                              *     
+                                     EXTERN  GETBUF,SETBCD,SETFUL,WRFLX,WRFLXA
+                                     EXTERN  OPEN,WRWAIT,RDWAIT,CLOSE,FSTATE,BUFFER 
+                              *     
+                              *      ASSIGN.($NAME1$,$NAME2$)     
+                              *     
+                  
+        TRANSFER VECTOR 
+      00000  272563226426     GETBUF
+      00001  622563222324     SETBCD
+      00002  622563266443     SETFUL
+      00003  665126436760     WRFLX 
+      00004  665126436721     WRFLXA
+      00005  464725456060     OPEN  
+      00006  665166213163     WRWAIT
+      00007  512466213163     RDWAIT
+      00010  234346622560     CLOSE 
+      00011  266263216325     FSTATE
+      00012  226426262551     BUFFER
+                  
+            LINKAGE DIRECTOR  
+      00013  000000000000     
+      00014  216262312745     
+                  
+      00015 -0500 60 4 00001  ASSIGN CAL*    1,4           OPEN FILE, GET FILE NAME.
+      00016  0602 00 0 00304         SLW     OUTNAM        ..     
+      00017 -0500 60 4 00002         CAL*    2,4           ..     
+      00020  0602 00 0 00305         SLW     OUTNAM+1      ..     
+      00021  0634 00 4 00041         SXA     OPX4,4        SAVE LINKAGE.
+      00022  0020 00 0 00023   OSW   TRA     *+1           ENTER ONE-TIME SECTION TO GET BUFFERS.     
+                              *                                                    *******************
+      00023 -0500 00 0 00315         CAL     WBFSZ         GET AN OUTPUT BUFFER FROM SUPERVISOR.
+      00024  0074 00 4 00000         TSX     GETBUF,4      ..     
+      00025  0621 00 0 00071         STA     WCALL         SAVE LOCATION OF BUFFER. 
+      00026  0621 00 0 00113         STA     CLCALL        TO CLOSE OUT FILE. 
+      00027  0361 00 0 00315         ACL     WBFSZ         ADD LENGTH, TO FORM END ADDRESS.     
+      00030  0621 00 0 00060         STA     WRNM          INSERT IN INSERTER.
+      00031 -0500 00 0 00313         CAL     TRKSZ         GET A DISK TRACK BUFFER. 
+      00032  0074 00 4 00000         TSX     GETBUF,4      ..     
+      00033  0621 00 0 00055         STA     BFCALL        SET UP BUFFER CALLER.    
+      00034 -0625 00 0 00022         STL     OSW           RESET ONE-TIME SWITCH.   
+                              *                                                    *******************
+      00035  0774 00 4 00040         AXT     OPOK,4        SET QUOTA EXHAUSTED ERROR RETURN.    
+      00036  0634 00 4 00143         SXA     WRTN,4        ..     
+      00037  0074 00 3 00043         TSX     OPN,3         OPEN THE FILE.     
+      00040  0774 00 7 00330  OPOK   AXT     WBFLTH,7      SET UP STORAGE COUNT.    
+      00041  0774 00 4 00000   OPX4  AXT     --,4          RESTORE LINKAGE.   
+      00042  0020 00 4 00003         TRA     3,4           RETURN.
+                              *     
+      00043  0074 00 4 00005  OPN    TSX     OPEN,4        OPEN FILE.   
+ TD   00044  3 00000 0 00324         TXH     =HW           FOR WRITING. 
+ TD   00045  3 00000 0 00304         TXH     OUTNAM        ..     
+ TD   00046  3 00000 0 00305         TXH     OUTNAM+1      ..     
+ TD   00047  3 00000 0 00156         TXH     MODE          MAKE IT PERMANENT IF POSSIBLE. 
+ TD   00050  3 00000 0 00320         TXH     =2            PUT IT ON THE DISK.
+ TD   00051  3 00000 0 00127  OPERR  TXH     OEXH          IN CASE NO MORE QUOTA AVAILABLE.     
+      00052  0074 00 4 00012         TSX     BUFFER,4      ASSIGN A BUFFER FOR THE FILE.  
+ TD   00053  3 00000 0 00304         TXH     OUTNAM        ..     
+ TD   00054  3 00000 0 00305         TXH     OUTNAM+1      ..     
+      00055  3 00660 0 00000  BFCALL TXH     --,,TRKLTH    ..     
+      00056  0020 00 3 00001         TRA     1,3           RETURN TO CALLER.  
+                              *     
+                              *     
+                              *      ENTRY TO ADD A WORD TO FILE. 
+                              *              WRWORD.(WORD)  
+                              *     
+      00057 -0500 60 4 00001  WRWORD CAL*    1,4           GET WORD TO BE ADDED.    
+      00060  0602 00 7 00000   WRNM  SLW     --,7          ADD WORD TO OUTPUT BUFFER.     
+      00061  2 00001 7 00077         TIX     RETURN,7,1    COUNT AND CHECK FOR FULL BUFFER.     
+      00062  0634 00 4 00076   FULL  SXA     FULX4,4       BUFFER FULL, WRITE IT OUT.     
+      00063  0774 00 4 00065         AXT     WRAGN,4       SET UP EXHAUSTED RETURN ADDRESS.     
+      00064  0634 00 4 00143         SXA     WRTN,4        ..     
+      00065  0074 00 4 00006  WRAGN  TSX     WRWAIT,4      GIVE BUFFER TO SUPERVISOR.     
+ TD   00066  3 00000 0 00304         TXH     OUTNAM        ..     
+ TD   00067  3 00000 0 00305         TXH     OUTNAM+1      ..     
+ TD   00070  3 00000 0 00316         TXH     =0            ..     
+      00071  3 00330 0 00000  WCALL  TXH     --,,WBFLTH    ..     
+ TD   00072  3 00000 0 00321         TXH     =-0           IGNORE POSSIBLE EOF.     
+ TD   00073  3 00000 0 00321         TXH     =-0           ..     
+ TD   00074  3 00000 0 00124  WRERR  TXH     WEXH          ALLOW ERROR RETURN.
+      00075  0774 00 7 00330         AXT     WBFLTH,7      RESET BUFFER POINTER.    
+      00076  0774 00 4 00000   FULX4 AXT     --,4          RESTORE LINKAGE.   
+      00077  0020 00 4 00002  RETURN TRA     2,4           RETURN TO CALLER.  
+                              *     
+                              *      FILE.     NO ARGUMENTS.
+                              *     
+      00100  0634 00 4 00122  FILE   SXA     CL4,4         ENTRY TO CLOSE OUT FILE. 
+      00101 -0634 00 7 00103         SXD     *+2,7         FORM COUNT OF WORDS SINCE
+      00102  0774 00 7 00330         AXT     WBFLTH,7      LAST BUFFER WAS WRITTEN. 
+      00103 -2 00000 7 00117         TNX     NOWR,7,--     IF ZERO, SKIP FINAL WRITE CALL.
+      00104 -0634 00 7 00113         SXD     CLCALL,7      NON-ZERO, SET UP WRITE CALL.   
+      00105  0774 00 4 00107         AXT     FWR,4         SET UP RETURN ADDRESS FOR EXHAUSTED CASE.  
+      00106  0634 00 4 00143         SXA     WRTN,4        ..     
+      00107  0074 00 4 00006  FWR    TSX     WRWAIT,4      WRITE OUT PARTIAL BUFFER.
+ TD   00110  3 00000 0 00304         TXH     OUTNAM        ..     
+ TD   00111  3 00000 0 00305         TXH     OUTNAM+1      ..     
+ TD   00112  3 00000 0 00316         TXH     =0            ..     
+      00113  3 00000 0 00000  CLCALL TXH     --,,--        ..     
+ TD   00114  3 00000 0 00321         TXH     =-0           IGNORE EOF RETURN. 
+ TD   00115  3 00000 0 00321         TXH     =-0           ..     
+ TD   00116  3 00000 0 00124         TXH     WEXH          ALLOW ERROR RETURN.
+      00117  0074 00 4 00010  NOWR   TSX     CLOSE,4       CLOSE OUT THE FILE.
+ TD   00120  3 00000 0 00304         TXH     OUTNAM        ..     
+ TD   00121  3 00000 0 00305         TXH     OUTNAM+1      ..     
+      00122  0774 00 4 00000   CL4   AXT     --,4          RESTORE LINKAGE.   
+      00123  0020 00 4 00001         TRA     1,4           ..     
+                              *     
+      00124  0074 00 4 00010  WEXH   TSX     CLOSE,4       TRACK QUOTA EXHAUSTED, CLOSE FILE.   
+ TD   00125  3 00000 0 00304         TXH     OUTNAM        ..     
+ TD   00126  3 00000 0 00305         TXH     OUTNAM+1      ..     
+      00127  0074 00 4 00001  OEXH   TSX     SETBCD,4      ENTRY FROM OPEN ERROR, COMMENT.
+      00130  0601 00 0 00157         STO     MODSW         SAVE OLD CHARACTER MODE SETTING.     
+      00131  0074 00 4 00003         TSX     WRFLX,4       ..     
+      00132  0 00011 0 00144                 ERMESS,,9
+      00133  0520 00 0 00157         ZET     MODSW         SHOULD 12-BIT INDICATOR BE RESET.    
+      00134  0074 00 4 00002         TSX     SETFUL,4      YES, RESET INDICATOR.    
+      00135 -0500 00 0 00317         CAL     =1            SWITCH TO TEMPORARY MODE.
+      00136  0601 00 0 00156         STO     MODE          ..     
+      00137 -0500 00 0 00155         CAL     NOP           BLOCK FUTURE ERROR RETURN.     
+      00140  0602 00 0 00051         SLW     OPERR         ..     
+      00141  0602 00 0 00074         SLW     WRERR    
+      00142  0074 00 3 00043         TSX     OPN,3         NOW, OPEN IT AGAIN.
+      00143  0020 00 0 00000  WRTN   TRA     --            ALL FIXED, RETURN TO MAIN STREAM.    
+                              *     
+      00144  635121234260     ERMESS BCI     9,TRACK QUOTA EXHAUSTED, TEMPORARY MODE WILL BE USED.    
+      00145  506446632160     
+      00146  256730216462     
+      00147  632524736063     
+      00150  254447465121     
+      00151  517060444624     
+      00152  256066314343     
+      00153  602225606462     
+      00154  252433606060     
+      00155  0761 00 0 00000   NOP   NOP                   INSTRUCTION TO BLOCK ERROR RETURN.   
+      00156  0 00000 0 00000  MODE           0             START IN PERMANENT MODE. 
+      00157  0 00000 0 00000  MODSW                        TEMP STORAGE FOR 6-BIT,12-BIT INDICATOR.   
+                              *     
+                              * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *     
+                              *      SEEK.($NAME1$, $NAME2$, ERRET)     
+                              *      ERROR RETURN MEANS FILE NOT FOUND. 
+                              *     
+      00160 -0500 60 4 00001   SEEK  CAL*    1,4           GET FILE NAME.     
+      00161  0602 00 0 00306         SLW     INNAM         ..     
+      00162 -0500 60 4 00002         CAL*    2,4           ..     
+      00163  0602 00 0 00307         SLW     INNAM+1       ..     
+      00164  0634 00 4 00222         SXA     SKX4,4        SAVE LINKAGE.
+      00165  0020 00 0 00166   SKSW  TRA     *+1           ENTER ONE-TIME SECTION TO GET BUFFERS.     
+                              *                                                  *********************
+      00166 -0500 00 0 00314         CAL     RBFSZ         GET A BUFFER FROM SUPERVISOR.  
+      00167  0074 00 4 00000         TSX     GETBUF,4      ..     
+      00170  0621 00 0 00257         STA     ECALL         STORE BUFFER LOCATION.   
+      00171  0621 00 0 00217         STA     STCALL        ..     
+      00172 -0625 00 0 00165         STL     SKSW          RESET ONE-TIME SWITCH.   
+                              *                                                  *********************
+1            BUFFER CONTROL ROUTINE FOR DISK INPUT AND OUTPUT.                                   PAGE 4     
+                  
+      00173 -0500 00 0 00217         CAL     STCALL        SET UP PICKUP INSTRUCTION FOR INDEXING.    
+      00174  0361 00 0 00314         ACL     RBFSZ         ..     
+      00175  0621 00 0 00242         STA     RDWORD        ..     
+      00176  0074 00 4 00011         TSX     FSTATE,4      MAKE SURE FILE IS THERE. 
+ TD   00177  3 00000 0 00306         TXH     INNAM         ..     
+ TD   00200  3 00000 0 00307         TXH     INNAM+1       ..     
+ TD   00201  3 00000 0 00321         TXH     =-0           DON'T WANT DATA.   
+ TD   00202  3 00000 0 00224         TXH     NOTFN         ERROR RETURN MEANS FILE NOT THERE.   
+      00203  0074 00 4 00005         TSX     OPEN,4        OPEN THE FILE FOR READING.     
+ TD   00204  3 00000 0 00322         TXH     =HR           ..     
+ TD   00205  3 00000 0 00306         TXH     INNAM         ..     
+ TD   00206  3 00000 0 00307         TXH     INNAM+1       ..     
+      00207  0774 00 6 00660         AXT     RBFLTH,6      SET UP BUFFER COUNTER.   
+      00210  0774 00 4 00222         AXT     SKX4,4        SET END OF FILE RETURN.  
+      00211  0634 00 4 00274         SXA     EOFRTN,4      ..     
+      00212  0600 00 0 00312         STZ     EOFR          CLEAR END OF FILE SWITCH.
+      00213  0074 00 4 00007         TSX     RDWAIT,4      GET INITIAL BUFFER LOAD. 
+ TD   00214  3 00000 0 00306         TXH     INNAM         ..     
+ TD   00215  3 00000 0 00307         TXH     INNAM+1       ..     
+ TD   00216  3 00000 0 00316         TXH     =0            ..     
+      00217  3 00660 0 00000  STCALL TXH     --,,RBFLTH    ..     
+ TD   00220  3 00000 0 00265         TXH     EOF           END OF FILE RETURN.
+ TD   00221  3 00000 0 00311         TXH     EOFCT         ..     
+      00222  0774 00 4 00000   SKX4  AXT     --,4          RESTORE LINKAGE.   
+      00223  0020 00 4 00004         TRA     4,4           RETURN TO CALLER.  
+                              *     
+      00224  0074 00 4 00001  NOTFN  TSX     SETBCD,4      FILE NOT FOUND, COMMENT. 
+      00225  0601 00 0 00157         STO     MODSW         SAVE OLD CHARACTER MODE SETTING.     
+      00226  0074 00 4 00004         TSX     WRFLXA,4      START UP COMMENT.  
+      00227  0 00001 0 00323                 =H FILE ,,1   ..     
+      00230  0074 00 4 00004         TSX     WRFLXA,4      INSERT FILE NAME.  
+      00231  0 00002 0 00306                 INNAM,,2      ..     
+      00232  0074 00 4 00003         TSX     WRFLX,4       END OF COMMENT.    
+      00233  0 00002 0 00240                 ECM,,2        ..     
+      00234  0520 00 0 00157         ZET     MODSW         SHOULD 12-BIT INDICATOR BE RESET.    
+      00235  0074 00 4 00002         TSX     SETFUL,4      YES, RESET MODE.   
+      00236  0534 00 4 00222         LXA     SKX4,4        GIVE ERROR RETURN. 
+      00237  0020 60 4 00003         TRA*    3,4           ..     
+                              *     
+      00240  604546636026     ECM    BCI     2, NOT FOUND.  
+      00241  466445243360     
+                              *     
+                              *      ENTRY TO OBTAIN WORD FROM FILE.    
+                              *              WORD = RDWORD.(EOF)  
+                              *     
+      00242  0500 00 6 00000  RDWORD CLA     --,6          GET WORD FROM INPUT BUFFER.    
+      00243  2 00001 6 00264         TIX     GOBACK,6,1    INDEX, AND CHECK FOR EMPTY BUFFER.   
+      00244  0520 00 0 00312         ZET     EOFR          BUFFER EMPTY, HAS END OF FILE OCCURRED.    
+      00245  0020 60 4 00001         TRA*    1,4           YES, GIVE EOF RETURN.    
+      00246  0601 00 0 00310         STO     RTEMP         NO, SAVE WORD AND GET SOME MORE DATA.
+      00247  0634 00 4 00263         SXA     EMPX4,4       SAVE LINKAGE, ALSO.
+      00250  0774 00 6 00660         AXT     RBFLTH,6      RESET BUFFER POINTER.    
+      00251  0774 00 4 00262         AXT     EMPGT,4       SET END OF FILE RETURN.  
+      00252  0634 00 4 00274         SXA     EOFRTN,4      ..     
+      00253  0074 00 4 00007         TSX     RDWAIT,4      GET ANOTHER BUFFER LOAD OF DATA.     
+ TD   00254  3 00000 0 00306         TXH     INNAM         ..     
+1            BUFFER CONTROL ROUTINE FOR DISK INPUT AND OUTPUT.                                   PAGE 5     
+                  
+ TD   00255  3 00000 0 00307         TXH     INNAM+1       ..     
+ TD   00256  3 00000 0 00316         TXH     =0            ..     
+      00257  3 00660 0 00000  ECALL  TXH     --,,RBFLTH    ..     
+ TD   00260  3 00000 0 00265         TXH     EOF           ..     
+ TD   00261  3 00000 0 00311         TXH     EOFCT         ..     
+      00262  0500 00 0 00310   EMPGT CLA     RTEMP         RESTORE WORD FOR THIS CALL.    
+      00263  0774 00 4 00000   EMPX4 AXT     --,4          RESTORE LINKAGE.   
+      00264  0020 00 4 00002  GOBACK TRA     2,4           RETURN TO CALLER.  
+                              *     
+      00265 -0625 00 0 00312  EOF    STL     EOFR          END OF FILE REACHED, SET SWITCH.     
+      00266 -0500 00 0 00311         CAL     EOFCT         GET COUNT OF WORDS LEFT. 
+      00267  0361 00 0 00317         ACL     =1            BUGGER WORD COUNT. 
+      00270  0734 00 6 00000         PAX     0,6           SET WORD COUNTER.  
+      00271  0361 00 0 00257         ACL     ECALL         ADJUST PICKUP INSTRUCTION.     
+      00272  0621 00 0 00242         STA     RDWORD        ..     
+      00273  0074 00 4 00275         TSX     ENDRD,4       TURN OFF FILE.     
+      00274  0020 00 0 00000  EOFRTN TRA     --            RETURN TO END OF RDFILE CALLING SEQUENCE.  
+                              *     
+                              *      ENTRY TO CLOSE INPUT FILE.   
+                              *      ENDRD.     
+                              *     
+      00275  0634 00 4 00302  ENDRD  SXA     ENDX4,4       SAVE LINKAGE.
+      00276  0074 00 4 00010         TSX     CLOSE,4       CLOSE FILE.  
+ TD   00277  3 00000 0 00306         TXH     INNAM         ..     
+ TD   00300  3 00000 0 00307         TXH     INNAM+1       ..     
+ TD   00301  3 00000 0 00302         TXH     *+1           IGNORE ANY ERROR RETURN. 
+      00302  0774 00 4 00000  ENDX4  AXT     --,4          RESTORE LINKAGE.   
+      00303  0020 00 4 00001         TRA     1,4           ..     
+                              *     
+      00304  545454545454     OUTNAM BCI     2,************  NAME OF OUTPUT FILE.   
+      00305  545454545454     
+      00306  545454545454      INNAM BCI     2,************  NAME OF INPUT FILE.    
+      00307  545454545454     
+      00310  0 00000 0 00000   RTEMP                       STORAGE FOR WORD.  
+      00311  0 00000 0 00000  EOFCT                        STORAGE FOR END OF FILE COUNTER.     
+      00312  0 00000 0 00312   EOFR          *             SWITCH FOR END OF FILE MET.    
+                              *     
+                       00660  TRKLTH EQU     432           DISK TRACK LENGTH. 
+      00313  0 00000 0 00660   TRKSZ         TRKLTH        WORD CONTAINING TRACK LENGTH.  
+                       00660  RBFLTH EQU     TRKLTH        READ BUFFER LENGTH.
+                       00330  WBFLTH EQU     TRKLTH/2      WRITE BUFFER LENGTH.     
+      00314  0 00000 0 00660  RBFSZ          RBFLTH        WORD CONTAINING READ BUFFER SIZE.    
+      00315  0 00000 0 00330  WBFSZ          WBFLTH        WORD CONTAINING WRITE BUFFER SIZE.   
+                              *     
+                                     END  
+
+
+
+SUBROUTINES TO CONTROL CHARACTER PACKING AND UNPACKING.
+                  
+                              *      INPUT AND OUTPUT IS LINE-MARKED FORMAT.  
+                              *      J. H. SALTZER, JANUARY, 1965 
+                              *     
+                       00010         ENTRY   WRITE         WRITE ONE LINE OUT.
+                       00071         ENTRY   READ          TO READ NEXT LINE. 
+                       00167         ENTRY   BOTTOM        TO RAPIDLY MOVE TO BOTTOM OF FILE.   
+                       00062         ENTRY   CLOSEW        CLOSE OUT WRITE FILE.    
+                              *     
+                                     EXTERN  WRFLX,WRWORD,RDWORD,SETBCD,SETFUL,FILE 
+                              *     
+                  
+        TRANSFER VECTOR 
+      00000  665126436760     WRFLX 
+      00001  665166465124     WRWORD
+      00002  512466465124     RDWORD
+      00003  622563222324     SETBCD
+      00004  622563266443     SETFUL
+      00005  263143256060     FILE  
+                  
+            LINKAGE DIRECTOR  
+      00006  000000000000     
+      00007  665131632560     
+                  
+                       00014   NBITS EQU     12            COULD BE 6, 9, 12, OR 18.
+                       00003   NCHRS EQU     36/NBITS      NO. OF CHARACTERS PER WORD ON 7094.  
+                              *     
+                              *      WRITE.(LINE, LENGTH)   
+                              *     
+      00010  0634 00 4 00056   WRITE SXA     WX4,4         SAVE LINKAGE AND REGISTERS.    
+      00011  0634 00 2 00057         SXA     WX2,2         ..     
+      00012  0634 00 1 00060         SXA     WX1,1         ..     
+      00013 -0500 00 4 00001         CAL     1,4           GET LINE ADDRESS.  
+      00014  0621 00 0 00035         STA     INLP          SET UP LOCATION OF INPUT.
+      00015  0500 60 4 00002         CLA*    2,4           GET CHARACTER COUNT.     
+      00016  0100 00 4 00003         TZE     3,4           DON'T WORK ON ZERO COUNT.
+      00017  0402 00 0 00200         SUB     =1            DISCARD CARRIAGE RETURN AT END.
+      00020  0100 00 4 00003         TZE     3,4           ZERO SIZE LINES NOT ALLOWED, EITHER. 
+      00021  0767 00 0 00022         ALS     18            SET UP CHARACTER COUNT.  
+      00022  0622 00 0 00041         STD     ENDTST        NCHARS = CPW*NWORDS + EXTRAS   
+      00023  0361 00 0 00066         ACL     CPWL1         CWP*NWORDS + EXTRAS + CPW - 1  
+      00024  0131 00 0 00000         XCA                   (CPW*NWORDS + EXTRAS + CWP - 1)/CPW =
+      00025 -0754 00 0 00000         ZAC                        NWORDS + (EXTRAS - 1 + CPW)/CPW 
+      00026  0221 00 0 00065         DVP     CPW           SECOND TERM IS 1 IF EXTRAS .G. 0,    
+      00027  0131 00 0 00000         XCA                                  0 IF EXTRAS .E. 0     
+      00030  0621 00 0 00067         STA     CWD           INSERT IN CONTROL WORD.  
+      00031  0074 00 4 00001         TSX     WRWORD,4      INSERT THIS WORD IN OUTPUT BUFFER.   
+ TD   00032  3 00000 0 00067         TXH     CWD           ..     
+      00033  0774 00 2 00001         AXT     1,2
+      00034  0774 00 1 00003   OUTLP AXT     36/NBITS,1    SET CHARACTER COUNTER.   
+      00035  0560 00 2 00000   INLP  LDQ     --,2     
+      00036 -0773 00 0 00030         RQL     36-NBITS      SHIFT CHARACTER TO POSITION.   
+      00037 -0763 00 0 00014         LGL     NBITS         AND INTO WORD.     
+      00040  1 00001 2 00041         TXI     *+1,2,1       COUNT INPUT CHARACTERS.  
+      00041  3 00000 2 00052  ENDTST TXH     DONE,2,--     CHECK FOR END OF INPUT.  
+      00042  2 00001 1 00035         TIX     INLP,1,1 
+      00043  0602 00 0 00070         SLW     WDOUT         SAVE COMPLETED WORD.     
+      00044  0074 00 4 00001   OUT   TSX     WRWORD,4      STORE COMPLETED WORD.    
+ TD   00045  3 00000 0 00070         TXH     WDOUT         ..     
+      00046  0020 00 0 00034         TRA     OUTLP         GO BACK FOR MORE.  
+                              *     
+      00047  0560 00 0 00063   NLLP  LDQ     NULL          FILL IN WORD WITH NULLS. 
+      00050 -0773 00 0 00030         RQL     36-NBITS      MOVE NULL TO POSITION.   
+      00051 -0763 00 0 00014         LGL     NBITS         SHIFT IN A NULL.   
+      00052  2 00001 1 00047   DONE  TIX     NLLP,1,1      COUNT SPACES LEFT. 
+      00053  0602 00 0 00070         SLW     WDOUT         STORE THIS WORD.   
+      00054  0074 00 4 00001         TSX     WRWORD,4      ADD TO OUTPUT BUFFER.    
+ TD   00055  3 00000 0 00070         TXH     WDOUT         ..     
+      00056  0774 00 4 00000   WX4   AXT     --,4          RESTORE LINKAGE, AND IRS.
+      00057  0774 00 2 00000   WX2   AXT     --,2          ..     
+      00060  0774 00 1 00000   WX1   AXT     --,1     
+      00061  0020 00 4 00003         TRA     3,4           ..     
+                              *     
+      00062  0020 00 0 00005  CLOSEW TRA     FILE          REFLECT CLOSE CALL TO BUFFER.  
+                              *     
+                              *     
+      00063 +000000000057      NULL  OCT     0057          NULL CHARACTER.    
+      00064 +000000000055     RETURN OCT     0055          CARRIAGE RETURN CHARACTER.     
+      00065  0 00003 0 00000   CPW           ,,NCHRS       NUMBER OF CHARACTERS PER WORD. 
+      00066  0 00002 0 00000   CPWL1         ,,NCHRS-1     CHARACTERS PER WORD LESS ONE.  
+                              *     
+      00067 -377777000000      CWD   OCT     777777000000   
+      00070  0 00000 0 00000   WDOUT                       STORAGE FOR WORD BEING OUTPUT. 
+                              *     
+                              *      LENGTH = READ.(LINE, BUFSIZ, EOF)  
+                              *     
+      00071  0634 00 1 00137   READ  SXA     RX1,1         READ NEXT LINE.    
+      00072  0634 00 2 00136         SXA     RX2,2    
+      00073  0634 00 4 00134         SXA     RX4,4    
+      00074  0634 00 3 00135         SXA     RX3,3    
+      00075 -0500 00 4 00001         CAL     1,4           GET LOCATION OF BUFFER.  
+      00076  0621 00 0 00124         STA     RPUT     
+      00077 -0500 60 4 00002         CAL*    2,4           SET UP END TEST.   
+      00100  0402 00 0 00200         SUB     =1 
+      00101  0767 00 0 00022         ALS     18            ..     
+      00102  0622 00 0 00125         STD     BUFTST        ..     
+      00103  0074 00 4 00002   RDAGN TSX     RDWORD,4      GET CONTROL WORD.  
+      00104  0 00000 0 00141                 EOF           IN CASE WE ARE AT END OF FILE. 
+      00105 -0734 00 1 00000         PDX     0,1           PUT FLAG IN IR1.   
+      00106  0734 00 3 00000         PAX     0,3           PUT COUNT IN IR3.  
+      00107 -2 77776 1 00146         TNX     WOOPS,1,-2    CHECK FLAG.  
+      00110 -3 00000 3 00103         TXL     RDAGN,3,0     IGNORE ZERO-LENGTH LINE. 
+      00111  0774 00 2 00000   RDON  AXT     0,2           SET OUTPUT COUNTER.
+      00112  0074 00 4 00002  ROUTLP TSX     RDWORD,4      READ A WORD. 
+      00113  0 00000 0 00141                 EOF           ..     
+      00114  0774 00 1 00003         AXT     36/NBITS,1    SET CHARACTER COUNTER.   
+      00115  0131 00 0 00000         XCA                   WORD TO MQ.  
+      00116 -0754 00 0 00000   RINLP ZAC                   CLEAR AC.    
+      00117 -0763 00 0 00014         LGL     NBITS         GET NEXT CHARACTER.
+      00120 -0340 00 0 00063         LAS     NULL          IS THIS A NULL CHARACTER.
+      00121  0020 00 0 00123         TRA     *+2           NO.    
+      00122  0020 00 0 00126         TRA     RCH           YES, SKIP IT.
+      00123  1 00001 2 00124         TXI     *+1,2,1       COUNT STORAGE SPACES.    
+      00124  0602 00 2 00000   RPUT  SLW     --,2          STORE CHARACTER IN LINE. 
+      00125  3 00000 2 00133  BUFTST TXH     PXA,2,--      TEST FOR FULL BUFFER.    
+      00126  2 00001 1 00116   RCH   TIX     RINLP,1,1     INDEX, AND COUNT CHARACTERS.   
+      00127  2 00001 3 00112         TIX     ROUTLP,3,1    INDEX, AND COUNT WORDS.  
+      00130 -0500 00 0 00064         CAL     RETURN        PUT RETURN AT END OF LINE.     
+      00131  1 00001 2 00132         TXI     *+1,2,1       INCLUDE IN COUNT.  
+      00132  0522 00 0 00124         XEC     RPUT          INSTALL IT.  
+      00133  0754 00 2 00000   PXA   PXA     0,2           GET WORD COUNT.    
+      00134  0774 00 4 00000   RX4   AXT     --,4     
+      00135  0774 00 3 00000   RX3   AXT     --,3     
+      00136  0774 00 2 00000   RX2   AXT     --,2     
+      00137  0774 00 1 00000   RX1   AXT     --,1     
+      00140  0020 00 4 00004         TRA     4,4
+                              *     
+      00141  0534 00 4 00134   EOF   LXA     RX4,4         END OF FILE REACHED, TAKE ERROR
+      00142  0534 00 3 00135         LXA     RX3,3         RETURN.
+      00143  0534 00 2 00136         LXA     RX2,2    
+      00144  0534 00 1 00137         LXA     RX1,1    
+      00145  0020 60 4 00003         TRA*    3,4
+                              *     
+                              *     
+      00146  0074 00 4 00003   WOOPS TSX     SETBCD,4      FILE IS NOT LINE-MARKED PROPERLY, COMPLAIN.
+      00147  0074 00 4 00000         TSX     WRFLX,4  
+      00150  0 00006 0 00161                 MESS1,,6 
+      00151  0074 00 4 00004         TSX     SETFUL,4      RESTORE INDICATOR. 
+      00152  0074 00 4 00002   LP    TSX     RDWORD,4      SEARCH FOR NEXT LINE MARK.     
+      00153  0 00000 0 00141                 EOF
+      00154 -0734 00 1 00000         PDX     0,1           CHECK FOR LINE MARK IN THIS WORD.    
+      00155 -2 77776 1 00152         TNX     LP,1,-2       ..     
+      00156  0734 00 3 00000         PAX     0,3           LINE MARK OK, CHECK COUNT.     
+      00157 -3 00000 1 00152         TXL     LP,1,0        ..     
+      00160  0020 00 0 00111         TRA     RDON          COUNT NON-ZERO, READ ON. 
+                              *     
+      00161  314547646360      MESS1 BCI     6,INPUT FILE HAS IMPROPER FORMAT.
+      00162  263143256030     
+      00163  216260314447     
+      00164  514647255160     
+      00165  264651442163     
+      00166  336060606060     
+                              *     
+                              *      ROUTINE TO SWING TO BOTTOM OF FILE.
+                              *     
+      00167  0634 00 4 00176  BOTTOM SXA     EOFB,4        SAVE LINKAGE.
+      00170  0074 00 4 00002   LOOP  TSX     RDWORD,4      GET NEXT INPUT WORD.     
+      00171  0 00000 0 00176                 EOFB          EXIT ON END OF FILE.     
+      00172  0601 00 0 00070         STO     WDOUT         SAVE THIS WORD.    
+      00173  0074 00 4 00001         TSX     WRWORD,4      WRITE OUT THIS WORD.     
+ TD   00174  3 00000 0 00070         TXH     WDOUT         ..     
+      00175  0020 00 0 00170         TRA     LOOP          REPEAT.
+                              *     
+      00176  0774 00 4 00000  EOFB   AXT     --,4          RESTORE LINKAGE.   
+      00177  0020 00 4 00001         TRA     1,4           RETURN.
+                              *     
+                                     END  
+
+
+RUNOFF OUTPUT ROUTINE.
+                  
+                              *              J. H. SALTZER, NOVEMBER, 1964.   
+                              *              MODIFIED 7/18/67 FOR 6-BIT FILE OUTPUT 
+                              *              BY MICHAEL R COMER   
+                              *     
+                       00513         ENTRY SETPK           SET UP OUTPUT BUFFERS.   
+                       00011         ENTRY   PACK          ADD CHARACTERS TO OUTPUT PAGE. 
+                       00420         ENTRY   PRPAGE        PRINT OUT THE PAGE.
+                       00507         ENTRY   RSPAGE        RESET PAGE, THROW AWAY CHARACTERS.   
+                       00556         ENTRY   WAIT          WAIT FOR RETURN FROM CONSOLE   
+                       00563         ENTRY   PKOFF         SHUT DOWN OPERATIONS.    
+                              *     
+                  
+        TRANSFER VECTOR 
+      00000  512544214760     REMAP 
+      00001  665166213163     WRWAIT
+      00002  272563226426     GETBUF
+      00003  464725456060     OPEN  
+      00004  226426262551     BUFFER
+      00005  234346622560     CLOSE 
+                  
+            LINKAGE DIRECTOR  
+      00006  000000000000     
+      00007  622563474260     
+                  
+                       00014  NBITS  EQU     12 
+                       00006  ABITS  EQU     6  
+                       04540  BUFSIZ EQU     2400          ROOM FOR MORE THAN ONE PAGE.   
+      00010  0 00000 0 04540  BUFLEN         BUFSIZ   
+                              *     
+      00011  0634 00 1 00406   PACK  SXA     PR1,1         SAVE IRS.    
+      00012  0634 00 2 00407         SXA     PR2,2    
+      00013  0634 00 3 00410         SXA     PR3,3    
+      00014  0634 00 4 00411         SXA     PR4,4    
+      00015 -0500 60 4 00002         CAL*    2,4           GET COUNT OF CHARACTERS TO MOVE.     
+      00016  0100 00 4 00003         TZE     3,4           SKIP WORK IF NONE. 
+      00017  0402 00 0 00616         SUB     =1            SETUP END TEST.    
+      00020  0767 00 0 00022         ALS     18 
+      00021  0622 00 0 00370         STD     LEAVE    
+      00022 -0500 00 4 00001         CAL     1,4           GET ARRAY ADDRESS. 
+      00023  0621 00 0 00371         STA     NUCHAR   
+      00024  0534 00 3 00413         LXA     NCHARS,3      LOAD UP OUTPUT CHARACTER COUNT.
+      00025  0535 00 2 00416         LAC     NWRDS,2       AND WORD COUNT.    
+      00026  3 00000 2 00031         TXH     *+3,2,0  
+      00027  0520 00 0 00576         ZET     OUTSW    
+      00030  0074 00 4 00327         TSX     STRTLN,4 
+      00031  0774 00 1 00000         AXT     0,1           SETUP ARRAY INDEX. 
+      00032 -0500 00 0 00417         CAL     UNFIN         GET UNFINISHED WORD.     
+      00033 -0520 00 0 00576         NZT     OUTSW         IS OUTPUT TO TYPEWRITER. 
+      00034  0020 00 0 00371         TRA     NUCHAR        ENTER LOOP.  
+      00035  0020 00 0 00040         TRA     ASCHAR        OUTPUT TO PRINTER, ENTER LOOP. 
+      00036  0774 00 3 00000  NUWRD1 AXT     0,3            RESET CHARACTER COUNTER 
+      00037  0522 00 0 00370  LEAVE1 XEC     LEAVE          SEE IF INPUT IS EXHAUSTED     
+      00040  0522 00 0 00371  ASCHAR XEC     NUCHAR         GET NEXT CHARACTER
+      00041  0602 00 0 00415         SLW     TEMP1          SAVE PARTIAL WORD 
+      00042 -0130 00 0 00000         XCL                    CHAR TO AC  
+      00043 -0320 00 0 00623         ANA     =O177          KILL MINUS ZEROES FROM MAD    
+      00044 -0340 00 0 00621         LAS     =O55           SEE IF CARRIAGE RETURN  
+      00045  0020 00 0 00047         TRA     *+2            NO    
+      00046  0020 00 0 00111         TRA     RSETLN         YES, START NEXT LINE    
+      00047 -0340 00 0 00620         LAS     =O52           SEE IF FORM FEED  
+      00050  0020 00 0 00052         TRA     *+2            NO    
+      00051  0020 00 0 00116         TRA     EJECT          YES, GO EJECT     
+      00052  0634 00 1 00073         SXA     C1,1           SAVE CVR XR 
+      00053 -0340 00 0 00622         LAS     =O100          SMALL OR CAP .Q   
+      00054  0020 00 0 00060         TRA     CVRCAP         CAP   
+      00055  0020 00 0 00060         TRA     CVRCAP         CAP   
+      00056  0114 01 1 00127         CVR     TBL,1,1        SMALL, CONVERT TO LEGAL 6-BIT 
+      00057  0020 00 0 00061         TRA     *+2            SKIP CAPS   
+      00060  0114 01 1 00227  CVRCAP CVR     TBL+64,1,1     CONVERT TO LEGAL 6-BIT  
+      00061  0771 00 0 00036         ARS     30             CHAR TO BITS 30-35
+      00062 -0130 00 0 00000         XCL                    TO MQ 
+      00063  0754 00 1 00000         PXA     ,1             WAS CHAR BACKSPACE 9(O135)    
+      00064  0361 00 0 00605         ACL     BACKSP         IF SO, 1 IS ADDED TP    
+      00065  0602 00 0 00605         SLW     BACKSP         BACKSPACE COUNTER 
+      00066 -0100 00 0 00102         TNZ     ANULL          IF BS COUNTER IS NOT ZERO, SKIP THIS CHAR 
+      00067 -0500 00 0 00415         CAL     TEMP1          GET PARTIAL WORD  
+      00070 -0773 00 0 00036         RQL     36-ABITS       SHIFT TO POSITION 
+      00071 -0763 00 0 00006         LGL     ABITS          ADD TO WORD 
+      00072  1 00001 3 00073         TXI     *+1,3,1        INC. CHAR COUNTER 
+      00073  0774 00 1 00000  C1     AXT     ,1             RESTOR INPUT COUNTER    
+      00074  1 00001 1 00075         TXI     *+1,1,1        COUNT 
+      00075 -3 00005 3 00037         TXL     LEAVE1,3,36/ABITS-1  IS WORD FULL
+      00076  0522 00 0 00400         XEC     BF3            YES, STORE WORD   
+      00077  1 77777 2 00100         TXI     *+1,2,-1       COUNT WORD  
+      00100  3 73240 2 00036         TXH     NUWRD1,2,-BUFSIZ  DON'T OVERFLOW OUTPUT
+      00101  0020 00 0 00403         TRA     MORE           EXIT  
+      00102  0754 00 1 00000  ANULL  PXA     ,1             GET BACKSP INDIC  
+      00103 -0100 00 0 00107         TNZ     SKIP           SKIP IF LAST CHAR WAS BACKSP  
+      00104 -0500 00 0 00605         CAL     BACKSP         DECREASE BACKSP COUNTER 
+      00105  0402 00 0 00616         SUB     =1             ..    
+      00106  0602 00 0 00605         SLW     BACKSP         ..    
+      00107 -0500 00 0 00415  SKIP   CAL     TEMP1          RESTOR PARTIAL WORD     
+      00110  0020 00 0 00073         TRA     C1             IGNORE THIS CHARACTER   
+      00111  1 00001 1 00112  RSETLN TXI     *+1,1,1        COUNT INPUT 
+      00112  0074 00 4 00340         TSX     ENDLIN,4       END LAST LINE     
+      00113  0074 00 4 00327         TSX     STRTLN,4       START NEXT LINE   
+      00114  3 73240 2 00036         TXH     NUWRD1,2,-BUFSIZ  CONTINUE 
+      00115  0020 00 0 00403         TRA     MORE     
+      00116 -3 00000 3 00121  EJECT  TXL     *+3,3,0        SKIP IF NEW LINE  
+      00117  0074 00 4 00340         TSX     ENDLIN,4 
+      00120  0074 00 4 00327         TSX     STRTLN,4       START NEW LINE    
+      00121 -0500 00 0 00607         CAL     EJCTMK         GET EJECT   
+      00122  1 00001 2 00123         TXI     *+1,2,1        POINT TO CONTROL WORD   
+      00123  0522 00 0 00400         XEC     BF3            GAZABE
+      00124  1 77777 2 00125         TXI     *+1,2,-1       POINT BACK  
+      00125  1 00001 1 00126         TXI     *+1,1,1        COUNT INPUT 
+      00126  0020 00 0 00036         TRA     NUWRD1         CONTINUE    
+                              *     
+                       00127  TBL    SYN     *  
+                              V      MACRO   VAL
+                                     IRP     VAL
+                                     IFF     1,VAL    
+                                     VFD     O6/60    
+                                     IFF     0,VAL    
+                                     VFD     O6/VAL   
+                                     IRP  
+                              V      END  
+                              *     
+      00127                          V       (0,1,2,3,4,5,6,7) CVR TABLES     
+      00137                          V       (10,11,12,13,14,,,)  
+      00147                          V       (20,21,22,23,24,25,26,27)  
+      00157                          V       (30,31,,33,34,33,,)  
+      00167                          V       (40,41,42,43,44,45,46,47)  
+      00177                          V       (50,51,,53,54,,,57)  
+      00207                          V       (60,61,62,63,64,65,66,67)  
+      00217                          V       (70,71,72,73,74,,,)  
+      00227                          V       (,,,73,,,,)    
+      00237                          V       (,,,,33,,,)    
+      00247                          V       (20,21,22,23,24,25,26,27)  
+      00257                          V       (30,31,,,)     
+      00264 +000000000001            OCT     1  
+      00265                          V       (,14)    
+      00267                          V       (,41,42,43,44,45,46,47)    
+      00277                          V       (50,51,,,,,33,)
+      00307                          V       (,,62,63,64,65,66,67)
+      00317                          V       (70,71,72,,,,,)
+                              *     
+      00327 -0500 00 0 00604  STRTLN CAL     LINMRK         GET LINE MARK     
+      00330  0522 00 0 00400         XEC     BF3            STORE 
+      00331  1 77777 2 00332         TXI     *+1,2,-1       COUNT 
+      00332  3 73240 2 00334         TXH     *+2,2,-BUFSIZ  IS BUF FULL 
+      00333  0020 00 4 00001         TRA     1,4            YES, RETURN 
+      00334 -0500 00 0 00606         CAL     BLANKS         NO, GET CARRIAGE CONTROL
+      00335  0522 00 0 00400         XEC     BF3            GAZABE
+      00336  1 77777 2 00337         TXI     *+1,2,-1       COUNT 
+      00337  0020 00 4 00001         TRA     1,4            RETURN
+                              *     
+      00340  0636 00 2 00416  ENDLIN SCA     NWRDS,2        SAVE COUNT  
+      00341  1 00001 2 00342         TXI     *+1,2,1        DON'T START TOO HIGH    
+      00342 -0500 00 0 00604         CAL     LINMRK         GET MODEL   
+      00343 -0340 60 0 00400         LAS*    BF3            CHECK FOR .GE.    
+      00344  1 00001 2 00343         TXI     *-1,2,1        NO,BACKSPACE AND TRY AGAIN    
+      00345  0020 00 0 00346         TRA     *+1            YES   
+      00346  0754 00 2 00000         PXA     ,2             YES,GET-NEWCOUNT  
+      00347  0361 00 0 00416         ACL     NWRDS          ADD OLDCOUNT
+      00350  0402 00 0 00616         SUB     =1             MAKE IT COME OUT RIGHT  
+      00351  0621 60 0 00400         STA*    BF3            STICK IN LINE MARK
+      00352  0535 00 2 00416         LAC     NWRDS,2        RESET COUNT 
+      00353  3 00000 3 00355         TXH     *+2,3,0        CHECK FOR UNFINISHED WORD     
+      00354  0020 00 4 00001         TRA     1,4            NO,RETURN   
+      00355 -0500 00 0 00415         CAL     TEMP1          YES, GET WORD     
+      00356  0560 00 0 00574  GNULL  LDQ     NULL           FILL WITH NULLS   
+      00357 -0773 00 0 00036         RQL     36-ABITS       ..    
+      00360 -0763 00 0 00006         LGL     ABITS          ..    
+      00361  1 00001 3 00362         TXI     *+1,3,1        ..    
+      00362 -3 00005 3 00356         TXL     GNULL,3,36/ABITS-1   
+      00363  0522 00 0 00400         XEC     BF3            STORE 
+      00364  1 77777 2 00365         TXI     *+1,2,-1       COUNT 
+      00365  0774 00 3 00000         AXT     0,3            ANNOUNCE FINISHED WORD  
+      00366  0020 00 0 00340         TRA     ENDLIN         FIX LINE MARK     
+                              *     
+                              *     
+                              *     
+      00367  0774 00 3 00000   NUWRD AXT     0,3           RESET CHARACTER COUNTER. 
+      00370  3 00000 1 00403   LEAVE TXH     MORE,1,--     SEE IF INPUT IS EXHAUSTED.     
+      00371  0560 00 1 00000  NUCHAR LDQ     --,1          GET NEXT INPUT INPUT CHARACTER.
+      00372  0074 00 4 00000         TSX     $REMAP,4      GO REMAP IT. 
+      00373 -0773 00 0 00030         RQL     36-NBITS      SHIFT TO POSITION. 
+      00374 -0763 00 0 00014         LGL     NBITS         ADD TO CURRENT WORD.     
+      00375  1 00001 3 00376         TXI     *+1,3,1       COUNT CHARACTERS.  
+      00376  1 00001 1 00377         TXI     *+1,1,1       COUNT WORDS IN INPUT USED.     
+      00377 -3 00002 3 00370         TXL     LEAVE,3,36/NBITS-1      IS WORD FULL.  
+      00400  0602 00 2 00000   BF3   SLW     --,2          YES, STORE WORD.   
+      00401  1 77777 2 00402         TXI     *+1,2,-1      ADJUST WORD COUNT. 
+      00402  3 73240 2 00367         TXH     NUWRD,2,-BUFSIZ         DON'T OVERFLOW BUFFER.     
+                              *     
+      00403  0602 00 0 00417   MORE  SLW     UNFIN         NEED MORE CHARACTERS, SAVE WORD.     
+      00404  0634 00 3 00413         SXA     NCHARS,3      SAVE CHARACTER COUNT.    
+      00405  0636 00 2 00416         SCA     NWRDS,2       SAVE WORD COUNT.   
+      00406  0774 00 1 00000   PR1   AXT     --,1     
+      00407  0774 00 2 00000   PR2   AXT     --,2     
+      00410  0774 00 3 00000  PR3    AXT     --,3     
+      00411  0774 00 4 00000   PR4   AXT     --,4     
+      00412  0020 00 4 00003         TRA     3,4
+                              *     
+      00413  0 00000 0 00000  NCHARS
+      00414  0 00000 0 00000  TEMP  
+      00415  0 00000 0 00000  TEMP1 
+      00416  0 00000 0 00000  NWRDS 
+      00417  0 00000 0 00000  UNFIN 
+                              *     
+      00420  0634 00 1 00467  PRPAGE SXA     PPR1,1   
+      00421  0634 00 2 00470         SXA     PPR2,2   
+      00422  0634 00 4 00471         SXA     PPR4,4   
+      00423  0520 00 0 00576         ZET     OUTSW         IS OUTPUT TO FILE. 
+      00424  0020 00 0 00473         TRA     ASCOUT        YES, GO WRITE FILE INSTEAD.    
+      00425  0534 00 1 00413         LXA     NCHARS,1      GET CHARACTER COUNT.     
+      00426 -3 00000 1 00441         TXL     NONUL,1,0     SEE IF LAST WORD NEEDS FILLING.
+                              *     
+      00427 -0500 00 0 00417         CAL     UNFIN         LAST WORD NEEDS FILLING. 
+      00430  0560 00 0 00574   AGN   LDQ     NULL          GET A NULL CHARACTER.    
+      00431 -0773 00 0 00030         RQL     36-NBITS      SHIFT TO POSITION. 
+      00432 -0763 00 0 00014         LGL     NBITS         INSERT.
+      00433  1 00001 1 00434         TXI     *+1,1,1       COUNT. 
+      00434 -3 00002 1 00430         TXL     AGN,1,36/NBITS-1        CHECK FOR FULL WORD. 
+      00435  0535 00 2 00416         LAC     NWRDS,2  
+      00436  0602 00 2 00000   BF2   SLW     --,2          INSERT FULL WORD.  
+      00437  1 77777 2 00440         TXI     *+1,2,-1      COUNT WORD.  
+      00440  0636 00 2 00416         SCA     NWRDS,2       SAVE COUNT.  
+                              *     
+      00441  0560 00 0 00416  NONUL  LDQ     NWRDS         GET WORD COUNT.    
+      00442 -0754 00 0 00000         ZAC  
+      00443  0221 00 0 00617         DVP     =14           COMPUTE NUMBER OF CALLS. 
+      00444  0767 00 0 00022         ALS     18 
+      00445  0622 00 0 00462         STD     LASTCT        SAVE LENGTH OF LAST CALL.
+      00446  0131 00 0 00000         XCA                   GET NUMBER OF CALLS.     
+      00447  0734 00 1 00000         PAX     0,1
+      00450  0074 00 4 00611         TSX     SETFUL,4      SET BCD MODE.
+      00451  0774 00 2 00000   BF1   AXT     --,2          GET OUTPUT POSITION.     
+      00452  1 00001 1 00457         TXI     LPTST,1,1     CHECK FOR NO LOOP NECESSARY.   
+      00453  0634 00 2 00455   WRLP  SXA     ADR,2         STORE OUTPUT POSITION.   
+      00454  0074 00 4 00612         TSX     WRFLXA,4      WRITE OUT CHARACTERS.    
+      00455  0 00016 0 00000   ADR           --,,14   
+      00456  1 00016 2 00457         TXI     *+1,2,14      INDEX OUTPUT POSITION.   
+      00457  2 00001 1 00453   LPTST TIX     WRLP,1,1      INDEX, DO AGAIN.   
+      00460  0634 00 2 00462         SXA     LASTCT,2      SAVE LAST BUFFER ADDRESS.
+      00461  0074 00 4 00612         TSX     WRFLXA,4      WRITE LAST LINE.   
+      00462  0 00000 0 00000  LASTCT         --,,--   
+                              *     
+      00463  0074 00 4 00613         TSX     SETBCD,4 
+      00464  0600 00 0 00416  DONEPR STZ     NWRDS         RESET COUNTERS.    
+      00465  0600 00 0 00413         STZ     NCHARS   
+      00466  0600 00 0 00417         STZ     UNFIN    
+      00467  0774 00 1 00000   PPR1  AXT     --,1     
+      00470  0774 00 2 00000   PPR2  AXT     --,2     
+      00471  0774 00 4 00000   PPR4  AXT     --,4     
+      00472  0020 00 4 00001         TRA     1,4
+                              *     
+      00473  0634 00 3 00477  ASCOUT SXA     PPR3,3         I GUESS WE SHOULD SAVE IT SOMEWHERE 
+      00474  0534 00 3 00413         LXA     NCHARS,3       SETUP CHAR COUNT  
+      00475  0535 00 2 00416         LAC     NWRDS,2        AND WORD COUNT    
+      00476  0074 00 4 00340         TSX     ENDLIN,4       CLOSE LAST LINE   
+      00477  0774 00 3 00000  PPR3   AXT     ,3 
+      00500  0636 00 2 00416         SCA     NWRDS,2       SAVE COUNT.  
+      00501  0074 00 4 00001  WRITE  TSX     $WRWAIT,4
+ TD   00502  3 00000 0 00577         TXH     OUTNAM   
+ TD   00503  3 00000 0 00600         TXH     NAME2    
+ TD   00504  3 00000 0 00615         TXH     =0 
+      00505  2 00416 0 00000  BF8    TIX     --,,NWRDS
+      00506  0020 00 0 00464         TRA     DONEPR   
+                              *     
+      00507  0600 00 0 00416  RSPAGE STZ     NWRDS         RESET WORD COUNT.  
+      00510  0600 00 0 00413         STZ     NCHARS        CHARACTER COUNT.   
+      00511  0600 00 0 00417         STZ     UNFIN         ..     
+      00512  0020 00 4 00001         TRA     1,4
+                              *     
+      00513  0634 00 4 00553  SETPK  SXA     PK4,4         SET UP PACK BUFFERS.     
+      00514  0634 00 2 00554         SXA     PK2,2    
+      00515 -0500 60 4 00001         CAL*    1,4           GET ARGUMENTS.     
+      00516  0602 00 0 00577         SLW     OUTNAM        OUTPUT FILE NAME, IF ANY.
+      00517 -0500 60 4 00002         CAL*    2,4           ..     
+      00520  0602 00 0 00576         SLW     OUTSW         SWITCH ON IF FILE DESIRED.     
+      00521  0020 00 0 00522   SW1   TRA     *+1           ONE-TIME SWITCH.   
+      00522 -0500 00 0 00010         CAL     BUFLEN        GET SIZE OF BUFFER NEEDED.     
+      00523  0074 00 4 00002         TSX     $GETBUF,4      SET UP BUFFER.    
+      00524  0621 00 0 00451         STA     BF1           SET UP USERS.
+      00525  0621 00 0 00505         STA     BF8
+      00526  0621 00 0 00436         STA     BF2
+      00527  0621 00 0 00400         STA     BF3
+      00530 -0520 00 0 00576         NZT     OUTSW         IS OUTPUT FILE WANTED.   
+      00531  0020 00 0 00552         TRA     DSET          NO, SKIP SETUP.    
+      00532 -0500 00 0 00601         CAL     TRKLEN        YES, GET OUTPUT BUFFER.  
+      00533  0074 00 4 00002         TSX     $GETBUF,4     ..     
+      00534  0621 00 0 00544         STA     BF9           ..     
+      00535  0074 00 4 00003         TSX     $OPEN,4       OPEN OUTPUT FILE.  
+ TD   00536  3 00000 0 00631         TXH     =HW
+ TD   00537  3 00000 0 00577         TXH     OUTNAM   
+ TD   00540  3 00000 0 00600         TXH     NAME2    
+      00541  0074 00 4 00004         TSX     $BUFFER,4     GIVE IT A BUFFER.  
+ TD   00542  3 00000 0 00577         TXH     OUTNAM                                 000000
+ TD   00543  3 00000 0 00600         TXH     NAME2    
+      00544  3 00660 0 00000  BF9    TXH     --,,TRKSIZ     
+      00545  0074 00 4 00001         TSX     $WRWAIT,4     WRITE OUT FIRST WORD.    
+ TD   00546  3 00000 0 00577         TXH     OUTNAM   
+ TD   00547  3 00000 0 00600         TXH     NAME2    
+ TD   00550  3 00000 0 00615         TXH     =0 
+      00551  3 00002 0 00602         TXH     FIRST,,2      SKIP TO TOP OF FIRST PAGE.     
+      00552 -0625 00 0 00521  DSET   STL     SW1           RESET SWITCH.
+      00553  0774 00 4 00000  PK4    AXT     --,4          RETURN.
+      00554  0774 00 2 00000  PK2    AXT     ,2 
+      00555  0020 00 4 00001         TRA     1,4           ..     
+                              *     
+      00556  0634 00 4 00561  WAIT   SXA     RETURN,4      ENTRY TO WAIT FOR SIGNAL FROM CONSOLE.     
+      00557  0074 00 4 00614         TSX     RDFLXA,4      SIGNAL IS A CARRIAGE RETURN.   
+      00560  0 00001 0 00573                 IN,,1         READ INTO DRAIN BUFFER.  
+      00561  0774 00 4 00000  RETURN AXT     --,4     
+      00562  0020 00 4 00001         TRA     1,4
+                              *     
+      00563 -0520 00 0 00576  PKOFF  NZT     OUTSW         WAS OUTPUT DONE TO FILE. 
+      00564  0020 00 4 00001         TRA     1,4           NO, RETURN.  
+      00565  0634 00 4 00571         SXA     OF4,4         YES, CLOSE FILE.   
+      00566  0074 00 4 00005         TSX     $CLOSE,4      ..     
+ TD   00567  3 00000 0 00577         TXH     OUTNAM   
+ TD   00570  3 00000 0 00600         TXH     NAME2    
+      00571  0774 00 4 00000  OF4    AXT     --,4          ..     
+      00572  0020 00 4 00001         TRA     1,4           RETURN TO CALLER.  
+                              *     
+      00573  0 00000 0 00000  IN                           INPUT BUFFER FOR CONSOLE SIGNAL.     
+                              *     
+      00574 +000000000057      NULL  OCT     57            NULL CHARACTER.    
+      00575 +000000000000     ASCNUL OCT     0  
+      00576  0 00000 0 00000  OUTSW                        NON-ZERO IF FILE OUTPUT WANTED.
+      00577  0 00000 0 00000  OUTNAM                       BCD NAME OF OUTPUT FILE  
+      00600  516445462626     NAME2  BCI     1,RUNOFF      SECONDARY NAME OF OUTPUT FILE. 
+                       00660  TRKSIZ EQU     432           OUTPUT BUFFER SIZE.
+      00601  0 00000 0 00660  TRKLEN         TRKSIZ        WORD CONTAINING SAME.    
+      00602 -377777000001     FIRST  OCT     777777000001   FIRST TWO WORDS   
+      00603 +015757575757            OCT     015757575757   OF OUTPUT FILE    
+      00604 -377777000000     LINMRK OCT     777777000000   SEE STATEMENT LABLE     
+      00605  0 00000 0 00000  BACKSP                        BACKSPACE COUNTER 
+      00606  616060606060     BLANKS BCI     1,/            NORMAL CARRIAGE CONTROL 
+      00607 +015757575757     EJCTMK OCT     015757575757   EJECT CARRIAGE    
+                              *     
+      00610  0101 00 0 00630  WRFLX  TIA     =HWRFLX  
+      00611  0101 00 0 00626  SETFUL TIA     =HSETFUL 
+      00612  0101 00 0 00627  WRFLXA TIA     =HWRFLXA 
+      00613  0101 00 0 00625  SETBCD TIA     =HSETBCD 
+      00614  0101 00 0 00624  RDFLXA TIA     =HRDFLXA 
+                              *     
+                                     END  
+
+
+SUBROUTINE TO CONVERT BCD NUMBER TO BINARY.
+                  
+                              *     
+                              *        J. H. SALTZER, MAY, 1966.  
+                       00002         ENTRY   BIN           CONVERTER.   
+                  
+            LINKAGE DIRECTOR  
+      00000  000000000000     
+      00001  223145606060     
+                  
+      00002  0634 00 1 00024   BIN   SXA     IRR1,1   
+      00003  0600 00 0 00027         STZ     INT           CLEAR RESULT.
+      00004  0774 00 1 00006         AXT     6,1
+      00005  0560 60 4 00001         LDQ*    1,4           GET ARGUMENT.
+      00006 -0754 00 0 00000  LOP    ZAC  
+      00007 -0763 00 0 00006         LGL     6             GET NEXT CHARACTER.
+      00010 -0340 00 0 00032         LAS     =10           SKIP OVER NON-DIGITS.    
+      00011  0020 00 0 00023         TRA     TIX
+      00012  0020 00 0 00023         TRA     TIX
+      00013  0601 00 0 00030         STO     DIG           NUMBER, SAVE DIGIT.
+      00014 -0600 00 0 00031         STQ     TEM           SAVE MQ FOR MULTIPLIACATION.   
+      00015  0560 00 0 00027         LDQ     INT           GET OLD NUMBER.    
+      00016  0200 00 0 00032         MPY     =10           SHIFT. 
+      00017  0131 00 0 00000         XCA  
+      00020  0400 00 0 00030         ADD     DIG           ADD THIS DIGIT TO RESULT.
+      00021  0601 00 0 00027         STO     INT           SAVE, FOR NEXT PASS.     
+      00022  0560 00 0 00031         LDQ     TEM           RESTORE MQ.  
+      00023  2 00001 1 00006  TIX    TIX     LOP,1,1  
+      00024  0774 00 1 00000   IRR1  AXT     --,1     
+      00025  0500 00 0 00027         CLA     INT           RESULT IN AC.
+      00026  0020 00 4 00002         TRA     2,4
+                              *     
+      00027  0 00000 0 00000   INT  
+      00030  0 00000 0 00000   DIG  
+      00031  0 00000 0 00000   TEM  
+                              *     
+                                     END  
+
+
+CHARACTER REMAPPING PACKAGE.
+                  
+                              *      CTSS CHARACTERS WHICH HAVE EQUIVALENTS ON THE NON-STANDARD BALL  
+                              *      ARE TYPED, THOSE WHICH DON'T ARE PRINTED AS SPACE.   
+                              *     
+                       00001         ENTRY   REMAP         GET CORRECT CHARACTER.   
+                       00015         ENTRY   CHBALL        SET CORRECT MAPPING TABLE.     
+                              *     
+                              *      CALLING SEQUENCE,
+                              *              LDQ           CHAR     GET INPUT CHARACTER.  
+                              *              TSX           REMAP,4  MAP IT.   
+                              *              STQ           CHAR     STORE AWAY PROPER CHARACTER.
+                              *      CHAR IS RIGHT ADJUSTED IN MQ.
+                              *     
+                  
+        TRANSFER VECTOR 
+      00000  663046214431     WHOAMI
+                  
+      00001  0634 00 4 00013  REMAP  SXA     RM4,4         SAVE THE IR THAT WE USE. 
+      00002 -0520 00 0 00054         NZT     MPSW          IS ANY MAPPING HANNENING.Q     
+      00003  0020 00 4 00001         TRA     1,4           GUESS NOT, RETURN. 
+      00004 -0130 00 0 00000         XCL                   GET CHARACTER FROM MQ.   
+      00005 -0320 00 0 00543         ANA     =O177         FLUSH OUT UNNEEDED BITS. 
+      00006  0734 00 4 00000         PAX     0,4           MAKE IT AN INDEX.  
+      00007 -0500 00 4 00000  TSW    CAL     --,4          LOOK UP NEW CHAR WITH OLD ONE AS INDEX.    
+      00010  0771 00 0 00000  SSW    ARS     --            SHIFT TO CORRECT VARIATION.    
+      00011 -0320 00 0 00543         ANA     =O177         MASK TO LEAVE ONLY THIS CHARACTER.   
+      00012 -0130 00 0 00000         XCL                   PUT CHARACTER BACK INTO MQ.    
+      00013  0774 00 4 00000  RM4    AXT     --,4          RESTORE LINKAGE.   
+      00014  0020 00 4 00001         TRA     1,4           RETURN TO CALLER.  
+                              *     
+                              *     
+                              *      CALLING SEQUENCE,
+                              *              CALL CHBALL.(BALL, AUTHORITY, ERR)     
+                              *              WHERE BALL IS A BCD BALL NAME,   
+                              *              AND AUTHORITY IS AN INTEGER.     
+                              *              IF BALL NOT IN TABLES, EXIT VIA ERR.   
+                              *     
+      00015  0500 00 0 00053  CHBALL CLA     AUTH          CHECK AUTHORITY.   
+      00016  0402 60 4 00002         SUB*    2,4           ..     
+      00017 -0120 00 4 00003         TMI     3,4           LESS AUTHORITATIVE, RETURN.    
+      00020  0500 60 4 00002         CLA*    2,4           EQUAL OR MORE, SAVE NEW AUTHORITY.   
+      00021  0601 00 0 00053         STO     AUTH          ..     
+      00022 -0500 60 4 00001         CAL*    1,4           GET BALL NAME.     
+      00023  0634 00 4 00051         SXA     CHX4,4        SAVE LINKAGE.
+      00024  0774 00 4 00060         AXT     NBALLS,4      SEARCH FOR THIS BALL NAME.     
+      00025 -0340 00 4 00141  SRCH   LAS     ETABLE,4      ..     
+      00026  0020 00 0 00030         TRA     *+2           NOT THIS ONE.
+      00027  1 77777 4 00033         TXI     GETTAB,4,-1   FOUND, BOUNCE INDEX AND GET BALL.    
+      00030  2 00001 4 00025         TIX     SRCH,4,1      INDEX, AND TRY AGAIN.    
+      00031  0534 00 4 00051         LXA     CHX4,4        NOT FOUND, GIVE ERROR RETURN.  
+      00032  0020 60 4 00003         TRA*    3,4           AT THIRD ARGUMENT. 
+                              *     
+      00033 -0500 00 4 00141  GETTAB CAL     ETABLE,4      GET TABLE LOCATION AND SHIFT SIZE.   
+      00034  0621 00 0 00007         STA     TSW           SET TABLE ADDRESS. 
+      00035  0771 00 0 00022         ARS     18            ..     
+      00036  0621 00 0 00010         STA     SSW           SET VARIATION SHIFTER.   
+      00037 -0625 00 0 00054         STL     MPSW          SET MAPPING SWITCH ON.   
+      00040  0074 00 4 00000         TSX     $WHOAMI,4     FIND IF WE MUST USE 938 TABLES.
+      00041  0 00004 0 00055                 IN,,4         ..     
+      00042 -0500 00 0 00060         CAL     IN+3          GET UNIT ID CODE.  
+      00043  0771 00 0 00036         ARS     30            EXTRACT DEVICE CODE.     
+      00044  0402 00 0 00541         SUB     =2            DEVICE 2 IS THE 1050.    
+      00045 -0100 00 0 00051         TNZ     CHX4          NOT 1050, ASSUME 2741 TABLE.   
+      00046 -0500 00 0 00010         CAL     SSW           1050, REDUCE SHIFT BY HALF WORD.     
+      00047  0402 00 0 00542         SUB     =18           ..     
+      00050  0621 00 0 00010         STA     SSW           RESET SHIFT ADDRESS
+      00051  0774 00 4 00000  CHX4   AXT     --,4          ALL DONE, RESTORE LINKAGE.     
+      00052  0020 00 4 00004         TRA     4,4           RETURN TO CALLER.  
+                              *     
+      00053 +377777777777     AUTH   OCT     377777777777  INITIAL MINIMUM AUTHORITY.     
+      00054  0 00000 0 00000  MPSW                         STORAGE FOR MAPPING SWITCH.    
+      00055                   IN     BSS     4             PLACE TO PUT CONSOLE ID. 
+                              *     
+                       00061  BTABLE EQU     *             TABLE OF ACCEPTABLE GOLF BALLS.
+                                                           BALLS INTENDED FOR 1050. 
+      00061  606060110310            BCI     1,   938      STANDARD CORRESPONDENCE BALL.  
+      00062  0 00022 0 00340                 TABLE1,,COL2   
+      00063  606060110603            BCI     1,   963      360 - PL/I - IBM EXTENDED BCD BALL.  
+      00064  0 00033 0 00340                 TABLE1,,COL1   
+                                                           BALLS FOR DOMESTIC SELECTRIC TYPEWRITER.   
+      00065  606060000001            BCI     1,   001 
+      00066  0 00022 0 00540                 TABLE2,,COL2   
+      00067  606060000005            BCI     1,   005 
+      00070  0 00022 0 00540                 TABLE2,,COL2   
+      00071  606060000007            BCI     1,   007 
+      00072  0 00022 0 00540                 TABLE2,,COL2   
+      00073  606060000010            BCI     1,   008 
+      00074  0 00022 0 00540                 TABLE2,,COL2   
+      00075  606060000102            BCI     1,   012 
+      00076  0 00022 0 00540                 TABLE2,,COL2   
+      00077  606060000104            BCI     1,   014 
+      00100  0 00022 0 00540                 TABLE2,,COL2   
+      00101  606060000105            BCI     1,   015 
+      00102  0 00022 0 00540                 TABLE2,,COL2   
+      00103  606060000200            BCI     1,   020 
+      00104  0 00022 0 00540                 TABLE2,,COL2   
+      00105  606060000300            BCI     1,   030 
+      00106  0 00022 0 00540                 TABLE2,,COL2   
+      00107  606060000500            BCI     1,   050 
+      00110  0 00022 0 00540                 TABLE2,,COL2   
+      00111  606060000700            BCI     1,   070 
+      00112  0 00022 0 00540                 TABLE2,,COL2   
+                                                           SELECTRIC BALLS WITH OPTIONAL CHARACTERS.  
+      00113  606060000201            BCI     1,   021 
+      00114  0 00033 0 00540                 TABLE2,,COL1   
+      00115  606060000205            BCI     1,   025 
+      00116  0 00033 0 00540                 TABLE2,,COL1   
+      00117  606060000206            BCI     1,   026 
+      00120  0 00033 0 00540                 TABLE2,,COL1   
+      00121  606060000207            BCI     1,   027 
+      00122  0 00033 0 00540                 TABLE2,,COL1   
+      00123  606060000211            BCI     1,   029 
+      00124  0 00033 0 00540                 TABLE2,,COL1   
+      00125  606060000301            BCI     1,   031 
+      00126  0 00033 0 00540                 TABLE2,,COL1   
+      00127  606060000303            BCI     1,   033 
+      00130  0 00033 0 00540                 TABLE2,,COL1   
+      00131  606060000305            BCI     1,   035 
+      00132  0 00033 0 00540                 TABLE2,,COL1   
+      00133  606060000306            BCI     1,   036 
+      00134  0 00033 0 00540                 TABLE2,,COL1   
+      00135  606060000311            BCI     1,   039 
+      00136  0 00033 0 00540                 TABLE2,,COL1   
+      00137  606060001100            BCI     1,   090 
+      00140  0 00033 0 00540                 TABLE2,,COL1   
+                  
+                       00060  NBALLS EQU     *-BTABLE      SIZE OF TABLE
+                  
+                       00141  ETABLE EQU     *             END OF TABLE OF ACCEPTABLE GOLF BALLS.     
+                              *     
+                       00033  COL1   EQU     27            SHIFT DEFINITION.  
+                       00022  COL2   EQU     18            ..     
+                       00011  COL3   EQU     9             ..     
+                       00000  COL4   EQU     0             ..     
+                              *     
+                              *      TABLE FOR 1050-STYLE BALLS.  EXCEPTIONS APPEAR AT CODES    
+                              *      155, 153, 152, 137, 114, 112, 105, 102, 101, AND 100.
+                              *     
+                              *              COLUMN 1 IS FOR BALL 953 WITH CTSS 963 CODE TABLE. 
+                              *              COLUMN 2 IS FOR BALL 938 WITH CTSS 963 CODE TABLE. 
+                              *              COLUMN 3 IS FOR BALL 963 WITH CTSS 938 TABLE.
+                              *              COLUMN 4 IS FOR BALL 938 WITH CTSS 938 TABLE.
+                              *     
+                              *               1  2  3  4    
+                              *     
+      00141 +177177177177            OCT     177177177177   
+      00142 +176176176176            OCT     176176176176   
+      00143 +175175175175            OCT     175175175175   
+      00144 +060060060060            OCT     060060060060  CLOSE BRACE. 
+      00145 +060060060060            OCT     060060060060  OPEN BRACE.  
+      00146 +172172172172            OCT     172172172172   
+      00147 +171171171171            OCT     171171171171   
+      00150 +170170170170            OCT     170170170170   
+      00151 +167167167167            OCT     167167167167   
+      00152 +166166166166            OCT     166166166166   
+      00153 +165165165165            OCT     165165165165   
+      00154 +164164164164            OCT     164164164164   
+      00155 +163163163163            OCT     163163163163   
+      00156 +162162162162            OCT     162162162162   
+      00157 +161161161161            OCT     161161161161   
+      00160 +060060060060            OCT     060060060060  OPEN QUOTE (GRAVE ACCENT.)     
+      00161 +157157157157            OCT     157157157157   
+      00162 +156156156156            OCT     156156156156   
+      00163 +155060137060            OCT     155060137060  GREATER THAN, NOT ON 938 BALL. 
+      00164 +154154154154            OCT     154154154154   
+      00165 +060060060060            OCT     060060060060  OPEN SQUARE BRACKET.     
+      00166 +152060100060            OCT     152060100060  LESS THAN, NOT ON 938 BALL     
+      00167 +151151151151            OCT     151151151151   
+      00170 +150150150150            OCT     150150150150   
+      00171 +147147147147            OCT     147147147147   
+      00172 +146146146146            OCT     146146146146   
+      00173 +145145145145            OCT     145145145145   
+      00174 +144144144144            OCT     144144144144   
+      00175 +143143143143            OCT     143143143143   
+      00176 +142142142142            OCT     142142142142   
+      00177 +141141141141            OCT     141141141141   
+      00200 +140140140140            OCT     140140140140   
+      00201 +137155112137            OCT     137155112137  DOUBLE QUOTE, IN DIFFERENT PLACES.   
+      00202 +136136136136            OCT     136136136136   
+      00203 +135135135135            OCT     135135135135   
+      00204 +060060060060            OCT     060060060060  TILDE. 
+      00205 +133133133133            OCT     133133133133   
+      00206 +132132132132            OCT     132132132132   
+      00207 +131131131131            OCT     131131131131   
+      00210 +130130130130            OCT     130130130130   
+      00211 +127127127127            OCT     127127127127   
+      00212 +126126126126            OCT     126126126126   
+      00213 +125125125125            OCT     125125125125   
+      00214 +124124124124            OCT     124124124124   
+      00215 +123123123123            OCT     123123123123   
+      00216 +122122122122            OCT     122122122122   
+      00217 +121121121121            OCT     121121121121   
+      00220 +120120120120            OCT     120120120120   
+      00221 +117117117117            OCT     117117117117   
+      00222 +116116116116            OCT     116116116116   
+      00223 +115115115115            OCT     115115115115   
+      00224 +114114114114            OCT     114114114114   
+      00225 +113113113113            OCT     113113113113   
+      00226 +060060060060            OCT     060060060060  CIRCUMFLEX.  
+      00227 +111111111111            OCT     111111111111   
+      00230 +110110110110            OCT     110110110110   
+      00231 +107107107107            OCT     107107107107   
+      00232 +106106106106            OCT     106106106106   
+      00233 +105105105105            OCT     105105105105   
+      00234 +104104104104            OCT     104104104104   
+      00235 +103103103103            OCT     103103103103   
+      00236 +060060060060            OCT     060060060060  LEFT SLASH.  
+      00237 +060060060060            OCT     060060060060  CLOSE SQUARE BRACKET.    
+      00240 +100060152060            OCT     100060152060  VERTICAL BAR, NOT ON BALL.     
+      00241 +077077077077            OCT     077077077077   
+      00242 +076076076076            OCT     076076076076   
+      00243 +075075075075            OCT     075075075075   
+      00244 +074074074074            OCT     074074074074   
+      00245 +073073073073            OCT     073073073073   
+      00246 +072072072072            OCT     072072072072   
+      00247 +071071071071            OCT     071071071071   
+      00250 +070070070070            OCT     070070070070   
+      00251 +067067067067            OCT     067067067067   
+      00252 +066066066066            OCT     066066066066   
+      00253 +065065065065            OCT     065065065065   
+      00254 +064064064064            OCT     064064064064   
+      00255 +063063063063            OCT     063063063063   
+      00256 +062062062062            OCT     062062062062   
+      00257 +061061061061            OCT     061061061061   
+      00260 +060060060060            OCT     060060060060   
+      00261 +057057057057            OCT     057057057057   
+      00262 +056056056056            OCT     056056056056   
+      00263 +055055055055            OCT     055055055055   
+      00264 +054054054054            OCT     054054054054   
+      00265 +053053053053            OCT     053053053053   
+      00266 +052052052052            OCT     052052052052   
+      00267 +051051051051            OCT     051051051051   
+      00270 +050050050050            OCT     050050050050   
+      00271 +047047047047            OCT     047047047047   
+      00272 +046046046046            OCT     046046046046   
+      00273 +045045045045            OCT     045045045045   
+      00274 +044044044044            OCT     044044044044   
+      00275 +043043043043            OCT     043043043043   
+      00276 +042042042042            OCT     042042042042   
+      00277 +041041041041            OCT     041041041041   
+      00300 +040040040040            OCT     040040040040   
+      00301 +037037037037            OCT     037037037037   
+      00302 +036036036036            OCT     036036036036   
+      00303 +035035035035            OCT     035035035035   
+      00304 +034034034034            OCT     034034034034   
+      00305 +033033033033            OCT     033033033033   
+      00306 +032032032032            OCT     032032032032   
+      00307 +031031031031            OCT     031031031031   
+      00310 +030030030030            OCT     030030030030   
+      00311 +027027027027            OCT     027027027027   
+      00312 +026026026026            OCT     026026026026   
+      00313 +025025025025            OCT     025025025025   
+      00314 +024024024024            OCT     024024024024   
+      00315 +023023023023            OCT     023023023023   
+      00316 +022022022022            OCT     022022022022   
+      00317 +021021021021            OCT     021021021021   
+      00320 +020020020020            OCT     020020020020   
+      00321 +017017017017            OCT     017017017017   
+      00322 +016016016016            OCT     016016016016   
+      00323 +015015015015            OCT     015015015015   
+      00324 +014014014014            OCT     014014014014   
+      00325 +013013013013            OCT     013013013013   
+      00326 +012012012012            OCT     012012012012   
+      00327 +011011011011            OCT     011011011011   
+      00330 +010010010010            OCT     010010010010   
+      00331 +007007007007            OCT     007007007007   
+      00332 +006006006006            OCT     006006006006   
+      00333 +005005005005            OCT     005005005005   
+      00334 +004004004004            OCT     004004004004   
+      00335 +003003003003            OCT     003003003003   
+      00336 +002002002002            OCT     002002002002   
+      00337 +001001001001            OCT     001001001001   
+      00340 +000000000000            OCT     000000000000   
+                       00340  TABLE1 EQU     *-1           LOCATION OF FIRST CHARACTER.   
+                              *     
+                              *      TABLE FOR SELECTRIC-STYLE BALLS.  VIRTUALLY ALL GRAPHICS   
+                              *      ARE REMAPPED.    
+                              *     
+                              *      COLUMNS 1 AND 2 ARE FOR THE SAME BALLS AS COLUMNS    
+                              *      THREE AND FOUR, BUT ASSUMING CTSS 963 TABLE.   
+                              *              COLUMN 3 IS FOR SELECTRIC OPTIONAL CHARACTER SET.  
+                              *                  USED FOR BALLS 021, 025, 026, 027, 029, 031, 033,    
+                              *                       035, 036, 039, AND 090  
+                              *              COLUMN 4 IS FOR STANDARD SELECTRIC CHARACTER SET.  
+                              *                  USED FOR BALLS 001, 005, 007, 008, 012, 014, 015,    
+                              *                       020, 030, 050, AND 070. 
+                              *     
+                              *               1  2  3  4   CTSS CODE    
+                              *     
+      00341 +177177177177            OCT     177177177177  0177   
+      00342 +176176176176            OCT     176176176176  0176   
+      00343 +175175175175            OCT     175175175175  0175   
+      00344 +060060060060            OCT     060060060060  0174 - CLOSE BRACE, PRINTS AS SPACE. 
+      00345 +060060060060            OCT     060060060060  0173 - OPEN BRACE, PRINTS AS SPACE.  
+      00346 +172172172172            OCT     172172172172  0172   
+      00347 +000000000000            OCT     000000000000  0171 - SMALL Z     
+      00350 +131131131131            OCT     131131131131  0170 - SMALL Y     
+      00351 +061061061061            OCT     061061061061  0167 - SMALL X     
+      00352 +053053053053            OCT     053053053053  0166 - SMALL W     
+      00353 +143143143143            OCT     143143143143  0165 - SMALL V     
+      00354 +163163163163            OCT     163163163163  0164 - SMALL U     
+      00355 -106506506506            OCT     506506506506  0163 - SMALL T     
+      00356 +151151151151            OCT     151151151151  0162 - SMALL S     
+      00357 +161161161161            OCT     161161161161  0161   
+      00360 +060060060060            OCT     060060060060  0160 - OPEN QUOTE, PRINTS AS SPACE.  
+      00361 +157157157157            OCT     157157157157  0157   
+      00362 +030030030030            OCT     030030030030  0156 - QUES MARK   
+      00363 +060060060060            OCT     060060060060  0155 - GREATER THAN SIGN, PRINTS AS SPACE. 
+      00364 -154554554554            OCT     554554554554  0154   
+      00365 +060013060013            OCT     060013060013  0153 - OPEN SQUARE BRACKET.    
+      00366 +060060060060            OCT     060060060060  0152 - LESS THAN SIGN, PRINTS AS SPACE     
+      00367 +145145145145            OCT     145145145145  0151 - SMALL R     
+      00370 +126126126126            OCT     126126126126  0150 - SMALL Q     
+      00371 +124124124124            OCT     124124124124  0147 - SMALL P     
+      00372 +150150150150            OCT     150150150150  0146 - SMALL 0     
+      00373 +162162162162            OCT     162162162162  0145 - SMALL N     
+      00374 +141141141141            OCT     141141141141  0144 - SMALL M     
+      00375 +170170170170            OCT     170170170170  0143 - SMALL L     
+      00376 +166166166166            OCT     166166166166  0142 - SMALL K     
+      00377 +120120120120            OCT     120120120120  0141 - SMALL J     
+      00400 +112112155155            OCT     112112155155  0140 - UNDERLINE   
+      00401 +044044044044            OCT     044044044044  0137 - DOUBLE QUOTE
+      00402 +136136136136            OCT     136136136136  0136   
+      00403 +135135135135            OCT     135135135135  0135 - BKSPCE
+      00404 +060060060060            OCT     060060060060  0134 - TILDE, PRINTS AS SPACE. 
+      00405 +133133133133            OCT     133133133133  0133 - RED SHIFT   
+      00406 +132132132132            OCT     132132132132  0132 - BLACK SHIFT 
+      00407 +146146146146            OCT     146146146146  0131 - SMALL I     
+      00410 +171171171171            OCT     171171171171  0130 - SMALL H     
+      00411 +121121121121            OCT     121121121121  0127 - SMALL G     
+      00412 +123123123123            OCT     123123123123  0126 - SMALL F     
+      00413 +164164164164            OCT     164164164164  0125 - SMALL E     
+      00414 +165165165165            OCT     165165165165  0124 - SMALL D     
+      00415 +167167167167            OCT     167167167167  0123 - SMALL C     
+      00416 +073073073073            OCT     073073073073  0122 - SMALL C     
+      00417 +147147147147            OCT     147147147147  0121 - SMALL A     
+      00420 -105505505505            OCT     505505505505  0120 - AMPERSAND   
+      00421 +117117117117            OCT     117117117117  0117   
+      00422 +116116116116            OCT     116116116116  0116   
+      00423 +115115115115            OCT     115115115115  0115   
+      00424 +060040060040            OCT     060040060040  0114 - EXCLAMATION POINT.
+      00425 +113113113113            OCT     113113113113  0113   
+      00426 +060060060060            OCT     060060060060  0112 - CIRCUMFLEX, PRINTS AS SPACE.  
+      00427 +111111111111            OCT     111111111111  0111 - 
+      00430 +110110110110            OCT     110110110110  0110 - IGNORE SINGLE SPC 
+      00431 +107107107107            OCT     107107107107  0107 - IGNORE LINE FEED  
+      00432 +152152100100            OCT     152152100100  0106 - COMMERCIAL AT     
+      00433 +035035035035            OCT     035035035035  0105 - PERCENT.    
+      00434 +103103103103            OCT     103103103103  0104 - NUMBER SIGN 
+      00435 +125125125125            OCT     125125125125  0103 - SEMICOLON   
+      00436 +060060060060            OCT     060060060060  0102 - LEFT SLASH, PRINTS AS SPACE   
+      00437 +060001060001            OCT     060001060001  0101 - CLOSE SQUARE BRACKET.   
+      00440 +060060060060            OCT     060060060060  0100 - UP ARROW, PRINTS AS SPACE.    
+      00441 +077077077077            OCT     077077077077  0077   
+      00442 +076076076076            OCT     076076076076  0076   
+      00443 +075075075075            OCT     075075075075  0075   
+      00444 +137137112112            OCT     137137112112  0074 - LEFT PAREN  
+      00445 +027027027027            OCT     027027027027  0073 - COMMA 
+      00446 +072072072072            OCT     072072072072  0072 - TAB   
+      00447 +034034034034            OCT     034034034034  0071 - CAP Z 
+      00450 +031031031031            OCT     031031031031  0070 - CAP Y 
+      00451 +156156156156            OCT     156156156156  0067 - CAP X 
+      00452 +114114114114            OCT     114114114114  0066 - CAP W 
+      00453 +043043043043            OCT     043043043043  0065 - CAP V 
+      00454 +063063063063            OCT     063063063063  0064 - CAP U 
+      00455 +102102102102            OCT     102102102102  0063 - CAP T 
+      00456 +051051051051            OCT     051051051051  0062 - CAP S 
+      00457 +130130130130            OCT     130130130130  0061 - SLASH 
+      00460 +060060060060            OCT     060060060060  0060 - SPACE 
+      00461 +057057057057            OCT     057057057057  0057   
+      00462 +056056056056            OCT     056056056056  0056   
+      00463 +055055055055            OCT     055055055055  0055 - NEW LINE    
+      00464 +155155137137            OCT     155155137137  0054 - ASTERISK    
+      00465 +054054054054            OCT     054054054054  0053 - DOLLAR SIGN 
+      00466 +052052052052            OCT     052052052052  0052   
+      00467 +045045045045            OCT     045045045045  0051 - CAP R 
+      00470 +026026026026            OCT     026026026026  0050 - CAP Q 
+      00471 +024024024024            OCT     024024024024  0047 - CAP P 
+      00472 +050050050050            OCT     050050050050  0046 - CAP O 
+      00473 +062062062062            OCT     062062062062  0045 - CAP N 
+      00474 +041041041041            OCT     041041041041  0044 - CAP M 
+      00475 +070070070070            OCT     070070070070  0043 - CAP L 
+      00476 +066066066066            OCT     066066066066  0042 - CAP K 
+      00477 +020020020020            OCT     020020020020  0041 - CAP J 
+      00500 +033033033033            OCT     033033033033  0040 - MINUS 
+      00501 +037037037037            OCT     037037037037  0037   
+      00502 +036036036036            OCT     036036036036  0036   
+      00503 +025025025025            OCT     025025025025  0035 - COLON 
+      00504 +074074074074            OCT     074074074074  0034 - RIGHT PAREN 
+      00505 +042042042042            OCT     042042042042  0033 - PERIOD
+      00506 +032032032032            OCT     032032032032  0032   
+      00507 +046046046046            OCT     046046046046  0031 - CAP I 
+      00510 +071071071071            OCT     071071071071  0030 - CAP H 
+      00511 +021021021021            OCT     021021021021  0027 - CAP G 
+      00512 +023023023023            OCT     023023023023  0026 - CAP F 
+      00513 +064064064064            OCT     064064064064  0025 - CAP E 
+      00514 +065065065065            OCT     065065065065  0024 - CAP D 
+      00515 +067067067067            OCT     067067067067  0023 - CAP C 
+      00516 +100100152152            OCT     100100152152  0022 - CAP B 
+      00517 +047047047047            OCT     047047047047  0021 - CAP A 
+      00520 +022022022022            OCT     022022022022  0020 - PLUS SIGN   
+      00521 +017017017017            OCT     017017017017  0017   
+      00522 +016016016016            OCT     016016016016  0016   
+      00523 +015015015015            OCT     015015015015  0015   
+      00524 +144144144144            OCT     144144144144  0014 - SINGLE QUOTE
+      00525 +122122122122            OCT     122122122122  0013 - EQUALS
+      00526 +012012012012            OCT     012012012012  0012   
+      00527 -104504504504            OCT     504504504504  0011 - 9     
+      00530 +007007007007            OCT     007007007007  0010 - 8     
+      00531 +005005005005            OCT     005005005005  0007   
+      00532 +006006006006            OCT     006006006006  0006   
+      00533 +004004004004            OCT     004004004004  0005   
+      00534 +010010010010            OCT     010010010010  0004   
+      00535 +003003003003            OCT     003003003003  0003   
+      00536 +002002002002            OCT     002002002002  0002   
+      00537 +001170001170            OCT     001170001170  0001 - 1, PRINTS AS SMALL L.   
+      00540 +011011011011            OCT     011011011011  0000   
+                       00540  TABLE2 EQU     *-1           LOCATION OF FIRST CHARACTER.   
+                              *     
+                                     END  
+
+
+
+SUPERVISOR CALL INTERLUDE AND TRANSFER VECTOR
+
+                       00024         ENTRY   .PCOMT        PRINT COMMENT ROUTINE    
+                       00010         ENTRY   CHNCOM        GO DORMANT.  
+                       00005         ENTRY   EXIT          SAME.  
+                       00002         ENTRY   .SETUP        CALLED BY MAD MAIN PROGRA.     
+                       00013         ENTRY   COMARG        GET COMMAND ARGUMENT.    
+                       00106         ENTRY   WHOAMI   
+                       00066         ENTRY   SETBCD   
+                       00064         ENTRY   SETFUL   
+                       00065         ENTRY   SETBRK   
+                       00061         ENTRY   WRFLXA   
+                       00063         ENTRY   WRFLX    
+                       00062         ENTRY   RDFLXA   
+                       00067         ENTRY   UPDATE        UPDATE U.F.D.
+                       00070         ENTRY   CHFILE   
+                       00071         ENTRY   DELFIL   
+                       00072         ENTRY   FSTATE   
+                       00073         ENTRY   BUFFER   
+                       00074         ENTRY   OPEN     
+                       00075         ENTRY   WRWAIT   
+                       00076         ENTRY   WRFILE   
+                       00077         ENTRY   RDWAIT   
+                       00100         ENTRY   RDFILE   
+                       00101         ENTRY   CLOSE    
+                       00043         ENTRY   GETBUF        OBTAIN BUFFERS FROM SUPERVISOR.
+                              *     
+                  
+            LINKAGE DIRECTOR  
+      00000  000000000000     
+      00001  334723464463     
+                  
+      00002  0760 00 0 00016  .SETUP LMTM                  USE SEVEN TAG MODE.
+      00003  0774 00 6 00000         AXT     0,6           SET UP IR6 TO AVOID EARLY CALL TO READ.    
+      00004  0020 00 0 00064         TRA     SETFUL        USE FULL MODE.  SETFUL RETURNS 1,4.  
+                              *     
+      00005  0074 00 4 00066  EXIT   TSX     SETBCD,4      CLEANUP, RESET MODE.     
+      00006  0074 00 4 00063         TSX     WRFLX,4       PUT OUT A STAR FOR RUNCOMS.    
+      00007  0 00001 0 00060                 STAR,,1       AND THEN PERFORM CHNCOM SEQUENCE.    
+      00010  0074 00 4 00102  CHNCOM TSX     CHN,4         THIS CHNCOM ALWAYS GOES DEAD,  
+ TD   00011  3 00000 0 00107         TXH     =0            IF NO CHAIN EXISTS.
+      00012  0020 00 0 00010         TRA     *-2           IN CASE OF RESTART, DON'T.     
+                              *     
+      00013  0634 00 4 00022  COMARG SXA     CM4,4         GET COMMAND ARGUMENT FOR MAD.  
+      00014 -0500 60 4 00001         CAL*    1,4           GET ARGUMENT NUMBER.     
+      00015  0602 00 0 00017         SLW     ARG           GIVE ARGUMENT NUMBER.    
+      00016  0074 00 4 00103         TSX     GETCOM,4      GET COMMAND ARGUMENT.    
+      00017  0 00000 0 00000   ARG                         ..     
+      00020  0602 00 0 00017         SLW     ARG           MOVE TO ARITHMETIC AC.   
+      00021  0500 00 0 00017         CLA     ARG           ..     
+      00022  0774 00 4 00000   CM4   AXT     --,4          RESTORE LINKAGE.   
+      00023  0020 00 4 00002         TRA     2,4           RETURN TO CALLER.  
+                              *     
+      00024 -0500 00 4 00001  .PCOMT CAL     1,4           GET WORD COUNT.    
+      00025  0621 00 0 00042         STA     RETURN        ON RETURN, JUMP BUFFER.  
+      00026  0767 00 0 00022         ALS     18            SETUP COUNT. 
+      00027  0622 00 0 00036         STD     PCNT          ..     
+      00030  1 77776 4 00031         TXI     *+1,4,-2      SETUP UP BUFFER ADDRESS. 
+      00031  0636 00 4 00036         SCA     PCNT,4        SAVE BUFFER ADDRESS, AND LINKAGE.    
+      00032  0074 00 4 00064         TSX     SETFUL,4      MAKE SURE MODE SET AND NO LINES COMING IN. 
+      00033  0074 00 4 00061         TSX     WRFLXA,4      SWITCH TO RED SHIFT.     
+      00034  0 00001 0 00056                 REDS,,1       ..     
+      00035  0074 00 4 00063         TSX     WRFLX,4       PRINT LINE.  
+      00036  0 00000 0 00000   PCNT          --,,--        ..     
+      00037  0074 00 4 00061         TSX     WRFLXA,4      SHIFT BACK TO BLACK.     
+      00040  0 00001 0 00057                 BLCKS,,1      ..     
+      00041  0535 00 4 00036         LAC     PCNT,4        RESTORE LINKAGE.   
+      00042  0020 00 4 00000  RETURN TRA     --,4          RETURN TO CALLER.  
+                              *     
+      00043  0634 00 4 00052  GETBUF SXA     GX4,4         ENTRY TO GET BUFFERS.    
+      00044  0602 00 0 00055         SLW     BUFSIZ        SIZE OF BUFFER IN AC.    
+      00045  0074 00 4 00104         TSX     GETMEM,4      GET PRESENT BOUND. 
+      00046  0601 00 0 00054         STO     START         SAVE AS BUFFER START.    
+      00047  0361 00 0 00055         ACL     BUFSIZ        FORM NEW BOUND.    
+      00050  0074 00 4 00105         TSX     SETMEM,4      ASK FOR MORE.
+      00051 -0500 00 0 00054         CAL     START         GIVE CALLER LOCATION OF  
+      00052  0774 00 4 00000   GX4   AXT     --,4          HIS NEW BUFFER.    
+      00053  0020 00 4 00001         TRA     1,4           RETURN.
+                              *     
+      00054  0 00000 0 00000   START                       STORAGE FOR BUFFER LOCATION.   
+      00055  0 00000 0 00000  BUFSIZ                       STORAGE FOR BUFFER SIZE. 
+                              *     
+      00056 +013300570057      REDS  OCT     013300570057  RED SHIFT AND TWO NULLS. 
+      00057 +013200570057      BLCKS OCT     013200570057  BLACK SHIFT AND TWO NULLS.     
+      00060 -145757575757     STAR   OCT     545757575757  ASTERISK AND 5 NULLS.    
+                              *     
+                              *              SUPERVISOR SUBROUTINE CALLERS.   
+                              *     
+      00061  0101 00 0 00133  WRFLXA TIA     =HWRFLXA 
+      00062  0101 00 0 00122  RDFLXA TIA     =HRDFLXA 
+      00063  0101 00 0 00134  WRFLX  TIA     =HWRFLX  
+      00064  0101 00 0 00126  SETFUL TIA     =HSETFUL 
+      00065  0101 00 0 00125  SETBRK TIA     =HSETBRK 
+      00066  0101 00 0 00124  SETBCD TIA     =HSETBCD 
+      00067  0101 00 0 00130  UPDATE TIA     =HUPDATE 
+      00070  0101 00 0 00111  CHFILE TIA     =HCHFILE 
+      00071  0101 00 0 00114  DELFIL TIA     =HDELFIL 
+      00072  0101 00 0 00115  FSTATE TIA     =HFSTATE 
+      00073  0101 00 0 00110  BUFFER TIA     =HBUFFER 
+      00074  0101 00 0 00120  OPEN   TIA     =HOPEN   
+      00075  0101 00 0 00135  WRWAIT TIA     =HWRWAIT 
+      00076  0101 00 0 00132  WRFILE TIA     =HWRFILE 
+      00077  0101 00 0 00123  RDWAIT TIA     =HRDWAIT 
+      00100  0101 00 0 00121  RDFILE TIA     =HRDFILE 
+      00101  0101 00 0 00113  CLOSE  TIA     =HCLOSE  
+      00102  0101 00 0 00112  CHN    TIA     =HCHNCOM 
+      00103  0101 00 0 00116  GETCOM TIA     =HGETCOM 
+      00104  0101 00 0 00117  GETMEM TIA     =HGETMEM 
+      00105  0101 00 0 00127  SETMEM TIA     =HSETMEM 
+      00106  0101 00 0 00131  WHOAMI TIA     =HWHOAMI 
+                              *     
+                                     END  
+
+
+

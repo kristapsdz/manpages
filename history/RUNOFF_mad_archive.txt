@@ -1,0 +1,1209 @@
+fRUNOFF   BCD 09/18/68 2319.7   82115         00000    
+1     MAD PROGRAM LISTING ... ... ...                 FILE   RMAIN   MAD            02/08/68    1243.2
+                 ..  MAIN PROGRAM TO CALL RUNOFF COMMAND.                                              LM00001    
+                                                                                                       LM00002    
+                 ..  J. H. SALTZER, DECEMBER, 1965.                                                    LM00003    
+                                                                                                       LM00004    
+                 ..  DECLARATIONS.                                                                     LM00005    
+                                                                                                       LM00006    
+                  NORMAL MODE IS INTEGER                                                          *001 LM00007    
+                  INSERT FILE RCOM                                                                *002 LM00008    
+                                                                                                  *002 LM00001    
+                 ..  RUNOFF COMMON PACKAGE.                                                       *002 LM00002    
+                                                                                                  *002 LM00003    
+                  NORMAL MODE IS INTEGER                                                          *003 LM00004    
+                                                                                                       LM00005    
+                  PROGRAM COMMON NOSTOP, NOWAIT, FSTPAG, PRINAM, OUTFIL                           *004 LM00006    
+                  PROGRAM COMMON HDLTH, HEAD(360), HDPOS                                          *005 LM00007    
+                  PROGRAM COMMON LINE(360)                                                        *006 LM00008    
+                  PROGRAM COMMON PGE, PAGENO, PGPOS, FTSW, PGMOD                                  *007 LM00009    
+                  PROGRAM COMMON PREFIX(25), PRLTH                                                *008 LM00010    
+                  PROGRAM COMMON RMARG                                                            *009 LM00011    
+                  PROGRAM COMMON WRD, SIZE, COUNT, WORD(360)                                      *010 LM00012    
+                  PROGRAM COMMON BEGIN, FILL, ADJST, NCHARS, LENGTH                               *011 LM00013    
+                  PROGRAM COMMON LMARG, LINECT, BOTLIN, CNTR, FILSW                               *012 LM00014    
+                  PROGRAM COMMON FLAGSW, DBLSPC, HEDPGE, PIX                                      *013 LM00015    
+                  PROGRAM COMMON MROW, TBTLIN, TBTPAG                                             *014 LM00016    
+                  PROGRAM COMMON TPGPOS, TFTSW, TPGE, TPRF(25)                                    *015 LM00017    
+                  PROGRAM COMMON TPRLTH, THDPOS, TPAGNO, TPGMOD                                   *016 LM00018    
+                  PROGRAM COMMON BOTPAG, FLAG(3)                                                  *017 LM00019    
+                  PROGRAM COMMON BLANK, BCKSPC, RETURN(3)                                         *018 LM00020    
+                  PROGRAM COMMON TAB, PERIOD, QUES, EXCLAM                                        *019 LM00021    
+                  PROGRAM COMMON COLON, HYPHEN, NULL                                              *020 LM00022    
+                                                                                                       LM00023    
+                  BOOLEAN NOSTOP, NOWAIT, FTSW, PGE, OUTFIL                                       *021 LM00024    
+                  BOOLEAN ADJST                                                                   *022 LM00025    
+                  BOOLEAN WRD, FILL, BEGIN, CNTR, FILSW, FLAGSW                                   *023 LM00026    
+                  BOOLEAN DBLSPC, HEDPGE, PIX, TPGE, TFTSW                                        *024 LM00027    
+                                                                                                       LM00028    
+                 ..  END OF RUNOFF COMMON PACKAGE                                                      LM00029    
+                                                                                                       LM00030    
+                  VECTOR VALUES FENCE = 777777777777K                                             *025 LM00009    
+                                                                                                       LM00010    
+                 ..  DEFAULT ARGUMENT VALUES                                                           LM00011    
+                                                                                                       LM00012    
+                  VECTOR VALUES NOSTOP = 1B                                                       *026 LM00013    
+                  VECTOR VALUES NOWAIT = 0B                                                       *027 LM00014    
+                  VECTOR VALUES FSTPAG = 0                                                        *028 LM00015    
+                  VECTOR VALUES OUTFIL = 0B                                                       *029 LM00016    
+                                                                                                       LM00017    
+                 ..  COLLECT COMMAND ARGUMENTS.  FIRST ARGUMENT IS                                     LM00018    
+                 ..  NAME OF FILE TO BE READ.                                                          LM00019    
+                                                                                                       LM00020    
+                  SETBRK.(CHNCOM.)                                                                *030 LM00021    
+                  PRINAM = COMARG.(1)                                                             *031 LM00022    
+                  WHENEVER PRINAM .E. FENCE                                                       *032 LM00023    
+      BADARG           PRINT COMMENT $0U1S1A1G1E0:$                                               *033 LM00024    
+                       PRINT COMMENT $0 0 0 0 0 0R0U0N0O0F0F0 1N1A1M1E0 0-0P0A0                   *034 LM00025    
+                1 G0E0 1N0-0 0-0S0T0O0P0-$                                                        *034 LM00026    
+                       CHNCOM.(0)                                                                 *035 LM00027    
+                  END OF CONDITIONAL                                                              *036 LM00028    
+                                                                                                       LM00029    
+                  THROUGH GETARG, FOR I = 2, 1, COMARG.(I) .E. FENCE                              *037 LM00030    
+                1                               .OR. I .G. 20                                     *037 LM00031    
+                       ARG = COMARG.(I)                                                           *038 LM00032    
+                                                                                                       LM00033    
+                       WHENEVER ARG .E. $  STOP$                                                  *039 LM00034    
+                            NOSTOP = 0B                                                           *040 LM00035    
+                                                                                                       LM00036    
+                       OR WHENEVER ARG .E. $NOWAIT$                                               *041 LM00037    
+                            NOWAIT = 1B                                                           *042 LM00038    
+                            NOSTOP = 1B                                                           *043 LM00039    
+                                                                                                       LM00040    
+                       OR WHENEVER ARG .E. $  PAGE$                                               *044 LM00041    
+                            ARG = COMARG.(I+1)                                                    *045 LM00042    
+                            WHENEVER ARG .E. FENCE, TRANSFER TO BADARG                            *046 LM00043    
+                            I = I + 1                                                             *047 LM00044    
+                            FSTPAG = BIN.(ARG)                                                    *048 LM00045    
+                                                                                                       LM00046    
+                       OR WHENEVER ARG .E. $ PRINT$                                               *049 LM00047    
+                            OUTFIL = 1B                                                           *050 LM00048    
+                            NOWAIT = 1B                                                           *051 LM00049    
+                                                                                                       LM00050    
+                       OR WHENEVER ARG .E. $  BALL$                                               *052 LM00051    
+                            ARG = COMARG.(I+1)                                                    *053 LM00052    
+                            WHENEVER ARG .E. FENCE, TRANSFER TO BADARG                            *054 LM00053    
+                            I = I + 1                                                             *055 LM00054    
+                            CHBALL.(ARG,2,BADARG)                                                 *056 LM00055    
+                                                                                                       LM00056    
+                       OTHERWISE                                                                  *057 LM00057    
+                            TRANSFER TO BADARG                                                    *058 LM00058    
+                                                                                                       LM00059    
+      GETARG           END OF CONDITIONAL                                                         *059 LM00060    
+                                                                                                       LM00061    
+                  RUNOFF.                                                                         *060 LM00062    
+                  CHNCOM.(0)                                                                      *061 LM00063    
+                                                                                                       LM00064    
+                  END OF PROGRAM                                                                  *062 LM00065    
+
+
+1     MAD PROGRAM LISTING ... ... ...                 FILE  RUNOFF   MAD            02/08/68    1243.3
+-                 
+                  EXTERNAL FUNCTION                                                               *001 LM00001    
+                                                                                                       LM00002    
+                 ..  RUN OFF AND RIGHT JUSTIFY MEMORANDUM FILE.                                        LM00003    
+                                                                                                       LM00004    
+                 ..  J. H. SALTZER, NOVEMBER, 1964.                                                    LM00005    
+                                                                                                       LM00006    
+                 ..  DECLARATIONS.                                                                     LM00007    
+                                                                                                       LM00008    
+                  INSERT FILE RCOM                                                                *002 LM00009    
+                                                                                                  *002 LM00001    
+                 ..  RUNOFF COMMON PACKAGE.                                                       *002 LM00002    
+                                                                                                  *002 LM00003    
+                  NORMAL MODE IS INTEGER                                                          *003 LM00004    
+                                                                                                       LM00005    
+                  PROGRAM COMMON NOSTOP, NOWAIT, FSTPAG, PRINAM, OUTFIL                           *004 LM00006    
+                  PROGRAM COMMON HDLTH, HEAD(360), HDPOS                                          *005 LM00007    
+                  PROGRAM COMMON LINE(360)                                                        *006 LM00008    
+                  PROGRAM COMMON PGE, PAGENO, PGPOS, FTSW, PGMOD                                  *007 LM00009    
+                  PROGRAM COMMON PREFIX(25), PRLTH                                                *008 LM00010    
+                  PROGRAM COMMON RMARG                                                            *009 LM00011    
+                  PROGRAM COMMON WRD, SIZE, COUNT, WORD(360)                                      *010 LM00012    
+                  PROGRAM COMMON BEGIN, FILL, ADJST, NCHARS, LENGTH                               *011 LM00013    
+                  PROGRAM COMMON LMARG, LINECT, BOTLIN, CNTR, FILSW                               *012 LM00014    
+                  PROGRAM COMMON FLAGSW, DBLSPC, HEDPGE, PIX                                      *013 LM00015    
+                  PROGRAM COMMON MROW, TBTLIN, TBTPAG                                             *014 LM00016    
+                  PROGRAM COMMON TPGPOS, TFTSW, TPGE, TPRF(25)                                    *015 LM00017    
+                  PROGRAM COMMON TPRLTH, THDPOS, TPAGNO, TPGMOD                                   *016 LM00018    
+                  PROGRAM COMMON BOTPAG, FLAG(3)                                                  *017 LM00019    
+                  PROGRAM COMMON BLANK, BCKSPC, RETURN(3)                                         *018 LM00020    
+                  PROGRAM COMMON TAB, PERIOD, QUES, EXCLAM                                        *019 LM00021    
+                  PROGRAM COMMON COLON, HYPHEN, NULL                                              *020 LM00022    
+                                                                                                       LM00023    
+                  BOOLEAN NOSTOP, NOWAIT, FTSW, PGE, OUTFIL                                       *021 LM00024    
+                  BOOLEAN ADJST                                                                   *022 LM00025    
+                  BOOLEAN WRD, FILL, BEGIN, CNTR, FILSW, FLAGSW                                   *023 LM00026    
+                  BOOLEAN DBLSPC, HEDPGE, PIX, TPGE, TFTSW                                        *024 LM00027    
+                                                                                                       LM00028    
+                 ..  END OF RUNOFF COMMON PACKAGE                                                      LM00029    
+                                                                                                       LM00030    
+                  BOOLEAN NLINE                                                                   *025 LM00010    
+                  NORMAL MODE IS INTEGER                                                          *026 LM00011    
+                                                                                                       LM00012    
+                 ..  CHARACTERS RECOGNIZED BY RUNOFF.                                                  LM00013    
+                                                                                                       LM00014    
+                  VECTOR VALUES PERIOD = 0033K                                                    *027 LM00015    
+                  VECTOR VALUES QUES = 0156K                                                      *028 LM00016    
+                  VECTOR VALUES EXCLAM = 0153K                                                    *029 LM00017    
+                  VECTOR VALUES BLANK = 0060K                                                     *030 LM00018    
+                  VECTOR VALUES HYPHEN = 0040K                                                    *031 LM00019    
+                  VECTOR VALUES COLON = 0035K                                                     *032 LM00020    
+                  VECTOR VALUES TAB = 0072K                                                       *033 LM00021    
+                  VECTOR VALUES NULL = 0057K                                                      *034 LM00022    
+                  VECTOR VALUES BCKSPC = 0135K                                                    *035 LM00023    
+                  VECTOR VALUES RETURN = 0055K, 0055K, 0055K                                      *036 LM00024    
+                                                                                                       LM00025    
+                 ..  DEFAULT PARAMETER VALUES.                                                         LM00026    
+                                                                                                       LM00027    
+                  VECTOR VALUES TPRF(1) = $00000P00000A00000G00000E00000 $                        *037 LM00028    
+                  VECTOR VALUES HDLTH = 0                                                         *038 LM00029    
+                  VECTOR VALUES THDPOS = $PPOSED$                                                 *039 LM00030    
+                  VECTOR VALUES TPGPOS = $MARGIN$                                                 *040 LM00031    
+                  VECTOR VALUES TFTSW = 0B                                                        *041 LM00032    
+                  VECTOR VALUES TPRLTH = 5                                                        *042 LM00033    
+                  VECTOR VALUES TPGE = 0B                                                         *043 LM00034    
+                  VECTOR VALUES TPAGNO = 2                                                        *044 LM00035    
+                  VECTOR VALUES TPGMOD = $ARABIC$                                                 *045 LM00036    
+                  VECTOR VALUES FLAG(1) = $00000 00000 00000*$                                    *046 LM00037    
+                  VECTOR VALUES RMARG = 60                                                        *047 LM00038    
+                  VECTOR VALUES LMARG = 0                                                         *048 LM00039    
+                  VECTOR VALUES TBTLIN = 60                                                       *049 LM00040    
+                  VECTOR VALUES TBTPAG = 66                                                       *050 LM00041    
+                  VECTOR VALUES ADJST = 1B                                                        *051 LM00042    
+                  VECTOR VALUES FILL = 1B                                                         *052 LM00043    
+                                                                                                       LM00044    
+                 ..  INITIAL VALUES OF INTERNAL VARIABLES.                                             LM00045    
+                                                                                                       LM00046    
+                  VECTOR VALUES PIX = 0B                                                          *053 LM00047    
+                  VECTOR VALUES FLAGSW = 0B                                                       *054 LM00048    
+                  VECTOR VALUES LIT = 0B                                                          *055 LM00049    
+                                                                                                       LM00050    
+                  ENTRY TO RUNOFF.                                                                *056 LM00051    
+                                                                                                       LM00052    
+                  SETUP.                                                                          *057 LM00053    
+                  SEEK.(PRINAM, $(MEMO)$ , EOF)                                                   *058 LM00054    
+                  WHENEVER .NOT.NOWAIT                                                            *059 LM00055    
+                  PRINT COMMENT $0L1O1A1D0 1P1A1P1E1R0,0 1H1I1T0 1R1E1T1U1R1N$                    *060 LM00056    
+                  WAIT.                                                                           *061 LM00057    
+                  END OF CONDITIONAL                                                              *062 LM00058    
+                                                                                                       LM00059    
+                 .. GET NEXT CHARACTER, BUILD UP WORD                                                  LM00060    
+                                                                                                       LM00061    
+      GTNXT       CHAR = NXCHAR.(NLINE, EOF)                                                      *063 LM00062    
+                                                                                                       LM00063    
+                  WHENEVER NLINE                                                                  *064 LM00064    
+                                                                                                       LM00065    
+                 .. DISCOVER NATURE OF NEXT INPUT LINE.                                                LM00066    
+                                                                                                       LM00067    
+      RENEW         WHENEVER LIT                                                                  *065 LM00068    
+                      LIT = 0B                                                                    *066 LM00069    
+                    OR WHENEVER CHAR .E. PERIOD                                                   *067 LM00070    
+                      TRANSFER TO CONTRL                                                          *068 LM00071    
+                    END OF CONDITIONAL                                                            *069 LM00072    
+                    SETCHR.(RETURN)                                                               *070 LM00073    
+                  END OF CONDITIONAL                                                              *071 LM00074    
+                                                                                                       LM00075    
+      PROCED      SETCHR.(CHAR)                                                                   *072 LM00076    
+                  TRANSFER TO GTNXT                                                               *073 LM00077    
+                                                                                                       LM00078    
+                 .. CONTROL WORD SECTION.                                                              LM00079    
+                                                                                                       LM00080    
+       CONTRL     CWD = GET.(0)                                                                   *074 LM00081    
+                                                                                                       LM00082    
+                  WHENEVER CWD .E. $   END$                                                       *075 LM00083    
+       EOF          SETWRD.                                                                       *076 LM00084    
+                    SETLIN.                                                                       *077 LM00085    
+                    SETPAG.                                                                       *078 LM00086    
+                    SETDWN.                                                                       *079 LM00087    
+                    CHNCOM.(0)                                                                    *080 LM00088    
+                                                                                                       LM00089    
+                  OR WHENEVER CWD .E. $   CWD$                                                    *081 LM00090    
+                    TRANSFER TO CONTRL                                                            *082 LM00091    
+                                                                                                       LM00092    
+                  OR WHENEVER CWD .E. $APPEND$ .OR. CWD .E. $    AP$                              *083 LM00093    
+                    ENDRD.(PRINAM, $(MEMO)$)                                                      *084 LM00094    
+                    PRINAM = GET.(0)                                                              *085 LM00095    
+                    SEEK.(PRINAM, $(MEMO)$, EOF)                                                  *086 LM00096    
+                    TRANSFER TO GTNXT                                                             *087 LM00097    
+                                                                                                       LM00098    
+                  OR WHENEVER CWD .E. $ SPACE$ .OR. CWD .E. $    SP$                              *088 LM00099    
+                    TEM = NUM.(0)                                                                 *089 LM00100    
+                    WHENEVER TEM .E. 0, TEM = 1                                                   *090 LM00101    
+                    SETWRD.                                                                       *091 LM00102    
+                    SETLIN.                                                                       *092 LM00103    
+                    WHENEVER TEM + LINECT .L. BOTLIN                                              *093 LM00104    
+                      THROUGH SPCLP, FOR I = 1, 1, I .G. TEM                                      *094 LM00105    
+        SPCLP           PACK.(RETURN, 1)                                                          *095 LM00106    
+                      LINECT = LINECT + TEM                                                       *096 LM00107    
+                      BRKLIN.                                                                     *097 LM00108    
+                    OTHERWISE                                                                     *098 LM00109    
+                      SETPAG.                                                                     *099 LM00110    
+                    END OF CONDITIONAL                                                            *100 LM00111    
+                                                                                                       LM00112    
+                  OR WHENEVER CWD .E. $ BREAK$ .OR. CWD .E. $    BR$                              *101 LM00113    
+                    BRKLIN.                                                                       *102 LM00114    
+                                                                                                       LM00115    
+                  OR WHENEVER CWD .E. $CENTER$ .OR. CWD .E. $    CE$                              *103 LM00116    
+                    BRKLIN.                                                                       *104 LM00117    
+                    BEGIN = 1B                                                                    *105 LM00118    
+                    CNTR = 1B                                                                     *106 LM00119    
+                    FILSW = FILL                                                                  *107 LM00120    
+                    FILL = 0B                                                                     *108 LM00121    
+                                                                                                       LM00122    
+                  OR WHENEVER CWD .E. $ITERAL$ .OR. CWD .E. $    LI$                              *109 LM00123    
+                    LIT = 1B                                                                      *110 LM00124    
+                                                                                                       LM00125    
+                  OR WHENEVER CWD .E. $  FLAG$ .OR. CWD .E. $    FL$                              *111 LM00126    
+                    FLAGSW = 1B                                                                   *112 LM00127    
+                                                                                                       LM00128    
+                  OR WHENEVER CWD .E. $  LINE$                                                    *113 LM00129    
+                    CWD = GET.(0)                                                                 *114 LM00130    
+                    RMARG = NUM.(0)                                                               *115 LM00131    
+                  OR WHENEVER CWD .E. $    LL$                                                    *116 LM00132    
+                    RMARG = NUM.(0)                                                               *117 LM00133    
+                                                                                                       LM00134    
+                  OR WHENEVER CWD .E. $INDENT$ .OR. CWD .E. $    IN$                              *118 LM00135    
+                    LMARG = NUM.(0)                                                               *119 LM00136    
+                                                                                                       LM00137    
+                  OR WHENEVER CWD .E. $UNDENT$ .OR. CWD .E. $    UN$                              *120 LM00138    
+                    BRKLIN.                                                                       *121 LM00139    
+                    NS = LMARG - NUM.(0)                                                          *122 LM00140    
+                    WHENEVER NS .L. 0, NS = 0                                                     *123 LM00141    
+                    LINE(1) = NULL                                                                *124 LM00142    
+                    THROUGH UNDLP, FOR LENGTH = 1, 1, LENGTH .GE. NS+1                            *125 LM00143    
+       UNDLP          LINE(LENGTH+1) = BLANK                                                      *126 LM00144    
+                    NCHARS = NS                                                                   *127 LM00145    
+                                                                                                       LM00146    
+                                                                                                       LM00147    
+                  OR WHENEVER CWD .E. $NOJUST$ .OR. CWD .E. $    NJ$                              *128 LM00148    
+                    BRKLIN.                                                                       *129 LM00149    
+                    ADJST = 0B                                                                    *130 LM00150    
+                                                                                                       LM00151    
+                  OR WHENEVER CWD .E. $ADJUST$ .OR. CWD .E. $    AD$                              *131 LM00152    
+                    BRKLIN.                                                                       *132 LM00153    
+                    ADJST = 1B                                                                    *133 LM00154    
+                                                                                                       LM00155    
+                  OR WHENEVER CWD .E. $  FILL$ .OR. CWD .E. $    FI$                              *134 LM00156    
+                    BRKLIN.                                                                       *135 LM00157    
+                    FILL = 1B                                                                     *136 LM00158    
+                                                                                                       LM00159    
+                  OR WHENEVER CWD .E. $NOFILL$ .OR. CWD .E. $    NF$                              *137 LM00160    
+                    BRKLIN.                                                                       *138 LM00161    
+                    FILL = 0B                                                                     *139 LM00162    
+                                                                                                       LM00163    
+                  OR WHENEVER CWD .E. $SINGLE$ .OR. CWD .E. $    SS$                              *140 LM00164    
+                    BRKLIN.                                                                       *141 LM00165    
+                    DBLSPC = 0B                                                                   *142 LM00166    
+                                                                                                       LM00167    
+                  OR WHENEVER CWD .E. $DOUBLE$ .OR. CWD .E. $    DS$                              *143 LM00168    
+                    BRKLIN.                                                                       *144 LM00169    
+                    DBLSPC = 1B                                                                   *145 LM00170    
+                                                                                                       LM00171    
+                  OR WHENEVER CWD .E. $ PAPER$                                                    *146 LM00172    
+                    CWD = GET.(0)                                                                 *147 LM00173    
+                    WHENEVER CWD .E. $LENGTH$                                                     *148 LM00174    
+      PL              TBTPAG = NUM.(0)                                                            *149 LM00175    
+                      TBTLIN = TBTPAG - 6                                                         *150 LM00176    
+                    END OF CONDITIONAL                                                            *151 LM00177    
+                                                                                                       LM00178    
+                  OR WHENEVER CWD .E. $ SHORT$ .OR. CWD .E. $    SH$                              *152 LM00179    
+                    BOTLIN = BOTLIN - NUM.(0)                                                     *153 LM00180    
+                                                                                                       LM00181    
+                  OR WHENEVER CWD .E. $    PL$                                                    *154 LM00182    
+                    TRANSFER TO PL                                                                *155 LM00183    
+                                                                                                       LM00184    
+                  OR WHENEVER CWD .E. $EADING$                                                    *156 LM00185    
+                    CWD = GET.(0)                                                                 *157 LM00186    
+                    TRANSFER TO HM                                                                *158 LM00187    
+                                                                                                       LM00188    
+                  OR WHENEVER CWD .E. $    HM$                                                    *159 LM00189    
+      HM            THDPOS = GET.(0)                                                              *160 LM00190    
+                                                                                                       LM00191    
+                  OR WHENEVER CWD .E. $PAGING$                                                    *161 LM00192    
+                    CWD = GET.(0)                                                                 *162 LM00193    
+                    TRANSFER TO PM                                                                *163 LM00194    
+                                                                                                       LM00195    
+                  OR WHENEVER CWD .E. $    PM$                                                    *164 LM00196    
+      PM            TPGE = 1B                                                                     *165 LM00197    
+                    CWD = GET.(0)                                                                 *166 LM00198    
+                    WHENEVER CWD .E. $ $                                                          *167 LM00199    
+                      TRANSFER TO DONEP                                                           *168 LM00200    
+                    OR WHENEVER CWD .E. $MARGIN$                                                  *169 LM00201    
+                      TPGPOS = CWD                                                                *170 LM00202    
+                    OR WHENEVER CWD .E. $FACING$                                                  *171 LM00203    
+                      TPGPOS = CWD                                                                *172 LM00204    
+                    OR WHENEVER CWD .E. $CENTER$                                                  *173 LM00205    
+                      TPGPOS = CWD                                                                *174 LM00206    
+                    OR WHENEVER CWD .E. $   TOP$                                                  *175 LM00207    
+                      TFTSW = 0B                                                                  *176 LM00208    
+                    OR WHENEVER CWD .E. $BOTTOM$                                                  *177 LM00209    
+                      TFTSW = 1B                                                                  *178 LM00210    
+                    OR WHENEVER CWD .E. $   OFF$                                                  *179 LM00211    
+                      TPGE = 0B                                                                   *180 LM00212    
+                    OR WHENEVER CWD .E. $ARABIC$                                                  *181 LM00213    
+                      TPGMOD = CWD                                                                *182 LM00214    
+                    OR WHENEVER CWD .E. $ROMANU$                                                  *183 LM00215    
+                      TPGMOD = CWD                                                                *184 LM00216    
+                    OR WHENEVER CWD .E. $ROMANL$                                                  *185 LM00217    
+                      TPGMOD = CWD                                                                *186 LM00218    
+                    OR WHENEVER CWD .E. $  SKIP$                                                  *187 LM00219    
+                      TPAGNO = TPAGNO + NUM.(0)                                                   *188 LM00220    
+                    OR WHENEVER CWD .E. $   SET$                                                  *189 LM00221    
+                      TPAGNO = NUM.(0)                                                            *190 LM00222    
+                    OR WHENEVER CWD .E. $PREFIX$                                                  *191 LM00223    
+                      QUOTE = NXCHAR.(NLINE, EOF)                                                 *192 LM00224    
+                      THROUGH PRFLP, FOR I = 1, 1, NLINE                                          *193 LM00225    
+                        TPRF(I) = NXCHAR. (NLINE, EOF)                                            *194 LM00226    
+      PRFLP             WHENEVER TPRF(I) .E. QUOTE, TRANSFER TO PRFSTP                            *195 LM00227    
+                      TRANSFER TO RENEW                                                           *196 LM00228    
+                                                                                                       LM00229    
+      PRFSTP          TPRLTH = I-1                                                                *197 LM00230    
+                    END OF CONDITIONAL                                                            *198 LM00231    
+                    TRANSFER TO PM                                                                *199 LM00232    
+      DONEP         CONTINUE                                                                      *200 LM00233    
+                                                                                                       LM00234    
+                  OR WHENEVER CWD .E. $  PAGE$ .OR. CWD .E. $    PA$                              *201 LM00235    
+                    TPGE = 1B                                                                     *202 LM00236    
+                    TEM = NUM.(0)                                                                 *203 LM00237    
+                    WHENEVER TEM .NE. 0                                                           *204 LM00238    
+                      SETWRD.                                                                     *205 LM00239    
+                      SETLIN.                                                                     *206 LM00240    
+                      TPAGNO = TEM                                                                *207 LM00241    
+                      SETPAG.                                                                     *208 LM00242    
+                    END OF CONDITIONAL                                                            *209 LM00243    
+                                                                                                       LM00244    
+                  OR WHENEVER CWD .E. $   ODD$ .OR. CWD .E. $    OP$                              *210 LM00245    
+                    SETWRD.                                                                       *211 LM00246    
+                    SETLIN.                                                                       *212 LM00247    
+                    TPAGNO = (TPAGNO/2)*2 + 1                                                     *213 LM00248    
+                    SETPAG.                                                                       *214 LM00249    
+                                                                                                       LM00250    
+                  OR WHENEVER CWD .E. $ BEGIN$ .OR. CWD .E. $    BP$                              *215 LM00251    
+                    SETWRD.                                                                       *216 LM00252    
+                    SETLIN.                                                                       *217 LM00253    
+                    SETPAG.                                                                       *218 LM00254    
+                                                                                                       LM00255    
+                  OR WHENEVER CWD .E. $HEADER$ .OR. CWD .E. $    HE$                              *219 LM00256    
+                    NLINE = 0B                                                                    *220 LM00257    
+                    THROUGH HDLP, FOR I = 1, 1, NLINE                                             *221 LM00258    
+        HDLP          HEAD(I) = NXCHAR.(NLINE, EOF)                                               *222 LM00259    
+                    CHAR = HEAD(I-1)                                                              *223 LM00260    
+                    HDLTH = I - 2                                                                 *224 LM00261    
+                    TRANSFER TO RENEW                                                             *225 LM00262    
+                                                                                                       LM00263    
+                  OR WHENEVER CWD .E. $FIGURE$                                                    *226 LM00264    
+                    MROW = FRAME.(0)                                                              *227 LM00265    
+                    WHENEVER LINECT + MROW .LE. BOTLIN                                            *228 LM00266    
+                      PRPIX.                                                                      *229 LM00267    
+                      LINECT = LINECT + MROW                                                      *230 LM00268    
+                      PIX = 0B                                                                    *231 LM00269    
+                    OTHERWISE                                                                     *232 LM00270    
+                      PIX = 1B                                                                    *233 LM00271    
+                    END OF CONDITIONAL                                                            *234 LM00272    
+                                                                                                       LM00273    
+                  OR WHENEVER CWD .E. $DEFINE$                                                    *235 LM00274    
+                    SYMSTO.(GET.(0), PAGENO)                                                      *236 LM00275    
+                                                                                                       LM00276    
+                  OR WHENEVER CWD .E. $   USE$                                                    *237 LM00277    
+                    SETWRD.                                                                       *238 LM00278    
+                    SIZE = NUMCON.(SYMGET.(GET.(0),0,$ARABIC$),WORD(1))+1                         *239 LM00279    
+                    COUNT = SIZE                                                                  *240 LM00280    
+                    WORD(1) = BLANK                                                               *241 LM00281    
+                    WRD = 1B                                                                      *242 LM00282    
+                    TRANSFER TO GTNXT                                                             *243 LM00283    
+                                                                                                       LM00284    
+                                                                                                       LM00285    
+                  END OF CONDITIONAL                                                              *244 LM00286    
+                                                                                                       LM00287    
+                  NLINE = 0B                                                                      *245 LM00288    
+                  THROUGH SKPLP, FOR I = 0, 0, NLINE                                              *246 LM00289    
+       SKPLP        CHAR = NXCHAR.(NLINE, EOF)                                                    *247 LM00290    
+                  WHENEVER CNTR, TRANSFER TO PROCED                                               *248 LM00291    
+                  TRANSFER TO RENEW                                                               *249 LM00292    
+                                                                                                       LM00293    
+                  END OF FUNCTION                                                                 *250 LM00294    
+
+
+1     MAD PROGRAM LISTING ... ... ...                 FILE  NXCHAR   MAD            02/08/68    1243.8
+-                 
+                 .. SUBROUTINE TO GET NEXT CHARACTER FROM INPUT STREAM.                                LM00001    
+                    IF NEW LINE ENCOUNTERED, SETS NLINE TO 1B.                                         LM00002    
+                    IF EOF ENCOUNTERED, TRANSFERS TO EOF                                               LM00003    
+                                                                                                       LM00004    
+                 .. USES .A., .V., .LS. OPERATORS.                                                     LM00005    
+                    TRANSLATE APPROPRIATELY.                                                           LM00006    
+                                                                                                       LM00007    
+                 ..  J. H. SALTZER, NOVEMBER, 1964                                                     LM00008    
+                                                                                                       LM00009    
+                  EXTERNAL FUNCTION (NLINE, EOF)                                                  *001 LM00010    
+                                                                                                       LM00011    
+                  VECTOR VALUES BLANK = 0060K                                                     *002 LM00012    
+                  VECTOR VALUES NULL = 0057K                                                      *003 LM00013    
+                  VECTOR VALUES RETURN = 0055K                                                    *004 LM00014    
+                  NORMAL MODE IS INTEGER                                                          *005 LM00015    
+                  STATEMENT LABEL EOF                                                             *006 LM00016    
+                  BOOLEAN NLINE                                                                   *007 LM00017    
+                  DIMENSION LINE(360)                                                             *008 LM00018    
+                                                                                                       LM00019    
+                  ENTRY TO NXCHAR.                                                                *009 LM00020    
+                  NLINE = 0B                                                                      *010 LM00021    
+      PUSH        COUNT = COUNT + 1                                                               *011 LM00022    
+                  WHENEVER COUNT .G. LENGTH, TRANSFER TO RENEW                                    *012 LM00023    
+                  FUNCTION RETURN LINE(COUNT)                                                     *013 LM00024    
+                                                                                                       LM00025    
+      RENEW       LENGTH = READ.(LINE, 360, EOF)                                                  *014 LM00026    
+       REDUCE     WHENEVER LINE(LENGTH) .E. BLANK                                                 *015 LM00027    
+                1      .OR. LINE(LENGTH) .E. RETURN                                               *015 LM00028    
+                1      .OR. LINE(LENGTH) .E. NULL                                                 *015 LM00029    
+                    LENGTH = LENGTH -1                                                            *016 LM00030    
+                    WHENEVER LENGTH .E. 0, TRANSFER TO RENEW                                      *017 LM00031    
+                    TRANSFER TO REDUCE                                                            *018 LM00032    
+                  END OF CONDITIONAL                                                              *019 LM00033    
+                  NLINE = 1B                                                                      *020 LM00034    
+                  COUNT = 0                                                                       *021 LM00035    
+                  TRANSFER TO PUSH                                                                *022 LM00036    
+                                                                                                       LM00037    
+                 .. ENTRY TO GET NEXT 6-CHARACTER WORD FROM THIS LINE.                                 LM00038    
+                                                                                                       LM00039    
+                  ENTRY TO GET.                                                                   *023 LM00040    
+                  WORD = $ $                                                                      *024 LM00041    
+                  SCAN.                                                                           *025 LM00042    
+      GULP        COUNT = COUNT + 1                                                               *026 LM00043    
+                  WHENEVER COUNT .G. LENGTH .OR. LINE(COUNT) .E. BLANK,                           *027 LM00044    
+                1      FUNCTION RETURN WORD                                                       *027 LM00045    
+                  WORD = (WORD .LS. 6) .V. (LINE(COUNT) .A. 77K)                                  *028 LM00046    
+                  TRANSFER TO GULP                                                                *029 LM00047    
+                                                                                                       LM00048    
+                 .. ENTRY TO GET DECIMAL INTEGER FROM INPUT STREAM.                                    LM00049    
+                                                                                                       LM00050    
+                  ENTRY TO NUM.                                                                   *030 LM00051    
+                  INT = 0                                                                         *031 LM00052    
+                  SCAN.                                                                           *032 LM00053    
+       MULP       COUNT = COUNT+1                                                                 *033 LM00054    
+                  WHENEVER COUNT .G. LENGTH .OR. LINE(COUNT) .E. BLANK,                           *034 LM00055    
+                1      FUNCTION RETURN INT                                                        *034 LM00056    
+                  WHENEVER LINE(COUNT) .LE. 9, INT = INT*10 + LINE(COUNT)                         *035 LM00057    
+                  TRANSFER TO MULP                                                                *036 LM00058    
+                                                                                                       LM00059    
+                 ..  FUNCTION TO SCAN FOR NON BNALK CHARACTER.                                         LM00060    
+                                                                                                       LM00061    
+                  INTERNAL FUNCTION                                                               *037 LM00062    
+                  ENTRY TO SCAN.                                                                  *038 LM00063    
+       SCANLP     WHENEVER LINE(COUNT+1) .NE. BLANK .OR. COUNT+1 .G. LENGTH                       *039 LM00064    
+                1      , FUNCTION RETURN                                                          *039 LM00065    
+                  COUNT = COUNT+1                                                                 *040 LM00066    
+                  TRANSFER TO SCANLP                                                              *041 LM00067    
+                  END OF FUNCTION                                                                 *042 LM00068    
+                                                                                                       LM00069    
+                                                                                                       LM00070    
+                  END OF FUNCTION                                                                 *043 LM00071    
+
+
+
+1     MAD PROGRAM LISTING ... ... ...                 FILE  SETTYP   MAD            02/08/68    1243.8
+-                 
+                 ..  GALLEY SETUP ROUTINES.                                                            LM00001    
+                 ..                                                                                    LM00002    
+                 ..  J. H. SALTZER, DECEMBER, 1965.                                                    LM00003    
+                                                                                                       LM00004    
+                  EXTERNAL FUNCTION(CHAR)                                                         *001 LM00005    
+                                                                                                       LM00006    
+                  INSERT FILE RCOM                                                                *002 LM00007    
+                                                                                                  *002 LM00001    
+                 ..  RUNOFF COMMON PACKAGE.                                                       *002 LM00002    
+                                                                                                  *002 LM00003    
+                  NORMAL MODE IS INTEGER                                                          *003 LM00004    
+                                                                                                       LM00005    
+                  PROGRAM COMMON NOSTOP, NOWAIT, FSTPAG, PRINAM, OUTFIL                           *004 LM00006    
+                  PROGRAM COMMON HDLTH, HEAD(360), HDPOS                                          *005 LM00007    
+                  PROGRAM COMMON LINE(360)                                                        *006 LM00008    
+                  PROGRAM COMMON PGE, PAGENO, PGPOS, FTSW, PGMOD                                  *007 LM00009    
+                  PROGRAM COMMON PREFIX(25), PRLTH                                                *008 LM00010    
+                  PROGRAM COMMON RMARG                                                            *009 LM00011    
+                  PROGRAM COMMON WRD, SIZE, COUNT, WORD(360)                                      *010 LM00012    
+                  PROGRAM COMMON BEGIN, FILL, ADJST, NCHARS, LENGTH                               *011 LM00013    
+                  PROGRAM COMMON LMARG, LINECT, BOTLIN, CNTR, FILSW                               *012 LM00014    
+                  PROGRAM COMMON FLAGSW, DBLSPC, HEDPGE, PIX                                      *013 LM00015    
+                  PROGRAM COMMON MROW, TBTLIN, TBTPAG                                             *014 LM00016    
+                  PROGRAM COMMON TPGPOS, TFTSW, TPGE, TPRF(25)                                    *015 LM00017    
+                  PROGRAM COMMON TPRLTH, THDPOS, TPAGNO, TPGMOD                                   *016 LM00018    
+                  PROGRAM COMMON BOTPAG, FLAG(3)                                                  *017 LM00019    
+                  PROGRAM COMMON BLANK, BCKSPC, RETURN(3)                                         *018 LM00020    
+                  PROGRAM COMMON TAB, PERIOD, QUES, EXCLAM                                        *019 LM00021    
+                  PROGRAM COMMON COLON, HYPHEN, NULL                                              *020 LM00022    
+                                                                                                       LM00023    
+                  BOOLEAN NOSTOP, NOWAIT, FTSW, PGE, OUTFIL                                       *021 LM00024    
+                  BOOLEAN ADJST                                                                   *022 LM00025    
+                  BOOLEAN WRD, FILL, BEGIN, CNTR, FILSW, FLAGSW                                   *023 LM00026    
+                  BOOLEAN DBLSPC, HEDPGE, PIX, TPGE, TFTSW                                        *024 LM00027    
+                                                                                                       LM00028    
+                 ..  END OF RUNOFF COMMON PACKAGE                                                      LM00029    
+                                                                                                       LM00030    
+                                                                                                  *002 LM00008    
+                  DIMENSION TBUF(360)                                                             *025 LM00009    
+                  BOOLEAN FIRST, NLINE                                                            *026 LM00010    
+                                                                                                       LM00011    
+                 ..  WRITEAROUNDS TO ALLOW INTERNAL AND                                                LM00012    
+                 ..  EXTERNAL USE OF FUNCTIONS.                                                        LM00013    
+                                                                                                       LM00014    
+                  ENTRY TO SETUP.                                                                 *027 LM00015    
+                    FIRST = 1B                                                                    *028 LM00016    
+                    COUNT = 0                                                                     *029 LM00017    
+                    HEDPGE = 1B                                                                   *030 LM00018    
+                    LENGTH = 0                                                                    *031 LM00019    
+                    NCHARS = 0                                                                    *032 LM00020    
+                    SETPK.(PRINAM, OUTFIL)                                                        *033 LM00021    
+                    INHDFT.                                                                       *034 LM00022    
+                    THROUGH STLP, FOR LINECT = 0, 1, LINECT .G. 11                                *035 LM00023    
+      STLP            PACK.(RETURN, 1)                                                            *036 LM00024    
+                    WRD = 0B                                                                      *037 LM00025    
+                    FUNCTION RETURN                                                               *038 LM00026    
+                                                                                                       LM00027    
+                  ENTRY TO SETDWN.                                                                *039 LM00028    
+                    PKOFF.                                                                        *040 LM00029    
+                    FUNCTION RETURN                                                               *041 LM00030    
+                                                                                                       LM00031    
+                  ENTRY TO SETCHR.                                                                *042 LM00032    
+                    WHENEVER CHAR .E. RETURN                                                      *043 LM00033    
+                      WHENEVER CNTR, BREAK.                                                       *044 LM00034    
+                      NLINE = 1B                                                                  *045 LM00035    
+                      FUNCTION RETURN                                                             *046 LM00036    
+                    END OF CONDITIONAL                                                            *047 LM00037    
+                    WHENEVER NLINE                                                                *048 LM00038    
+                      NLINE = 0B                                                                  *049 LM00039    
+                      WHENEVER FIRST, TRANSFER TO SKIP                                            *050 LM00040    
+                                                                                                       LM00041    
+                 .. IF NEW LINE IS CONTINUATION OF OLD, PATCH BROKEN WORD.                             LM00042    
+                                                                                                       LM00043    
+                    WHENEVER CHAR .NE. BLANK .AND. CHAR .NE. TAB .AND. FILL                       *051 LM00044    
+                       WHENEVER .NOT.WRD                                                          *052 LM00045    
+                         CONTINUE                                                                 *053 LM00046    
+                       OR WHENEVER WORD(COUNT) .E. HYPHEN                                         *054 LM00047    
+                         COUNT = COUNT - 1                                                        *055 LM00048    
+                         SIZE = SIZE - 1                                                          *056 LM00049    
+                       OTHERWISE                                                                  *057 LM00050    
+                         WHENEVER WORD(COUNT) .E. PERIOD                                          *058 LM00051    
+                1            .OR. WORD(COUNT) .E. QUES                                            *058 LM00052    
+                2            .OR. WORD(COUNT) .E. EXCLAM                                          *058 LM00053    
+                2            .OR. WORD(COUNT) .E. COLON                                           *058 LM00054    
+                3            .OR. WORD(COUNT-1) .E. PERIOD                                        *058 LM00055    
+                4            .OR. WORD(COUNT-1) .E. QUES                                          *058 LM00056    
+                5            .OR. WORD(COUNT-1) .E. EXCLAM                                        *058 LM00057    
+                6            .OR. WORD(COUNT-2) .E. PERIOD                                        *058 LM00058    
+                7            .OR. WORD(COUNT-2) .E. QUES                                          *058 LM00059    
+                8            .OR. WORD(COUNT-2) .E. EXCLAM                                        *058 LM00060    
+                9                , ADCHR.(BLANK)                                                  *058 LM00061    
+                         ADCHR.(BLANK)                                                            *059 LM00062    
+                       END OF CONDITIONAL                                                         *060 LM00063    
+                    OTHERWISE                                                                     *061 LM00064    
+                                                                                                       LM00065    
+                 .. NEW LINE STARTS NEW PARAGRAPH, PROCESS LAST LINE.                                  LM00066    
+                                                                                                       LM00067    
+                      BREAK.                                                                      *062 LM00068    
+      SKIP            FIRST = 0B                                                                  *063 LM00069    
+                      BEGIN = 0B                                                                  *064 LM00070    
+                    END OF CONDITIONAL                                                            *065 LM00071    
+                    END OF CONDITIONAL                                                            *066 LM00072    
+                    ADCHR.(CHAR)                                                                  *067 LM00073    
+                    FUNCTION RETURN                                                               *068 LM00074    
+                                                                                                       LM00075    
+                  ENTRY TO SETWRD.                                                                *069 LM00076    
+                    ADLP.                                                                         *070 LM00077    
+                    FUNCTION RETURN                                                               *071 LM00078    
+                                                                                                       LM00079    
+                  ENTRY TO SETLIN.                                                                *072 LM00080    
+                    INSERT.                                                                       *073 LM00081    
+                    FUNCTION RETURN                                                               *074 LM00082    
+                                                                                                       LM00083    
+                  ENTRY TO BRKLIN.                                                                *075 LM00084    
+                    BREAK.                                                                        *076 LM00085    
+                    FUNCTION RETURN                                                               *077 LM00086    
+                                                                                                       LM00087    
+                  ENTRY TO SETPAG.                                                                *078 LM00088    
+                    PGOUT.                                                                        *079 LM00089    
+                    FUNCTION RETURN                                                               *080 LM00090    
+                                                                                                       LM00091    
+                  INTERNAL FUNCTION(CHR)                                                          *081 LM00092    
+                  ENTRY TO ADCHR.                                                                 *082 LM00093    
+                    WHENEVER CHR .E. BLANK .AND. WRD                                              *083 LM00094    
+                      ADLP.                                                                       *084 LM00095    
+                      BEGIN = 0B                                                                  *085 LM00096    
+                    OR WHENEVER CHR .NE. BLANK                                                    *086 LM00097    
+                      WRD = 1B                                                                    *087 LM00098    
+                    END OF CONDITIONAL                                                            *088 LM00099    
+                    WHENEVER CHR .E. BCKSPC                                                       *089 LM00100    
+                      SIZE = SIZE - 1                                                             *090 LM00101    
+                    OTHERWISE                                                                     *091 LM00102    
+                      SIZE = SIZE + 1                                                             *092 LM00103    
+                    END OF CONDITIONAL                                                            *093 LM00104    
+                    COUNT = COUNT + 1                                                             *094 LM00105    
+                    WORD(COUNT) = CHR                                                             *095 LM00106    
+                    FUNCTION RETURN                                                               *096 LM00107    
+                                                                                                       LM00108    
+                  END OF FUNCTION                                                                 *097 LM00109    
+                                                                                                       LM00110    
+                  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                          LM00111    
+                                                                                                       LM00112    
+                 ..          SUBROUTINES.                                                              LM00113    
+                                                                                                       LM00114    
+      ADLP       .. FUNCTION TO MOVE WORD INTO LINE.                                                   LM00115    
+                                                                                                       LM00116    
+                  INTERNAL FUNCTION                                                               *098 LM00117    
+                  ENTRY TO ADLP.                                                                  *099 LM00118    
+                    WHENEVER COUNT .LE. 0, FUNCTION RETURN                                        *100 LM00119    
+                    WHENEVER SIZE + NCHARS .G. RMARG .AND. FILL                                   *101 LM00120    
+                      WHENEVER ADJST,ADJUST.(LINE,LENGTH,RMARG,NCHARS)                            *102 LM00121    
+                      INSERT.                                                                     *103 LM00122    
+                    END OF CONDITIONAL                                                            *104 LM00123    
+                    WHENEVER LENGTH .E. 0 .AND. LMARG .G. 0                                       *105 LM00124    
+                      THROUGH MARGLP, FOR I = 1, 1, I .G. LMARG                                   *106 LM00125    
+                        LENGTH = LENGTH + 1                                                       *107 LM00126    
+                        LINE(LENGTH) = BLANK                                                      *108 LM00127    
+       MARGLP           NCHARS = NCHARS + 1                                                       *109 LM00128    
+                    END OF CONDITIONAL                                                            *110 LM00129    
+                    THROUGH ADL1, FOR I = 1, 1, I .G. COUNT                                       *111 LM00130    
+                      WHENEVER WORD(I) .E. BLANK .AND. BEGIN, TRANSFER TO ADL1                    *112 LM00131    
+                      WHENEVER WORD(I) .E. BCKSPC                                                 *113 LM00132    
+                        NCHARS = NCHARS - 1                                                       *114 LM00133    
+                      OTHERWISE                                                                   *115 LM00134    
+                        NCHARS = NCHARS + 1                                                       *116 LM00135    
+                      END OF CONDITIONAL                                                          *117 LM00136    
+                      LENGTH = LENGTH+1                                                           *118 LM00137    
+                      LINE(LENGTH) = WORD(I)                                                      *119 LM00138    
+       ADL1           CONTINUE                                                                    *120 LM00139    
+                    COUNT = 0                                                                     *121 LM00140    
+                    SIZE = 0                                                                      *122 LM00141    
+                    WRD = 0B                                                                      *123 LM00142    
+                    FUNCTION RETURN                                                               *124 LM00143    
+                  END OF FUNCTION                                                                 *125 LM00144    
+                                                                                                       LM00145    
+      INSERT     .. FUNCTION TO ADD LINE TO PAGE.                                                      LM00146    
+                                                                                                       LM00147    
+                  INTERNAL FUNCTION                                                               *126 LM00148    
+                  ENTRY TO INSERT.                                                                *127 LM00149    
+                    WHENEVER LENGTH .LE. LMARG, FUNCTION RETURN                                   *128 LM00150    
+                    WHENEVER LINECT .GE. BOTLIN, PGOUT.                                           *129 LM00151    
+                    WHENEVER CNTR                                                                 *130 LM00152    
+                      CENTER.(LINE,LENGTH,RMARG,NCHARS)                                           *131 LM00153    
+                      CNTR = 0B                                                                   *132 LM00154    
+                      WHENEVER FILSW, FILL = 1B                                                   *133 LM00155    
+                    END OF CONDITIONAL                                                            *134 LM00156    
+                    LINECT = LINECT + 1                                                           *135 LM00157    
+                    PACK.(LINE(1), LENGTH)                                                        *136 LM00158    
+                  WHENEVER FLAGSW                                                                 *137 LM00159    
+                      THROUGH PKEND, FOR I = 1, 1, I .G. RMARG-NCHARS                             *138 LM00160    
+        PKEND           PACK.(BLANK, 1)                                                           *139 LM00161    
+                      PACK.(FLAG(1), 3)                                                           *140 LM00162    
+                      FLAGSW = 0B                                                                 *141 LM00163    
+                    END OF CONDITIONAL                                                            *142 LM00164    
+                    PACK.(RETURN, 1)                                                              *143 LM00165    
+                    WHENEVER DBLSPC .AND. LINECT .L. BOTLIN                                       *144 LM00166    
+                      LINECT = LINECT+1                                                           *145 LM00167    
+                      PACK.(RETURN, 1)                                                            *146 LM00168    
+                    END OF CONDITIONAL                                                            *147 LM00169    
+                    LENGTH = 0                                                                    *148 LM00170    
+                    NCHARS = 0                                                                    *149 LM00171    
+                    BEGIN = 1B                                                                    *150 LM00172    
+                    FUNCTION RETURN                                                               *151 LM00173    
+                  END OF FUNCTION                                                                 *152 LM00174    
+                                                                                                       LM00175    
+      PGOUT      .. FUNCTION TO PRINT OUT PAGE, BEGIN NEXT PAGE.                                       LM00176    
+                                                                                                       LM00177    
+                  INTERNAL FUNCTION                                                               *153 LM00178    
+                  ENTRY TO PGOUT.                                                                 *154 LM00179    
+       PPGE         WHENEVER PAGENO .L. FSTPAG, TRANSFER TO PREPAR                                *155 LM00180    
+                    WHENEVER LINECT .L. 7                                                         *156 LM00181    
+                1      .OR. (LINECT .L. 13 .AND. HEDPGE)                                          *156 LM00182    
+                2      , TRANSFER TO PREPAR                                                       *156 LM00183    
+                  WHENEVER OUTFIL .AND. .NOT. FTSW                                                *157 LM00184    
+                      PACK.(EJECT,1)                                                              *158 LM00185    
+                      TRANSFER TO GAZABE                                                          *159 LM00186    
+                  END OF CONDITIONAL                                                              *160 LM00187    
+                    THROUGH RESTOR, FOR I = LINECT+1, 1, I .GE. BOTPAG-3                          *161 LM00188    
+      RESTOR          PACK.(RETURN, 1)                                                            *162 LM00189    
+                    SETFT.(TBUF, TLTH)                                                            *163 LM00190    
+                    PACK.(TBUF(1), TLTH)                                                          *164 LM00191    
+                    PACK.(RETURN,1)                                                               *165 LM00192    
+                    WHENEVER OUTFIL                                                               *166 LM00193    
+                      PACK.(EJECT,1)                                                              *167 LM00194    
+                    OTHERWISE                                                                     *168 LM00195    
+                      PACK.(RETURN, 2)                                                            *169 LM00196    
+                      WHENEVER NOSTOP, PACK.(RETURN, 1)                                           *170 LM00197    
+                    END OF CONDITIONAL                                                            *171 LM00198    
+      ....       ...............MOVE SOMEPLACE ELSE...........                                         LM00199    
+                    VECTOR VALUES EJECT = 52K                                                     *172 LM00200    
+      ....       .........................                                                             LM00201    
+      GAZABE        PRPAGE.                                                                       *173 LM00202    
+                    WHENEVER .NOT. NOSTOP, WAIT.                                                  *174 LM00203    
+                                                                                                       LM00204    
+      PREPAR        RSPAGE.                                                                       *175 LM00205    
+                    HEDPGE = 0B                                                                   *176 LM00206    
+                    INHDFT.                                                                       *177 LM00207    
+                    TPAGNO = TPAGNO + 1                                                           *178 LM00208    
+                    PACK.(RETURN, 3)                                                              *179 LM00209    
+                    SETHD.(TBUF, TLTH)                                                            *180 LM00210    
+                    PACK.(TBUF(1), TLTH)                                                          *181 LM00211    
+                    PACK.(RETURN, 3)                                                              *182 LM00212    
+                    LINECT = 6                                                                    *183 LM00213    
+                    WHENEVER PIX                                                                  *184 LM00214    
+                      PRPIX.                                                                      *185 LM00215    
+                      LINECT = LINECT+MROW                                                        *186 LM00216    
+                      PIX = 0B                                                                    *187 LM00217    
+                      WHENEVER LINECT .G. BOTLIN, TRANSFER TO PPGE                                *188 LM00218    
+                    END OF CONDITIONAL                                                            *189 LM00219    
+                    FUNCTION RETURN                                                               *190 LM00220    
+                    END OF FUNCTION                                                               *191 LM00221    
+                                                                                                       LM00222    
+      BREAK      .. FUNCTION TO BREAK UP OUTPUT LINES.                                                 LM00223    
+                                                                                                       LM00224    
+                  INTERNAL FUNCTION                                                               *192 LM00225    
+                  ENTRY TO BREAK.                                                                 *193 LM00226    
+                    ADLP.                                                                         *194 LM00227    
+                    INSERT.                                                                       *195 LM00228    
+                 .. DON'T PUT FIRST LINE OF NEW PARAGRAPH AT BOTTOM OF PAGE.                           LM00229    
+                    WHENEVER LINECT + 1 .GE. BOTLIN                                               *196 LM00230    
+                1       .OR.(LINECT + 2 .GE. BOTLIN .AND. DBLSPC)                                 *196 LM00231    
+                2           , PGOUT.                                                              *196 LM00232    
+                    BEGIN = 0B                                                                    *197 LM00233    
+                    FUNCTION RETURN                                                               *198 LM00234    
+                  END OF FUNCTION                                                                 *199 LM00235    
+                                                                                                       LM00236    
+      INHDFT     ..  FUNCTION TO SET PAGING AND HEADING MODES.                                         LM00237    
+                                                                                                       LM00238    
+                  INTERNAL FUNCTION                                                               *200 LM00239    
+                  ENTRY TO INHDFT.                                                                *201 LM00240    
+                    PGPOS = TPGPOS                                                                *202 LM00241    
+                    FTSW = TFTSW                                                                  *203 LM00242    
+                    PGE = TPGE                                                                    *204 LM00243    
+                    THROUGH TPFLP, FOR I = 1, 1, I .G. TPRLTH                                     *205 LM00244    
+      TPFLP           PREFIX(I) = TPRF(I)                                                         *206 LM00245    
+                    PRLTH = TPRLTH                                                                *207 LM00246    
+                    HDPOS = THDPOS                                                                *208 LM00247    
+                    PAGENO = TPAGNO                                                               *209 LM00248    
+                    PGMOD = TPGMOD                                                                *210 LM00249    
+                    BOTLIN = TBTLIN                                                               *211 LM00250    
+                    BOTPAG = TBTPAG                                                               *212 LM00251    
+                    FUNCTION RETURN                                                               *213 LM00252    
+                                                                                                       LM00253    
+                  END OF FUNCTION                                                                 *214 LM00254    
+                                                                                                       LM00255    
+                  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                          LM00256    
+                                                                                                       LM00257    
+                  END OF FUNCTION                                                                 *215 LM00258    
+
+
+
+1     MAD PROGRAM LISTING ... ... ...                 FILE  ADJUST   MAD            02/08/68    1244.0
+-                 
+                 ..  SUBROUTINE TO FILL OUT A LINE WITH BLANKS.                                        LM00001    
+                     (TYPE JUSTIFICATION.)                                                             LM00002    
+                                                                                                       LM00003    
+                 ..  J. H. SALTZER, NOVEMBER, 1964                                                     LM00004    
+                                                                                                       LM00005    
+                  EXTERNAL FUNCTION (LINE, LENGTH, RMARG, NCHARS)                                 *001 LM00006    
+                                                                                                       LM00007    
+                  NORMAL MODE IS INTEGER                                                          *002 LM00008    
+                  BOOLEAN FIRST, CHR                                                              *003 LM00009    
+                  VECTOR VALUES BLANK = 0060K                                                     *004 LM00010    
+                                                                                                       LM00011    
+                  ENTRY TO ADJUST.                                                                *005 LM00012    
+                  WHENEVER NCHARS .GE. RMARG, FUNCTION RETURN                                     *006 LM00013    
+                                                                                                       LM00014    
+                 .. MAKE SURE LINE IS FILLABLE.                                                        LM00015    
+                                                                                                       LM00016    
+                  CHR = 0B                                                                        *007 LM00017    
+                  FSTCH = 1                                                                       *008 LM00018    
+                  THROUGH CKSP, FOR I = 1, 1, I .G. LENGTH                                        *009 LM00019    
+                    WHENEVER LINE(I) .NE. BLANK .AND. (.NOT.CHR)                                  *010 LM00020    
+                      FSTCH = I                                                                   *011 LM00021    
+                      CHR = 1B                                                                    *012 LM00022    
+                    END OF CONDITIONAL                                                            *013 LM00023    
+       CKSP         WHENEVER LINE(I) .E. BLANK .AND. CHR, TRANSFER TO OK                          *014 LM00024    
+                  FUNCTION RETURN                                                                 *015 LM00025    
+                                                                                                       LM00026    
+       OK         FIRST = 1B                                                                      *016 LM00027    
+                                                                                                       LM00028    
+                 .. SCAN LINE BACKWARDS, INSERT SPACES WHERE THERE ARE SPACES                          LM00029    
+                                                                                                       LM00030    
+                  TMARG = RMARG + LENGTH - NCHARS                                                 *017 LM00031    
+       LOOP       PNTR = TMARG                                                                    *018 LM00032    
+                  DEL = -1                                                                        *019 LM00033    
+                  LNOW = LENGTH                                                                   *020 LM00034    
+                  THROUGH BACKLP, FOR J = LENGTH, -1, J .L. FSTCH                                 *021 LM00035    
+       EN1          LINE(PNTR) = LINE(J)                                                          *022 LM00036    
+                    PNTR = PNTR + DEL                                                             *023 LM00037    
+                    WHENEVER LINE(J) .E. BLANK .AND. (FIRST .OR. (J/2)*2 .E. J)                   *024 LM00038    
+                         LINE(PNTR) = BLANK                                                       *025 LM00039    
+                         PNTR = PNTR + DEL                                                        *026 LM00040    
+                         LENGTH = LENGTH + 1                                                      *027 LM00041    
+                         NCHARS = NCHARS + 1                                                      *028 LM00042    
+                         WHENEVER NCHARS .GE. RMARG, FUNCTION RETURN                              *029 LM00043    
+                    END OF CONDITIONAL                                                            *030 LM00044    
+       BACKLP       WHENEVER DEL .G. 0, TRANSFER TO FORLP                                         *031 LM00045    
+                                                                                                       LM00046    
+                 .. IF NOTHING WAS ACCOMPLISHED, GIVE UP.                                              LM00047    
+                                                                                                       LM00048    
+                  WHENEVER LENGTH .E. LNOW, FUNCTION RETURN                                       *032 LM00049    
+                                                                                                       LM00050    
+                 .. NOW SCAN FORWARDS.                                                                 LM00051    
+                                                                                                       LM00052    
+                  FIRST = 0B                                                                      *033 LM00053    
+                  DEL = +1                                                                        *034 LM00054    
+                  BEGIN = PNTR + 1                                                                *035 LM00055    
+                  PNTR = FSTCH                                                                    *036 LM00056    
+                  THROUGH FORLP, FOR J = BEGIN, +1, J .G. TMARG                                   *037 LM00057    
+                    TRANSFER TO EN1                                                               *038 LM00058    
+       FORLP        CONTINUE                                                                      *039 LM00059    
+                  TRANSFER TO LOOP                                                                *040 LM00060    
+                                                                                                       LM00061    
+                 .. SUBROUTINE TO CENTER A LINE.                                                       LM00062    
+                                                                                                       LM00063    
+                  ENTRY TO CENTER.                                                                *041 LM00064    
+                  WHENEVER NCHARS .GE. RMARG-1, FUNCTION RETURN                                   *042 LM00065    
+                  DEL = (RMARG-NCHARS)/2                                                          *043 LM00066    
+                  THROUGH CTRLP, FOR I = LENGTH, -1, I .L. 1                                      *044 LM00067    
+       CTRLP        LINE(I+DEL) = LINE(I)                                                         *045 LM00068    
+                  THROUGH FILLUP, FOR I = 1, 1, I .G. DEL                                         *046 LM00069    
+       FILLUP       LINE(I) = BLANK                                                               *047 LM00070    
+                  LENGTH = LENGTH + DEL                                                           *048 LM00071    
+                  NCHARS = NCHARS + DEL                                                           *049 LM00072    
+                  FUNCTION RETURN                                                                 *050 LM00073    
+                                                                                                       LM00074    
+                  END OF FUNCTION                                                                 *051 LM00075    
+
+
+
+1     MAD PROGRAM LISTING ... ... ...                 FILE    HDFT   MAD            02/08/68    1244.5
+-                 
+                 ..  ROUTINE TO SET UP HEADER AND FOOTER HFLINES.                                      LM00001    
+                 ..                                                                                    LM00002    
+                 ..  J. H. SALTZER, DECEMBER, 1965                                                     LM00003    
+                                                                                                       LM00004    
+                  EXTERNAL FUNCTION(HFLINE, HFLTH)                                                *001 LM00005    
+                                                                                                       LM00006    
+                  NORMAL MODE IS INTEGER                                                          *002 LM00007    
+                  BOOLEAN EVENPG                                                                  *003 LM00008    
+                  VECTOR VALUES BLANK = 0060K                                                     *004 LM00009    
+                  INSERT FILE RCOM                                                                *005 LM00010    
+                                                                                                  *005 LM00001    
+                 ..  RUNOFF COMMON PACKAGE.                                                       *005 LM00002    
+                                                                                                  *005 LM00003    
+                  NORMAL MODE IS INTEGER                                                          *006 LM00004    
+                                                                                                       LM00005    
+                  PROGRAM COMMON NOSTOP, NOWAIT, FSTPAG, PRINAM, OUTFIL                           *007 LM00006    
+                  PROGRAM COMMON HDLTH, HEAD(360), HDPOS                                          *008 LM00007    
+                  PROGRAM COMMON LINE(360)                                                        *009 LM00008    
+                  PROGRAM COMMON PGE, PAGENO, PGPOS, FTSW, PGMOD                                  *010 LM00009    
+                  PROGRAM COMMON PREFIX(25), PRLTH                                                *011 LM00010    
+                  PROGRAM COMMON RMARG                                                            *012 LM00011    
+                  PROGRAM COMMON WRD, SIZE, COUNT, WORD(360)                                      *013 LM00012    
+                  PROGRAM COMMON BEGIN, FILL, ADJST, NCHARS, LENGTH                               *014 LM00013    
+                  PROGRAM COMMON LMARG, LINECT, BOTLIN, CNTR, FILSW                               *015 LM00014    
+                  PROGRAM COMMON FLAGSW, DBLSPC, HEDPGE, PIX                                      *016 LM00015    
+                  PROGRAM COMMON MROW, TBTLIN, TBTPAG                                             *017 LM00016    
+                  PROGRAM COMMON TPGPOS, TFTSW, TPGE, TPRF(25)                                    *018 LM00017    
+                  PROGRAM COMMON TPRLTH, THDPOS, TPAGNO, TPGMOD                                   *019 LM00018    
+                  PROGRAM COMMON BOTPAG, FLAG(3)                                                  *020 LM00019    
+                  PROGRAM COMMON BLANK, BCKSPC, RETURN(3)                                         *021 LM00020    
+                  PROGRAM COMMON TAB, PERIOD, QUES, EXCLAM                                        *022 LM00021    
+                  PROGRAM COMMON COLON, HYPHEN, NULL                                              *023 LM00022    
+                                                                                                       LM00023    
+                  BOOLEAN NOSTOP, NOWAIT, FTSW, PGE, OUTFIL                                       *024 LM00024    
+                  BOOLEAN ADJST                                                                   *025 LM00025    
+                  BOOLEAN WRD, FILL, BEGIN, CNTR, FILSW, FLAGSW                                   *026 LM00026    
+                  BOOLEAN DBLSPC, HEDPGE, PIX, TPGE, TFTSW                                        *027 LM00027    
+                                                                                                       LM00028    
+                 ..  END OF RUNOFF COMMON PACKAGE                                                      LM00029    
+                                                                                                       LM00030    
+                                                                                                  *005 LM00011    
+                  ENTRY TO SETHD.                                                                 *028 LM00012    
+                    I = 1                                                                         *029 LM00013    
+                    HFLTH = 0                                                                     *030 LM00014    
+                    EVENPG = (PAGENO/2)*2 .E. PAGENO                                              *031 LM00015    
+                    WHENEVER HDLTH .E. 0, TRANSFER TO PAGET                                       *032 LM00016    
+                                                                                                       LM00017    
+                 ..  SET Z TO POSITION OF HEADER.                                                      LM00018    
+                                                                                                       LM00019    
+                    WHENEVER HDPOS .E. $CENTER$                                                   *033 LM00020    
+                      Z = (RMARG - HDLTH) / 2                                                     *034 LM00021    
+                    OR WHENEVER HDPOS .E. $FACING$ .AND. EVENPG                                   *035 LM00022    
+                      Z = 0                                                                       *036 LM00023    
+                    OR WHENEVER HDPOS .E. $MARGIN$ .OR. HDPOS .E. $FACING$                        *037 LM00024    
+                      Z = RMARG - HDLTH                                                           *038 LM00025    
+                    OR WHENEVER HDPOS .E. $PPOSED$                                                *039 LM00026    
+                      WHENEVER EVENPG .AND. PGPOS .E. $FACING$                                    *040 LM00027    
+                        Z = RMARG - HDLTH                                                         *041 LM00028    
+                      OTHERWISE                                                                   *042 LM00029    
+                        Z = 0                                                                     *043 LM00030    
+                      END OF CONDITIONAL                                                          *044 LM00031    
+                    END OF CONDITIONAL                                                            *045 LM00032    
+                                                                                                       LM00033    
+                 ..  PACK BLANKS AHEAD OF THE HEADER.                                                  LM00034    
+                                                                                                       LM00035    
+                    THROUGH PADHD, FOR I = 1, 1, I .G. Z                                          *046 LM00036    
+      PADHD           HFLINE(I) = BLANK                                                           *047 LM00037    
+                                                                                                       LM00038    
+                 ..  NOW INSERT THE HEADER.                                                            LM00039    
+                                                                                                       LM00040    
+                    THROUGH INHEAD, FOR I = Z+1, 1, I .G. (Z+HDLTH)                               *048 LM00041    
+      INHEAD          HFLINE(I) = HEAD(I-Z)                                                       *049 LM00042    
+                    HFLTH = I-1                                                                   *050 LM00043    
+                                                                                                       LM00044    
+                 ..  GO GET THE PAGE NUMBER, IF ANY.                                                   LM00045    
+                                                                                                       LM00046    
+      PAGET         WHENEVER .NOT.FTSW, TRANSFER TO FOOT                                          *051 LM00047    
+                    FUNCTION RETURN                                                               *052 LM00048    
+                                                                                                       LM00049    
+                  ENTRY TO SETFT.                                                                 *053 LM00050    
+                    HFLTH = 0                                                                     *054 LM00051    
+                    WHENEVER .NOT.FTSW, FUNCTION RETURN                                           *055 LM00052    
+                    I = 1                                                                         *056 LM00053    
+                    EVENPG = (PAGENO/2)*2 .NE. PAGENO                                             *057 LM00054    
+                                                                                                       LM00055    
+      FOOT          WHENEVER .NOT. PGE, FUNCTION RETURN                                           *058 LM00056    
+                    NMLTH = NUMCON.(PAGENO, PREFIX(PRLTH), PGMOD) + PRLTH                         *059 LM00057    
+                                                                                                       LM00058    
+                 ..  SET Z TO POSITION OF PAGE NUMBER.                                                 LM00059    
+                                                                                                       LM00060    
+                    WHENEVER PGPOS .E. $CENTER$                                                   *060 LM00061    
+                      Z = (RMARG-NMLTH)/2                                                         *061 LM00062    
+                    OR WHENEVER PGPOS .E. $FACING$ .AND. EVENPG                                   *062 LM00063    
+                      Z = 0                                                                       *063 LM00064    
+                    OTHERWISE                                                                     *064 LM00065    
+                      Z = RMARG - NMLTH                                                           *065 LM00066    
+                    END OF CONDITIONAL                                                            *066 LM00067    
+                                                                                                       LM00068    
+                 ..  PACK BLANKS IF NOT ALREADY THERE.                                                 LM00069    
+                                                                                                       LM00070    
+                    THROUGH PADFT, FOR I = I, 1, I .G. Z                                          *067 LM00071    
+      PADFT           HFLINE(I) = BLANK                                                           *068 LM00072    
+                                                                                                       LM00073    
+                 ..  INSERT PAGE NUMBER.                                                               LM00074    
+                                                                                                       LM00075    
+                    THROUGH INPAGE, FOR I = Z+1, 1, I .G. (Z+NMLTH)                               *069 LM00076    
+      INPAGE          HFLINE(I) = PREFIX(I-Z)                                                     *070 LM00077    
+                                                                                                       LM00078    
+                    WHENEVER HFLTH .L. I-1, HFLTH = I-1                                           *071 LM00079    
+                    FUNCTION RETURN                                                               *072 LM00080    
+                                                                                                       LM00081    
+                  END OF FUNCTION                                                                 *073 LM00082    
+
+
+
+1     MAD PROGRAM LISTING ... ... ...                 FILE  NUMCON   MAD            02/08/68    1245.5
+-                 
+                 ..  BINARY NUMBER TO CHARACTER STRING CONVERSION.                                     LM00001    
+                                                                                                       LM00002    
+                 ..  CALLING SEQUENCE...                                                               LM00003    
+                 ..      Z = NUMCON.(INT, LOC, MODE)                                                   LM00004    
+                     WHERE                                                                             LM00005    
+                 ..      INT IS THE NUMBER TO BE CONVERTED                                             LM00006    
+                 ..   LOC(1) IS FIRST LOCATION TO RECEIVE OUTPUT.                                      LM00007    
+                      MODE IS ARABIC FOR ARABIC                                                        LM00008    
+                              ROMANU FOR UPPER CASE ROMAN                                              LM00009    
+                              ROMANL FOR LOWER CASE ROMAN.                                             LM00010    
+                 ..        Z IS LENGTH OF OUTPUT STRING.                                               LM00011    
+                                                                                                       LM00012    
+                  EXTERNAL FUNCTION(INT, LOC, MODE)                                               *001 LM00013    
+                                                                                                       LM00014    
+                    NORMAL MODE IS INTEGER                                                        *002 LM00015    
+                    VECTOR VALUES PLACE(1) = $00000I$, $00000V$, $00000X$,                        *003 LM00016    
+                1      $00000L$, $00000C$, $00000D$, $00000M$                                     *003 LM00017    
+                    VECTOR VALUES NMODES = 3                                                      *004 LM00018    
+                    VECTOR VALUES XMODE(1) = $ARABIC$,$ROMANU$,$ROMANL$                           *005 LM00019    
+b                    VECTOR VALUES CONV(1) = ARABIC, ROMANU, ROMANL                                *006 LM00020    
+                  DIMENSION OBUF(16)                                                              *007 LM00021    
+                                                                                                       LM00022    
+                  ENTRY TO NUMCON.                                                                *008 LM00023    
+                    Q = 0                                                                         *009 LM00024    
+                    K = INT                                                                       *010 LM00025    
+                    CASEBT = 0                                                                    *011 LM00026    
+                    THROUGH DSPTCH, FOR I = 1, 1, I .G. NMODES                                    *012 LM00027    
+      DSPTCH          WHENEVER XMODE(I) .E. MODE, TRANSFER TO CONV(I)                             *013 LM00028    
+                    FUNCTION RETURN                                                               *014 LM00029    
+                                                                                                       LM00030    
+      . . . .    ..  CONVERT TO ARABIC NUMBERS . . . . . .                                             LM00031    
+                                                                                                       LM00032    
+      ARABIC        OUT.(K - (K/10)*10)                                                           *015 LM00033    
+                    K = K/10                                                                      *016 LM00034    
+                    WHENEVER K .G. 0, TRANSFER TO ARABIC                                          *017 LM00035    
+                    TRANSFER TO DONE                                                              *018 LM00036    
+                                                                                                       LM00037    
+      . . . .    ..  CONVERT TO ROMAN NUMERALS . . . . . .                                             LM00038    
+                                                                                                       LM00039    
+      ROMANL        CASEBT = $000010$                                                             *019 LM00040    
+                                                                                                       LM00041    
+      ROMANU      THROUGH SCAN, FOR J = 1, 2, K .E. 0                                             *020 LM00042    
+                    R1 = K-(K/5)*5                                                                *021 LM00043    
+                    K = K/5                                                                       *022 LM00044    
+                    R2 = K-(K/2)*2                                                                *023 LM00045    
+                    K = K/2                                                                       *024 LM00046    
+                                                                                                       LM00047    
+                    WHENEVER R1 .E. 4                                                             *025 LM00048    
+                      WHENEVER R2 .E. 0                                                           *026 LM00049    
+                        OUT.(PLACE(J+1))                                                          *027 LM00050    
+                      OTHERWISE                                                                   *028 LM00051    
+                        OUT.(PLACE(J+2))                                                          *029 LM00052    
+                      END OF CONDITIONAL                                                          *030 LM00053    
+                      OUT.(PLACE(J))                                                              *031 LM00054    
+                    OTHERWISE                                                                     *032 LM00055    
+                      THROUGH COUNT, FOR I = 1, 1, I .G. R1                                       *033 LM00056    
+      COUNT             OUT.(PLACE(J))                                                            *034 LM00057    
+                      WHENEVER R2 .E. 1, OUT.(PLACE(J+1))                                         *035 LM00058    
+      SCAN          END OF CONDITIONAL                                                            *036 LM00059    
+                                                                                                       LM00060    
+      DONE          THROUGH OUTPUT, FOR K = 1, 1, K .G. Q                                         *037 LM00061    
+      OUTPUT          LOC(K) = OBUF(Q-K+1)                                                        *038 LM00062    
+                    FUNCTION RETURN Q                                                             *039 LM00063    
+                                                                                                       LM00064    
+                    INTERNAL FUNCTION(X)                                                          *040 LM00065    
+                      ENTRY TO OUT.                                                               *041 LM00066    
+                        Q = Q + 1                                                                 *042 LM00067    
+                        OBUF(Q) = X .V. CASEBT                                                    *043 LM00068    
+                        FUNCTION RETURN                                                           *044 LM00069    
+                    END OF FUNCTION                                                               *045 LM00070    
+                                                                                                       LM00071    
+                  END OF FUNCTION                                                                 *046 LM00072    
+
+
+
+1     MAD PROGRAM LISTING ... ... ...                 FILE  FRAME1   MAD            02/08/68    1244.9
+-                 
+                 ..  ROUTINES TO FRAME OUT AND PRINT FLOW DIAGRAMS.                                    LM00001    
+                                                                                                       LM00002    
+                 ..  J. H. SALTZER, JANUARY, 1965.                                                     LM00003    
+                                                                                                       LM00004    
+                  EXTERNAL FUNCTION(PAGE, DP)                                                     *001 LM00005    
+                                                                                                       LM00006    
+                  DIMENSION LENGTH(100)                                                           *002 LM00007    
+                  VECTOR VALUES FENCE = 777777777777K                                             *003 LM00008    
+                  VECTOR VALUES DISK = 1                                                          *004 LM00009    
+                  DIMENSION LINE(100)                                                             *005 LM00010    
+                  VECTOR VALUES RETURN = 0055K                                                    *006 LM00011    
+                  VECTOR VALUES PERIOD = 0033K                                                    *007 LM00012    
+                  VECTOR VALUES BLANK = 0060K                                                     *008 LM00013    
+                  VECTOR VALUES NULL = 0057K                                                      *009 LM00014    
+                  NORMAL MODE IS INTEGER                                                          *010 LM00015    
+                                                                                                       LM00016    
+                  ENTRY TO FRAME1.                                                                *011 LM00017    
+       IN         LENGTH = READ.(LINE, 100, EOF)                                                  *012 LM00018    
+                  WHENEVER LINE(1) .E. PERIOD, TRANSFER TO CONTRL                                 *013 LM00019    
+       DATA       WHENEVER ROW .G.  MAXROW                                                        *014 LM00020    
+       COM          PRINT COMMENT $0B0O0X0 0E0X0T0E0N0D0S0 0O0U0T0S0I0D0E0 0F0R                   *015 LM00021    
+                1 0A0M0E0.$                                                                       *015 LM00022    
+                    ROW = ROW + 1                                                                 *016 LM00023    
+                    TRANSFER TO IN                                                                *017 LM00024    
+                  END OF CONDITIONAL                                                              *018 LM00025    
+                  THROUGH PUTLIN, FOR I = 1, 1, I .G. LENGTH                                      *019 LM00026    
+                  WHENEVER COL+I-1 .G. MAXCOL .AND. LINE(I) .NE. NULL, TRANSFER TO COM            *020 LM00027    
+       PUTLIN       WHENEVER LINE(I) .NE. NULL, PAGE(ROW, COL+I-1) = LINE(I)                      *021 LM00028    
+                  ROW = ROW+1                                                                     *022 LM00029    
+                  TRANSFER TO IN                                                                  *023 LM00030    
+                                                                                                       LM00031    
+       CONTRL     EDCT = 1                                                                        *024 LM00032    
+                  CWD = GET.(0)                                                                   *025 LM00033    
+                  WHENEVER CWD .E. $   BOX$ .OR. CWD .E. $    BO$                                 *026 LM00034    
+                    ROW = NUM.(0)                                                                 *027 LM00035    
+                    COL = NUM.(0)                                                                 *028 LM00036    
+                                                                                                       LM00037    
+                  OR WHENEVER CWD .E. $ FRAME$                                                    *029 LM00038    
+                    MAXROW = NUM.(0)                                                              *030 LM00039    
+                    MAXCOL = NUM.(0)                                                              *031 LM00040    
+                    DP(2) = MAXCOL + 1                                                            *032 LM00041    
+                    THROUGH BLANKR, FOR I = 1, 1, I .G. MAXROW*(MAXCOL+1)                         *033 LM00042    
+       BLANKR         PAGE(I) = BLANK                                                             *034 LM00043    
+                                                                                                       LM00044    
+                  OR WHENEVER CWD .E. $   END$                                                    *035 LM00045    
+       EOF          FUNCTION RETURN MAXROW                                                        *036 LM00046    
+                  OTHERWISE                                                                       *037 LM00047    
+                    TRANSFER TO DATA                                                              *038 LM00048    
+                                                                                                       LM00049    
+                  END OF CONDITIONAL                                                              *039 LM00050    
+                  TRANSFER TO IN                                                                  *040 LM00051    
+                                                                                                       LM00052    
+                  ENTRY TO PRPIX1.                                                                *041 LM00053    
+                    THROUGH PRSCN, FOR ROW = 1, 1, ROW .G. MAXROW                                 *042 LM00054    
+                      LENGTH(ROW) = SIZE.(ROW) + 1                                                *043 LM00055    
+                      PAGE(ROW, LENGTH(ROW)) = RETURN                                             *044 LM00056    
+       PRSCN          PACK.(PAGE(ROW,1), LENGTH(ROW))                                             *045 LM00057    
+                    RSMEM.                                                                        *046 LM00058    
+                    FUNCTION RETURN                                                               *047 LM00059    
+                                                                                                       LM00060    
+       SIZE.     .. FUNCTION TO SCAN FOR LINE SIZE.                                                    LM00061    
+                                                                                                       LM00062    
+                  INTERNAL FUNCTION(RW)                                                           *048 LM00063    
+                  ENTRY TO SIZE.                                                                  *049 LM00064    
+       SZLP         THROUGH SZLP, FOR I = MAXCOL, -1, I .E. 0                                     *050 LM00065    
+                1         .OR. PAGE(RW, I) .NE. BLANK                                             *050 LM00066    
+                    FUNCTION RETURN I                                                             *051 LM00067    
+                  END OF FUNCTION                                                                 *052 LM00068    
+                                                                                                       LM00069    
+       GET.      ..  FUNCTION TO OBTAIN AGRUMENT WORD IN 6-BIT MODE.                                   LM00070    
+                                                                                                       LM00071    
+                  INTERNAL FUNCTION                                                               *053 LM00072    
+                  ENTRY TO GET.                                                                   *054 LM00073    
+                    WORD = $ $                                                                    *055 LM00074    
+                    SCANB.                                                                        *056 LM00075    
+       GTLP         EDCT = EDCT + 1                                                               *057 LM00076    
+                    WHENEVER LINE(EDCT) .E. BLANK .OR. EDCT .G. LENGTH                            *058 LM00077    
+                1           , FUNCTION RETURN WORD                                                *058 LM00078    
+                    WORD = (WORD .LS. 6) .V. (LINE(EDCT) .A. 77K)                                 *059 LM00079    
+                    TRANSFER TO GTLP                                                              *060 LM00080    
+                  END OF FUNCTION                                                                 *061 LM00081    
+                                                                                                       LM00082    
+       NUM.      .. FUNCTION TO OBTAIN DECIMAL INTEGER FROM INPUT.                                     LM00083    
+                                                                                                       LM00084    
+                  INTERNAL FUNCTION                                                               *062 LM00085    
+                  ENTRY TO NUM.                                                                   *063 LM00086    
+                    INT = 0                                                                       *064 LM00087    
+                    SCANB.                                                                        *065 LM00088    
+       MULP         EDCT = EDCT + 1                                                               *066 LM00089    
+                    WHENEVER LINE(EDCT) .E. BLANK .OR. EDCT .G. LENGTH                            *067 LM00090    
+                1      .OR. LINE(EDCT) .G. 9, FUNCTION RETURN INT                                 *067 LM00091    
+                    INT = INT*10 + LINE(EDCT)                                                     *068 LM00092    
+                    TRANSFER TO MULP                                                              *069 LM00093    
+                  END OF FUNCTION                                                                 *070 LM00094    
+                                                                                                       LM00095    
+       SCANB.    ..  FUNCTION TO SCAN FOR NON-BLANK CHARACTER.                                         LM00096    
+                                                                                                       LM00097    
+                  INTERNAL FUNCTION                                                               *071 LM00098    
+                  ENTRY TO SCANB.                                                                 *072 LM00099    
+       SCANLP       WHENEVER LINE(EDCT+1) .NE. BLANK .OR. EDCT+1 .G. LENGTH                       *073 LM00100    
+                1        , FUNCTION RETURN                                                        *073 LM00101    
+                    EDCT = EDCT+1                                                                 *074 LM00102    
+                    TRANSFER TO SCANLP                                                            *075 LM00103    
+                  END OF FUNCTION                                                                 *076 LM00104    
+                                                                                                       LM00105    
+                  END OF FUNCTION                                                                 *077 LM00106    
+
+
+
+1     MAD PROGRAM LISTING ... ... ...                 FILE  SYMSTO   MAD            02/08/68    1245.2
+
+                 ..  SYMBOL TABLE PACKAGE.                                                             LM00001    
+                                                                                                       LM00002    
+                 ..  J. H. SALTZER, JANUARY, 1965.                                                     LM00003    
+                                                                                                       LM00004    
+                  EXTERNAL FUNCTION(SYMBOL, VALUE)                                                *001 LM00005    
+                  NORMAL MODE IS INTEGER                                                          *002 LM00006    
+                  DIMENSION SYM(10), VAL(10)                                                      *003 LM00007    
+                  VECTOR VALUES COUNT = 0                                                         *004 LM00008    
+                                                                                                       LM00009    
+                  ENTRY TO SYMSTO.                                                                *005 LM00010    
+                    WHENEVER COUNT .GE. 10                                                        *006 LM00011    
+                      PRINTCOMMENT $0S0Y0M0B0O0L0 0T0A0B0L0E0 0O0V0E0R0F0L0O0W$                   *007 LM00012    
+                      FUNCTION RETURN                                                             *008 LM00013    
+                    END OF CONDITIONAL                                                            *009 LM00014    
+                    COUNT = COUNT + 1                                                             *010 LM00015    
+                    SYM(COUNT) = SYMBOL                                                           *011 LM00016    
+                    VAL(COUNT) = VALUE                                                            *012 LM00017    
+                    FUNCTION RETURN                                                               *013 LM00018    
+                                                                                                       LM00019    
+                  ENTRY TO SYMGET.                                                                *014 LM00020    
+                    THROUGH LOOK, FOR I = 1, 1, I .G. COUNT                                       *015 LM00021    
+       LOOK           WHENEVER SYM(I) .E. SYMBOL, FUNCTION RETURN VAL(I)                          *016 LM00022    
+                    FUNCTION RETURN 0                                                             *017 LM00023    
+                  END OF FUNCTION                                                                 *018 LM00024    
+
+
