@@ -1,0 +1,81 @@
+Subject: Re: UNIX manpage history
+From: Jerry Saltzer
+Date: 06/11/2011 04:09
+To: Kristaps Dzonsons
+
+Kristaps,
+
+Thanks for the progress report on the manpage history.  You have tracked
+down quite a few pertinent facts and performed a valuable service in
+straightening out the information and clearly outlining several
+remaining mysteries.
+
+In the interest of accuracy and completeness, I list below a few minor
+details that you might consider adjusting.
+
+					       Jerry
+
+--------------- 1.  Memo, Modify and Ditto:  The documentation of those
+commands (Computation Center Memo CC-205, March 11, 1963) was authored
+by M. J. Leslie Lowry, Fernando J. Corbató, and J. Richard Steinberg.  I
+believe it is appropriate to identify all three of them as the
+designers.  A copy of CC-205 is attached below.
+
+2.  The zip file reached by the link "source file containing RUNOFF"
+also contains several other unrelated CTSS commands.  Attached below are
+two files that contain just the source code (in MAD and FAP) of RUNOFF
+and a text file showing how they relate.
+
+3.  The file under the link "manual" leads to just a synopsis, not the
+full manual.  Also, it appears to be a synopsis of the somewhat expanded
+Multics version.
+
+4.  The second source under 1964 is incorrectly attributed.  Patricia
+Crisman was the general editor of the programmers guide.  I was the
+author of section AH.9.01.  A better way to cite this source would be
+
+• Jerome H. Saltzer, Manuscript Typing and Editing, section AH.9.01 of
+The Compatible Time-Sharing System, A Programmers Guide, Patricia
+Crisman, editor (second edition). M.I.T. Press, 1965 (revised December
+1966). (HTML)
+
+5.  The title of the 3rd source under 1964 has a typo; it should be
+"TYPSET and RUNOFF,..."
+
+6.  I just remembered another branch:  Starting sometime around 1966,
+General Electric began running a commercial time-sharing service on the
+GE-635, using Dartmouth's 635 version of DTSS.  I was surprised to
+discover that RUNOFF was one of the applications available on that
+service.  Whether that version of RUNOFF is somehow related to the
+unconfirmed Bell Labs ports to the 635 is a mystery that needs some
+followup.
+
+7.  In the list of sources for the discussion of SCRIPT (1967) the link
+"UNIX manpage history..." produces a 404 not found response.
+
+8.  Under 1969 runoff (Douglas McIlroy) there is a comment that "the
+mention of CTSS is incorrect."  There are two mentions of CTSS in the
+previous few sentences; it is not clear which one you are identifying as
+incorrect--I think it is the one in the context "under CTSS".  I suggest
+that you clarify that.
+
+However, I believe that your correction changing CTSS to GECOS is an
+oversimplification.  There was an as yet unmentioned additional branch
+in the RUNOFF tree:  an ASCII version of RUNOFF, named roff and written
+in BCPL, running on CTSS.  Where this version fits in the tree I am not
+sure.  It seems likely that there was just one roff BCPL source that was
+recompiled everywhere that BCPL was available (GECOS, CTSS, and Multics
+for starters) with support from local machine language interludes to the
+underlying operating system.  So a better correction might be that the
+BCPL roff was developed by McIlroy under GECOS and ported to CTSS and
+Multics.
+
+9.  Under 1971 roff (Ritchie) the 4th source is identified as "Multics
+System Programmer's Manual".  It would be more accurate to identify it
+as "Multics System Programmers Manual Table of Contents", so that people
+don't expect to find the whole manual at the other end of that link.  A
+few of the sections are there, but most are not.
+
+10.  Under "people" the entry for my name is misleading--I was not
+working in the CTSS project.  I wrote RUNOFF as a graduate student to
+format my doctoral thesis proposal.

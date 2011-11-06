@@ -52,7 +52,8 @@
 					<A HREF="#saltzer">Saltzer</A> wrote the <SPAN CLASS="cmd">RUNOFF</SPAN> utility for <ABBR
 					TITLE="Massachusettes Institute of Technology">MIT</ABBR>'s <ABBR TITLE="International Business
 					Machines">IBM</ABBR> 7094 <ABBR TITLE="Compatible Time-Sharing System">CTSS</ABBR> operating system in
-					the <ABBR TITLE="Michigan Algorithm Decoder">MAD</ABBR> computer language.  Its legacy is considerable:
+					the <ABBR TITLE="Michigan Algorithm Decoder">MAD</ABBR> computer language.  
+					Its legacy is considerable:
 					not only do contemporary manpages inherit from <SPAN CLASS="cmd">RUNOFF</SPAN>, many of them, in fact,
 					use instructions identical to those specified in the original <SPAN CLASS="cmd">RUNOFF</SPAN> manual.
 				</P>
@@ -68,7 +69,9 @@
 					and <CODE>br</CODE> are still common-place.  According to <A HREF="#saltzer">Saltzer</A> and the source
 					literature, the syntax of <SPAN CLASS="cmd">RUNOFF</SPAN> inherits loosely from the prior <SPAN
 					CLASS="cmd">DITTO</SPAN>, <SPAN CLASS="cmd">MEMO</SPAN>, and <SPAN CLASS="cmd">MODIFY</SPAN> utilities
-					by M. J. Leslie Lowry, Fernando J. Corbat&oacute;, and J. Richard Steinberg, 1963.
+					by M. J. Leslie Lowry, Fernando J. Corbat&oacute;, and J. Richard Steinberg, 1963.  The original purpose
+					of <SPAN CLASS="cmd">RUNOFF</SPAN> was to format <A HREF="#saltzer">Salter</A>'s doctoral thesis
+					proposal.
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -109,6 +112,10 @@
 						<LI>
 							Jerome Saltzer, <I><A HREF="history/saltzer_22_10_2011.txt">UNIX manpage history: CTSS
 							RUNOFF</A></I>.  22 October, 2011.  Email to Kristaps Dzonsons.
+						</LI>
+						<LI>
+							Jerome Saltzer, <I><A HREF="history/saltzer_06_11_2011.txt">UNIX manpage history: CTSS
+							RUNOFF</A></I>.  06 November, 2011.  Email to Kristaps Dzonsons.
 						</LI>
 					</UL>
 				</DIV>
@@ -260,18 +267,9 @@
 				</BLOCKQUOTE>
 				<P>
 					<A HREF="#mcilroy">McIlroy</A>'s port is at times referred to as <SPAN CLASS="cmd">runoff</SPAN>, at
-					times as <SPAN CLASS="cmd">roff</SPAN>.  <A HREF="#saltzer">Saltzer</A> writes, <Q>my understanding was
-					that Doug [<A HREF="#mcilroy">McIlroy</A>] did the conversion of <A CLASS="cmd"
-					HREF="#1964_RUNOFF">RUNOFF</A> from the <ABBR TITLE="Compatible Time-Sharing System">CTSS</ABBR>
-					extended character set to <ABBR TITLE="American Standard Code for Information Interchange">ASCII</ABBR>,
-					using <ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR>, under <ABBR TITLE="Compatible
-					Time-Sharing System">CTSS</ABBR>.  He chose to name the port <SPAN CLASS="cmd">roff</SPAN>, I think to
-					distinguish the ASCII version from the <ABBR TITLE="Compatible Time-Sharing System">CTSS</ABBR> extended
-					character set version.</Q>  (Ed., the mention of <ABBR TITLE="Compatible Time-Sharing
-					System">CTSS</ABBR> is incorrect; it was <ABBR TITLE="General Electric Comprehensive Operating
-					Supervisor">GECOS</ABBR>.) <A HREF="#mcilroy">McIlroy</A> writes similarly, <Q>I see that I called it
-					<SPAN CLASS="cmd">runoff</SPAN> in 1969.  By 1971 it was <SPAN CLASS="cmd">roff</SPAN>.  Now I'm not so
-					sure I got the name from <A HREF="#morris">Morris</A>.  Conceivably it came from <A
+					times as <SPAN CLASS="cmd">roff</SPAN>.  The reason for renaming is not entirely clear: <Q>I see that I
+					called it <SPAN CLASS="cmd">runoff</SPAN> in 1969.  By 1971 it was <SPAN CLASS="cmd">roff</SPAN>.  Now
+					I'm not so sure I got the name from <A HREF="#morris">Morris</A>.  Conceivably it came from <A
 					HREF="#thompson">Thompson</A>, who was big on shortening names.  My 1971 description came in January;
 					the first ediion Unix manual is dated December 1971.</Q> 
 				</P>
@@ -482,7 +480,8 @@
 							Manual</A></I>, First Edition.  November 3, 1971.
 						</LI>
 						<LI>
-							<A HREF="http://www.multicians.org/mspmtoc.html">Multics System Programmer's Manual</A>,
+							Table of contents and partial listing of the <A
+							HREF="http://www.multicians.org/mspmtoc.html">Multics System Programmer's Manual</A>,
 							hosted by <A HREF="http://www.multicians.org/">Multicians.org</A>.
 						</LI>
 						<LI>
@@ -979,9 +978,9 @@
 				<DT ID="saltzer">Saltzer, Jerome H.</DT>
 				<DD>
 					<P>
-						Wrote <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> while working in <ABBR
-						TITLE="Massachusettes Institute of Technology">MIT</ABBR>'s <ABBR TITLE="Compatible Time-Sharing
-						System">CTSS</ABBR> project.  Homepage: <A HREF="http://mit.edu/saltzer/">mit.edu/saltzer</A>.
+						Wrote <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> while working a student at <ABBR
+						TITLE="Massachusettes Institute of Technology">MIT</ABBR>.  Homepage: <A
+						HREF="http://mit.edu/saltzer/">mit.edu/saltzer</A>.
 					</P>
 				</DD>
 				<DT ID="spencer">Spencer, Henry</DT>

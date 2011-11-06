@@ -5,8 +5,10 @@ DATE	= 05 November 2011
 
 CFLAGS  += -W -Wall -Wstrict-prototypes -Wno-unused-parameter -Wwrite-strings
 
-HISTORY = history/RUNOFF.gz \
-	  history/RUNOFF.info \
+HISTORY = history/CC-205.pdf \
+	  history/RUNOFF_fap_archive.txt \
+	  history/RUNOFF_fap_support.txt \
+	  history/RUNOFF_mad_archive.txt \
 	  history/canaday_24_10_2011.txt \
 	  history/canaday_27_10_2011.txt \
 	  history/clarke_28_10_2011.txt \
@@ -26,6 +28,7 @@ HISTORY = history/RUNOFF.gz \
 	  history/runoff.s.gz \
 	  history/runoff69.high.pdf.gz \
 	  history/runoff69.low.pdf \
+	  history/saltzer_06_11_2011.txt \
 	  history/saltzer_22_10_2011.txt \
 	  history/saltzer_23_10_2011.txt \
 	  history/spencer_22_10_2011.txt \
