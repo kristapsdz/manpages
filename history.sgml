@@ -29,7 +29,7 @@
 			HREF="http://plan9.bell-labs.com/sources/plan9/sys/src/">Plan 9 sources</A>;  <A
 			HREF="http://www.bitsavers.org/">BitSavers</A> for their historical archive; and last but not least, Rudd Canaday, James
 			Clarke, Brian Kernighan, Douglas McIlroy, Nils-Peter Nelson, Jerome Saltzer, Henry Spencer, Ken Thompson, and Tom Van
-			Vleck for their valuable <A HREF="history">contributions</A>.
+			Vleck for their valuable <A HREF="history/">contributions</A>.
 		</P>
 		<P>
 			Please see the <A HREF="#copyright">Copyright</A> section if you plan on reproducing parts of this work.
@@ -128,7 +128,7 @@
 					While working at AT&amp;T Bell Labs' Whippany centre, <A HREF="#canaday">Canaday</A> led a porting
 					effort of the <ABBR TITLE="Compatible Time-Sharing System">CTSS</ABBR> at <ABBR TITLE="Massachusettes
 					Institute of Technology">MIT</ABBR> to the GE-635 (in 635 assembly).  The <A CLASS="cmd"
-					HREF="#1964_RUNOFF">RUNOFF</A> utility is suspected to be part of this port.  The ported <ABBR
+					HREF="#x1964_RUNOFF">RUNOFF</A> utility is suspected to be part of this port.  The ported <ABBR
 					TITLE="Compatible Time-Sharing System">CTSS</ABBR> was originally intended as a prototype (to be
 					replaced by Nike hardware), but ended up being used for five more years.  No sources could be located
 					for this CTSS port.
@@ -290,12 +290,12 @@
 						<LI>
 							Douglas McIlroy, <I><A HREF="history/roff71.low.pdf">Roff</A></I>, AT&amp;T Bell Labs
 							Technical Memorandum.  12 January, 1971.  Available with permission of the author.  (<A
-							HREF="history/roff71.high.pdf.gz>">High-quality</A> version.)
+							HREF="history/roff71.high.pdf.gz">High-quality</A> version.)
 						</LI>
 						<LI>
 							Douglas McIlroy, <I><A HREF="history/runoff69.low.pdf">Runoff</A></I>, AT&amp;T Bell
 							Labs Technical Memorandum.  17 September, 1969.  Available with permission of the
-							author.  (<A HREF="history/runoff69.high.pdf.gz>">High-quality</A> version.)
+							author.  (<A HREF="history/runoff69.high.pdf.gz">High-quality</A> version.)
 						</LI>
 						<LI>
 							Douglas McIlroy, <I><A HREF="history/mcilroy_21_10_2011.txt">UNIX manpage history:
@@ -393,7 +393,7 @@
 						<LI>
 							Brian Kernighan, <I><A HREF="history/roff69.low.pdf">Manuscript Printing under OS/360:
 							ROFF</A></I>.  Available with permission of the author.  (<A
-							HREF="history/roff69.high.pdf.gz>">High-quality</A> version.)
+							HREF="history/roff69.high.pdf.gz">High-quality</A> version.)
 						</LI>
 					</UL>
 				</DIV>
@@ -432,7 +432,7 @@
 					so it's no surprise that Multics <SPAN CLASS="cmd">runoff</SPAN> was incorporated as UNIX <SPAN
 					CLASS="cmd">roff(1)</SPAN> in Version 1 AT&amp;T UNIX, 1971.  This was a PDP-11 assembly-language port
 					of the <ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR> <A CLASS="cmd"
-					HREF="#x1969_runoff">runoff</A>.  According to <A HREF="#thompson">Thompson</A>, <SPAN
+					HREF="#x1969">runoff</A>.  According to <A HREF="#thompson">Thompson</A>, <SPAN
 					CLASS="cmd">roff(1)</SPAN> for formatting patent applications was used as a justification for the PDP-11
 					purchase.
 				</P>
@@ -443,7 +443,7 @@
 					and Thompson settle on Ritchie as the primary author.  This is corroborated by Ritchie's expertise in
 					<ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR>, as <SPAN CLASS="cmd">roff(1)</SPAN> was
 					based upon McIlroy's <ABBR TITLE="Basic Combined Programming Language">BCPL</ABBR> <A
-					HREF="#x1969_runoff" CLASS="cmd">runoff</A>.
+					HREF="#x1969" CLASS="cmd">runoff</A>.
 				</P>
 				<P>
 					Unfortunately, the first <SPAN CLASS="cmd">roff(1)</SPAN> version is lost.  Some sources from Version 1
@@ -863,7 +863,7 @@
 					CLASS="cmd" HREF="#x1979">ditroff(1)</A> macro files (not general <A CLASS="cmd"
 					HREF="#x1979">ditroff(1)</A> input), although it has some capability for generalised input.  It is the
 					first fully semantic parser for manpages, exposing the annotated content of parsed documents.   <A
-					CLASS="cmd" HREF="#x1991_groff">groff(1)</A> manuals were the predominant basis for this port.
+					CLASS="cmd" HREF="#x1989_groff">groff(1)</A> manuals were the predominant basis for this port.
 				</P>
 				<P>
 					<B>Disclaimer</B>: the author of this document wrote <SPAN CLASS="cmd">mandoc(1)</SPAN>.
@@ -1010,7 +1010,7 @@
 				The content of this page are available under Creative Commons' <A CLASS="external"
 				HREF="http://creativecommons.org/licenses/by-sa/3.0/">Attribution Share-Alike</A>: deriving works must attribute
 				the author(s) and use a similar license.  However, cited communications (and copies of source materials),
-				available <A HREF="history">here</A>, are copyright the sender/author, and not covered by this license.
+				available <A HREF="history/">here</A>, are copyright the sender/author, and not covered by this license.
 			</P>
 		</DIV>
 		<TABLE CLASS="nav">
