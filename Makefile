@@ -1,7 +1,7 @@
 .SUFFIXES: .html .sgml .xml .xhtml .opf .dot .png .map
 
 VERSION	= 0.1.2
-DATE	= 05 November 2011
+DATE	= 07 November 2011
 
 CFLAGS  += -W -Wall -Wstrict-prototypes -Wno-unused-parameter -Wwrite-strings
 

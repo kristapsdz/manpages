@@ -35,8 +35,8 @@
 			</DIV>
 			.Pp
 			<DIV>
-				<I><A HREF="#mdoc">Practical UNIX Manuals: mdoc</A></I> is a guide for writing well-formed and maintainable UNIX
-				manuals (<Q>manpages</Q>) in the <I>mdoc</I> language.
+				<I>Practical UNIX Manuals: mdoc</I> is a guide for writing well-formed and maintainable UNIX manuals
+				(<Q>manpages</Q>) in the <I>mdoc</I> language.
 			</DIV>
 			.Pp
 			<DIV>
@@ -53,13 +53,13 @@
 			<DIV>
 				This guide is structured first as a series of tutorials, then as a guide to UNIX manual best practises.  It is
 				<B>not</B> a reference!  For that, refer to your local <I>mdoc</I> manual.  It is, however, a <I>work in
-				progress</I> &mdash; if you have questions, comments, or suggestions, please contact <A CLASS="external"
-				HREF="http://kristaps.bsd.lv">Kristaps</A>.
+				progress</I> &mdash; if you have questions, comments, or suggestions, please contact the author, <A
+				CLASS="external" HREF="http://kristaps.bsd.lv">Kristaps Dzonsons</A>.
 			</DIV>
 			.Pp
 			<DIV>
-				I also feature the <I><A HREF="#history">History of UNIX Manpages</A></I>, which unfolds the development of
-				manpages from the 1960s to the present day.
+				I also feature the <I>History of UNIX Manpages</I>, which chronicles the development of manpages from the 1960s
+				to the present day.
 			</DIV>
 			.
 			<DIV>
@@ -68,18 +68,12 @@
 				All content licensed under Creative Commons' <A CLASS="external"
 				HREF="http://creativecommons.org/licenses/by-sa/3.0/">Attribution Share-Alike</A>: deriving works must
 				attribute the author(s) and use a similar license.  
+				Citations should include the current version, <SPAN CLASS="ver">@VERSION@</SPAN>, and date, @DATE@.
 			</DIV>
 			.
 			<BR>
 			.Sh <SPAN ID="mdoc" CLASS="h1">Practical UNIX Manuals: <I>mdoc</I></SPAN>
 			<BR>
-			.
-			<DIV>
-				Citation information: <a class="external" href="http://kristaps.bsd.lv">Dzonsons, Kristaps</a>.  <I>Practical
-				UNIX Manuals: mdoc</I>.
-				<BR>
-				Current version: @DATE@, <SPAN CLASS="ver">@VERSION@</SPAN>.
-			</DIV>
 			.
 			<BR>
 			.Ss <SPAN CLASS="h2">On-line</SPAN>
@@ -107,13 +101,6 @@
 			.Sh <SPAN ID="history" CLASS="h1">The History of UNIX Manpages</SPAN>
 			<BR>
 			.
-			<DIV>
-				Citation information: <a class="external" href="http://kristaps.bsd.lv">Dzonsons, Kristaps</a>.  <I>The History
-				of UNIX Manpages</I>.
-				<BR>
-				Current version: @DATE@, <SPAN CLASS="ver">@VERSION@</SPAN>.
-			</DIV>
-			.
 			<BR>
 			.Ss <SPAN CLASS="h2">On-line</SPAN>
 			<BR>
@@ -127,12 +114,12 @@
 			<BR>
 			.Bl -ohang
 			<BR>
-			.It <SPAN>05 November 2011, <SPAN CLASS="ver">0.1.2</SPAN></SPAN>
+			.It <SPAN>07 November 2011, <SPAN CLASS="ver">0.1.2</SPAN></SPAN>
 			<DIV>
-				Major addition of the <I><A HREF="#history">History of UNIX Manpages</A></I> study.
-				Also moved this page's Table of Contents to its own page (to free up space).
-				Numerous editorial fixes thanks to outside contributions: fixed History links and clarified some concepts in the
-				first few chapters.
+				Major addition of the <I>History of UNIX Manpages</I> study.
+				Also moved this page's Table of Contents to its own page (to free up space) and simplified this page.
+				Valuable editorial fixes thanks to an outside contributor: fixed History links and clarified several concepts in
+				the first few chapters among other improvements.
 			</DIV>
 			.
 			<BR>
@@ -149,7 +136,7 @@
 			<BR>
 			.
 			<BR>
-			.\" <SPAN CLASS="inv">Copyright &copy; 2010&mdash;2011, Kristaps Dzonsons</SPAN>
+			.\" <SPAN CLASS="inv copy">Copyright &copy; 2010&mdash;2011, Kristaps Dzonsons</SPAN>
 		</DIV>
 	</BODY>
 </HTML>
