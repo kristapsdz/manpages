@@ -83,8 +83,8 @@
 							listings</A>, hosted by <A HREF="http://www.piercefuller.com/">Paul Pierce</A>.
 						</LI>
 						<LI>
-							RUNOFF source: <A HREF="history/RUNOFF_fap_archive.txt">MAD</A>, <A
-							HREF="history/RUNOFF_mad_archive.txt">FAP</A> supporting routines, and the <A
+							RUNOFF source: <A HREF="history/RUNOFF_mad_archive.txt">MAD</A>, <A
+							HREF="history/RUNOFF_fap_archive.txt">FAP</A> supporting routines, and the <A
 							HREF="history/RUNOFF_fap_support.txt">interface</A> for the supporting routines.
 							Provided by Mr. Saltzer.
 						</LI>
