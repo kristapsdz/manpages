@@ -70,7 +70,7 @@
 					literature, the syntax of <SPAN CLASS="cmd">RUNOFF</SPAN> inherits loosely from the prior <SPAN
 					CLASS="cmd">DITTO</SPAN>, <SPAN CLASS="cmd">MEMO</SPAN>, and <SPAN CLASS="cmd">MODIFY</SPAN> utilities
 					by M. J. Leslie Lowry, Fernando J. Corbat&oacute;, and J. Richard Steinberg, 1963.  The original purpose
-					of <SPAN CLASS="cmd">RUNOFF</SPAN> was to format <A HREF="#saltzer">Salter</A>'s doctoral thesis
+					of <SPAN CLASS="cmd">RUNOFF</SPAN> was to format <A HREF="#saltzer">Saltzer</A>'s doctoral thesis
 					proposal.
 				</P>
 				<DIV CLASS="sources">
@@ -271,7 +271,7 @@
 					called it <SPAN CLASS="cmd">runoff</SPAN> in 1969.  By 1971 it was <SPAN CLASS="cmd">roff</SPAN>.  Now
 					I'm not so sure I got the name from <A HREF="#morris">Morris</A>.  Conceivably it came from <A
 					HREF="#thompson">Thompson</A>, who was big on shortening names.  My 1971 description came in January;
-					the first ediion Unix manual is dated December 1971.</Q> 
+					the first ediion [sic] Unix manual is dated December 1971.</Q> 
 				</P>
 				<DIV CLASS="sources">
 					<P>
@@ -614,7 +614,7 @@
 			</DT>
 			<DD>
 				<P>
-					In around 1975, <A HREF="#ossanna">Ossanna</A> re-write <A CLASS="cmd" HREF="#x1973">troff(1)</A> in the
+					In around 1975, <A HREF="#ossanna">Ossanna</A> re-wrote <A CLASS="cmd" HREF="#x1973">troff(1)</A> in the
 					C-language.  However, in 1977 this work was discontinued and sources were untouched for nearly two years
 					until resumed by <A HREF="#kernighan">Kernighan</A>:
 				</P>
@@ -978,7 +978,7 @@
 				<DT ID="saltzer">Saltzer, Jerome H.</DT>
 				<DD>
 					<P>
-						Wrote <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> while working a student at <ABBR
+						Wrote <A CLASS="cmd" HREF="#x1964_RUNOFF">RUNOFF</A> while working as a student at <ABBR
 						TITLE="Massachusettes Institute of Technology">MIT</ABBR>.  Homepage: <A
 						HREF="http://mit.edu/saltzer/">mit.edu/saltzer</A>.
 					</P>
