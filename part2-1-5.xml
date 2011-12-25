@@ -74,7 +74,7 @@
 		<p>
 			These are treated specially by the formatter when used in macro lines and at the end of text lines.
 		</p>
-		<h4>
+		<h4 id="sentential_punctuation">
 			Sentential Punctuation
 		</h4>
 		<blockquote>

@@ -13,7 +13,8 @@
 			Without exception, a well-formed <span class="lang">mdoc</span> document consists only of <a class="term"
 				href="glossary.xml#ascii">ASCII</a> printable characters, the space character, the newline character, and in
 			some cases the tab character.  Most modern formatters allow for CR+LF newlines <span class="screen">\r\n</span>, but
-			this is not portable.  There is no limit to line length.
+			this is not portable.  Modern formatters also accomodate for unlimit to line length; this is not necessarily the case
+			for legacy formatters.
 		</p>
 		<p>
 			Unilaterally, the backslash <span class="screen">\</span> is always interpreted as the beginning of an <a
@@ -131,7 +132,7 @@
 		</div>
 		<p>
 			The spaces between <span class="screen">Hello,</span> and <span class="screen">world</span> delimit arguments in this
-			case, and produce the same output.
+			case, and produce the same output of <i>Hello, World</i> without extra spaces.
 		</p>
 		<h4 id="text_line">
 			Text Line
@@ -150,24 +151,65 @@
 			Hello, World
 		</div>
 		<p>
-			Thus, the spaces between <span class="screen">Hello,</span> and <span class="screen">world</span> will be reproduced in
-			output.  In general, however, it is considered non-portable to use spaces on a text-line to shape output: <a
-				class="term" href="glossary.xml#html">HTML</a> by default collapses whitespace.  A literal display mode should
-			be used instead.
+			The spaces between <span class="screen">Hello,</span> and <span class="screen">world</span> will be reproduced in both
+			cases as-is.  However, it is considered non-portable to use spaces on a text-line to shape output: <a class="term"
+				href="glossary.xml#html">HTML</a>, for example, by default collapses whitespace.  Secondly, consider whether
+			controlled spacing between text in an otherwise free-form text sequence is appropriate.  In most space-retaining cases,
+			such as in source code examples, you're better off with a literal display mode such as covered at the end of this
+			section.
 		</p>
 		<p>
-			Furthermore, if the first letter of a text line is a space character, the output line shall be preceded by a newline.
+			<b>Do not</b> use the space-retaining feature to create double-spaces following a sentential period!  See <a
+				href="part2-1-5.xml#sentential_punctuation">Sentential Punctuation</a> for how to do this properly.
+		</p>
+		<p>
+			If the first letter of a text line is a space character, the output line shall be preceded by a newline.  This creates
+			the effect of an implicit literal display.
 		</p>
 		<div class="mdocin">
 			Hello, World.
 			<br />
+			&nbsp;&nbsp;The newline, leading spaces, and in-line&nbsp;&nbsp;&nbsp;&nbsp;spacing are retained.
+			<br />
+			This is free-form text.
+		</div>
+		<p>
+			The portability of this behaviour is unknown.  For greater portability (and semantic annotation), a literal display mode
+			should be opened instead with, for example, the <a class="macro" href="macros.xml#macro_bd">Bd</a> <span
+				class="macroflag">literal</span>:
+		</p>
+		<div class="mdocin">
+			Hello, World.
+			<br />
+			.Bd -literal -compact
+			<br />
 			&nbsp;&nbsp;The newline and leading spaces are retained.
+			<br />
+			.Ed
 			<br />
 			While this is not.
 		</div>
 		<p>
-			This behaviour should also not be assumed; a literal display mode should be opened instead.
+			In this example, the <span class="macroflag">compact</span> flag prevents leading vertical space.  To effect a vertical
+			space following the literal display, use a <a class="macro" href="macros.xml#macro_pp">Pp</a>.
 		</p>
+		<div class="mdocin">
+			Consider the following example:
+			<br />
+			.Bd -literal
+			<br />
+			int a_function(int *foo, int bar) {
+			<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;*foo += bar;
+			<br />
+			}
+			<br />
+			.Ed
+			<br />
+			.Pp
+			<br />
+			This is subsequent text.
+		</div>
 		<table class="nav">
 			<tbody>
 				<tr>
