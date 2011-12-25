@@ -23,11 +23,15 @@
 		<p>
 			By quoting <span class="screen">Ar</span>, it is passed verbatim to <a class="macro" href="macros.xml#macro_fl">Fl</a>
 			If not, it would be interpreted as the macro <a class="macro" href="macros.xml#macro_ar">Ar</a> and open a new macro
-			scope.  What's worse is that the syntax is entirely legal!
+			scope.  What's worse is that the syntax is entirely legal!  This illustrates a minor short-coming of <span
+				class="lang">mdoc</span>: beginners may unwittingly invoke macros (such as <a class="macro"
+				href="macros.xml#macro_ar">Ar</a> in our example).  Printing a warning would cause more harm than good with
+			well-formed manuals; thus, it's the responsibility of the document author to double-check that macro instructions are
+			properly treated. 
 		</p>
 		<p>
-			This could also have been avoided by beginning the argument <span class="screen">Ar</span> with a zero-width escape,
-			such as <span class="screen">\&amp;Ar</span>.  The need for quotation is more obvious with the <a class="macro"
+			This condition could have been avoided by beginning the argument <span class="screen">Ar</span> with a zero-width
+			escape, such as <span class="screen">\&amp;Ar</span>.  The need for quotation is more obvious with the <a class="macro"
 				href="macros.xml#macro_fn">Fn</a> macro:
 		</p>
 		<div class="mdocin">
@@ -63,8 +67,10 @@
 			.Li <span style="border: 1px dashed green;">"""&nbsp;&nbsp;&nbsp;&nbsp;"</span>
 		</div>
 		<p>
-			This artificial invocation, for example, passes a quotation mark followed by four whitespaces to the <a
-				href="macros.xml#macro_li" class="macro">Li</a> macro.
+			This artificial invocation passes a quotation mark followed by four whitespaces to the <a href="macros.xml#macro_li"
+				class="macro">Li</a> macro.  It is, however, unwise to use this language component: it's jarring to those
+			expecting symmetric quotes, and easy to mis-type, leaving runaway quotes.  It's safer to use an escape, such as <span
+				class="screen">\(dq</span>, instead of pair-wise quotations.
 		</p>
 		<table class="nav">
 			<tbody>
