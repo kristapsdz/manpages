@@ -781,6 +781,10 @@
 							James Clarke, <I><A HREF="history/clarke_28_10_2011.txt">UNIX manpage history:
 							groff</A></I>.  28 October, 2011.  Email to Kristaps Dzonsons.
 						</LI>
+						<LI>
+							GNU troff <A HREF="ftp://ftp.gnu.org/gnu/groff/old/">historical releases</A>, provided
+							by the <A HREF="http://groff.ffii.org">GNU troff</A> project.
+						</LI>
 					</UL>
 				</DIV>
 			</DD>

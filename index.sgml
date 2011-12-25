@@ -114,19 +114,18 @@
 			<BR>
 			.Bl -ohang
 			<BR>
+			.It <SPAN>xx Xxxxx 2011, <SPAN CLASS="ver">0.1.3</SPAN></SPAN>
+			<DIV>
+				Added GNU troff archives.
+			</DIV>
+			.
+			<BR>
 			.It <SPAN>07 November 2011, <SPAN CLASS="ver">0.1.2</SPAN></SPAN>
 			<DIV>
 				Major addition of the <I>History of UNIX Manpages</I> study.
 				Also moved this page's Table of Contents to its own page (to free up space) and simplified this page.
 				Valuable editorial fixes thanks to an outside contributor: fixed History links and clarified several concepts in
 				the first few chapters among other improvements.
-			</DIV>
-			.
-			<BR>
-			.It <SPAN>04 September 2011, <SPAN CLASS="ver">0.0.27</SPAN></SPAN>
-			<DIV>
-				Collected appendices into <A HREF="part4.html">Appendices</A> part.  From now on, only minor editing before I
-				freeze a minor number release.
 			</DIV>
 			.El
 			<BR>
