@@ -12,7 +12,9 @@
 		<p>
 			An escape sequence is any grouping of characters following a backslash <span class="screen">\</span>.  This may happen
 			anywhere in input.  What follows the escape sequence syntactically depends upon the first letter.  The following
-			sections describe common escape sequences.  The use of any other sequence is strongly discouraged for portable manuals.
+			sections describe common escape sequences.  The use of any other sequence is strongly discouraged for portable manuals;
+			in fact, the use of any escape beyond <span class="screen">\&amp;</span> should be strongly avoided: it makes manuals in
+			different output formats inconsistent depending on their methods of glyph rendering.
 		</p>
 		<h4 id="special_characters">
 			Special Characters
@@ -45,8 +47,28 @@
 		</table>
 		<p>
 			The <i>n</i>-letter form may be used to express any of the others.  For example, <span class="screen">\&amp;</span> (a
-			zero-width space) is equivalent to <span class="screen">\[&amp;]</span>.
+			zero-width space) is equivalent to <span class="screen">\[&amp;]</span>.  The most common escape sequence is in fact
+			<span class="screen">\&amp;</span>, a non-printing, zero-width space.  When preceding a word, it automatically causes it
+			to be rendered as regular text:
 		</p>
+		<div class="mdocin">
+			The following flags are also macros:
+			<br />
+			.Fl \&amp;Ar
+		</div>
+		<p>
+			If the <span class="screen">Ar</span> were not preceded with an escape, it would have be interpreted as the <a
+				class="macro" href="macros.xml#macro_ar">Ar</a> macro instead of the flags <span class="cmdflag">Ar</span>.  An
+			alternative to this is to quote the argument (see <a href="part2-1-6.xml#quotation">Quotation</a>).  The zero-width
+			escape is found more readily in literal contexts beginning with a period, such as
+		</p>
+		<div class="mdocin">
+			.Bd -literal
+			<br />
+			\&amp;.Fl Ar
+			<br />
+			.Ed
+		</div>
 		<h4>
 			Predefined Strings
 		</h4>
