@@ -12,10 +12,13 @@
 		<p>
 			So far we've considered several different types of macros.  A macro is usually a terse, two or three-character sequence
 			specified on a <a href="part2-1-1.xml#macro_line">macro line</a>.  In this section I formalise the various types of
-			macros, categorised by their scope rules.
+			macros, categorised by their scope rules.  As with many other languages, macros instructions are either scoped to one
+			line (following a single instruction), which I call in-line; or to multiple lines (bracketed between instructions),
+			which I call blocked.  Block macros are usually invoked on a line of their own, as with <a class="macro"
+				href="macros.xml#macro_bd">Bd</a>, but may also be invoked within a line.
 		</p>
 		<p>
-			In general, a macro is syntactically defined as having a macro name, and optionally flags and with optional flag
+			Generally speaking, a macro is syntactically defined as having a macro name, and optionally flags and with optional flag
 			arguments.  The arguments to a macro depend on its scope rules.
 		</p>
 		<div class="mdocsyntax">
