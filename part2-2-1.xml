@@ -258,6 +258,11 @@
 				class="macroarg">category</span> <span class="macroopt"><span class="macroarg">architecture</span></span>
 		</div>
 		<p>
+			For a list of possible architectures, consult your local documentation.  A safe example is <span
+				class="screen">i386</span>, for 32-bit x86-based systems; or <span class="screen">amd64</span> for 64-bit AMD
+			systems.
+		</p>
+		<p>
 			A device referring to a particular architecture uses this to explicitly note its relevant architecture.  In normal
 			manuals, this should not be used.
 		</p>

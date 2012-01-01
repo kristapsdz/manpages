@@ -188,7 +188,7 @@
 			<br />
 			.Pp
 			<br />
-			.Dl $ hello \*qDear Joe, \*q \(bv mail -s \*qHi!\*q joe
+			.Dl $ hello \(dqDear Joe, \(dq \(bv mail -s \(dqHi!\(dq joe
 		</div>
 		<p>
 			The <a href="macros.xml#macro_dl" class="macro">Dl</a>, used for one-line literal displays, is a common macro in the
@@ -205,9 +205,9 @@
 			<br />
 			.Bd -literal -offset indent
 			<br />
-			$ hello \*qDear Joe, \*q \(bv \e
+			$ hello \(dqDear Joe, \(dq \(bv \e
 			<br />
-			&nbsp;&nbsp;mail -s \*qHi!\*q joe
+			&nbsp;&nbsp;mail -s \(dqHi!\(dq joe
 			<br />
 			.Ed
 		</div>
@@ -251,8 +251,7 @@
 		</p>
 		<p>
 			Some manuals will use the <span class="screen">vS</span> and <span class="screen">vE</span> macros around source code.
-			These are not <span class="lang">mdoc</span>: I'll discuss these later in this book, but they should be avoided for
-			portable manuals.
+			These are not <span class="lang">mdoc</span> and should be avoided in portable manuals.
 		</p>
 		<h4>
 			DIAGNOSTICS

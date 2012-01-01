@@ -14,7 +14,7 @@
 			the <a class="cmd" href="commands.xml#cmd_make">make</a> utility.  Although there are two disjoint <a
 				href="commands.xml#cmd_make" class="cmd">make</a> implementations in use (namely by for <a
 				href="glossary.xml#gnu" class="term">GNU</a> and <a href="glossary.xml#bsd_unix" class="term">BSD UNIX</a>
-			systems), I consider the syntax common to both.
+			systems), I examine the syntax common to both.
 		</p>
 		<p>
 			In this section, I'll assume the file <span class="file">Makefile</span> already exists, and is used to build a system

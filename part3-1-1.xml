@@ -17,7 +17,7 @@
 			utilities.  The first version was released in 1990, and it is still actively maintained.  <a
 				href="commands.xml#cmd_groff" class="cmd">groff</a> is significant in that it is the predominant implementation
 			of <a href="commands.xml#cmd_nroff" class="cmd">nroff</a> and <a href="commands.xml#cmd_troff" class="cmd">troff</a> on
-			contemporary UNIX operating systems.  It also shepherded the evolution of <span class="lang">mdoc</span>.
+			contemporary UNIX operating systems.
 		</p>
 		<p>
 			On systems with <a href="commands.xml#cmd_groff" class="cmd">groff</a> installed, both <a href="commands.xml#cmd_troff"

@@ -66,8 +66,9 @@
 			.\" Copyright (c) 2011 Kristaps Dzonsons &lt;kristaps@bsd.lv&gt;
 		</div>
 		<p>
-			Make sure that the first line has a tab character between the <span class="screen">$&#8203;Id$</span> and leading comment
-			marker.  This sequence is filled in with the file's last editor, revision, and checkin date.
+			Make sure that the first line has a tab character between the leading comment marker and <span
+				class="screen">$&#8203;Id$</span>.  This sequence is filled in with the file's last editor, revision, and
+			checkin date.
 		</p>
 		<p>
 			Some <a href="commands.xml#cmd_cvs" class="cmd">cvs</a> servers (e.g., those in <a class="term"

@@ -266,14 +266,17 @@
 		</h5>
 		<p>
 			A command or set of commands is documented in <span class="sec">DESCRIPTION</span> with a brief explanation of
-			behaviour, a list of arguments, and default behaviour regarding those arguments.
+			behaviour, default usage, then a list of arguments.  Some utilities state default usage following the argument list;
+			however, manpages beginning with these statements are more readable and economical.
 		</p>
 		<div class="mdocin">
 			The
 			<br />
 			.Nm
 			<br />
-			command prints out a simple greeting.
+			command prints a mixed-case greeting to standard output.
+			<br />
+			.Pp
 			<br />
 			The arguments are as follows:
 			<br />
@@ -292,14 +295,6 @@
 			A string prefixed to the output.
 			<br />
 			.El
-			<br />
-			.Pp
-			<br />
-			By default,
-			<br />
-			.Nm
-			<br />
-			prints a mixed-case greeting to standard output.
 		</div>
 		<p>
 			If multiple commands are included, they should be listed in the order they appear in <span class="sec">NAME</span> and

@@ -30,31 +30,29 @@
 			<BR>
 			.
 			<DIV>
-				So you've written a UNIX utility, library, or driver&mdash;or started writing one&mdash;and you want to document your
-				work in manual form.  What happens next?
+				So you've written a UNIX utility, library, or driver&mdash;or have started writing one&mdash;and you want to
+				document your work in a manual.  What happens next?
 			</DIV>
 			.Pp
 			<DIV>
-				<I>Practical UNIX Manuals: mdoc</I> is a guide for writing well-formed and maintainable UNIX manuals
+				<I>Practical UNIX Manuals: mdoc</I> is a guide for writing portable and maintainable UNIX manuals
 				(<Q>manpages</Q>) in the <I>mdoc</I> language.
 			</DIV>
 			.Pp
 			<DIV>
 				Why <I>mdoc</I>?  
-				Foremost, formatters for the language are available by default on all modern UNIX installations and may be downloaded
-				for non-UNIX systems.  
-				Furthermore, <I>mdoc</I> semantically annotates content, allowing for search and reference analysis of your
-				documentation.  
+				Formatters for the language are available by default on all modern UNIX installations and may be downloaded for
+				non-UNIX systems.  
+				Furthermore, <I>mdoc</I> annotates content semantically, not presentationally, producing consistent manpages
+				across systems.
 				For an analysis of <I>mdoc</I> and competing formats, refer to
 				<I><A CLASS="external" HREF="http://www.usenix.org/publications/login/2009-10/pdfs/dzonsons.pdf">Fixing on a
 				Standard Language for UNIX Manuals</A></I>, published in the USENIX magazine.
 			</DIV>
 			.Pp
 			<DIV>
-				This guide is structured first as a series of tutorials, then as a guide to UNIX manual best practises.  It is
-				<B>not</B> a reference!  For that, refer to your local <I>mdoc</I> manual.  It is, however, a <I>work in
-				progress</I> &mdash; if you have questions, comments, or suggestions, please contact the author, <A
-				CLASS="external" HREF="http://kristaps.bsd.lv">Kristaps Dzonsons</A>.
+				This book is structured first as a series of tutorials, then a guide to best practises:  it is
+				<B>not</B> a reference!  For that, refer to your local <I>mdoc</I> manual.  
 			</DIV>
 			.Pp
 			<DIV>
@@ -67,7 +65,7 @@
 				<BR>
 				All content licensed under Creative Commons' <A CLASS="external"
 				HREF="http://creativecommons.org/licenses/by-sa/3.0/">Attribution Share-Alike</A>: deriving works must
-				attribute the author(s) and use a similar license.  
+				attribute the author, <A CLASS="external" HREF="http://kristaps.bsd.lv">Kristaps Dzonsons</A>, and use a similar license.  
 				Citations should include the current version, <SPAN CLASS="ver">@VERSION@</SPAN>, and date, @DATE@.
 			</DIV>
 			.
@@ -114,9 +112,9 @@
 			<BR>
 			.Bl -ohang
 			<BR>
-			.It <SPAN>xx Xxxxx 2011, <SPAN CLASS="ver">0.1.3</SPAN></SPAN>
+			.It <SPAN>02 January 2011, <SPAN CLASS="ver">0.1.3</SPAN></SPAN>
 			<DIV>
-				Added GNU troff archives and edited content in the Part 3 as suggested by an outside contributor (thanks!).
+				Added GNU troff archives and edited content in Part 3 as suggested by an outside contributor (thanks!).
 			</DIV>
 			.
 			<BR>

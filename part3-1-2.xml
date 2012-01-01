@@ -11,7 +11,7 @@
 		</h3>
 		<p>
 			The <a class="cmd" href="commands.xml#cmd_mandoc">mandoc</a> utility is a specialised <span class="lang">mdoc</span>
-			formatter: although it also supports some other UNIX manual formats, it is not accept general-purpose <a class="lang
+			formatter: although it also supports some other UNIX manual formats, it does not accept general-purpose <a class="lang
 				term" href="glossary.xml#roff">roff</a> input.  Development began in 2008 to replace <a class="cmd"
 				href="commands.xml#cmd_groff">groff</a> with an <a class="term" href="glossary.xml#isc_license">ISC licensed</a>,
 			high-speed reimplementation.
