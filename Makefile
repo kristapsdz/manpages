@@ -1,5 +1,6 @@
 .SUFFIXES: .html .sgml .xml .xhtml .opf .dot .png .map
 
+PREFIX	= /usr/vhosts/manpages.bsd.lv/www/htdocs
 VERSION	= 0.1.4
 DATE	= 07 April 2014
 
@@ -312,7 +313,7 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 	rm -rf .book
 
 history.html: history.sgml history.map history.png
-	validate --warn history.sgml
+	#validate --warn history.sgml
 	( sed -n '1,/<MAP/p' history.sgml ; \
 	  cat history.map ; \
 	  sed -n '/<\/MAP>/,$$p' history.sgml ; ) >$@
@@ -320,11 +321,11 @@ history.html: history.sgml history.map history.png
 history.map history.png: history.dot
 
 .sgml.html:
-	validate --warn $<
+	#validate --warn $<
 	sed -e "s!@VERSION@!$(VERSION)!g" -e "s!@DATE@!$(DATE)!g" $< >$@
 
 index.html: index.xml
-	validate --warn $<
+	#validate --warn $<
 	sed -e "s!@VERSION@!$(VERSION)!g" -e "s!@DATE@!$(DATE)!g" $< >$@
 
 .xml.opf:
@@ -342,7 +343,7 @@ index.html: index.xml
 	    -e "s!@DATE@!$(DATE)!g" \
 	    -e "/manpages.bsd.lv\/cgi-bin\/cvsweb/!s/\.xml/\.xhtml/g" \
 	    -e "s!text\/xml!application/xhtml+xml!" >$@
-	validate --xml --warn $@ || rm -f $@
+	#validate --xml --warn $@ || rm -f $@
 
 .xml.html:
 	( echo "<!DOCTYPE html>" ; \
@@ -351,7 +352,7 @@ index.html: index.xml
 	    -e "s!@DATE@!$(DATE)!g" \
 	    -e "/manpages.bsd.lv\/cgi-bin\/cvsweb/!s/\.xml/\.html/g" \
 	    -e "s!text\/xml!text/html!" >$@
-	validate --warn $@ || rm -f $@
+	#validate --warn $@ || rm -f $@
 
 .dot.map:
 	dot -Tcmap -o $@ $<
