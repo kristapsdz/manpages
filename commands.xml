@@ -71,7 +71,7 @@
 				instead of properly parsing its input.  Originally in Version 7 AT&amp;T UNIX (if not before?) and used heavily
 				by the <a class="term" href="glossary.xml#wwb">Writer's Workbench</a>.  Non-standard. Available under the Lucent
 				Public License at <a class="external"
-					href="http://heirloom.sourceforge.net/tools.html">heirloom.sourceforge.net/tools.html</a> and under the
+					href="http://heirloom.sf.net/tools.html">heirloom.sf.net/tools.html</a> and under the
 				<a class="term" href="glossary.xml#gpl">GPL</a> at <a class="external"
 					href="http://marmaro.de/prog/deroff/">marmaro.de/prog/deroff</a>.
 			</dd>
@@ -93,7 +93,7 @@
 				<span class="cmd">ditroff</span> implementation such as <a href="#cmd_groff" class="cmd">groff</a>.  A version
 				of the pre-<a href="#cmd_groff" class="cmd">groff</a> utility is available under the Lucent Public License at <a
 					class="external"
-					href="http://heirloom.sourceforge.net/doctools.html">heirloom.sourceforge.net/doctools.html</a>.
+					href="http://heirloom.sf.net/doctools.html">heirloom.sf.net/doctools.html</a>.
 			</dd>
 			<dt id="cmd_dump">
 				Dump

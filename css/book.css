@@ -1,9 +1,12 @@
 html		{ margin-top: 1em;
-		  width: 75%;
-		  margin-left: 4em; }
+		  width: 70%;
+		  margin-left: auto;
+		  margin-right: auto; }
+@media only screen and (max-width: 600px), only screen and (max-device-width: 600px) {
+html		{ width: 98%; }
+}
 body		{ font-family: serif;
-		  line-height: 14pt;
-		  font-size: 10pt; }
+		  line-height: 140%; }
 table.nav	{ width: 100%; }
 td.nav-contents,
 td.nav-history	{ width: 1%; }
@@ -30,10 +33,13 @@ div		{ margin-bottom: 1ex; }
 blockquote	{ padding-left: 1ex;
 		  border-left: 1px solid green; }
 dl		{ margin-left: 2%; }
-h1		{ margin-left: -3em; }
-h2		{ margin-left: -2em; }
-h3		{ margin-left: -1em; }
-h4		{ margin-left: -1ex; }
+h1		{ margin-left: -4%; }
+h2		{ margin-left: -3%; }
+h3		{ margin-left: -2%; }
+h4		{ margin-left: -1%; }
+@media only screen and (max-width: 600px), only screen and (max-device-width: 600px) {
+h1, h2, h3, h4  { margin-left: 0; }
+}
 h1,
 h2,
 h3,
@@ -61,7 +67,7 @@ h5		{ font-size: inherit; }
 .type,
 .value,
 .var		{ font-family: monospace; 
-		  font-size: 9pt; } 
+		  font-size: 10pt; } 
 .under		{ text-decoration: underline }
 a.cmd,
 a.macro,

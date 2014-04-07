@@ -1,46 +1,38 @@
-html		{ margin-top: 0em;
-		  margin-left: 2em;
-		  max-width: 80%;
-		  min-width: 580px; }
+html,body		{ margin: 0; }
+body			{ font-family: monospace; 
+			  width: 80%;
+			  margin-top: 1em;
+			  line-height: 120%;
+			  margin-bottom: 1em;
+			  margin-left: auto;
+			  margin-right: auto;
+			  color: #dddddd; }
+@media only screen and (max-width: 600px), only screen and (max-device-width: 600px) {
+body			{ width: 98%; 
+			  margin-top: 1ex; 
+		 	  margin-bottom: 1ex; }
+}
 
-a img		{ border: thin solid #0000ff; }
-a:hover img	{ border: thin solid #339999; }
+a img			{ border: thin solid #0000ff; }
+a:hover img		{ border: thin solid #339999; }
+div > div > div,
+div > div > span:nth-child(+2)	
+			{ color: #000000;
+			  font-family: Verdana, Tahoma, Arial, sans-serif; }
+div > div > span:first-child
+			{ display: inline-block; 
+			  width: 5ex; }
+div > div > div		{ padding-left: 5ex; }
 
-span.inv,
-div.inv,
-body		{ font-family: monospace; 
-		  line-height: 11pt;
-		  font-size: 9pt;
-		  color: #dddddd; }
-
-span.copy	{ color: #999999; }
-
-span,
-div		{ color: #000000;
-		  font-size: 9pt;
-		  font-family: Verdana, Tahoma, Arial, sans-serif; }
-
-a.external 	{ background: transparent url(../external.png) center right no-repeat; 
-		  padding-right: 12px; }
-
-a		{ color: #0000ff;
-		  text-decoration: none; }
-
-a:hover		{ color: #339999; }
-
-span		{ padding-left: 0em;
-		  margin-left: 2em; }
-
-div		{ margin-left: 4em;
-		  padding-left: 0.5em; }
-
-span.h1		{ font-weight: bolder;
-		  margin-left: 0em; }
-
-span.h2		{ font-weight: bolder;
-		  margin-left: 1em; }
-
-span.part	{ }
-span.chap	{ padding-left: 2em; }
-span.sec	{ padding-left: 4em; }
-span.ver	{ margin-left: 0em; font-style: italic; }
+a.external 		{ background: transparent url(../external.png) center right no-repeat; 
+		  	  padding-right: 12px; }
+a			{ color: #0000ff; 
+			  text-decoration: none; }
+a:hover			{ text-decoration: underline; }
+span.h1			{ font-weight: bolder; }
+span.h2			{ font-weight: bolder; }
+span.ver		{ font-style: italic; }
+#copy			{ font-size: smaller; 
+			  color: #999; }
+#copy a			{ color: #111; }
+#copy a:hover		{ text-decoration: underline; }

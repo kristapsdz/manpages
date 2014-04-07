@@ -189,15 +189,11 @@ XHTMLS	= preface.xhtml \
 all: index.html history.html
 
 index.html: \
-	mdoc.single-xhtml.tgz \
 	mdoc.single-html.tgz \
-	mdoc.multi-xhtml.tgz \
 	mdoc.multi-html.tgz \
-	mdoc.xhtml \
 	mdoc.html \
 	mdoc.epub \
 	toc.html \
-	toc.xhtml \
 	$(HTMLS) \
 	$(XHTMLS)
 
@@ -208,20 +204,18 @@ install: all
 	install -m 0644 license.png external.png $(PREFIX)
 	install -m 0644 index.html history.html $(PREFIX)
 	install -m 0644 history.png history.map $(PREFIX)
-	install -m 0644 toc.xhtml toc.html $(PREFIX)
+	install -m 0644 toc.html $(PREFIX)
 	install -m 0644 $(XHTMLS) $(HTMLS) $(PREFIX)
 	install -m 0644 css/book.css css/history.css css/index.css $(PREFIX)/css
-	install -m 0644 mdoc.epub mdoc.xhtml mdoc.html $(PREFIX)
-	install -m 0644 mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz $(PREFIX)
+	install -m 0644 mdoc.epub mdoc.html $(PREFIX)
 	install -m 0644 mdoc.single-html.tgz mdoc.multi-html.tgz $(PREFIX)
 	install -m 0644 $(HISTORY) $(PREFIX)/history
 
 clean:
 	rm -f index.html history.html
-	rm -f toc.html toc.xhtml
+	rm -f toc.html 
 	rm -f $(XHTMLS) $(HTMLS)
-	rm -f mdoc.epub mdoc.xhtml mdoc.html mdoc.sgml mdoc.xml book.opf
-	rm -f mdoc.single-xhtml.tgz mdoc.multi-xhtml.tgz
+	rm -f mdoc.epub mdoc.html mdoc.sgml mdoc.xml book.opf
 	rm -f mdoc.single-html.tgz mdoc.multi-html.tgz
 	rm -f history.png history.map 
 
@@ -236,17 +230,6 @@ mdoc.multi-html.tgz: toc.html $(HTMLS) css/book.css external.png
 	( cd .html-multi && tar zcf ../$@ mdoc )
 	rm -rf .html-multi
 
-mdoc.multi-xhtml.tgz: toc.xhtml $(XHTMLS) css/book.css external.png
-	mkdir .xhtml-multi
-	mkdir .xhtml-multi/mdoc
-	mkdir .xhtml-multi/mdoc/css
-	install -m 0644 toc.xhtml .xhtml-multi/mdoc
-	install -m 0644 $(XHTMLS) .xhtml-multi/mdoc
-	install -m 0644 external.png .xhtml-multi/mdoc
-	install -m 0644 css/book.css .xhtml-multi/mdoc/css
-	( cd .xhtml-multi && tar zcf ../$@ mdoc )
-	rm -rf .xhtml-multi
-
 mdoc.single-html.tgz: mdoc.html css/book.css external.png
 	mkdir .html-single
 	mkdir .html-single/mdoc
@@ -256,16 +239,6 @@ mdoc.single-html.tgz: mdoc.html css/book.css external.png
 	install -m 0644 css/book.css .html-single/mdoc/css
 	(cd .html-single && tar zcf ../$@ mdoc)
 	rm -rf .html-single
-
-mdoc.single-xhtml.tgz: mdoc.xhtml css/book.css external.png
-	mkdir .xhtml-single
-	mkdir .xhtml-single/mdoc
-	mkdir .xhtml-single/mdoc/css
-	install -m 0644 mdoc.xhtml .xhtml-single/mdoc
-	install -m 0644 external.png .xhtml-single/mdoc
-	install -m 0644 css/book.css .xhtml-single/mdoc/css
-	( cd .xhtml-single && tar zcf ../$@ mdoc )
-	rm -rf .xhtml-single
 
 mdoc.xml: full-head.xml full-tail.xml $(XMLS)
 	( cat full-head.xml ; \
@@ -352,6 +325,10 @@ history.map history.png: history.dot
 	validate --warn $<
 	sed -e "s!@VERSION@!$(VERSION)!g" -e "s!@DATE@!$(DATE)!g" $< >$@
 
+index.html: index.xml
+	validate --warn $<
+	sed -e "s!@VERSION@!$(VERSION)!g" -e "s!@DATE@!$(DATE)!g" $< >$@
+
 .xml.opf:
 	sed -e "s!@VERSION@!$(VERSION)!g" $< >$@
 
@@ -370,14 +347,10 @@ history.map history.png: history.dot
 	validate --xml --warn $@ || rm -f $@
 
 .xml.html:
-	( echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" ; \
-	  echo "<!DOCTYPE HTML PUBLIC \
-		\"-//W3C//DTD HTML 4.01//EN\" \
-		\"http://www.w3.org/TR/html4/strict.dtd\">" ; \
+	( echo "<!DOCTYPE html>" ; \
 	  tail -n+2 $< ) | \
 	sed -e "s!@VERSION@!$(VERSION)!g" \
 	    -e "s!@DATE@!$(DATE)!g" \
-	    -e "s!\/>!>!" \
 	    -e "/manpages.bsd.lv\/cgi-bin\/cvsweb/!s/\.xml/\.html/g" \
 	    -e "s!text\/xml!text/html!" >$@
 	validate --warn $@ || rm -f $@
