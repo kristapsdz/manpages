@@ -1,9 +1,7 @@
 .SUFFIXES: .html .sgml .xml .xhtml .opf .dot .png .map
 
-VERSION	= 0.1.3
-DATE	= 02 January 2012
-
-CFLAGS  += -W -Wall -Wstrict-prototypes -Wno-unused-parameter -Wwrite-strings
+VERSION	= 0.1.4
+DATE	= 07 April 2014
 
 HISTORY = history/CC-205.pdf \
 	  history/RUNOFF_fap_archive.txt \

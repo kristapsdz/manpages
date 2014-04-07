@@ -97,6 +97,7 @@
 			<div><span>.It</span><span>07 April 2014, <span class="ver">0.1.4</span></span></div>
 			<div>
 				<div>
+					Polished (editing) text in various places.
 					Cleaned up markup for more variable media.
 					Removed XHTML (of course, it's still used for the ePub) in favour of clean HTML5.
 				</div>
