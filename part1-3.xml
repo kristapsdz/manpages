@@ -155,9 +155,9 @@
 			<div class="mdoc-section">
 				<h1>SYNOPSIS</h1>
 				<b class="mdoc-includes">#include &lt;<span class="mdoc-link-includes">hello.h</span>&gt;</b><br/>
-				<b class="mdoc-includes">#include &lt;<span class="mdoc-link-includes">hi.h</span>&gt;</b><p/>
+				<b class="mdoc-includes">#include &lt;<span class="mdoc-link-includes">hi.h</span>&gt;</b><p></p>
 				<i class="mdoc-ftype">int</i><br/>
-				<b class="mdoc-fname">hello</b>(<i class="mdoc-farg">int C</i>, <i class="mdoc-farg">const char *prefix</i>);<p/>
+				<b class="mdoc-fname">hello</b>(<i class="mdoc-farg">int C</i>, <i class="mdoc-farg">const char *prefix</i>);<p></p>
 				<i class="mdoc-ftype">void</i><br/>
 				<b class="mdoc-fname">hi</b>();
 			</div>
@@ -271,11 +271,11 @@
 				<b class="mdoc-includes">#include &lt;<span class="mdoc-link-includes">hello.h</span>&gt;</b>
 				<br/>
 				<b class="mdoc-includes">#include &lt;<span class="mdoc-link-includes">hi.h</span>&gt;</b>
-				<p/>
+				<p></p>
 				<i class="mdoc-ftype">int</i>
 				<br/>
 				<b class="mdoc-fname">hello</b>(<i class="mdoc-farg">int C</i>, <i class="mdoc-farg">const char *prefix</i>);
-				<p/>
+				<p></p>
 				<i class="mdoc-ftype">void</i>
 				<br/>
 				<b class="mdoc-fname">hi</b>();
@@ -283,9 +283,9 @@
 			<div class="mdoc-section">
 				<h1>DESCRIPTION</h1>
 				The <b class="mdoc-fname">hi</b>() and <b class="mdoc-fname">hello</b>() functions print out greeting messages.
-				<p/>
+				<p></p>
 				The <b class="mdoc-fname">hi</b>() function accepts no arguments and prints out &#8220;hello, world&#8221;.
-				<p/>
+				<p></p>
 				The <b class="mdoc-fname">hello</b>() function accepts a value <i class="mdoc-farg">C</i>, which if non-zero indicates
 				output should be uppercase; and <i class="mdoc-farg">prefix</i>, which, if non-NULL, shall be prefixed to the output.
 				The <i class="mdoc-farg">prefix</i> argument, if non-NULL, must be nil-terminated.
@@ -293,7 +293,7 @@
 			<div class="mdoc-section">
 				<h1>RETURN VALUES</h1>
 				The <b class="mdoc-fname">hi</b>() function does not return a value.
-				<p/>
+				<p></p>
 				The <b class="mdoc-fname">hello</b>() function returns 1 on success, 0 on failure.
 			</div>
 		</div>

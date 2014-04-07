@@ -109,7 +109,7 @@
 			<div class="mdoc-section">
 				<h1>SYNOPSIS</h1>
 				<b class="mdoc-includes">#include &lt;<span class="mdoc-link-includes">hello.h</span>&gt;</b>
-				<p/>
+				<p></p>
 				<i class="mdoc-ftype">int</i>
 				<br/>
 				<b class="mdoc-fname">hello</b>(<i class="mdoc-farg">int C</i>, <i class="mdoc-farg">const char *prefix</i>);
@@ -117,7 +117,7 @@
 			<div class="mdoc-section">
 				<h1>DESCRIPTION</h1>
 				The <b class="mdoc-name">hello</b> function prints out a greeting message.
-				<p/>
+				<p></p>
 				It accepts a value <i class="mdoc-farg">C</i>, which if non-zero indicates output should be uppercase; and <i
 					class="mdoc-farg">prefix</i>, which, if not <span class="mdoc-define">NULL</span>, shall be prefixed to the
 				output. The <i class="mdoc-farg">prefix</i> argument, if not <span class="mdoc-define">NULL</span>, must be
@@ -203,14 +203,14 @@
 			<div class="mdoc-section">
 				<h1>SYNOPSIS</h1>
 				<b class="mdoc-includes">#include &lt;<span class="mdoc-link-includes">hello.h</span>&gt;</b>
-				<p/>
+				<p></p>
 				<i class="mdoc-ftype">int</i><br/>
 				<b class="mdoc-fname">hello</b>(<i class="mdoc-farg">int C</i>, <i class="mdoc-farg">const char *prefix</i>);
 			</div>
 			<div class="mdoc-section">
 				<h1>DESCRIPTION</h1>
 				The <b class="mdoc-name">hello</b> function prints out a greeting message.
-				<p/>
+				<p></p>
 				It accepts a value <i class="mdoc-farg">C</i>, which if non-zero indicates output should be uppercase; and <i
 					class="mdoc-farg">prefix</i>, which, if not <span class="mdoc-define">NULL</span>, shall be prefixed to
 				the output. The <i class="mdoc-farg">prefix</i> argument, if not <span class="mdoc-define">NULL</span>, must be

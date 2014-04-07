@@ -55,7 +55,7 @@
 			<div class="mdoc-section">
 				<h1>SYNOPSIS</h1>
 				<b class="mdoc-includes">#include &lt;<span class="mdoc-link-includes">hello.h</span>&gt;</b>
-				<p/>
+				<p></p>
 				<i class="mdoc-ftype">int</i>
 				<br/>
 				<b class="mdoc-fname">hello</b>(<i class="mdoc-farg">int C</i>, <i class="mdoc-farg">const char *prefix</i>);
@@ -114,7 +114,7 @@
 			<div class="mdoc-section">
 				<h1>SYNOPSIS</h1> 
 				<b class="mdoc-includes">#include &lt;<span class="link-includes">hi.h</span>&gt;</b>
-				<p />
+				<p></p>
 				<i class="mdoc-ftype">void</i>
 				<br />
 				<b class="mdoc-fname">hello</b>(<i class="mdoc-farg" style="border: thin solid blue;">int C</i>, 
@@ -172,7 +172,7 @@
 		<div class="mdocout">
 			<div class="mdoc-section">
 				<h1>DESCRIPTION</h1>
-				The <b class="mdoc-name">hello</b>() function prints &#8220;hello, world&#8221;.<p/>
+				The <b class="mdoc-name">hello</b>() function prints &#8220;hello, world&#8221;.<p></p>
 				It accepts the following arguments:
 				<dl style="margin-top: 0.00em;margin-bottom: 0.00em;" class="mdoc-list mdoc-list-tag">
 					<dt class="mdoc-list-tag" style="margin-top: 1.00em;">
