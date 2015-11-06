@@ -22,7 +22,7 @@
 				<a href="part1.xml">Tutorial Introduction</a>
 				<ol>
 					<li class="toc-chap">
-						<a href="part1-1.xml">Commnds</a>
+						<a href="part1-1.xml">Commands</a>
 						<ol>
 							<li class="toc-sec"><a href="part1-1-1.xml">Simple Command</a></li>
 							<li class="toc-sec"><a href="part1-1-2.xml">Elaborate Command</a></li>
