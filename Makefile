@@ -1,6 +1,6 @@
 .SUFFIXES: .html .sgml .xml .xhtml .opf .dot .png .map
 
-PREFIX	= /usr/vhosts/manpages.bsd.lv/www/htdocs
+PREFIX	= /var/www/vhosts/manpages.bsd.lv/htdocs
 VERSION	= 0.1.4
 DATE	= 07 April 2014
 
@@ -217,6 +217,7 @@ clean:
 	rm -f mdoc.epub mdoc.html mdoc.sgml mdoc.xml book.opf
 	rm -f mdoc.single-html.tgz mdoc.multi-html.tgz
 	rm -f history.png history.map 
+	rm -rf .html-multi .html-single .book
 
 mdoc.multi-html.tgz: toc.html $(HTMLS) css/book.css external.png
 	mkdir .html-multi
