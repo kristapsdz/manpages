@@ -86,19 +86,19 @@
 			</div>
 		</div>
 		<p>
-			We next add a new section to name the library itself.
+			Even though that is hard to maintain and not very useful, some operating systems, for example FreeBSD and NetBSD,
+			require a <span class="sec">LIBRARY</span> section for base system libraries.  For portable libraries,
+			do not include such a section.
 		</p>
 		<div class="mdocin">
 			.Sh LIBRARY
 			<br />
-			.Lb greeting
+			.Lb libgreeting
 		</div>
 		<p>
-			This uses the macro <a href="macros.xml#macro_lb" class="macro">Lb</a>, which accepts the name of the library (not
-			including the leading <q>lib</q>).  This macro is smart enough to know about <a class="term"
-				href="glossary.xml#libc">standard libraries</a>, and will format the output in a different way if it
-			encounters such an argument.  Since our library is non-standard, it will print in a generic way.  The intent of this
-			section is to hint us on how to link to the installed library.
+			This uses the macro <a href="macros.xml#macro_lb" class="macro">Lb</a>, which accepts the name of the library
+			starting with <q>lib</q>.  This macro is not portable because the list of known library names is system
+			dependent, so it will produce different output on different systems, which is not desirable for a manual page.
 		</p>
 		<div class="mdocout">
 			<div class="mdoc-section">
@@ -108,7 +108,7 @@
 			</div>
 			<div class="mdoc-section">
 				<h1>LIBRARY</h1>
-				<span class="mdoc-lib">library &#8220;greeting&#8221;</span>
+				<span class="mdoc-lib">library &#8220;libgreeting&#8221;</span>
 			</div>
 		</div>
 		<p>
@@ -150,7 +150,7 @@
 			</div>
 			<div class="mdoc-section">
 				<h1>LIBRARY</h1>
-				<span class="mdoc-lib">library &#8220;greeting&#8221;</span>
+				<span class="mdoc-lib">library &#8220;libgreeting&#8221;</span>
 			</div>
 			<div class="mdoc-section">
 				<h1>SYNOPSIS</h1>
@@ -264,7 +264,7 @@
 			</div>
 			<div class="mdoc-section">
 				<h1>LIBRARY</h1>
-				<span class="mdoc-lib">library &#8220;greeting&#8221;</span>
+				<span class="mdoc-lib">library &#8220;libgreeting&#8221;</span>
 			</div>
 			<div class="mdoc-section">
 				<h1>SYNOPSIS</h1>
