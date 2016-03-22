@@ -313,11 +313,11 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 		OPS/css/book.css )
 	rm -rf .book
 
-history.html: history.sgml history.map history.png
+history.html: history.xml history.map history.png
 	#validate --warn history.sgml
-	( sed -n '1,/<MAP/p' history.sgml ; \
+	( sed -n '/<map/!p;//q' history.xml ; \
 	  cat history.map ; \
-	  sed -n '/<\/MAP>/,$$p' history.sgml ; ) >$@
+	  sed -e '1,/<\/map>/d' history.xml ; ) >$@
 
 history.map history.png: history.dot
 
@@ -356,7 +356,7 @@ index.html: index.xml
 	#validate --warn $@ || rm -f $@
 
 .dot.map:
-	dot -Tcmap -o $@ $<
+	dot -Tcmapx -o $@ $<
 
 .dot.png:
 	dot -Tpng -o $@ $<
