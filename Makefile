@@ -216,7 +216,7 @@ clean:
 	rm -f $(XHTMLS) $(HTMLS)
 	rm -f mdoc.epub mdoc.html mdoc.sgml mdoc.xml book.opf
 	rm -f mdoc.single-html.tgz mdoc.multi-html.tgz
-	rm -f history.png history.map 
+	rm -f history.png history.map history-long.png history-long.map history-long.dot
 	rm -rf .html-multi .html-single .book
 
 mdoc.multi-html.tgz: toc.html $(HTMLS) css/book.css external.png
@@ -313,13 +313,19 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 		OPS/css/book.css )
 	rm -rf .book
 
-history.html: history.xml history.map history.png
+history.html: history.xml history.map history.png history-long.map history-long.png
 	#validate --warn history.sgml
-	( sed -n '/<map/!p;//q' history.xml ; \
+	( sed -n '/<map id="manpages">/!p;//q' history.xml ; \
 	  cat history.map ; \
-	  sed -e '1,/<\/map>/d' history.xml ; ) >$@
+	  cat history-long.map | sed -e 's!id="!id="long-!' -e 's!name="!name="long-!' ; \
+	  sed -e '1,/<map id="manpages">/d' history.xml ; ) >$@
 
 history.map history.png: history.dot
+
+history-long.map history-long.png: history-long.dot
+
+history-long.dot: history.dot
+	sed -e 's/rankdir=LR/rankdir=TB/' history.dot >$@
 
 .sgml.html:
 	#validate --warn $<

@@ -3,25 +3,29 @@
 	<head>
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 		<meta charset="utf-8" /> 
-		<link rel="stylesheet" href="css/book.css" />
-		<link rel="stylesheet" href="css/history.css" />
 		<title>History of UNIX Manpages</title>
+		<link rel="stylesheet" href="css/history.css" />
+		<script src="css/imageMapResizer.min.js"></script>
 	</head>
 	<body>
 		<h1>
 			History of UNIX Manpages
 		</h1>
-		<p>
+		<div class="subhead">
+			An appendix of <a href="index.html">Practical UNIX Manpages</a>
+		</div>
+		<p class="first">
 			Where do UNIX manpages come from?  Who introduced the section-based layout of <b>NAME</b>, <b>SYNOPSIS</b>, and so on?
-			And for manpage source writers and readers: where were those economical two- and three-letter instructions developed?
-			The many accounts available on the Internet lack citations and are at times inconsistent.
+			And for manpage authors: where were those economical two- and three-letter instructions developed?
 		</p>
 		<p>
+			The many accounts available on the Internet lack citations and are at times inconsistent.
 			In this article, I reconstruct the history of the UNIX manpage based on source code, manuals, and first-hand accounts.
 		</p>
 		<p>
-			Special thanks to <a href="http://www.piercefuller.com/">Paul Pierce</a> for his <abbr title="Compatible Time-Sharing
-			System">CTSS</abbr> <a href="http://www.piercefuller.com/library/ctss.html">source archive</a>; Bernard Nivelet for the
+			Special thanks to <a href="http://www.piercefuller.com/">Paul Pierce</a> for his 
+			<abbr title="Compatible Time-Sharing System">CTSS</abbr> 
+			<a href="http://www.piercefuller.com/library/ctss.html">source archive</a>; Bernard Nivelet for the
 			<a href="http://web.mit.edu/multics-history/source/Multics_Internet_Server/Multics_sources.html">Multics Internet
 			Server</a>; the <a href="http://www.tuhs.org">UNIX Heritage Society</a> for their research UNIX <a
 			href="http://minnie.tuhs.org/cgi-bin/utree.pl">source reconstruction</a>; <a href="#ritter">Gunnar Ritter</a> for the <a
@@ -38,9 +42,22 @@
 		<h2>
 			Timeline
 		</h2>
-		<p style="text-align: center;">
-			<img src="history.png" alt="Timeline of UNIX manpage utilities" usemap="#manpages" />
-		</p>
+		<figure>
+			<figcaption>
+				The development of UNIX manpages can be divided into the <a class="prehistory"
+					href="#prehistory">Prehistory</a>, before UNIX; the
+				<a href="#classical" class="classical">Classical Age</a>, during the development of UNIX; and the
+				<a href="#renaissance" class="renaissance">Renaissance</a>, where traditional UNIX utilities were re-written.
+				In this chart, I show all known formatters of manpages (and their logical precursors before <q>manpages</q>
+				existed as such).
+			</figcaption>
+			<div id="manpagesbox">
+				<img src="history.png" alt="Timeline of UNIX manpage utilities" usemap="#manpages" />
+			</div>
+			<div id="manpageslongbox">
+				<img src="history-long.png" alt="Timeline of UNIX manpage utilities" usemap="#long-manpages" />
+			</div>
+		</figure>
 		<h3 id="prehistory">
 			Prehistory
 		</h3>
@@ -51,8 +68,9 @@
 			<dd>
 				<p>
 					<a href="#saltzer">Saltzer</a> wrote the <span class="cmd">RUNOFF</span> utility for <abbr
-					title="Massachusettes Institute of Technology">MIT</abbr>'s <abbr title="International Business
-					Machines">IBM</abbr> 7094 <abbr title="Compatible Time-Sharing System">CTSS</abbr> operating system in
+						title="Massachusettes Institute of Technology">MIT</abbr>'s 
+					<abbr title="International Business Machines">IBM</abbr> 
+					7094 <abbr title="Compatible Time-Sharing System">CTSS</abbr> operating system in
 					the <abbr title="Michigan Algorithm Decoder">MAD</abbr> computer language.  
 					Its legacy is considerable:
 					not only do contemporary manpages inherit from <span class="cmd">RUNOFF</span>, many of them, in fact,
@@ -127,8 +145,8 @@
 			<dd>
 				<p>
 					While working at AT&amp;T Bell Labs' Whippany centre, <a href="#canaday">Canaday</a> led a porting
-					effort of the <abbr title="Compatible Time-Sharing System">CTSS</abbr> at <abbr title="Massachusettes
-					Institute of Technology">MIT</abbr> to the GE-635 (in 635 assembly).  The <a class="cmd"
+					effort of the <abbr title="Compatible Time-Sharing System">CTSS</abbr> at 
+					<abbr title="Massachusettes Institute of Technology">MIT</abbr> to the GE-635 (in 635 assembly).  The <a class="cmd"
 					href="#x1964_RUNOFF">RUNOFF</a> utility is suspected to be part of this port.  The ported <abbr
 					title="Compatible Time-Sharing System">CTSS</abbr> was originally intended as a prototype (to be
 					replaced by Nike hardware), but ended up being used for five more years.  No sources could be located
@@ -156,8 +174,8 @@
 			<dd>
 				<p>
 					Little is known about this speculated port of <a href="#x1964_RUNOFF" class="cmd">RUNOFF</a>, only that
-					it was called <span class="cmd">roff</span> and probably ran on Bell Labs' <abbr title="General
-					Comprehensive Operating System">GCOS</abbr>-II GE-635.  <a href="#ritchie">Ritchie</a> is commonly cited
+					it was called <span class="cmd">roff</span> and probably ran on Bell Labs' 
+					<abbr title="General Comprehensive Operating System">GCOS</abbr>-II GE-635.  <a href="#ritchie">Ritchie</a> is commonly cited
 					as participating in this port, and this is not disputed.  <a href="#canaday">Canaday</a> is also
 					mentioned as an author, though this is not the case by his own account.  Both <a
 					href="#mcilroy">McIlroy</a> and <a href="#saltzer">Saltzer</a> speculate that this version, if written,
@@ -247,8 +265,8 @@
 			</dt>
 			<dd>
 				<p>
-					In 1969, <a href="#mcilroy">McIlroy</a> released an influential <abbr title="Basic Combined Programming
-					Language">BCPL</abbr> port of <a class="cmd" href="#x1964_RUNOFF">RUNOFF</a> <q>to extend the runoff
+					In 1969, <a href="#mcilroy">McIlroy</a> released an influential 
+					<abbr title="Basic Combined Programming Language">BCPL</abbr> port of <a class="cmd" href="#x1964_RUNOFF">RUNOFF</a> <q>to extend the runoff
 					model</q> to the <abbr title="General Electric Comprehensive Operating Supervisor">GECOS</abbr> GE-645
 					computer at AT&amp;T Bell Labs, Murray Hill.  He did not refer to the CTSS <a class="cmd"
 					href="#x1964_RUNOFF">RUNOFF</a> source code in writing <span class="cmd">runoff</span>, nor any other
@@ -327,8 +345,8 @@
 					Honeywell 6180.  It was later tuned and improved by Ed Wallman.  Tom Van Vleck, Wallman's manager in
 					mid-1978, recounts the porting effort <q>to produce photo-typeset manuals and eliminate dependence on
 					<abbr title="Basic Combined Programming Language">BCPL</abbr></q>.  (Note: the primary source
-					erroneously refers to <a href="#ossanna">Ossanna</a> as writing the <abbr title="Basic Combined
-					Programming Language">BCPL</abbr> <span class="cmd">runoff</span>; it was in fact <a
+				erroneously refers to <a href="#ossanna">Ossanna</a> as writing the 
+				<abbr title="Basic Combined Programming Language">BCPL</abbr> <span class="cmd">runoff</span>; it was in fact <a
 					href="#mcilroy">McIlroy</a>.)
 				</p>
 				<div class="sources">
@@ -1018,19 +1036,23 @@
 				available <a href="history/">here</a>, are copyright the sender/author, and not covered by this license.
 			</p>
 		</div>
-		<table class="nav">
-			<tbody>
-				<tr>
-					<td class="nav-home"><a href="http://manpages.bsd.lv/index.html">Home</a></td>
-					<td class="nav-history"><a href="http://manpages.bsd.lv/cgi-bin/cvsweb/history.sgml?cvsroot=manpages">History</a></td>
-				</tr>
-			</tbody>
-		</table>
-		<p class="edits">
-			Last edited by $Author$ on $Date$.  Copyright &copy; 2011, Kristaps Dzonsons.  CC BY-SA.
-		</p>
+		<nav>
+			<a href="http://manpages.bsd.lv/index.html">Home</a>
+			<a href="http://manpages.bsd.lv/cgi-bin/cvsweb/history.sgml?cvsroot=manpages">History</a>
+		</nav>
+		<footer>
+			<div>
+				<span>&copy; 2011, 2016, <a href="http://kristaps.bsd.lv">Kristaps Dzonsons</a></span>
+			</div>
+			<div>
+				<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="license.png" alt="CC BY-SA" /></a>
+			</div>
+		</footer>
 		<div>
-			<map id="manpages" NAME="manpages"></map>
+			<map id="manpages"></map>
 		</div>
+		<script>
+			imageMapResize();
+		</script>
 	</body>
 </html>

@@ -1,11 +1,60 @@
-img 		{ border: 0; }
-dd 		{ margin-bottom: 2em; }
-span.cmd	{ font-family: inherit; font-style: italic; }
-a.cmd		{ font-family: inherit; font-style: italic; border-bottom: 0; color: #0000ff; }
-div.sources p   { margin-bottom: 0.25em; }
-p.foot 		{ margin-top: 1em; color: #666666; font-size: smaller; }
-div#people dd	{ margin-bottom: 1em; }
-div#people dd p { margin-bottom: 0.0em; margin-top: 0em; }
-td.nav-home	{ text-align: right; width: 99%; }
-td.nav-home:after	
-		{ content: "\A0|"; }
+body				{ font-family: Calibri, Candara, Segoe, Segoe UI, Optima, Arial, sans-serif; 
+				  font-size: 12pt; }
+h1, h2, h3			{ font-family: Georgia, Times, Times New Roman, serif; 
+				  font-weight: normal; }
+h1				{ font-size: 28pt; 
+				  margin-bottom: 0; }
+.subhead			{ font-size: 14pt; 
+				  color: #888; }
+.subhead a			{ color: #333; 
+				  font-style: italic; }
+.subhead a:hover		{ color: #000; }
+.first				{ font-size: 16pt; 
+				  margin-top: 24pt; 
+				  margin-bottom: 24pt;
+				  line-height: 20pt;
+				  font-family: Georgia, Times, Times New Roman, serif; }
+figure				{ width: 95%; 
+				  margin-left: auto;
+				  margin-right: auto; }
+figcaption			{ font-size: 11pt; 
+				  margin-bottom: 12pt; }
+.prehistory			{ color: green; }
+.classical			{ color: darkorange; }
+.renaissance			{ color: purple; }
+.prehistory, .classical, 
+.renaissance			{ font-weight: bold; }
+#manpagesbox img		{ max-width: 1809px;
+				  width: 100%; }
+#manpageslongbox img		{ max-width: 737px;
+				  width: 100%; }
+#manpageslongbox		{ display: none; }
+a				{ text-decoration: none; }
+dd				{ margin-bottom: 2em; }
+span.cmd			{ font-family: inherit; 
+				  font-style: italic; }
+a.cmd				{ font-family: inherit; 
+				  font-style: italic; 
+				  color: #0000ff; }
+div.sources p			{ margin-bottom: 0.25em; }
+div#people dd			{ margin-bottom: 1em; }
+div#people dd p			{ margin-bottom: 0.0em; 
+				  margin-top: 0em; }
+nav				{ text-align: right; }
+nav a + a			{ border-left: thin solid silver; 
+				  margin-left: 0.5ex;
+				  padding-left: 1ex; }
+footer				{ text-align: center;
+			  	  margin-top: 1em;
+				  font-size: 11pt; }
+footer div + div		{ margin-top: 4pt; }
+footer span			{ color: #666; }
+footer a			{ color: #333; }
+footer a:hover			{ color: #000; }
+@media only screen and (max-width: 800px), only screen and (max-device-width: 800px) {
+#manpageslongbox		{ display: block; }
+#manpagesbox			{ display: none; }
+dd				{ margin-left: 8pt; }
+.sources ul			{ padding-left: 1em; }
+figure				{ width: 100%; }
+}

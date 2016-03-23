@@ -1,11 +1,10 @@
 /*	$Id$ */
 digraph manpages {
 	rankdir=LR;
-	size="9,18";
 	ranksep=0.15;
 	nodesep=0.15;
 
-	node [shape=ellipse,fontsize=11,colorscheme=dark24,style=filled];
+	node [shape=ellipse,fontname="Helvetica",colorscheme=dark24,style=filled];
 	edge [arrowhead=normal,arrowsize=0.5];
 
 	subgraph { 
