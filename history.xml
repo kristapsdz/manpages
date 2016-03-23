@@ -878,7 +878,8 @@
 				</div>
 			</dd>
 			<dt id="x2008_mandoc">
-				2008: <span class="cmd">mandoc(1)</span> (<a href="#dzonsons">Kristaps Dzonsons</a>)
+				2008: <span class="cmd">mandoc(1)</span> (<a href="#dzonsons">Kristaps Dzonsons</a>, <a href="#schwarze">Ingo
+					Schwarze</a>)
 			</dt>
 			<dd>
 				<p>
@@ -889,7 +890,7 @@
 					class="cmd" href="#x1989_groff">groff(1)</a> manuals were the predominant basis for this port.
 				</p>
 				<p>
-					<b>Disclaimer</b>: the author of this document wrote <span class="cmd">mandoc(1)</span>.
+					<b>Disclaimer</b>: the author of this document originally wrote <span class="cmd">mandoc(1)</span>.
 				</p>
 				<div class="sources">
 					<p>
@@ -1006,6 +1007,14 @@
 						href="http://mit.edu/saltzer/">mit.edu/saltzer</a>.
 					</p>
 				</dd>
+				<dt id="schwarze">Schwarze, Ingo</dt>
+				<dd>
+					<p>
+						Took over <a class="cmd" href="#x2008_mandoc">mandoc(1)</a> from <a href="#dzonsons">Kristaps
+							Dzonsons</a> in 2013.
+						Current project lead.
+					</p>
+				</dd>
 				<dt id="spencer">Spencer, Henry</dt>
 				<dd>
 					<p>
@@ -1038,7 +1047,7 @@
 		</div>
 		<nav>
 			<a href="http://manpages.bsd.lv/index.html">Home</a>
-			<a href="http://manpages.bsd.lv/cgi-bin/cvsweb/history.sgml?cvsroot=manpages">History</a>
+			<a href="http://manpages.bsd.lv/cgi-bin/cvsweb/history.xml?cvsroot=manpages">History</a>
 		</nav>
 		<footer>
 			<div>
