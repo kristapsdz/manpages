@@ -7,6 +7,11 @@ body			{ font-family: monospace;
 			  margin-left: auto;
 			  margin-right: auto;
 			  color: #dddddd; }
+nav[data-sblg-nav] ul	{ list-style-type: none; 
+			  padding: 0;
+			  margin: 0; }
+nav[data-sblg-nav] li	{ padding: 0;
+			  margin: 0; }
 @media only screen and (max-width: 600px), only screen and (max-device-width: 600px) {
 body			{ width: 98%; 
 			  margin-top: 1ex; 
@@ -16,12 +21,16 @@ body			{ width: 98%;
 a img			{ border: thin solid #0000ff; }
 a:hover img		{ border: thin solid #339999; }
 div > div > div,
+div > nav div > div,
+div > nav div > span:nth-child(+2),
 div > div > span:nth-child(+2)	
 			{ color: #000000;
 			  font-family: Verdana, Tahoma, Arial, sans-serif; }
+div > nav div > span:first-child,
 div > div > span:first-child
 			{ display: inline-block; 
 			  width: 5ex; }
+div > nav div > div,
 div > div > div		{ padding-left: 5ex; }
 
 a.external 		{ background: transparent url(../external.png) center right no-repeat; 

@@ -329,7 +329,8 @@ history-long.dot: history.dot
 
 index.html: index.xml
 	#validate --warn $<
-	sed -e "s!@VERSION@!$(VERSION)!g" -e "s!@DATE@!$(DATE)!g" $< >$@
+	sblg -o- -t index.xml versions.xml | \
+		sed -e "s!@VERSION@!$(VERSION)!g" -e "s!@DATE@!$(DATE)!g" >$@
 
 .xml.opf:
 	sed -e "s!@VERSION@!$(VERSION)!g" $< >$@

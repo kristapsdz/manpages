@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-		<meta charset='utf-8' /> 
-		<link rel="stylesheet" href="css/index.css" type="text/css" />
+		<meta charset="utf-8" /> 
+		<link rel="stylesheet" href="css/index.css" />
 		<title>Practical UNIX Manuals: mdoc</title>
 	</head>
 	<body>
@@ -22,7 +22,7 @@
 			<div>.</div>
 			<div>
 				<div>
-					So you've written a UNIX utility, library, or driver&mdash;or have started writing one&mdash;and you want to
+					So you've written a UNIX utility, library, or driver&#8212;or have started writing one&#8212;and you want to
 					document your work in a manual.  What happens next?
 				</div>
 			</div>
@@ -63,7 +63,7 @@
 			<div>.</div>
 			<div>
 				<div>
-					<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="license.png" ALT="CC BY-SA"></a>
+					<a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="license.png" ALT="CC BY-SA" /></a>
 				</div>
 				<div>
 					All content licensed under Creative Commons' <a class="external"
@@ -94,36 +94,20 @@
 			<div>.Ed</div>
 			<div><span>.Sh</span><span class="h1">News</span></div>
 			<div>.Bl -ohang</div>
-			<div><span>.It</span><span>07 April 2014, <span class="ver">0.1.4</span></span></div>
-			<div>
+			<nav data-sblg-nav="1" data-sblg-navcontent="1">
+				<div><span>.It</span><span>${sblg-date}, <span class="ver">${sblg-title}</span></span></div>
 				<div>
-					Polished (editing) text in various places.
-					Cleaned up markup for more variable media.
-					Removed XHTML (of course, it's still used for the ePub) in favour of clean HTML5.
+					<div>
+						${sblg-aside}
+					</div>
 				</div>
-			</div>
-			<div>.</div>
-			<div><span>.It</span><span>02 January 2012, <span class="ver">0.1.3</span></span></div>
-			<div>
-				<div>
-					Added GNU troff archives and edited content in Part 3 as suggested by an outside contributor (thanks!).
-				</div>
-			</div>
-			<div>.</div>
-			<div><span>.It</span><span>07 November 2011, <span class="ver">0.1.2</span></span></div>
-			<div>
-				<div>
-					Major addition of the <i>History of UNIX Manpages</i> study.
-					Also moved this page's Table of Contents to its own page (to free up space) and simplified this page.
-					Valuable editorial fixes thanks to an outside contributor: fixed History links and clarified several concepts in
-					the first few chapters among other improvements.
-				</div>
-			</div>
+				<div>.</div>
+			</nav>
 			<div>.El</div>
 			<div><span>.Lk</span><span>See <a href="/cgi-bin/cvsweb/index.sgml?cvsroot=manpages">cvsweb</a> for old news.</span></div>
 			<div>.</div>
 			<div>.</div>
-			<div><span>.\"</span><span id="copy">Copyright &copy; 2010&mdash;2011, 2014, <a href="http://kristaps.bsd.lv">Kristaps Dzonsons</a></span></div>
+			<div><span>.\"</span><span id="copy">&#169; 2010&#8211;2011, 2014, 2016, <a href="http://kristaps.bsd.lv">Kristaps Dzonsons</a></span></div>
 		</div>
 	</body>
 </html>
