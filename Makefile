@@ -1,4 +1,4 @@
-.SUFFIXES: .html .sgml .xml .xhtml .opf .dot .png .map
+.SUFFIXES: .html .xml .xhtml .opf .dot .png .map
 
 PREFIX	= /var/www/vhosts/manpages.bsd.lv/htdocs
 VERSION	= 0.1.4
@@ -42,12 +42,12 @@ SOURCE	= book.css \
 	  book.xml \
 	  container.xml \
 	  css/book.css \
+	  css/imageMapResizer.min.js \
 	  css/index.css \
 	  external.png \
 	  full-head.xml \
 	  full-tail.xml \
 	  glossary.xml \
-	  index.sgml \
 	  license.png \
 	  Makefile \
 	  toc.xml \
@@ -206,6 +206,7 @@ install: all
 	install -m 0644 toc.html $(PREFIX)
 	install -m 0644 $(XHTMLS) $(HTMLS) $(PREFIX)
 	install -m 0644 css/book.css css/history.css css/index.css $(PREFIX)/css
+	install -m 0644 css/imageMapResizer.min.js $(PREFIX)/css
 	install -m 0644 mdoc.epub mdoc.html $(PREFIX)
 	install -m 0644 mdoc.single-html.tgz mdoc.multi-html.tgz $(PREFIX)
 	install -m 0644 $(HISTORY) $(PREFIX)/history
@@ -214,7 +215,7 @@ clean:
 	rm -f index.html history.html
 	rm -f toc.html 
 	rm -f $(XHTMLS) $(HTMLS)
-	rm -f mdoc.epub mdoc.html mdoc.sgml mdoc.xml book.opf
+	rm -f mdoc.epub mdoc.html mdoc.xml book.opf
 	rm -f mdoc.single-html.tgz mdoc.multi-html.tgz
 	rm -f history.png history.map history-long.png history-long.map history-long.dot
 	rm -rf .html-multi .html-single .book
@@ -314,7 +315,6 @@ mdoc.epub: $(XHTMLS) book.css book.ncx book.opf external.png
 	rm -rf .book
 
 history.html: history.xml history.map history.png history-long.map history-long.png
-	#validate --warn history.sgml
 	( sed -n '/<map id="manpages">/!p;//q' history.xml ; \
 	  cat history.map ; \
 	  cat history-long.map | sed -e 's!id="!id="long-!' -e 's!name="!name="long-!' ; \
@@ -326,10 +326,6 @@ history-long.map history-long.png: history-long.dot
 
 history-long.dot: history.dot
 	sed -e 's/rankdir=LR/rankdir=TB/' history.dot >$@
-
-.sgml.html:
-	#validate --warn $<
-	sed -e "s!@VERSION@!$(VERSION)!g" -e "s!@DATE@!$(DATE)!g" $< >$@
 
 index.html: index.xml
 	#validate --warn $<
