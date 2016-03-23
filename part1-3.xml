@@ -30,6 +30,15 @@
 			similar functions.
 		</p>
 		<p>
+			In general, it's not a good idea to document your library in one manpage: the best form is to have one manpage per
+			function (or associated functions).
+			Larger libraries will often have an <q>index</q>-style manpage, but that's different.
+			It's not a good idea because it requires the reader to grep through the page to find the function that interests them.
+			It might be easier for you to maintain one file when your API changes, but you might alienate users by requiring them to
+			jump through your manpage to find their function.
+			Keep the trade-off in mind!
+		</p>
+		<p>
 			For simplicity's sake, I'll call this C function library <span class="lib">libgreeting</span>, implying that the
 			installed library is called <span class="file">libgreeting.a</span> or <span class="file">libgreeting.so</span>.  It
 			will consist of two header files, <span class="header">hi.h</span> and <span class="header">hello.h</span>, containing
@@ -98,11 +107,11 @@
 		<div class="mdocin">
 			.Sh LIBRARY
 			<br />
-			.Lb libgreeting
+			.Lb greeting
 		</div>
 		<p>
 			This uses the macro <a href="macros.xml#macro_lb" class="macro">Lb</a>, which accepts the name of the library
-			starting with <q>lib</q>.  This macro is not portable because the list of known library names is system
+			omitting the starting <q>lib</q>.  This macro is not portable because the list of known library names is system
 			dependent, so it will produce different output on different systems, which is not desirable for a manual page.
 		</p>
 		<div class="mdocout">
@@ -113,7 +122,7 @@
 			</div>
 			<div class="mdoc-section">
 				<h1>LIBRARY</h1>
-				<span class="mdoc-lib">library &#8220;libgreeting&#8221;</span>
+				<span class="mdoc-lib">library &#8220;greeting&#8221;</span>
 			</div>
 		</div>
 		<p>
@@ -155,7 +164,7 @@
 			</div>
 			<div class="mdoc-section">
 				<h1>LIBRARY</h1>
-				<span class="mdoc-lib">library &#8220;libgreeting&#8221;</span>
+				<span class="mdoc-lib">library &#8220;greeting&#8221;</span>
 			</div>
 			<div class="mdoc-section">
 				<h1>SYNOPSIS</h1>
@@ -265,7 +274,7 @@
 			</div>
 			<div class="mdoc-section">
 				<h1>LIBRARY</h1>
-				<span class="mdoc-lib">library &#8220;libgreeting&#8221;</span>
+				<span class="mdoc-lib">library &#8220;greeting&#8221;</span>
 			</div>
 			<div class="mdoc-section">
 				<h1>SYNOPSIS</h1>
