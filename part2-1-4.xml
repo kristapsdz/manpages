@@ -39,8 +39,8 @@
 		<p>
 			An in-line macro's arguments are scoped to the current line.  Its scope may also be closed out by subsequent macros: an
 			in-line macro can never contain a nested macro.  For a complete reference, see <a class="external"
-				href="http://mdocml.bsd.lv/mdoc.7.html#x496e2d6c696e65">In-Line</a> macros in the <a class="external lang"
-				href="http://mdocml.bsd.lv/mdoc.7.html">mdoc</a> reference.
+				href="http://mdocml.bsd.lv/man/mdoc.7.html#x496e2d6c696e65">In-Line</a> macros in the <a class="external lang"
+				href="http://mdocml.bsd.lv/man/mdoc.7.html">mdoc</a> reference.
 		</p>
 		<div class="mdocsyntax">
 			<span class="macro">Name</span>
@@ -115,8 +115,8 @@
 				partial explicit</a> macros) and <i>partial</i> in that it only extends to the current line (as opposed to <a
 				href="#block_full_implicit">block full implicit</a> macros).  Unlike an in-line macro, it accepts nested macros
 			(hence <i>block</i> macro).  For a complete reference, see <a class="external"
-				href="http://mdocml.bsd.lv/mdoc.7.html#x426c6f636b207061727469616c2d696d706c69636974">Block Partial Implicit</a>
-			macros in the <a class="external lang" href="http://mdocml.bsd.lv/mdoc.7.html">mdoc</a> reference.
+				href="http://mdocml.bsd.lv/man/mdoc.7.html#x426c6f636b207061727469616c2d696d706c69636974">Block Partial Implicit</a>
+			macros in the <a class="external lang" href="http://mdocml.bsd.lv/man/mdoc.7.html">mdoc</a> reference.
 		</p>
 		<div class="mdocsyntax">
 			<span class="macro">Name</span>
@@ -155,8 +155,8 @@
 			<a href="#block_partial_implicit">block partial implicit</a> macros, these consist of multiple lines (they are
 			<i>blocks</i>) and treat the line arguments and multi-line arguments differently (<i>full</i>).
 			For a complete reference, see <a class="external"
-				href="http://mdocml.bsd.lv/mdoc.7.html#x426c6f636b2066756c6c2d696d706c69636974">Block Full Implicit</a>
-			macros in the <a class="external lang" href="http://mdocml.bsd.lv/mdoc.7.html">mdoc</a> reference.
+				href="http://mdocml.bsd.lv/man/mdoc.7.html#x426c6f636b2066756c6c2d696d706c69636974">Block Full Implicit</a>
+			macros in the <a class="external lang" href="http://mdocml.bsd.lv/man/mdoc.7.html">mdoc</a> reference.
 		</p>
 		<div class="mdocsyntax">
 			.<span class="macro">Begin</span>
@@ -210,8 +210,8 @@
 			or subsequent lines, as opposed to <a href="#block_full_explicit">block full explicit</a> macros.  The pair of macros
 			involved in a full block macro are called the beginning and ending macros.
 			For a complete reference, see <a class="external"
-				href="http://mdocml.bsd.lv/mdoc.7.html#x426c6f636b207061727469616c2d6578706c69636974">Block Partial Explicit</a>
-			macros in the <a class="external lang" href="http://mdocml.bsd.lv/mdoc.7.html">mdoc</a> reference.
+				href="http://mdocml.bsd.lv/man/mdoc.7.html#x426c6f636b207061727469616c2d6578706c69636974">Block Partial Explicit</a>
+			macros in the <a class="external lang" href="http://mdocml.bsd.lv/man/mdoc.7.html">mdoc</a> reference.
 		</p>
 		<div class="mdocsyntax">
 			.<span class="macro">Begin</span>
@@ -257,8 +257,8 @@
 			treated differently (like <a href="#block_full_implicit">block full implicit</a> macros).  The earliest example of this
 			is the <a href="macros.xml#macro_bl" class="macro">Bl</a>.  These macros are <i>explicitly</i> closed by a closing
 			macro and may contain nested macros.  For a complete reference, see <a class="external"
-				href="http://mdocml.bsd.lv/mdoc.7.html#x426c6f636b2066756c6c2d6578706c69636974">Block Full Explicit</a> macros
-			in the <a class="external lang" href="http://mdocml.bsd.lv/mdoc.7.html">mdoc</a> reference.
+				href="http://mdocml.bsd.lv/man/mdoc.7.html#x426c6f636b2066756c6c2d6578706c69636974">Block Full Explicit</a> macros
+			in the <a class="external lang" href="http://mdocml.bsd.lv/man/mdoc.7.html">mdoc</a> reference.
 		</p>
 		<p>
 			Consider the <a href="macros.xml#macro_bd" class="macro">Bd</a> macro, which does not accept line arguments (most
