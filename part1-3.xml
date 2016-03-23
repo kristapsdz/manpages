@@ -18,7 +18,11 @@
 		<p>
 			A function library is a collection of object files, which consist mainly of programming functions, within a single file
 			called a library.  On most <a class="term" href="glossary.xml#unix">UNIX</a> systems, you can find libraries installed
-			in <span class="path">/usr/local</span>, ending in <span class="file">.a</span> or <span class="file">.so</span>.
+			in <span class="path">/usr/lib</span> and/or <span class="path">/usr/local/lib</span>, ending in 
+			<span class="file">.a</span>,
+			<span class="file">.la</span>,
+			<span class="file">.dylib</span>, or
+			<span class="file">.so</span> (followed by version numbers).
 		</p>
 		<p>
 			This example applies to any number of functions belonging to the same library &mdash; not necessarily all functions in
@@ -51,8 +55,8 @@
 			its filename.
 		</p>
 		<p>
-			Next, I'll list the names of the functions being documented.  I also change the description of the manual to be more
-			generic, just in case I want to add new functions, later.
+			Next, I'll list the names of the functions being documented.  I also change the description of the manual to accomodate
+			for the functionality of both documented functions.
 		</p>
 		<div class="mdocin">
 			.Sh NAME
@@ -66,7 +70,7 @@
 		<p>
 			Here I've used <a href="macros.xml#macro_nm" class="macro">Nm</a> twice to indicate that the manual documents two
 			functions.  In doing so, I'll have to be careful when invoking <a href="macros.xml#macro_nm" class="macro">Nm</a> in
-			later parts of the manual, as it will produce <span class="screen">hi</span> if I don't specify a name, and this is
+			later parts of the manual, as it will produce <span class="screen">hello</span> if I don't specify a name, and this is
 			probably not desired (nor should it be depended upon, as I may re-order the names).
 		</p>
 		<p>
@@ -75,8 +79,9 @@
 			that of the library.
 		</p>
 		<p>
-			It's good practise to alphabetise the function names in the <span class="sec">NAME</span> section.  We must also be sure
-			to comma-separate each name, leaving the last invocation without a comma.  Let's look at the output so far.
+			It's easiest to alphabetise the function names in the <span class="sec">NAME</span> section, but there are many ways to
+			order the names: order of importance, most often called, etc.
+			We must also be sure to comma-separate each name, leaving the last invocation without a comma.  Let's look at the output so far.
 		</p>
 		<div class="mdocout">
 			<div class="mdoc-section">
@@ -120,8 +125,6 @@
 			<br />
 			.In hello.h
 			<br />
-			.In hi.h
-			<br />
 			.Ft int
 			<br />
 			.Fo hello
@@ -129,6 +132,8 @@
 			.Fa "int C" "const char *prefix"
 			<br />
 			.Fc
+			<br />
+			.In hi.h
 			<br />
 			.Ft void
 			<br />
@@ -215,7 +220,7 @@
 			<br />
 			.Fa prefix
 			<br />
-			argument, if non-NULL, must be nil-terminated.
+			argument, which may be NULL.
 		</div>
 		<p>
 			Notice how each sentence in this fragment ends on its own line, for example,
@@ -241,18 +246,14 @@
 			<br />
 			The
 			<br />
-			.Fn hi
-			<br />
-			function does not return a value.
-			<br />
-			.Pp
-			<br />
-			The
-			<br />
 			.Fn hello
 			<br />
 			function returns 1 on success, 0 on failure.
 		</div>
+		<p>
+			If you're writing functions that returns -1 on failure (setting the <span class="var">errno</span>) and 0 on success
+			(such as a system call), then you can also use the <a href="macros.xml#macro_rv" class="macro">Rv</a> macro.
+		</p>
 		<p>
 			Let's collect these fragments into a single document and see if it's enough to use as a programming reference.
 		</p>
@@ -288,12 +289,10 @@
 				<p></p>
 				The <b class="mdoc-fname">hello</b>() function accepts a value <i class="mdoc-farg">C</i>, which if non-zero indicates
 				output should be uppercase; and <i class="mdoc-farg">prefix</i>, which, if non-NULL, shall be prefixed to the output.
-				The <i class="mdoc-farg">prefix</i> argument, if non-NULL, must be nil-terminated.
+				The <i class="mdoc-farg">prefix</i> argument, which may be NULL.
 			</div>
 			<div class="mdoc-section">
 				<h1>RETURN VALUES</h1>
-				The <b class="mdoc-fname">hi</b>() function does not return a value.
-				<p></p>
 				The <b class="mdoc-fname">hello</b>() function returns 1 on success, 0 on failure.
 			</div>
 		</div>
@@ -303,6 +302,7 @@
 			function, naming their arguments.  We also stipulated the necessary header files in the order they'd be included in
 			source files.  In the <span class="sec">DESCRIPTION</span>, we described each function and its arguments in full.
 			Lastly, we documented return values in the <span class="sec">RETURN VALUES</span> section.
+			If the function does not return a value, there's no need to mention it.
 		</p>
 		<p>
 			From this information, a programmer should be able to interface with our library.
