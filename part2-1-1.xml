@@ -13,7 +13,7 @@
 			Without exception, a well-formed <span class="lang">mdoc</span> document consists only of <a class="term"
 				href="glossary.xml#ascii">ASCII</a> printable characters, the space character, the newline character, and in
 			some cases the tab character.  Most modern formatters allow for CR+LF newlines <span class="screen">\r\n</span>, but
-			this is not portable.  Modern formatters also accomodate for unlimit to line length; this is not necessarily the case
+			this is not portable.  Modern formatters also accommodate for unlimit to line length; this is not necessarily the case
 			for legacy formatters.
 		</p>
 		<p>

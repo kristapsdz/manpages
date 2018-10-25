@@ -313,7 +313,7 @@
 			syntax of the command.
 		</p>
 		<p>
-			Finally, let's accomodate for command errors by stipulating the exit status of the command.  To do this, we add a new
+			Finally, let's accommodate for command errors by stipulating the exit status of the command.  To do this, we add a new
 			section to the end of the manual, <span class="sec">EXIT STATUS</span>, consisting of a single macro.  We didn't add
 			this to <span class="file">hi.1</span> because we didn't stipulate any exit state; however, it's good practise to always
 			include this section, even if your command only exits in one way.
