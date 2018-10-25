@@ -276,7 +276,7 @@
 			<br />
 			.It "%file:%line:%col: %msg[: %extra]"
 			<br />
-			An error occured when processing
+			An error occurred when processing
 			<br />
 			.Cm %file
 			<br />
