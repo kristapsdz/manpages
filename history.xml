@@ -30,8 +30,9 @@
 			Server</a>; the <a href="http://www.tuhs.org">UNIX Heritage Society</a> for their research UNIX <a
 			href="http://minnie.tuhs.org/cgi-bin/utree.pl">source reconstruction</a>; <a href="#ritter">Gunnar Ritter</a> for the <a
 			href="http://heirloom.sourceforge.net/index.html">Heirloom Project sources</a>; <a
-			href="http://www.alcatel-lucent.com/wps/portal/BellLabs">Alcatel-Lucent Bell Labs</a> for the <a
-			href="http://plan9.bell-labs.com/sources/plan9/sys/src/">Plan 9 sources</a>;  <a
+			href="http://www.bell-labs.com/">Nokia Bell Labs</a> for the <a
+			href="https://s3-us-west-2.amazonaws.com/belllabs-microsite-plan9/sources/plan9/sys/src.html">Plan 9 sources</a> (<a
+			href="https://9p.io/sources/plan9/sys/src/">alternate link</a>); <a
 			href="http://www.bitsavers.org/">BitSavers</a> for their historical archive; and last but not least, Rudd Canaday, James
 			Clarke, Brian Kernighan, Douglas McIlroy, Nils-Peter Nelson, Jerome Saltzer, Henry Spencer, Ken Thompson, and Tom Van
 			Vleck for their valuable <a href="history/">contributions</a>.
@@ -673,19 +674,19 @@
 					<ul>
 						<li>
 							B. W. Kernighan, M. E. Lesk, and J. F. Ossanna, <i><a
-							href="http://www.alcatel-lucent.com/bstj/vol57-1978/articles/bstj57-6-2115.pdf">UNIX
+							href="http://web.archive.org/web/20140718044610/http://www3.alcatel-lucent.com/bstj/vol57-1978/articles/bstj57-6-2115.pdf">UNIX
 							Time-sharing System: Document Preparation</a></i>, AT&amp;T Bell System Technical
 							Journal, Vol. 57, No. 6.  July 1978.
 						</li>
 						<li>
 							L. E. McMahon, L. L. Cherry, and R. Morris, <i><a
-							href="http://www.alcatel-lucent.com/bstj/vol57-1978/articles/bstj57-6-2137.pdf">UNIX
+							href="http://web.archive.org/web/20140718080612/http://www3.alcatel-lucent.com/bstj/vol57-1978/articles/bstj57-6-2137.pdf">UNIX
 							Time-sharing System: Statistical Text Processing</a></i>, AT&amp;T Bell System Technical
 							Journal, Vol. 57, No. 6.  July, 1978.
 						</li>
 						<li>
 							B. W. Kernighan, M. E. Lesk, and J. F. Ossanna, <i><a
-							href="http://www.alcatel-lucent.com/bstj/vol57-1978/articles/bstj57-6-2115.pdf">UNIX
+							href="http://web.archive.org/web/20140718044610/http://www3.alcatel-lucent.com/bstj/vol57-1978/articles/bstj57-6-2115.pdf">UNIX
 							Time-sharing System: Document Preparation</a></i>, AT&amp;T Bell System Technical
 							Journal, Vol. 57, No. 6.  July, 1978.
 						</li>
@@ -734,12 +735,12 @@
 					<ul>
 						<li>
 							Joseph F. Ossanna and Brian W. Kernighan, <i><a
-							href="http://plan9.bell-labs.com/sys/doc/troff.pdf">Troff User's Manual</a></i>, Second
+							href="https://s3-us-west-2.amazonaws.com/belllabs-microsite-plan9/sources/plan9/sys/doc/troff.pdf">Troff User's Manual</a></i>, Second
 							Edition.
 						</li>
 						<li>
-							<a href="http://cm.bell-labs.com/sources/plan9/sys/src/cmd/troff/">Plan 9 from Bell Labs
-							source listings</a>, hosted by <a href="http://plan9.bell-labs.com/plan9/">Plan 9 from
+							<a href="https://s3-us-west-2.amazonaws.com/belllabs-microsite-plan9/magic/webls_dir_/sources/plan9/sys/src/cmd/troff.html">Plan 9 from Bell Labs
+							source listings</a>, hosted by <a href="https://s3-us-west-2.amazonaws.com/belllabs-microsite-plan9/plan9.html">Plan 9 from
 							Bell Labs</a>.
 						</li>
 					</ul>
