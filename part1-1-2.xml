@@ -224,7 +224,7 @@
 		</p>
 		<p>
 			If we hadn't done so, the formatter wouldn't distinguish period from word.  This is more intuitive when re-using the
-			familiar <a href="macro.xml#macro_qq" class="macro">Qq</a>.
+			familiar <a href="macros.xml#macro_qq" class="macro">Qq</a>.
 		</p>
 		<div class="mdocin">
 			.Qq <span style="border: thin solid blue;">first</span> .

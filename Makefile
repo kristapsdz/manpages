@@ -200,7 +200,7 @@ install: all
 	mkdir -p $(PREFIX)
 	mkdir -p $(PREFIX)/css
 	mkdir -p $(PREFIX)/history
-	install -m 0644 license.png external.png $(PREFIX)
+	install -m 0644 license.png external.png history-long.png $(PREFIX)
 	install -m 0644 index.html history.html $(PREFIX)
 	install -m 0644 history.png history.map $(PREFIX)
 	install -m 0644 toc.html $(PREFIX)
