@@ -495,7 +495,7 @@
 						</li>
 						<li>
 							Ken Thompson and Dennis M. Ritchie, <i><a
-							href="http://www.cs.bell-labs.com/who/dmr/1stEdman.html">UNIX Programmer's
+							href="https://www.bell-labs.com/usr/dmr/www/1stEdman.html">UNIX Programmer's
 							Manual</a></i>, First Edition.  November 3, 1971.
 						</li>
 						<li>
@@ -611,7 +611,7 @@
 						</li>
 						<li>
 							Ken Wellsch's <a
-							href="http://minnie.tuhs.org/Archive/PDP-11/Distributions/research/Ken_Wellsch_v6/">Version
+							href="https://www.tuhs.org/Archive/Distributions/Research/Ken_Wellsch_v6/">Version
 							6 AT&amp;T UNIX tape archive</a>, hosted by the <a href="http://www.tuhs.org">UNIX
 							Heritage Society</a>.
 						</li>
@@ -948,8 +948,8 @@
 				<dt id="kernighan">Kernighan, Brian</dt>
 				<dd>
 					<p>
-						Completed <a class="cmd" href="#x1979">ditroff(1)</a> while at AT&amp;T Bell Labs, Murray Hill.  Homepage:
-						<a href="http://www.cs.bell-labs.com/who/bwk/index.html">www.cs.bell-labs.com/who/bwk/</a>.
+						Completed <a class="cmd" href="#x1979">ditroff(1)</a> while at AT&amp;T Bell Labs, Murray Hill.  Mirror of his Bell Labs Homepage:
+						<a href="http://www.cs.princeton.edu/~bwk/btl.mirror/">www.cs.princeton.edu/~bwk/btl.mirror/</a>.
 					</p>
 				</dd>
 				<dt id="madnick">Madnick, Stuart</dt>
@@ -989,7 +989,7 @@
 					<p>
 						Wrote the PDP-11 assembly-language <a class="cmd" href="#x1971">roff(1)</a> while working at AT&amp;T Bell
 						Labs, Murray Hill.  Homepage: <a
-						href="http://cm.bell-labs.com/who/dmr/">cm.bell-labs.com/who/dmr</a>.
+						href="https://www.bell-labs.com/usr/dmr/www/">www.bell-labs.com/usr/dmr/www/</a>.
 					</p>
 				</dd>
 				<dt id="ritter">Ritter, Gunnar</dt>
