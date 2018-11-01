@@ -109,18 +109,18 @@
 						</li>
 						<li>
 							Jerome H. Saltzer, <i><a
-							href="http://web.mit.edu/Saltzer/www/publications/ctss/AH.9.01.pdf">Manuscript Typing
+							href="http://web.mit.edu/saltzer/www/publications/ctss/AH.9.01.pdf">Manuscript Typing
 							and Editing</a></i>, section AH.9.01 of <i>The Compatible Time-Sharing System, A
 							Programmers Guide</i>, Patricia Crisman, editor (second edition). M.I.T. Press, 1965
 							(revised December 1966).  (<a
-							href="http://web.mit.edu/Saltzer/www/publications/ctss/AH.9.01.html">HTML</a>)
+							href="http://web.mit.edu/saltzer/www/publications/ctss/AH.9.01.html">HTML</a>)
 						</li>
 						<li>
 							Jerome H. Saltzer, <i><a
-							href="http://mit.edu/saltzer/www/publications/CC-244.pdf">TYPSET and RUNOFF,
+							href="http://web.mit.edu/saltzer/www/publications/CC-244.pdf">TYPSET and RUNOFF,
 							memorandum editor and type-out commands</a></i>, <i>M.I.T. Computation Center
 							Memorandum</i>, CC-244. 6 November, 1964.
-							(<a href="http://mit.edu/Saltzer/www/publications/CC-244.html">HTML</a>)
+							(<a href="http://web.mit.edu/saltzer/www/publications/CC-244.html">HTML</a>)
 						</li>
 						<li>
 							M. J. Leslie Lowry, Fernando J. Corbat&oacute;, and J. Richard Steinberg,
@@ -862,7 +862,7 @@
 			<dd>
 				<p>
 					<a href="#abell">Abell</a> ported <a class="cmd" href="#x1991_awf">awf(1)</a> to C in 1991 while at
-					Purdue.  The motivation of this port was to <q cite="ftp://lsof.itap.purdue.edu/pub/cawf.zip">[produce]
+					Purdue.  The motivation of this port was to <q cite="http://cd.textfiles.com/ems/emspro1/CUTIL/CAWF407.ZIP">[produce]
 					a C language version that would run on small systems, particularly MS-DOS ones</q>.
 				</p>
 				<div class="sources">
@@ -871,7 +871,8 @@
 					</p>
 					<ul>
 						<li>
-							<a href="ftp://lsof.itap.purdue.edu/pub/cawf.zip">Cawf source listing</a>, hosted by <a
+							<a href="http://cd.textfiles.com/ems/emspro1/CUTIL/CAWF407.ZIP">Cawf source listing</a>, now hosted by <a
+							href="http://cd.textfiles.com/">CD Textfiles</a>, formerly hosted by <a
 							href="http://www.itap.purdue.edu/">Information Technology at Purdue University</a>.
 						</li>
 					</ul>
@@ -1004,7 +1005,7 @@
 					<p>
 						Wrote <a class="cmd" href="#x1964_RUNOFF">RUNOFF</a> while working as a student at <abbr
 						title="Massachusettes Institute of Technology">MIT</abbr>.  Homepage: <a
-						href="http://mit.edu/saltzer/">mit.edu/saltzer</a>.
+						href="http://web.mit.edu/saltzer/www/home.html">web.mit.edu/saltzer/www/home.html</a>.
 					</p>
 				</dd>
 				<dt id="schwarze">Schwarze, Ingo</dt>
