@@ -257,7 +257,7 @@
 			<br />
 			The
 			<br />
-			.Nm
+			.Fn hello
 			<br />
 			function returns 1 on success, 0 on failure.
 		</div>
